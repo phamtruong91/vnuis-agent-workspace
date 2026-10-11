@@ -1,0 +1,4 @@
+interface:
+  display_name: Truyền thông · Lập kế hoạch quản trị thương hiệu – VNU-IS
+  short_description: Hỗ trợ lập kế hoạch quản trị thương hiệu (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-tt-ke-hoach-quan-tri-thuong-hieu để hỗ trợ công việc: Lập kế hoạch quản trị thương hiệu; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

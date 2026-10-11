@@ -1,0 +1,319 @@
+{
+ "name": "vnuis-khcn-bao-cao-nghiem-thu-de-tai",
+ "title": "Báo cáo nghiệm thu đề tài NCKH (tổng kết + biên bản hội đồng)",
+ "description": "Dùng khi đề tài NCKH hết thời gian thực hiện và cần bộ hồ sơ nghiệm thu: báo cáo tổng kết của chủ nhiệm và biên bản nghiệm thu của hội đồng, làm căn cứ thanh lý hợp đồng.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-bao-cao-nghiem-thu-de-tai",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+ "when": "Khi đề tài đã hết thời gian thực hiện (hoặc hoàn thành sớm): chủ nhiệm soạn Báo cáo\ntổng kết; Phòng KHCN&HTPT soạn Biên bản nghiệm thu để Hội đồng họp đánh giá, xếp loại.\nBộ hồ sơ này là căn cứ để thanh lý hợp đồng và quyết toán kinh phí.",
+ "inputs": [
+  {
+   "key": "ten_de_tai",
+   "desc": "Tên đầy đủ của đề tài",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ma_so_de_tai",
+   "desc": "Mã số đề tài",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chu_nhiem",
+   "desc": "Họ tên, học hàm/học vị chủ nhiệm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "co_quan_chu_tri",
+   "desc": "Đơn vị chủ trì",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_thuc_hien",
+   "desc": "Từ ngày/tháng/năm đến ngày/tháng/năm (thực tế)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tom_tat",
+   "desc": "Tóm tắt: đặt vấn đề, mục tiêu, phương pháp (ngắn gọn)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_qua_chi_tiet",
+   "desc": "Kết quả theo từng nội dung/mục tiêu đã đăng ký",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "san_pham_doi_chieu",
+   "desc": "Bảng đối chiếu sản phẩm đăng ký vs sản phẩm thực đạt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hieu_qua",
+   "desc": "Hiệu quả khoa học, kinh tế – xã hội, đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quyet_toan_kinh_phi",
+   "desc": "Bảng đối chiếu dự toán được duyệt vs thực chi theo khoản mục",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_luan_kien_nghi",
+   "desc": "Kết luận, kiến nghị và hướng phát triển tiếp",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "hoi_dong",
+   "desc": "Thành phần hội đồng: Chủ tịch, 02 phản biện, ủy viên, thư ký (họ tên, học hàm/học vị, đơn vị)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngay_hop",
+   "desc": "Ngày họp nghiệm thu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Địa điểm họp (chọn cơ sở: Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dien_bien",
+   "desc": "Diễn biến chính: trình bày, nhận xét phản biện, thảo luận",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_qua_danh_gia",
+   "desc": "Kết quả bỏ phiếu/xếp loại của từng thành viên và kết luận chung (Xuất sắc/Đạt/Không đạt)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kien_nghi_hoi_dong",
+   "desc": "Kiến nghị của hội đồng (chỉnh sửa, bổ sung trước thanh lý)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 93/2025/QH15; Nghị định 265/2025 và 267/2025, hiệu lực 14/10/2025: Yêu cầu cấp nhiệm vụ, nguồn kinh phí, tài trợ/đặt hàng, ngày phê duyệt, quy chế cơ quan tài trợ, phương thức khoán và quyền sử dụng kết quả. Đối chiếu NĐ 265 về tài chính và NĐ 267 về nhiệm vụ; không cố định thang xếp loại hoặc thu hồi toàn bộ kinh phí cho mọi đề tài. Nghiệm thu dựa hợp đồng và tiêu chí được duyệt, hội đồng có thẩm quyền xác nhận.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.\n\n**PHẦN A – Báo cáo tổng kết đề tài** (do chủ nhiệm soạn):",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Viết tóm tắt đề tài",
+   "lam_gi": "từ `tom_tat` viết phần tóm tắt: đặt vấn đề (3–5 dòng), mục tiêu, phương pháp chính — người đọc nắm được toàn bộ đề tài trong 1 trang; điền khối thông tin đề tài: `ten_de_tai`, `ma_so_de_tai`, `chu_nhiem`, `co_quan_chu_tri`, `thoi_gian_thuc_hien` (thực tế).",
+   "inputs": [
+    "tom_tat",
+    "ten_de_tai",
+    "ma_so_de_tai",
+    "chu_nhiem",
+    "co_quan_chu_tri",
+    "thoi_gian_thuc_hien"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: soạn dự thảo tóm tắt",
+   "luu_y": "tóm tắt là phần hội đồng đọc đầu tiên — phải nêu được \"làm gì, bằng cách nào, được gì\"; tránh sao chép nguyên mục tính cấp thiết của thuyết minh.",
+   "ket_qua": "dự thảo mục I – Tóm tắt + khối thông tin đề tài."
+  },
+  {
+   "n": 2,
+   "title": "Trình bày kết quả chi tiết",
+   "lam_gi": "từ `ket_qua_chi_tiet` trình bày theo từng nội dung/mục tiêu đã đăng ký trong thuyết minh; mỗi nội dung nêu: đã làm gì, kết quả cụ thể (số liệu), so sánh với mục tiêu đăng ký (đạt/vượt/chưa đạt).",
+   "inputs": [
+    "ket_qua_chi_tiet"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: trình bày theo từng nội dung/mục tiêu",
+   "luu_y": "mọi con số phải có minh chứng (phụ lục số liệu, biên bản thử nghiệm); nội dung nào chưa đạt mục tiêu phải giải trình trung thực — hội đồng phát hiện dễ dàng khi đối chiếu với thuyết minh.",
+   "ket_qua": "dự thảo mục II – Kết quả chi tiết (có đối chiếu mục tiêu đăng ký)."
+  },
+  {
+   "n": 3,
+   "title": "Lập bảng đối chiếu sản phẩm",
+   "lam_gi": "từ `san_pham_doi_chieu` lập bảng 2 cột \"Đăng ký\" vs \"Thực đạt\" cho từng sản phẩm (bài báo, phần mềm, đào tạo...); ghi kết luận tỷ lệ hoàn thành; giải trình nếu có chênh lệch.",
+   "inputs": [
+    "san_pham_doi_chieu"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: lập bảng đối chiếu Đăng ký vs Thực đạt và tính tỷ lệ hoàn thành",
+   "luu_y": "sản phẩm \"thực đạt\" phải có minh chứng kèm theo (bài báo: bản in/quyết định đăng; phần mềm: biên bản chạy thử; đào tạo: quyết định công nhận tốt nghiệp).",
+   "ket_qua": "bảng đối chiếu sản phẩm đăng ký/thực đạt."
+  },
+  {
+   "n": 4,
+   "title": "Đánh giá hiệu quả",
+   "lam_gi": "từ `hieu_qua` viết 3 nhóm: hiệu quả khoa học (đóng góp mới so với tình trạng đã biết); hiệu quả kinh tế – xã hội (khả năng ứng dụng, đối tượng thụ hưởng, số liệu minh họa); hiệu quả đào tạo (thạc sĩ, sinh viên NCKH).",
+   "inputs": [
+    "hieu_qua"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: soạn dự thảo 3 nhóm hiệu quả",
+   "luu_y": "hiệu quả kinh tế – xã hội cần số liệu cụ thể (VD: giảm 12% chi phí khảo sát), tránh khẩu hiệu chung chung (\"góp phần phát triển kinh tế\").",
+   "ket_qua": "dự thảo mục IV – Hiệu quả (3 nhóm)."
+  },
+  {
+   "n": 5,
+   "title": "Lập bảng quyết toán kinh phí",
+   "lam_gi": "từ `quyet_toan_kinh_phi` lập bảng đối chiếu dự toán được duyệt vs thực chi theo từng khoản mục; kiểm tra tổng thực chi không vượt tổng dự toán; giải trình các chênh lệch lớn.",
+   "inputs": [
+    "quyet_toan_kinh_phi"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: lập bảng đối chiếu và tính chênh lệch",
+   "luu_y": "số liệu ở đây phải khớp với hồ sơ quyết toán đã nộp Phòng TC&QT (kế hoạch – tài chính) — hội đồng sẽ đối chiếu chéo hai nguồn.",
+   "ket_qua": "bảng quyết toán kinh phí (dự toán – thực chi – chênh lệch theo khoản mục)."
+  },
+  {
+   "n": 6,
+   "title": "Viết kết luận, kiến nghị và hoàn thiện Phần A",
+   "lam_gi": "từ `ket_luan_kien_nghi` viết mức độ hoàn thành mục tiêu, kiến nghị ứng dụng kết quả, hướng nghiên cứu tiếp theo; ráp các kết quả bước 1–5 thành báo cáo tổng kết hoàn chỉnh (I. Tóm tắt → VI. Kết luận và kiến nghị); kiểm tra chính tả, số liệu; trình chủ nhiệm ký.",
+   "inputs": [
+    "ket_luan_kien_nghi",
+    "chu_nhiem"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: ráp Phần A hoàn chỉnh",
+   "luu_y": "kiến nghị phải khả thi và có địa chỉ thụ hưởng cụ thể (đơn vị nào áp dụng), không kiến nghị chung chung.",
+   "ket_qua": "Phần A – Báo cáo tổng kết hoàn chỉnh, sẵn sàng trình ký. **PHẦN B – Biên bản nghiệm thu của Hội đồng** (do thư ký hội đồng ghi):"
+  },
+  {
+   "n": 7,
+   "title": "Ghi thông tin hội đồng và kiểm tra điều kiện họp",
+   "lam_gi": "ghi quyết định thành lập hội đồng; điền thành phần từ `hoi_dong` (Chủ tịch, 02 phản biện, ủy viên, thư ký — họ tên, học hàm/học vị, đơn vị); ghi `ngay_hop`, `dia_diem`, hình thức họp; kiểm tra tỷ lệ thành viên có mặt — phải đủ theo quy chế mới được tiến hành họp.",
+   "inputs": [
+    "hoi_dong",
+    "ngay_hop",
+    "dia_diem"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: chuẩn bị hồ sơ trình ký, nhắc lịch và theo dõi tiến độ",
+   "luu_y": "thành viên vắng mặt không đủ tỷ lệ → cuộc họp không hợp lệ, biên bản vô giá trị; kiểm tra tư cách thành viên (không thuộc nhóm thực hiện đề tài, đủ tiêu chuẩn theo quy chế).",
+   "ket_qua": "phần 1 biên bản (thông tin hội đồng, thời gian, địa điểm, tỷ lệ có mặt)."
+  },
+  {
+   "n": 8,
+   "title": "Ghi diễn biến cuộc họp",
+   "lam_gi": "từ `dien_bien` ghi theo trình tự: chủ nhiệm trình bày tóm tắt kết quả; 02 phản biện đọc nhận xét; các thành viên thảo luận, chất vấn; chủ nhiệm giải trình; ghi ý kiến chính của từng người, không ghi nguyên văn dài dòng.",
+   "inputs": [
+    "dien_bien"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: chuẩn bị tài liệu họp, tổng hợp ý kiến",
+   "luu_y": "phải ghi đầy đủ ý kiến trái chiều (nếu có) và nội dung giải trình — đây là căn cứ khi có khiếu nại về kết quả nghiệm thu.",
+   "ket_qua": "phần 2 biên bản (diễn biến cuộc họp)."
+  },
+  {
+   "n": 9,
+   "title": "Ghi kết quả đánh giá và xếp loại",
+   "lam_gi": "từ `ket_qua_danh_gia` ghi ý kiến từng thành viên, kết quả bỏ phiếu kín (số phiếu theo từng mức), kết luận xếp loại chung của hội đồng (Xuất sắc/Đạt/Không đạt).",
+   "inputs": [
+    "ket_qua_danh_gia"
+   ],
+   "vai_tro": "Hội đồng nghiệm thu · AI hỗ trợ: chuẩn bị tài liệu họp, tổng hợp ý kiến",
+   "luu_y": "xếp loại \"Không đạt\" đồng nghĩa không thanh lý được hợp đồng và phải xử lý theo Điều 7 (thu hồi kinh phí) — phải ghi rõ căn cứ trong biên bản.",
+   "ket_qua": "phần 3 biên bản (kết quả đánh giá, xếp loại)."
+  },
+  {
+   "n": 10,
+   "title": "Ghi kiến nghị của hội đồng",
+   "lam_gi": "từ `kien_nghi_hoi_dong` ghi nội dung cần chỉnh sửa, bổ sung trong báo cáo tổng kết trước khi thanh lý (trường hợp xếp loại Đạt có điều kiện), kèm thời hạn hoàn thành cụ thể.",
+   "inputs": [
+    "kien_nghi_hoi_dong"
+   ],
+   "vai_tro": "Hội đồng nghiệm thu · AI hỗ trợ: rà soát kỹ thuật, tổng hợp và lưu trữ hồ sơ",
+   "luu_y": "kiến nghị phải cụ thể, có thời hạn — kiến nghị chung chung (\"hoàn thiện thêm\") sẽ gây ách tắc khi làm thủ tục thanh lý.",
+   "ket_qua": "phần 4 biên bản (kiến nghị + thời hạn hoàn thành)."
+  },
+  {
+   "n": 11,
+   "title": "Hoàn thiện, ký và kiểm tra nhất quán",
+   "lam_gi": "Chủ tịch, Thư ký và các thành viên ký xác nhận biên bản; kiểm tra số liệu sản phẩm, kinh phí giữa Phần A và Phần B khớp nhau tuyệt đối — nếu lệch thì quay lại sửa Phần A trước khi ký; ghi số bản biên bản và thời điểm thông qua toàn văn tại cuộc họp.",
+   "inputs": [],
+   "vai_tro": "Chủ tịch Hội đồng, Thư ký Hội đồng · AI hỗ trợ: kiểm tra nhất quán số liệu hai phần",
+   "luu_y": "biên bản phải được thông qua toàn văn tại cuộc họp và ghi rõ giờ kết thúc; số bản lập theo quy định (thường 04 bản).",
+   "ket_qua": "bộ hồ sơ nghiệm thu hoàn chỉnh (Phần A + Phần B), sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Đủ cấu trúc 2 phần theo chuẩn: Phần A 9 phần (tiêu đề → khối thông tin → mục I–VI → chữ ký chủ nhiệm) + Phần B 9 phần (Quốc hiệu – Tiêu ngữ → tiêu đề → thông tin đề tài → phần 1–4 → số bản, thời điểm thông qua → chữ ký hội đồng)",
+  "Số liệu trong output khớp Input: sản phẩm thực đạt = `san_pham_doi_chieu`; quyết toán kinh phí = `quyet_toan_kinh_phi`; thành phần hội đồng = `hoi_dong`",
+  "Không bịa đặt diễn biến cuộc họp, kết quả bỏ phiếu, ý kiến phản biện, minh chứng sản phẩm",
+  "Số liệu sản phẩm và kinh phí giữa Phần A (báo cáo tổng kết) và Phần B (biên bản) khớp nhau tuyệt đối",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (hợp đồng thực hiện đề tài, quyết định thành lập hội đồng nghiệm thu)",
+  "Mỗi sản phẩm \"thực đạt\" có minh chứng kèm theo; bảng quyết toán khớp với hồ sơ quyết toán đã nộp Phòng TC&QT (kế hoạch – tài chính)",
+  "Tỷ lệ thành viên hội đồng có mặt đủ theo quy chế; thành viên đủ tư cách (không thuộc nhóm thực hiện đề tài); biên bản ghi đầy đủ ý kiến trái chiều (nếu có) và nội dung giải trình",
+  "Kiến nghị của hội đồng cụ thể, có thời hạn hoàn thành; biên bản ghi rõ số bản và thời điểm thông qua toàn văn tại cuộc họp",
+  "Đã qua Human gate: chủ nhiệm ký Phần A; Chủ tịch, Thư ký và các thành viên ký biên bản"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Báo cáo nghiệm thu đối chiếu mục tiêu, sản phẩm cam kết trong thuyết minh với kết quả; không tự cho đạt.",
+  "Sản phẩm công bố tiếng Anh ghi đúng thông tin tạp chí, hội nghị."
+ ],
+ "cho_xac_nhan": [
+  "Tiêu chí nghiệm thu từng loại đề tài (C2).",
+  "Hội đồng nghiệm thu (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề \"BÁO CÁO TỔNG KẾT ĐỀ TÀI NGHIÊN CỨU KHOA HỌC\"",
+  "Khối thông tin: tên đề tài; mã số – cấp đề tài; chủ nhiệm; cơ quan chủ trì; thời gian thực hiện (thực tế)",
+  "Mục I. Tóm tắt (đặt vấn đề, mục tiêu, phương pháp)",
+  "Mục II. Kết quả chi tiết (theo từng nội dung/mục tiêu, đối chiếu đăng ký)",
+  "Mục III. Sản phẩm đạt được (bảng đăng ký – thực đạt)",
+  "Mục IV. Hiệu quả (khoa học – kinh tế xã hội – đào tạo)",
+  "Mục V. Quyết toán kinh phí (bảng dự toán – thực chi theo khoản mục)",
+  "Mục VI. Kết luận và kiến nghị",
+  "Địa danh, ngày tháng năm + chữ ký chủ nhiệm đề tài - Phần B – Biên bản nghiệm thu của Hội đồng:",
+  "Quốc hiệu – Tiêu ngữ",
+  "Tiêu đề \"BIÊN BẢN NGHIỆM THU ĐỀ TÀI NGHIÊN CỨU KHOA HỌC\"",
+  "Thông tin đề tài (tên, mã số, chủ nhiệm)",
+  "Phần 1. Hội đồng nghiệm thu (quyết định thành lập, thành phần, thời gian, địa điểm, tỷ lệ thành viên có mặt)",
+  "Phần 2. Diễn biến cuộc họp (trình bày, nhận xét phản biện, thảo luận/chất vấn, giải trình)",
+  "Phần 3. Kết quả đánh giá (ý kiến từng thành viên, kết quả bỏ phiếu, kết luận xếp loại)",
+  "Phần 4. Kiến nghị của Hội đồng (nội dung bổ sung + thời hạn hoàn thành)",
+  "Số bản biên bản + thời điểm thông qua toàn văn tại cuộc họp",
+  "Chữ ký: Chủ tịch hội đồng, Thư ký, các thành viên Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "- Phần A – Báo cáo tổng kết đề tài:\n  1. Tiêu đề \"BÁO CÁO TỔNG KẾT ĐỀ TÀI NGHIÊN CỨU KHOA HỌC\"\n  2. Khối thông tin: tên đề tài; mã số – cấp đề tài; chủ nhiệm; cơ quan chủ trì; thời gian thực hiện (thực tế)\n  3. Mục I. Tóm tắt (đặt vấn đề, mục tiêu, phương pháp)\n  4. Mục II. Kết quả chi tiết (theo từng nội dung/mục tiêu, đối chiếu đăng ký)\n  5. Mục III. Sản phẩm đạt được (bảng đăng ký – thực đạt)\n  6. Mục IV. Hiệu quả (khoa học – kinh tế xã hội – đào tạo)\n  7. Mục V. Quyết toán kinh phí (bảng dự toán – thực chi theo khoản mục)\n  8. Mục VI. Kết luận và kiến nghị\n  9. Địa danh, ngày tháng năm + chữ ký chủ nhiệm đề tài\n- Phần B – Biên bản nghiệm thu của Hội đồng:\n  1. Quốc hiệu – Tiêu ngữ\n  2. Tiêu đề \"BIÊN BẢN NGHIỆM THU ĐỀ TÀI NGHIÊN CỨU KHOA HỌC\"\n  3. Thông tin đề tài (tên, mã số, chủ nhiệm)\n  4. Phần 1. Hội đồng nghiệm thu (quyết định thành lập, thành phần, thời gian, địa điểm, tỷ lệ thành viên có mặt)\n  5. Phần 2. Diễn biến cuộc họp (trình bày, nhận xét phản biện, thảo luận/chất vấn, giải trình)\n  6. Phần 3. Kết quả đánh giá (ý kiến từng thành viên, kết quả bỏ phiếu, kết luận xếp loại)\n  7. Phần 4. Kiến nghị của Hội đồng (nội dung bổ sung + thời hạn hoàn thành)\n  8. Số bản biên bản + thời điểm thông qua toàn văn tại cuộc họp\n  9. Chữ ký: Chủ tịch hội đồng, Thư ký, các thành viên",
+ "human_gate_check": "Đã qua Human gate: chủ nhiệm ký Phần A; Chủ tịch, Thư ký và các thành viên ký biên bản",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Luật 93/2025/QH15; Nghị định 265/2025 và 267/2025, hiệu lực 14/10/2025\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=215664&pageid=27160\n\nYêu cầu cấp nhiệm vụ, nguồn kinh phí, tài trợ/đặt hàng, ngày phê duyệt, quy chế cơ quan tài trợ, phương thức khoán và quyền sử dụng kết quả. Đối chiếu NĐ 265 về tài chính và NĐ 267 về nhiệm vụ; không cố định thang xếp loại hoặc thu hồi toàn bộ kinh phí cho mọi đề tài. Nghiệm thu dựa hợp đồng và tiêu chí được duyệt, hội đồng có thẩm quyền xác nhận.\n",
+ "outputs_dir": "skills/vnuis-khcn-bao-cao-nghiem-thu-de-tai/references"
+}

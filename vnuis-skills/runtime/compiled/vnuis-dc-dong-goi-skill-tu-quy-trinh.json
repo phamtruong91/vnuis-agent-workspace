@@ -1,0 +1,184 @@
+{
+ "name": "vnuis-dc-dong-goi-skill-tu-quy-trinh",
+ "title": "Đóng gói skill từ quy trình",
+ "description": "Dùng khi đơn vị muốn biến một quy trình công việc đang làm thủ công thành skill AI dùng lại được: vẽ lại quy trình, viết đặc tả skill, soạn bộ tình huống kiểm thử.",
+ "group": "dc",
+ "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+ "previous_name": "vnuis-dong-goi-skill-tu-quy-trinh",
+ "format": "zip",
+ "version": "0.4.2",
+ "unit": "CES GLOBAL và đầu mối VNU-IS",
+ "when": "Khi một đơn vị muốn biến quy trình công việc thực tế (đang làm thủ công hoặc nằm trong\nđầu cán bộ) thành skill AI có thể tái dùng, kiểm thử và chuyển giao. Đây là skill\n\"dùng để tạo ra các skill khác\" — áp dụng chung cho mọi phòng ban.",
+ "inputs": [
+  {
+   "key": "mo_ta_quy_trinh",
+   "desc": "Mô tả quy trình: phỏng vấn cán bộ, SOP hiện có, các bước thực hiện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "mau_input",
+   "desc": "Ít nhất 1 mẫu input thực tế (đã ẩn danh)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "mau_output",
+   "desc": "Ít nhất 1 mẫu output tương ứng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tieu_chi_nghiem_thu",
+   "desc": "Tiêu chí đánh giá output đạt/không đạt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngoai_le",
+   "desc": "Các trường hợp ngoại lệ, tình huống đặc biệt đã gặp",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "CES GLOBAL và đầu mối VNU-IS"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Rà soát mô tả và phân rã IPO",
+   "lam_gi": "đọc kỹ `mo_ta_quy_trinh`, tách quy trình thành chuỗi Input → các bước xử lý → Output; đánh dấu bước nào mô tả mơ hồ, thiếu điều kiện hoặc chưa rõ người chịu trách nhiệm để hỏi lại process owner.",
+   "inputs": [
+    "mo_ta_quy_trinh",
+    "ngoai_le"
+   ],
+   "vai_tro": "Process owner (chủ quy trình) · AI hỗ trợ: phân rã IPO nháp, đánh dấu điểm mờ cần làm rõ",
+   "luu_y": "không \"AI hóa\" quy trình còn tranh cãi — nếu các bên mô tả cách làm khác nhau thì phải thống nhất trước; ghi riêng danh sách ngoại lệ và điểm cần con người quyết định ngay từ bước này.",
+   "ket_qua": "bản phân rã IPO nháp (danh sách bước xử lý + danh sách điểm mờ cần làm rõ)."
+  },
+  {
+   "n": 2,
+   "title": "Phân tích cặp mẫu input – output",
+   "lam_gi": "đặt `mau_input` cạnh `mau_output`, đối chiếu từng trường input tạo ra phần nào của output; trích các trường bắt buộc, điều kiện ràng buộc và quy tắc xử lý ngầm mà mô tả chữ không nêu.",
+   "inputs": [
+    "mau_input",
+    "mau_output",
+    "ngoai_le"
+   ],
+   "vai_tro": "Cán bộ phụ trách đóng gói skill (phối hợp process owner) · AI hỗ trợ: đối chiếu cặp mẫu input–output, trích trường bắt buộc và quy tắc ngầm",
+   "luu_y": "mẫu dữ liệu phải đã được ẩn danh; nếu output có thông tin mà mẫu input không chứa trường tương ứng thì ghi rõ là suy luận cần kiểm chứng, tuyệt đối không bịa quy tắc.",
+   "ket_qua": "bảng đối chiếu input – output + danh sách ngoại lệ và quy tắc xử lý."
+  },
+  {
+   "n": 3,
+   "title": "Vẽ process map",
+   "lam_gi": "vẽ sơ đồ luồng toàn bộ quy trình theo đúng thứ tự các bước, thêm nhánh rẽ cho từng ngoại lệ, đánh dấu điểm kiểm soát và điểm human gate (cần con người quyết định/duyệt).",
+   "inputs": [
+    "ngoai_le"
+   ],
+   "vai_tro": "Cán bộ phụ trách đóng gói skill · AI hỗ trợ: vẽ process map đầy đủ nhánh ngoại lệ và điểm human gate",
+   "luu_y": "mỗi nhánh ngoại lệ phải có điểm kết thúc rõ ràng (quay lại luồng chính hay dừng và báo cho ai); human gate đặt tại các quyết định không thể tự động (phê duyệt, ký, đánh giá định tính).",
+   "ket_qua": "process map có đầy đủ nhánh ngoại lệ và điểm human gate."
+  },
+  {
+   "n": 4,
+   "title": "Viết skill spec theo chuẩn SKILL.md 9 mục",
+   "lam_gi": "viết đầy đủ 9 mục — frontmatter (name, description), khi nào dùng, input (bảng), quy trình, output, ví dụ mô phỏng, human gate, giới hạn, căn cứ; mỗi mục viết cụ thể, cấm câu chung chung kiểu \"xử lý phù hợp\".",
+   "inputs": [
+    "mau_input",
+    "mau_output",
+    "tieu_chi_nghiem_thu"
+   ],
+   "vai_tro": "Cán bộ phụ trách đóng gói skill · AI hỗ trợ: viết skill spec đầy đủ 9 mục theo chuẩn, phản ánh đúng process map",
+   "luu_y": "mục Quy trình của spec phải phản ánh đúng process map (kể cả nhánh ngoại lệ); ví dụ mô phỏng dùng đúng cặp mẫu input/output đã phân tích ở bước 2.",
+   "ket_qua": "bản nháp skill spec hoàn chỉnh 9 mục."
+  },
+  {
+   "n": 5,
+   "title": "Soạn bộ test case kiểm thử",
+   "lam_gi": "soạn mỗi test case gồm input mẫu → output kỳ vọng → tiêu chí đạt/không đạt; bao phủ cả case thường, case biên và case ngoại lệ.",
+   "inputs": [
+    "mau_input",
+    "tieu_chi_nghiem_thu",
+    "ngoai_le"
+   ],
+   "vai_tro": "Cán bộ phụ trách đóng gói skill · AI hỗ trợ: soạn bộ test case (thường + biên + ngoại lệ) theo tiêu chí đo được",
+   "luu_y": "tiêu chí đạt phải đo được (đếm được/kiểm tra được), không dùng từ mơ hồ; test case ngoại lệ bắt buộc phải có — skill không qua test ngoại lệ thì chưa hoàn thành.",
+   "ket_qua": "bộ test case (case thường + case biên + case ngoại lệ)."
+  },
+  {
+   "n": 6,
+   "title": "Chạy thử, hiệu chỉnh và nghiệm thu",
+   "lam_gi": "cho AI chạy từng test case với bản nháp spec, so output thực tế với output kỳ vọng theo tiêu chí; sửa spec (quay lại bước 4) đến khi tất cả test case đạt; trình process owner nghiệm thu và ký xác nhận gói skill.",
+   "inputs": [
+    "tieu_chi_nghiem_thu"
+   ],
+   "vai_tro": "Process owner (chạy thử, hiệu chỉnh spec và ký nghiệm thu) · AI hỗ trợ: chạy thử từng test case với bản nháp spec, hỗ trợ hiệu chỉnh",
+   "luu_y": "mỗi lần sửa spec phải chạy lại toàn bộ test case (tránh sửa chỗ này hỏng chỗ khác); không đưa vào sử dụng chính thức khi chưa có chữ ký nghiệm thu.",
+   "ket_qua": "gói skill đã nghiệm thu (skill spec + process map + bộ test case)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Skill spec đủ 9 mục: frontmatter, khi nào dùng, input (bảng), quy trình, output, ví dụ mô phỏng, human gate, giới hạn, căn cứ.",
+  "Quy trình trong spec phản ánh đúng process map, kể cả nhánh ngoại lệ và điểm human gate.",
+  "Ví dụ mô phỏng dùng đúng cặp mẫu input/output đã phân tích ở bước 2 (dữ liệu giả lập, đã ẩn danh).",
+  "Bộ test case bao phủ case thường + case biên + case ngoại lệ; tiêu chí đạt đo được (đếm/kiểm tra được, không từ mơ hồ).",
+  "Mọi test case đã chạy thử đạt trước khi nghiệm thu (mỗi lần sửa spec chạy lại toàn bộ); test case ngoại lệ bắt buộc phải có.",
+  "Không bịa quy tắc xử lý cho trường hợp mẫu input không chứa thông tin tương ứng; quy trình còn tranh cãi thì thống nhất trước, không \"AI hóa\" sự lộn xộn.",
+  "Đã qua Human gate: process owner nghiệm thu và ký xác nhận gói skill (duyệt spec, duyệt test case). > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Process owner** (chủ quy trình — trưởng đơn vị hoặc cán bộ phụ trách nghiệp vụ) nghiệm thu gói skill: duyệt spec, duyệt test case, ký xác nhận.",
+  "Không đưa skill vào sử dụng chính thức khi chưa nghiệm thu."
+ ],
+ "guardrails": [
+  "**Không đóng gói khi thiếu mẫu input/output thực tế và tiêu chí kiểm thử rõ ràng** — skill không có test case thì không được coi là hoàn thành.",
+  "Không đóng gói quy trình mà đơn vị chưa thống nhất (còn tranh cãi về cách làm).",
+  "Mọi mẫu dữ liệu dùng để đóng gói phải được ẩn danh trước.",
+  "Skill hướng dẫn tạo skill không thay thế việc chuẩn hóa quy trình — quy trình rối thì phải gỡ rối trước, không \"AI hóa\" sự lộn xộn."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Dùng để biến kết quả khảo sát thành skill mới: lấy khung của phiếu CES (Input, Process, Output, Điểm nghẽn, Thông tin cần bổ sung) làm cấu trúc process map.",
+  "Mỗi skill mới phải gắn với một nghiệp vụ đã xác nhận trong phiếu và có 01–02 mẫu Input, Output đã ẩn thông tin cá nhân; thiếu thì dừng.",
+  "Skill mới theo chuẩn của gói VNU-IS: tiền tố `vnuis-`, mục bối cảnh VNU-IS, mã chờ xác nhận."
+ ],
+ "cho_xac_nhan": [
+  "Danh sách nghiệp vụ ưu tiên sau khảo sát (C8).",
+  "Người phê duyệt skill phía VNU-IS (C6)."
+ ],
+ "output_structure": [
+  "Frontmatter (`name`, `description`) và tiêu đề tên skill.",
+  "\"Khi nào dùng\": điều kiện kích hoạt, phạm vi áp dụng.",
+  "\"Đầu vào (Input)\": bảng Trường | Mô tả | Bắt buộc.",
+  "\"Quy trình\": các bước thực thi, mỗi bước cho ra bán thành phẩm.",
+  "\"Đầu ra (Output)\": danh sách sản phẩm cuối.",
+  "\"Ví dụ mô phỏng\": Input mẫu + Output mẫu (dữ liệu giả lập, có ghi chú giả lập).",
+  "\"Human gate\": ai kiểm duyệt, kiểm duyệt nội dung gì, điều kiện dừng.",
+  "\"Giới hạn\": các việc cấm làm.",
+  "\"Căn cứ & lưu ý\": văn bản/căn cứ áp dụng."
+ ],
+ "output_structure_raw": "1. Frontmatter (`name`, `description`) và tiêu đề tên skill.\n\n2. \"Khi nào dùng\": điều kiện kích hoạt, phạm vi áp dụng.\n\n3. \"Đầu vào (Input)\": bảng Trường | Mô tả | Bắt buộc.\n\n4. \"Quy trình\": các bước thực thi, mỗi bước cho ra bán thành phẩm.\n\n5. \"Đầu ra (Output)\": danh sách sản phẩm cuối.\n\n6. \"Ví dụ mô phỏng\": Input mẫu + Output mẫu (dữ liệu giả lập, có ghi chú giả lập).\n\n7. \"Human gate\": ai kiểm duyệt, kiểm duyệt nội dung gì, điều kiện dừng.\n\n8. \"Giới hạn\": các việc cấm làm.\n\n9. \"Căn cứ & lưu ý\": văn bản/căn cứ áp dụng.",
+ "human_gate_check": "Đã qua Human gate: process owner nghiệm thu và ký xác nhận gói skill (duyệt spec, duyệt test case). > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: CES GLOBAL và đầu mối VNU-IS. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dc-dong-goi-skill-tu-quy-trinh/references"
+}

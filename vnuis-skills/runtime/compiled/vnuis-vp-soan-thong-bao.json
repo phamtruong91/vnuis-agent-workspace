@@ -1,0 +1,225 @@
+{
+ "name": "vnuis-vp-soan-thong-bao",
+ "title": "Soạn thông báo",
+ "description": "Dùng khi cần thông tin chính thức tới toàn trường hoặc một nhóm đối tượng: lịch nghỉ, triệu tập họp, quy định mới, học bổng, tuyển dụng, kết quả; ngắn gọn, rõ đối tượng và thời hạn.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-soan-thong-bao",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường; Phòng Tổ chức và Quản trị rà thể thức",
+ "when": "Khi cần thông tin chính thức đến toàn thể hoặc một nhóm đối tượng trong trường: lịch nghỉ,\ntriệu tập họp, quy định mới, kế hoạch, kết quả...",
+ "inputs": [
+  {
+   "key": "tieu_de",
+   "desc": "Tiêu đề thông báo (ngắn, nêu việc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong",
+   "desc": "Toàn thể CBVC / sinh viên / các đơn vị...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung",
+   "desc": "Các điểm cần thông báo, dạng gạch đầu dòng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han",
+   "desc": "Thời gian hiệu lực / hạn thực hiện (nếu có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "don_vi_ban_hanh",
+   "desc": "Phòng/ban ban hành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Chức danh người ký",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "co_quan_chu_quan",
+   "desc": "Cơ quan chủ quản: Đại học Quốc gia Hà Nội (đã điền sẵn)",
+   "required": false,
+   "note": "Không (mặc định: ĐHQGHN)"
+  },
+  {
+   "key": "co_quan_ban_hanh",
+   "desc": "Cơ quan ban hành: Trường Quốc tế – ĐHQGHN (đã điền sẵn); ghi thêm đơn vị soạn thảo nếu khác",
+   "required": false,
+   "note": "Không (mặc định: Trường Quốc tế – ĐHQGHN)"
+  },
+  {
+   "key": "dia_danh",
+   "desc": "Địa danh ghi ở dòng ngày tháng năm (mặc định: Hà Nội)",
+   "required": false,
+   "note": "Không (mặc định: Hà Nội)"
+  },
+  {
+   "key": "so_van_ban",
+   "desc": "Số, ký hiệu văn bản đã được cấp (để trống nếu chưa cấp; không tự đặt)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Danh sách nơi nhận, gồm cả nơi lưu (VT, đơn vị soạn)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường; Phòng Tổ chức và Quản trị rà thể thức"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định mục đích, đối tượng và thời hạn",
+   "lam_gi": "Đọc `tieu_de` để xác định mục đích thông báo (thông tin / yêu cầu thực hiện / triệu tập); đọc `doi_tuong` để xác định phạm vi người nhận (toàn trường / nhóm đơn vị / sinh viên...); đọc `thoi_han` để xác định thời gian hiệu lực hoặc hạn thực hiện; kiểm tra `don_vi_ban_hanh` và `nguoi_ky` có thẩm quyền ban hành thông báo về nội dung này không.",
+   "inputs": [
+    "tieu_de",
+    "doi_tuong",
+    "thoi_han",
+    "don_vi_ban_hanh",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "Thông báo yêu cầu thực hiện bắt buộc phải có thời hạn rõ ràng; thông báo gửi \"toàn thể\" mà nội dung chỉ liên quan một nhóm sẽ gây nhiễu — thu hẹp đối tượng cho đúng.",
+   "ket_qua": "Xác nhận mục đích + đối tượng nhận + thời hạn của thông báo."
+  },
+  {
+   "n": 2,
+   "title": "Thu thập và kiểm chứng nội dung cần thông báo",
+   "lam_gi": "Từ `noi_dung`, kiểm chứng từng điểm: sự kiện có thật không (đối chiếu quyết định/kế hoạch liên quan), ngày giờ có chính xác và rơi đúng thứ trong tuần không, địa điểm có tồn tại và đủ sức chứa đối tượng không; loại bỏ điểm trùng lặp, gộp các điểm cùng chủ đề.",
+   "inputs": [
+    "noi_dung",
+    "thoi_han"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Bẫy thường gặp — ngày tháng trong nội dung không khớp thứ (vd ghi \"thứ Sáu, ngày …\" nhưng tra lịch lại là thứ khác); hạn đăng ký đặt sau ngày diễn ra sự kiện.",
+   "ket_qua": "Danh sách nội dung đã kiểm chứng, loại trùng, sẵn sàng đưa vào thông báo."
+  },
+  {
+   "n": 3,
+   "title": "Đặt tiêu đề và viết mở đầu",
+   "lam_gi": "Viết dòng \"THÔNG BÁO\" (in hoa, căn giữa) + trích yếu ở dòng dưới lấy từ `tieu_de`; viết dòng \"Kính gửi\" + `doi_tuong`; mở đầu 1–2 câu: nêu căn cứ/quyết định liên quan (nếu có) rồi đi thẳng vào nội dung (\"...thông báo ... như sau:\"). Phần đầu văn bản lấy từ `co_quan_chu_quan` (nếu có), `co_quan_ban_hanh`, `dia_danh`, `so_van_ban` (để dòng dấu chấm nếu chưa cấp số).",
+   "inputs": [
+    "tieu_de",
+    "doi_tuong",
+    "co_quan_chu_quan",
+    "co_quan_ban_hanh",
+    "dia_danh",
+    "so_van_ban"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Tiêu đề không dài quá một dòng; mở đầu không kể lể dài dòng — thông báo càng vào việc nhanh càng tốt.",
+   "ket_qua": "Phần tiêu đề + mở đầu hoàn chỉnh."
+  },
+  {
+   "n": 4,
+   "title": "Liệt kê nội dung theo chuẩn việc – ai – khi nào – ở đâu",
+   "lam_gi": "Chuyển từng điểm trong `noi_dung` thành các mục đánh số 1., 2., 3...; mỗi mục phải trả lời đủ 4 câu hỏi: việc gì – ai thực hiện – khi nào – ở đâu; với thông báo yêu cầu thực hiện, mỗi mục ghi rõ đơn vị/cá nhân chịu trách nhiệm và hạn hoàn thành.",
+   "inputs": [
+    "noi_dung",
+    "thoi_han",
+    "doi_tuong"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Tránh câu bị động mập mờ (\"sẽ được bố trí\") — phải ghi rõ chủ thể thực hiện; thời gian ghi đầy đủ thứ, ngày/tháng/năm, giờ (nếu có).",
+   "ket_qua": "Dự thảo nội dung đánh số, mỗi ý đủ 4 yếu tố."
+  },
+  {
+   "n": 5,
+   "title": "Viết kết thúc và dự thảo nơi nhận, chữ ký",
+   "lam_gi": "Viết câu kết: với thông báo yêu cầu thực hiện — \"Đề nghị các đơn vị, cá nhân nghiêm túc thực hiện./.\"; với thông báo thông tin — lời cảm ơn hoặc câu kết phù hợp; liệt kê nơi nhận (\"- Như trên;\" + \"- Lưu: VT, [mã đơn vị].\"); khối chữ ký theo `nguoi_ky` (ký thừa ủy quyền thì ghi \"TL. HIỆU TRƯỞNG\" + chức danh). Nơi nhận lấy từ `noi_nhan`.",
+   "inputs": [
+    "nguoi_ky",
+    "doi_tuong",
+    "noi_nhan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Thông báo do Trưởng phòng ký phải có quyết định ủy quyền còn hiệu lực; nơi nhận phải bao phủ hết `doi_tuong` đã xác định ở Bước 1.",
+   "ket_qua": "Phần kết thúc + nơi nhận + khối chữ ký hoàn chỉnh."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra đối tượng, thời hạn, ngôn ngữ",
+   "lam_gi": "Đối chiếu: nơi nhận có bao phủ hết đối tượng trong `doi_tuong` không; thời hạn trong nội dung có rõ và nhất quán với `thoi_han` không; đọc lại toàn văn kiểm tra ngôn ngữ dễ hiểu, không vòng vo, không thuật ngữ chuyên môn khó hiểu với đối tượng nhận; kiểm tra thể thức (quốc hiệu, số ký hiệu, ngày tháng).",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "Đọc thử với góc nhìn của người nhận ít thông tin nhất (vd sinh viên năm nhất) — chỗ nào khó hiểu thì viết lại.",
+   "ket_qua": "Kết quả đối chiếu nội bộ (không xuất kèm file) + danh sách chỗ cần sửa (nếu có), trả về bước tương ứng để chỉnh."
+  },
+  {
+   "n": 7,
+   "title": "Xuất bản thông báo trình duyệt",
+   "lam_gi": "Ghép toàn bộ thành thông báo hoàn chỉnh file theo định dạng đầu ra của skill; chuyển cho thủ trưởng đơn vị ban hành duyệt (human gate) trước khi phát hành trên các kênh (website, email, bảng tin).",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) chuẩn bị, thủ trưởng đơn vị ban hành ký · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "Thông báo có thời hạn gấp nên ghi rõ giờ phát hành dự kiến để đơn vị truyền thông kịp đăng.",
+   "ket_qua": "Thông báo hoàn chỉnh, sẵn sàng ban hành."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức văn bản theo Nghị định 30/2020/NĐ-CP (đối chiếu hiệu lực tại ngày nghiệp vụ) và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Thông báo yêu cầu thực hiện bắt buộc phải có thời hạn rõ ràng",
+  "Thông báo gửi \"toàn thể\" mà nội dung chỉ liên quan một nhóm sẽ gây nhiễu — thu hẹp đối tượng cho đúng",
+  "Tránh câu bị động mập mờ (\"sẽ được bố trí\") — phải ghi rõ chủ thể thực hiện"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Phân loại thông báo theo đối tượng nhận: viên chức, giảng viên, sinh viên chương trình ĐHQGHN, sinh viên chương trình liên kết, sinh viên quốc tế, đối tác. Thông báo cho sinh viên quốc tế hoặc liên kết thêm bản tiếng Anh khi người dùng yêu cầu.",
+  "Thông báo về lịch học, thi, học phí, học bổng, tuyển sinh chỉ lấy dữ kiện từ văn bản hoặc dữ liệu hiện hành do đơn vị phụ trách cung cấp; không điền số liệu từ website.",
+  "Ghi rõ cơ sở nếu thông báo gắn với địa điểm (Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)."
+ ],
+ "cho_xac_nhan": [
+  "Thể thức và người ký thông báo (C1).",
+  "Kênh phát hành: E-Office, website hay email (C5)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "THÔNG BÁO (TB) theo Mẫu 1.4 Phụ lục III: phần đầu hành chính đủ cơ quan ban hành, quốc hiệu/tiêu ngữ, số/ký hiệu, địa danh/ngày; THÔNG BÁO; trích yếu ở dòng dưới (không dùng V/v như công văn); nội dung thông báo theo đối tượng, việc, thời gian, địa điểm; tổ chức thực hiện; nơi nhận và khối ký.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-soan-thong-bao/references"
+}

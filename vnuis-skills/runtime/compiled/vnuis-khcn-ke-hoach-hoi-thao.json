@@ -1,0 +1,240 @@
+{
+ "name": "vnuis-khcn-ke-hoach-hoi-thao",
+ "title": "Kế hoạch tổ chức hội thảo khoa học",
+ "description": "Dùng khi khoa, phòng được giao hoặc đề xuất tổ chức hội thảo khoa học và cần kế hoạch trình lãnh đạo: chủ đề, thời gian, thành phần, chương trình, dự toán, thư mời.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-ke-hoach-hoi-thao-khoa-hoc",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Khoa hoặc Viện chủ trì",
+ "when": "Khi trường/khoa/phòng được giao hoặc chủ động đề xuất tổ chức hội thảo khoa học\n(cấp trường, cấp quốc gia, cấp quốc tế): xây dựng kế hoạch tổng thể, chương trình\nchi tiết, dự toán kinh phí và thư mời để trình lãnh đạo phê duyệt và triển khai.",
+ "inputs": [
+  {
+   "key": "ten_hoi_thao",
+   "desc": "Tên hội thảo (tiếng Việt; tiếng Anh nếu hội thảo quốc tế)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cap_hoi_thao",
+   "desc": "Cấp Trường / Quốc gia / Quốc tế",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chu_de",
+   "desc": "Chủ đề và các tiểu ban/phân ban dự kiến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Thời gian tổ chức dự kiến (ngày, buổi)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Địa điểm tổ chức (chọn cơ sở: Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_to_chuc",
+   "desc": "Đơn vị chủ trì, đơn vị phối hợp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thanh_phan",
+   "desc": "Thành phần tham dự dự kiến: số lượng, đối tượng (nhà khoa học, giảng viên, doanh nghiệp...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuong_trinh_du_kien",
+   "desc": "Các hoạt động chính: khai mạc, báo cáo phiên toàn thể, thảo luận phân ban, bế mạc",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguon_kinh_phi",
+   "desc": "Nguồn kinh phí: ngân sách trường, tài trợ, phí tham dự...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "yeu_cau_dac_biet",
+   "desc": "Kỷ yếu, chỉ số xuất bản, khách mời quốc tế, phiên dịch...",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Khoa hoặc Viện chủ trì"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định quy mô, cấp và mục tiêu hội thảo",
+   "lam_gi": "căn cứ `cap_hoi_thao` để chốt số lượng đại biểu mục tiêu, số báo cáo dự kiến, yêu cầu về kỷ yếu (có phản biện hay không, có chỉ số xuất bản ISBN hay không); đối chiếu với `thanh_phan` (đối tượng, số lượng) và `chu_de` (số tiểu ban) để kiểm tra tính khả thi.",
+   "inputs": [
+    "ten_hoi_thao",
+    "cap_hoi_thao",
+    "chu_de",
+    "thanh_phan",
+    "yeu_cau_dac_biet"
+   ],
+   "vai_tro": "Trưởng Phòng KHCN&HTPT · AI hỗ trợ: đề xuất quy mô",
+   "luu_y": "hội thảo quốc tế cần thêm thư mời song ngữ, thủ tục đón khách quốc tế, phiên dịch, visa; kỷ yếu có ISBN phải đăng ký qua Nhà xuất bản trước ít nhất 30 ngày — nếu `thoi_gian` quá gần mà chưa đăng ký thì phải hạ yêu cầu kỷ yếu xuống bản nội bộ.",
+   "ket_qua": "bảng xác định quy mô (cấp hội thảo, số đại biểu mục tiêu, số báo cáo, yêu cầu kỷ yếu, yêu cầu đặc biệt)."
+  },
+  {
+   "n": 2,
+   "title": "Soạn kế hoạch tổng thể",
+   "lam_gi": "viết dự thảo kế hoạch gồm tên, cấp, chủ đề và các tiểu ban, mục đích – yêu cầu, thời gian, địa điểm, đơn vị chủ trì/phối hợp, thành phần tham dự, nội dung hoạt động; lập tiến độ chuẩn bị với các mốc tính ngược từ ngày tổ chức: ban hành thông báo → hạn nhận bài → phản biện → in kỷ yếu → tổ chức.",
+   "inputs": [
+    "ten_hoi_thao",
+    "cap_hoi_thao",
+    "chu_de",
+    "thoi_gian",
+    "dia_diem",
+    "don_vi_to_chuc",
+    "thanh_phan",
+    "chuong_trinh_du_kien",
+    "yeu_cau_dac_biet"
+   ],
+   "vai_tro": "Đơn vị tổ chức · AI hỗ trợ: soạn dự thảo kế hoạch",
+   "luu_y": "hạn nhận bài toàn văn phải cách ngày tổ chức ít nhất 25–30 ngày để kịp phản biện và in kỷ yếu; mốc nào phụ thuộc đơn vị ngoài (nhà in, báo cáo mời) thì cộng thêm thời gian dự phòng.",
+   "ket_qua": "dự thảo kế hoạch tổng thể."
+  },
+  {
+   "n": 3,
+   "title": "Xây dựng chương trình chi tiết theo khung giờ",
+   "lam_gi": "xếp lịch từng khung giờ trong ngày tổ chức: đón tiếp, khai mạc, báo cáo mời (keynote), báo cáo phiên toàn thể, thảo luận phân ban song song, giải lao, bế mạc – tổng kết; ghi rõ người điều hành/phụ trách từng phiên.",
+   "inputs": [
+    "chuong_trinh_du_kien",
+    "thoi_gian",
+    "dia_diem",
+    "thanh_phan"
+   ],
+   "vai_tro": "Ban Tổ chức · AI hỗ trợ: xếp chương trình khung giờ",
+   "luu_y": "mỗi báo cáo cần thời gian hỏi – đáp (tối thiểu 10 phút/báo cáo); phân ban song song phải bố trí đủ phòng và người điều hành riêng; báo cáo mời nên đặt buổi sáng ngay sau khai mạc.",
+   "ket_qua": "bảng chương trình chi tiết theo khung giờ (giờ – nội dung – địa điểm – người phụ trách)."
+  },
+  {
+   "n": 4,
+   "title": "Lập dự toán kinh phí theo nhóm",
+   "lam_gi": "liệt kê chi phí theo nhóm: in ấn kỷ yếu/tài liệu, thù lao báo cáo mời và phản biện, ăn ở – đi lại đại biểu/khách mời, thuê hội trường – thiết bị, truyền thông, chi quản lý; mỗi khoản ghi số lượng, đơn giá, thành tiền và nguồn chi tương ứng.",
+   "inputs": [
+    "nguon_kinh_phi",
+    "thanh_phan",
+    "chu_de",
+    "yeu_cau_dac_biet"
+   ],
+   "vai_tro": "Kế toán · AI hỗ trợ: lập bảng dự toán",
+   "luu_y": "tổng các khoản phải khớp đúng tỷ lệ nguồn đã khai (ví dụ ngân sách 70% / tài trợ 30%); thù lao báo cáo mời và phản biện phải theo khung quy định hiện hành, không tự đặt mức.",
+   "ket_qua": "bảng dự toán kinh phí (khoản mục – số lượng – đơn giá – thành tiền – nguồn kinh phí)."
+  },
+  {
+   "n": 5,
+   "title": "Soạn thư mời tham dự / thư mời viết bài",
+   "lam_gi": "soạn mẫu thư gồm tên hội thảo, thời gian – địa điểm, chủ đề và tiểu ban, thời hạn gửi bài toàn văn, thể lệ bài viết, thông tin liên hệ của đơn vị tổ chức; nếu hội thảo quốc tế thì soạn thêm bản tiếng Anh.",
+   "inputs": [
+    "ten_hoi_thao",
+    "cap_hoi_thao",
+    "chu_de",
+    "thoi_gian",
+    "dia_diem",
+    "don_vi_to_chuc"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn mẫu thư mời (thêm bản tiếng Anh nếu hội thảo quốc tế)",
+   "luu_y": "thời hạn gửi bài trong thư phải khớp mốc tiến độ ở Bước 2; thư mời viết bài và thư mời tham dự là hai mẫu khác nhau — không gộp thể lệ bài viết vào thư mời tham dự.",
+   "ket_qua": "mẫu thư mời viết bài và mẫu thư mời tham dự (bản tiếng Việt; thêm bản tiếng Anh nếu hội thảo quốc tế)."
+  },
+  {
+   "n": 6,
+   "title": "Lập danh mục kiểm triển khai và tiến độ",
+   "lam_gi": "phân công Ban Tổ chức, Ban Nội dung, Ban Hậu cần – Tài chính với đầu việc và người phụ trách cụ thể; liệt kê các mốc kiểm soát trước ngày tổ chức (duyệt kế hoạch, gửi thư mời, chốt báo cáo mời, ký tài trợ, in kỷ yếu, tổng duyệt hậu cần).",
+   "inputs": [
+    "thoi_gian",
+    "don_vi_to_chuc"
+   ],
+   "vai_tro": "Ban Tổ chức · AI hỗ trợ: lập danh mục kiểm triển khai",
+   "luu_y": "mỗi mốc phải có người chịu trách nhiệm và ngày chốt cụ thể; các mốc phụ thuộc bên ngoài (tài trợ, báo cáo mời, nhà in) cần mốc dự phòng.",
+   "ket_qua": "danh mục kiểm triển khai (ban – đầu việc – người phụ trách – hạn hoàn thành)."
+  },
+  {
+   "n": 7,
+   "title": "Rà soát, trình phê duyệt và xuất bản bộ hồ sơ",
+   "lam_gi": "rà soát tính nhất quán toàn bộ (tên hội thảo, ngày, địa điểm, số liệu giữa kế hoạch – chương trình – dự toán – thư mời); trình Hiệu trưởng phê duyệt; xuất bản bộ hồ sơ hoàn chỉnh file theo định dạng đầu ra của skill.",
+   "inputs": [],
+   "vai_tro": "Hiệu trưởng · AI hỗ trợ: rà soát nhất quán toàn bộ hồ sơ",
+   "luu_y": "kiểm tra lần cuối các con số (số đại biểu, tổng dự toán, các mốc thời gian) — sai một con số ở kế hoạch sẽ kéo theo sai ở chương trình và dự toán.",
+   "ket_qua": "bộ hồ sơ hoàn chỉnh (kế hoạch + chương trình + dự toán + thư mời + danh mục kiểm), sẵn sàng trình phê duyệt và triển khai."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu khớp với Input: tên hội thảo, thời gian, địa điểm, số đại biểu, số tiểu ban, tỷ lệ nguồn kinh phí.",
+  "Không bịa đặt số liệu, đơn giá, thông tin đối tác/tài trợ.",
+  "Thể thức văn bản hành chính đúng quy định (tiêu đề, kính gửi, bố cục mục – tiểu mục).",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực: quy chế tổ chức hội thảo của Trường, quy định quản lý kinh phí KHCN hiện hành.",
+  "Đã qua Human gate: Hiệu trưởng phê duyệt kế hoạch trước khi triển khai.",
+  "Các mốc tiến độ tính ngược hợp lý (nhận bài trước tổ chức ít nhất 25–30 ngày; kỷ yếu ISBN đăng ký trước ít nhất 30 ngày nếu có).",
+  "Chương trình có thời gian hỏi – đáp cho mỗi báo cáo; dự toán đủ cột số lượng – đơn giá – thành tiền – nguồn kinh phí.",
+  "Thư mời viết bài và thư mời tham dự là hai mẫu riêng; hội thảo quốc tế có bản tiếng Anh. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hội thảo quốc tế cần thêm: ngôn ngữ làm việc, mời diễn giả nước ngoài, thủ tục xuất nhập cảnh (nếu có), phụ đề hoặc phiên dịch.",
+  "Kinh phí chỉ ghi khi có dự toán duyệt."
+ ],
+ "cho_xac_nhan": [
+  "Quy trình xin tổ chức hội thảo quốc tế (C2, C6).",
+  "Địa điểm theo cơ sở (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề văn bản: \"KẾ HOẠCH TỔ CHỨC HỘI THẢO KHOA HỌC\".",
+  "Khối thông tin định danh: tên hội thảo, cấp hội thảo, đơn vị chủ trì, đơn vị phối hợp, thời gian, địa điểm.",
+  "I. Mục đích – yêu cầu.",
+  "II. Nội dung (chủ đề và các tiểu ban).",
+  "III. Thành phần tham dự (số lượng, đối tượng).",
+  "IV. Tiến độ chuẩn bị (các mốc: thông báo – nhận bài – phản biện – in kỷ yếu – tổ chức).",
+  "Chương trình chi tiết theo khung giờ (giờ – nội dung – người phụ trách).",
+  "Dự toán kinh phí theo nhóm (khoản mục – thành tiền – nguồn kinh phí).",
+  "Thư mời tham dự / thư mời viết bài (mẫu; thêm bản tiếng Anh nếu hội thảo quốc tế). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề văn bản: \"KẾ HOẠCH TỔ CHỨC HỘI THẢO KHOA HỌC\".\n\n2. Khối thông tin định danh: tên hội thảo, cấp hội thảo, đơn vị chủ trì, đơn vị phối hợp, thời gian, địa điểm.\n\n3. I. Mục đích – yêu cầu.\n\n4. II. Nội dung (chủ đề và các tiểu ban).\n\n5. III. Thành phần tham dự (số lượng, đối tượng).\n\n6. IV. Tiến độ chuẩn bị (các mốc: thông báo – nhận bài – phản biện – in kỷ yếu – tổ chức).\n\n7. Chương trình chi tiết theo khung giờ (giờ – nội dung – người phụ trách).\n\n8. Dự toán kinh phí theo nhóm (khoản mục – thành tiền – nguồn kinh phí).\n\n9. Thư mời tham dự / thư mời viết bài (mẫu; thêm bản tiếng Anh nếu hội thảo quốc tế).",
+ "human_gate_check": "Đã qua Human gate: Hiệu trưởng phê duyệt kế hoạch trước khi triển khai.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-khcn-ke-hoach-hoi-thao/references"
+}

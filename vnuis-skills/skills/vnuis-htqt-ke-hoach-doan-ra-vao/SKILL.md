@@ -1,0 +1,162 @@
+---
+name: "vnuis-htqt-ke-hoach-doan-ra-vao"
+description: "Dùng khi chuẩn bị chuyến công tác, học tập, dự hội nghị nước ngoài của cán bộ (đoàn ra) hoặc đón đoàn đối tác, chuyên gia quốc tế (đoàn vào): mục đích, thành phần, chương trình theo ngày, kinh phí, trình duyệt."
+---
+
+# Kế hoạch đoàn ra / đoàn vào
+
+## Khi nào dùng
+Khi cần lập kế hoạch cho **đoàn ra** (cán bộ, giảng viên của Trường đi công tác, học tập,
+dự hội nghị ở nước ngoài) hoặc **đoàn vào** (đón tiếp đoàn đối tác, chuyên gia quốc tế
+đến thăm và làm việc tại Trường), phục vụ trình duyệt, xin chủ trương và dự toán kinh phí.
+
+## Định dạng và file đầu ra
+
+Định dạng đầu ra có thể chọn theo sản phẩm/yêu cầu: .docx, .pdf. Đọc mục “Định dạng bổ sung” trong quy cách đầu ra trước khi chọn.
+
+**Phải tạo file thực tế để tải xuống, không chỉ trả nội dung trong chat.** Định dạng mặc định của skill: **.docx**. Nếu có bảng số liệu nghiệp vụ yêu cầu file bảng tính riêng, tạo thêm Excel theo yêu cầu; không tự tạo file kiểm tra. Không chờ người dùng yêu cầu xuất file lần nữa. Ưu tiên định dạng người dùng chỉ định; đọc quy tắc xuất file tại references/quy-cach-dau-ra.md.
+
+**Chạy qua API (không có công cụ tạo file):** trả đủ nội dung dạng văn bản có tiêu đề, bảng; ứng dụng gọi sẽ xuất file.
+
+## Quy cách đầu ra và thông tin thiếu
+Khi dựng file Word/Excel, áp dụng mục “Thể thức và bảng biểu khi dựng file” trong quy cách đầu ra (cỡ chữ từng thành phần, bảng nhiều trang, số trang, phụ lục). Đọc [quy cách và cấu trúc sản phẩm](references/quy-cach-dau-ra.md) trước khi soạn/xuất. File giao chỉ gồm sản phẩm nghiệp vụ được yêu cầu; kiểm tra nội bộ không xuất kèm. Thiếu thông tin thì giữ nguyên trường/mục và chỗ điền theo mẫu gốc (dòng dấu chấm, dấu gạch hoặc ô trống); không tự điền dữ liệu mẫu, số 0, mã chờ xác minh hay dòng chờ ký. Mẫu chuyên ngành còn áp dụng được ưu tiên về cấu trúc, mã biểu và người ký. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+Khi người dùng yêu cầu bộ slide (.pptx), đọc mục “Xuất PowerPoint (.pptx) khi được yêu cầu” trong quy cách đầu ra.
+
+## Kiểm soát áp dụng và phê duyệt
+Trước khi chạy, xác định `ngay_ap_dung`, `loai_hinh_truong`, `quy_che_noi_bo`, `nguon_du_lieu`, `nguoi_kiem_duyet`; chỉ hỏi thông tin liên quan nghiệp vụ, không dùng giá trị giả định thay dữ liệu bắt buộc. Đối chiếu căn cứ pháp lý với văn bản gốc, hiệu lực, điều khoản áp dụng và chuyển tiếp. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Giới hạn và human gate
+AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Bối cảnh riêng của VNU-IS
+
+Bản chỉnh cho Trường Quốc tế – ĐHQGHN (VNU-IS), v0.4.2. Dựng từ website công khai và phiếu khảo sát CES còn trống; **chưa có dữ liệu khảo sát thực tế của đơn vị**. Đọc [bối cảnh VNU-IS](references/boi-canh-vnuis.md) trước khi chạy; các mã C1–C8 nằm ở mục 6 của file đó.
+
+- **Đơn vị thường dùng:** Phòng KHCN và Hợp tác phát triển (hợp tác quốc tế); phối hợp TC&QT.
+- **Nghiệp vụ trong phiếu CES:** "Báo cáo đối ngoại: Tổng hợp hoạt động hợp tác quốc tế định kỳ" (sheet `06_KS_KHCN_HTPT`). Tần suất gợi ý: Định kỳ. Đầu vào gợi ý: Danh sách hoạt động; MOU; mobility; sự kiện; mẫu. Khó khăn gợi ý: Tài liệu phân tán, nhiều định dạng; Đọc và đối chiếu thủ công mất thời gian; Khó kiểm tra chênh lệch, trùng lặp và nguồn số liệu; Đầu ra phụ thuộc kinh nghiệm từng cá nhân. Đây là gợi ý có sẵn của CES, chưa phải xác nhận của đơn vị.
+
+**Điều chỉnh khi dùng cho VNU-IS**
+- Skill này chuyển từ nhóm "chưa chắc" sang áp dụng vì phiếu CES giao hợp tác, trao đổi quốc tế cho Phòng KHCN&HTPT; người dùng có thể bỏ nếu thực tế không có.
+- Thủ tục xuất nhập cảnh, phê duyệt đoàn do cơ quan có thẩm quyền quy định; skill chỉ lập kế hoạch và danh mục hồ sơ, không tự khẳng định thủ tục.
+
+**Chờ xác nhận khi khảo sát**
+- Quy trình duyệt đoàn ra, đoàn vào của Trường và ĐHQGHN (C2, C6).
+- Đầu mối ngoại vụ (C7).
+
+Nếu người dùng chưa trả lời mục chờ xác nhận liên quan, hỏi lại; không tự điền giả định.
+
+## Đầu vào (Input)
+
+| Trường | Mô tả | Bắt buộc |
+|---|---|---|
+| `loai_doan` | Đoàn ra / Đoàn vào | Có |
+| `muc_dich` | Mục đích chuyến đi / chuyến thăm (ký MOU, dự hội thảo, khảo sát, làm việc...) | Có |
+| `doi_tac` | Tên đối tác, quốc gia (đoàn ra: nơi đến; đoàn vào: đoàn khách) | Có |
+| `thoi_gian` | Thời gian dự kiến (ngày đi – ngày về / ngày đón – ngày tiễn) | Có |
+| `thanh_phan` | Danh sách thành viên: họ tên, chức danh, đơn vị, vai trò trong đoàn | Có |
+| `chuong_trinh` | Chương trình chi tiết theo từng ngày: thời gian, nội dung, địa điểm, người phụ trách | Có |
+| `nguon_kinh_phi` | Nguồn kinh phí: ngân sách trường / đối tác tài trợ / đề tài / cá nhân tự túc | Có |
+| `don_vi_dau_moi` | Đơn vị đầu mối tổ chức (thường là Phòng KHCN&HTPT phối hợp đơn vị liên quan) | Không |
+
+### Thông tin VNU-IS đã điền sẵn (không hỏi lại)
+
+| Mục | Giá trị mặc định |
+|---|---|
+| Cơ quan chủ quản; Trường; địa danh | Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội |
+| Đơn vị sử dụng và phối hợp | Phòng KHCN và Hợp tác phát triển (hợp tác quốc tế); phối hợp TC&QT |
+| Cơ sở | Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm |
+| Mô hình đào tạo | Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2 |
+| Ngôn ngữ đầu ra | Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu |
+| Người duyệt và ký | Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6 |
+
+Nguồn: website và phiếu CES; đổi theo khảo sát thì sửa tại đây và trong `references/boi-canh-vnuis.md`.
+
+## Quy trình
+
+*⏱ là ước tính ban đầu của bộ gốc, chưa đo tại VNU-IS; hiệu chỉnh sau khảo sát.*
+
+**Bước 1. Xác định loại đoàn và mục đích**
+- Làm gì: căn cứ `loai_doan` để chốt hướng soạn: đoàn ra phải nêu rõ yêu cầu của phía mời (thư mời chính thức) hoặc nhiệm vụ được giao; đoàn vào phải nêu rõ thành phần đoàn khách và nội dung làm việc đề xuất; ghi rõ `muc_dich` và thông tin `doi_tac` (tên đối tác, quốc gia).
+- Dùng input: `loai_doan`, `muc_dich`, `doi_tac`.
+- Vai trò: Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn · ⏱ ~20–30 phút (ước tính)
+- Lưu ý nghiệp vụ: đoàn ra đi nước ngoài bắt buộc phải có thư mời chính thức của đối tác — thiếu thư mời thì kế hoạch không đủ căn cứ trình; đoàn vào phải xác nhận lại số lượng và thành phần đoàn khách với đối tác trước khi lập chương trình.
+- → Kết quả bước: tờ xác định loại đoàn (thư mời/nhiệm vụ được giao đối với đoàn ra; thành phần đoàn khách + nội dung làm việc đối với đoàn vào).
+
+**Bước 2. Lập danh sách thành phần**
+- Làm gì: lập danh sách đầy đủ họ tên, chức danh, đơn vị, vai trò trong đoàn: đoàn ra ghi rõ trưởng đoàn, từng thành viên và nhiệm vụ của từng người; đoàn vào ghi rõ đầu mối đón tiếp phía Trường tương ứng với từng thành viên đoàn khách.
+- Dùng input: `thanh_phan`, `loai_doan`.
+- Vai trò: Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: lập danh sách · ⏱ ~30–45 phút (ước tính)
+- Lưu ý nghiệp vụ: trưởng đoàn ra phải là người có thẩm quyền quyết định nội dung làm việc; đoàn vào phải bố trí phiên dịch đi cùng suốt chương trình nếu đoàn khách không dùng tiếng Việt.
+- → Kết quả bước: danh sách thành phần đoàn (họ tên – chức danh – đơn vị – vai trò/nhiệm vụ).
+
+**Bước 3. Xây dựng chương trình chi tiết theo ngày**
+- Làm gì: xếp lịch từng ngày trong `thoi_gian`: mỗi ngày liệt kê giờ giấc, nội dung (làm việc, tham quan, hội đàm, ký kết...), địa điểm, người phụ trách; đoàn vào bổ sung phương án đón/tiễn sân bay, bố trí ăn ở, phiên dịch.
+- Dùng input: `chuong_trinh`, `thoi_gian`, `doi_tac`.
+- Vai trò: Trưởng Phòng KHCN&HTPT · AI hỗ trợ: xếp chương trình theo ngày · ⏱ ~1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: giờ bay đến/đi của đoàn vào phải khớp với phương án đón/tiễn; không xếp lịch làm việc dày đặc ngay sau chuyến bay dài; mỗi buổi làm việc chính thức cần có người chủ trì phía Trường được chỉ định rõ.
+- → Kết quả bước: bảng chương trình chi tiết theo ngày (ngày – giờ – nội dung – địa điểm – người phụ trách).
+
+**Bước 4. Lập dự toán kinh phí chi tiết**
+- Làm gì: liệt kê từng khoản chi (vé máy bay, visa, khách sạn, ăn uống, đi lại nội địa, lệ phí hội nghị, quà tặng đối ngoại, phiên dịch, in ấn khánh tiết...) kèm số lượng, đơn giá, thành tiền; ghi rõ `nguon_kinh_phi` và cơ chế thanh quyết toán.
+- Dùng input: `nguon_kinh_phi`, `thanh_phan`, `thoi_gian`.
+- Vai trò: Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: lập bảng dự toán · ⏱ ~1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: đơn giá phải theo khung quy định chi tiêu nội bộ (khách sạn, công tác phí); tổng dự toán không được vượt nguồn đã khai; đoàn vào phải tính đủ chi phí đón tiếp phát sinh (xe, tiệc chiêu đãi, quà tặng).
+- → Kết quả bước: bảng dự toán kinh phí (khoản mục – số lượng – đơn giá – thành tiền – nguồn kinh phí).
+
+**Bước 5. Hoàn thiện tờ trình xin chủ trương**
+- Làm gì: đặt toàn bộ kết quả các Bước 1–4 vào thể thức tờ trình: tiêu đề cơ quan, tên tờ trình, trích yếu, kính gửi Hiệu trưởng, căn cứ (thư mời/MOU/quy chế), các mục Mục đích – Thành phần – Thời gian – Chương trình – Dự toán – Kiến nghị; ghi rõ `don_vi_dau_moi` chịu trách nhiệm triển khai.
+- Dùng input: `don_vi_dau_moi`, kết quả các Bước 1–4.
+- Vai trò: Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: ráp thể thức tờ trình · ⏱ ~45–60 phút (ước tính)
+- Lưu ý nghiệp vụ: số liệu trong tờ trình (số người, số ngày, tổng kinh phí) phải khớp tuyệt đối với bảng chương trình và bảng dự toán — đây là lỗi bị trả về nhiều nhất.
+- → Kết quả bước: dự thảo tờ trình kế hoạch đoàn hoàn chỉnh.
+
+**Bước 6. Trình phê duyệt và xuất bản**
+- Làm gì: trình Hiệu trưởng phê duyệt tờ trình; sau khi duyệt, xuất bản kế hoạch + dự toán hoàn chỉnh và chuyển cho các đơn vị phối hợp thực hiện.
+- Dùng input: toàn bộ input (đối chiếu chéo).
+- Vai trò: Hiệu trưởng · AI hỗ trợ: chuẩn bị hồ sơ trình ký, nhắc lịch và theo dõi tiến độ · ⏱ ~1–3 ngày làm việc (ước tính)
+- Lưu ý nghiệp vụ: đoàn ra chỉ được triển khai sau khi có quyết định cử đi công tác của Hiệu trưởng; giữ lại 01 bộ hồ sơ đã duyệt tại đơn vị đầu mối để thanh quyết toán.
+- → Kết quả bước: tờ trình đã phê duyệt + kế hoạch và dự toán hoàn chỉnh, sẵn sàng trình ký và chuyển các đơn vị phối hợp.
+
+## Luồng quy trình (Workflow)
+```mermaid
+flowchart TD
+    IN[/"Đầu vào"/] --> B1["Bước 1: Xác định loại đoàn và mục đích"]
+    B1 --> B2["Bước 2: Lập danh sách thành phần"]
+    B2 --> B3["Bước 3: Xây dựng chương trình chi tiết theo ngày"]
+    B3 --> B4["Bước 4: Lập dự toán kinh phí chi tiết"]
+    B4 --> B5["Bước 5: Hoàn thiện tờ trình xin chủ trương"]
+    B5 --> B6["Bước 6: Trình phê duyệt và xuất bản"]
+    B6 --> HG["👤 Hiệu trưởng phê duyệt tờ trình"]
+    HG --> OUT[["Xuất bản kế hoạch và dự toán"]]
+```
+
+## Đầu ra
+
+File nghiệp vụ thực tế theo định dạng mặc định ở đầu skill hoặc định dạng người dùng yêu cầu, kèm liên kết tải trong phản hồi cuối.
+
+Sản phẩm nghiệp vụ hoàn chỉnh theo [quy cách và cấu trúc](references/quy-cach-dau-ra.md), giữ các trường chưa có dữ liệu ở trạng thái trống. Không xuất kèm danh mục kiểm/phụ lục kiểm tra đầu ra.
+
+## Kiểm tra nội bộ trước khi giao
+- [ ] Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.
+- [ ] Số liệu khớp với Input: số người, số ngày, thời gian, địa điểm, tổng kinh phí, nguồn kinh phí.
+- [ ] Không bịa đặt số liệu, đơn giá, thông tin đối tác, thành viên đoàn.
+- [ ] Đúng thể thức tờ trình hành chính; bảng dự toán đủ cột (khoản mục – số lượng – đơn giá – thành tiền – nguồn).
+- [ ] Căn cứ pháp lý đầy đủ, còn hiệu lực: quy chế quản lý đoàn ra/đoàn vào, quy chế chi tiêu nội bộ của Trường.
+- [ ] Đã qua Human gate: Hiệu trưởng phê duyệt; đoàn ra có quyết định cử đi công tác.
+- [ ] Đoàn ra có thư mời chính thức của đối tác; đoàn vào có phương án đón/tiễn khớp giờ bay và phiên dịch đầy đủ.
+- [ ] Số liệu trong tờ trình khớp tuyệt đối với bảng chương trình và bảng dự toán.
+- [ ] Đơn giá theo khung quy định chi tiêu nội bộ; tổng dự toán không vượt nguồn đã khai.
+
+Tiêu chí đạt = tất cả các ô được đánh dấu.
+
+## Căn cứ & lưu ý
+- Quy chế quản lý đoàn ra, đoàn vào và Quy chế chi tiêu nội bộ của Trường Quốc tế – ĐHQGHN.
+- Đoàn ra đi nước ngoài phải có thư mời chính thức của đối tác và quyết định cử đi công tác của Hiệu trưởng.
+- Kinh phí đối ngoại thực hiện theo đúng dự toán được duyệt, thanh quyết toán đầy đủ chứng từ.
+- Ví dụ trong skill chỉ để minh họa; không đưa dữ liệu cá nhân thật vào ví dụ. Tên Trường, cơ quan chủ quản và địa danh dùng đúng bảng thông tin VNU-IS đã điền sẵn.
+
+## Quản trị phiên bản
+- Phiên bản gói VNU-IS `0.4.2` (cập nhật 2026-10-11), dựa trên skill gốc `ke-hoach-doan-ra-vao` bản `1.3.2`; hồ sơ đầy đủ tại [references/version.json](references/version.json).
+- Người phê duyệt nghiệp vụ: **chưa chỉ định**. Trạng thái: dự thảo nghiệp vụ; kiểm tra pháp lý trước thực thi. Ngày cập nhật không đồng nghĩa mọi văn bản đã được rà soát toàn văn.
+- Giấy phép theo LICENSE của kho (bản quyền CES Global). Lịch sử thay đổi: CHANGELOG.md.

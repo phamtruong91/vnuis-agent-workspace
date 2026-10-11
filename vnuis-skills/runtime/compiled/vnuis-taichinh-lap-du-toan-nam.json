@@ -1,0 +1,170 @@
+{
+ "name": "vnuis-taichinh-lap-du-toan-nam",
+ "title": "Lập dự toán thu – chi ngân sách năm",
+ "description": "Dùng khi Phòng TC&QT xây dựng dự toán thu – chi ngân sách cho năm học hoặc năm tài chính mới, cân đối thu bằng chi và trình cấp có thẩm quyền duyệt.",
+ "group": "taichinh",
+ "group_label": "Kế hoạch – tài chính",
+ "previous_name": "vnuis-lap-du-toan-nam",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính); các đơn vị gửi nhu cầu",
+ "when": "Khi xây dựng dự toán ngân sách năm (năm tài chính hoặc năm học) của trường: tổng hợp các\nnguồn thu, lập kế hoạch chi tiết theo từng nội dung chi, cân đối thu – chi và trình cấp có\nthẩm quyền phê duyệt.",
+ "inputs": [
+  {
+   "key": "nam_ngan_sach",
+   "desc": "Năm ngân sách lập dự toán (vd: 2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_lieu_thu",
+   "desc": "Số liệu các nguồn thu: học phí, ngân sách nhà nước cấp, thu dịch vụ – liên kết đào tạo, thu khác (đơn vị: triệu đồng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_lieu_chi",
+   "desc": "Kế hoạch chi: lương – phụ cấp, hoạt động thường xuyên, học bổng, NCKH, đầu tư – mua sắm, dự phòng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chi_tieu_giao",
+   "desc": "Chỉ tiêu, định mức được giao (biên chế, quỹ lương, nhiệm vụ chi...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "du_phong_ty_le",
+   "desc": "Tỷ lệ dự phòng chi (mặc định: 3% tổng chi)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "don_vi_trinh",
+   "desc": "Cấp trình duyệt (cấp có thẩm quyền (C6) / Hiệu trưởng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_lap",
+   "desc": "Chuyên viên lập dự toán (để ký tên cuối biểu)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính); các đơn vị gửi nhu cầu"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 89/2025/QH15 và Nghị định 73/2026/NĐ-CP – ngân sách năm 2026: Yêu cầu năm ngân sách, nguồn kinh phí, dự toán được giao và thời điểm nghiệp vụ; áp dụng Luật 89 từ 01/01/2026 và NĐ 73 cho năm ngân sách 2026. Quyết toán 2025 phải kiểm tra chế độ và chuyển tiếp của năm đó, không tự thay toàn bộ căn cứ lịch sử.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tổng hợp và kiểm chứng nguồn thu",
+   "lam_gi": "phân loại đầy đủ 4 nhóm nguồn thu từ `so_lieu_thu`: (1) thu học phí, lệ phí (quy mô tuyển sinh × mức thu dự kiến); (2) ngân sách nhà nước cấp (kinh phí thường xuyên, kinh phí không thường xuyên / nhiệm vụ đặt hàng); (3) thu dịch vụ – liên kết đào tạo (đào tạo ngắn hạn, tư vấn, chuyển giao, cho thuê cơ sở vật chất); (4) thu khác (lãi tiền gửi, hợp tác, nguồn thu hợp pháp khác). Với mỗi nguồn, kiểm tra tính khả thi qua quyết định giao dự toán, hợp đồng đã ký và số thực hiện năm trước; đánh dấu nguồn chưa chắc chắn.",
+   "inputs": [
+    "so_lieu_thu",
+    "chi_tieu_giao",
+    "nam_ngan_sach"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "không đưa nguồn thu \"hy vọng\" vào tổng thu để cân đối; thu dịch vụ phải có hợp đồng hoặc kế hoạch triển khai khả thi kèm theo.",
+   "ket_qua": "bảng tổng hợp nguồn thu đã kiểm chứng (4 nhóm, số tiền, ghi chú mức độ chắc chắn của từng nguồn)."
+  },
+  {
+   "n": 2,
+   "title": "Lập dự toán chi tiết theo 6 nhóm nội dung chi",
+   "lam_gi": "dựng chi tiết từng nhóm từ `so_lieu_chi`: chi lương – phụ cấp (biên chế được giao × ngạch bậc, hệ số × lương cơ sở + các khoản phụ cấp); chi hoạt động thường xuyên (điện, nước, văn phòng phẩm, công tác phí, sửa chữa nhỏ...); chi học bổng, hỗ trợ sinh viên; chi nghiên cứu khoa học; chi đầu tư – mua sắm; chi dự phòng theo `du_phong_ty_le` (mặc định 3% tổng chi). Mỗi khoản chi ghi rõ cơ sở tính.",
+   "inputs": [
+    "so_lieu_chi",
+    "chi_tieu_giao",
+    "du_phong_ty_le"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: lập bảng biểu, định dạng",
+   "luu_y": "chi lương tính theo biên chế được giao, không theo biên chế mong muốn; chi dự phòng tính trên tổng chi sau khi đã lập đủ 5 nhóm còn lại.",
+   "ket_qua": "bảng dự toán chi chi tiết 6 nhóm (số tiền kèm cơ sở tính từng khoản)."
+  },
+  {
+   "n": 3,
+   "title": "Cân đối thu – chi",
+   "lam_gi": "cộng tổng thu (Bước 1) và tổng chi (Bước 2); nếu tổng chi > tổng thu, cắt giảm theo thứ tự ưu tiên: chi đầu tư – mua sắm → chi hoạt động thường xuyên → các nội dung chi khác; tuyệt đối không giảm chi lương – phụ cấp và chi học bổng đã cam kết. Lặp lại cho đến khi tổng thu = tổng chi; ghi lại nhật ký mọi điều chỉnh (trước/sau).",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "bẫy thường gặp là cắt giảm lương/học bổng để cân đối cho nhanh — vi phạm cam kết chi; mọi khoản cắt giảm phải có vết để giải trình ở thuyết minh.",
+   "ket_qua": "bảng cân đối thu = chi cuối cùng + nhật ký điều chỉnh."
+  },
+  {
+   "n": 4,
+   "title": "Lập thuyết minh dự toán",
+   "lam_gi": "viết giải trình cơ sở tính của từng khoản thu/chi biến động lớn so với năm trước (nguyên nhân: tuyển sinh, lương cơ sở, nhiệm vụ mới; định mức áp dụng); nêu rõ các khoản đã cắt giảm ở Bước 3 và lý do.",
+   "inputs": [
+    "chi_tieu_giao"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: soạn dự thảo, tính toán, phân tích số liệu",
+   "luu_y": "thuyết minh là căn cứ để cấp có thẩm quyền (C6) chất vấn — mọi số liệu trong thuyết minh phải khớp 100% với số trên biểu dự toán.",
+   "ket_qua": "dự thảo thuyết minh dự toán."
+  },
+  {
+   "n": 5,
+   "title": "Hoàn thiện hồ sơ và trình duyệt",
+   "lam_gi": "ghép bộ hồ sơ gồm Tờ trình + biểu dự toán thu + biểu dự toán chi + thuyết minh; kiểm tra số học cộng khớp, đơn vị tính thống nhất (triệu đồng), tổng thu = tổng chi; lấy chữ ký người lập (`nguoi_lap`) và trưởng phòng; trình cấp có thẩm quyền (`don_vi_trinh`) phê duyệt theo quy chế chi tiêu nội bộ.",
+   "inputs": [
+    "don_vi_trinh",
+    "nguoi_lap"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) (lập hồ sơ); Trưởng Phòng TC&QT (kế hoạch – tài chính) ký duyệt · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, tính toán, phân tích số liệu",
+   "luu_y": "dự toán phải được phê duyệt trước khi năm ngân sách bắt đầu; mọi khoản chi đều phải có trong dự toán được duyệt hoặc được điều chỉnh, bổ sung theo thẩm quyền.",
+   "ket_qua": "bộ hồ sơ trình duyệt hoàn chỉnh (Tờ trình + 2 biểu + thuyết minh, đã ký)."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Có đầy đủ sản phẩm: Tờ trình phê duyệt dự toán ngân sách năm",
+  "Có đầy đủ sản phẩm: Bảng dự toán thu ngân sách năm (đơn vị: triệu đồng)",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Không đưa nguồn thu \"hy vọng\" vào tổng thu để cân đối",
+  "Chi lương tính theo biên chế được giao, không theo biên chế mong muốn"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Dự toán tổng hợp từ nhu cầu từng đơn vị; không tự cắt hoặc thêm khoản.",
+  "Học phí chương trình liên kết phụ thuộc thỏa thuận với đối tác (C2)."
+ ],
+ "cho_xac_nhan": [
+  "Định mức và tuyến duyệt dự toán (C2, C6).",
+  "Mẫu dự toán (C8)."
+ ],
+ "output_structure": [
+  "Tờ trình (đơn vị trình, nội dung trình, tổng thu = tổng chi, đề nghị phê duyệt);",
+  "Biểu 1: Dự toán thu (cột: TT, nguồn thu, dự toán, tỷ trọng; dòng tổng thu);",
+  "Biểu 2: Dự toán chi (cột: TT, nội dung chi, dự toán, tỷ trọng; dòng tổng chi);",
+  "Thuyết minh dự toán (cơ sở tính từng khoản, biến động so với năm trước, các khoản đã điều chỉnh khi cân đối);",
+  "Chữ ký: người lập, trưởng phòng, người phê duyệt (ký, đóng dấu). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tờ trình (đơn vị trình, nội dung trình, tổng thu = tổng chi, đề nghị phê duyệt);\n\n2. Biểu 1: Dự toán thu (cột: TT, nguồn thu, dự toán, tỷ trọng; dòng tổng thu);\n\n3. Biểu 2: Dự toán chi (cột: TT, nội dung chi, dự toán, tỷ trọng; dòng tổng chi);\n\n4. Thuyết minh dự toán (cơ sở tính từng khoản, biến động so với năm trước, các khoản\n   đã điều chỉnh khi cân đối);\n\n5. Chữ ký: người lập, trưởng phòng, người phê duyệt (ký, đóng dấu).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (kế hoạch – tài chính). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Luật 89/2025/QH15 và Nghị định 73/2026/NĐ-CP – ngân sách năm 2026\n\nNguồn: https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-73-2026-nd-cp-469083.htm\n\nYêu cầu năm ngân sách, nguồn kinh phí, dự toán được giao và thời điểm nghiệp vụ; áp dụng Luật 89 từ 01/01/2026 và NĐ 73 cho năm ngân sách 2026. Quyết toán 2025 phải kiểm tra chế độ và chuyển tiếp của năm đó, không tự thay toàn bộ căn cứ lịch sử.\n",
+ "outputs_dir": "skills/vnuis-taichinh-lap-du-toan-nam/references"
+}

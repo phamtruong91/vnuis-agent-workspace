@@ -1,0 +1,145 @@
+{
+ "name": "vnuis-dc-lap-danh-muc-kho-tri-thuc",
+ "title": "Danh mục kho tri thức và hồ sơ mẫu",
+ "description": "Dùng khi biểu mẫu, hướng dẫn, hồ sơ mẫu nằm rải rác nhiều nơi và cần lập danh mục: phân loại, gắn nhãn đơn vị, tìm bản trùng và bản cũ, chọn bản dùng chính để các đơn vị dùng lại.",
+ "group": "dc",
+ "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+ "previous_name": "vnuis-kho-tri-thuc-ho-so-mau",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Viện ĐMST&CGCN; Phòng KHCN và Hợp tác phát triển; Văn phòng (TC&QT)",
+ "when": "Khi tài liệu mẫu nằm rải rác ở nhiều nơi và cần một danh mục có người chịu trách nhiệm; khi chuẩn bị đưa tài liệu vào hệ thống hỏi đáp hoặc skill dùng chung.",
+ "inputs": [
+  {
+   "key": "danh_sach_tai_lieu",
+   "desc": "Danh sách file: tên, đường dẫn hoặc nơi lưu, ngày sửa, đơn vị tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "khung_phan_loai",
+   "desc": "Khung phân loại do Trường quyết: nghiệp vụ, đơn vị, loại tài liệu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_tac_dat_ten",
+   "desc": "Quy tắc đặt tên và đánh phiên bản nếu có",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "danh_sach_ban_chinh",
+   "desc": "Tài liệu đã được xác nhận là bản chính thức",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "quyen_truy_cap",
+   "desc": "Phân quyền đọc: ai được xem tài liệu nào",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Viện ĐMST&CGCN; Phòng KHCN và Hợp tác phát triển; Văn phòng (TC&QT)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Đọc danh sách và gắn nhãn",
+   "lam_gi": "Gán nhãn theo khung phân loại; tài liệu không xếp được đưa vào nhóm chờ.",
+   "inputs": [
+    "danh_sach_tai_lieu",
+    "khung_phan_loai"
+   ],
+   "vai_tro": "Chuyên viên · AI hỗ trợ: gắn nhãn đề xuất",
+   "luu_y": "Chỉ dựa tên và thông tin có trong danh sách; không mở nội dung nhạy cảm khi chưa được phép.",
+   "ket_qua": "Danh mục gắn nhãn."
+  },
+  {
+   "n": 2,
+   "title": "Phát hiện trùng và bản cũ",
+   "lam_gi": "So tên và ngày để tìm bản trùng hoặc bản cũ; đề xuất bản dùng chính, đối chiếu danh sách bản chính nếu có.",
+   "inputs": [
+    "danh_sach_tai_lieu",
+    "danh_sach_ban_chinh",
+    "quy_tac_dat_ten"
+   ],
+   "vai_tro": "Chuyên viên · AI hỗ trợ: so khớp",
+   "luu_y": "Không xóa hay gộp file; chỉ đề xuất.",
+   "ket_qua": "Danh sách trùng và đề xuất."
+  },
+  {
+   "n": 3,
+   "title": "Gắn quyền truy cập",
+   "lam_gi": "Mỗi tài liệu gắn mức truy cập theo bảng quyền; thiếu quy định thì ghi \"chưa xác định\".",
+   "inputs": [
+    "quyen_truy_cap"
+   ],
+   "vai_tro": "Trưởng đơn vị · AI hỗ trợ: đối chiếu quyền",
+   "luu_y": "Không mở rộng quyền xem.",
+   "ket_qua": "Cột quyền truy cập."
+  },
+  {
+   "n": 4,
+   "title": "Lập danh mục và người chịu trách nhiệm",
+   "lam_gi": "Tạo danh mục cuối: nhãn, bản chính, người chịu trách nhiệm cập nhật, ngày rà gần nhất.",
+   "inputs": [
+    "danh_sach_ban_chinh"
+   ],
+   "vai_tro": "Trưởng đơn vị · AI hỗ trợ: lập danh mục",
+   "luu_y": "Người chịu trách nhiệm do đơn vị chỉ định, không tự gán tên.",
+   "ket_qua": "Danh mục kho tri thức."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi tài liệu có đúng một nhãn chính.",
+  "Quyền truy cập khớp bảng quyền.",
+  "Đề xuất xóa hoặc gộp chỉ là đề xuất.",
+  "Không có nội dung tài liệu nhạy cảm trong danh mục.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng đơn vị** xác nhận bản chính và người chịu trách nhiệm.",
+  "**Người phụ trách an toàn thông tin** xác nhận phân quyền."
+ ],
+ "guardrails": [
+  "KHÔNG tải tài liệu chứa dữ liệu cá nhân lên dịch vụ ngoài khi chưa có quyền (C5).",
+  "KHÔNG xóa hoặc đổi tên file gốc."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Khung phân loại và nơi lưu tài liệu (C5, C8).",
+  "Quy định phân quyền tài liệu (C5)."
+ ],
+ "output_structure": [
+  "Sheet Danh mục: tên, nhãn, đơn vị, bản chính, ngày sửa, quyền, người chịu trách nhiệm.",
+  "Sheet Trùng và bản cũ.",
+  "Sheet Chờ xác định: tài liệu chưa xếp nhãn hoặc chưa có quyền.",
+  "Sheet Khung phân loại đã dùng."
+ ],
+ "output_structure_raw": "1. Sheet Danh mục: tên, nhãn, đơn vị, bản chính, ngày sửa, quyền, người chịu trách nhiệm.\n\n2. Sheet Trùng và bản cũ.\n\n3. Sheet Chờ xác định: tài liệu chưa xếp nhãn hoặc chưa có quyền.\n\n4. Sheet Khung phân loại đã dùng.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Viện ĐMST&CGCN. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dc-lap-danh-muc-kho-tri-thuc/references"
+}

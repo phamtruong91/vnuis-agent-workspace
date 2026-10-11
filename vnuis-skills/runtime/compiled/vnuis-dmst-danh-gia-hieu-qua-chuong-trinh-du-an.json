@@ -1,0 +1,149 @@
+{
+ "name": "vnuis-dmst-danh-gia-hieu-qua-chuong-trinh-du-an",
+ "title": "Đánh giá hiệu quả chương trình hoặc dự án",
+ "description": "Dùng khi chương trình, khóa bồi dưỡng, dự án hoặc đợt thử nghiệm đã xong và cần đánh giá bằng số liệu: so chỉ số cam kết với kết quả thực tế, phản hồi người tham gia, chi phí, bài học.",
+ "group": "dmst",
+ "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+ "previous_name": "vnuis-danh-gia-hieu-qua-chuong-trinh-du-an",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Viện ĐMST&CGCN; Phòng KHCN và Hợp tác phát triển",
+ "when": "Khi chương trình, khóa bồi dưỡng, dự án hoặc thử nghiệm kết thúc và cần đánh giá bằng số liệu thay vì cảm nhận.",
+ "inputs": [
+  {
+   "key": "muc_tieu_chi_so",
+   "desc": "Mục tiêu và chỉ số cam kết ban đầu, kèm cách đo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_qua_thuc_te",
+   "desc": "Số liệu thực tế: số người tham gia, sản phẩm bàn giao, kết quả đo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "phan_hoi",
+   "desc": "Khảo sát hoặc ý kiến người tham gia",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "chi_phi",
+   "desc": "Chi phí thực tế và nguồn",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ky_danh_gia",
+   "desc": "Thời gian chương trình và mốc đánh giá",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Viện ĐMST&CGCN; Phòng KHCN và Hợp tác phát triển"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chốt chỉ số và cách đo",
+   "lam_gi": "Liệt kê chỉ số cam kết; chỉ số nào không có cách đo hoặc số liệu thì ghi \"không đánh giá được\".",
+   "inputs": [
+    "muc_tieu_chi_so",
+    "ky_danh_gia"
+   ],
+   "vai_tro": "Quản lý chương trình · AI hỗ trợ: lập bảng chỉ số",
+   "luu_y": "Không bổ sung chỉ số sau khi đã có kết quả.",
+   "ket_qua": "Bảng chỉ số đánh giá."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu mục tiêu và kết quả",
+   "lam_gi": "Tính chênh lệch từng chỉ số; nêu đạt, một phần, chưa đạt theo ngưỡng cam kết.",
+   "inputs": [
+    "ket_qua_thuc_te"
+   ],
+   "vai_tro": "Quản lý chương trình · AI hỗ trợ: tính chênh lệch",
+   "luu_y": "Không tự hạ ngưỡng để thành đạt.",
+   "ket_qua": "Bảng đạt hay chưa đạt."
+  },
+  {
+   "n": 3,
+   "title": "Tổng hợp phản hồi và chi phí",
+   "lam_gi": "Gom phản hồi theo chủ đề và đếm; chi phí trên đầu người chỉ tính khi có cả hai số.",
+   "inputs": [
+    "phan_hoi",
+    "chi_phi"
+   ],
+   "vai_tro": "Quản lý chương trình · AI hỗ trợ: phân nhóm phản hồi",
+   "luu_y": "Cỡ mẫu nhỏ thì nêu rõ, không khái quát.",
+   "ket_qua": "Bảng phản hồi và chi phí."
+  },
+  {
+   "n": 4,
+   "title": "Lập báo cáo và bài học",
+   "lam_gi": "Ghép báo cáo: kết quả, nguyên nhân người phụ trách xác nhận, bài học, đề xuất tiếp theo.",
+   "inputs": [
+    "ket_qua_thuc_te",
+    "phan_hoi"
+   ],
+   "vai_tro": "Trưởng đơn vị · AI hỗ trợ: dự thảo báo cáo",
+   "luu_y": "Nguyên nhân do người phụ trách xác nhận; AI chỉ nêu giả thuyết có gắn nhãn.",
+   "ket_qua": "Báo cáo đánh giá hiệu quả."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mọi chỉ số trong báo cáo có trong bảng chỉ số ban đầu.",
+  "Chỉ số không đo được được ghi rõ.",
+  "Cỡ mẫu phản hồi được nêu.",
+  "Nguyên nhân được tách khỏi số liệu.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng đơn vị chủ trì** kiểm tra số liệu và kết luận.",
+  "**Lãnh đạo có thẩm quyền** duyệt nếu báo cáo gửi ra ngoài."
+ ],
+ "guardrails": [
+  "KHÔNG tự đổi chỉ số hoặc ngưỡng đạt.",
+  "KHÔNG kết luận nguyên nhân khi người phụ trách chưa xác nhận."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Chỉ số và cách đo của các chương trình đang chạy (C4, C8).",
+  "Mẫu báo cáo đánh giá (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề, chương trình hoặc dự án, kỳ đánh giá.",
+  "Bảng chỉ số: cam kết, thực tế, chênh lệch, kết luận.",
+  "Phản hồi người tham gia và chi phí (nếu có số liệu).",
+  "Bài học và đề xuất tiếp theo, tách phần đã xác nhận và phần giả thuyết."
+ ],
+ "output_structure_raw": "1. Tiêu đề, chương trình hoặc dự án, kỳ đánh giá.\n\n2. Bảng chỉ số: cam kết, thực tế, chênh lệch, kết luận.\n\n3. Phản hồi người tham gia và chi phí (nếu có số liệu).\n\n4. Bài học và đề xuất tiếp theo, tách phần đã xác nhận và phần giả thuyết.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Viện ĐMST&CGCN. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dmst-danh-gia-hieu-qua-chuong-trinh-du-an/references"
+}

@@ -1,0 +1,182 @@
+{
+ "name": "vnuis-dmst-ke-hoach-uom-tao",
+ "title": "Kế hoạch ươm tạo ĐMST",
+ "description": "Dùng khi Viện tổ chức đợt ươm tạo đổi mới sáng tạo (startup của sinh viên, giảng viên, dự án khởi nghiệp) và cần kế hoạch: tiêu chí tuyển chọn, lộ trình theo giai đoạn, nguồn lực, chỉ tiêu đầu ra.",
+ "group": "dmst",
+ "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+ "previous_name": "vnuis-ke-hoach-uom-tao-dmst",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Viện ĐMST&CGCN",
+ "when": "Khi Viện ĐMST & CGCN tổ chức chương trình ươm tạo (startup sinh viên, giảng viên, dự án spin-off):\ncần kế hoạch gồm tiêu chí tuyển chọn, lộ trình các giai đoạn, nguồn lực hỗ trợ và chỉ tiêu đầu ra.",
+ "inputs": [
+  {
+   "key": "ten_chuong_trinh",
+   "desc": "Tên chương trình ươm tạo + đợt/năm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong",
+   "desc": "Sinh viên / giảng viên / startup ngoài / hỗn hợp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "linh_vuc_uu_tien",
+   "desc": "Các lĩnh vực ưu tiên (VD: AI, nông nghiệp thông minh...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguon_luc",
+   "desc": "Mentor, phòng lab, vốn mồi, hỗ trợ pháp lý... hiện có",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Thời gian mỗi giai đoạn và toàn chương trình",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chi_tieu",
+   "desc": "Số lượng dự án tuyển, tỷ lệ tốt nghiệp mong muốn",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Viện ĐMST&CGCN"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xây dựng bộ tiêu chí tuyển chọn và thang điểm",
+   "lam_gi": "Thiết kế bộ tiêu chí chấm thang 100 điểm: tính đổi mới sáng tạo, tính khả thi kỹ thuật, năng lực đội ngũ, tiềm năng thị trường, phù hợp lĩnh vực ưu tiên; mỗi tiêu chí có trọng số và thang tiêu chí chấm mô tả các mức điểm để giám khảo chấm nhất quán; đặt ngưỡng trúng tuyển.",
+   "inputs": [
+    "ten_chuong_trinh",
+    "doi_tuong",
+    "linh_vuc_uu_tien",
+    "chi_tieu"
+   ],
+   "vai_tro": "Hội đồng tuyển chọn · AI hỗ trợ: soạn bộ tiêu chí, thang điểm và thang tiêu chí chấm dự thảo",
+   "luu_y": "trọng số phải phản ánh mục tiêu chương trình (ươm tạo trong trường thì coi trọng tính đổi mới + đội ngũ hơn doanh thu tức thì); thang tiêu chí chấm phải cụ thể, tránh tiêu chí định tính chung chung khó chấm.",
+   "ket_qua": "Bộ tiêu chí + thang điểm 100 + thang tiêu chí chấm + ngưỡng trúng tuyển (dự thảo trình hội đồng ươm tạo duyệt)."
+  },
+  {
+   "n": 2,
+   "title": "Thiết kế lộ trình ươm tạo theo giai đoạn",
+   "lam_gi": "Chia chương trình thành 4 giai đoạn khớp `thoi_gian`: (1) Tuyển chọn — các mốc phát động/nhận hồ sơ/chấm/phỏng vấn/công bố; (2) Ươm tạo — hoàn thiện MVP, lịch đào tạo kỹ năng, mentor 1-1; (3) Tăng tốc — kết nối thị trường, tập gọi vốn; (4) Tốt nghiệp — demo day, đánh giá. Mỗi giai đoạn ghi: thời gian, mục tiêu đầu ra, tiêu chí \"qua cửa\" để sang giai đoạn tiếp theo.",
+   "inputs": [
+    "thoi_gian",
+    "chi_tieu",
+    "doi_tuong"
+   ],
+   "vai_tro": "Chuyên viên ươm tạo · AI hỗ trợ: thiết kế timeline 4 giai đoạn dự thảo, ban tổ chức chốt mốc và tiêu chí qua cửa",
+   "luu_y": "mỗi giai đoạn phải có \"cửa kiểm tra\" (gate) với tiêu chí rõ ràng — dự án không đạt thì dừng hỗ trợ hoặc kéo dài có điều kiện, tránh nuôi dự án không triển vọng; mốc thời gian phải chừa đệm cho tuyển chọn (thường 6–8 tuần).",
+   "ket_qua": "Timeline chi tiết 4 giai đoạn (mốc thời gian, đầu ra, tiêu chí qua cửa)."
+  },
+  {
+   "n": 3,
+   "title": "Phân bổ nguồn lực hỗ trợ",
+   "lam_gi": "Từ `nguon_luc` hiện có: ghép mentor cho từng dự án theo lĩnh vực chuyên môn, lập lịch dùng lab/phòng làm việc chung, gói hỗ trợ pháp lý–kế toán (đăng ký doanh nghiệp, SHTT), thiết kế cơ chế giải ngân vốn mồi theo mốc (tỷ lệ % từng đợt gắn với chỉ số đánh giá giai đoạn).",
+   "inputs": [
+    "nguon_luc",
+    "chi_tieu"
+   ],
+   "vai_tro": "Chuyên viên ươm tạo · AI hỗ trợ: lập bảng phân bổ nguồn lực dự thảo, ban tổ chức xác nhận mentor và lịch lab",
+   "luu_y": "vốn mồi giải ngân theo mốc đạt được, không cấp một lần; mentor phải cam kết thời gian tối thiểu (VD: 2 giờ/tuần/dự án); kiểm tra tổng cam kết không vượt nguồn lực thực có.",
+   "ket_qua": "Bảng phân bổ nguồn lực (ghép mentor–dự án, lịch lab, lịch giải ngân vốn mồi theo mốc)."
+  },
+  {
+   "n": 4,
+   "title": "Thiết lập chỉ số đánh giá và cơ chế đánh giá – tốt nghiệp",
+   "lam_gi": "Đặt chỉ số đánh giá đầu ra định lượng (số dự án tốt nghiệp, số MVP hoàn thiện, số dự án gọi được vốn, việc làm tạo ra) gắn với `chi_tieu`; thiết kế tiêu chí đánh giá cuối kỳ, format demo day (thành phần ban giám khảo, thang điểm), chính sách hỗ trợ sau ươm tạo (mạng lưới alumni, ưu đãi dùng lab).",
+   "inputs": [
+    "chi_tieu",
+    "thoi_gian"
+   ],
+   "vai_tro": "Hội đồng tuyển chọn · AI hỗ trợ: đề xuất chỉ số đánh giá và quy chế đánh giá cuối kỳ",
+   "luu_y": "chỉ số đánh giá phải đo được và có mốc thời gian; quy định rõ điều kiện \"tốt nghiệp\" so với \"chưa đạt\" và quyền lợi khác nhau của 2 nhóm.",
+   "ket_qua": "Bộ chỉ số đánh giá đầu ra + quy chế đánh giá cuối kỳ, demo day và tốt nghiệp."
+  },
+  {
+   "n": 5,
+   "title": "Tổng hợp thành văn bản kế hoạch và trình phê duyệt",
+   "lam_gi": "Ghép kết quả các bước 1–4 thành văn bản kế hoạch hoàn chỉnh theo cấu trúc chuẩn; kiểm tra tính khả thi tổng thể (nguồn lực có đủ cho số dự án tuyển không, tổng vốn mồi cam kết có vượt ngân sách không); trình hội đồng ươm tạo và viện trưởng phê duyệt.",
+   "inputs": [
+    "ten_chuong_trinh",
+    "doi_tuong"
+   ],
+   "vai_tro": "Viện trưởng · AI hỗ trợ: ghép văn bản và kiểm tra chéo tính khả thi",
+   "luu_y": "kiểm tra chéo lần cuối — số mentor đủ cho số dự án, lịch lab không chồng chéo, mốc giải ngân khớp timeline; kế hoạch phải ban hành trước khi phát động tuyển chọn.",
+   "ket_qua": "Văn bản kế hoạch chương trình ươm tạo hoàn chỉnh (trình phê duyệt)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu khớp với Input: số dự án tuyển, nguồn lực (mentor, lab, vốn mồi), thời gian.",
+  "Không bịa đặt cam kết gọi vốn, cam kết đầu tư hay nguồn lực không có thật.",
+  "Bộ tiêu chí thang 100 điểm có trọng số và thang tiêu chí chấm cụ thể cho từng mức điểm, ngưỡng trúng tuyển rõ ràng.",
+  "Mỗi giai đoạn có \"cửa kiểm tra\" với tiêu chí qua cửa rõ ràng; dự án không đạt thì dừng hỗ trợ hoặc kéo dài có điều kiện.",
+  "Tổng cam kết nguồn lực (mentor, lịch lab, vốn mồi giải ngân theo mốc) không vượt nguồn lực thực có.",
+  "chỉ số đánh giá định lượng được, có mốc thời gian; quy định rõ điều kiện tốt nghiệp so với chưa đạt và quyền lợi khác nhau.",
+  "Kế hoạch ban hành trước khi phát động tuyển chọn.",
+  "Đã qua Human gate: hội đồng ươm tạo duyệt bộ tiêu chí, viện trưởng phê duyệt kế hoạch và danh sách trúng tuyển. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Hội đồng ươm tạo** chấm tuyển chọn và đánh giá tốt nghiệp theo thang điểm đã duyệt.",
+  "**Viện trưởng** phê duyệt danh sách trúng tuyển và quyết định giải ngân vốn mồi theo mốc."
+ ],
+ "guardrails": [
+  "KHÔNG cam kết khả năng gọi vốn thành công cho dự án ươm tạo.",
+  "KHÔNG quyết định đầu tư/góp vốn thay mặt nhà trường khi chưa có phê duyệt thẩm quyền.",
+  "KHÔNG tiết lộ ý tưởng/dữ liệu của dự án này cho dự án khác khi chưa được đồng ý."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Đối tượng ươm tạo có thể là sinh viên, giảng viên hoặc dự án bên ngoài; kế hoạch ghi rõ đối tượng và tiêu chí tuyển chọn cho từng nhóm.",
+  "Theo phiếu CES: lập bảng theo dõi mốc, cam kết và minh chứng cho từng dự án (hồ sơ, kế hoạch, nhật ký cố vấn, chỉ số đánh giá).",
+  "Không cam kết kinh phí, đầu tư hay khả năng gọi vốn khi chưa có phê duyệt."
+ ],
+ "cho_xac_nhan": [
+  "Nguồn lực mentor, không gian, kinh phí hỗ trợ (C8).",
+  "Quy chế chương trình ươm tạo của Viện (C2)."
+ ],
+ "output_structure": [
+  "Tiêu đề: tên chương trình + đợt/năm; đơn vị tổ chức; thời gian thực hiện.",
+  "Đối tượng và lĩnh vực ưu tiên.",
+  "Tiêu chí tuyển chọn: thang điểm được phê duyệt (trọng số từng tiêu chí), thang tiêu chí chấm, ngưỡng trúng tuyển.",
+  "Lộ trình ươm tạo: 4 giai đoạn (tuyển chọn, ươm tạo, tăng tốc, tốt nghiệp) — mỗi giai đoạn ghi mốc thời gian, đầu ra, tiêu chí \"qua cửa\".",
+  "Nguồn lực hỗ trợ: mentor, lab, vốn mồi (lịch giải ngân theo mốc), hỗ trợ pháp lý.",
+  "chỉ số đánh giá đầu ra (định lượng, có mốc thời gian).",
+  "Đánh giá cuối kỳ, demo day và chính sách hỗ trợ sau ươm tạo. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề: tên chương trình + đợt/năm; đơn vị tổ chức; thời gian thực hiện.\n\n2. Đối tượng và lĩnh vực ưu tiên.\n\n3. Tiêu chí tuyển chọn: thang điểm được phê duyệt (trọng số từng tiêu chí), thang tiêu chí chấm, ngưỡng\n   trúng tuyển.\n\n4. Lộ trình ươm tạo: 4 giai đoạn (tuyển chọn, ươm tạo, tăng tốc, tốt nghiệp) — mỗi giai\n   đoạn ghi mốc thời gian, đầu ra, tiêu chí \"qua cửa\".\n\n5. Nguồn lực hỗ trợ: mentor, lab, vốn mồi (lịch giải ngân theo mốc), hỗ trợ pháp lý.\n\n6. chỉ số đánh giá đầu ra (định lượng, có mốc thời gian).\n\n7. Đánh giá cuối kỳ, demo day và chính sách hỗ trợ sau ươm tạo.",
+ "human_gate_check": "Đã qua Human gate: hội đồng ươm tạo duyệt bộ tiêu chí, viện trưởng phê duyệt kế hoạch và danh sách trúng tuyển. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Viện ĐMST&CGCN. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dmst-ke-hoach-uom-tao/references"
+}

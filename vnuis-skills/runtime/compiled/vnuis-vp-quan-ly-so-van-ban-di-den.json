@@ -1,0 +1,189 @@
+{
+ "name": "vnuis-vp-quan-ly-so-van-ban-di-den",
+ "title": "Quản lý sổ văn bản đi / đến",
+ "description": "Dùng khi Phòng TC&QT (văn phòng – văn thư) lập sổ văn bản đi, văn bản đến hoặc xây dựng, chuẩn hóa quy trình xử lý văn bản: tiếp nhận, đăng ký, trình, theo dõi, lưu trữ.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-so-van-ban-di-den",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (văn thư – lưu trữ); các đơn vị nhận văn bản",
+ "when": "Khi lập sổ theo dõi văn bản đi, văn bản đến của trường / đơn vị; khi xây dựng hoặc\nchuẩn hóa quy trình xử lý văn bản đến.",
+ "inputs": [
+  {
+   "key": "loai_so",
+   "desc": "Sổ văn bản đi / Sổ văn bản đến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi",
+   "desc": "Đơn vị quản lý sổ (Văn phòng trường / phòng ban)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nam",
+   "desc": "Năm mở sổ",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (văn thư – lưu trữ); các đơn vị nhận văn bản"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại sổ, chuẩn bị mẫu sổ năm mới",
+   "lam_gi": "căn cứ `loai_so` để chọn đúng mẫu sổ (văn bản đến hay văn bản đi); kiểm tra đầy đủ các cột bắt buộc của mẫu; mở sổ cho `nam` (sổ giấy: đánh số trang, đóng dấu giáp lai; sổ điện tử: tạo file, phân quyền truy cập, đặt lịch sao lưu định kỳ); ghi tên `don_vi` quản lý sổ lên bìa/trang đầu.",
+   "inputs": [
+    "loai_so",
+    "don_vi",
+    "nam"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "sổ phải mở từ đầu năm, không bỏ trống số thứ tự; sổ điện tử phải sao lưu định kỳ, tránh mất dữ liệu; mỗi đơn vị chỉ dùng một sổ đi và một sổ đến cho một năm.",
+   "ket_qua": "mẫu sổ năm mới đầy đủ cột bắt buộc, sẵn sàng ghi chép. ### Nhánh A — Xử lý văn bản đến"
+  },
+  {
+   "n": 2,
+   "title": "Tiếp nhận văn bản đến",
+   "lam_gi": "nhận văn bản từ các kênh (trực tiếp, bưu điện, email công vụ); kiểm tra số lượng trang, tính nguyên vẹn, dấu niêm phong (nếu là văn bản mật); đối chiếu thông tin bì thư với văn bản bên trong; từ chối ký nhận và yêu cầu bổ sung nếu văn bản rách, thiếu trang, sai địa chỉ nhận.",
+   "inputs": [
+    "don_vi",
+    "loai_so"
+   ],
+   "vai_tro": "Văn thư/Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: ghi nhận, phân loại ban đầu",
+   "luu_y": "văn bản mật chỉ người có thẩm quyền được mở; ghi lại thời điểm nhận chính xác (làm căn cứ tính hạn xử lý); không tự ý mở văn bản ghi \"chỉ người có tên được mở\".",
+   "ket_qua": "văn bản đến đã kiểm tra nguyên vẹn, ghi nhận thời điểm tiếp nhận."
+  },
+  {
+   "n": 3,
+   "title": "Đăng ký vào sổ văn bản đến",
+   "lam_gi": "ghi ngay trong ngày làm việc vào sổ: số thứ tự đến (liên tục từ đầu năm), số/ký hiệu văn bản, ngày tháng văn bản, cơ quan ban hành, trích yếu nội dung, ngày đến, đơn vị/người nhận xử lý, hạn xử lý.",
+   "inputs": [
+    "loai_so"
+   ],
+   "vai_tro": "Văn thư Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: ghi sổ theo dõi, đánh số thứ tự",
+   "luu_y": "đăng ký trong ngày làm việc — bẫy thường gặp là dồn cuối tuần mới ghi, gây sai lệch số thứ tự và hạn xử lý; trích yếu phải ngắn gọn, nêu đúng việc cần xử lý; văn bản khẩn ghi chú \"KHẨN\" và xử lý ngay.",
+   "ket_qua": "dòng đăng ký văn bản đến đầy đủ các cột trong sổ."
+  },
+  {
+   "n": 4,
+   "title": "Trình lãnh đạo cho ý kiến chỉ đạo",
+   "lam_gi": "chuyển văn bản (kèm phiếu trình nếu cần) tới lãnh đạo có thẩm quyền; ghi ý kiến chỉ đạo của lãnh đạo (giao đơn vị nào chủ trì/phối hợp, hạn hoàn thành) vào cột ghi chú của sổ.",
+   "inputs": [
+    "don_vi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) trình xin ý kiến, Lãnh đạo cho ý kiến chỉ đạo · AI hỗ trợ: tổng hợp nội dung, dự thảo phương án trình",
+   "luu_y": "xác định đúng lãnh đạo phụ trách lĩnh vực để trình, tránh trình lòng vòng; nếu lãnh đạo đi vắng, trình người được ủy quyền và ghi rõ.",
+   "ket_qua": "ý kiến chỉ đạo của lãnh đạo đã ghi vào sổ."
+  },
+  {
+   "n": 5,
+   "title": "Chuyển xử lý, đôn đốc tiến độ",
+   "lam_gi": "chuyển bản chính/bản sao cho đơn vị được giao xử lý (có ký nhận); cập nhật bảng theo dõi tiến độ (đơn vị xử lý – tình trạng – quá hạn?); định kỳ đôn đốc các văn bản sắp đến hạn và nhắc đơn vị chậm trễ.",
+   "inputs": [
+    "loai_so"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "văn bản có hạn xử lý phải được theo dõi riêng, nhắc trước hạn 02–03 ngày; đơn vị quá hạn phải có văn bản giải trình; cập nhật tình trạng ngay khi đơn vị báo hoàn thành.",
+   "ket_qua": "bảng theo dõi tiến độ xử lý được cập nhật."
+  },
+  {
+   "n": 6,
+   "title": "Thu hồi, lưu trữ hồ sơ văn bản đến",
+   "lam_gi": "thu hồi văn bản đã xử lý xong kèm tài liệu xử lý (phúc đáp, báo cáo); sắp xếp hồ sơ theo số thứ tự đến hoặc theo số/ký hiệu văn bản; lưu trữ theo thời hạn quy định của trường; ghi chú kết quả xử lý vào sổ.",
+   "inputs": [
+    "loai_so"
+   ],
+   "vai_tro": "Văn thư Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: sắp xếp, đánh chỉ mục hồ sơ",
+   "luu_y": "không lưu lẫn văn bản chưa xử lý xong với hồ sơ đã hoàn thành; hồ sơ mật lưu riêng theo quy định bảo mật.",
+   "ket_qua": "hồ sơ văn bản đến đã sắp xếp, lưu trữ đúng quy định. ### Nhánh B — Phát hành văn bản đi"
+  },
+  {
+   "n": 7,
+   "title": "Đăng ký, phát hành văn bản đi",
+   "lam_gi": "nhận văn bản đã trình ký hoàn tất; đăng ký vào sổ văn bản đi: số thứ tự đi (liên tục), số/ký hiệu, ngày ban hành, trích yếu, nơi nhận, người ký; nhân bản theo số lượng nơi nhận, đóng dấu, gửi đi (trực tiếp/bưu điện/email); lưu bản chính tại văn thư.",
+   "inputs": [
+    "loai_so",
+    "don_vi"
+   ],
+   "vai_tro": "Văn thư Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: định dạng bản chính, cập nhật sổ phát hành",
+   "luu_y": "số thứ tự đi không được trùng, không bỏ số; kiểm tra nơi nhận đầy đủ trước khi nhân bản — bẫy là gửi thiếu nơi nhận ghi trong văn bản; bản lưu văn thư phải có đủ chữ ký và dấu.",
+   "ket_qua": "văn bản đi đã phát hành + bản chính lưu tại văn thư."
+  },
+  {
+   "n": 8,
+   "title": "Kiểm tra định kỳ sổ sách",
+   "lam_gi": "văn thư kiểm tra sổ sách định kỳ (số thứ tự liên tục, cột ghi đầy đủ, không tẩy xóa); đối chiếu số liệu sổ đi/đến với thực tế hồ sơ lưu; lập bảng tổng hợp số lượng văn bản đi/đến theo tháng/quý phục vụ báo cáo.",
+   "inputs": [
+    "loai_so",
+    "don_vi",
+    "nam"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "phát hiện số thứ tự bị nhảy/bỏ thì lập biên bản xác nhận ngay, không tự ý sửa; số liệu tổng hợp phải khớp 100% với sổ trước khi đưa vào báo cáo.",
+   "ket_qua": "sổ văn bản được kiểm tra, bảng tổng hợp số liệu định kỳ."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và định dạng theo Nghị định 30/2020/NĐ-CP về công tác văn thư.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Sổ phải mở từ đầu năm, không bỏ trống số thứ tự",
+  "Sổ điện tử phải sao lưu định kỳ, tránh mất dữ liệu",
+  "Trích yếu phải ngắn gọn, nêu đúng việc cần xử lý"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Ghi rõ cho mỗi văn bản: cơ quan ban hành (ĐHQGHN hay đơn vị trong Trường), và đơn vị đề xuất chủ trì xử lý. Gợi ý định tuyến theo chức năng công bố trên website: đào tạo, người học, khảo thí → Phòng Đào tạo; tuyển sinh, truyền thông → Phòng Truyền thông và Tuyển sinh; khoa học công nghệ, hợp tác, thư viện → Phòng KHCN và Hợp tác phát triển; nhân sự, tài chính, hành chính → Phòng Tổ chức và Quản trị; người dùng xác nhận trước khi chuyển.",
+  "Văn bản có phần tiếng Anh hoặc song ngữ: tóm tắt bằng tiếng Việt, giữ nguyên tên riêng, số hiệu, tên đối tác và thuật ngữ gốc.",
+  "Bản scan OCR kém: đánh dấu độ tin cậy thấp, không đoán số hiệu, ngày ban hành hay người ký.",
+  "Chỉ đề xuất mức khẩn/ưu tiên khi văn bản nêu hạn; không tự suy ra."
+ ],
+ "cho_xac_nhan": [
+  "Sổ theo dõi văn bản hiện dùng (Excel hay E-Office) và các cột bắt buộc (C8).",
+  "Quy tắc phân phối văn bản và người duyệt phân phối (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề sổ: \"SỔ ĐĂNG KÝ VĂN BẢN ĐẾN/ĐI NĂM ...\" + tên đơn vị quản lý sổ;",
+  "Bảng đăng ký — các cột bắt buộc theo đúng thứ tự: - Sổ văn bản đến: STT đến | Số, ký hiệu | Ngày văn bản | Cơ quan ban hành | Trích yếu nội dung | Ngày đến | Chuyển xử lý | Hạn xử lý | Ghi chú; - Sổ văn bản đi: STT đi | Số, ký hiệu | Ngày ban hành | Trích yếu nội dung | Nơi nhận | Người ký | Ghi chú;",
+  "Bảng theo dõi tiến độ xử lý (văn bản đến): STT đến | Đơn vị xử lý | Tình trạng | Quá hạn?"
+ ],
+ "output_structure_raw": "1. Tiêu đề sổ: \"SỔ ĐĂNG KÝ VĂN BẢN ĐẾN/ĐI NĂM ...\" + tên đơn vị quản lý sổ;\n\n2. Bảng đăng ký — các cột bắt buộc theo đúng thứ tự:\n   - Sổ văn bản đến: STT đến | Số, ký hiệu | Ngày văn bản | Cơ quan ban hành | Trích yếu nội dung | Ngày đến | Chuyển xử lý | Hạn xử lý | Ghi chú;\n   - Sổ văn bản đi: STT đi | Số, ký hiệu | Ngày ban hành | Trích yếu nội dung | Nơi nhận | Người ký | Ghi chú;\n\n3. Bảng theo dõi tiến độ xử lý (văn bản đến): STT đến | Đơn vị xử lý | Tình trạng | Quá hạn?",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (văn thư – lưu trữ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-quan-ly-so-van-ban-di-den/references"
+}

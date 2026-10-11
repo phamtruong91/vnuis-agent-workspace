@@ -1,0 +1,160 @@
+{
+ "name": "vnuis-nhansu-bao-cao-thong-ke-nhan-su",
+ "title": "Báo cáo thống kê nhân sự",
+ "description": "Dùng khi Phòng Tổ chức và Quản trị lập báo cáo nhân sự theo kỳ (tuần, quý, năm) hoặc theo yêu cầu ĐHQGHN, Ban Giám hiệu từ file Excel nhân sự: cơ cấu theo đơn vị, chức danh, trình độ, hợp đồng.",
+ "group": "nhansu",
+ "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+ "previous_name": "vnuis-bao-cao-thong-ke-nhan-su",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị",
+ "when": "Khi Phòng Tổ chức và Quản trị cần báo cáo số liệu nhân sự theo kỳ hoặc theo yêu cầu của ĐHQGHN, Ban Giám hiệu; và khi cần đối chiếu nhu cầu nhân lực với vị trí việc làm hiện có.",
+ "inputs": [
+  {
+   "key": "file_nhan_su",
+   "desc": "File Excel nhân sự đã xuất, đã che hoặc dùng mã nội bộ thay họ tên; tối thiểu: đơn vị, chức danh, vị trí việc làm, trình độ, loại hợp đồng, trạng thái",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dinh_nghia_chi_tieu",
+   "desc": "Định nghĩa từng chỉ tiêu do Trường quy định (ví dụ cách tính giảng viên cơ hữu, người kiêm nhiệm)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "mau_bao_cao",
+   "desc": "Mẫu báo cáo nhân sự đang dùng hoặc mẫu của ĐHQGHN",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ky_bao_cao",
+   "desc": "Kỳ báo cáo và ngày chốt số liệu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ke_hoach_nhan_luc",
+   "desc": "Vị trí việc làm, nhu cầu, biên chế được giao nếu có",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Kiểm tra file nhân sự",
+   "lam_gi": "Đọc cột, kiểu dữ liệu, ô trống, bản ghi trùng, ngày không hợp lệ, giá trị ngoài danh mục; lập bảng \"cần rà\" theo dòng.",
+   "inputs": [
+    "file_nhan_su"
+   ],
+   "vai_tro": "Chuyên viên nhân sự · AI hỗ trợ: quét lỗi dữ liệu",
+   "luu_y": "Không sửa file gốc; mọi chỉnh sửa do người phụ trách làm trên bản của mình.",
+   "ket_qua": "Bảng dữ liệu cần rà."
+  },
+  {
+   "n": 2,
+   "title": "Áp định nghĩa chỉ tiêu",
+   "lam_gi": "Tính từng chỉ tiêu theo định nghĩa đã cung cấp, theo từng đơn vị (4 phòng, 6 khoa, Viện, Hội đồng). Người kiêm nhiệm hai vai trò chỉ đếm một lần ở tổng toàn Trường và ghi rõ quy tắc đã dùng.",
+   "inputs": [
+    "file_nhan_su",
+    "dinh_nghia_chi_tieu"
+   ],
+   "vai_tro": "Chuyên viên nhân sự · AI hỗ trợ: tính và đối chiếu tổng",
+   "luu_y": "Nếu tổng các nhóm không bằng tổng chung thì nêu chênh lệch, không làm tròn che lệch.",
+   "ket_qua": "Bảng chỉ tiêu theo đơn vị."
+  },
+  {
+   "n": 3,
+   "title": "Lập bảng cơ cấu và so sánh kỳ trước",
+   "lam_gi": "Cơ cấu theo chức danh, trình độ, loại hợp đồng; so với kỳ trước nếu có file kỳ trước; chỉ nêu xu hướng khi có từ 3 mốc số liệu.",
+   "inputs": [
+    "file_nhan_su",
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: dự thảo bảng và nhận xét dựa trên số liệu",
+   "luu_y": "Chỉ nêu số lượng; không đánh giá cá nhân.",
+   "ket_qua": "Bảng cơ cấu và so sánh."
+  },
+  {
+   "n": 4,
+   "title": "Đối chiếu nhu cầu nhân lực",
+   "lam_gi": "So vị trí việc làm và nhu cầu với số hiện có; liệt kê chênh lệch và các vị trí thiếu dữ liệu.",
+   "inputs": [
+    "ke_hoach_nhan_luc"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: lập bảng chênh lệch",
+   "luu_y": "Không tự đặt biên chế hay chỉ tiêu tuyển dụng.",
+   "ket_qua": "Bảng chênh lệch nhu cầu và hiện có."
+  },
+  {
+   "n": 5,
+   "title": "Lập báo cáo và nhật ký thiếu dữ liệu",
+   "lam_gi": "Ghép thành báo cáo theo mẫu; thêm nhật ký chỉ tiêu thiếu dữ liệu hoặc mâu thuẫn.",
+   "inputs": [
+    "mau_bao_cao",
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: ghép báo cáo",
+   "luu_y": "Nhóm quá nhỏ có thể nhận diện cá nhân thì gộp nhóm khi báo cáo ra ngoài Phòng; ngưỡng do Trường quyết.",
+   "ket_qua": "Báo cáo thống kê nhân sự."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Tổng các nhóm bằng tổng chung hoặc đã nêu chênh lệch.",
+  "Không có họ tên cá nhân trong báo cáo tổng hợp.",
+  "Mọi chỉ tiêu có định nghĩa kèm theo.",
+  "Chỉ số liệu có trong file; chỗ thiếu để trống và ghi vào nhật ký.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng phòng Tổ chức và Quản trị** kiểm tra số liệu và định nghĩa trước khi gửi.",
+  "**Người có thẩm quyền của Trường** duyệt báo cáo gửi ĐHQGHN."
+ ],
+ "guardrails": [
+  "KHÔNG đưa dữ liệu nhân sự định danh lên dịch vụ ngoài khi chưa có quyền (C5).",
+  "KHÔNG tự đặt biên chế, chỉ tiêu tuyển dụng hay đánh giá cá nhân."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Định nghĩa chỉ tiêu và mẫu báo cáo nhân sự (C8).",
+  "Quy định về dữ liệu nhân sự được tải lên (C5)."
+ ],
+ "output_structure": [
+  "Tiêu đề, kỳ báo cáo, ngày chốt số liệu, đơn vị lập.",
+  "Bảng chỉ tiêu theo đơn vị; bảng cơ cấu theo chức danh, trình độ, loại hợp đồng.",
+  "So sánh kỳ trước (nếu có file); bảng chênh lệch nhu cầu và hiện có (nếu có dữ liệu).",
+  "Nhật ký thiếu dữ liệu và mâu thuẫn; định nghĩa chỉ tiêu đã dùng."
+ ],
+ "output_structure_raw": "1. Tiêu đề, kỳ báo cáo, ngày chốt số liệu, đơn vị lập.\n\n2. Bảng chỉ tiêu theo đơn vị; bảng cơ cấu theo chức danh, trình độ, loại hợp đồng.\n\n3. So sánh kỳ trước (nếu có file); bảng chênh lệch nhu cầu và hiện có (nếu có dữ liệu).\n\n4. Nhật ký thiếu dữ liệu và mâu thuẫn; định nghĩa chỉ tiêu đã dùng.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-nhansu-bao-cao-thong-ke-nhan-su/references"
+}

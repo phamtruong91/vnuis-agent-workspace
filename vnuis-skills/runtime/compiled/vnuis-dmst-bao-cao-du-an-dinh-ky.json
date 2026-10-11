@@ -1,0 +1,192 @@
+{
+ "name": "vnuis-dmst-bao-cao-du-an-dinh-ky",
+ "title": "Báo cáo dự án định kỳ",
+ "description": "Dùng khi dự án của Viện đến kỳ báo cáo theo hợp đồng hoặc thỏa thuận (tháng, quý, giai đoạn) gửi khách hàng, đối tác, nhà tài trợ: tiến độ, sản phẩm bàn giao, chỉ số, vấn đề, kế hoạch tiếp theo.",
+ "group": "dmst",
+ "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+ "previous_name": "vnuis-bao-cao-du-an-dinh-ky",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Viện ĐMST&CGCN; chủ nhiệm dự án",
+ "when": "Khi dự án của Viện đến kỳ báo cáo (tháng/quý/giai đoạn) cho khách hàng, đối tác, cơ quan quản lý:\ntổng hợp tiến độ, sản phẩm bàn giao, chỉ số đánh giá, vấn đề tồn tại và kế hoạch tiếp theo.",
+ "inputs": [
+  {
+   "key": "ten_du_an",
+   "desc": "Tên + mã dự án, khách hàng/đối tác",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ky_bao_cao",
+   "desc": "Kỳ báo cáo (VD: Quý II/2026) và thời gian bao phủ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tien_do",
+   "desc": "% hoàn thành tổng thể và từng gói việc so với kế hoạch",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "deliverables",
+   "desc": "Sản phẩm đã bàn giao / đang thực hiện trong kỳ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kpi",
+   "desc": "Các chỉ số đánh giá cam kết và giá trị đạt được",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "van_de",
+   "desc": "Vấn đề tồn tại, nguyên nhân, giải pháp đang triển khai",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ke_hoach_tiep",
+   "desc": "Kế hoạch kỳ báo cáo tiếp theo",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Viện ĐMST&CGCN; chủ nhiệm dự án"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập và đối chiếu dữ liệu nguồn",
+   "lam_gi": "Thu thập tracker tiến độ điều phối dự án, vấn đề nhật ký, biên bản bàn giao phát sinh trong kỳ; đối chiếu % thực hiện từng gói việc với kế hoạch; ghi chênh lệch và nguyên nhân sơ bộ.",
+   "inputs": [
+    "ten_du_an",
+    "ky_bao_cao",
+    "tien_do",
+    "deliverables"
+   ],
+   "vai_tro": "Chủ nhiệm dự án · AI hỗ trợ: đối chiếu số liệu từ tracker điều phối dự án",
+   "luu_y": "số liệu lấy từ tracker điều phối dự án đã được chủ nhiệm xác nhận, không tự ước tính; nếu thiếu biên bản bàn giao thì ghi rõ \"chưa có biên bản\", không ghi \"đã bàn giao\".",
+   "ket_qua": "Bảng đối chiếu tiến độ thực tế/kế hoạch theo từng gói việc."
+  },
+  {
+   "n": 2,
+   "title": "Phân loại sản phẩm bàn giao",
+   "lam_gi": "Chia sản phẩm bàn giao thành 2 nhóm: (a) đã bàn giao — ghi ngày bàn giao, số biên bản, bên nhận; (b) đang thực hiện — ghi % tiến độ, ngày dự kiến hoàn thành. Kiểm tra tính đầy đủ, hợp lệ của biên bản.",
+   "inputs": [
+    "deliverables"
+   ],
+   "vai_tro": "Chủ nhiệm dự án · AI hỗ trợ: phân loại sản phẩm bàn giao và lập danh sách",
+   "luu_y": "chỉ ghi \"đã bàn giao\" khi có biên bản 2 bên ký; sản phẩm bàn giao muộn phải nêu lý do và ngày bàn giao thực tế.",
+   "ket_qua": "Danh sách sản phẩm bàn giao phân loại (đã bàn giao / đang thực hiện) kèm minh chứng."
+  },
+  {
+   "n": 3,
+   "title": "Đánh giá chỉ số đánh giá cam kết",
+   "lam_gi": "Lập bảng chỉ số đánh giá: chỉ tiêu cam kết (trong hợp đồng/thỏa thuận) so với giá trị thực đạt; tính % đạt được; với chỉ số chưa đạt: phân tích nguyên nhân và ghi rõ có ảnh hưởng đến cam kết hợp đồng không.",
+   "inputs": [
+    "kpi"
+   ],
+   "vai_tro": "Chủ nhiệm dự án · AI hỗ trợ: tính % đạt chỉ số đánh giá và lập bảng so sánh",
+   "luu_y": "không làm tròn số liệu có lợi cho mình; chỉ số đánh giá chưa đạt phải có giải pháp khắc phục và thời hạn cụ thể, không chỉ giải thích nguyên nhân.",
+   "ket_qua": "Bảng đánh giá chỉ số đánh giá (cam kết / thực đạt / % đạt / giải thích)."
+  },
+  {
+   "n": 4,
+   "title": "Tổng hợp vấn đề và giải pháp khắc phục",
+   "lam_gi": "Từ vấn đề nhật ký, chọn các vấn đề còn tồn tại ảnh hưởng đến dự án; mỗi vấn đề ghi: mô tả, nguyên nhân (khách quan/chủ quan), giải pháp đang triển khai, tiến độ khắc phục, người chịu trách nhiệm. Phân biệt vấn đề nội bộ (đơn vị tự xử lý) và vấn đề cần phía đối tác phối hợp.",
+   "inputs": [
+    "van_de"
+   ],
+   "vai_tro": "Chủ nhiệm dự án · AI hỗ trợ: tổng hợp vấn đề từ vấn đề nhật ký",
+   "luu_y": "nêu trung thực, không giấu vấn đề; không đổ lỗi cho đối tác bằng ngôn từ thiếu chuyên nghiệp; vấn đề đã đóng trong kỳ thì không đưa vào báo cáo.",
+   "ket_qua": "Bảng vấn đề tồn tại (mô tả, nguyên nhân, giải pháp, tiến độ khắc phục)."
+  },
+  {
+   "n": 5,
+   "title": "Lập kế hoạch kỳ báo cáo tiếp theo",
+   "lam_gi": "Liệt kê công việc chính kỳ tới, các mốc quan trọng, sản phẩm dự kiến bàn giao; nêu rõ đề nghị phối hợp từ phía khách hàng/đối tác (nội dung cần hỗ trợ, thời hạn cần phản hồi).",
+   "inputs": [
+    "ke_hoach_tiep"
+   ],
+   "vai_tro": "Chủ nhiệm dự án · AI hỗ trợ: soạn dự thảo kế hoạch kỳ tới",
+   "luu_y": "đề nghị phối hợp phải cụ thể (ai làm, làm gì, trước ngày nào); không đưa cam kết mới về phạm vi/tiến độ vượt thẩm quyền khi chưa được phê duyệt.",
+   "ket_qua": "Kế hoạch kỳ tới (việc chính, mốc quan trọng, đề nghị phối hợp)."
+  },
+  {
+   "n": 6,
+   "title": "Soạn báo cáo theo cấu trúc chuẩn",
+   "lam_gi": "Ghép kết quả các bước 1–5 vào khung báo cáo chuẩn; kiểm tra: số liệu nhất quán giữa các phần (tiến độ ↔ chỉ số đánh giá ↔ sản phẩm bàn giao), văn phong chuyên nghiệp, đầy đủ thông tin người lập/ngày lập.",
+   "inputs": [
+    "ten_du_an",
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Chủ nhiệm dự án soạn, Viện trưởng duyệt ở bước cuối · AI hỗ trợ: ghép khung báo cáo và kiểm tra chéo số liệu",
+   "luu_y": "kiểm tra chéo số liệu giữa các phần — không được mâu thuẫn (VD: tiến độ 41% nhưng chỉ số đánh giá đạt 90% phải giải thích được); rà chính tả, định dạng trước khi trình.",
+   "ket_qua": "Dự thảo báo cáo dự án định kỳ hoàn chỉnh (sẵn sàng trình duyệt)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu tiến độ, chỉ số đánh giá, sản phẩm bàn giao khớp với Input (tracker điều phối dự án, biên bản bàn giao) đã cho.",
+  "Không bịa đặt biên bản bàn giao, chỉ số đánh giá hay minh chứng không có thật; mục \"chưa có biên bản\" ghi đúng là chưa có.",
+  "Số liệu nhất quán giữa các phần (tiến độ ↔ chỉ số đánh giá ↔ sản phẩm bàn giao) hoặc đã giải thích được chênh lệch.",
+  "Vấn đề nêu trung thực, không giấu, không đổ lỗi cho đối tác bằng ngôn từ thiếu chuyên nghiệp.",
+  "chỉ số đánh giá chưa đạt có giải pháp khắc phục và thời hạn cụ thể, không chỉ giải thích nguyên nhân.",
+  "Đúng thể thức: có người lập, ngày lập, văn phong chuyên nghiệp, không lỗi chính tả, định dạng chuẩn.",
+  "Đã qua Human gate: chủ nhiệm xác nhận số liệu, viện trưởng duyệt trước khi gửi khách hàng/đối tác. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Chủ nhiệm dự án** xác nhận số liệu tiến độ, chỉ số đánh giá, vấn đề trước khi soạn báo cáo.",
+  "**Viện trưởng** duyệt nội dung báo cáo trước khi gửi cho khách hàng/đối tác."
+ ],
+ "guardrails": [
+  "KHÔNG tự động gửi báo cáo cho khách hàng/đối tác dưới mọi hình thức.",
+  "KHÔNG che giấu, làm nhẹ vấn đề/rủi ro trong báo cáo.",
+  "KHÔNG cam kết mốc tiến độ, phạm vi mới vượt thẩm quyền khi chưa được phê duyệt."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Báo cáo tiến độ dự án so với kế hoạch đã duyệt; vấn đề và rủi ro nêu thẳng, không làm mềm.",
+  "Dự án có đối tác nước ngoài: nêu phần việc, sản phẩm bàn giao của từng bên."
+ ],
+ "cho_xac_nhan": [
+  "Chu kỳ báo cáo dự án (C6).",
+  "Mẫu báo cáo (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề + thông tin dự án: tên, mã dự án, đối tác/khách hàng, đơn vị thực hiện, kỳ báo cáo (thời gian bao phủ).",
+  "Tiến độ tổng thể: % thực hiện so với kế hoạch, đánh giá chung (đúng tiến độ/chậm).",
+  "Sản phẩm bàn giao: đã bàn giao (ngày bàn giao, biên bản) / đang thực hiện (tiến độ, dự kiến xong).",
+  "chỉ số đánh giá: bảng chỉ tiêu cam kết so với thực đạt, giải thích chỉ số chưa đạt.",
+  "Vấn đề tồn tại: mô tả, nguyên nhân, giải pháp đang triển khai, tiến độ khắc phục.",
+  "Kế hoạch kỳ tiếp theo: việc chính, mốc quan trọng, đề nghị phối hợp từ phía khách hàng/đối tác (nếu có). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề + thông tin dự án: tên, mã dự án, đối tác/khách hàng, đơn vị thực hiện,\n   kỳ báo cáo (thời gian bao phủ).\n\n2. Tiến độ tổng thể: % thực hiện so với kế hoạch, đánh giá chung (đúng tiến độ/chậm).\n\n3. Sản phẩm bàn giao: đã bàn giao (ngày bàn giao, biên bản) / đang thực hiện (tiến độ,\n   dự kiến xong).\n\n4. chỉ số đánh giá: bảng chỉ tiêu cam kết so với thực đạt, giải thích chỉ số chưa đạt.\n\n5. Vấn đề tồn tại: mô tả, nguyên nhân, giải pháp đang triển khai, tiến độ khắc phục.\n\n6. Kế hoạch kỳ tiếp theo: việc chính, mốc quan trọng, đề nghị phối hợp từ phía\n   khách hàng/đối tác (nếu có).",
+ "human_gate_check": "Đã qua Human gate: chủ nhiệm xác nhận số liệu, viện trưởng duyệt trước khi gửi khách hàng/đối tác. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Viện ĐMST&CGCN. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dmst-bao-cao-du-an-dinh-ky/references"
+}

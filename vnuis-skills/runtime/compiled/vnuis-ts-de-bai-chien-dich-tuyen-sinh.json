@@ -1,0 +1,218 @@
+{
+ "name": "vnuis-ts-de-bai-chien-dich-tuyen-sinh",
+ "title": "Đề bài chiến dịch tuyển sinh",
+ "description": "Dùng trước mỗi đợt chiến dịch tuyển sinh (mở đợt, cao điểm, xét tuyển bổ sung) khi cần một bản yêu cầu thống nhất cho cả nhóm và trình lãnh đạo: mục tiêu, đối tượng, thông điệp, kênh, ngân sách, chỉ số.",
+ "group": "ts",
+ "group_label": "Tuyển sinh",
+ "previous_name": "vnuis-campaign-brief-tuyen-sinh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Trước mỗi đợt chiến dịch tuyển sinh (mở đợt, cao điểm, xét tuyển bổ sung...), khi cần một bản\nbản yêu cầu thống nhất để cả nhóm triển khai và trình lãnh đạo phê duyệt.",
+ "inputs": [
+  {
+   "key": "ten_chien_dich",
+   "desc": "Tên chiến dịch/đợt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Thời gian chạy chiến dịch",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_tieu",
+   "desc": "Mục tiêu cụ thể, đo được (thí sinh tiềm năng, hồ sơ, nhập học)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong",
+   "desc": "Chân dung đối tượng (học sinh lớp 12 khu vực nào, phụ huynh...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thong_diep",
+   "desc": "Thông điệp chính + thông điệp phụ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kenh",
+   "desc": "Kênh triển khai (paid + owned + earned)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngan_sach",
+   "desc": "Ngân sách dự kiến theo kênh",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kpi",
+   "desc": "chỉ số đánh giá theo kênh và tổng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Biểu mẫu tuyển sinh; nền tảng AI tư vấn (ai.vnuis.edu.vn); hotline và is@vnu.edu.vn. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định mục tiêu SMART và chốt chỉ tiêu",
+   "lam_gi": "chuyển `muc_tieu` thành mục tiêu SMART (cụ thể, đo được, khả thi, liên quan, có thời hạn), gắn với chỉ tiêu tuyển sinh của đợt; chốt con số cuối (VD: 3.000 hồ sơ đợt 1) và mốc thời gian đo.",
+   "inputs": [
+    "muc_tieu",
+    "thoi_gian"
+   ],
+   "vai_tro": "Trưởng Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "mục tiêu phải bám chỉ tiêu tuyển sinh đã được duyệt; tránh mục tiêu mơ hồ kiểu \"tăng nhận biết\" mà không đo được.",
+   "ket_qua": "Mục tiêu SMART đã chốt (con số + thời hạn đo)."
+  },
+  {
+   "n": 2,
+   "title": "Vẽ chân dung đối tượng",
+   "lam_gi": "từ `doi_tuong`, mô tả chi tiết từng nhóm: học sinh lớp 12 ở khu vực nào, dùng kênh nào hằng ngày, quan tâm điều gì khi chọn trường; phụ huynh: mối bận tâm (học phí, đầu ra, xa nhà).",
+   "inputs": [
+    "doi_tuong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "chân dung càng cụ thể thì chọn kênh và thông điệp càng trúng; tách riêng học sinh và phụ huynh vì mối quan tâm khác nhau.",
+   "ket_qua": "Bảng chân dung đối tượng (nhóm – đặc điểm – kênh hay dùng – mối quan tâm)."
+  },
+  {
+   "n": 3,
+   "title": "Chốt thông điệp chính và thông điệp phụ",
+   "lam_gi": "từ `thong_diep`, chốt 1 thông điệp chính (≤ 12 từ, dễ nhớ) + 2–3 thông điệp phụ; kiểm tra từng thông điệp có bằng chứng/số liệu trong đề án tuyển sinh không; rà soát theo brand voice trẻ trung, học thuật.",
+   "inputs": [
+    "thong_diep"
+   ],
+   "vai_tro": "Trưởng Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "không đưa thông điệp sai lệch so với đề án tuyển sinh đã ban hành; mỗi thông điệp phụ phải có số liệu chứng minh.",
+   "ket_qua": "Bộ thông điệp đã chốt (1 chính + 2–3 phụ, kèm bằng chứng)."
+  },
+  {
+   "n": 4,
+   "title": "Chọn kênh và phân bổ ngân sách",
+   "lam_gi": "từ `kenh`, liệt kê kênh paid/owned/earned; ưu tiên kênh có tỉ lệ chuyển đổi tốt từ các đợt trước; phân bổ `ngan_sach` theo từng kênh (số tiền cụ thể); ghi vai trò của từng kênh trong phễu.",
+   "inputs": [
+    "kenh",
+    "ngan_sach"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "tổng phân bổ phải khớp 100% ngân sách được duyệt; không cam kết ngân sách vượt thẩm quyền.",
+   "ket_qua": "Bảng kênh – ngân sách – vai trò (tổng khớp ngân sách duyệt)."
+  },
+  {
+   "n": 5,
+   "title": "Lập timeline và phân công",
+   "lam_gi": "chia 4 pha: chuẩn bị → chạy → cao điểm → tổng kết; gắn từng mốc vào `thoi_gian`; mỗi mốc ghi công việc, người phụ trách, sản phẩm bàn giao; đối chiếu timeline với lịch tuyển sinh chung của Bộ/trường.",
+   "inputs": [
+    "thoi_gian"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "mốc cao điểm phải trùng giai đoạn thí sinh quyết định (sau thi tốt nghiệp THPT); để dự phòng 5–7 ngày cho phê duyệt nội dung.",
+   "ket_qua": "Timeline chi tiết (mốc – công việc – phụ trách – bàn giao)."
+  },
+  {
+   "n": 6,
+   "title": "Thiết lập chỉ số đánh giá và bảng theo dõi",
+   "lam_gi": "từ `kpi`, chốt chỉ số đánh giá tổng và chỉ số đánh giá từng kênh; thiết kế bảng theo dõi hằng tuần (tuần – chỉ số đánh giá kế hoạch – thực tế – chênh lệch – hành động); quy định ngưỡng cảnh báo (VD: đạt < 70% kế hoạch tuần → họp rà soát).",
+   "inputs": [
+    "kpi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, lập bảng biểu, định dạng",
+   "luu_y": "chỉ số đánh giá phải đo được hằng tuần bằng dữ liệu thực (thí sinh tiềm năng, hồ sơ), không dùng chỉ số cảm tính.",
+   "ket_qua": "Bộ chỉ số đánh giá đã chốt + mẫu bảng theo dõi hằng tuần."
+  },
+  {
+   "n": 7,
+   "title": "Kiểm tra tính tương xứng và hoàn thiện bản yêu cầu",
+   "lam_gi": "kiểm tra tam giác mục tiêu – ngân sách – chỉ số đánh giá có tương xứng không (ngân sách có đủ để đạt chỉ số đánh giá không); rà soát toàn bộ bản yêu cầu: thông điệp bám đề án, timeline khớp lịch chung; tổng hợp thành bản yêu cầu hoàn chỉnh.",
+   "inputs": [
+    "ten_chien_dich"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "nếu ngân sách không đủ đạt chỉ số đánh giá thì hoặc giảm mục tiêu hoặc xin bổ sung — không để bản yêu cầu \"thiếu tiền mà đòi kết quả\".",
+   "ket_qua": "Campaign bản yêu cầu hoàn chỉnh (sẵn sàng trình duyệt)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Campaign bản yêu cầu hoàn chỉnh: mục tiêu, đối tượng, thông điệp, kênh, ngân sách,…",
+  "Có đầy đủ sản phẩm: Bảng theo dõi chỉ số đánh giá hằng tuần (mẫu)",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Mục tiêu phải bám chỉ tiêu tuyển sinh đã được duyệt",
+  "Chân dung càng cụ thể thì chọn kênh và thông điệp càng trúng > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Trưởng phòng duyệt bản yêu cầu trước khi trình.",
+  "Ban Giám hiệu phê duyệt ngân sách chiến dịch.",
+  "Không chạy chiến dịch khi chưa được phê duyệt."
+ ],
+ "guardrails": [
+  "Không tự chạy quảng cáo, tự chi ngân sách.",
+  "Không cam kết ngân sách vượt thẩm quyền.",
+  "Không đưa thông điệp sai lệch so với đề án tuyển sinh đã ban hành.",
+  "Không dùng hình ảnh, KOLs không rõ bản quyền/thỏa thuận."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Bản yêu cầu ghi rõ nhóm chương trình đích: ĐHQGHN cấp bằng, liên kết quốc tế (website nêu 130 chỉ tiêu xét tuyển trực tiếp), song bằng, tích hợp, sau đại học; và phương thức xét tuyển nhắm tới.",
+  "Thông điệp về học bổng, việc làm, xếp hạng chỉ dùng khi có thông báo hiện hành hoặc số liệu có nguồn do Phòng xác nhận; không lấy số tự công bố trên website làm cam kết.",
+  "Kênh sẵn có theo website: biểu mẫu tư vấn, nền tảng AI tư vấn, hotline, email. Kênh khác (mạng xã hội, quảng cáo) do Phòng cung cấp, skill không giả định.",
+  "chỉ số đánh giá và ngân sách do Phòng đặt; chưa có thì để trống."
+ ],
+ "cho_xac_nhan": [
+  "Ngân sách, kênh, chỉ số đánh giá chiến dịch (C8).",
+  "Nguồn số liệu tuyển sinh chính thức (C4)."
+ ],
+ "output_structure": [
+  "Tiêu đề (tên chiến dịch + thời gian chạy).",
+  "Mục tiêu SMART (con số + thời hạn đo).",
+  "Đối tượng (bảng chân dung: nhóm – đặc điểm – kênh hay dùng – mối quan tâm).",
+  "Thông điệp (1 chính + 2–3 phụ, kèm bằng chứng/số liệu).",
+  "Kênh và ngân sách (bảng: kênh – số tiền – vai trò trong phễu).",
+  "Timeline (4 pha: chuẩn bị – chạy – cao điểm – tổng kết; mốc – công việc – phụ trách – bàn giao).",
+  "chỉ số đánh giá (chỉ số đánh giá tổng, chỉ số đánh giá từng kênh, tần suất báo cáo). - Phụ lục: Mẫu bảng theo dõi chỉ số đánh giá hằng tuần."
+ ],
+ "output_structure_raw": "1. Tiêu đề (tên chiến dịch + thời gian chạy).\n\n2. Mục tiêu SMART (con số + thời hạn đo).\n\n3. Đối tượng (bảng chân dung: nhóm – đặc điểm – kênh hay dùng – mối quan tâm).\n\n4. Thông điệp (1 chính + 2–3 phụ, kèm bằng chứng/số liệu).\n\n5. Kênh và ngân sách (bảng: kênh – số tiền – vai trò trong phễu).\n\n6. Timeline (4 pha: chuẩn bị – chạy – cao điểm – tổng kết; mốc – công việc – phụ trách – bàn giao).\n\n7. chỉ số đánh giá (chỉ số đánh giá tổng, chỉ số đánh giá từng kênh, tần suất báo cáo).\n- Phụ lục: Mẫu bảng theo dõi chỉ số đánh giá hằng tuần.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ts-de-bai-chien-dich-tuyen-sinh/references"
+}

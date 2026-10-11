@@ -1,0 +1,177 @@
+{
+ "name": "vnuis-thuvien-bao-cao-cong-tac",
+ "title": "Báo cáo công tác thư viện",
+ "description": "Dùng khi kết thúc năm học và thư viện cần báo cáo tổng kết: vốn tài liệu, phục vụ bạn đọc, số hóa, cơ sở dữ liệu điện tử; cũng dùng làm minh chứng học liệu cho kiểm định.",
+ "group": "thuvien",
+ "group_label": "Thông tin thư viện",
+ "previous_name": "vnuis-bao-cao-cong-tac-thu-vien",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (thư viện)",
+ "when": "Khi kết thúc năm học / năm công tác, thư viện cần tổng hợp hoạt động phục vụ\nbạn đọc và phát triển vốn tài liệu thành báo cáo.",
+ "inputs": [
+  {
+   "key": "nam_bao_cao",
+   "desc": "Năm học / năm công tác",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_lieu_von_tai_lieu",
+   "desc": "Tổng đầu sách, bản sách, CSDL, tài liệu số hóa (tăng thêm trong năm)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_lieu_phuc_vu",
+   "desc": "Số bạn đọc, lượt mượn/trả, lượt truy cập CSDL, lượt vào thư viện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoat_dong_noi_bat",
+   "desc": "Các hoạt động, sự kiện trong năm (tập huấn, triển lãm sách...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Giám đốc thư viện",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (thư viện)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Hệ thống thư viện; kho tài nguyên số. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập và kiểm tra số liệu đầu vào",
+   "lam_gi": "trích xuất từ hệ thống quản lý thư viện (ILS): vốn tài liệu phân theo loại hình (sách, giáo trình, luận văn/luận án, tạp chí), bạn đọc phân theo đối tượng (SV/GV/CB), lượt mượn–trả, lượt truy cập từng CSDL điện tử, lượt sử dụng không gian học tập. Đối chiếu: đầu sách đầu năm + bổ sung trong năm − thanh lý = đầu sách cuối năm; kiểm tra lượt truy cập CSDL không vượt giới hạn của gói license đã mua.",
+   "inputs": [
+    "so_lieu_von_tai_lieu",
+    "so_lieu_phuc_vu",
+    "nam_bao_cao"
+   ],
+   "vai_tro": "Cán bộ Thư viện · AI hỗ trợ: trích xuất và đối chiếu số liệu từ hệ thống ILS, thủ thư xác minh nguồn số liệu",
+   "luu_y": "phân biệt rõ \"đầu sách\" và \"bản sách\" — không cộng gộp hai đơn vị khác nhau; mức tăng/giảm phải tính so với cùng kỳ năm trước; số liệu truy cập CSDL lấy từ báo cáo thống kê của nhà cung cấp, không ước lượng thủ công.",
+   "ket_qua": "bảng số liệu gốc đã đối chiếu, có cột so sánh với năm trước và ghi chú nguồn số liệu."
+  },
+  {
+   "n": 2,
+   "title": "Soạn phần Vốn tài liệu",
+   "lam_gi": "viết mục I của báo cáo — tổng vốn tài liệu hiện có, số bổ sung trong năm theo từng hình thức (mua mới, tặng/biếu, số hóa), tỷ lệ tăng trưởng; đối chiếu với danh mục học phần để khẳng định mức độ đáp ứng tài liệu học tập.",
+   "inputs": [
+    "so_lieu_von_tai_lieu"
+   ],
+   "vai_tro": "Cán bộ Thư viện · AI hỗ trợ: viết dự thảo mục I “Vốn tài liệu” từ số liệu đã đối chiếu",
+   "luu_y": "nêu cả số tuyệt đối và tỷ lệ % tăng; tài liệu thanh lý phải được trừ khỏi tổng trước khi tính tăng trưởng; đây là minh chứng kiểm định nên số liệu phải khớp với sổ sách kho.",
+   "ket_qua": "dự thảo mục I \"Vốn tài liệu\" (văn bản + số liệu)."
+  },
+  {
+   "n": 3,
+   "title": "Soạn phần Phục vụ bạn đọc",
+   "lam_gi": "viết mục II — số bạn đọc đăng ký theo đối tượng, lượt mượn/trả tài liệu in, lượt truy cập CSDL điện tử, lượt sử dụng không gian học tập; so sánh với năm trước để nêu xu hướng (VD: chuyển dịch từ mượn in sang truy cập số).",
+   "inputs": [
+    "so_lieu_phuc_vu"
+   ],
+   "vai_tro": "Cán bộ Thư viện · AI hỗ trợ: viết dự thảo mục II “Phục vụ bạn đọc” từ số liệu đã đối chiếu",
+   "luu_y": "lượt \"truy cập\" và \"tải về\" là hai chỉ số khác nhau — ghi đúng tên chỉ số nhà cung cấp CSDL cung cấp; không suy diễn nguyên nhân tăng/giảm khi chưa có khảo sát (chỉ nêu số liệu và xu hướng).",
+   "ket_qua": "dự thảo mục II \"Phục vụ bạn đọc\" (văn bản + số liệu)."
+  },
+  {
+   "n": 4,
+   "title": "Soạn phần Số hóa, CSDL và Hỗ trợ đào tạo – NCKH",
+   "lam_gi": "viết mục III (kết quả số hóa tài liệu, CSDL mới bổ sung trong năm) và mục IV (các lớp tập huấn kỹ năng tra cứu, hỗ trợ luận văn/luận án, sự kiện văn hóa đọc); mỗi hoạt động ghi rõ thời gian, quy mô, đơn vị phối hợp.",
+   "inputs": [
+    "so_lieu_von_tai_lieu",
+    "hoat_dong_noi_bat"
+   ],
+   "vai_tro": "Cán bộ Thư viện · AI hỗ trợ: soạn dự thảo mục III và IV, thư viện bổ sung minh chứng hoạt động",
+   "luu_y": "số hóa luận văn/luận án phải tuân thủ quy định về quyền tác giả và mức độ công khai; hoạt động không có minh chứng (ảnh, danh sách, quyết định) thì không đưa vào báo cáo kiểm định.",
+   "ket_qua": "dự thảo mục III \"Số hóa và cơ sở dữ liệu\" và mục IV \"Hỗ trợ đào tạo – NCKH\"."
+  },
+  {
+   "n": 5,
+   "title": "Đánh giá chung và phương hướng",
+   "lam_gi": "viết mục V — tổng hợp ưu điểm (dựa trên xu hướng tăng ở các mục I–IV), chỉ ra tồn tại cụ thể có số liệu (VD: kho sách đạt 90% công suất, CSDL ít khai thác), đề xuất phương hướng năm tới gắn với từng tồn tại.",
+   "inputs": [
+    "nam_bao_cao"
+   ],
+   "vai_tro": "Giám đốc Thư viện · AI hỗ trợ: soạn dự thảo mục V",
+   "luu_y": "mỗi tồn tại phải đi kèm nguyên nhân và giải pháp đề xuất — không nêu tồn tại chung chung kiểu \"còn hạn chế\"; phương hướng phải đo được (có chỉ tiêu, thời hạn).",
+   "ket_qua": "dự thảo mục V \"Đánh giá chung và phương hướng\"."
+  },
+  {
+   "n": 6,
+   "title": "Hoàn thiện, kiểm tra và trình ký",
+   "lam_gi": "gộp 5 mục thành văn bản hành chính đúng thể thức (số văn bản, ngày tháng, chữ ký, nơi nhận); kiểm tra chéo: số liệu trong các mục không mâu thuẫn nhau, tổng các thành phần khớp với tổng đã nêu; trình Giám đốc thư viện ký duyệt; lưu hồ sơ theo mã minh chứng kiểm định của trường.",
+   "inputs": [
+    "nguoi_ky",
+    "nam_bao_cao"
+   ],
+   "vai_tro": "Giám đốc Thư viện · AI hỗ trợ: kiểm tra chéo số liệu và thể thức văn bản",
+   "luu_y": "kiểm tra lần cuối lỗi chính tả tên CSDL, tên đơn vị; số văn bản lấy theo sổ văn bản đi của thư viện, không tự đặt số tùy ý.",
+   "ket_qua": "báo cáo công tác thư viện hoàn chỉnh, đã ký duyệt và lưu hồ sơ."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu vốn tài liệu, bạn đọc, lượt mượn/truy cập khớp với Input và số liệu hệ thống ILS; phân biệt đúng \"đầu sách\" và \"bản sách\".",
+  "Không bịa đặt số liệu truy cập CSDL, hoạt động hay minh chứng không có thật; hoạt động không có minh chứng không đưa vào báo cáo kiểm định.",
+  "Công thức đối chiếu đúng: đầu sách đầu năm + bổ sung − thanh lý = đầu sách cuối năm; mức tăng/giảm tính so với cùng kỳ.",
+  "Chỉ số \"truy cập\" và \"tải về\" ghi đúng tên chỉ số nhà cung cấp CSDL cung cấp; không suy diễn nguyên nhân khi chưa có khảo sát.",
+  "Số hóa luận văn/luận án tuân thủ quy định về quyền tác giả và mức độ công khai.",
+  "Tồn tại gắn nguyên nhân và giải pháp đề xuất; phương hướng có chỉ tiêu và thời hạn đo được.",
+  "Số liệu các mục không mâu thuẫn nhau; số văn bản lấy theo sổ văn bản đi của thư viện.",
+  "Đã qua Human gate: giám đốc thư viện ký duyệt; lưu hồ sơ theo mã minh chứng kiểm định của trường. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thư viện thuộc Phòng KHCN&HTPT theo phiếu CES; số liệu lượt mượn, truy cập lấy từ hệ thống thư viện hoặc repository (C4, C5).",
+  "Học liệu số tách tài liệu mua và tài liệu mở."
+ ],
+ "cho_xac_nhan": [
+  "Hệ thống thư viện đang dùng (C5).",
+  "Mẫu báo cáo (C8)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – tiêu ngữ (căn giữa, phía phải).",
+  "Tên đơn vị ban hành + số văn bản (phía trái).",
+  "Địa danh, ngày/tháng/năm ban hành (phía phải).",
+  "Tên loại văn bản \"BÁO CÁO\" + trích yếu nội dung (căn giữa).",
+  "Kính gửi: đơn vị nhận báo cáo.",
+  "Đoạn mở đầu: căn cứ lập báo cáo, phạm vi năm báo cáo, nguồn số liệu.",
+  "Nội dung chính theo 5 mục: I. Vốn tài liệu; II. Phục vụ bạn đọc; III. Số hóa và cơ sở dữ liệu; IV. Hỗ trợ đào tạo – NCKH; V. Đánh giá chung và phương hướng (ưu điểm, tồn tại, phương hướng năm tới).",
+  "Chữ ký: chức danh + họ tên người ký .",
+  "Nơi nhận + nơi lưu hồ sơ. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – tiêu ngữ (căn giữa, phía phải).\n\n2. Tên đơn vị ban hành + số văn bản (phía trái).\n\n3. Địa danh, ngày/tháng/năm ban hành (phía phải).\n\n4. Tên loại văn bản \"BÁO CÁO\" + trích yếu nội dung (căn giữa).\n\n5. Kính gửi: đơn vị nhận báo cáo.\n\n6. Đoạn mở đầu: căn cứ lập báo cáo, phạm vi năm báo cáo, nguồn số liệu.\n\n7. Nội dung chính theo 5 mục: I. Vốn tài liệu; II. Phục vụ bạn đọc;\n   III. Số hóa và cơ sở dữ liệu; IV. Hỗ trợ đào tạo – NCKH;\n   V. Đánh giá chung và phương hướng (ưu điểm, tồn tại, phương hướng năm tới).\n\n8. Chữ ký: chức danh + họ tên người ký .\n\n9. Nơi nhận + nơi lưu hồ sơ.",
+ "human_gate_check": "Đã qua Human gate: giám đốc thư viện ký duyệt; lưu hồ sơ theo mã minh chứng kiểm định của trường. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (thư viện). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-thuvien-bao-cao-cong-tac/references"
+}

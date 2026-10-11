@@ -1,0 +1,183 @@
+{
+ "name": "vnuis-ctsv-bao-cao-cong-tac-sinh-vien-nam",
+ "title": "Soạn báo cáo công tác sinh viên năm học",
+ "description": "Dùng khi Phòng Đào tạo (mảng công tác sinh viên) lập báo cáo tổng kết cả năm học: học bổng, rèn luyện, ký túc xá, phong trào, việc làm, y tế – bảo hiểm, để trình Ban Giám hiệu.",
+ "group": "ctsv",
+ "group_label": "Công tác sinh viên",
+ "previous_name": "vnuis-bao-cao-ctsv-nam",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (công tác sinh viên)",
+ "when": "Khi Phòng Đào tạo (công tác sinh viên) cần soạn báo cáo tổng kết năm học: tổng hợp kết quả thực hiện các nhiệm vụ công tác sinh viên trong năm, đánh giá ưu điểm/khuyết điểm, đề xuất phương hướng năm học tiếp theo để trình Ban Giám hiệu và báo cáo cấp trên.",
+ "inputs": [
+  {
+   "key": "nam_hoc",
+   "desc": "Năm học báo cáo (ví dụ: 2025–2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tong_sv",
+   "desc": "Tổng số sinh viên toàn trường trong năm học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_lieu_mang",
+   "desc": "Số liệu các mảng: học bổng, phân loại rèn luyện, ký túc xá, hoạt động phong trào, hỗ trợ việc làm, y tế – bảo hiểm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "su_kien_noi_bat",
+   "desc": "Các sự kiện, thành tích nổi bật trong năm",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "han_che_ton_tai",
+   "desc": "Các hạn chế, tồn tại cần nêu trong báo cáo",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "phuong_huong_nam_sau",
+   "desc": "Định hướng, nhiệm vụ trọng tâm năm học tiếp theo",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Người ký báo cáo (thường là Trưởng Phòng Đào tạo (công tác sinh viên))",
+   "required": false,
+   "note": "Không (mặc định: Trưởng Phòng Đào tạo (công tác sinh viên))"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (công tác sinh viên)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Cổng sinh viên; cổng việc làm; tra cứu văn bằng. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập số liệu các mảng công tác sinh viên",
+   "lam_gi": "thu thập số liệu 7 mảng trong năm học: (1) tuyển sinh đầu vào liên quan (số SV nhập học, tân sinh viên); (2) học bổng, trợ cấp xã hội, miễn giảm học phí; (3) đánh giá kết quả rèn luyện (6 mức: Xuất sắc/Giỏi/Khá/Trung bình/Yếu/Kém); (4) ký túc xá (số SV nội trú, công suất, công tác quản lý); (5) hoạt động phong trào, văn hóa – văn nghệ – TDTT, tình nguyện; (6) hỗ trợ việc làm, tư vấn hướng nghiệp; (7) y tế học đường, BHYT, an ninh trật tự, phòng chống tệ nạn xã hội.",
+   "inputs": [
+    "nam_hoc",
+    "tong_sv",
+    "so_lieu_mang"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: chuẩn bị hồ sơ trình ký, nhắc lịch và theo dõi tiến độ",
+   "luu_y": "ghi rõ nguồn số liệu từng mảng (phòng Đào tạo, Phòng TC&QT (kế hoạch – tài chính), ban quản lý KTX...); số liệu phải chốt tại thời điểm cuối năm học.",
+   "ket_qua": "bộ số liệu thô theo 7 mảng (kèm nguồn từng mảng)."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu, thống nhất số liệu",
+   "lam_gi": "đối chiếu tính nhất quán giữa các nguồn (tổng số SV, số suất học bổng, số SV nội trú...); loại bỏ trùng lặp; thống nhất con số cuối cùng đưa vào báo cáo.",
+   "inputs": [],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: đối chiếu tính toán",
+   "luu_y": "chênh lệch giữa các nguồn phải làm rõ và chốt một con số thống nhất; chưa thống nhất thì quay lại thu thập bổ sung.",
+   "ket_qua": "bảng số liệu các mảng đã đối chiếu, thống nhất."
+  },
+  {
+   "n": 3,
+   "title": "Soạn báo cáo theo bố cục 4 phần",
+   "lam_gi": "soạn theo bố cục chuẩn: Phần I – Đặc điểm tình hình (tổng số SV, cơ cấu khóa/ngành/ hệ đào tạo); Phần II – Kết quả thực hiện từng mảng (số liệu + nhận xét); Phần III – Đánh giá chung (ưu điểm, hạn chế và nguyên nhân); Phần IV – Phương hướng, nhiệm vụ năm học tiếp theo.",
+   "inputs": [
+    "nam_hoc",
+    "tong_sv",
+    "su_kien_noi_bat"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo báo cáo theo bố cục 4 phần",
+   "luu_y": "mỗi mảng ở Phần II trình bày số liệu trước, nhận xét sau; số liệu phải khớp tuyệt đối với bảng đã thống nhất ở bước 2.",
+   "ket_qua": "dự thảo báo cáo đủ 4 phần."
+  },
+  {
+   "n": 4,
+   "title": "Viết đánh giá và phương hướng",
+   "lam_gi": "viết ưu điểm (nêu cụ thể kèm số liệu minh chứng, sự kiện nổi bật); viết hạn chế thẳng thắn, phân tích nguyên nhân khách quan/chủ quan; xây dựng phương hướng năm sau với chỉ tiêu cụ thể, đo lường được.",
+   "inputs": [
+    "su_kien_noi_bat",
+    "han_che_ton_tai",
+    "phuong_huong_nam_sau"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "hạn chế không né tránh, nguyên nhân phân rõ chủ quan/khách quan; phương hướng phải gắn chỉ tiêu số (tỷ lệ %, số lượng).",
+   "ket_qua": "Phần III–IV hoàn chỉnh (đánh giá chung + phương hướng năm học tiếp theo)."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra, trình duyệt và xuất bản",
+   "lam_gi": "kiểm tra số liệu, chính tả, thể thức văn bản hành chính; trình lãnh đạo phòng duyệt trước khi trình ký (Human gate); xuất báo cáo hoàn chỉnh file theo định dạng đầu ra của skill, sẵn sàng trình ký/xuất file Word.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: rà soát thể thức văn bản",
+   "luu_y": "lãnh đạo phòng duyệt chưa đạt thì quay lại chỉnh sửa; chỉ trình ký khi đã được duyệt.",
+   "ket_qua": "báo cáo tổng kết năm học hoàn chỉnh, sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Phần II đầy đủ 7 mảng: học bổng/chính sách; đánh giá rèn luyện; ký túc xá; hoạt động phong trào; hỗ trợ việc làm; y tế – bảo hiểm – an ninh (mỗi mảng số liệu trước, nhận xét sau).",
+  "Năm học, tổng số sinh viên, số liệu các mảng khớp với Input đã cho.",
+  "Không bịa đặt số liệu, thành tích, sự kiện nổi bật.",
+  "Đúng thể thức văn bản hành chính: số/ký hiệu, địa danh, ngày tháng năm, chữ ký người ký.",
+  "Căn cứ pháp lý (Thông tư 10/2016/TT-BGDĐT, quy chế công tác sinh viên của nhà trường) còn hiệu lực.",
+  "Đã qua Human gate: lãnh đạo phòng duyệt trước khi trình ký; chưa duyệt thì chưa trình ký.",
+  "Hạn chế nêu thẳng thắn, phân rõ nguyên nhân chủ quan/khách quan; phương hướng có chỉ tiêu số cụ thể, đo lường được; số liệu khớp tuyệt đối với bảng đã đối chiếu, thống nhất. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Phiếu CES xếp công tác sinh viên thuộc Phòng Đào tạo; người phụ trách chưa rõ (C7).",
+  "Số liệu tách sinh viên quốc tế và sinh viên chương trình liên kết nếu dữ liệu có phân loại."
+ ],
+ "cho_xac_nhan": [
+  "Cấu trúc báo cáo CTSV năm của Trường (C8).",
+  "Nguồn dữ liệu rèn luyện, học bổng, kỷ luật (C4)."
+ ],
+ "output_structure": [
+  "Tiêu đề hành chính: Quốc hiệu – Tiêu ngữ; tên đơn vị; số, ký hiệu; địa danh, ngày tháng năm.",
+  "Tên báo cáo: \"BÁO CÁO\" + \"Tổng kết công tác sinh viên năm học ...\" (`nam_hoc`) + Kính gửi Ban Giám hiệu.",
+  "I. Đặc điểm tình hình (tổng số SV, cơ cấu khóa/ngành/hệ đào tạo, biến động so với năm trước).",
+  "II. Kết quả thực hiện (từng mảng: số liệu + nhận xét — học bổng/chính sách; rèn luyện; ký túc xá; phong trào; hỗ trợ việc làm; y tế – bảo hiểm – an ninh).",
+  "III. Đánh giá chung (1. Ưu điểm kèm số liệu minh chứng; 2. Hạn chế và nguyên nhân khách quan/chủ quan).",
+  "IV. Phương hướng, nhiệm vụ năm học tiếp theo (từng nhiệm vụ kèm chỉ tiêu cụ thể).",
+  "Đoạn kết (kính trình Ban Giám hiệu xem xét) + Nơi nhận + chữ ký (`nguoi_ky`). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề hành chính: Quốc hiệu – Tiêu ngữ; tên đơn vị; số, ký hiệu; địa danh, ngày tháng\n   năm.\n\n2. Tên báo cáo: \"BÁO CÁO\" + \"Tổng kết công tác sinh viên năm học ...\" (`nam_hoc`) + Kính gửi\n   Ban Giám hiệu.\n\n3. I. Đặc điểm tình hình (tổng số SV, cơ cấu khóa/ngành/hệ đào tạo, biến động so với năm trước).\n\n4. II. Kết quả thực hiện (từng mảng: số liệu + nhận xét — học bổng/chính sách; rèn luyện;\n   ký túc xá; phong trào; hỗ trợ việc làm; y tế – bảo hiểm – an ninh).\n\n5. III. Đánh giá chung (1. Ưu điểm kèm số liệu minh chứng; 2. Hạn chế và nguyên nhân khách\n   quan/chủ quan).\n\n6. IV. Phương hướng, nhiệm vụ năm học tiếp theo (từng nhiệm vụ kèm chỉ tiêu cụ thể).\n\n7. Đoạn kết (kính trình Ban Giám hiệu xem xét) + Nơi nhận + chữ ký (`nguoi_ky`).",
+ "human_gate_check": "Đã qua Human gate: lãnh đạo phòng duyệt trước khi trình ký; chưa duyệt thì chưa trình ký.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (công tác sinh viên). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ctsv-bao-cao-cong-tac-sinh-vien-nam/references"
+}

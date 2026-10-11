@@ -1,0 +1,4 @@
+interface:
+  display_name: Viện ĐMST · Sàng lọc sáng kiến ĐMST VNU-IS
+  short_description: Sàng lọc sáng kiến ĐMST cho VNU-IS
+  default_prompt: 'Hãy dùng $vnuis-dmst-sang-loc-sang-kien để hỗ trợ công việc: Sàng lọc và xếp ưu tiên sáng kiến đổi mới sáng tạo của Trường Quốc tế – ĐHQGHN; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .xlsx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

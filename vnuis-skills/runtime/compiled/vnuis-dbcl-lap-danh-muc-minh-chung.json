@@ -1,0 +1,165 @@
+{
+ "name": "vnuis-dbcl-lap-danh-muc-minh-chung",
+ "title": "Lập danh mục minh chứng kiểm định",
+ "description": "Dùng khi chuẩn bị minh chứng cho tự đánh giá và đón đoàn đánh giá ngoài: liệt kê minh chứng theo từng tiêu chí, mã hóa, phân công thu thập.",
+ "group": "dbcl",
+ "group_label": "Đảm bảo chất lượng, kiểm định",
+ "previous_name": "vnuis-checklist-minh-chung-kiem-dinh",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (đảm bảo chất lượng)",
+ "when": "Khi cần rà soát, thu thập và quản lý hệ thống minh chứng phục vụ tự đánh giá /\nkiểm định chất lượng CSGD hoặc CTĐT.",
+ "inputs": [
+  {
+   "key": "doi_tuong",
+   "desc": "Kiểm định CSGD / CTĐT (ghi rõ tên)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bo_tieu_chuan",
+   "desc": "Danh sách tiêu chuẩn – tiêu chí áp dụng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_tac_ma_hoa",
+   "desc": "Quy tắc mã minh chứng (VD: H<tieu-chuan>.<tieu-chi>.<stt>)",
+   "required": false,
+   "note": "Không (mặc định: H + số tiêu chuẩn.tiêu chí.stt)"
+  },
+  {
+   "key": "don_vi_dau_moi",
+   "desc": "Đơn vị đầu mối từng nhóm minh chứng",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (đảm bảo chất lượng)"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026: Yêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n- Thông tư 04/2025/TT-BGDĐT, hiệu lực 04/04/2025: Tách kiểm định chương trình khỏi kiểm định cơ sở. Yêu cầu phiên bản tiêu chuẩn, ngày đăng ký và bộ minh chứng; trích tiêu chí từ phụ lục hiện hành. Không mặc định khung 11 tiêu chuẩn của 04/2016 là khung hiện hành; đối chiếu chuyển tiếp trước khi tiếp tục hồ sơ cũ.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Liệt kê tiêu chí",
+   "lam_gi": "Bóc tách `bo_tieu_chuan` thành danh sách tiêu chí chi tiết theo đúng thứ tự (tiêu chuẩn → tiêu chí), đánh số thứ tự đầy đủ; ghi kèm yêu cầu/yếu tố cần đánh giá của từng tiêu chí theo hướng dẫn của bộ tiêu chuẩn.",
+   "inputs": [
+    "bo_tieu_chuan",
+    "doi_tuong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: bóc tách bộ tiêu chuẩn thành danh sách tiêu chí đầy đủ theo đúng thứ tự",
+   "luu_y": "không gộp/bỏ tiêu chí — mỗi tiêu chí đều phải có minh chứng riêng; kiểm tra đang dùng đúng phiên bản bộ tiêu chuẩn hiện hành.",
+   "ket_qua": "Danh sách tiêu chí chi tiết đầy đủ của bộ tiêu chuẩn."
+  },
+  {
+   "n": 2,
+   "title": "Xác định minh chứng yêu cầu cho mỗi tiêu chí",
+   "lam_gi": "Căn cứ hướng dẫn của bộ tiêu chuẩn, xác định cho từng tiêu chí các loại minh chứng cần có (văn bản, quyết định, số liệu, biên bản, hình ảnh...), mỗi tiêu chí tối thiểu 02–03 minh chứng; ghi tên minh chứng yêu cầu cụ thể (không ghi chung chung \"các văn bản liên quan\").",
+   "inputs": [
+    "bo_tieu_chuan"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: đề xuất danh sách minh chứng sơ bộ cho từng tiêu chí",
+   "luu_y": "bẫy thường gặp — liệt kê minh chứng không gắn với yếu tố cụ thể của tiêu chí, dẫn đến thu thập thừa/thiếu; ưu tiên minh chứng trong chu kỳ đánh giá.",
+   "ket_qua": "Bảng minh chứng yêu cầu cho từng tiêu chí (chưa mã hóa)."
+  },
+  {
+   "n": 3,
+   "title": "Mã hóa minh chứng",
+   "lam_gi": "Áp dụng `quy_tac_ma_hoa` thống nhất toàn trường (mặc định: H + số tiêu chuẩn.tiêu chí.số thứ tự, VD: H1.2.01); gán mã duy nhất cho từng minh chứng, kiểm tra không trùng mã, không sót minh chứng chưa có mã.",
+   "inputs": [
+    "quy_tac_ma_hoa",
+    "bo_tieu_chuan"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: gán mã minh chứng theo quy tắc và kiểm tra không trùng mã",
+   "luu_y": "mã minh chứng phải nhất quán giữa danh mục kiểm, báo cáo tự đánh giá và hồ sơ lưu — sai một ký tự mã là đoàn đánh giá ngoài không truy xuất được; khi bổ sung minh chứng mới, đánh số thứ tự tiếp theo, không chèn số làm lệch thứ tự cũ.",
+   "ket_qua": "Bảng minh chứng đã mã hóa, mỗi mã là duy nhất."
+  },
+  {
+   "n": 4,
+   "title": "Phân công thu thập",
+   "lam_gi": "Gán từng minh chứng cho 01 đơn vị đầu mối (`don_vi_dau_moi`) chịu trách nhiệm cung cấp; ấn định thời hạn nộp cụ thể cho từng nhóm minh chứng; gửi văn bản đề nghị các đơn vị cung cấp minh chứng theo mã.",
+   "inputs": [
+    "don_vi_dau_moi"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: soạn văn bản phân công, lập bảng phân công theo mã minh chứng",
+   "luu_y": "thời hạn phải trừ hao thời gian kiểm tra, hiệu đính trước khi đóng gói hồ sơ; giao 01 đầu mối duy nhất cho mỗi minh chứng để tránh đùn đẩy.",
+   "ket_qua": "Bảng phân công thu thập (mã MC, đơn vị đầu mối, thời hạn)."
+  },
+  {
+   "n": 5,
+   "title": "Rà soát tình trạng",
+   "lam_gi": "Thu minh chứng từ các đơn vị, kiểm tra từng minh chứng có thật, còn hiệu lực, đúng nội dung yêu cầu; đánh dấu tình trạng từng dòng: Đầy đủ / Cần bổ sung / Thiếu; tổng hợp danh sách minh chứng còn thiếu, gửi văn bản đôn đốc các đơn vị nợ minh chứng.",
+   "inputs": [
+    "doi_tuong",
+    "don_vi_dau_moi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: tổng hợp bảng tình trạng minh chứng sơ bộ, cảnh báo các đơn vị nợ minh chứng",
+   "luu_y": "minh chứng \"có nhưng không đúng nội dung tiêu chí\" vẫn tính là Cần bổ sung; đôn đốc bằng văn bản có thời hạn cụ thể, không đôn đốc miệng.",
+   "ket_qua": "Bảng danh mục kiểm đã cập nhật tình trạng + danh sách minh chứng còn thiếu cần đôn đốc."
+  },
+  {
+   "n": 6,
+   "title": "Đóng gói hồ sơ",
+   "lam_gi": "Sắp xếp toàn bộ minh chứng theo thứ tự mã; lập danh mục minh chứng kèm theo báo cáo tự đánh giá; chuẩn bị 02 bộ hồ sơ: bản cứng (đóng tập theo tiêu chuẩn) và bản số (scan/file, đặt tên file theo mã MC) phục vụ đoàn đánh giá ngoài.",
+   "inputs": [
+    "doi_tuong",
+    "bo_tieu_chuan"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: đối chiếu danh mục minh chứng với hồ sơ thực tế, kiểm tra tên file bản số trùng mã MC",
+   "luu_y": "tên file bản số phải trùng mã MC để tra cứu nhanh; kiểm tra lần cuối không thiếu trang, không nhầm mã trước khi niêm phong hồ sơ.",
+   "ket_qua": "Hồ sơ minh chứng đã đóng gói (bản cứng + bản số) + danh mục minh chứng."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Mỗi tiêu chí của bộ tiêu chuẩn đều có minh chứng riêng, không gộp/bỏ tiêu chí; ưu tiên minh chứng trong chu kỳ đánh giá.",
+  "Không bịa đặt minh chứng, mã minh chứng, tình trạng thu thập.",
+  "Mã minh chứng duy nhất, đúng quy tắc mã hóa, nhất quán giữa danh mục kiểm, báo cáo tự đánh giá và hồ sơ lưu.",
+  "Đúng phiên bản bộ tiêu chuẩn hiện hành.",
+  "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+  "Mỗi minh chứng có 01 đơn vị đầu mối duy nhất và thời hạn nộp cụ thể; đã đôn đốc bằng văn bản (có thời hạn) các đơn vị nợ minh chứng.",
+  "Bản số đặt tên file trùng mã minh chứng; đã kiểm tra lần cuối không thiếu trang, không nhầm mã trước khi niêm phong hồ sơ."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Danh mục kiểm lập theo từng tiêu chí; đơn vị nào phụ trách minh chứng nào ghi theo vai trò.",
+  "Minh chứng song ngữ cần ghi rõ bản gốc và bản dịch."
+ ],
+ "cho_xac_nhan": [
+  "Bộ tiêu chuẩn kiểm định (C2).",
+  "Kho minh chứng đang lưu ở đâu (C5)."
+ ],
+ "output_structure": [
+  "Tiêu đề danh mục (DANH MỤC MINH CHỨNG KIỂM ĐỊNH) + đối tượng kiểm định + quy tắc mã hóa áp dụng;",
+  "Bảng danh mục kiểm theo từng tiêu chuẩn, mỗi dòng gồm: Mã MC – Tiêu chí – Tên minh chứng yêu cầu – Đơn vị đầu mối – Thời hạn – Tình trạng (Đầy đủ / Cần bổ sung / Thiếu);",
+  "Báo cáo rà soát (tính đến ngày lập): tổng số minh chứng yêu cầu, số đã đầy đủ (tỷ lệ %), số cần bổ sung, số còn thiếu; liệt kê các đơn vị còn nợ minh chứng nhiều nhất;",
+  "Hướng dẫn mã hóa minh chứng: quy tắc mã hóa, ví dụ minh họa, nguyên tắc mã duy nhất và nhất quán với báo cáo tự đánh giá."
+ ],
+ "output_structure_raw": "1. Tiêu đề danh mục (DANH MỤC MINH CHỨNG KIỂM ĐỊNH) + đối tượng kiểm định + quy tắc mã hóa áp dụng;\n\n2. Bảng danh mục kiểm theo từng tiêu chuẩn, mỗi dòng gồm: Mã MC – Tiêu chí – Tên minh chứng yêu cầu – Đơn vị đầu mối – Thời hạn – Tình trạng (Đầy đủ / Cần bổ sung / Thiếu);\n\n3. Báo cáo rà soát (tính đến ngày lập): tổng số minh chứng yêu cầu, số đã đầy đủ (tỷ lệ %), số cần bổ sung, số còn thiếu; liệt kê các đơn vị còn nợ minh chứng nhiều nhất;\n\n4. Hướng dẫn mã hóa minh chứng: quy tắc mã hóa, ví dụ minh họa, nguyên tắc mã duy nhất và nhất quán với báo cáo tự đánh giá.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (đảm bảo chất lượng). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026\n\nNguồn: https://congbao.cdnchinhphu.vn/180507251028987904/2026/4/24/469367-1777014846_v1_1777018480_signed.pdf\n\nYêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n\n## Thông tư 04/2025/TT-BGDĐT, hiệu lực 04/04/2025\n\nNguồn: https://chinhphu.vn/?classid=1&docid=213005&pageid=27160\n\nTách kiểm định chương trình khỏi kiểm định cơ sở. Yêu cầu phiên bản tiêu chuẩn, ngày đăng ký và bộ minh chứng; trích tiêu chí từ phụ lục hiện hành. Không mặc định khung 11 tiêu chuẩn của 04/2016 là khung hiện hành; đối chiếu chuyển tiếp trước khi tiếp tục hồ sơ cũ.\n",
+ "outputs_dir": "skills/vnuis-dbcl-lap-danh-muc-minh-chung/references"
+}

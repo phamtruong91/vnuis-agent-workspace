@@ -1,0 +1,4 @@
+interface:
+  display_name: Văn phòng · Soạn tờ trình – VNU-IS
+  short_description: Hỗ trợ soạn tờ trình cho VNU-IS (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-vp-soan-to-trinh để hỗ trợ công việc: Soạn tờ trình; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

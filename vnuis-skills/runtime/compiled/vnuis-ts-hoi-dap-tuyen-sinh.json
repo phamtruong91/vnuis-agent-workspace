@@ -1,0 +1,166 @@
+{
+ "name": "vnuis-ts-hoi-dap-tuyen-sinh",
+ "title": "Hỏi đáp tuyển sinh",
+ "description": "Dùng khi cần bộ hỏi đáp tuyển sinh cho website, chatbot hoặc tư vấn viên về phương thức, chỉ tiêu, học phí, học bổng, hồ sơ; mỗi câu trả lời trích nguồn và năm áp dụng.",
+ "group": "ts",
+ "group_label": "Tuyển sinh",
+ "previous_name": "vnuis-faq-tuyen-sinh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi cần bộ câu hỏi thường gặp về tuyển sinh: phương thức xét tuyển, chỉ tiêu, học phí,\nhọc bổng, hồ sơ, thời gian... cho website, chatbot tư vấn và đội ngũ tư vấn viên.",
+ "inputs": [
+  {
+   "key": "nam_tuyen_sinh",
+   "desc": "Năm áp dụng (VD: 2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguon",
+   "desc": "Đề án/quy chế/thông báo tuyển sinh của năm (trích dẫn cụ thể)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nhom_cau_hoi",
+   "desc": "Các nhóm: phương thức, chỉ tiêu, học phí, học bổng, hồ sơ, thời gian, liên hệ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cau_hoi_thuc_te",
+   "desc": "Câu hỏi thí sinh hay hỏi (từ tư vấn viên/chatbot)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Biểu mẫu tuyển sinh; nền tảng AI tư vấn (ai.vnuis.edu.vn); hotline và is@vnu.edu.vn. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập và phân loại câu hỏi theo nhóm",
+   "lam_gi": "gom câu hỏi từ `cau_hoi_thuc_te` (nhật ký chatbot, hotline, fanpage, ghi nhận của tư vấn viên); bổ sung câu hỏi chuẩn cho mỗi nhóm trong `nhom_cau_hoi` (phương thức, chỉ tiêu, học phí, học bổng, hồ sơ, thời gian, liên hệ); loại câu trùng ý, gộp câu hỏi tương tự.",
+   "inputs": [
+    "nhom_cau_hoi",
+    "cau_hoi_thuc_te"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "ưu tiên câu hỏi thực tế thí sinh hay hỏi; mỗi nhóm tối thiểu 3–5 câu để phủ đủ nội dung.",
+   "ket_qua": "Danh sách câu hỏi đã phân nhóm (đã loại trùng)."
+  },
+  {
+   "n": 2,
+   "title": "Tra cứu và trích xuất nội dung từ văn bản nguồn",
+   "lam_gi": "với từng câu hỏi, tra trong `nguon` (đề án/quy chế/thông báo tuyển sinh) tìm điều/mục quy định; trích nguyên văn đoạn liên quan; đánh dấu câu hỏi nằm ngoài phạm vi văn bản nguồn.",
+   "inputs": [
+    "nguon"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "chỉ dùng văn bản của đúng `nam_tuyen_sinh` — không dùng quy định năm cũ; câu hỏi ngoài phạm vi văn bản được chuyển sang nhóm \"hướng dẫn liên hệ\", tuyệt đối không suy đoán.",
+   "ket_qua": "Bảng ánh xạ câu hỏi → điều/mục văn bản (kèm nguyên văn trích dẫn) + danh sách câu hỏi ngoài phạm vi."
+  },
+  {
+   "n": 3,
+   "title": "Soạn câu trả lời chuẩn có trích nguồn",
+   "lam_gi": "viết câu trả lời 2–4 câu, ngôn ngữ dễ hiểu với học sinh/phụ huynh; cuối mỗi câu trả lời ghi nguồn theo mẫu: (Nguồn: [tên văn bản], mục X — áp dụng năm YYYY); với câu hỏi ngoài phạm vi: viết mẫu hướng dẫn liên hệ (bộ phận, số điện thoại).",
+   "inputs": [
+    "nam_tuyen_sinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "không trả lời chung chung kiểu \"liên hệ để biết thêm\" khi văn bản đã quy định rõ; số liệu (chỉ tiêu, học phí) phải chép đúng từng chữ số.",
+   "ket_qua": "Dự thảo hỏi đáp (câu hỏi → câu trả lời → nguồn + năm áp dụng)."
+  },
+  {
+   "n": 4,
+   "title": "Phân loại câu hỏi theo chu kỳ cập nhật",
+   "lam_gi": "đánh dấu từng câu hỏi: \"cập nhật hằng năm\" (chỉ tiêu, học phí, thời gian, hồ sơ) vs \"ổn định\" (quy trình chung, khái niệm); lập danh sách rà soát hằng năm kèm thời điểm rà soát (ngay sau khi có đề án tuyển sinh mới).",
+   "inputs": [
+    "nam_tuyen_sinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, lập bảng biểu, định dạng",
+   "luu_y": "lỗi phổ biến nhất là dùng hỏi đáp năm cũ cho năm mới — danh sách rà soát này là rào chắn bắt buộc.",
+   "ket_qua": "Bộ hỏi đáp có gắn nhãn chu kỳ cập nhật + danh sách rà soát hằng năm."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra đối chiếu và hoàn thiện",
+   "lam_gi": "đọc lại từng câu trả lời đối chiếu với văn bản nguồn (khớp 100%); kiểm tra năm áp dụng đã ghi đủ ở mọi câu; kiểm tra định dạng phù hợp kênh đăng tải (website/chatbot).",
+   "inputs": [
+    "nguon"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, chuẩn bị bản phát hành",
+   "luu_y": "người kiểm tra chéo nên khác người soạn để bắt lỗi tốt hơn; đặc biệt soát các mốc thời gian trong câu trả lời.",
+   "ket_qua": "Bộ hỏi đáp hoàn chỉnh + danh sách rà soát hằng năm (sẵn sàng trình duyệt)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Bộ hỏi đáp theo nhóm: câu hỏi → câu trả lời → nguồn trích dẫn + năm áp dụng",
+  "Có đầy đủ sản phẩm: Danh sách câu hỏi cần rà soát lại mỗi năm",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Ưu tiên câu hỏi thực tế thí sinh hay hỏi",
+  "Chỉ dùng văn bản của đúng `nam_tuyen_sinh` — không dùng quy định năm cũ > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Tư vấn viên trưởng rà soát tính đúng đắn của câu trả lời.",
+  "Trưởng phòng duyệt bộ hỏi đáp trước khi đăng tải.",
+  "Khi quy chế/đề án thay đổi, đơn vị nghiệp vụ (Phòng Đào tạo) xác nhận lại nội dung."
+ ],
+ "guardrails": [
+  "Không trả lời ngoài phạm vi văn bản nguồn; câu hỏi chưa có quy định thì hướng dẫn liên hệ thay vì suy đoán.",
+  "Mọi câu trả lời phải ghi rõ năm áp dụng; không dùng hỏi đáp năm cũ cho năm mới.",
+  "Không quyết định trúng tuyển thay hội đồng tuyển sinh.",
+  "Không tự đăng tải; không tự cập nhật khi chưa có văn bản mới."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Mỗi câu trả lời gắn nguồn (thông báo, đề án tuyển sinh) và ngày hiệu lực. Website hiện không nêu học phí và điểm sàn tiếng Anh: các câu hỏi đó ghi \"chưa có thông tin xác nhận\", không trả lời bằng số ước chừng.",
+  "Nhóm câu hỏi theo kiểu chương trình; thêm nhóm dành cho phụ huynh và học sinh quốc tế; tiếng Việt và tiếng Anh.",
+  "Đã có nền tảng AI tư vấn trên website: hỏi đáp này là nguồn đã duyệt cho nền tảng đó, không để hai nguồn mâu thuẫn; thay đổi hỏi đáp phải báo cho người quản trị nền tảng."
+ ],
+ "cho_xac_nhan": [
+  "Bộ câu hỏi cũ và người duyệt nội dung (C6).",
+  "Cách nền tảng AI tư vấn hiện lấy dữ liệu (C5)."
+ ],
+ "output_structure": [
+  "Tiêu đề bộ hỏi đáp (tên trường + năm tuyển sinh áp dụng).",
+  "Các nhóm câu hỏi theo đúng thứ tự `nhom_cau_hoi`; trong mỗi nhóm, mỗi mục gồm: a. Câu hỏi (Q). b. Câu trả lời (A): ngắn gọn 2–4 câu, ngôn ngữ dễ hiểu với học sinh/phụ huynh. c. Dòng nguồn: (Nguồn: [tên văn bản], [điều/mục] — áp dụng năm YYYY).",
+  "Phụ lục: danh sách câu hỏi cần rà soát lại mỗi năm (kèm thời điểm rà soát)."
+ ],
+ "output_structure_raw": "1. Tiêu đề bộ hỏi đáp (tên trường + năm tuyển sinh áp dụng).\n\n2. Các nhóm câu hỏi theo đúng thứ tự `nhom_cau_hoi`; trong mỗi nhóm, mỗi mục gồm:\n   a. Câu hỏi (Q).\n   b. Câu trả lời (A): ngắn gọn 2–4 câu, ngôn ngữ dễ hiểu với học sinh/phụ huynh.\n   c. Dòng nguồn: (Nguồn: [tên văn bản], [điều/mục] — áp dụng năm YYYY).\n\n3. Phụ lục: danh sách câu hỏi cần rà soát lại mỗi năm (kèm thời điểm rà soát).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ts-hoi-dap-tuyen-sinh/references"
+}

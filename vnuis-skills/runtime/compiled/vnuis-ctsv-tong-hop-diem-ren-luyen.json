@@ -1,0 +1,207 @@
+{
+ "name": "vnuis-ctsv-tong-hop-diem-ren-luyen",
+ "title": "Tổng hợp điểm rèn luyện toàn trường theo học kỳ",
+ "description": "Dùng khi các khoa đã chấm xong điểm rèn luyện học kỳ và cần gộp toàn trường: bảng theo khoa (số sinh viên từng mức xếp loại, tỷ lệ %), kèm nhận xét, kiến nghị gửi Ban Giám hiệu.",
+ "group": "ctsv",
+ "group_label": "Công tác sinh viên",
+ "previous_name": "vnuis-tong-hop-diem-ren-luyen",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (công tác sinh viên)",
+ "when": "Sau khi các khoa hoàn thành đánh giá kết quả rèn luyện sinh viên của học kỳ, khi Phòng Công tác\nsinh viên cần tổng hợp toàn trường: lập bảng thống kê theo từng khoa (số sinh viên ở mỗi mức xếp\nloại và tỷ lệ %), tính số liệu chung toàn trường, viết nhận xét – đánh giá – kiến nghị để báo cáo\nBan Giám hiệu và làm căn cứ xét học bổng, thi đua, khen thưởng.",
+ "inputs": [
+  {
+   "key": "hoc_ky",
+   "desc": "Học kỳ tổng hợp (ví dụ: Học kỳ 1)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nam_hoc",
+   "desc": "Năm học tổng hợp (ví dụ: 2026–2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "du_lieu_khoa",
+   "desc": "Kết quả từng khoa: tên khoa, tổng số SV được đánh giá, số SV ở mỗi mức xếp loại (Xuất sắc, Tốt, Khá, Trung bình, Yếu, Kém)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ky_truoc",
+   "desc": "Số liệu tổng hợp của học kỳ trước (để so sánh biến động)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "don_vi_bao_cao",
+   "desc": "Đơn vị lập báo cáo (mặc định: Phòng Đào tạo (công tác sinh viên))",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Trưởng Phòng Đào tạo (công tác sinh viên) (thừa ủy quyền) / Phó Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (công tác sinh viên)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Cổng sinh viên; cổng việc làm; tra cứu văn bằng. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập bảng tổng hợp của các khoa",
+   "lam_gi": "tiếp nhận bảng tổng hợp điểm rèn luyện của từng khoa cho đúng học kỳ, năm học; đối chiếu danh sách khoa đã gửi/chưa gửi; kiểm tra mỗi bảng có chữ ký xác nhận của Trưởng khoa.",
+   "inputs": [
+    "du_lieu_khoa",
+    "hoc_ky",
+    "nam_hoc"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: rà soát tính đầy đủ các bảng khoa",
+   "luu_y": "chỉ nhận bảng đúng kỳ tổng hợp; loại trừ sinh viên bảo lưu, thôi học không thuộc diện đánh giá.",
+   "ket_qua": "tập hợp bảng tổng hợp từng khoa đã tiếp nhận + danh sách khoa còn thiếu/ chưa đạt yêu cầu cần gửi lại."
+  },
+  {
+   "n": 2,
+   "title": "Kiểm tra nhất quán số liệu từng khoa",
+   "lam_gi": "với mỗi khoa, cộng số sinh viên ở 6 mức xếp loại (Xuất sắc, Tốt, Khá, Trung bình, Yếu, Kém) rồi đối chiếu với tổng số sinh viên được đánh giá của khoa; ghi nhận mọi chênh lệch.",
+   "inputs": [
+    "du_lieu_khoa"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: cộng và đối chiếu số liệu từng khoa, phát hiện chênh lệch",
+   "luu_y": "chênh lệch khác 0 là lỗi số liệu, phải yêu cầu khoa gửi lại — không tự ý điều chỉnh số liệu của khoa.",
+   "ket_qua": "bảng đối chiếu kiểm tra nhất quán (khoa đạt / khoa cần gửi lại, kèm nội dung lỗi cụ thể)."
+  },
+  {
+   "n": 3,
+   "title": "Lập bảng tổng hợp theo khoa",
+   "lam_gi": "dựng bảng với các cột: STT | Khoa | Tổng số SV | Xuất sắc (số lượng, %) | Tốt (số lượng, %) | Khá (số lượng, %) | Trung bình (số lượng, %) | Yếu (số lượng, %) | Kém (số lượng, %); tính tỷ lệ % từng mức trong phạm vi từng khoa.",
+   "inputs": [
+    "du_lieu_khoa"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: lập bảng tổng hợp theo khoa, tính tỷ lệ % từng mức",
+   "luu_y": "tỷ lệ % tính trong từng khoa, làm tròn 1 chữ số thập phân.",
+   "ket_qua": "bảng tổng hợp theo khoa (số lượng và tỷ lệ % từng mức xếp loại)."
+  },
+  {
+   "n": 4,
+   "title": "Tính dòng tổng toàn trường",
+   "lam_gi": "cộng dồn số sinh viên từng mức xếp loại của tất cả các khoa; tính tỷ lệ % từng mức trên tổng số sinh viên toàn trường; kiểm tra tổng các tỷ lệ xấp xỉ 100%.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: cộng dồn toàn trường, kiểm tra tổng tỷ lệ xấp xỉ 100%",
+   "luu_y": "tổng số SV toàn trường phải bằng tổng cộng dồn các khoa; tỷ lệ làm tròn 1 chữ số thập phân.",
+   "ket_qua": "dòng tổng toàn trường (số lượng và tỷ lệ % từng mức), khớp với bảng tổng hợp."
+  },
+  {
+   "n": 5,
+   "title": "So sánh với học kỳ trước",
+   "lam_gi": "tính chênh lệch tỷ lệ từng mức xếp loại giữa kỳ này và kỳ trước; xác định mức tăng/giảm đáng chú ý (biến động từ 2 điểm % trở lên).",
+   "inputs": [
+    "ky_truoc"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: tính chênh lệch tỷ lệ từng mức so với kỳ trước",
+   "luu_y": "nếu không có dữ liệu kỳ trước thì bỏ qua bước này và ghi rõ trong báo cáo; so sánh trên cùng thang mức xếp loại.",
+   "ket_qua": "bảng so sánh biến động tỷ lệ từng mức (chênh lệch điểm %, nêu mức tăng/ giảm đáng chú ý)."
+  },
+  {
+   "n": 6,
+   "title": "Viết nhận xét – đánh giá",
+   "lam_gi": "viết nhận xét chung (tỷ lệ Khá trở lên, diễn biến so với kỳ trước); nêu điểm sáng (khoa có tỷ lệ Xuất sắc/Tốt cao nhất, mức cải thiện tốt nhất); nêu tồn tại (khoa có tỷ lệ Yếu/Kém cao, nguyên nhân theo báo cáo của khoa); ghi trường hợp đặc biệt (sinh viên bị hạ xếp loại do kỷ luật, nếu có).",
+   "inputs": [
+    "du_lieu_khoa"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo nhận xét từ số liệu",
+   "luu_y": "mọi nhận xét phải có căn cứ từ số liệu; không suy diễn nguyên nhân ngoài báo cáo của khoa.",
+   "ket_qua": "dự thảo phần nhận xét – đánh giá (kết quả chung, điểm sáng, tồn tại, trường hợp đặc biệt)."
+  },
+  {
+   "n": 7,
+   "title": "Đề xuất kiến nghị",
+   "lam_gi": "đề xuất biện pháp nâng cao chất lượng rèn luyện (tăng cường hoạt động Đoàn – Hội, công tác cố vấn học tập, tuyên truyền nội quy...), ghi rõ thời hạn và đơn vị thực hiện cho từng kiến nghị.",
+   "inputs": [],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: gợi ý biện pháp",
+   "luu_y": "kiến nghị phải khả thi, gắn với đơn vị chịu trách nhiệm và mốc thời gian cụ thể.",
+   "ket_qua": "dự thảo phần kiến nghị (biện pháp, thời hạn, đơn vị thực hiện)."
+  },
+  {
+   "n": 8,
+   "title": "Kiểm tra và hoàn thiện báo cáo",
+   "lam_gi": "kiểm tra số liệu cộng dồn, tỷ lệ %, tính căn cứ của nhận xét, thể thức văn bản hành chính và chữ ký; lắp ráp đầy đủ thành báo cáo hoàn chỉnh file theo định dạng đầu ra của skill.",
+   "inputs": [
+    "don_vi_bao_cao",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: kiểm tra chéo số liệu toàn văn",
+   "luu_y": "kiểm tra chéo lần cuối trước khi trình ký; thực hiện đối chiếu nội bộ, không xuất kèm danh mục kiểm số liệu.",
+   "ket_qua": "báo cáo tổng hợp điểm rèn luyện hoàn chỉnh; phần kiểm tra giữ nội bộ số liệu, sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Tổng các mức xếp loại của mỗi khoa bằng tổng số SV được đánh giá của khoa; dòng tổng toàn trường bằng tổng cộng dồn các khoa; tổng các tỷ lệ % xấp xỉ 100%.",
+  "Tỷ lệ % tính trong phạm vi từng khoa, làm tròn 1 chữ số thập phân.",
+  "Số liệu trong output khớp Input; sinh viên bảo lưu, thôi học không đưa vào bảng tổng hợp.",
+  "Không bịa đặt số liệu; nhận xét phải có căn cứ từ số liệu, không suy diễn nguyên nhân ngoài báo cáo của khoa.",
+  "So sánh với kỳ trước có số liệu đối chiếu cụ thể, hoặc ghi rõ khi không có dữ liệu kỳ trước.",
+  "Kiến nghị khả thi, gắn đơn vị chịu trách nhiệm và mốc thời gian cụ thể.",
+  "Đã qua Human gate: số liệu khoa có chữ ký xác nhận của Trưởng khoa; Trưởng Phòng Đào tạo (công tác sinh viên) (thừa ủy quyền) hoặc Phó Hiệu trưởng ký báo cáo. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [
+  "Chỉ tổng hợp sinh viên thuộc diện đánh giá trong học kỳ; sinh viên bảo lưu, thôi học không đưa vào bảng tổng hợp."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Tổng hợp từ file lớp hoặc khoa gửi; số trường hợp thiếu phiếu được liệt kê riêng, không tự điền.",
+  "Báo cáo ra ngoài Phòng dùng mã sinh viên, không họ tên (C5)."
+ ],
+ "cho_xac_nhan": [
+  "Định dạng file điểm từ các lớp (C8).",
+  "Hạn chốt điểm mỗi học kỳ (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề văn bản hành chính: Quốc hiệu – Tiêu ngữ; tên đơn vị lập (`don_vi_bao_cao`); số, ký hiệu; địa danh, ngày tháng năm ban hành.",
+  "Tên báo cáo: \"BÁO CÁO TỔNG HỢP ĐIỂM RÈN LUYỆN SINH VIÊN\" + học kỳ, năm học (`hoc_ky`, `nam_hoc`).",
+  "Kính gửi Ban Giám hiệu + đoạn mở đầu nêu căn cứ (kết quả đánh giá rèn luyện do các khoa gửi về).",
+  "Phần I. Bảng tổng hợp theo khoa: cột STT | Khoa | Tổng số SV | từng mức xếp loại (số lượng, %) | dòng tổng toàn trường ở cuối bảng.",
+  "Phần II. Nhận xét, đánh giá: kết quả chung; điểm sáng; tồn tại và nguyên nhân; trường hợp đặc biệt.",
+  "Phần III. Kiến nghị: từng kiến nghị kèm thời hạn và đơn vị thực hiện.",
+  "Đoạn kết + Nơi nhận + chữ ký (`nguoi_ky`). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề văn bản hành chính: Quốc hiệu – Tiêu ngữ; tên đơn vị lập (`don_vi_bao_cao`); số,\n   ký hiệu; địa danh, ngày tháng năm ban hành.\n\n2. Tên báo cáo: \"BÁO CÁO TỔNG HỢP ĐIỂM RÈN LUYỆN SINH VIÊN\" + học kỳ, năm học (`hoc_ky`,\n   `nam_hoc`).\n\n3. Kính gửi Ban Giám hiệu + đoạn mở đầu nêu căn cứ (kết quả đánh giá rèn luyện do các khoa\n   gửi về).\n\n4. Phần I. Bảng tổng hợp theo khoa: cột STT | Khoa | Tổng số SV | từng mức xếp loại (số\n   lượng, %) | dòng tổng toàn trường ở cuối bảng.\n\n5. Phần II. Nhận xét, đánh giá: kết quả chung; điểm sáng; tồn tại và nguyên nhân; trường hợp\n   đặc biệt.\n\n6. Phần III. Kiến nghị: từng kiến nghị kèm thời hạn và đơn vị thực hiện.\n\n7. Đoạn kết + Nơi nhận + chữ ký (`nguoi_ky`).",
+ "human_gate_check": "Đã qua Human gate: số liệu khoa có chữ ký xác nhận của Trưởng khoa; Trưởng Phòng Đào tạo (công tác sinh viên) (thừa ủy quyền) hoặc Phó Hiệu trưởng ký báo cáo. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (công tác sinh viên). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ctsv-tong-hop-diem-ren-luyen/references"
+}

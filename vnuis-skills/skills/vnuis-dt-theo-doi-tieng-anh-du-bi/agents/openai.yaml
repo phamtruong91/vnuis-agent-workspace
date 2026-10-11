@@ -1,0 +1,4 @@
+interface:
+  display_name: Đào tạo · Theo dõi tiếng Anh dự bị VNU-IS
+  short_description: Theo dõi tiếng Anh dự bị VNU-IS
+  default_prompt: 'Hãy dùng $vnuis-dt-theo-doi-tieng-anh-du-bi để hỗ trợ công việc: Theo dõi lớp tiếng Anh dự bị của Trường Quốc tế – ĐHQGHN; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .xlsx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

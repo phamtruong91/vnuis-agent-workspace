@@ -1,0 +1,4 @@
+interface:
+  display_name: KHCN · Thông báo đăng ký đề tài NCKH các cấp – VNU-IS
+  short_description: Hỗ trợ thông báo đăng ký đề tài NCKH các cấp (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-khcn-soan-thong-bao-dang-ky-de-tai để hỗ trợ công việc: Thông báo đăng ký đề tài NCKH các cấp; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

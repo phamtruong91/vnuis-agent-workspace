@@ -1,0 +1,212 @@
+{
+ "name": "vnuis-khaothi-lap-bien-ban-phong-thi",
+ "title": "Biên bản phòng thi & bàn giao bài thi",
+ "description": "Dùng khi kết thúc mỗi ca thi và cán bộ coi thi cần lập biên bản phòng thi (số thí sinh, diễn biến, vi phạm nếu có) và biên bản bàn giao bài thi cho thư ký hội đồng.",
+ "group": "khaothi",
+ "group_label": "Khảo thí",
+ "previous_name": "vnuis-bien-ban-phong-thi",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (khảo thí)",
+ "when": "Khi kết thúc mỗi ca thi: cán bộ coi thi lập biên bản ghi nhận tình hình phòng thi\nvà bàn giao bài thi, giấy thi cho thư ký hội đồng.",
+ "inputs": [
+  {
+   "key": "ky_thi",
+   "desc": "Tên kỳ thi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "mon_thi",
+   "desc": "Mã + tên học phần thi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngay_thi",
+   "desc": "Ngày, ca thi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "phong_thi",
+   "desc": "Số phòng thi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_bo_coi_thi",
+   "desc": "Họ tên 02 cán bộ coi thi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tong_so_thi_sinh",
+   "desc": "Tổng số thí sinh theo danh sách",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_thi_sinh_du_thi",
+   "desc": "Số thí sinh thực tế dự thi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_thi_sinh_vang",
+   "desc": "Số thí sinh vắng (kèm họ tên, MSSV nếu có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "vi_pham",
+   "desc": "Các trường hợp vi phạm quy chế (nếu có): họ tên, MSSV, hình thức xử lý",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "so_bai_thi_ban_giao",
+   "desc": "Số bài thi / túi bài thi bàn giao",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (khảo thí)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Lập biên bản ngay tại phòng thi",
+   "lam_gi": "Ngay sau khi thu bài xong tại phòng thi, cán bộ coi thi lập biên bản trên mẫu chuẩn của trường: ghi đầy đủ kỳ thi, mã + tên học phần, ngày thi, ca thi, số phòng thi, họ tên 02 cán bộ coi thi; ghi số liệu thí sinh theo 03 con số: tổng số theo danh sách (`tong_so_thi_sinh`), số thực tế dự thi (`so_thi_sinh_du_thi`), số vắng (đối chiếu với danh sách điểm danh).",
+   "inputs": [
+    "ky_thi",
+    "mon_thi",
+    "ngay_thi",
+    "phong_thi",
+    "can_bo_coi_thi",
+    "tong_so_thi_sinh",
+    "so_thi_sinh_du_thi"
+   ],
+   "vai_tro": "Cán bộ coi thi · AI hỗ trợ: điền sẵn thông tin ca thi vào mẫu biên bản trước giờ thi để đối chiếu tại chỗ",
+   "luu_y": "lập biên bản ngay tại phòng thi, không để về sau mới ghi lại từ trí nhớ; 03 con số thí sinh phải cộng khớp nhau (dự thi + vắng = tổng số).",
+   "ket_qua": "Dự thảo biên bản phòng thi với đầy đủ thông tin ca thi và số liệu thí sinh."
+  },
+  {
+   "n": 2,
+   "title": "Ghi nhận vắng thi",
+   "lam_gi": "Đối chiếu danh sách điểm danh, liệt kê vào biên bản từng thí sinh vắng: họ tên, MSSV; phân loại vắng có phép (có đơn xin phép/giấy tờ kèm theo) hay vắng không phép; đính kèm giấy tờ (nếu có) vào hồ sơ phòng thi.",
+   "inputs": [
+    "so_thi_sinh_vang"
+   ],
+   "vai_tro": "Cán bộ coi thi · AI hỗ trợ: đối chiếu chéo số liệu vắng thi với danh sách điểm danh, cảnh báo sai lệch",
+   "luu_y": "vắng có phép/không phép ảnh hưởng đến quyền dự thi lại của sinh viên — phải ghi đúng, đủ giấy tờ; không ghi tên thí sinh vắng theo trí nhớ mà phải đối chiếu danh sách điểm danh có chữ ký.",
+   "ket_qua": "Danh sách thí sinh vắng thi đã phân loại, kèm trong biên bản phòng thi."
+  },
+  {
+   "n": 3,
+   "title": "Ghi nhận vi phạm",
+   "lam_gi": "Nếu có vi phạm quy chế, mô tả cụ thể hành vi vi phạm, tang vật thu giữ, thời điểm phát hiện; áp dụng hình thức xử lý theo quy chế (khiển trách/cảnh cáo/đình chỉ thi); thí sinh vi phạm và 02 cán bộ coi thi cùng ký xác nhận vào biên bản (nếu thí sinh từ chối ký, ghi rõ \"thí sinh từ chối ký\" vào biên bản).",
+   "inputs": [
+    "vi_pham"
+   ],
+   "vai_tro": "Cán bộ coi thi (lập biên bản), thí sinh vi phạm (ký xác nhận) · AI hỗ trợ: chuẩn bị mẫu biên bản vi phạm và tra cứu quy chế xử lý đúng thẩm quyền",
+   "luu_y": "mức xử lý phải đúng thẩm quyền — cán bộ coi thi chỉ được khiển trách, cảnh cáo và đình chỉ phải báo trưởng ban chỉ đạo; biên bản vi phạm lập riêng, đính kèm biên bản phòng thi.",
+   "ket_qua": "Biên bản ghi nhận vi phạm (nếu có) đã có chữ ký xác nhận."
+  },
+  {
+   "n": 4,
+   "title": "Kiểm đếm bài thi",
+   "lam_gi": "Đếm số bài thi thực tế thu được, đối chiếu với số thí sinh dự thi (số bài = số thí sinh dự thi); kiểm tra mỗi bài thi có đủ thông tin (họ tên, MSSV, số tờ); cho toàn bộ bài thi vào túi, niêm phong, ghi số niêm phong vào biên bản.",
+   "inputs": [
+    "so_thi_sinh_du_thi",
+    "so_bai_thi_ban_giao"
+   ],
+   "vai_tro": "Cán bộ coi thi · AI hỗ trợ: đối chiếu số bài thu được với số thí sinh dự thi, cảnh báo thiếu/thừa ngay tại phòng",
+   "luu_y": "bẫy thường gặp — thiếu bài do thí sinh nộp 02 lần/kẹp nhầm bài; nếu số bài không khớp số thí sinh dự thi phải kiểm đếm lại ngay tại phòng, không mang túi bài chưa khớp đi bàn giao.",
+   "ket_qua": "Túi bài thi đã niêm phong, số lượng khớp với số thí sinh dự thi."
+  },
+  {
+   "n": 5,
+   "title": "Bàn giao",
+   "lam_gi": "Cán bộ coi thi mang túi bài thi đã niêm phong + biên bản phòng thi đến văn phòng hội đồng thi; cùng thư ký hội đồng kiểm tra tình trạng niêm phong còn nguyên vẹn, đối chiếu số lượng bài thi với biên bản; hai bên ký xác nhận vào biên bản bàn giao bài thi (lập thành 02 bản, mỗi bên giữ 01 bản).",
+   "inputs": [
+    "so_bai_thi_ban_giao",
+    "can_bo_coi_thi"
+   ],
+   "vai_tro": "Cán bộ coi thi (bên giao), Thư ký Hội đồng thi (bên nhận, kiểm tra niêm phong) · AI hỗ trợ: chuẩn bị mẫu biên bản bàn giao, đối chiếu số liệu bài thi với biên bản phòng thi",
+   "luu_y": "không bàn giao khi niêm phong bị rách/hở — phải lập biên bản ghi nhận ngay; thư ký hội đồng từ chối nhận nếu số liệu không khớp biên bản phòng thi.",
+   "ket_qua": "Biên bản bàn giao bài thi đã ký hai bên + túi bài thi nhập kho hội đồng."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "03 con số thí sinh cộng khớp nhau (dự thi + vắng = tổng số); số bài thi thực tế thu được = số thí sinh dự thi.",
+  "Không bịa đặt số liệu thí sinh, bài thi, nội dung vi phạm.",
+  "Đúng mẫu biên bản chuẩn của trường; biên bản vi phạm lập riêng, đính kèm biên bản phòng thi.",
+  "Mức xử lý vi phạm đúng thẩm quyền theo quy chế thi: cán bộ coi thi chỉ được khiển trách; cảnh cáo và đình chỉ phải báo trưởng ban chỉ đạo.",
+  "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+  "Biên bản được lập ngay tại phòng thi sau khi thu bài, không ghi lại từ trí nhớ sau.",
+  "Túi bài thi còn nguyên niêm phong khi bàn giao; thư ký hội đồng đã kiểm tra và ký xác nhận (mỗi bên giữ 01 bản).",
+  "Thí sinh vắng phân loại đúng có phép/không phép, có giấy tờ kèm theo; thí sinh vi phạm ký xác nhận (nếu từ chối ký đã ghi rõ \"thí sinh từ chối ký\")."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Biên bản phòng thi ghi theo mã sinh viên; xử lý vi phạm do giám thị lập, skill chỉ chuẩn hóa văn bản.",
+  "Kỳ thi bằng tiếng Anh hoặc kỳ thi của đối tác: ghi rõ đơn vị tổ chức (C3)."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu biên bản phòng thi (C8).",
+  "Quy định lưu giữ biên bản (C2)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – tiêu ngữ;",
+  "Tên biên bản (BIÊN BẢN PHÒNG THI);",
+  "Thông tin ca thi: kỳ thi, mã + tên học phần, ngày thi, ca thi, phòng thi, họ tên 02 cán bộ coi thi;",
+  "Số lượng thí sinh: theo danh sách – dự thi – vắng thi (kèm họ tên, MSSV thí sinh vắng, phân loại có phép/không phép);",
+  "Ghi nhận vi phạm quy chế (mô tả cụ thể hoặc ghi \"Không có trường hợp vi phạm\");",
+  "Số bài thi thu được, số túi niêm phong và số niêm phong;",
+  "Địa danh, ngày tháng năm lập biên bản;",
+  "Chữ ký của 02 cán bộ coi thi (ký, ghi rõ họ tên). B. Biên bản bàn giao bài thi:",
+  "Quốc hiệu – tiêu ngữ;",
+  "Tên biên bản (BIÊN BẢN BÀN GIAO BÀI THI);",
+  "Thời gian, địa điểm bàn giao; thành phần bên giao (cán bộ coi thi) – bên nhận (thư ký hội đồng);",
+  "Nội dung bàn giao: số túi bài thi đã niêm phong (số niêm phong), số bài thi, học phần, ca thi, kèm 01 biên bản phòng thi; xác nhận túi bài thi còn nguyên niêm phong;",
+  "Chữ ký hai bên (ký, ghi rõ họ tên), lập thành 02 bản. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng. Biên bản hành chính dùng BB và các thành phần của Mẫu 1.9 Phụ lục III Nghị định 30; biên bản chuyên ngành dùng nguyên mẫu chuyên ngành. Ghi giờ bắt đầu/kết thúc, người tham dự, nội dung/kết quả thực tế và khối ký phù hợp; không tự ghi “không có vi phạm”, “nghiệm thu đạt”, “đã thông qua” khi không có nguồn."
+ ],
+ "output_structure_raw": "A. Biên bản phòng thi:\n\n1. Quốc hiệu – tiêu ngữ;\n\n2. Tên biên bản (BIÊN BẢN PHÒNG THI);\n\n3. Thông tin ca thi: kỳ thi, mã + tên học phần, ngày thi, ca thi, phòng thi, họ tên 02 cán bộ coi thi;\n\n4. Số lượng thí sinh: theo danh sách – dự thi – vắng thi (kèm họ tên, MSSV thí sinh vắng, phân loại có phép/không phép);\n\n5. Ghi nhận vi phạm quy chế (mô tả cụ thể hoặc ghi \"Không có trường hợp vi phạm\");\n\n6. Số bài thi thu được, số túi niêm phong và số niêm phong;\n\n7. Địa danh, ngày tháng năm lập biên bản;\n\n8. Chữ ký của 02 cán bộ coi thi (ký, ghi rõ họ tên).\nB. Biên bản bàn giao bài thi:\n\n1. Quốc hiệu – tiêu ngữ;\n\n2. Tên biên bản (BIÊN BẢN BÀN GIAO BÀI THI);\n\n3. Thời gian, địa điểm bàn giao; thành phần bên giao (cán bộ coi thi) – bên nhận (thư ký hội đồng);\n\n4. Nội dung bàn giao: số túi bài thi đã niêm phong (số niêm phong), số bài thi, học phần, ca thi, kèm 01 biên bản phòng thi; xác nhận túi bài thi còn nguyên niêm phong;\n\n5. Chữ ký hai bên (ký, ghi rõ họ tên), lập thành 02 bản.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (khảo thí). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n",
+ "outputs_dir": "skills/vnuis-khaothi-lap-bien-ban-phong-thi/references"
+}

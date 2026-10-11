@@ -1,0 +1,199 @@
+{
+ "name": "vnuis-khoa-ke-hoach-hoat-dong-trung-tam-thuc-hanh",
+ "title": "Kế hoạch hoạt động trung tâm thực hành",
+ "description": "Dùng đầu năm học khi trung tâm thực hành nghề nghiệp (thực hành pháp luật, sư phạm, phòng khám, xưởng) cần kế hoạch năm: lịch thực hành, tiếp nhận ca thực tế, phân công giảng viên, đánh giá sinh viên.",
+ "group": "khoa",
+ "group_label": "Khoa, bộ môn",
+ "previous_name": "vnuis-ke-hoach-hoat-dong-trung-tam-thuc-hanh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Sáu khoa hoặc Viện (trung tâm thực hành nếu có)",
+ "when": "Đầu năm học, trung tâm thực hành nghề nghiệp của trường (thực hành pháp luật, thực hành sư phạm,\nphòng khám, xưởng...) cần lập kế hoạch: lịch thực hành mô phỏng theo học phần, tiếp nhận\nvụ việc/ca thực tế, phân công giảng viên hướng dẫn và tiêu chí đánh giá sinh viên.",
+ "inputs": [
+  {
+   "key": "ten_trung_tam",
+   "desc": "Tên trung tâm thực hành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nam_hoc",
+   "desc": "Năm học áp dụng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoc_phan_lien_quan",
+   "desc": "Các học phần thực hành gắn với trung tâm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_luong_sv",
+   "desc": "Số SV tham gia thực hành trong năm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "giang_vien",
+   "desc": "Giảng viên hướng dẫn, chuyên gia thỉnh giảng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "co_so_vat_chat",
+   "desc": "Phòng mô phỏng, trang thiết bị hiện có",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Sáu khoa hoặc Viện (trung tâm thực hành nếu có)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định mục tiêu và chuẩn đầu ra",
+   "lam_gi": "rà soát đề cương các học phần gắn với trung tâm, trích chuẩn đầu ra kỹ năng thực hành của từng học phần, quy đổi thành chỉ tiêu đo được (VD: mỗi SV tham gia tối thiểu 02 phiên mô phỏng và 01 vụ việc thực tế; tỷ lệ SV đạt chuẩn ≥ 90%). Trưởng khoa xác nhận chuẩn đầu ra gắn với CTĐT.",
+   "inputs": [
+    "ten_trung_tam",
+    "nam_hoc",
+    "hoc_phan_lien_quan"
+   ],
+   "vai_tro": "Trưởng khoa · AI hỗ trợ: trích chuẩn đầu ra và quy đổi thành chỉ tiêu đo được",
+   "luu_y": "chỉ tiêu phải khớp CTĐT đã kiểm định — không tự đặt chuẩn mới; không đặt chỉ tiêu vượt năng lực giám sát thực tế của giảng viên (VD: số vụ việc thực tế/SV phải tương xứng số giờ giám sát khả dụng).",
+   "ket_qua": "bảng mục tiêu – chuẩn đầu ra – chỉ tiêu đo được của từng học phần."
+  },
+  {
+   "n": 2,
+   "title": "Lập lịch thực hành",
+   "lam_gi": "chia SV thành ca/nhóm theo `so_luong_sv`; xếp lịch mô phỏng theo tuần của từng học kỳ (phiên tòa giả định, ca lâm sàng mô phỏng, vận hành xưởng...) khớp với thời khóa biểu chung; phân bổ phòng mô phỏng/trang thiết bị theo `co_so_vat_chat`, tính hệ số dự phòng khi trùng lịch.",
+   "inputs": [
+    "so_luong_sv",
+    "hoc_phan_lien_quan",
+    "co_so_vat_chat"
+   ],
+   "vai_tro": "Cán bộ Trung tâm Thực hành · AI hỗ trợ: xếp lịch thực hành dự thảo theo ca/nhóm, trung tâm chốt và kiểm tra trùng phòng/thiết bị",
+   "luu_y": "sĩ số mỗi nhóm không vượt quy định của học phần; mỗi nhóm phải được trải nghiệm đủ các vai trò trong mô phỏng (không để SV chỉ làm khán giả); kiểm tra không trùng phòng/thiết bị với đơn vị khác.",
+   "ket_qua": "bảng lịch thực hành chi tiết (tuần – ca – nhóm – nội dung – phòng/thiết bị)."
+  },
+  {
+   "n": 3,
+   "title": "Xây dựng quy trình tiếp nhận vụ việc thực tế",
+   "lam_gi": "chỉ thực hiện khi trung tâm có mảng tiếp nhận vụ việc/ca thực tế (VD: tư vấn pháp luật miễn phí, khám chữa bệnh thực hành). Thiết kế quy trình: tiếp nhận → phân loại (mức độ phức tạp, rủi ro) → phân công SV xử lý dưới sự giám sát trực tiếp của giảng viên; kèm phiếu tiếp nhận và biên bản bàn giao vụ việc.",
+   "inputs": [
+    "ten_trung_tam",
+    "nam_hoc"
+   ],
+   "vai_tro": "Giám đốc Trung tâm Thực hành · AI hỗ trợ: soạn quy trình tiếp nhận và biểu mẫu",
+   "luu_y": "vụ việc liên quan đến con người/tài sản phải có giảng viên hoặc chuyên gia giám sát trực tiếp — tuyệt đối không để SV tự ý tư vấn, quyết định; từ chối tiếp nhận vụ việc vượt năng lực của trung tâm và chuyển tuyến phù hợp.",
+   "ket_qua": "quy trình tiếp nhận – phân loại – phân công xử lý vụ việc thực tế + biểu mẫu phiếu tiếp nhận."
+  },
+  {
+   "n": 4,
+   "title": "Phân công giảng viên và chuyên gia hướng dẫn",
+   "lam_gi": "phân công giảng viên phụ trách từng nhóm/ca theo lịch ở Bước 2; xếp lịch chuyên gia thỉnh giảng tham gia mô phỏng và phản biện; xác nhận khối lượng giờ với Trưởng khoa để tính vào giờ chuẩn giảng dạy.",
+   "inputs": [
+    "giang_vien"
+   ],
+   "vai_tro": "Giảng viên · AI hỗ trợ: lập bảng phân công dự thảo, trung tâm xác nhận và tránh trùng giờ lên lớp",
+   "luu_y": "mỗi nhóm/ca phải có giảng viên chịu trách nhiệm chính ghi rõ họ tên; chuyên gia thỉnh giảng cần có văn bản mời và xác nhận tham gia trước khi đưa vào kế hoạch; tránh phân công trùng giờ lên lớp của giảng viên.",
+   "ket_qua": "bảng phân công hướng dẫn (nhóm/ca – giảng viên phụ trách – chuyên gia tham gia – thời gian)."
+  },
+  {
+   "n": 5,
+   "title": "Xây dựng công cụ đánh giá",
+   "lam_gi": "xây dựng thang tiêu chí chấm kỹ năng thực hành theo chuẩn đầu ra ở Bước 1 (thang 100 điểm, phân bổ trọng số từng tiêu chí: kỹ năng chuyên môn, soạn thảo/hồ sơ, đạo đức nghề nghiệp, báo cáo thu hoạch); thiết kế mẫu báo cáo thu hoạch của SV; quy định điều kiện đạt (điểm tối thiểu, số buổi tham gia tối thiểu).",
+   "inputs": [
+    "hoc_phan_lien_quan"
+   ],
+   "vai_tro": "Giảng viên · AI hỗ trợ: soạn khung thang tiêu chí chấm và mẫu báo cáo thu hoạch",
+   "luu_y": "thang tiêu chí chấm phải đo đúng chuẩn đầu ra đã công bố trong đề cương học phần; AI chỉ hỗ trợ soạn khung thang tiêu chí chấm — việc đánh giá năng lực thực hành của SV do giảng viên thực hiện; công bố thang tiêu chí chấm cho SV từ đầu kỳ.",
+   "ket_qua": "thang tiêu chí chấm đánh giá kỹ năng thực hành + mẫu báo cáo thu hoạch của SV."
+  },
+  {
+   "n": 6,
+   "title": "Tổng hợp và trình duyệt",
+   "lam_gi": "gộp mục tiêu (Bước 1), lịch (Bước 2), quy trình tiếp nhận (Bước 3, nếu có), phân công (Bước 4), công cụ đánh giá (Bước 5) và dự toán kinh phí thành kế hoạch hoàn chỉnh; kiểm tra tính khớp nối giữa các phần (lịch – phân công – thang tiêu chí chấm); trình Giám đốc trung tâm phê duyệt, gửi khoa và nhà trường.",
+   "inputs": [
+    "ten_trung_tam",
+    "nam_hoc"
+   ],
+   "vai_tro": "Giám đốc Trung tâm Thực hành · AI hỗ trợ: gộp kế hoạch và kiểm tra khớp nối các phần",
+   "luu_y": "kinh phí dự kiến phải tách rõ nguồn (ngân sách trường, học phí thực hành, tài trợ); kế hoạch chỉ có hiệu lực sau khi Giám đốc trung tâm ký duyệt.",
+   "ket_qua": "kế hoạch hoạt động năm của trung tâm thực hành (hoàn chỉnh, đã duyệt)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung khớp với Input: số lượng SV, giảng viên, học phần, cơ sở vật chất.",
+  "Không bịa đặt lịch, phân công giảng viên hay chuyên gia thỉnh giảng chưa có xác nhận tham gia.",
+  "Chuẩn đầu ra khớp CTĐT đã kiểm định (có xác nhận của trưởng khoa); chỉ tiêu đo được.",
+  "Lịch thực hành: sĩ số nhóm đúng quy định, không trùng phòng/thiết bị với đơn vị khác, mỗi nhóm trải đủ các vai trò.",
+  "Vụ việc thực tế có giảng viên/chuyên gia giám sát trực tiếp; có cơ chế từ chối vụ việc vượt năng lực trung tâm.",
+  "Thang tiêu chí chấm đo đúng chuẩn đầu ra trong đề cương học phần; công bố cho SV từ đầu kỳ.",
+  "Kinh phí tách rõ nguồn; kế hoạch chỉ có hiệu lực sau khi giám đốc trung tâm ký duyệt.",
+  "Đã qua Human gate: giám đốc trung tâm phê duyệt kế hoạch, trưởng khoa xác nhận chuẩn đầu ra. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Giám đốc trung tâm** phê duyệt kế hoạch và phân công giảng viên.",
+  "**Trưởng khoa** xác nhận chuẩn đầu ra thực hành gắn với CTĐT.",
+  "**Giảng viên hướng dẫn** chịu trách nhiệm chuyên môn đối với vụ việc thực tế do SV xử lý."
+ ],
+ "guardrails": [
+  "AI không thay giảng viên đánh giá năng lực thực hành của SV.",
+  "Vụ việc thực tế liên quan đến con người phải có giảng viên/luật sư giám sát trực tiếp; không để SV tự ý tư vấn, quyết định."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Chỉ dùng khi đơn vị có trung tâm hoặc phòng thực hành; website chưa xác nhận (C8).",
+  "Kế hoạch gắn học phần thực hành và lịch của Khoa."
+ ],
+ "cho_xac_nhan": [
+  "Có trung tâm thực hành hay không và đơn vị quản lý (C8).",
+  "Quy chế sử dụng (C2)."
+ ],
+ "output_structure": [
+  "Tiêu đề: tên trung tâm + \"Kế hoạch hoạt động năm học...\" (căn giữa).",
+  "I. Mục tiêu: chỉ tiêu đo được gắn với chuẩn đầu ra từng học phần.",
+  "II. Lịch thực hành: phân kỳ theo học kỳ/tuần, ca – nhóm SV – nội dung mô phỏng – phòng/thiết bị.",
+  "III. Tiếp nhận vụ việc thực tế (chỉ khi trung tâm có mảng này): quy trình tiếp nhận – phân loại – phân công dưới giám sát giảng viên.",
+  "IV. Phân công hướng dẫn: giảng viên phụ trách từng nhóm/ca, chuyên gia thỉnh giảng.",
+  "V. Đánh giá: thang tiêu chí chấm (thang điểm, trọng số tiêu chí), mẫu báo cáo thu hoạch, điều kiện đạt.",
+  "VI. Kinh phí dự kiến: tổng mức và phân bổ theo nguồn.",
+  "Chữ ký duyệt: Giám đốc trung tâm (kèm xác nhận của Trưởng khoa về chuẩn đầu ra). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề: tên trung tâm + \"Kế hoạch hoạt động năm học...\" (căn giữa).\n\n2. I. Mục tiêu: chỉ tiêu đo được gắn với chuẩn đầu ra từng học phần.\n\n3. II. Lịch thực hành: phân kỳ theo học kỳ/tuần, ca – nhóm SV – nội dung mô phỏng –\n   phòng/thiết bị.\n\n4. III. Tiếp nhận vụ việc thực tế (chỉ khi trung tâm có mảng này): quy trình tiếp nhận –\n   phân loại – phân công dưới giám sát giảng viên.\n\n5. IV. Phân công hướng dẫn: giảng viên phụ trách từng nhóm/ca, chuyên gia thỉnh giảng.\n\n6. V. Đánh giá: thang tiêu chí chấm (thang điểm, trọng số tiêu chí), mẫu báo cáo thu hoạch,\n   điều kiện đạt.\n\n7. VI. Kinh phí dự kiến: tổng mức và phân bổ theo nguồn.\n\n8. Chữ ký duyệt: Giám đốc trung tâm (kèm xác nhận của Trưởng khoa về chuẩn đầu ra).",
+ "human_gate_check": "Đã qua Human gate: giám đốc trung tâm phê duyệt kế hoạch, trưởng khoa xác nhận chuẩn đầu ra. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Sáu khoa hoặc Viện (trung tâm thực hành nếu có). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-khoa-ke-hoach-hoat-dong-trung-tam-thuc-hanh/references"
+}

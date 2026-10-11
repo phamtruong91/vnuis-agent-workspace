@@ -1,0 +1,148 @@
+{
+ "name": "vnuis-hd-kiem-tra-ho-so-trinh-hoi-dong",
+ "title": "Kiểm tra hồ sơ trình Hội đồng",
+ "description": "Dùng khi thư ký Hội đồng Khoa học và Đào tạo nhận tờ trình, đề án, chương trình đào tạo, quy chế và cần kiểm tra hồ sơ đã đủ để đưa vào chương trình phiên họp chưa, lập phiếu tiếp nhận và danh sách cần bổ sung.",
+ "group": "hd",
+ "group_label": "Hội đồng KH&ĐT",
+ "previous_name": "vnuis-ho-so-trinh-hoi-dong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Hội đồng Khoa học và Đào tạo (thư ký); đơn vị trình hồ sơ",
+ "when": "Khi thư ký Hội đồng nhận tờ trình, đề án, chương trình đào tạo, quy chế hoặc nội dung xin ý kiến và cần biết hồ sơ đã đủ để đưa ra phiên họp chưa.",
+ "inputs": [
+  {
+   "key": "ho_so_trinh",
+   "desc": "Tờ trình và toàn bộ hồ sơ kèm theo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_muc_thanh_phan",
+   "desc": "Danh mục thành phần bắt buộc theo từng loại nội dung do Hội đồng hoặc Trường quy định",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_che_hoi_dong",
+   "desc": "Quy chế về thẩm quyền và điều kiện đưa nội dung ra Hội đồng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "y_kien_don_vi",
+   "desc": "Ý kiến các đơn vị liên quan nếu quy định yêu cầu",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Hội đồng Khoa học và Đào tạo (thư ký); đơn vị trình hồ sơ"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tiếp nhận và phân loại",
+   "lam_gi": "Ghi ngày nhận, đơn vị trình, tên hồ sơ, loại nội dung (đề án, chương trình, quy chế, ý kiến chuyên môn, khác).",
+   "inputs": [
+    "ho_so_trinh"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: lập phiếu tiếp nhận",
+   "luu_y": "Không rõ loại thì ghi \"chưa phân loại\" và hỏi lại.",
+   "ket_qua": "Phiếu tiếp nhận."
+  },
+  {
+   "n": 2,
+   "title": "Xác định thẩm quyền",
+   "lam_gi": "Đối chiếu nội dung với quy chế Hội đồng để nêu nội dung thuộc thẩm quyền xin ý kiến hay thẩm định, hay chuyển đơn vị khác.",
+   "inputs": [
+    "quy_che_hoi_dong"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: đối chiếu quy chế",
+   "luu_y": "Chưa có quy chế thì để trống và ghi `[CẦN XÁC MINH]` (C2); không tự suy ra thẩm quyền.",
+   "ket_qua": "Nhận định thẩm quyền để người có thẩm quyền xác nhận."
+  },
+  {
+   "n": 3,
+   "title": "Kiểm tra thành phần",
+   "lam_gi": "Đối chiếu từng thành phần: có, thiếu, không rõ; kiểm tra phiên bản và phụ lục được nhắc trong tờ trình có mặt đầy đủ; ý kiến đơn vị liên quan.",
+   "inputs": [
+    "ho_so_trinh",
+    "danh_muc_thanh_phan",
+    "y_kien_don_vi"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: lập bảng kiểm",
+   "luu_y": "Mâu thuẫn giữa tờ trình và phụ lục (số liệu, tên, ngày) được nêu riêng.",
+   "ket_qua": "Bảng kiểm thành phần."
+  },
+  {
+   "n": 4,
+   "title": "Lập danh sách bổ sung",
+   "lam_gi": "Liệt kê điều cần bổ sung, đơn vị trả lời, hạn đề xuất.",
+   "inputs": [
+    "danh_muc_thanh_phan"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: dự thảo danh sách",
+   "luu_y": "Hạn do người có thẩm quyền chốt.",
+   "ket_qua": "Danh sách cần bổ sung."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mọi thành phần trong danh mục được đối chiếu.",
+  "Phụ lục nhắc trong tờ trình đều được kiểm tra.",
+  "Không có kết luận hồ sơ đủ điều kiện.",
+  "Chỗ thiếu quy chế được đánh dấu.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Thư ký Hội đồng** xác nhận bảng kiểm.",
+  "**Người có thẩm quyền** quyết định hồ sơ đủ điều kiện đưa ra Hội đồng."
+ ],
+ "guardrails": [
+  "KHÔNG tự kết luận hồ sơ đủ điều kiện hay thuộc thẩm quyền.",
+  "KHÔNG chia sẻ hồ sơ ngoài danh sách được phép."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Theo Điều 18 Luật 125/2025/QH15, Hội đồng khoa học và đào tạo chỉ tư vấn; \"nghị quyết\", \"kết luận\" của Hội đồng là ý kiến tham mưu, quyết định thuộc Hiệu trưởng hoặc cấp có thẩm quyền (chờ C6). Không viết như quyết định có hiệu lực thi hành. Hội đồng trường công lập đã chấm dứt từ 01/01/2026 (Điều 46)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế và danh mục thành phần hồ sơ của Hội đồng (C2, C8).",
+  "Tuyến chuyển hồ sơ giữa đơn vị và Hội đồng (C6)."
+ ],
+ "output_structure": [
+  "Phiếu tiếp nhận: ngày, đơn vị, tên hồ sơ, loại nội dung.",
+  "Nhận định thẩm quyền (chờ xác nhận).",
+  "Bảng kiểm thành phần: có, thiếu, không rõ; mâu thuẫn trong hồ sơ.",
+  "Danh sách cần bổ sung."
+ ],
+ "output_structure_raw": "1. Phiếu tiếp nhận: ngày, đơn vị, tên hồ sơ, loại nội dung.\n\n2. Nhận định thẩm quyền (chờ xác nhận).\n\n3. Bảng kiểm thành phần: có, thiếu, không rõ; mâu thuẫn trong hồ sơ.\n\n4. Danh sách cần bổ sung.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Hội đồng Khoa học và Đào tạo (thư ký). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-hd-kiem-tra-ho-so-trinh-hoi-dong/references"
+}

@@ -1,0 +1,208 @@
+{
+ "name": "vnuis-ctsv-ke-hoach-ngay-hoi-viec-lam",
+ "title": "Kế hoạch Ngày hội việc làm",
+ "description": "Dùng khi tổ chức Ngày hội việc làm hoặc kết nối doanh nghiệp cho sinh viên năm cuối và sinh viên mới tốt nghiệp: gian hàng tuyển dụng, phỏng vấn thử, tọa đàm kỹ năng nghề nghiệp.",
+ "group": "ctsv",
+ "group_label": "Công tác sinh viên",
+ "previous_name": "vnuis-ke-hoach-ngay-hoi-viec-lam",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh; Phòng Đào tạo (CTSV)",
+ "when": "Khi trường cần tổ chức Ngày hội việc làm (Job Fair) nhằm kết nối sinh viên năm cuối /\nsinh viên mới tốt nghiệp với doanh nghiệp tuyển dụng: gian hàng giới thiệu – tuyển\ndụng, phỏng vấn thử, tọa đàm kỹ năng nghề nghiệp, ký kết hợp tác doanh nghiệp.",
+ "inputs": [
+  {
+   "key": "ten_su_kien",
+   "desc": "Tên ngày hội (vd: Ngày hội việc làm năm 2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong_sv",
+   "desc": "Sinh viên năm cuối, sinh viên mới tốt nghiệp (ghi rõ khóa, ngành)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_luong_dn",
+   "desc": "Số lượng doanh nghiệp tham gia dự kiến",
+   "required": true,
+   "note": "Có (mặc định: 20)"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Ngày tổ chức, khung giờ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Sân trường / nhà thi đấu / hội trường (chọn cơ sở: Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nganh_nghe",
+   "desc": "Các nhóm ngành ưu tiên mời doanh nghiệp (theo ngành đào tạo của trường)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "kinh_phi",
+   "desc": "Nguồn kinh phí (ngân sách trường / tài trợ doanh nghiệp / kết hợp)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh; Phòng Đào tạo (CTSV)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Cổng sinh viên; cổng việc làm; tra cứu văn bằng. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định mục đích – yêu cầu và quy mô",
+   "lam_gi": "chốt mục đích (cầu nối tuyển dụng trực tiếp; sinh viên tiếp cận thị trường lao động, rèn kỹ năng ứng tuyển; quảng bá thương hiệu, mở rộng mạng lưới đối tác doanh nghiệp); xác định quy mô: số doanh nghiệp (khuyến nghị ~20 gian hàng cho lần đầu hoặc trường quy mô vừa), số sinh viên tham dự dự kiến, số vị trí tuyển dụng dự kiến.",
+   "inputs": [
+    "ten_su_kien",
+    "doi_tuong_sv",
+    "so_luong_dn"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn khung dự thảo",
+   "luu_y": "quy mô phải tương xứng năng lực mặt bằng và nhân sự tổ chức; lần đầu tổ chức không nên vượt 20–25 gian hàng.",
+   "ket_qua": "khung mục đích – yêu cầu + quy mô sự kiện (số DN, số SV, số vị trí dự kiến)."
+  },
+  {
+   "n": 2,
+   "title": "Mời doanh nghiệp, chốt danh sách",
+   "lam_gi": "lập danh sách doanh nghiệp theo nhóm ngành đào tạo của trường (`nganh_nghe`: công nghệ thông tin, kinh tế – quản trị, kỹ thuật, ngoại ngữ...); gửi thư mời trước 4–6 tuần; chốt danh sách; thu thập thông tin tuyển dụng (vị trí, số lượng, yêu cầu, quyền lợi) của từng doanh nghiệp để in cẩm nang ngày hội.",
+   "inputs": [
+    "so_luong_dn",
+    "nganh_nghe"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: tổng hợp và đối chiếu dữ liệu thu thập được",
+   "luu_y": "mời dư khoảng 50% so với chỉ tiêu để dự phòng từ chối; chốt thông tin tuyển dụng trước ít nhất 2 tuần để kịp in cẩm nang.",
+   "ket_qua": "danh sách doanh nghiệp chốt tham gia + bộ thông tin tuyển dụng từng doanh nghiệp."
+  },
+  {
+   "n": 3,
+   "title": "Thiết kế nội dung chương trình",
+   "lam_gi": "thiết kế chi tiết: lễ khai mạc (phát biểu lãnh đạo trường, đại diện doanh nghiệp, ký kết hợp tác nếu có); khu gian hàng (mỗi DN 1 gian hàng: bàn, ghế, backdrop, điện); phỏng vấn thử (số bàn, thời lượng mỗi lượt, đăng ký trước); tọa đàm kỹ năng (\"Kỹ năng viết CV và phỏng vấn\", \"Xu hướng thị trường lao động\", \"Khởi nghiệp cho sinh viên\"); khu tư vấn hướng nghiệp 1–1.",
+   "inputs": [
+    "thoi_gian",
+    "dia_diem"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo kịch bản chương trình theo khung giờ",
+   "luu_y": "khung giờ các hoạt động không chồng chéo gây phân tán sinh viên; phỏng vấn thử giới hạn số lượng theo năng lực chuyên gia.",
+   "ket_qua": "kịch bản chương trình chi tiết theo khung giờ."
+  },
+  {
+   "n": 4,
+   "title": "Chuẩn bị truyền thông và đăng ký",
+   "lam_gi": "thiết kế poster, banner, bài đăng fanpage, email tới sinh viên; mở form đăng ký tham dự và đăng ký phỏng vấn thử trước 2 tuần.",
+   "inputs": [
+    "ten_su_kien",
+    "thoi_gian",
+    "dia_diem"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn nội dung",
+   "luu_y": "truyền thông chạy ít nhất 2 tuần trước sự kiện; form đăng ký thu đủ thông tin để phân luồng (ngành, nhu cầu phỏng vấn thử).",
+   "ket_qua": "bộ ấn phẩm truyền thông + form đăng ký tham dự/phỏng vấn thử (đang mở)."
+  },
+  {
+   "n": 5,
+   "title": "Lập dự toán kinh phí",
+   "lam_gi": "lập dự toán theo hạng mục: dựng gian hàng, backdrop – sân khấu; âm thanh – ánh sáng; in cẩm nang – băng rôn; thù lao MC – chuyên gia tọa đàm; nước uống, quà tặng doanh nghiệp, lễ tân; dự phòng; phân rõ nguồn (ngân sách trường / phí gian hàng doanh nghiệp / tài trợ).",
+   "inputs": [
+    "kinh_phi",
+    "so_luong_dn"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: tính toán dự toán",
+   "luu_y": "mức phí gian hàng phải được doanh nghiệp chấp thuận khi gửi thư mời; có khoản dự phòng tối thiểu 5–10%.",
+   "ket_qua": "bảng dự toán kinh phí chi tiết theo hạng mục + phân nguồn."
+  },
+  {
+   "n": 6,
+   "title": "Phân công tiểu ban và tiến độ chuẩn bị",
+   "lam_gi": "thành lập Ban Tổ chức và các tiểu ban (nội dung – chương trình; hậu cần – kỹ thuật – mặt bằng; truyền thông – lễ tân; an ninh – y tế; tài chính – tổng hợp); lập tiến độ theo mốc (T-6 tuần đến ngày G và T+1 tuần tổng kết).",
+   "inputs": [],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: lập bảng dự thảo",
+   "luu_y": "mỗi tiểu ban có trưởng ban chịu trách nhiệm và đầu mối phối hợp; mốc T-1 tuần phải tổng duyệt mặt bằng, kịch bản.",
+   "ket_qua": "bảng phân công nhiệm vụ các tiểu ban + bảng tiến độ chuẩn bị theo mốc."
+  },
+  {
+   "n": 7,
+   "title": "Kiểm tra và hoàn thiện kế hoạch",
+   "lam_gi": "kiểm tra danh sách doanh nghiệp đã chốt, sơ đồ mặt bằng gian hàng, kịch bản MC, phương án an ninh – y tế – PCCC, phương án mưa (nếu ngoài trời); hoàn thiện văn bản kế hoạch trình ký.",
+   "inputs": [
+    "dia_diem"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: đối chiếu danh mục kiểm",
+   "luu_y": "chưa đạt hạng mục nào thì quay lại điều chỉnh ở bước tương ứng; sau sự kiện phải có báo cáo tổng kết và thư cảm ơn doanh nghiệp.",
+   "ket_qua": "văn bản kế hoạch hoàn chỉnh + phụ lục phân công, tiến độ, danh sách doanh nghiệp, sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Kèm phụ lục: bảng phân công nhiệm vụ các tiểu ban, bảng tiến độ chuẩn bị theo mốc (T-6 tuần đến T+1 tuần), danh sách doanh nghiệp tham gia.",
+  "Quy mô (số doanh nghiệp, số sinh viên, số vị trí tuyển dụng dự kiến), thời gian, địa điểm khớp với Input đã cho.",
+  "Không bịa đặt tên doanh nghiệp, số liệu vị trí tuyển dụng, đơn giá trong dự toán.",
+  "Đúng thể thức văn bản kế hoạch: số/ký hiệu, địa danh, ngày tháng năm.",
+  "Nguồn kinh phí rõ ràng (ngân sách trường / phí gian hàng / tài trợ); dự toán có khoản dự phòng tối thiểu 5–10%.",
+  "Đã qua Human gate: kế hoạch được lãnh đạo phê duyệt, đã tổng duyệt (T-1 tuần) trước ngày tổ chức.",
+  "Có phương án an ninh – y tế – PCCC và phương án thời tiết (nếu tổ chức ngoài trời); khung giờ các hoạt động (gian hàng, phỏng vấn thử, tọa đàm) không chồng chéo gây phân tán sinh viên. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Doanh nghiệp tham gia và số vị trí lấy từ danh sách đối tác thật; không tự đưa tên doanh nghiệp.",
+  "Có thể mở cho sinh viên chương trình liên kết và quốc tế."
+ ],
+ "cho_xac_nhan": [
+  "Mô hình ngày hội mà Trường từng tổ chức (C8).",
+  "Đầu mối doanh nghiệp (C7)."
+ ],
+ "output_structure": [
+  "Tiêu đề hành chính: Quốc hiệu – Tiêu ngữ; tên đơn vị; số, ký hiệu; địa danh, ngày tháng năm.",
+  "Tên kế hoạch: \"KẾ HOẠCH\" + \"Tổ chức ...\" (`ten_su_kien`).",
+  "I. Mục đích – yêu cầu.",
+  "II. Thời gian – địa điểm – thành phần (`thoi_gian`, `dia_diem`, `doi_tuong_sv`, `so_luong_dn`).",
+  "III. Nội dung chương trình (theo khung giờ: khai mạc, gian hàng, phỏng vấn thử, tọa đàm, tư vấn 1–1).",
+  "IV. Kinh phí dự kiến (bảng hạng mục + tổng cộng + phân nguồn).",
+  "V. Tổ chức thực hiện (Ban Tổ chức, các tiểu ban, tiến độ chuẩn bị).",
+  "Phụ lục 1 – Phân công nhiệm vụ chi tiết các tiểu ban; Phụ lục 2 – Tiến độ chuẩn bị theo mốc; danh sách doanh nghiệp tham gia.",
+  "Nơi nhận + chữ ký. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề hành chính: Quốc hiệu – Tiêu ngữ; tên đơn vị; số, ký hiệu; địa danh, ngày tháng\n   năm.\n\n2. Tên kế hoạch: \"KẾ HOẠCH\" + \"Tổ chức ...\" (`ten_su_kien`).\n\n3. I. Mục đích – yêu cầu.\n\n4. II. Thời gian – địa điểm – thành phần (`thoi_gian`, `dia_diem`, `doi_tuong_sv`,\n   `so_luong_dn`).\n\n5. III. Nội dung chương trình (theo khung giờ: khai mạc, gian hàng, phỏng vấn thử, tọa đàm,\n   tư vấn 1–1).\n\n6. IV. Kinh phí dự kiến (bảng hạng mục + tổng cộng + phân nguồn).\n\n7. V. Tổ chức thực hiện (Ban Tổ chức, các tiểu ban, tiến độ chuẩn bị).\n\n8. Phụ lục 1 – Phân công nhiệm vụ chi tiết các tiểu ban; Phụ lục 2 – Tiến độ chuẩn bị theo\n   mốc; danh sách doanh nghiệp tham gia.\n\n9. Nơi nhận + chữ ký.",
+ "human_gate_check": "Đã qua Human gate: kế hoạch được lãnh đạo phê duyệt, đã tổng duyệt (T-1 tuần) trước ngày tổ chức.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ctsv-ke-hoach-ngay-hoi-viec-lam/references"
+}

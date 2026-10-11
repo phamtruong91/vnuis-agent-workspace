@@ -1,0 +1,199 @@
+{
+ "name": "vnuis-sdh-lap-bien-ban-bao-ve-luan-van",
+ "title": "Biên bản bảo vệ luận văn / luận án",
+ "description": "Dùng ngay sau buổi bảo vệ luận văn thạc sĩ hoặc luận án tiến sĩ, khi thư ký hội đồng cần lập biên bản: diễn biến, phiếu đánh giá, kết luận đạt hay không, yêu cầu chỉnh sửa.",
+ "group": "sdh",
+ "group_label": "Sau đại học",
+ "previous_name": "vnuis-bien-ban-bao-ve-luan-van",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (sau đại học)",
+ "when": "Ngay sau khi kết thúc buổi bảo vệ luận văn thạc sĩ / luận án tiến sĩ: thư ký hội đồng tổng hợp\nghi chép diễn biến, phiếu đánh giá của từng thành viên để lập biên bản làm căn cứ ra quyết định\ncông nhận tốt nghiệp và cấp văn bằng.",
+ "inputs": [
+  {
+   "key": "bac_dao_tao",
+   "desc": "Thạc sĩ / Tiến sĩ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_ten_hv",
+   "desc": "Họ tên học viên / NCS, mã HV, ngành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ten_de_tai",
+   "desc": "Tên đề tài luận văn / luận án",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quyet_dinh_hd",
+   "desc": "Số quyết định thành lập hội đồng, ngày ký",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thanh_phan_tham_du",
+   "desc": "Danh sách thành viên hội đồng có mặt / vắng mặt (lý do)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dien_bien",
+   "desc": "Tóm tắt phần trình bày của học viên; câu hỏi của từng thành viên và trả lời tóm tắt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "phieu_danh_gia",
+   "desc": "Điểm đánh giá của từng thành viên (thang 10), nhận xét tóm tắt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_luan",
+   "desc": "Đạt / Không đạt; yêu cầu chỉnh sửa, bổ sung (nếu có); thời hạn nộp bản hoàn chỉnh",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_dia_diem",
+   "desc": "Ngày, giờ, địa điểm buổi bảo vệ",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (sau đại học)"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Ghi nhận thông tin chung và kiểm tra thành phần tham dự",
+   "lam_gi": "ghi căn cứ quyết định thành lập hội đồng (số, ngày ký, người ký); thời gian, địa điểm buổi bảo vệ; thông tin HV/NCS (họ tên, mã, ngành, đề tài, người hướng dẫn); lập danh sách thành viên hội đồng có mặt / vắng mặt (ghi rõ lý do vắng). Kiểm tra điều kiện tiến hành: buổi bảo vệ chỉ được tiến hành khi có ít nhất 4/5 thành viên (thạc sĩ) hoặc 5/7 thành viên (tiến sĩ) có mặt, trong đó bắt buộc có Chủ tịch, Thư ký và ít nhất 01 phản biện — nếu không đủ thì hoãn và hẹn lại.",
+   "inputs": [
+    "quyet_dinh_hd",
+    "thanh_phan_tham_du",
+    "ho_ten_hv",
+    "ten_de_tai",
+    "thoi_gian_dia_diem",
+    "bac_dao_tao"
+   ],
+   "vai_tro": "Thư ký hội đồng bảo vệ · AI hỗ trợ: chuẩn bị mẫu biên bản, danh sách thành phần đối chiếu trước buổi bảo vệ",
+   "luu_y": "ghi chính xác số quyết định thành lập hội đồng (sai số là lỗi pháp lý); vắng Chủ tịch hoặc Thư ký thì bắt buộc hoãn, không thay thế tùy tiện.",
+   "ket_qua": "phần thông tin chung của biên bản + xác nhận đủ điều kiện tiến hành buổi bảo vệ (hoặc quyết định hoãn)."
+  },
+  {
+   "n": 2,
+   "title": "Ghi diễn biến buổi bảo vệ theo trình tự",
+   "lam_gi": "ghi tóm tắt diễn biến theo đúng trình tự: (1) Chủ tịch tuyên bố lý do, giới thiệu hội đồng, công bố quyết định thành lập; (2) HV/NCS trình bày tóm tắt luận văn/luận án (15–20 phút); (3) các phản biện đọc nhận xét; (4) thành viên hội đồng nêu câu hỏi, HV/NCS trả lời; (5) hội đồng họp kín thảo luận, bỏ phiếu đánh giá; (6) công bố kết quả. Ghi tóm tắt trung thực từng câu hỏi và ý trả lời chính, không ghi nguyên văn dài dòng.",
+   "inputs": [
+    "dien_bien",
+    "thanh_phan_tham_du"
+   ],
+   "vai_tro": "Thư ký hội đồng bảo vệ · AI hỗ trợ: chuẩn bị đề cương diễn biến mẫu theo đúng trình tự",
+   "luu_y": "ghi rõ ai hỏi – hỏi gì – trả lời thế nào (gắn tên thành viên với câu hỏi); không bỏ sót câu hỏi của phản biện vì đây là cơ sở của yêu cầu chỉnh sửa ở bước 4.",
+   "ket_qua": "phần diễn biến buổi bảo vệ (theo trình tự, gắn câu hỏi với từng thành viên)."
+  },
+  {
+   "n": 3,
+   "title": "Tổng hợp phiếu đánh giá của hội đồng",
+   "lam_gi": "lập bảng điểm đánh giá của từng thành viên (thang điểm 10) kèm nhận xét tóm tắt; tính điểm trung bình; đếm số phiếu \"đạt\"/\"không đạt\". Áp nguyên tắc đạt: thạc sĩ đạt khi điểm trung bình ≥ 5,5 và không có quá 01 phiếu dưới 5,0; luận án tiến sĩ đạt khi đa số phiếu tán thành và không có phiếu phản đối về tính trung thực khoa học.",
+   "inputs": [
+    "phieu_danh_gia",
+    "bac_dao_tao"
+   ],
+   "vai_tro": "Thư ký hội đồng bảo vệ · AI hỗ trợ: tổng hợp bảng điểm tự động, tính điểm trung bình",
+   "luu_y": "kiểm tra từng phiếu có chữ ký của thành viên — phiếu không ký không có giá trị; tính lại điểm trung bình độc lập, không copy số liệu từ ghi chép tay.",
+   "ket_qua": "bảng tổng hợp điểm đánh giá từng thành viên + điểm trung bình + số phiếu đạt/không đạt."
+  },
+  {
+   "n": 4,
+   "title": "Ghi kết luận của hội đồng",
+   "lam_gi": "ghi kết luận theo 2 trường hợp: (a) ĐẠT — ghi rõ đạt không cần chỉnh sửa, hay đạt nhưng cần chỉnh sửa/bổ sung (liệt kê từng yêu cầu chỉnh sửa chi tiết kèm thời hạn nộp bản hoàn chỉnh); (b) KHÔNG ĐẠT — nêu lý do và hướng xử lý (bảo vệ lại, thời gian bảo vệ lại).",
+   "inputs": [
+    "ket_luan",
+    "phieu_danh_gia"
+   ],
+   "vai_tro": "Hội đồng bảo vệ luận văn · AI hỗ trợ: chuẩn bị mẫu kết luận theo 2 trường hợp đạt/không đạt",
+   "luu_y": "yêu cầu chỉnh sửa phải cụ thể, kiểm chứng được (tránh ghi chung chung kiểu \"hoàn thiện thêm\"); thời hạn nộp bản hoàn chỉnh phải khả thi và được hội đồng thống nhất.",
+   "ket_qua": "phần kết luận của hội đồng (đạt/không đạt + danh mục yêu cầu chỉnh sửa kèm thời hạn)."
+  },
+  {
+   "n": 5,
+   "title": "Hoàn thiện biên bản, ký và lưu hồ sơ",
+   "lam_gi": "hoàn thiện biên bản đầy đủ các phần; thư ký ký, chủ tịch hội đồng ký xác nhận; đính kèm phiếu đánh giá của từng thành viên (tài liệu bắt buộc); ghi rõ số bản và nơi lưu (hồ sơ HV/NCS, Phòng Đào tạo (sau đại học), người hướng dẫn); chuyển Phòng Đào tạo (sau đại học) làm thủ tục công nhận tốt nghiệp.",
+   "inputs": [
+    "ket_luan",
+    "thoi_gian_dia_diem"
+   ],
+   "vai_tro": "Thư ký và Chủ tịch hội đồng ký biên bản · AI hỗ trợ: kiểm tra đầy đủ chữ ký và phụ lục đính kèm trước khi lưu",
+   "luu_y": "biên bản thiếu chữ ký Chủ tịch hoặc thiếu phiếu đánh giá đính kèm thì không đủ căn cứ ra quyết định công nhận tốt nghiệp; lưu bản chính, không chỉ lưu bản photo.",
+   "ket_qua": "biên bản buổi bảo vệ hoàn chỉnh (có chữ ký, có phiếu đánh giá đính kèm), đã phân phối và lưu hồ sơ."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu/nội dung trong output khớp với Input đã cho (bậc đào tạo, thông tin HV/NCS, đề tài, quyết định hội đồng, thành viên, diễn biến, phiếu điểm, kết luận, thời gian – địa điểm).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng thể thức văn bản hành chính của biên bản.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Thông tư 23/2021/TT-BGDĐT đối với thạc sĩ; Thông tư 18/2021/TT-BGDĐT đối với tiến sĩ).",
+  "Đã qua Human gate: thư ký và Chủ tịch hội đồng đã ký biên bản; phiếu đánh giá của từng thành viên có chữ ký và đã đính kèm đầy đủ.",
+  "Buổi bảo vệ chỉ được tiến hành khi đủ số thành viên tối thiểu (thạc sĩ 4/5, tiến sĩ 5/7) trong đó bắt buộc có Chủ tịch, Thư ký và ít nhất 01 phản biện; số quyết định thành lập hội đồng ghi chính xác.",
+  "Diễn biến ghi rõ ai hỏi – hỏi gì – trả lời thế nào, gắn tên thành viên với từng câu hỏi; không bỏ sót câu hỏi của phản biện.",
+  "Điểm trung bình được tính lại độc lập; nguyên tắc đạt áp đúng quy chế (thạc sĩ: ĐTB ≥ 5,5 và không quá 01 phiếu dưới 5,0; tiến sĩ: đa số phiếu tán thành, không phiếu phản đối về tính trung thực khoa học).",
+  "Yêu cầu chỉnh sửa cụ thể, kiểm chứng được, có thời hạn khả thi được hội đồng thống nhất; ghi rõ số bản biên bản và nơi lưu. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Biên bản ghi theo mẫu của đơn vị cấp bằng: Trường hoặc đối tác nước ngoài (C2).",
+  "Hội đồng có thành viên nước ngoài: ghi ngôn ngữ bảo vệ."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu biên bản bảo vệ (C8).",
+  "Ngôn ngữ luận văn (C3)."
+ ],
+ "output_structure": [
+  "Phần đầu: tên trường + đơn vị (Phòng Đào tạo (sau đại học)); quốc hiệu – tiêu ngữ.",
+  "Tên biên bản + đối tượng: \"BIÊN BẢN\" + \"Buổi bảo vệ luận văn thạc sĩ / luận án tiến sĩ của học viên/NCS…\" (họ tên).",
+  "Phần căn cứ: quyết định thành lập hội đồng (số, ngày ký, người ký).",
+  "Thông tin chung: thời gian (giờ, ngày), địa điểm buổi bảo vệ; thông tin HV/NCS (họ tên, mã, ngành, đề tài trong ngoặc kép, người hướng dẫn).",
+  "Nội dung chính theo thứ tự: I. Thành phần tham dự (đánh số, ghi rõ có mặt/vắng mặt và lý do); II. Diễn biến buổi bảo vệ (theo trình tự, gắn câu hỏi với từng thành viên); III. Kết quả đánh giá (bảng điểm từng thành viên — vai trò, điểm thang 10, phiếu đạt/không đạt — + điểm trung bình); IV. Kết luận của hội đồng (ĐẠT/KHÔNG ĐẠT + xếp loại nếu có + danh mục yêu cầu chỉnh sửa chi tiết kèm thời hạn nộp bản hoàn chỉnh).",
+  "Phần phân phối: số bản biên bản và nơi lưu (hồ sơ HV/NCS, Phòng Đào tạo (sau đại học), người hướng dẫn).",
+  "Phần ký: Thư ký hội đồng và Chủ tịch hội đồng (chữ ký, họ tên).",
+  "Tài liệu đính kèm bắt buộc: phiếu đánh giá của từng thành viên. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng. Biên bản hành chính dùng BB và các thành phần của Mẫu 1.9 Phụ lục III Nghị định 30; biên bản chuyên ngành dùng nguyên mẫu chuyên ngành. Ghi giờ bắt đầu/kết thúc, người tham dự, nội dung/kết quả thực tế và khối ký phù hợp; không tự ghi “không có vi phạm”, “nghiệm thu đạt”, “đã thông qua” khi không có nguồn."
+ ],
+ "output_structure_raw": "1. Phần đầu: tên trường + đơn vị (Phòng Đào tạo (sau đại học)); quốc hiệu – tiêu ngữ.\n\n2. Tên biên bản + đối tượng: \"BIÊN BẢN\" + \"Buổi bảo vệ luận văn thạc sĩ / luận án tiến sĩ\n   của học viên/NCS…\" (họ tên).\n\n3. Phần căn cứ: quyết định thành lập hội đồng (số, ngày ký, người ký).\n\n4. Thông tin chung: thời gian (giờ, ngày), địa điểm buổi bảo vệ; thông tin HV/NCS (họ tên, mã,\n   ngành, đề tài trong ngoặc kép, người hướng dẫn).\n\n5. Nội dung chính theo thứ tự: I. Thành phần tham dự (đánh số, ghi rõ có mặt/vắng mặt và lý do);\n   II. Diễn biến buổi bảo vệ (theo trình tự, gắn câu hỏi với từng thành viên); III. Kết quả đánh\n   giá (bảng điểm từng thành viên — vai trò, điểm thang 10, phiếu đạt/không đạt — + điểm trung\n   bình); IV. Kết luận của hội đồng (ĐẠT/KHÔNG ĐẠT + xếp loại nếu có + danh mục yêu cầu chỉnh\n   sửa chi tiết kèm thời hạn nộp bản hoàn chỉnh).\n\n6. Phần phân phối: số bản biên bản và nơi lưu (hồ sơ HV/NCS, Phòng Đào tạo (sau đại học), người hướng dẫn).\n\n7. Phần ký: Thư ký hội đồng và Chủ tịch hội đồng (chữ ký, họ tên).\n\n8. Tài liệu đính kèm bắt buộc: phiếu đánh giá của từng thành viên.",
+ "human_gate_check": "Đã qua Human gate: thư ký và Chủ tịch hội đồng đã ký biên bản; phiếu đánh giá của từng thành viên có chữ ký và đã đính kèm đầy đủ.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (sau đại học). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-sdh-lap-bien-ban-bao-ve-luan-van/references"
+}

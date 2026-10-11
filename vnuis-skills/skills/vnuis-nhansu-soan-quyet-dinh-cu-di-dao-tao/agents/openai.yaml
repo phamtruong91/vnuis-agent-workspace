@@ -1,0 +1,4 @@
+interface:
+  display_name: Nhân sự · Quyết định cử cán bộ đi đào tạo / tập huấn – VNU-IS
+  short_description: Hỗ trợ quyết định cử cán bộ đi đào tạo / tập huấn (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-nhansu-soan-quyet-dinh-cu-di-dao-tao để hỗ trợ công việc: Quyết định cử cán bộ đi đào tạo / tập huấn; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

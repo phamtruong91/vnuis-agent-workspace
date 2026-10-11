@@ -1,0 +1,142 @@
+{
+ "name": "vnuis-cntt-soan-quy-che-an-toan-thong-tin",
+ "title": "Quy chế an toàn thông tin mạng",
+ "description": "Dùng khi cần ban hành mới hoặc rà soát quy chế an toàn thông tin mạng, quy định bảo mật thông tin của trường: quản lý tài khoản, phân quyền, bảo vệ dữ liệu, sao lưu, ứng phó sự cố.",
+ "group": "cntt",
+ "group_label": "Hạ tầng CNTT, an toàn thông tin, chuyển đổi số",
+ "previous_name": "vnuis-quy-che-an-toan-thong-tin",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin, chuyển đổi số)",
+ "when": "Khi cần ban hành hoặc sửa đổi quy chế quản lý an toàn thông tin cho các hệ thống\nCNTT của trường (SIS, LMS, email, website, dữ liệu dùng chung...).",
+ "inputs": [
+  {
+   "key": "pham_vi",
+   "desc": "Hệ thống áp dụng (toàn trường / từng hệ thống)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cac_he_thong",
+   "desc": "Danh sách hệ thống CNTT (SIS, LMS, email, website, wifi...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cap_do_att",
+   "desc": "Cấp độ an toàn thông tin mục tiêu (1–5)",
+   "required": false,
+   "note": "Không (mặc định: cấp độ 3)"
+  },
+  {
+   "key": "don_vi_dau_moi",
+   "desc": "Bộ phận hạ tầng CNTT (Phòng TC&QT)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin, chuyển đổi số)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office; LMS; cổng sinh viên; cổng việc làm; tra cứu văn bằng; thư viện; kho tài nguyên số; E-GOV. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định phạm vi và đối tượng áp dụng",
+   "lam_gi": "từ `pham_vi` và `cac_he_thong`, liệt kê đầy đủ hệ thống thuộc phạm vi điều chỉnh (SIS, LMS, email, website, wifi nội bộ...); xác định đối tượng áp dụng (cán bộ, giảng viên, sinh viên, đơn vị vận hành, đối tác); chốt `cap_do_att` mục tiêu (mặc định cấp độ 3) và các yêu cầu tương ứng theo Nghị định 85/2016/NĐ-CP.",
+   "inputs": [
+    "pham_vi",
+    "cac_he_thong",
+    "cap_do_att"
+   ],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "hệ thống nào không liệt kê trong phạm vi thì quy chế không điều chỉnh được — phải liệt kê đủ, kể cả hệ thống thuê ngoài/cloud.",
+   "ket_qua": "Bảng phạm vi – đối tượng – cấp độ ATTT đã chốt."
+  },
+  {
+   "n": 2,
+   "title": "Soạn dự thảo quy chế theo chương – điều",
+   "lam_gi": "viết dự thảo 6 chương: I. Quy định chung (phạm vi, đối tượng, nguyên tắc); II. Quản lý tài khoản và phân quyền (cấp phát, mật khẩu tối thiểu 08 ký tự, thay đổi 90 ngày/lần, thu hồi trong 07 ngày làm việc); III. Bảo vệ dữ liệu (phân loại, sao lưu hằng ngày 02 bản/02 vị trí, mã hóa dữ liệu nhạy cảm); IV. Sử dụng hệ thống (thiết bị đầu cuối, wifi, thư điện tử, cấm phần mềm không rõ nguồn gốc); V. Ứng phó sự cố (phát hiện – báo cáo trong 01 giờ – xử lý – báo cáo BGH trong 24 giờ); VI. Trách nhiệm và xử lý vi phạm + điều khoản thi hành.",
+   "inputs": [
+    "don_vi_dau_moi"
+   ],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: soạn dự thảo, lưu trữ hồ sơ",
+   "luu_y": "mỗi điều phải ghi rõ \"ai làm – làm gì – thời hạn\"; dữ liệu sinh viên/cán bộ là dữ liệu cá nhân theo Luật Bảo vệ dữ liệu cá nhân 2025 — phải có điều khoản bảo vệ tương ứng; tham chiếu đúng văn bản pháp luật, không ghi căn cứ mơ hồ.",
+   "ket_qua": "Dự thảo quy chế 6 chương (đầy đủ điều khoản)."
+  },
+  {
+   "n": 3,
+   "title": "Lấy ý kiến các phòng ban và hiệu đính",
+   "lam_gi": "gửi dự thảo cho các phòng/khoa/trung tâm góp ý (thời hạn 7–10 ngày làm việc); `don_vi_dau_moi` (Bộ phận hạ tầng CNTT (Phòng TC&QT)) tổng hợp ý kiến vào bảng (ý kiến – đơn vị – tiếp thu/không tiếp thu + lý do); hiệu đính dự thảo.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: soạn dự thảo, tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "ý kiến không tiếp thu phải giải trình bằng văn bản; sau hiệu đính phải kiểm tra lại đánh số chương/điều không bị lệch.",
+   "ket_qua": "Dự thảo hiệu đính + bảng tổng hợp ý kiến (tiếp thu/không tiếp thu)."
+  },
+  {
+   "n": 4,
+   "title": "Hoàn thiện hồ sơ trình ban hành",
+   "lam_gi": "soạn tờ trình Hiệu trưởng kèm dự thảo quy chế và bảng tổng hợp ý kiến; kiểm tra thể thức văn bản theo Nghị định 30/2020 (căn cứ ban hành, bố cục, chính tả); chuẩn bị kế hoạch phổ biến, tập huấn sau ban hành.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) (chuẩn bị hồ sơ trình); Hiệu trưởng (người ký) ban hành · AI hỗ trợ: soạn dự thảo, tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "căn cứ pháp lý phải còn hiệu lực tại thời điểm ban hành; quyết định ban hành phải ghi đúng tên quy chế kèm theo.",
+   "ket_qua": "Hồ sơ trình ban hành (tờ trình + dự thảo quy chế + dự thảo quyết định ban hành + kế hoạch phổ biến)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Văn bản quy chế an toàn thông tin mạng hoàn chỉnh (chương/điều)",
+  "Có đầy đủ sản phẩm: Quyết định ban hành quy chế",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Hệ thống nào không liệt kê trong phạm vi thì quy chế không điều chỉnh được — phải liệt kê đủ, kể cả hệ thống thuê ngoài/cloud.",
+  "Mỗi điều phải ghi rõ \"ai làm – làm gì – thời hạn\" > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Quy chế an toàn thông tin phải tính dữ liệu người học và nhân sự, đặc biệt khi dùng công cụ AI; cấm hoặc cho phép tải dữ liệu nào lên dịch vụ ngoài do Trường quyết (C5).",
+  "Căn cứ pháp lý ghi khi người dùng cung cấp văn bản; chưa có ghi `[CẦN XÁC MINH]`."
+ ],
+ "cho_xac_nhan": [
+  "Quy định an toàn thông tin hiện hành của Trường và ĐHQGHN (C2).",
+  "Người chịu trách nhiệm an toàn thông tin (C7)."
+ ],
+ "output_structure": [
+  "Tiêu đề quy chế + dòng ban hành (kèm theo Quyết định số... ngày... của Hiệu trưởng).",
+  "Chương I. Quy định chung (phạm vi điều chỉnh, đối tượng áp dụng, nguyên tắc, giải thích từ ngữ).",
+  "Chương II. Quản lý tài khoản và phân quyền (cấp phát, mật khẩu, phân quyền tối thiểu, thu hồi).",
+  "Chương III. Bảo vệ dữ liệu (phân loại, sao lưu, mã hóa, bảo vệ dữ liệu cá nhân).",
+  "Chương IV. Sử dụng hệ thống (thiết bị đầu cuối, mạng wifi, thư điện tử, phần mềm).",
+  "Chương V. Ứng phó sự cố (phát hiện, báo cáo, xử lý, khắc phục, báo cáo cơ quan chức năng).",
+  "Chương VI. Trách nhiệm và xử lý vi phạm + Điều khoản thi hành (hiệu lực, trách nhiệm phổ biến). - Kèm theo: Quyết định ban hành quy chế. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề quy chế + dòng ban hành (kèm theo Quyết định số... ngày... của Hiệu trưởng).\n\n2. Chương I. Quy định chung (phạm vi điều chỉnh, đối tượng áp dụng, nguyên tắc, giải thích từ ngữ).\n\n3. Chương II. Quản lý tài khoản và phân quyền (cấp phát, mật khẩu, phân quyền tối thiểu, thu hồi).\n\n4. Chương III. Bảo vệ dữ liệu (phân loại, sao lưu, mã hóa, bảo vệ dữ liệu cá nhân).\n\n5. Chương IV. Sử dụng hệ thống (thiết bị đầu cuối, mạng wifi, thư điện tử, phần mềm).\n\n6. Chương V. Ứng phó sự cố (phát hiện, báo cáo, xử lý, khắc phục, báo cáo cơ quan chức năng).\n\n7. Chương VI. Trách nhiệm và xử lý vi phạm + Điều khoản thi hành (hiệu lực, trách nhiệm phổ biến).\n- Kèm theo: Quyết định ban hành quy chế.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin, chuyển đổi số). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-cntt-soan-quy-che-an-toan-thong-tin/references"
+}

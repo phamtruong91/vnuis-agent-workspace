@@ -1,0 +1,4 @@
+interface:
+  display_name: CSVC · Soạn hợp đồng mua sắm thiết bị – VNU-IS
+  short_description: Hỗ trợ soạn hợp đồng mua sắm thiết bị (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-csvc-soan-hop-dong-mua-sam để hỗ trợ công việc: Soạn hợp đồng mua sắm thiết bị; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

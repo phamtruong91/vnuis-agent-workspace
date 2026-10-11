@@ -1,0 +1,193 @@
+{
+ "name": "vnuis-khcn-bien-soan-giao-trinh",
+ "title": "Biên soạn giáo trình / bài giảng",
+ "description": "Dùng khi giảng viên hoặc bộ môn được giao biên soạn giáo trình, bài giảng cho một học phần: đề cương chi tiết, cấu trúc chương, phản biện, nghiệm thu.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-bien-soan-giao-trinh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Khoa",
+ "when": "Khi giảng viên được giao nhiệm vụ biên soạn giáo trình, bài giảng phục vụ giảng dạy\nhọc phần (theo kế hoạch biên soạn của khoa/trường).",
+ "inputs": [
+  {
+   "key": "ten_giao_trinh",
+   "desc": "Tên giáo trình / bài giảng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoc_phan",
+   "desc": "Mã + tên học phần sử dụng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tac_gia",
+   "desc": "Họ tên, học hàm/học vị, đơn vị của tác giả/nhóm tác giả",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "de_cuong_hoc_phan",
+   "desc": "Đề cương chi tiết học phần (mục tiêu, nội dung, CLO)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong_su_dung",
+   "desc": "Sinh viên năm mấy, ngành nào",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Khoa"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 131/2025/QH15 sửa đổi sở hữu trí tuệ, hiệu lực 01/04/2026: Yêu cầu chủ thể quyền, nguồn tài trợ, hợp đồng và loại tài sản trí tuệ; đối chiếu sửa đổi 131/2025 theo thời điểm. Không mặc định quyền thuộc trường hay tác giả khi chưa có căn cứ; rà soát quyền sử dụng học liệu trước chia sẻ/chuyển giao.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định yêu cầu và phạm vi biên soạn",
+   "lam_gi": "Tiếp nhận nhiệm vụ biên soạn từ khoa/trường; đọc kỹ đề cương chi tiết học phần để nắm mục tiêu, nội dung, chuẩn đầu ra (CLO); xác định đối tượng sử dụng (sinh viên năm mấy, ngành nào); xác minh học hàm/học vị, đơn vị của tác giả/nhóm tác giả; kiểm tra học phần có nằm trong kế hoạch biên soạn đã phê duyệt không; lập tiến độ biên soạn theo các mốc (đề cương → bản thảo → phản biện → nghiệm thu → xuất bản).",
+   "inputs": [
+    "ten_giao_trinh",
+    "hoc_phan",
+    "tac_gia",
+    "de_cuong_hoc_phan",
+    "doi_tuong_su_dung"
+   ],
+   "vai_tro": "Giảng viên biên soạn · AI hỗ trợ: lập bảng yêu cầu và tiến độ dự thảo từ Input, chủ biên kiểm tra",
+   "luu_y": "Tên giáo trình nên trùng/khớp với tên học phần để tránh nhầm lẫn khi kiểm định học liệu; nếu là nhóm tác giả, phải phân công rõ chương/phần cho từng người ngay từ đầu và ghi vào biên bản; kiểm tra đề cương học phần là bản mới nhất đã phê duyệt, không dùng bản nháp cũ.",
+   "ket_qua": "Bảng yêu cầu biên soạn (tên giáo trình, học phần, tác giả/phân công, đối tượng sử dụng, tiến độ các mốc)."
+  },
+  {
+   "n": 2,
+   "title": "Xây dựng đề cương giáo trình",
+   "lam_gi": "Từ đề cương chi tiết học phần, chia nội dung thành các chương; quyết định số chương và dung lượng mỗi chương (số trang dự kiến); đối chiếu từng chương với CLO để đảm bảo mọi chuẩn đầu ra đều được ít nhất một chương \"phủ\"; xác định thời lượng giảng dạy tương ứng từng chương (tiết lý thuyết/bài tập); trình tổ bộ môn/khoa góp ý và chốt đề cương.",
+   "inputs": [
+    "de_cuong_hoc_phan"
+   ],
+   "vai_tro": "Giảng viên biên soạn · AI hỗ trợ: đề xuất chia chương và bảng đối chiếu chương–CLO, tổ bộ môn/khoa góp ý và chốt đề cương",
+   "luu_y": "Mỗi CLO phải được gắn với ít nhất một chương — đây là điểm kiểm định học liệu hay soi nhất; dung lượng các chương nên cân đối, tránh chương đầu quá dài, chương cuối sơ sài; số chương của giáo trình không nhất thiết bằng số chương trong đề cương học phần, có thể gộp/tách cho hợp lý về sư phạm.",
+   "ket_qua": "Đề cương giáo trình (danh sách chương, dung lượng, thời lượng, bảng đối chiếu chương – CLO)."
+  },
+  {
+   "n": 3,
+   "title": "Thiết kế cấu trúc chuẩn cho từng chương",
+   "lam_gi": "Quy định khung mục bắt buộc áp dụng thống nhất cho mọi chương: (1) Mục tiêu chương (gắn CLO); (2) Nội dung lý thuyết có ví dụ minh họa; (3) Ví dụ/bài tập mẫu có lời giải; (4) Câu hỏi ôn tập; (5) Bài tập cuối chương (phân 3 mức độ: nhận biết – thông hiểu – vận dụng); (6) Tài liệu tham khảo của chương. Thống nhất quy tắc trình bày: cách đánh số mục/ví dụ/hình/bảng, kiểu trích dẫn, thuật ngữ chuyên môn dùng xuyên suốt giáo trình.",
+   "inputs": [
+    "de_cuong_hoc_phan"
+   ],
+   "vai_tro": "Giảng viên biên soạn · AI hỗ trợ: soạn khung cấu trúc chuẩn và quy tắc trình bày, nhóm tác giả thống nhất áp dụng",
+   "luu_y": "Thuật ngữ phải thống nhất từ chương 1 đến chương cuối — bẫy thường gặp là mỗi tác giả trong nhóm dùng một cách dịch khác nhau; quy ước một chuẩn trích dẫn duy nhất (VD: [số thứ tự] hoặc APA) và áp dụng cho toàn giáo trình.",
+   "ket_qua": "Khung giáo trình hoàn chỉnh (mục lục chi tiết + cấu trúc chuẩn từng chương) — sản phẩm chính thứ nhất."
+  },
+  {
+   "n": 4,
+   "title": "Biên soạn nội dung các chương",
+   "lam_gi": "Viết đầy đủ từng chương theo cấu trúc chuẩn đã chốt: diễn đạt sư phạm, mạch lạc; mỗi khái niệm mới kèm ví dụ minh họa cụ thể; mỗi chương có ít nhất 2–3 bài tập mẫu có lời giải chi tiết; cập nhật kiến thức, công nghệ mới của chuyên ngành; trích dẫn đầy đủ nguồn tài liệu tham khảo; viết Lời nói đầu và Phụ lục (nếu có).",
+   "inputs": [],
+   "vai_tro": "Giảng viên · AI hỗ trợ: hỗ trợ soạn dự thảo nội dung từng chương",
+   "luu_y": "Tôn trọng bản quyền — trích dẫn đầy đủ, không sao chép nguyên văn tài liệu có bản quyền; tránh \"viết cho xong\": mỗi chương nên được đọc lại sau ít nhất 1–2 ngày để phát hiện lỗi logic; nếu nhóm tác giả, chủ biên phải đọc soát toàn bộ để thống nhất giọng văn.",
+   "ket_qua": "Bản thảo toàn văn giáo trình + 01 chương mẫu viết đầy đủ theo cấu trúc chuẩn."
+  },
+  {
+   "n": 5,
+   "title": "Tổ chức phản biện độc lập",
+   "lam_gi": "Mời ít nhất 02 phản biện độc lập (01 trong trường, 01 ngoài trường — ưu tiên người có chuyên môn sâu về học phần); gửi bản thảo kèm phiếu nhận xét phản biện (đánh giá: tính khoa học, tính sư phạm, tính cập nhật, hình thức); thu phiếu nhận xét, phân loại ý kiến (bắt buộc sửa / nên sửa / góp ý tham khảo).",
+   "inputs": [],
+   "vai_tro": "Giảng viên biên soạn · AI hỗ trợ: chuẩn bị dự thảo, tài liệu và số liệu phục vụ bước này",
+   "luu_y": "Phản biện ngoài trường không được là đồng tác giả/cộng sự thân thiết của nhóm biên soạn để đảm bảo tính độc lập; yêu cầu phản biện trả lời đúng hạn và ghi rõ ý kiến nào \"bắt buộc\" để tác giả không bỏ sót.",
+   "ket_qua": "Phiếu nhận xét phản biện + danh sách ý kiến phản biện đã phân loại."
+  },
+  {
+   "n": 6,
+   "title": "Hiệu đính theo ý kiến phản biện, lập bảng tiếp thu",
+   "lam_gi": "Tác giả sửa bản thảo theo từng ý kiến phản biện; với ý kiến không tiếp thu phải ghi rõ lý do; lập bảng tiếp thu ý kiến (cột: STT, ý kiến phản biện, tiếp thu của tác giả); đối chiếu lần cuối thuật ngữ, đánh số mục/ví dụ/hình/bảng, trích dẫn sau hiệu đính.",
+   "inputs": [],
+   "vai_tro": "Giảng viên biên soạn · AI hỗ trợ: hỗ trợ đối chiếu và lập bảng tiếp thu, tác giả sửa bản thảo theo ý kiến phản biện",
+   "luu_y": "Bảng tiếp thu là minh chứng bắt buộc trong hồ sơ nghiệm thu — không được bỏ trống cột \"tiếp thu\"; ý kiến \"bắt buộc sửa\" của phản biện mà không tiếp thu thì phải có lý do thuyết phục, nếu không hội đồng nghiệm thu sẽ trả hồ sơ về.",
+   "ket_qua": "Bản thảo đã hiệu đính + Bảng tiếp thu ý kiến phản biện (mẫu) — sản phẩm chính thứ hai."
+  },
+  {
+   "n": 7,
+   "title": "Nghiệm thu tại hội đồng cấp trường",
+   "lam_gi": "Nộp hồ sơ nghiệm thu (bản thảo, bảng tiếp thu, phiếu phản biện, đề cương học phần); hội đồng nghiệm thu cấp trường đánh giá theo tiêu chí (khoa học, sư phạm, cập nhật, hình thức); ghi biên bản nghiệm thu (đạt / đạt có sửa / không đạt); nếu \"đạt có sửa\", tác giả chỉnh sửa lần cuối theo kết luận hội đồng.",
+   "inputs": [],
+   "vai_tro": "Hội đồng thẩm định · AI hỗ trợ: chuẩn bị dự thảo, tài liệu và số liệu phục vụ bước này",
+   "luu_y": "Kiểm tra đủ thành phần hồ sơ trước khi nộp — thiếu phiếu phản biện ngoài trường là lỗi hay gặp nhất khiến hồ sơ bị trả; giữ lại biên bản nghiệm thu vì đây là minh chứng tính giờ NCKH và kiểm định học liệu.",
+   "ket_qua": "Biên bản nghiệm thu + bản thảo hoàn chỉnh sau chỉnh sửa lần cuối."
+  },
+  {
+   "n": 8,
+   "title": "Xuất bản, lưu hành và đưa vào thư viện",
+   "lam_gi": "Đăng ký xuất bản (nhà xuất bản) hoặc lưu hành nội bộ theo quy định của trường; nộp bản lưu chiểu cho thư viện, đưa giáo trình vào danh mục học liệu của thư viện; thông báo cho bộ môn/khoa đưa vào danh mục học liệu của học phần; lập kế hoạch cập nhật, tái bản định kỳ (3–5 năm).",
+   "inputs": [
+    "ten_giao_trinh",
+    "hoc_phan"
+   ],
+   "vai_tro": "Giảng viên biên soạn · AI hỗ trợ: chuẩn bị dự thảo, tài liệu và số liệu phục vụ bước này",
+   "luu_y": "Giáo trình chỉ được tính là \"đã xuất bản\" khi có giấy phép xuất bản hoặc quyết định lưu hành nội bộ — bản in thử không tính; cập nhật mã học liệu vào đề cương chi tiết học phần để phục vụ kiểm định.",
+   "ket_qua": "Giáo trình đã xuất bản/lưu hành nội bộ + hồ sơ đưa vào danh mục học liệu thư viện."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Mọi CLO của đề cương học phần đều được ít nhất một chương \"phủ\" (có bảng đối chiếu chương–CLO).",
+  "Mỗi chương có đúng 6 mục theo đúng thứ tự; thuật ngữ và quy ước trích dẫn thống nhất toàn giáo trình.",
+  "Nội dung output khớp với Input (`ten_giao_trinh`, `hoc_phan`, `tac_gia`, `de_cuong_hoc_phan`).",
+  "Không sao chép nguyên văn tài liệu có bản quyền; trích dẫn đầy đủ nguồn tài liệu tham khảo.",
+  "Đúng thể thức trình bày: đánh số mục/ví dụ/hình/bảng liên tục, chính tả chuẩn.",
+  "Đã qua Human gate: đủ phiếu phản biện (01 trong trường, 01 ngoài trường) và biên bản nghiệm thu của hội đồng cấp trường.",
+  "Bảng tiếp thu ý kiến phản biện đầy đủ cột \"tiếp thu\"; ý kiến \"bắt buộc sửa\" không tiếp thu đã có lý do thuyết phục.",
+  "Hồ sơ nghiệm thu đầy đủ thành phần (bản thảo, bảng tiếp thu, phiếu phản biện, đề cương học phần)."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Giáo trình hoặc tài liệu giảng dạy cho chương trình dạy bằng tiếng Anh: ngôn ngữ do Khoa quyết (C3).",
+  "Chương trình liên kết dùng tài liệu của đối tác: không biên soạn lại khi không có thỏa thuận (C2)."
+ ],
+ "cho_xac_nhan": [
+  "Quy định biên soạn giáo trình (C2).",
+  "Hội đồng thẩm định giáo trình (C6)."
+ ],
+ "output_structure": [
+  "Trang bìa: tên giáo trình, tác giả (chủ biên), đơn vị, năm xuất bản.",
+  "Lời nói đầu: mục đích biên soạn, đối tượng sử dụng, cấu trúc cuốn sách.",
+  "Mục lục chi tiết: chương, mục, tiểu mục — mỗi chương ghi CLO tương ứng.",
+  "Nội dung các chương — mỗi chương gồm đúng 6 mục theo thứ tự: 4.1. Mục tiêu chương (gắn CLO); 4.2. Nội dung lý thuyết (có ví dụ minh họa); 4.3. Ví dụ / bài tập mẫu có lời giải; 4.4. Câu hỏi ôn tập; 4.5. Bài tập cuối chương (phân 3 mức độ: nhận biết – thông hiểu – vận dụng); 4.6. Tài liệu tham khảo của chương.",
+  "Phụ lục (nếu có).",
+  "Tài liệu tham khảo chung."
+ ],
+ "output_structure_raw": "1. Trang bìa: tên giáo trình, tác giả (chủ biên), đơn vị, năm xuất bản.\n\n2. Lời nói đầu: mục đích biên soạn, đối tượng sử dụng, cấu trúc cuốn sách.\n\n3. Mục lục chi tiết: chương, mục, tiểu mục — mỗi chương ghi CLO tương ứng.\n\n4. Nội dung các chương — mỗi chương gồm đúng 6 mục theo thứ tự:\n   4.1. Mục tiêu chương (gắn CLO);\n   4.2. Nội dung lý thuyết (có ví dụ minh họa);\n   4.3. Ví dụ / bài tập mẫu có lời giải;\n   4.4. Câu hỏi ôn tập;\n   4.5. Bài tập cuối chương (phân 3 mức độ: nhận biết – thông hiểu – vận dụng);\n   4.6. Tài liệu tham khảo của chương.\n\n5. Phụ lục (nếu có).\n\n6. Tài liệu tham khảo chung.",
+ "human_gate_check": "Đã qua Human gate: đủ phiếu phản biện (01 trong trường, 01 ngoài trường) và biên bản nghiệm thu của hội đồng cấp trường.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Luật 131/2025/QH15 sửa đổi sở hữu trí tuệ, hiệu lực 01/04/2026\n\nNguồn: https://congbao.chinhphu.vn/van-ban/luat-so-131-2025-qh15-468691.htm\n\nYêu cầu chủ thể quyền, nguồn tài trợ, hợp đồng và loại tài sản trí tuệ; đối chiếu sửa đổi 131/2025 theo thời điểm. Không mặc định quyền thuộc trường hay tác giả khi chưa có căn cứ; rà soát quyền sử dụng học liệu trước chia sẻ/chuyển giao.\n",
+ "outputs_dir": "skills/vnuis-khcn-bien-soan-giao-trinh/references"
+}

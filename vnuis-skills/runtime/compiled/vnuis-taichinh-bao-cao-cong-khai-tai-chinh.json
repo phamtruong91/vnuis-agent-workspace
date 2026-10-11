@@ -1,0 +1,186 @@
+{
+ "name": "vnuis-taichinh-bao-cao-cong-khai-tai-chinh",
+ "title": "Soạn báo cáo công khai tài chính",
+ "description": "Dùng khi Phòng TC&QT cần công bố công khai tài chính trên cổng thông tin điện tử (học phí, tổng thu – chi, chi cho người học, kiểm toán) theo Thông tư 09/2024/TT-BGDĐT.",
+ "group": "taichinh",
+ "group_label": "Kế hoạch – tài chính",
+ "previous_name": "vnuis-bao-cao-cong-khai-tai-chinh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)",
+ "when": "Khi thực hiện nghĩa vụ công khai tài chính của cơ sở giáo dục đại học: công bố mức thu học\nphí các ngành, tổng thu – chi ngân sách, các khoản chi cho người học (học bổng, hỗ trợ sinh\nviên), kết quả kiểm toán, theo hình thức công khai quy định.",
+ "inputs": [
+  {
+   "key": "nam_hoc",
+   "desc": "Năm học công khai (khi công khai theo năm học)",
+   "required": true,
+   "note": "Có (một trong hai)"
+  },
+  {
+   "key": "nam_tai_chinh",
+   "desc": "Năm tài chính công khai (khi công khai theo năm tài chính)",
+   "required": true,
+   "note": "Có (một trong hai)"
+  },
+  {
+   "key": "hoc_phi_cac_nganh",
+   "desc": "Bảng học phí theo từng ngành/khối ngành đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tong_thu_chi",
+   "desc": "Tổng thu, tổng chi ngân sách năm (theo số liệu quyết toán/BCTC)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chi_cho_nguoi_hoc",
+   "desc": "Học bổng khuyến khích học tập, hỗ trợ sinh viên khó khăn, miễn giảm học phí...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_qua_kiem_toan",
+   "desc": "Kết luận kiểm toán (đơn vị kiểm toán, ý kiến kiểm toán, kiến nghị chính)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "hinh_thuc_cong_khai",
+   "desc": "Cổng thông tin điện tử / niêm yết tại trụ sở / hội nghị CBVC...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_cong_khai",
+   "desc": "Thời gian thực hiện công khai",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 09/2024/TT-BGDĐT, hiệu lực 19/07/2024, thay 36/2017: Chuyển từ mẫu ba công khai cũ sang nội dung công khai và báo cáo thường niên theo 09/2024. Đối chiếu phần thông tin chung, phần giáo dục đại học và phụ lục báo cáo thường niên; lưu nội dung trên website tối thiểu 5 năm. Ghi thời điểm, đường dẫn công bố, người duyệt và bằng chứng cập nhật. Không tự thêm số liệu hoặc tự công bố; không coi báo cáo gửi cơ quan quản lý là nghĩa vụ định kỳ nếu không có căn cứ/yêu cầu bằng văn bản.\n- Nghị định 238/2025/NĐ-CP, hiệu lực 03/09/2025: Yêu cầu năm học, trình độ, ngành, loại hình trường, mức tự chủ, quyết định học phí được duyệt và đối tượng miễn/giảm/hỗ trợ. Đối chiếu 238/2025 và chuyển tiếp; không lấy mức trần, tỷ lệ tăng hoặc đối tượng từ 81/2021/97/2023 làm mặc định hiện hành. Chỉ tính khi đủ căn cứ và dữ liệu từng người học.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập số liệu nguồn và kiểm tra tính phê duyệt",
+   "lam_gi": "lấy mức học phí các ngành từ thông báo mức thu đã ban hành (`hoc_phi_cac_nganh`); lấy tổng thu – chi từ báo cáo quyết toán / báo cáo tài chính đã được phê duyệt (`tong_thu_chi`); lấy chi cho người học từ sổ kế toán và các quyết định cấp học bổng, miễn giảm (`chi_cho_nguoi_hoc`); lấy kết luận kiểm toán từ báo cáo kiểm toán gần nhất (`ket_qua_kiem_toan`). Với mỗi nguồn số liệu, xác nhận đã có phê duyệt của cấp có thẩm quyền.",
+   "inputs": [
+    "hoc_phi_cac_nganh",
+    "tong_thu_chi",
+    "chi_cho_nguoi_hoc",
+    "ket_qua_kiem_toan",
+    "nam_hoc",
+    "nam_tai_chinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "chỉ công khai số liệu đã được phê duyệt — tuyệt đối không dùng số liệu tạm tính hay số liệu nội bộ chưa duyệt; ghi lại nguồn và văn bản phê duyệt của từng số liệu để đối chiếu khi bị chất vấn.",
+   "ket_qua": "bảng số liệu nguồn đã kiểm tra phê duyệt (từng chỉ tiêu + văn bản phê duyệt tương ứng)."
+  },
+  {
+   "n": 2,
+   "title": "Soạn báo cáo theo 5 nội dung công khai",
+   "lam_gi": "viết báo cáo gồm đúng 5 nội dung: (1) mức thu học phí và các khoản thu khác của từng ngành đào tạo (dạng bảng); (2) tổng thu – chi ngân sách năm ở mức tổng hợp, không đi sâu chi tiết nhạy cảm; (3) các khoản chi cho người học: học bổng, hỗ trợ, miễn giảm (kèm số suất/số sinh viên); (4) kết quả kiểm toán (đơn vị kiểm toán, ý kiến kiểm toán, kiến nghị chính và tình trạng khắc phục); (5) hình thức và thời gian công khai (`hinh_thuc_cong_khai`, `thoi_gian_cong_khai`).",
+   "inputs": [
+    "hinh_thuc_cong_khai",
+    "thoi_gian_cong_khai"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: soạn dự thảo, tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "nội dung (2) chỉ công khai ở mức tổng hợp; nội dung (4) nếu ý kiến kiểm toán không phải chấp nhận toàn phần thì phải trình bày trung thực kèm kế hoạch khắc phục.",
+   "ket_qua": "dự thảo báo cáo công khai tài chính (đủ 5 nội dung)."
+  },
+  {
+   "n": 3,
+   "title": "Đối chiếu với 3 công khai theo văn bản hiện hành nêu tại phap-ly.md",
+   "lam_gi": "đối chiếu nội dung tài chính trong dự thảo với hai nội dung công khai còn lại (công khai chất lượng đào tạo; công khai đội ngũ, cơ sở vật chất) sẽ đăng đồng bộ: số liệu học phí, quy mô sinh viên, số suất học bổng phải nhất quán giữa các báo cáo.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "mâu thuẫn số liệu giữa các báo cáo công khai là lỗi dễ bị thanh tra phát hiện nhất — kiểm tra chéo từng con số chung.",
+   "ket_qua": "dự thảo báo cáo đã đối chiếu, nhất quán với 2 nội dung công khai còn lại."
+  },
+  {
+   "n": 4,
+   "title": "Trình ký và đăng công khai",
+   "lam_gi": "trình Hiệu trưởng (`nguoi_ky`) ký duyệt; đăng tải trên cổng thông tin điện tử của trường tại chuyên mục công khai; đồng thời niêm yết bản giấy tại trụ sở theo quy định.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) (chuẩn bị hồ sơ trình); Hiệu trưởng (người ký) ban hành · AI hỗ trợ: chuẩn bị hồ sơ trình đầy đủ, chuẩn bị bản phát hành",
+   "luu_y": "thời hạn công khai thực hiện vào đầu năm học và duy trì trong suốt năm học — ghi rõ thời gian bắt đầu công khai trong báo cáo.",
+   "ket_qua": "báo cáo công khai tài chính đã ký và đăng tải."
+  },
+  {
+   "n": 5,
+   "title": "Lưu hồ sơ công khai",
+   "lam_gi": "lưu bản báo cáo đã đăng, ảnh chụp màn hình trang đăng tải, biên bản/ảnh niêm yết tại trụ sở; lưu theo hồ sơ để phục vụ thanh tra, kiểm tra của cơ quan quản lý.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, chuẩn bị bản phát hành",
+   "luu_y": "bằng chứng đăng tải (screenshot có ngày) là căn cứ chứng minh đã thực hiện nghĩa vụ công khai đúng hạn.",
+   "ket_qua": "hồ sơ lưu trữ công khai đầy đủ bằng chứng."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Có đầy đủ sản phẩm: Báo cáo công khai tài chính hoàn chỉnh, sẵn sàng đăng cổng thông tin",
+  "Có đầy đủ sản phẩm: Bảng học phí các ngành + bảng tổng hợp thu – chi + bảng chi cho người học",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Chỉ công khai số liệu đã được phê duyệt — tuyệt đối không dùng số liệu",
+  "Nội dung (2) chỉ công khai ở mức tổng hợp"
+ ],
+ "gates": [],
+ "guardrails": [
+  "Chỉ công khai số liệu đã được cấp có thẩm quyền phê duyệt (quyết toán, BCTC, kết luận kiểm toán); không công khai số liệu tạm tính, số liệu nội bộ chưa duyệt."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Chỉ công khai nội dung theo quy định; mức công khai do Trường quyết (C2).",
+  "Số liệu phải trùng báo cáo tài chính đã duyệt."
+ ],
+ "cho_xac_nhan": [
+  "Danh mục nội dung bắt buộc công khai (C2).",
+  "Kênh công khai (C5)."
+ ],
+ "output_structure": [
+  "Tiêu đề văn bản (tên đơn vị, số ký hiệu, địa danh ngày tháng, tên báo cáo, năm học / năm tài chính, căn cứ căn cứ hiện hành đã chọn);",
+  "Nội dung 1: Mức thu học phí các ngành (bảng: khối ngành, đồng/tín chỉ, đồng/năm; ghi chú các khoản thu khác);",
+  "Nội dung 2: Tổng thu – chi ngân sách năm (bảng tổng hợp: tổng thu, tổng chi, chênh lệch);",
+  "Nội dung 3: Các khoản chi cho người học (bảng: nội dung, số tiền, số suất/số sinh viên; dòng tổng cộng);",
+  "Nội dung 4: Kết quả kiểm toán (đơn vị kiểm toán, ý kiến kiểm toán, kiến nghị và tình trạng khắc phục);",
+  "Nội dung 5: Hình thức và thời gian công khai;",
+  "Thông tin liên hệ giải đáp (đơn vị đầu mối);",
+  "Nơi nhận – chữ ký Hiệu trưởng (ghi rõ họ tên). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề văn bản (tên đơn vị, số ký hiệu, địa danh ngày tháng, tên báo cáo, năm học /\n   năm tài chính, căn cứ căn cứ hiện hành đã chọn);\n\n2. Nội dung 1: Mức thu học phí các ngành (bảng: khối ngành, đồng/tín chỉ, đồng/năm;\n   ghi chú các khoản thu khác);\n\n3. Nội dung 2: Tổng thu – chi ngân sách năm (bảng tổng hợp: tổng thu, tổng chi, chênh lệch);\n\n4. Nội dung 3: Các khoản chi cho người học (bảng: nội dung, số tiền, số suất/số sinh viên;\n   dòng tổng cộng);\n\n5. Nội dung 4: Kết quả kiểm toán (đơn vị kiểm toán, ý kiến kiểm toán, kiến nghị và tình\n   trạng khắc phục);\n\n6. Nội dung 5: Hình thức và thời gian công khai;\n\n7. Thông tin liên hệ giải đáp (đơn vị đầu mối);\n\n8. Nơi nhận – chữ ký Hiệu trưởng (ghi rõ họ tên).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (kế hoạch – tài chính). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Thông tư 09/2024/TT-BGDĐT, hiệu lực 19/07/2024, thay 36/2017\n\nNguồn: https://chinhphu.vn/?classid=1&docid=210411&pageid=27160\n\nChuyển từ mẫu ba công khai cũ sang nội dung công khai và báo cáo thường niên theo 09/2024. Đối chiếu phần thông tin chung, phần giáo dục đại học và phụ lục báo cáo thường niên; lưu nội dung trên website tối thiểu 5 năm. Ghi thời điểm, đường dẫn công bố, người duyệt và bằng chứng cập nhật. Không tự thêm số liệu hoặc tự công bố; không coi báo cáo gửi cơ quan quản lý là nghĩa vụ định kỳ nếu không có căn cứ/yêu cầu bằng văn bản.\n\n## Nghị định 238/2025/NĐ-CP, hiệu lực 03/09/2025\n\nNguồn: https://vanban.chinhphu.vn/?docid=215169&pageid=27160\n\nYêu cầu năm học, trình độ, ngành, loại hình trường, mức tự chủ, quyết định học phí được duyệt và đối tượng miễn/giảm/hỗ trợ. Đối chiếu 238/2025 và chuyển tiếp; không lấy mức trần, tỷ lệ tăng hoặc đối tượng từ 81/2021/97/2023 làm mặc định hiện hành. Chỉ tính khi đủ căn cứ và dữ liệu từng người học.\n",
+ "outputs_dir": "skills/vnuis-taichinh-bao-cao-cong-khai-tai-chinh/references"
+}

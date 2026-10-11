@@ -1,0 +1,194 @@
+{
+ "name": "vnuis-nhansu-ke-hoach-dao-tao-boi-duong-can-bo",
+ "title": "Kế hoạch đào tạo, bồi dưỡng cán bộ năm",
+ "description": "Dùng khi Phòng TC&QT tổng hợp nhu cầu các đơn vị để lập kế hoạch năm đào tạo, bồi dưỡng cán bộ, giảng viên trình Hiệu trưởng: đối tượng, nội dung, hình thức, kinh phí.",
+ "group": "nhansu",
+ "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+ "previous_name": "vnuis-ke-hoach-boi-duong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị",
+ "when": "Khi cần xây dựng kế hoạch năm về đào tạo, bồi dưỡng cán bộ, viên chức, giảng viên:\ntổng hợp nhu cầu từ các đơn vị, xác định đối tượng – nội dung – hình thức – kinh phí,\ntrình Hiệu trưởng phê duyệt để làm căn cứ triển khai.",
+ "inputs": [
+  {
+   "key": "nam_ke_hoach",
+   "desc": "Năm áp dụng kế hoạch (vd: 2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_tieu",
+   "desc": "Mục tiêu chung của công tác bồi dưỡng trong năm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nhu_cau_don_vi",
+   "desc": "Tổng hợp nhu cầu từ các đơn vị: đối tượng, số lượng, nội dung đề xuất",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung_boi_duong",
+   "desc": "Các nội dung/chương trình: nghiệp vụ sư phạm, phương pháp giảng dạy, ngoại ngữ, tin học, quản lý...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hinh_thuc",
+   "desc": "Tập huấn trong nước / gửi đi đào tạo / bồi dưỡng trực tuyến / liên kết đơn vị...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kinh_phi_du_kien",
+   "desc": "Tổng kinh phí và nguồn (ngân sách nhà nước / nguồn thu / học phí hỗ trợ...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tien_do",
+   "desc": "Phân kỳ thực hiện theo quý/tháng",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "don_vi_chu_tri",
+   "desc": "Đơn vị chủ trì, phối hợp",
+   "required": false,
+   "note": "Không (mặc định: Phòng TC&QT (nhân sự))"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tổng hợp nhu cầu từ các đơn vị",
+   "lam_gi": "thu thập phiếu khảo sát nhu cầu bồi dưỡng của các đơn vị; phân loại theo đối tượng (giảng viên, viên chức quản lý, nhân viên) và theo nội dung; loại bỏ nhu cầu trùng lặp, gộp các nhu cầu tương đồng thành một chương trình.",
+   "inputs": [
+    "nhu_cau_don_vi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: tổng hợp và chuẩn hóa dữ liệu",
+   "luu_y": "nhu cầu phải xuất phát từ yêu cầu của vị trí việc làm / chuẩn chức danh, không theo nguyện vọng cá nhân đơn thuần; nhu cầu không có đơn vị đề xuất thì không đưa vào kế hoạch.",
+   "ket_qua": "bảng tổng hợp nhu cầu phân loại theo đối tượng – nội dung."
+  },
+  {
+   "n": 2,
+   "title": "Xác định mục tiêu, chỉ tiêu",
+   "lam_gi": "xác định mục tiêu chung của công tác bồi dưỡng trong năm; cụ thể hóa thành chỉ tiêu đo đếm được: số lượng cán bộ được bồi dưỡng, tỷ lệ đạt chuẩn (chứng chỉ nghiệp vụ sư phạm, trình độ tiến sĩ, chứng chỉ ngoại ngữ/tin học...); gắn với chiến lược phát triển đội ngũ của trường.",
+   "inputs": [
+    "muc_tieu",
+    "nam_ke_hoach"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "chỉ tiêu phải đo đếm được (số lượng, tỷ lệ %, thời hạn hoàn thành); mục tiêu chung chung không kiểm tra được khi tổng kết cuối năm.",
+   "ket_qua": "bộ mục tiêu – chỉ tiêu của năm kế hoạch."
+  },
+  {
+   "n": 3,
+   "title": "Xây dựng nội dung chi tiết từng chương trình",
+   "lam_gi": "thiết kế từng chương trình bồi dưỡng: tên chương trình, đối tượng, số lượng, hình thức (tập huấn tại trường / gửi đi bồi dưỡng / học trực tuyến), thời gian, địa điểm, đơn vị thực hiện.",
+   "inputs": [
+    "noi_dung_boi_duong",
+    "hinh_thuc"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "đối tượng các chương trình không trùng lặp gây lãng phí nguồn lực; hình thức phải phù hợp nội dung (kỹ năng thực hành ưu tiên tập huấn tập trung, kiến thức lý thuyết có thể trực tuyến).",
+   "ket_qua": "bảng kế hoạch chi tiết (chương trình | đối tượng | số lượng | hình thức | thời gian | kinh phí | đơn vị thực hiện)."
+  },
+  {
+   "n": 4,
+   "title": "Lập dự toán kinh phí",
+   "lam_gi": "tính chi phí từng chương trình (thù lao giảng viên/báo cáo viên, tài liệu, đi lại, ăn ở...); tổng hợp theo nguồn kinh phí (ngân sách nhà nước / nguồn thu sự nghiệp / kinh phí đề tài, dự án...); đối chiếu tổng dự toán với dự toán được giao.",
+   "inputs": [
+    "kinh_phi_du_kien"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: lập bảng tính toán",
+   "luu_y": "tổng kinh phí các chương trình phải khớp tổng các nguồn; vượt dự toán được giao thì cắt giảm nội dung hoặc điều chỉnh quy mô, không \"vẽ\" thêm nguồn.",
+   "ket_qua": "bảng dự toán kinh phí theo nguồn (khớp với tổng kinh phí)."
+  },
+  {
+   "n": 5,
+   "title": "Phân kỳ tiến độ và phân công thực hiện",
+   "lam_gi": "xếp các chương trình theo quý/tháng trong năm; phân công đơn vị chủ trì – phối hợp từng chương trình; quy định chế độ báo cáo (định kỳ 6 tháng và cả năm).",
+   "inputs": [
+    "tien_do",
+    "don_vi_chu_tri"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "tránh dồn quá nhiều chương trình vào quý IV; tiến độ phải khả thi với năng lực của đơn vị chủ trì (mặc định: Phòng TC&QT (nhân sự)).",
+   "ket_qua": "lịch tiến độ theo quý + phân công trách nhiệm chủ trì, phối hợp."
+  },
+  {
+   "n": 6,
+   "title": "Soạn văn bản kế hoạch và chuẩn bị trình ký",
+   "lam_gi": "soạn Quyết định ban hành kế hoạch theo thể thức NĐ 30/2020 — Điều 1: ban hành kế hoạch kèm theo; Điều 2: tổng kinh phí + nguồn kinh phí; Điều 3: tổ chức thực hiện, chế độ báo cáo; Điều 4: hiệu lực, trách nhiệm thi hành — và soạn kế hoạch chi tiết kèm theo (I. Mục tiêu; II. Nội dung thực hiện dạng bảng; III. Kinh phí; IV. Tổ chức thực hiện); kiểm tra lần cuối: kinh phí trong quyết định khớp bảng dự toán, đối tượng không trùng lặp, thẩm quyền ký đúng; hoàn thiện để trình ký.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) chuẩn bị, Hiệu trưởng phê duyệt · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "số kinh phí ghi bằng số và bằng chữ trong Điều 2 phải khớp nhau và khớp bảng dự toán; kế hoạch chi tiết là phụ lục kèm theo, phải ghi rõ số/ký hiệu quyết định ban hành.",
+   "ket_qua": "quyết định + kế hoạch chi tiết hoàn chỉnh, sẵn sàng trình ký (trình ký tại Human gate)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và định dạng theo Nghị định 30/2020/NĐ-CP về công tác văn thư (thể thức văn bản).",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Nhu cầu phải xuất phát từ yêu cầu của vị trí việc làm / chuẩn chức danh, không theo nguyện vọng cá nhân đơn thuần",
+  "Chỉ tiêu phải đo đếm được (số lượng, tỷ lệ %, thời hạn hoàn thành)",
+  "Mục tiêu chung chung không kiểm tra được khi tổng kết cuối năm"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kế hoạch bồi dưỡng gồm giảng viên, viên chức, cán bộ quản lý; nhu cầu ngoại ngữ và kỹ năng giảng dạy bằng tiếng Anh do Trường xác nhận.",
+  "Bồi dưỡng về AI và chuyển đổi số: nêu rõ nội dung và đối tượng từng nhóm.",
+  "Kinh phí chỉ điền khi có dự toán."
+ ],
+ "cho_xac_nhan": [
+  "Nhu cầu bồi dưỡng đã khảo sát (C8).",
+  "Nguồn kinh phí (C8)."
+ ],
+ "output_structure": [
+  "Tên loại \"QUYẾT ĐỊNH\" + trích yếu; 5. Người ban hành (Hiệu trưởng); 6. Phần \"Căn cứ...\";",
+  "Phần \"Xét...\"; 8. Nội dung \"QUYẾT ĐỊNH:\": Điều 1 (ban hành kế hoạch kèm theo), Điều 2 (tổng kinh phí + nguồn kinh phí), Điều 3 (tổ chức thực hiện, chế độ báo cáo), Điều 4 (hiệu lực, trách nhiệm thi hành); 9. Nơi nhận; 10. Chữ ký. - *Phần Kế hoạch chi tiết (kèm theo quyết định):* I. Mục tiêu; II. Nội dung thực hiện (bảng: chương trình | đối tượng | số lượng | hình thức | thời gian | kinh phí | đơn vị thực hiện); III. Kinh phí (tổng kinh phí + nguồn); IV. Tổ chức thực hiện. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "**Cấu trúc output chuẩn** (Quyết định ban hành kế hoạch + Kế hoạch chi tiết kèm theo):\n- *Phần Quyết định:* 1. Quốc hiệu – Tiêu ngữ; 2. Tên cơ quan, số/ký hiệu; 3. Địa danh, ngày tháng;\n  4. Tên loại \"QUYẾT ĐỊNH\" + trích yếu; 5. Người ban hành (Hiệu trưởng); 6. Phần \"Căn cứ...\";\n  7. Phần \"Xét...\"; 8. Nội dung \"QUYẾT ĐỊNH:\": Điều 1 (ban hành kế hoạch kèm theo),\n  Điều 2 (tổng kinh phí + nguồn kinh phí), Điều 3 (tổ chức thực hiện, chế độ báo cáo),\n  Điều 4 (hiệu lực, trách nhiệm thi hành); 9. Nơi nhận; 10. Chữ ký.\n- *Phần Kế hoạch chi tiết (kèm theo quyết định):* I. Mục tiêu; II. Nội dung thực hiện\n  (bảng: chương trình | đối tượng | số lượng | hình thức | thời gian | kinh phí | đơn vị thực hiện);\n  III. Kinh phí (tổng kinh phí + nguồn); IV. Tổ chức thực hiện.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-nhansu-ke-hoach-dao-tao-boi-duong-can-bo/references"
+}

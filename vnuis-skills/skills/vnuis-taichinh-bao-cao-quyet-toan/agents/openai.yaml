@@ -1,0 +1,4 @@
+interface:
+  display_name: Tài chính · Soạn báo cáo quyết toán ngân sách năm – VNU-IS
+  short_description: Hỗ trợ soạn báo cáo quyết toán ngân sách năm (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-taichinh-bao-cao-quyet-toan để hỗ trợ công việc: Soạn báo cáo quyết toán ngân sách năm; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .xlsx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

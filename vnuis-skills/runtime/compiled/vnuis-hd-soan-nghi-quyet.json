@@ -1,0 +1,169 @@
+{
+ "name": "vnuis-hd-soan-nghi-quyet",
+ "title": "Nghị quyết Hội đồng KH&ĐT",
+ "description": "Dùng khi Hội đồng Khoa học và Đào tạo đã biểu quyết thông qua các nội dung (chương trình đào tạo, đề tài, công nhận chức danh, định hướng khoa học công nghệ) và cần ban hành nghị quyết làm căn cứ để Hiệu trưởng quyết định.",
+ "group": "hd",
+ "group_label": "Hội đồng KH&ĐT",
+ "previous_name": "vnuis-nghi-quyet-hoi-dong-khdt",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Hội đồng Khoa học và Đào tạo; Văn phòng Trường",
+ "when": "Sau phiên họp Hội đồng Khoa học và Đào tạo đã biểu quyết thông qua các nội dung (chương trình\nđào tạo, danh mục đề tài, công nhận chức danh, định hướng KHCN...), cần ban hành nghị quyết\nlàm căn cứ để Hiệu trưởng quyết định và các đơn vị triển khai.",
+ "inputs": [
+  {
+   "key": "so_nghi_quyet",
+   "desc": "Số, ký hiệu nghị quyết",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "phien_hop",
+   "desc": "Căn cứ phiên họp (số, ngày) và biên bản họp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu",
+   "desc": "Quy chế tổ chức HĐ, các văn bản pháp lý liên quan",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dieu_quyet_nghi",
+   "desc": "Từng điều quyết nghị: nội dung + kết quả biểu quyết",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hieu_luc",
+   "desc": "Hiệu lực thi hành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Nơi nhận (Ban Giám hiệu, các đơn vị, lưu)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Hội đồng Khoa học và Đào tạo; Văn phòng Trường"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Trích lập phần căn cứ",
+   "lam_gi": "trích Quy chế tổ chức và hoạt động của Hội đồng từ `can_cu`; trích biên bản phiên họp trong `phien_hop` (số biên bản, ngày họp); sắp xếp các căn cứ theo thứ tự (quy chế trước, biên bản sau).",
+   "inputs": [
+    "can_cu",
+    "phien_hop"
+   ],
+   "vai_tro": "Thư ký hội đồng (trích lập phần căn cứ theo biên bản đã ký) · AI hỗ trợ: trích lập phần căn cứ theo thứ tự quy chế trước, biên bản sau",
+   "luu_y": "chỉ trích căn cứ có liên quan trực tiếp đến nội dung quyết nghị; số biên bản và ngày họp phải khớp chính xác biên bản đã ký.",
+   "ket_qua": "phần căn cứ hoàn chỉnh (quy chế + biên bản phiên họp)."
+  },
+  {
+   "n": 2,
+   "title": "Soạn các điều quyết nghị",
+   "lam_gi": "với từng nội dung trong `dieu_quyet_nghi`, viết một điều riêng ghi rõ nội dung và kết quả biểu quyết; điều cuối quy định đơn vị chịu trách nhiệm thi hành; thêm điều về `hieu_luc`.",
+   "inputs": [
+    "dieu_quyet_nghi",
+    "hieu_luc"
+   ],
+   "vai_tro": "Thư ký hội đồng (soát đảm bảo không sửa đổi nội dung đã biểu quyết) · AI hỗ trợ: soạn từng điều quyết nghị từ nội dung đã biểu quyết, kèm kết quả biểu quyết",
+   "luu_y": "mỗi điều chỉ chứa một nội dung đã được biểu quyết thông qua; tuyệt đối không sửa đổi nội dung đã biểu quyết khi soạn nghị quyết; không đưa nội dung vượt thẩm quyền của hội đồng vào quyết nghị.",
+   "ket_qua": "dự thảo các điều quyết nghị (kèm kết quả biểu quyết từng điều)."
+  },
+  {
+   "n": 3,
+   "title": "Đối chiếu với biên bản và kiểm tra thẩm quyền",
+   "lam_gi": "đối chiếu từng điều quyết nghị với biên bản họp (nội dung, số liệu biểu quyết); rà soát từng điều xem có vượt thẩm quyền của hội đồng theo quy chế không (hội đồng tư vấn/quyết nghị chuyên môn; quyết định hành chính thuộc Hiệu trưởng).",
+   "inputs": [
+    "phien_hop",
+    "can_cu"
+   ],
+   "vai_tro": "Chủ tịch hội đồng (xác nhận, loại nội dung vượt thẩm quyền) · AI hỗ trợ: đối chiếu từng điều với biên bản, rà soát thẩm quyền từng điều",
+   "luu_y": "nội dung vượt thẩm quyền thì loại khỏi nghị quyết, chuyển Hiệu trưởng quyết định; sai lệch số liệu biểu quyết so với biên bản phải sửa ngay, không tự điều chỉnh.",
+   "ket_qua": "dự thảo nghị quyết đã đối chiếu khớp biên bản và đúng thẩm quyền."
+  },
+  {
+   "n": 4,
+   "title": "Hoàn thiện thể thức, ký ban hành và triển khai",
+   "lam_gi": "ghi `so_nghi_quyet`, địa danh và ngày ban hành; lập `noi_nhan`; trình Chủ tịch hội đồng ký ban hành; chuyển nghị quyết đến Hiệu trưởng và các đơn vị liên quan triển khai.",
+   "inputs": [
+    "so_nghi_quyet",
+    "noi_nhan"
+   ],
+   "vai_tro": "Chủ tịch hội đồng (đối chiếu biên bản, ký ban hành); Văn thư phát hành · AI hỗ trợ: chuẩn bị văn bản, lập danh sách nơi nhận trước khi trình ký",
+   "luu_y": "Chủ tịch hội đồng đối chiếu với biên bản trước khi ký; nghị quyết hội đồng là căn cứ chuyên môn để Hiệu trưởng ra quyết định hành chính theo thẩm quyền.",
+   "ket_qua": "nghị quyết đã ký ban hành, chuyển các đơn vị triển khai."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực: Quy chế tổ chức và hoạt động của Hội đồng; số biên bản và ngày họp khớp chính xác biên bản đã ký.",
+  "Mỗi điều quyết nghị chỉ chứa một nội dung đã biểu quyết thông qua; không đưa nội dung vượt thẩm quyền hội đồng vào quyết nghị (nội dung vượt thẩm quyền chuyển Hiệu trưởng quyết định).",
+  "Kết quả biểu quyết từng điều khớp 100% biên bản họp — tuyệt đối không sửa đổi nội dung đã biểu quyết.",
+  "Có điều cuối quy định đơn vị chịu trách nhiệm thi hành và điều về hiệu lực thi hành.",
+  "Đã qua Human gate: Chủ tịch hội đồng đối chiếu với biên bản trước khi ký ban hành. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Chủ tịch Hội đồng** ký ban hành nghị quyết sau khi đối chiếu với biên bản họp.",
+  "**Hiệu trưởng** xem xét và ra quyết định hành chính theo thẩm quyền đối với các nội dung cần quyết định (nghị quyết hội đồng là căn cứ chuyên môn)."
+ ],
+ "guardrails": [
+  "KHÔNG quyết nghị nội dung vượt thẩm quyền của hội đồng theo quy chế (hội đồng có chức năng tư vấn/quyết nghị chuyên môn, không thay quyết định quản lý của Hiệu trưởng).",
+  "KHÔNG ban hành nghị quyết khi chưa có biên bản họp và kết quả biểu quyết hợp lệ.",
+  "KHÔNG sửa đổi nội dung đã biểu quyết khi soạn nghị quyết."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Theo Điều 18 Luật 125/2025/QH15, Hội đồng khoa học và đào tạo chỉ tư vấn; \"nghị quyết\", \"kết luận\" của Hội đồng là ý kiến tham mưu, quyết định thuộc Hiệu trưởng hoặc cấp có thẩm quyền (chờ C6). Không viết như quyết định có hiệu lực thi hành. Hội đồng trường công lập đã chấm dứt từ 01/01/2026 (Điều 46).",
+  "Đối chiếu ba chiều: biên bản, kết quả biểu quyết, văn bản; mọi con số biểu quyết phải khớp.",
+  "Hội đồng có vai trò tư vấn chuyên môn theo website; chọn hình thức văn bản (nghị quyết, kết luận, kiến nghị) theo quy chế Hội đồng, chưa có quy chế thì hỏi lại (C2).",
+  "Người ban hành và ký (Chủ tịch Hội đồng hay Hiệu trưởng căn cứ kiến nghị của Hội đồng) chưa xác nhận (C1)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế tổ chức và hoạt động của Hội đồng (C2).",
+  "Mẫu nghị quyết và người ký (C1, C8)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – tiêu ngữ + tên cơ quan (HỘI ĐỒNG KHOA HỌC VÀ ĐÀO TẠO) và tên trường.",
+  "Số, ký hiệu nghị quyết; địa danh, ngày tháng năm ban hành.",
+  "Tiêu đề \"NGHỊ QUYẾT\" + trích yếu (phiên họp, năm học).",
+  "Các căn cứ pháp lý: Quy chế tổ chức và hoạt động của Hội đồng; biên bản phiên họp (số, ngày).",
+  "\"QUYẾT NGHỊ\": từng điều — mỗi điều một nội dung đã biểu quyết thông qua + kết quả biểu quyết; điều cuối: đơn vị chịu trách nhiệm thi hành; điều về hiệu lực.",
+  "Nơi nhận (Ban Giám hiệu, các đơn vị liên quan, lưu).",
+  "Chữ ký Chủ tịch hội đồng (chức danh, họ tên đầy đủ). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – tiêu ngữ + tên cơ quan (HỘI ĐỒNG KHOA HỌC VÀ ĐÀO TẠO) và tên trường.\n\n2. Số, ký hiệu nghị quyết; địa danh, ngày tháng năm ban hành.\n\n3. Tiêu đề \"NGHỊ QUYẾT\" + trích yếu (phiên họp, năm học).\n\n4. Các căn cứ pháp lý: Quy chế tổ chức và hoạt động của Hội đồng; biên bản phiên họp (số, ngày).\n\n5. \"QUYẾT NGHỊ\": từng điều — mỗi điều một nội dung đã biểu quyết thông qua + kết quả biểu quyết; điều cuối: đơn vị chịu trách nhiệm thi hành; điều về hiệu lực.\n\n6. Nơi nhận (Ban Giám hiệu, các đơn vị liên quan, lưu).\n\n7. Chữ ký Chủ tịch hội đồng (chức danh, họ tên đầy đủ).",
+ "human_gate_check": "Đã qua Human gate: Chủ tịch hội đồng đối chiếu với biên bản trước khi ký ban hành. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Hội đồng Khoa học và Đào tạo. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-hd-soan-nghi-quyet/references"
+}

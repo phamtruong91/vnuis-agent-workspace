@@ -1,0 +1,192 @@
+{
+ "name": "vnuis-khaothi-quy-trinh-ngan-hang-de-thi",
+ "title": "Quy trình xây dựng ngân hàng đề thi",
+ "description": "Dùng khi cần ban hành hoặc rà soát quy trình quản lý ngân hàng đề thi: biên soạn, phản biện, phê duyệt, lưu trữ bảo mật, rút đề theo ma trận.",
+ "group": "khaothi",
+ "group_label": "Khảo thí",
+ "previous_name": "vnuis-quy-trinh-ngan-hang-de-thi",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Sáu khoa; Phòng Đào tạo (khảo thí)",
+ "when": "Khi cần ban hành mới hoặc sửa đổi quy trình quản lý đề thi: từ khâu biên soạn câu hỏi,\nphản biện, phê duyệt, lưu trữ bảo mật đến rút đề thi theo ma trận.",
+ "inputs": [
+  {
+   "key": "pham_vi",
+   "desc": "Toàn trường / Khoa / Bộ môn",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hinh_thuc_thi",
+   "desc": "Trắc nghiệm / Tự luận / Vấn đáp / Thực hành / Kết hợp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ma_tran_mau",
+   "desc": "Ma trận đề mẫu (tỷ lệ % theo mức độ nhận thức: Nhớ – Hiểu – Vận dụng – Vận dụng cao)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "so_luong_muc_tieu",
+   "desc": "Số câu hỏi mục tiêu cho mỗi học phần",
+   "required": false,
+   "note": "Không (mặc định: gấp 3 lần số câu của 1 đề thi)"
+  },
+  {
+   "key": "don_vi_thuc_hien",
+   "desc": "Phòng Đào tạo (khảo thí, đảm bảo chất lượng) phối hợp Khoa/Bộ môn",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Sáu khoa; Phòng Đào tạo (khảo thí)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xây dựng ma trận đề thi theo chuẩn đầu ra học phần",
+   "lam_gi": "căn cứ chuẩn đầu ra học phần (CLO), lập ma trận phân bố câu hỏi theo 4 mức độ nhận thức: Nhớ – Hiểu – Vận dụng – Vận dụng cao. Tỷ lệ gợi ý: Nhớ 20% – Hiểu 30% – Vận dụng 30% – Vận dụng cao 20%; điều chỉnh theo đặc thù hình thức thi (trắc nghiệm/tự luận/vấn đáp/thực hành).",
+   "inputs": [
+    "pham_vi",
+    "hinh_thuc_thi",
+    "ma_tran_mau"
+   ],
+   "vai_tro": "Bộ môn phụ trách học phần · AI hỗ trợ: lập ma trận mẫu theo CLO và 4 mức độ nhận thức",
+   "luu_y": "mỗi CLO phải được phủ ít nhất một câu hỏi trong ma trận; ma trận phải được thống nhất trước khi biên soạn — không biên soạn rồi mới ép vào ma trận.",
+   "ket_qua": "ma trận đề thi của học phần (bảng phân bố % theo CLO và mức độ nhận thức)."
+  },
+  {
+   "n": 2,
+   "title": "Biên soạn câu hỏi theo biểu mẫu thống nhất",
+   "lam_gi": "giảng viên phụ trách học phần biên soạn đủ số lượng câu hỏi mục tiêu (mặc định gấp 3 lần số câu của 1 đề thi) theo Phiếu biên soạn (Mẫu 01): nội dung câu hỏi, đáp án/thang điểm chi tiết, CLO tương ứng, mức độ nhận thức, thời gian làm bài dự kiến.",
+   "inputs": [
+    "so_luong_muc_tieu",
+    "hinh_thuc_thi"
+   ],
+   "vai_tro": "Giảng viên phụ trách học phần · AI hỗ trợ: gợi ý cấu trúc câu hỏi theo ma trận, kiểm tra độ phủ CLO",
+   "luu_y": "đáp án trắc nghiệm phải có 1 đáp án đúng rõ ràng, các phương án nhiễu phải hợp lý; thang điểm tự luận phải chi tiết đến từng ý; ghi đúng CLO và mức độ nhận thức của từng câu.",
+   "ket_qua": "bộ câu hỏi biên soạn theo biểu mẫu thống nhất (đủ số lượng mục tiêu)."
+  },
+  {
+   "n": 3,
+   "title": "Phản biện độc lập và lập biên bản",
+   "lam_gi": "tổ phản biện (ít nhất 02 giảng viên không tham gia biên soạn) kiểm tra từng câu hỏi về: tính chính xác nội dung, độ rõ ràng của đề bài, tính đúng đắn của đáp án/thang điểm, độ phù hợp với ma trận; lập Biên bản phản biện (Mẫu 02) ghi nhận xét từng câu đạt/không đạt và lý do.",
+   "inputs": [
+    "don_vi_thuc_hien"
+   ],
+   "vai_tro": "Tổ phản biện độc lập (≥02 giảng viên) · AI hỗ trợ: chuẩn bị danh mục kiểm tiêu chí kiểm tra từng câu hỏi",
+   "luu_y": "phản biện phải độc lập tuyệt đối với người biên soạn; câu hỏi không đạt thì trả về biên soạn lại, không tự sửa thay người biên soạn.",
+   "ket_qua": "biên bản phản biện (đánh giá đạt/không đạt từng câu hỏi kèm lý do)."
+  },
+  {
+   "n": 4,
+   "title": "Hiệu đính và phê duyệt đưa vào ngân hàng",
+   "lam_gi": "trưởng bộ môn hiệu đính các câu hỏi theo ý kiến phản biện; trưởng khoa (hoặc trưởng Phòng Đào tạo (khảo thí, đảm bảo chất lượng) theo phân cấp) phê duyệt đưa câu hỏi đạt yêu cầu vào ngân hàng đề thi. Đây là Human gate trước khi câu hỏi được nhập kho chính thức.",
+   "inputs": [
+    "don_vi_thuc_hien",
+    "pham_vi"
+   ],
+   "vai_tro": "Trưởng bộ môn hiệu đính, Trưởng khoa phê duyệt · AI hỗ trợ: tổng hợp ý kiến phản biện để đối chiếu",
+   "luu_y": "chỉ câu hỏi đã qua phản biện và hiệu đính mới được phê duyệt; ghi rõ người phê duyệt và ngày phê duyệt để truy xuất trách nhiệm.",
+   "ket_qua": "bộ câu hỏi đã được phê duyệt, đủ điều kiện nhập ngân hàng."
+  },
+  {
+   "n": 5,
+   "title": "Nhập kho, mã hóa và phân quyền truy cập",
+   "lam_gi": "nhập từng câu hỏi đã duyệt vào kho lưu trữ tập trung; mã hóa mỗi câu hỏi (mã học phần + mức độ nhận thức + số thứ tự); phân quyền truy cập theo vai trò (ai được xem, ai được rút đề, ai được quản trị).",
+   "inputs": [
+    "don_vi_thuc_hien"
+   ],
+   "vai_tro": "Cán bộ đơn vị khảo thí · AI hỗ trợ: nhập và mã hóa câu hỏi (mã học phần + ...)",
+   "luu_y": "đề thi là tài liệu mật — phân quyền tối thiểu (chỉ người có nhiệm vụ mới được truy cập); nhật ký mọi lượt truy cập, rút đề; không lưu bản sao ngoài kho tập trung.",
+   "ket_qua": "ngân hàng câu hỏi đã mã hóa, lưu trữ tập trung, phân quyền theo vai trò."
+  },
+  {
+   "n": 6,
+   "title": "Rút đề thi theo ma trận, niêm phong và bàn giao",
+   "lam_gi": "khi tổ chức thi, rút ngẫu nhiên câu hỏi từ ngân hàng đúng theo ma trận và tỷ lệ đã duyệt; in đề thi, niêm phong; bàn giao có biên bản (ghi vào Sổ theo dõi rút đề thi — Mẫu 03) cho đơn vị tổ chức thi theo quy trình bảo mật.",
+   "inputs": [
+    "hinh_thuc_thi"
+   ],
+   "vai_tro": "Đơn vị khảo thí · AI hỗ trợ: chuẩn bị biên bản rút đề và bàn giao theo quy trình",
+   "luu_y": "kiểm tra đề rút ra phủ đủ CLO và đúng tỷ lệ mức độ nhận thức trước khi niêm phong; nghiêm cấm sao chép, phát tán đề thi dưới mọi hình thức — quy định rõ chế tài vi phạm.",
+   "ket_qua": "đề thi đã rút đúng ma trận, niêm phong, bàn giao có biên bản."
+  },
+  {
+   "n": 7,
+   "title": "Rà soát định kỳ chất lượng câu hỏi",
+   "lam_gi": "sau mỗi học kỳ/năm, phân tích chất lượng câu hỏi đã dùng (độ khó, độ phân biệt qua kết quả thi); loại bỏ câu hỏi kém chất lượng, bổ sung câu hỏi mới; cập nhật ngân hàng (tối thiểu 20% số câu hỏi mỗi năm).",
+   "inputs": [
+    "pham_vi"
+   ],
+   "vai_tro": "Bộ môn phụ trách học phần · AI hỗ trợ: phân tích độ khó, độ phân biệt của câu hỏi đã dùng",
+   "luu_y": "câu hỏi bị lộ hoặc có độ phân biệt kém phải loại ngay, không chờ kỳ rà soát; lưu lịch sử thay đổi ngân hàng để truy xuất.",
+   "ket_qua": "báo cáo rà soát định kỳ + ngân hàng câu hỏi đã được cập nhật."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu/nội dung trong output khớp với Input đã cho (phạm vi, hình thức thi, ma trận mẫu, số lượng mục tiêu, đơn vị thực hiện).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng thể thức văn bản hành chính của quy trình (ban hành kèm quyết định, có điều khoản đánh số).",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (văn bản hiện hành nêu tại phap-ly.md, quy chế tổ chức và hoạt động của trường).",
+  "Đã qua Human gate: Trưởng khoa (hoặc Trưởng Phòng Đào tạo (khảo thí, đảm bảo chất lượng) theo phân cấp) đã phê duyệt đưa câu hỏi đạt yêu cầu vào ngân hàng; ghi rõ người và ngày phê duyệt.",
+  "Ma trận được thống nhất trước khi biên soạn; mỗi CLO được phủ ít nhất một câu hỏi; chỉ câu hỏi đã qua phản biện và hiệu đính mới được phê duyệt.",
+  "Đáp án trắc nghiệm có 1 đáp án đúng rõ ràng, phương án nhiễu hợp lý; thang điểm tự luận chi tiết đến từng ý; ghi đúng CLO và mức độ nhận thức từng câu.",
+  "Tổ phản biện độc lập tuyệt đối với người biên soạn; câu hỏi không đạt trả về biên soạn lại, không tự sửa thay người biên soạn.",
+  "Đề thi được rút ngẫu nhiên đúng ma trận, phủ đủ CLO và đúng tỷ lệ mức độ nhận thức trước khi niêm phong; phân quyền truy cập tối thiểu, nhật ký mọi lượt truy cập/rút đề, không lưu bản sao ngoài kho tập trung; quy định rõ chế tài vi phạm bảo mật."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Đánh giá bằng tiếng Anh: đề và đáp án theo ngôn ngữ của học phần; bảo mật đề là yêu cầu cao nhất, không đưa đề hoặc đáp án thật lên dịch vụ ngoài khi chưa được phép (C5).",
+  "Đề của chương trình liên kết có thể theo quy định đối tác (C2).",
+  "Khảo thí nằm trong Phòng Đào tạo; quy trình lưu và truy cập ngân hàng đề do Phòng xác nhận (C7)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế thi và ngân hàng đề hiện có (C2).",
+  "Quy tắc truy cập, lưu trữ đề (C5)."
+ ],
+ "output_structure": [
+  "Tên quy trình + quyết định ban hành kèm theo (số, ngày ban hành, chức danh người ký).",
+  "Các điều khoản theo đúng trình tự vòng đời câu hỏi: Điều 1. Ma trận đề thi (phân bố theo CLO và 4 mức độ nhận thức); Điều 2. Biên soạn câu hỏi (biểu mẫu, nội dung bắt buộc của phiếu); Điều 3. Phản biện độc lập (thành phần tổ phản biện, nội dung kiểm tra, biên bản; câu hỏi không đạt phải biên soạn lại); Điều 4. Phê duyệt và lưu trữ (hiệu đính, phê duyệt, mã hóa, lưu trữ tập trung, phân quyền truy cập); Điều 5. Rút đề và bảo mật (rút ngẫu nhiên theo ma trận, niêm phong, bàn giao có biên bản, chế tài vi phạm bảo mật); Điều 6. Rà soát định kỳ (phân tích chất lượng câu hỏi, loại bỏ/bổ sung, tỷ lệ cập nhật tối thiểu hằng năm).",
+  "Bộ biểu mẫu kèm theo: Mẫu 01 – Phiếu biên soạn câu hỏi; Mẫu 02 – Biên bản phản biện; Mẫu 03 – Sổ theo dõi rút đề thi."
+ ],
+ "output_structure_raw": "1. Tên quy trình + quyết định ban hành kèm theo (số, ngày ban hành, chức danh người ký).\n\n2. Các điều khoản theo đúng trình tự vòng đời câu hỏi: Điều 1. Ma trận đề thi (phân bố theo CLO\n   và 4 mức độ nhận thức); Điều 2. Biên soạn câu hỏi (biểu mẫu, nội dung bắt buộc của phiếu);\n   Điều 3. Phản biện độc lập (thành phần tổ phản biện, nội dung kiểm tra, biên bản; câu hỏi\n   không đạt phải biên soạn lại); Điều 4. Phê duyệt và lưu trữ (hiệu đính, phê duyệt, mã hóa,\n   lưu trữ tập trung, phân quyền truy cập); Điều 5. Rút đề và bảo mật (rút ngẫu nhiên theo ma\n   trận, niêm phong, bàn giao có biên bản, chế tài vi phạm bảo mật); Điều 6. Rà soát định kỳ\n   (phân tích chất lượng câu hỏi, loại bỏ/bổ sung, tỷ lệ cập nhật tối thiểu hằng năm).\n\n3. Bộ biểu mẫu kèm theo: Mẫu 01 – Phiếu biên soạn câu hỏi; Mẫu 02 – Biên bản phản biện;\n   Mẫu 03 – Sổ theo dõi rút đề thi.",
+ "human_gate_check": "Đã qua Human gate: Trưởng khoa (hoặc Trưởng Phòng Đào tạo (khảo thí, đảm bảo chất lượng) theo phân cấp) đã phê duyệt đưa câu hỏi đạt yêu cầu vào ngân hàng; ghi rõ người và ngày phê duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Sáu khoa. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n",
+ "outputs_dir": "skills/vnuis-khaothi-quy-trinh-ngan-hang-de-thi/references"
+}

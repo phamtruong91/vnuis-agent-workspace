@@ -1,0 +1,195 @@
+{
+ "name": "vnuis-khcn-bien-tap-xuat-ban-an-pham",
+ "title": "Biên tập & xuất bản ấn phẩm",
+ "description": "Dùng khi Nhà xuất bản hoặc ban biên tập của trường xuất bản giáo trình, sách chuyên khảo, kỷ yếu, tài liệu nội bộ và cần đi từ bản thảo đến sách in đúng quy định xuất bản.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-bien-tap-xuat-ban-an-pham",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+ "when": "Khi trường (qua Nhà xuất bản hoặc ban biên tập) xuất bản giáo trình, sách chuyên khảo, kỷ yếu\nhội thảo, tài liệu nội bộ: cần quy trình từ bản thảo đến sách in hoàn chỉnh, đúng quy định\nxuất bản.",
+ "inputs": [
+  {
+   "key": "ten_an_pham",
+   "desc": "Tên ấn phẩm, loại (giáo trình/sách chuyên khảo/kỷ yếu/tài liệu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tac_gia",
+   "desc": "Tác giả/chủ biên, đơn vị",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ban_thao",
+   "desc": "File bản thảo, số trang dự kiến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_luong_in",
+   "desc": "Số lượng bản in dự kiến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_dich",
+   "desc": "Xuất bản thương mại / nội bộ / lưu hành nội bộ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han",
+   "desc": "Thời hạn phát hành mong muốn",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tiếp nhận và thẩm định bản thảo",
+   "lam_gi": "đối chiếu file bản thảo nhận được với thông tin `ten_an_pham`, `tac_gia` (tên tác giả/chủ biên, đơn vị) và số trang dự kiến trong `ban_thao`; kiểm tra tính mới của đề tài (đối chiếu danh mục ấn phẩm NXB/trường đã xuất bản 5 năm gần nhất), chạy kiểm tra trùng lặp/đạo văn sơ bộ; xác minh mục đích xuất bản (`muc_dich`) phù hợp tôn chỉ, chức năng của NXB/trường; với giáo trình, sách chuyên khảo thì chuyển hội đồng thẩm định gồm ít nhất 02 phản biện độc lập.",
+   "inputs": [
+    "ten_an_pham",
+    "tac_gia",
+    "ban_thao",
+    "muc_dich"
+   ],
+   "vai_tro": "Hội đồng biên tập · AI hỗ trợ: đối chiếu hồ sơ và kiểm tra trùng lặp/đạo văn sơ bộ",
+   "luu_y": "bản thảo giáo trình bắt buộc qua hội đồng thẩm định; mục đích \"lưu hành nội bộ\" thì thủ tục đơn giản hơn (không bắt buộc ISBN nhưng vẫn phải đăng ký kế hoạch xuất bản). Bẫy: tác giả gửi bản thảo chưa hoàn chỉnh (thiếu chương, thiếu hình) — phải yêu cầu bổ sung trước khi thẩm định, tránh thẩm định trên bản thảo dở.",
+   "ket_qua": "phiếu tiếp nhận bản thảo + biên bản thẩm định (đạt/không đạt, nhận xét cần sửa của từng phản biện)."
+  },
+  {
+   "n": 2,
+   "title": "Biên tập nội dung (tác giả xác nhận)",
+   "lam_gi": "biên tập viên đọc toàn văn bản thảo, hiệu đính cấu trúc chương mục, thống nhất thuật ngữ chuyên ngành, kiểm tra trích dẫn và tài liệu tham khảo (đủ nguồn, đúng chuẩn trích dẫn), rà soát tính nhất quán số liệu/bảng biểu giữa các chương; lập \"phiếu yêu cầu sửa\" gửi tác giả; tác giả sửa và ký xác nhận vào bản biên tập.",
+   "inputs": [
+    "ban_thao",
+    "tac_gia"
+   ],
+   "vai_tro": "Biên tập viên · AI hỗ trợ: hỗ trợ kiểm tra trích dẫn, thống nhất thuật ngữ; biên tập viên biên tập, tác giả sửa và ký xác nhận",
+   "luu_y": "mọi thay đổi nội dung chuyên môn (thêm/bớt chương, đổi kết luận khoa học) phải có chữ ký xác nhận của tác giả/chủ biên — biên tập viên không tự ý sửa nội dung chuyên môn. Bẫy: thuật ngữ dịch không thống nhất (lúc dịch, lúc để nguyên tiếng Anh) — phải lập bảng thuật ngữ thống nhất ngay từ đầu.",
+   "ket_qua": "bản thảo đã biên tập nội dung có chữ ký xác nhận của tác giả + bảng thuật ngữ thống nhất."
+  },
+  {
+   "n": 3,
+   "title": "Biên tập ngôn ngữ – kỹ thuật và soát bản quyền",
+   "lam_gi": "soát chính tả, ngữ pháp, dấu câu toàn văn (ít nhất 2 lượt độc lập: biên tập viên + người soát chéo); chuẩn hóa định dạng (font, cỡ chữ, heading, đánh số bảng/hình); kiểm tra chất lượng hình ảnh (độ phân giải in ≥ 300dpi); xác minh bản quyền từng hình/bảng trích từ nguồn khác (có văn bản cho phép sử dụng hoặc ghi nguồn đúng quy định); lập danh sách lỗi kỹ thuật phân loại theo mức (chính tả / định dạng / bản quyền).",
+   "inputs": [
+    "ban_thao"
+   ],
+   "vai_tro": "Biên tập viên · AI hỗ trợ: soát chính tả, ngữ pháp, định dạng; biên tập viên xác minh bản quyền hình/bảng trích nguồn",
+   "luu_y": "hình ảnh lấy từ internet không rõ nguồn thì buộc thay thế hoặc xin phép bằng văn bản — đây là điểm hay bị \"lọt\" nhất. Không chuyển sang chế bản khi còn lỗi bản quyền chưa xử lý.",
+   "ket_qua": "danh sách lỗi kỹ thuật đã xử lý xong + bản thảo sạch sẵn sàng chế bản."
+  },
+  {
+   "n": 4,
+   "title": "Chế bản, duyệt bông, chốt file in",
+   "lam_gi": "dàn trang theo khổ sách đã duyệt; thiết kế bìa (bìa 1, bìa 4, gáy sách) theo nhận diện của NXB/trường; in bông (bản in thử) gửi tác giả duyệt — tác giả ký xác nhận từng trang hoặc ghi chú sửa; biên tập viên đối chiếu bông với bản thảo sạch (số trang chẵn, trang trắng, mục lục khớp số trang); chốt file in (PDF chuẩn in).",
+   "inputs": [
+    "ten_an_pham",
+    "ban_thao",
+    "so_luong_in"
+   ],
+   "vai_tro": "Biên tập viên · AI hỗ trợ: phòng chế bản dàn trang và đối chiếu bông với bản thảo sạch (AI hỗ trợ kiểm tra số trang, mục lục), tác giả ký duyệt bông",
+   "luu_y": "sau khi tác giả duyệt bông, mọi sửa chữa đều phát sinh chi phí chế bản lại — phải chốt bằng văn bản nguyên tắc \"không sửa nội dung sau duyệt bông\".",
+   "ket_qua": "file in hoàn chỉnh (PDF chuẩn in) + bông có chữ ký duyệt của tác giả + mẫu bìa đã duyệt."
+  },
+  {
+   "n": 5,
+   "title": "Ký quyết định xuất bản và làm thủ tục (KHXB, lưu chiểu, ISBN)",
+   "lam_gi": "trình Tổng biên tập/Giám đốc NXB ký quyết định xuất bản dựa trên hồ sơ (biên bản thẩm định, bản duyệt bông, file in) — human gate; đăng ký kế hoạch xuất bản với cơ quan quản lý; nộp lưu chiểu theo quy định; đăng ký ISBN (đối với xuất bản thương mại qua NXB có giấy phép); lưu số quyết định, số ISBN vào hồ sơ ấn phẩm.",
+   "inputs": [
+    "muc_dich",
+    "thoi_han"
+   ],
+   "vai_tro": "Tổng biên tập · AI hỗ trợ: chuẩn bị dự thảo, tài liệu và số liệu phục vụ bước này",
+   "luu_y": "KHÔNG được in trước khi có quyết định xuất bản và hoàn tất đăng ký — in trước là vi phạm Luật Xuất bản. Ấn phẩm \"lưu hành nội bộ\" vẫn phải đăng ký kế hoạch xuất bản nhưng không bắt buộc ISBN.",
+   "ket_qua": "quyết định xuất bản đã ký + giấy xác nhận đăng ký KHXB/lưu chiểu + số ISBN (nếu có)."
+  },
+  {
+   "n": 6,
+   "title": "In, phát hành và quyết toán",
+   "lam_gi": "lựa chọn nhà in (đấu thầu/chỉ định theo quy định), ký hợp đồng in đúng `so_luong_in`; giám sát in thử, kiểm tra chất lượng bản in đại trà (màu sắc, đóng gáy, cắt xén), lập biên bản nghiệm thu in; phát hành theo kênh đã duyệt (thư viện, nhà sách, nội bộ) kèm phiếu xuất kho; đối chiếu số lượng in – phát hành – tồn kho; quyết toán chi phí (biên tập, chế bản, in, phát hành) so với dự toán.",
+   "inputs": [
+    "so_luong_in",
+    "muc_dich",
+    "thoi_han"
+   ],
+   "vai_tro": "Biên tập viên · AI hỗ trợ: soạn dự thảo văn bản trình ký, kiểm tra thể thức",
+   "luu_y": "giữ lại tối thiểu 02 bản lưu chiểu + bản lưu tại NXB; chênh lệch số lượng in so với quyết định xuất bản phải được phê duyệt bổ sung. Bẫy: nhà in giao thiếu/sai màu — phải nghiệm thu từng lô trước khi thanh toán.",
+   "ket_qua": "biên bản nghiệm thu in + phiếu xuất kho phát hành + báo cáo quyết toán."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung khớp với Input: tên ấn phẩm, tác giả, số trang, số lượng in, mục đích xuất bản, thời hạn.",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Bảng tiến độ đúng định dạng (Giai đoạn | Nội dung công việc | Thời hạn | Đơn vị/Người phụ trách) và đúng thứ tự các giai đoạn.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Luật Xuất bản 2012 sửa đổi, quy định xuất bản giáo trình của Bộ GD&ĐT).",
+  "Đã qua Human gate: hội đồng thẩm định kết luận đạt, Tổng biên tập/Giám đốc NXB ký quyết định xuất bản, tác giả xác nhận bản biên tập và bông.",
+  "Không in trước khi có quyết định xuất bản và hoàn tất đăng ký KHXB/lưu chiểu; có số ISBN nếu xuất bản thương mại.",
+  "Bản quyền hình/bảng trích nguồn đã xác minh (văn bản cho phép sử dụng hoặc ghi nguồn đúng quy định); không còn lỗi bản quyền chưa xử lý.",
+  "Mọi thay đổi nội dung chuyên môn có chữ ký xác nhận của tác giả/chủ biên; chốt nguyên tắc không sửa nội dung sau duyệt bông. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Hội đồng thẩm định** quyết định bản thảo có đủ điều kiện xuất bản.",
+  "**Tổng biên tập/Giám đốc NXB** ký quyết định xuất bản và duyệt bông cuối.",
+  "**Tác giả/chủ biên** xác nhận bản biên tập và bản in thử."
+ ],
+ "guardrails": [
+  "AI không thay hội đồng thẩm định đánh giá chất lượng khoa học của bản thảo.",
+  "Không xuất bản nội dung vi phạm bản quyền, đạo văn chưa xử lý."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Biên tập ấn phẩm tiếng Việt và tiếng Anh: giữ nguyên thuật ngữ gốc, chỉ sửa chính tả, định dạng và nhất quán.",
+  "Không thay đổi nội dung khoa học của tác giả."
+ ],
+ "cho_xac_nhan": [
+  "Quy trình duyệt xuất bản (C6).",
+  "Phong cách biên tập (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề: \"KẾ HOẠCH BIÊN TẬP – XUẤT BẢN\" + tên ấn phẩm.",
+  "Thông tin ấn phẩm: tác giả/chủ biên và đơn vị; bản thảo (số trang, số chương); số lượng in dự kiến; mục đích xuất bản (thương mại / nội bộ / lưu hành nội bộ).",
+  "Bảng tiến độ các giai đoạn — các cột: Giai đoạn | Nội dung công việc | Thời hạn | Đơn vị/Người phụ trách — theo đúng thứ tự: thẩm định chuyên môn → biên tập nội dung → biên tập ngôn ngữ – kỹ thuật → chế bản và duyệt bông → thủ tục xuất bản (đăng ký KHXB, lưu chiểu, ISBN) → in → phát hành.",
+  "Kinh phí dự kiến: tổng số và cơ cấu theo hạng mục (thẩm định, biên tập, chế bản, in, phát hành).",
+  "Phương án phát hành: số lượng phân bổ theo từng kênh (thư viện, nhà sách, lưu trữ nội bộ). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề: \"KẾ HOẠCH BIÊN TẬP – XUẤT BẢN\" + tên ấn phẩm.\n\n2. Thông tin ấn phẩm: tác giả/chủ biên và đơn vị; bản thảo (số trang, số chương); số lượng in dự kiến; mục đích xuất bản (thương mại / nội bộ / lưu hành nội bộ).\n\n3. Bảng tiến độ các giai đoạn — các cột: Giai đoạn | Nội dung công việc | Thời hạn | Đơn vị/Người phụ trách — theo đúng thứ tự: thẩm định chuyên môn → biên tập nội dung → biên tập ngôn ngữ – kỹ thuật → chế bản và duyệt bông → thủ tục xuất bản (đăng ký KHXB, lưu chiểu, ISBN) → in → phát hành.\n\n4. Kinh phí dự kiến: tổng số và cơ cấu theo hạng mục (thẩm định, biên tập, chế bản, in, phát hành).\n\n5. Phương án phát hành: số lượng phân bổ theo từng kênh (thư viện, nhà sách, lưu trữ nội bộ).",
+ "human_gate_check": "Đã qua Human gate: hội đồng thẩm định kết luận đạt, Tổng biên tập/Giám đốc NXB ký quyết định xuất bản, tác giả xác nhận bản biên tập và bông.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-khcn-bien-tap-xuat-ban-an-pham/references"
+}

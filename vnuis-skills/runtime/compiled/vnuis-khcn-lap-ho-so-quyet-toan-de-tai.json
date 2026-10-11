@@ -1,0 +1,202 @@
+{
+ "name": "vnuis-khcn-lap-ho-so-quyet-toan-de-tai",
+ "title": "Hồ sơ thanh quyết toán kinh phí đề tài",
+ "description": "Dùng khi đề tài NCKH cần thanh toán đợt hoặc quyết toán kinh phí: phân loại chứng từ theo nội dung chi, đối chiếu dự toán được duyệt, kiểm tra hồ sơ trước khi nộp Phòng KHCN&HTPT, Phòng TC&QT.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-ho-so-quyet-toan-de-tai",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); phối hợp Phòng TC&QT",
+ "when": "Khi đề tài/dự án nghiên cứu khoa học các cấp cần thanh quyết toán kinh phí: chuẩn bị hồ sơ\nchứng từ thanh toán đợt, quyết toán khi đề tài kết thúc, đối chiếu chi thực tế với dự toán\nđược phê duyệt, kiểm tra trước khi nộp về Phòng KHCN&HTPT / Phòng TC&QT (kế hoạch – tài chính).",
+ "inputs": [
+  {
+   "key": "ten_de_tai",
+   "desc": "Tên đầy đủ của đề tài/dự án",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ma_de_tai",
+   "desc": "Mã số đề tài (nếu có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "chu_nhiem",
+   "desc": "Họ tên, chức danh, đơn vị của chủ nhiệm đề tài",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cap_de_tai",
+   "desc": "Cấp Bộ / Tỉnh / Trường / cơ sở",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tong_kinh_phi",
+   "desc": "Tổng kinh phí được phê duyệt (VNĐ)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "du_toan_chi_tiet",
+   "desc": "Bảng dự toán theo từng nội dung chi: nội dung, số tiền, tỷ lệ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chung_tu",
+   "desc": "Danh sách chứng từ phát sinh: ngày, nội dung chi, số tiền, loại chứng từ (hóa đơn/chứng từ thuê khoán/biên lai...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dot_thanh_toan",
+   "desc": "Đợt thanh toán (đợt 1/2/... hoặc quyết toán cuối kỳ)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_thuc_hien",
+   "desc": "Thời gian thực hiện đề tài (từ–đến)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); phối hợp Phòng TC&QT"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 93/2025/QH15; Nghị định 265/2025 và 267/2025, hiệu lực 14/10/2025: Yêu cầu cấp nhiệm vụ, nguồn kinh phí, tài trợ/đặt hàng, ngày phê duyệt, quy chế cơ quan tài trợ, phương thức khoán và quyền sử dụng kết quả. Đối chiếu NĐ 265 về tài chính và NĐ 267 về nhiệm vụ; không cố định thang xếp loại hoặc thu hồi toàn bộ kinh phí cho mọi đề tài. Nghiệm thu dựa hợp đồng và tiêu chí được duyệt, hội đồng có thẩm quyền xác nhận.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Phân loại chứng từ theo nhóm nội dung chi",
+   "lam_gi": "từ `chung_tu` phân loại từng chứng từ vào 6 nhóm chuẩn: (1) thuê khoán chuyên môn; (2) vật tư, nguyên liệu, dụng cụ thí nghiệm; (3) hội thảo, hội nghị khoa học; (4) công tác phí; (5) in ấn, tài liệu, xuất bản; (6) quản lý chung, chi khác; mỗi chứng từ ghi rõ: ngày, nội dung chi, số tiền, loại chứng từ (hóa đơn/chứng từ thuê khoán/biên lai...).",
+   "inputs": [
+    "chung_tu",
+    "ten_de_tai",
+    "ma_de_tai"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: phân loại chứng từ vào 6 nhóm",
+   "luu_y": "một chứng từ chỉ thuộc một nhóm — chứng từ \"lưỡng tính\" (VD: in tài liệu hội thảo) thì xếp theo mục đích chính và ghi chú rõ; sắp xếp chứng từ theo thứ tự thời gian trong từng nhóm.",
+   "ket_qua": "bảng phân loại chứng từ (chứng từ – nhóm nội dung chi – số tiền)."
+  },
+  {
+   "n": 2,
+   "title": "Kiểm tra tính hợp lệ từng chứng từ",
+   "lam_gi": "kiểm tra từng chứng từ theo 5 tiêu chí: đúng mẫu quy định; đủ chữ ký (người đề nghị chi, kế toán, thủ trưởng); phát sinh trong `thoi_gian_thuc_hien` của đề tài; nội dung chi phù hợp mục đích đề tài; số tiền không vượt định mức; lập danh sách chứng từ đạt/không đạt — chứng từ không đạt thì yêu cầu bổ sung, hoàn thiện rồi kiểm tra lại.",
+   "inputs": [
+    "thoi_gian_thuc_hien"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: lập bảng đạt/cần bổ sung",
+   "luu_y": "2 lỗi bị loại nhiều nhất — chứng từ phát sinh ngoài thời gian thực hiện đề tài và thiếu chữ ký/người duyệt; hóa đơn phải là hóa đơn hợp pháp (tra cứu được).",
+   "ket_qua": "bảng kiểm tra hợp lệ từng chứng từ (đạt / cần bổ sung + lý do)."
+  },
+  {
+   "n": 3,
+   "title": "Đối chiếu dự toán với thực chi",
+   "lam_gi": "từ `du_toan_chi_tiet` và kết quả bước 2, lập bảng so sánh theo từng nội dung chi: Dự toán – Thực chi – Chênh lệch (số tiền và %); đánh dấu các khoản vượt dự toán hoặc chi sai nội dung; khoản vượt trong ngưỡng cho phép thì soạn thuyết minh điều chỉnh, vượt ngưỡng thì báo cáo xin điều chỉnh dự toán chính thức.",
+   "inputs": [
+    "du_toan_chi_tiet",
+    "tong_kinh_phi"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: lập bảng đối chiếu dự toán – thực chi",
+   "luu_y": "mức điều chỉnh giữa các nội dung chi tuân theo quy định của cơ quan quản lý (thường ≤10–20% cần thuyết minh, vượt ngưỡng phải xin điều chỉnh dự toán) — không tự ý \"cấn trừ\" giữa các khoản mục.",
+   "ket_qua": "bảng đối chiếu dự toán – thực chi – chênh lệch + danh sách khoản cần thuyết minh/điều chỉnh."
+  },
+  {
+   "n": 4,
+   "title": "Lập bảng quyết toán tổng hợp",
+   "lam_gi": "tổng hợp từ kết quả bước 3: tổng thực chi, số kinh phí đã tạm ứng, số còn phải thanh toán hoặc số phải nộp trả ngân sách (nếu chi không hết); viết kết luận quyết toán (tiết kiệm/vượt chi bao nhiêu, tỷ lệ %).",
+   "inputs": [
+    "dot_thanh_toan",
+    "tong_kinh_phi"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: tổng hợp số liệu và viết kết luận quyết toán",
+   "luu_y": "tổng thực chi không được vượt `tong_kinh_phi` đã phê duyệt; nếu là quyết toán cuối kỳ thì số liệu phải khớp với bảng quyết toán trong báo cáo tổng kết nghiệm thu.",
+   "ket_qua": "bảng quyết toán tổng hợp + kết luận quyết toán."
+  },
+  {
+   "n": 5,
+   "title": "Lập danh mục kiểm hồ sơ thanh quyết toán",
+   "lam_gi": "lập danh mục kiểm các thành phần: tờ trình đề nghị thanh toán/quyết toán; bảng quyết toán tổng hợp (có xác nhận chủ nhiệm); bảng đối chiếu dự toán – thực chi; bộ chứng từ gốc sắp xếp theo nhóm nội dung chi; thuyết minh điều chỉnh (nếu có ở bước 3); biên bản nghiệm thu (nếu quyết toán cuối kỳ); xác nhận của đơn vị chủ trì; đánh dấu đủ/thiếu từng thành phần.",
+   "inputs": [
+    "dot_thanh_toan",
+    "chu_nhiem",
+    "cap_de_tai"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài · AI hỗ trợ: lập danh mục kiểm các thành phần hồ sơ theo đợt thanh toán",
+   "luu_y": "quyết toán cuối kỳ bắt buộc có biên bản nghiệm thu; thanh toán đợt giữa kỳ thì thay bằng báo cáo tiến độ đã được đánh giá đạt yêu cầu.",
+   "ket_qua": "danh mục kiểm hồ sơ (đánh dấu đủ/thiếu từng thành phần)."
+  },
+  {
+   "n": 6,
+   "title": "Hoàn thiện và trình duyệt",
+   "lam_gi": "trình chủ nhiệm ký xác nhận, đơn vị chủ trì xác nhận; nộp Phòng KHCN&HTPT / Phòng TC&QT (kế hoạch – tài chính) kiểm tra và duyệt; xuất bộ hồ sơ hoàn chỉnh ở theo định dạng đầu ra của skill, sẵn sàng in/ký và nộp.",
+   "inputs": [],
+   "vai_tro": "Phòng KHCN&HTPT, Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: chuẩn bị hồ sơ trình ký, nhắc lịch và theo dõi tiến độ",
+   "luu_y": "giữ lại 01 bộ chứng từ sao có đóng dấu của đơn vị; nộp bản gốc duy nhất mà không giữ bản lưu là rủi ro khi hồ sơ bị thất lạc.",
+   "ket_qua": "bộ hồ sơ quyết toán hoàn chỉnh đã duyệt."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu trong output khớp Input: tổng kinh phí = `tong_kinh_phi`; dự toán theo khoản mục = `du_toan_chi_tiet`; danh sách chứng từ = `chung_tu`",
+  "Không bịa đặt số tiền, chứng từ, nội dung chi",
+  "Bảng quyết toán đúng mẫu (TT – nội dung chi – dự toán – thực chi – chênh lệch); tổng thực chi không vượt kinh phí được phê duyệt",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Thông tư 02/2023/TT-BKHCN, quy chế quản lý đề tài, quyết định phê duyệt kinh phí)",
+  "Mọi chứng từ phát sinh trong thời gian thực hiện đề tài, đủ chữ ký theo quy định, hóa đơn hợp pháp; khoản vượt dự toán trong ngưỡng có thuyết minh, vượt ngưỡng có văn bản điều chỉnh chính thức",
+  "Quyết toán cuối kỳ: số liệu khớp bảng quyết toán trong báo cáo tổng kết nghiệm thu; hồ sơ kèm biên bản nghiệm thu",
+  "Đã qua Human gate: chủ nhiệm và đơn vị chủ trì ký xác nhận; Phòng KHCN&HTPT / Phòng TC&QT (kế hoạch – tài chính) kiểm tra và duyệt"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hồ sơ quyết toán đề tài kiểm tra theo quy định của nguồn tài trợ cụ thể: cấp ĐHQGHN, Bộ, hay nguồn khác; mỗi nguồn khác nhau (C2).",
+  "Chỉ kiểm tra tính đầy đủ và nhất quán, không phê duyệt chi."
+ ],
+ "cho_xac_nhan": [
+  "Quy định tài chính từng loại đề tài (C2).",
+  "Mẫu hồ sơ (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề \"BẢNG QUYẾT TOÁN KINH PHÍ ĐỀ TÀI\" + đợt thanh toán",
+  "Khối thông tin: tên đề tài, mã số, chủ nhiệm, cấp đề tài, thời gian thực hiện",
+  "Bảng quyết toán: TT – Nội dung chi – Dự toán – Thực chi – Chênh lệch (theo 6 nhóm nội dung chi) + dòng tổng cộng",
+  "Kết luận quyết toán (tổng thực chi, tiết kiệm/vượt chi, tỷ lệ %)",
+  "Bảng phân loại chứng từ (nhóm nội dung chi – chứng từ – trạng thái hợp lệ)",
+  "Danh sách khoản cần điều chỉnh/thuyết minh bổ sung (nếu có)",
+  "Danh mục kiểm hồ sơ thanh quyết toán (đánh dấu đủ/thiếu từng thành phần)"
+ ],
+ "output_structure_raw": "1. Tiêu đề \"BẢNG QUYẾT TOÁN KINH PHÍ ĐỀ TÀI\" + đợt thanh toán\n\n2. Khối thông tin: tên đề tài, mã số, chủ nhiệm, cấp đề tài, thời gian thực hiện\n\n3. Bảng quyết toán: TT – Nội dung chi – Dự toán – Thực chi – Chênh lệch (theo 6 nhóm nội dung chi) + dòng tổng cộng\n\n4. Kết luận quyết toán (tổng thực chi, tiết kiệm/vượt chi, tỷ lệ %)\n\n5. Bảng phân loại chứng từ (nhóm nội dung chi – chứng từ – trạng thái hợp lệ)\n\n6. Danh sách khoản cần điều chỉnh/thuyết minh bổ sung (nếu có)\n\n7. Danh mục kiểm hồ sơ thanh quyết toán (đánh dấu đủ/thiếu từng thành phần)",
+ "human_gate_check": "Đã qua Human gate: chủ nhiệm và đơn vị chủ trì ký xác nhận; Phòng KHCN&HTPT / Phòng TC&QT (kế hoạch – tài chính) kiểm tra và duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ và phạm vi áp dụng\n\nNgày cập nhật 2026-10-09; phải kiểm tra toàn văn và chuyển tiếp trước thực thi.\n\n## Luật 93/2025/QH15; Nghị định 265/2025 và 267/2025, hiệu lực 14/10/2025\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=215664&pageid=27160\n\nYêu cầu cấp nhiệm vụ, nguồn kinh phí, tài trợ/đặt hàng, ngày phê duyệt, quy chế cơ quan tài trợ, phương thức khoán và quyền sử dụng kết quả. Đối chiếu NĐ 265 về tài chính và NĐ 267 về nhiệm vụ; không cố định thang xếp loại hoặc thu hồi toàn bộ kinh phí cho mọi đề tài. Nghiệm thu dựa hợp đồng và tiêu chí được duyệt, hội đồng có thẩm quyền xác nhận.\n",
+ "outputs_dir": "skills/vnuis-khcn-lap-ho-so-quyet-toan-de-tai/references"
+}

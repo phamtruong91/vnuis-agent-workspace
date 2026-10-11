@@ -1,0 +1,165 @@
+{
+ "name": "vnuis-tt-dich-song-ngu-va-thuat-ngu",
+ "title": "Dịch song ngữ & quản lý thuật ngữ",
+ "description": "Dùng khi cần bản tiếng Anh (hoặc tiếng Việt) của văn bản trường học như MOU, thông báo tuyển sinh, văn bằng, nội dung website, hồ sơ kiểm định: dịch theo bảng thuật ngữ, đối chiếu số liệu và tên riêng.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-dich-thuat-song-ngu-va-thuat-ngu",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh; Phòng KHCN và HTPT; các khoa",
+ "when": "Khi cần bản tiếng Anh (hoặc tiếng Việt) của văn bản trường học: MOU/MOA, thông báo tuyển sinh,\ngiới thiệu chương trình, văn bằng/chứng chỉ, nội dung website, hồ sơ kiểm định quốc tế...",
+ "inputs": [
+  {
+   "key": "van_ban_goc",
+   "desc": "Toàn văn bản gốc",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "huong_dich",
+   "desc": "Việt → Anh / Anh → Việt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "glossary",
+   "desc": "Bảng thuật ngữ chuẩn (thuật ngữ + bản dịch cố định), gồm danh sách KHÔNG dịch (tên riêng, chức danh...)",
+   "required": false,
+   "note": "Không (khuyến nghị có)"
+  },
+  {
+   "key": "doi_tuong_doc",
+   "desc": "Đối tác quốc tế / kiểm định viên / sinh viên quốc tế... (để chọn register)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh; Phòng KHCN và HTPT; các khoa"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định register và bộ thuật ngữ áp dụng",
+   "lam_gi": "Đọc toàn văn `van_ban_goc` để xác định loại văn bản (MOU, thông báo tuyển sinh, văn bằng, nội dung website...); căn cứ `doi_tuong_doc` để chốt register (hành chính–trang trọng / học thuật / truyền thông); trích từ `glossary` danh sách thuật ngữ cố định và danh sách KHÔNG dịch áp dụng cho văn bản này; ghi nhận độ dài và phạm vi văn bản.",
+   "inputs": [
+    "van_ban_goc",
+    "doi_tuong_doc",
+    "glossary"
+   ],
+   "vai_tro": "Biên tập viên song ngữ · AI hỗ trợ: xác định register, trích bộ thuật ngữ và danh sách không-dịch áp dụng",
+   "luu_y": "register phải nhất quán toàn văn — văn bản pháp lý dùng văn phong trang trọng, động từ khiếm khuyết chuẩn (VD: \"shall\" cho nghĩa vụ); các mục trong danh sách không-dịch (tên trường, tên đơn vị, chức danh) luôn giữ nguyên, kể cả khi nghe có vẻ \"dịch được\".",
+   "ket_qua": "Bảng \"register + danh sách thuật ngữ/không-dịch áp dụng\" làm chuẩn cho bước dịch."
+  },
+  {
+   "n": 2,
+   "title": "Dịch đầy đủ (bản dịch thô)",
+   "lam_gi": "Dịch từng đoạn của `van_ban_goc` sang ngôn ngữ đích theo `huong_dich`, không lược ý; câu hành chính dài được tách thành câu ngắn hơn nhưng giữ đầy đủ nghĩa pháp lý; đánh dấu [?] ngay tại chỗ nào còn nghi ngờ để xử lý ở bước 6.",
+   "inputs": [
+    "van_ban_goc",
+    "huong_dich"
+   ],
+   "vai_tro": "Biên tập viên song ngữ · AI hỗ trợ: dịch đầy đủ bản thô, không lược ý, đánh dấu [?] chỗ nghi ngờ",
+   "luu_y": "bẫy thường gặp là \"dịch đẹp mà mất nghĩa\" ở câu có điều kiện pháp lý (VD: nhầm \"shall\" với \"should\"); chưa áp glossary ở bước này để bước 3 áp đồng bộ một lượt.",
+   "ket_qua": "Bản dịch thô đầy đủ, các đoạn nghi ngờ đã đánh dấu [?]."
+  },
+  {
+   "n": 3,
+   "title": "Áp glossary và danh sách không-dịch",
+   "lam_gi": "Quét toàn bộ bản dịch thô, thay mọi thuật ngữ có trong `glossary` bằng bản dịch cố định; kiểm tra từng tên riêng/tên đơn vị/chức danh đối chiếu với danh sách không-dịch — chỗ nào sai thì sửa về đúng chuẩn (VD: tên giao dịch quốc tế đã đăng ký của trường); ghi thêm các thuật ngữ mới phát sinh chưa có trong glossary vào danh sách tạm.",
+   "inputs": [
+    "glossary"
+   ],
+   "vai_tro": "Biên tập viên song ngữ · AI hỗ trợ: áp glossary đồng bộ toàn văn, kiểm tra danh sách không-dịch",
+   "luu_y": "một thuật ngữ phải thống nhất 100% ở mọi vị trí xuất hiện — dùng tìm kiếm toàn văn để bắt chỗ sót; tên trường/đơn vị trong văn bằng phải khớp tuyệt đối với tên giao dịch chính thức.",
+   "ket_qua": "Bản dịch đã chuẩn hóa thuật ngữ + \"danh sách thuật ngữ mới phát sinh\" để cập nhật glossary."
+  },
+  {
+   "n": 4,
+   "title": "Đối chiếu chéo số liệu, tên riêng, ngày tháng",
+   "lam_gi": "Lập bảng đối chiếu song song bản gốc–bản dịch cho mọi số liệu, ngày tháng, họ tên, tên đơn vị, số/ký hiệu văn bản; kiểm tra định dạng ngày tháng theo chuẩn ngôn ngữ đích (VD: 01/03/2027 → March 1, 2027); đánh dấu và sửa mọi điểm lệch dù chỉ một ký tự.",
+   "inputs": [
+    "van_ban_goc"
+   ],
+   "vai_tro": "Biên tập viên song ngữ · AI hỗ trợ: lập bảng đối chiếu chéo bản gốc–bản dịch (số liệu, ngày tháng, tên riêng)",
+   "luu_y": "bẫy thường gặp — số tiền/số lượng bị dịch nhầm đơn vị, ngày tháng bị đảo ngày/tháng; văn bản pháp lý yêu cầu khớp 100%, không được \"đại khái\".",
+   "ket_qua": "Bảng đối chiếu chéo (match/mismatch) — mọi mismatch đã được sửa."
+  },
+  {
+   "n": 5,
+   "title": "Đọc lại bản dịch như văn bản độc lập (QA)",
+   "lam_gi": "Đọc lại toàn bộ bản dịch mà KHÔNG nhìn bản gốc để phát hiện câu tối nghĩa, sai ngữ pháp, lỗi chính tả, văn phong không tự nhiên; kiểm tra register có nhất quán từ đầu đến cuối theo `doi_tuong_doc`; sửa và ghi lại mọi chỉnh sửa vào nhật ký hiệu đính.",
+   "inputs": [
+    "doi_tuong_doc"
+   ],
+   "vai_tro": "Biên tập viên song ngữ · AI hỗ trợ: QA bằng cách đọc lại bản dịch như văn bản độc lập, ghi nhật ký hiệu đính",
+   "luu_y": "mắt đọc lần hai dễ bỏ sót — nên đọc to thành tiếng hoặc nghỉ một quãng rồi mới QA; độc giả mục tiêu quyết định độ trang trọng của văn phong.",
+   "ket_qua": "Bản dịch hoàn chỉnh sau QA + nhật ký hiệu đính."
+  },
+  {
+   "n": 6,
+   "title": "Lập vấn đề list",
+   "lam_gi": "Tổng hợp mọi chỗ còn chưa chắc chắn (thuật ngữ chưa có trong glossary, khái niệm đặc thù Việt Nam khó dịch sát như \"chỉ tiêu\", \"chính quy\"); mỗi vấn đề ghi rõ: vị trí, phương án đề xuất, phương án thay thế và câu hỏi cần biên tập viên quyết định.",
+   "inputs": [
+    "glossary"
+   ],
+   "vai_tro": "Biên tập viên song ngữ · AI hỗ trợ: lập vấn đề list; biên tập viên song ngữ quyết định từng vấn đề",
+   "luu_y": "KHÔNG \"dịch đại cho xong\" — chỗ nào không chắc phải lên vấn đề list; khái niệm không có tương đương tiếng Anh cần đề xuất cách dịch nghĩa, kèm giữ thuật ngữ gốc trong ngoặc nếu cần thiết.",
+   "ket_qua": "Vấn đề list đầy đủ — đầu vào cho Human gate (biên tập viên song ngữ duyệt)."
+  }
+ ],
+ "checks": [
+  "Output đầy đủ 4 phần theo cấu trúc sản phẩm tại references/quy-cach-dau-ra.md: thông tin văn bản (tên, hướng dịch, register, ngày xuất bản); bản dịch; glossary cập nhật; vấn đề list.",
+  "Bản dịch trình bày 2 cột song ngữ hoặc 2 văn bản riêng, các đoạn tương ứng nhau; register nhất quán toàn văn theo đối tượng đọc.",
+  "Số liệu, ngày tháng, họ tên, tên đơn vị, số/ký hiệu văn bản khớp 100% bản gốc; định dạng ngày tháng theo chuẩn ngôn ngữ đích.",
+  "Thuật ngữ theo glossary thống nhất 100% mọi vị trí; danh sách không-dịch (tên trường, tên đơn vị, chức danh) giữ nguyên; tên giao dịch quốc tế của trường chính xác.",
+  "Không \"dịch đại cho xong\": mọi chỗ chưa chắc chắn đã đưa vào vấn đề list (vị trí + phương án đề xuất + phương án thay thế + câu hỏi cho biên tập viên).",
+  "Không dịch nội dung mật/không được phép công bố ra ngoài (đã kiểm tra phân loại tài liệu).",
+  "Đã qua Human gate: biên tập viên song ngữ đã duyệt toàn bộ bản dịch và chốt vấn đề list; văn bản có giá trị pháp lý (MOU, văn bằng) đã được lãnh đạo ký duyệt. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [
+  "KHÔNG thay thế phiên dịch/phê duyệt cuối cùng đối với văn bản pháp lý, văn bằng, hồ sơ kiểm định.",
+  "KHÔNG tự ý dịch tên riêng, tên đơn vị, chức danh khi đã có trong danh sách không-dịch hoặc tên giao dịch chính thức.",
+  "Mọi chỗ chưa chắc chắn phải đưa vào vấn đề list, không \"dịch đại cho xong\".",
+  "KHÔNG dịch nội dung mật/không được phép công bố ra ngoài (kiểm tra phân loại tài liệu trước khi dịch)."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Bảng thuật ngữ khởi đầu nằm ở mục 7 của bối cảnh VNU-IS; phân biệt \"tên chính thức theo website\" với \"gợi ý\".",
+  "Tên chương trình: dùng tên tiếng Anh theo tài liệu chương trình hoặc website và giữ nguyên mã (ví dụ International Business, QHQ01); không tự dịch lại.",
+  "Website có bản tiếng Pháp (IFI): chỉ dịch Pháp khi người dùng yêu cầu.",
+  "Văn bản có giá trị pháp lý hoặc thỏa thuận: bản dịch chỉ tham khảo cho đến khi người có thẩm quyền chốt."
+ ],
+ "cho_xac_nhan": [
+  "Bảng thuật ngữ chính thức của Trường (C8).",
+  "Ngôn ngữ từng chương trình (C3)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "Giao bản dịch giữ cấu trúc, trường trống, bảng, phụ lục nghiệp vụ và phần ký của bản gốc; song ngữ theo yêu cầu. Không ghép glossary cập nhật, vấn đề list hoặc nhật ký dịch vào bản giao trừ khi được yêu cầu riêng.",
+ "human_gate_check": "Đã qua Human gate: biên tập viên song ngữ đã duyệt toàn bộ bản dịch và chốt vấn đề list; văn bản có giá trị pháp lý (MOU, văn bằng) đã được lãnh đạo ký duyệt. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-dich-song-ngu-va-thuat-ngu/references"
+}

@@ -1,0 +1,146 @@
+{
+ "name": "vnuis-htqt-lap-ho-so-doi-tac",
+ "title": "Hồ sơ tóm tắt đối tác quốc tế",
+ "description": "Dùng khi chuẩn bị đón tiếp, đàm phán hoặc ký MOU, MOA với một đối tác quốc tế và cần hồ sơ tóm tắt đối tác (tên Việt – Anh, quốc gia, lĩnh vực, lịch sử hợp tác, đầu mối, tình trạng thỏa thuận), mỗi thông tin kèm nguồn.",
+ "group": "htqt",
+ "group_label": "Hợp tác quốc tế",
+ "previous_name": "vnuis-ho-so-doi-tac-quoc-te",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển; Viện ĐMST&CGCN; các khoa",
+ "when": "Khi chuẩn bị đón tiếp, đàm phán, ký MOU/MOA hoặc xin ý kiến lãnh đạo về một đối tác; khi cần tra cứu lịch sử hợp tác với một đối tác.",
+ "inputs": [
+  {
+   "key": "ten_doi_tac",
+   "desc": "Tên đối tác bằng tiếng Việt và tiếng Anh",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tai_lieu_nguon",
+   "desc": "Hồ sơ năng lực, MOU cũ, báo cáo hợp tác, biên bản, tài liệu công khai đã tải",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_dich",
+   "desc": "Mục đích hồ sơ (đón tiếp, đàm phán, ký kết, báo cáo)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "lich_su_hop_tac",
+   "desc": "Hoạt động đã làm cùng đối tác nếu có",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển; Viện ĐMST&CGCN; các khoa"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Đọc và trích thông tin",
+   "lam_gi": "Trích tên, quốc gia, loại hình, lĩnh vực, đầu mối, thỏa thuận đã có, hoạt động đã làm; mỗi thông tin gắn nguồn (tên file, trang hoặc mục).",
+   "inputs": [
+    "ten_doi_tac",
+    "tai_lieu_nguon"
+   ],
+   "vai_tro": "Chuyên viên hợp tác · AI hỗ trợ: trích xuất và gắn nguồn",
+   "luu_y": "Thông tin không có trong tài liệu thì ghi \"chưa có tài liệu\"; không điền từ trí nhớ.",
+   "ket_qua": "Bảng thông tin có nguồn."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu và phát hiện mâu thuẫn",
+   "lam_gi": "So thông tin giữa các tài liệu (tên, năm, phạm vi); nêu chỗ khác nhau.",
+   "inputs": [
+    "tai_lieu_nguon"
+   ],
+   "vai_tro": "Chuyên viên hợp tác · AI hỗ trợ: đối chiếu",
+   "luu_y": "Không chọn thông tin nào đúng.",
+   "ket_qua": "Danh sách mâu thuẫn."
+  },
+  {
+   "n": 3,
+   "title": "Tóm tắt lịch sử và đề xuất câu hỏi",
+   "lam_gi": "Tóm tắt theo thời gian; liệt kê điều cần hỏi thêm trước khi làm việc.",
+   "inputs": [
+    "lich_su_hop_tac",
+    "muc_dich"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: dự thảo tóm tắt",
+   "luu_y": "Không đánh giá uy tín hay xếp hạng đối tác nếu không có nguồn người dùng cung cấp.",
+   "ket_qua": "Tóm tắt và câu hỏi cần làm rõ."
+  },
+  {
+   "n": 4,
+   "title": "Lập hồ sơ",
+   "lam_gi": "Ghép thành hồ sơ 1 đến 2 trang theo mục đích.",
+   "inputs": [
+    "muc_dich"
+   ],
+   "vai_tro": "Chuyên viên hợp tác · AI hỗ trợ: ghép hồ sơ",
+   "luu_y": "Ghi ngày lập và phiên bản tài liệu nguồn.",
+   "ket_qua": "Hồ sơ đối tác."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi thông tin có nguồn.",
+  "Tên Việt và Anh nhất quán.",
+  "Không có đánh giá hay xếp hạng không nguồn.",
+  "Thông tin thiếu được ghi rõ là thiếu.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Chuyên viên phụ trách đối tác** xác nhận thông tin.",
+  "**Trưởng phòng KHCN và Hợp tác phát triển** duyệt trước khi dùng làm căn cứ đàm phán."
+ ],
+ "guardrails": [
+  "KHÔNG bịa thông tin về đối tác.",
+  "KHÔNG đưa nội dung bí mật của đối tác ra ngoài hồ sơ nội bộ."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Mẫu hồ sơ đối tác đang dùng nếu có (C8).",
+  "Đầu mối lưu bản gốc MOU/MOA (C8)."
+ ],
+ "output_structure": [
+  "Tên đối tác (Việt và Anh), quốc gia, loại hình, lĩnh vực.",
+  "Quan hệ hiện tại: thỏa thuận (theo văn bản), hoạt động, đầu mối.",
+  "Tóm tắt lịch sử theo thời gian.",
+  "Mâu thuẫn, thông tin thiếu và câu hỏi cần làm rõ; danh mục nguồn."
+ ],
+ "output_structure_raw": "1. Tên đối tác (Việt và Anh), quốc gia, loại hình, lĩnh vực.\n\n2. Quan hệ hiện tại: thỏa thuận (theo văn bản), hoạt động, đầu mối.\n\n3. Tóm tắt lịch sử theo thời gian.\n\n4. Mâu thuẫn, thông tin thiếu và câu hỏi cần làm rõ; danh mục nguồn.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-htqt-lap-ho-so-doi-tac/references"
+}

@@ -1,0 +1,232 @@
+{
+ "name": "vnuis-nhansu-soan-hop-dong-lam-viec",
+ "title": "Soạn hợp đồng làm việc / hợp đồng lao động",
+ "description": "Dùng khi cần soạn hợp đồng làm việc cho viên chức (mới trúng tuyển, hết tập sự, ký lại, chuyển loại hợp đồng) hoặc hợp đồng lao động cho người lao động như bảo vệ, tạp vụ, lái xe.",
+ "group": "nhansu",
+ "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+ "previous_name": "vnuis-hop-dong-lam-viec",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị",
+ "when": "Khi tuyển dụng viên chức mới trúng tuyển, hết thời gian tập sự, ký lại hợp đồng khi hết hạn,\nchuyển từ hợp đồng xác định thời hạn sang hợp đồng không xác định thời hạn,\nhoặc ký hợp đồng lao động với lao động hợp đồng (bảo vệ, tạp vụ, lái xe...).",
+ "inputs": [
+  {
+   "key": "loai_hop_dong",
+   "desc": "Hợp đồng làm việc (viên chức) / Hợp đồng lao động (người lao động)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_ten_nld",
+   "desc": "Họ tên người lao động",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngay_sinh",
+   "desc": "Ngày tháng năm sinh",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cccd",
+   "desc": "Số CCCD, ngày cấp, nơi cấp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_chi",
+   "desc": "Địa chỉ thường trú / nơi ở hiện nay",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "trinh_do",
+   "desc": "Trình độ đào tạo (Cử nhân / Thạc sĩ / Tiến sĩ + chuyên ngành)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuc_danh",
+   "desc": "Chức danh nghề nghiệp (VD: Giảng viên hạng III – mã số V.07.01.03)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi",
+   "desc": "Đơn vị công tác (phòng / khoa / trung tâm)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cong_viec",
+   "desc": "Mô tả công việc chính phải làm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han",
+   "desc": "Xác định thời hạn (từ ngày... đến ngày...) / Không xác định thời hạn",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngay_bat_dau",
+   "desc": "Ngày hợp đồng có hiệu lực",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "he_so_luong",
+   "desc": "Hệ số lương + bậc (VD: bậc 2/9, hệ số 2,67)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_luong_toi_thieu",
+   "desc": "Mức lương cơ sở áp dụng để tính (theo quy định hiện hành)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "phu_cap",
+   "desc": "Các khoản phụ cấp (chức vụ, ưu đãi nghề, thâm niên...) nếu có",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "thoi_gian_lam_viec",
+   "desc": "Giờ làm việc, ngày nghỉ hằng tuần",
+   "required": false,
+   "note": "Không (mặc định theo quy định của trường)"
+  },
+  {
+   "key": "nguoi_dai_dien",
+   "desc": "Người đại diện trường ký hợp đồng (Hiệu trưởng)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo: Cập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n- Nghị định 235/2026/NĐ-CP; phạm vi: Hợp đồng lao động và dịch vụ thực hiện công việc trong đơn vị sự nghiệp công lập: Phân biệt hợp đồng làm việc của viên chức với hợp đồng lao động/dịch vụ. NĐ 235 cho công việc quản lý/chuyên môn/nghiệp vụ/hỗ trợ; công việc phục vụ như bảo vệ, lái xe ưu tiên tổ chức cung cấp dịch vụ theo điều kiện nghị định, không mặc định tất cả là hợp đồng lao động. Kiểm tra thẩm quyền ký theo nhóm vị trí.\n- Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo: Thêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại hợp đồng",
+   "lam_gi": "căn cứ đối tượng để phân loại: viên chức trúng tuyển theo văn bản hiện hành nêu tại phap-ly.md → Hợp đồng làm việc; lao động ngoài biên chế (bảo vệ, tạp vụ, lái xe...) → Hợp đồng lao động theo Bộ luật Lao động.",
+   "inputs": [
+    "loai_hop_dong",
+    "chuc_danh",
+    "don_vi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "chọn sai loại hợp đồng thì sai toàn bộ căn cứ pháp lý (Hợp đồng làm việc căn cứ Luật Viên chức + văn bản hiện hành nêu tại phap-ly.md; Hợp đồng lao động căn cứ Bộ luật Lao động).",
+   "ket_qua": "phiếu xác định loại hợp đồng."
+  },
+  {
+   "n": 2,
+   "title": "Kiểm tra điều kiện ký",
+   "lam_gi": "kiểm tra quyết định tuyển dụng/trúng tuyển còn hiệu lực; xác nhận đã hết thời gian tập sự (nếu ký sau tập sự); kiểm tra thẩm quyền người ký (Hiệu trưởng); đối chiếu thông tin định danh hai bên (họ tên, ngày sinh, CCCD, địa chỉ, trình độ).",
+   "inputs": [
+    "ho_ten_nld",
+    "ngay_sinh",
+    "cccd",
+    "dia_chi",
+    "trinh_do",
+    "nguoi_dai_dien"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "chưa hết thời gian tập sự thì chưa ký hợp đồng chính thức; CCCD hết hạn phải yêu cầu cập nhật trước khi ký.",
+   "ket_qua": "biên bản kiểm tra điều kiện ký (đủ điều kiện / nội dung cần bổ sung)."
+  },
+  {
+   "n": 3,
+   "title": "Xác định tiền lương và thời hạn",
+   "lam_gi": "đối chiếu chức danh nghề nghiệp + mã ngạch với bảng lương văn bản hiện hành nêu tại phap-ly.md để xác định bậc, hệ số đúng; xác định loại thời hạn (viên chức lần đầu: xác định thời hạn không quá 60 tháng; đủ điều kiện: không xác định thời hạn); xác định các khoản phụ cấp theo quy định; xác định thời giờ làm việc, ngày nghỉ hằng tuần.",
+   "inputs": [
+    "chuc_danh",
+    "he_so_luong",
+    "muc_luong_toi_thieu",
+    "phu_cap",
+    "thoi_han",
+    "ngay_bat_dau",
+    "thoi_gian_lam_viec"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "tra sai bậc/hệ số so với ngạch là lỗi phổ biến nhất — phải đối chiếu trực tiếp bảng lương; thời hạn lần đầu vượt 60 tháng là vi phạm quy định.",
+   "ket_qua": "bảng tiền lương – thời hạn (bậc/hệ số, phụ cấp, thời hạn, ngày hiệu lực)."
+  },
+  {
+   "n": 4,
+   "title": "Soạn thảo 7 điều khoản hợp đồng",
+   "lam_gi": "soạn đầy đủ các điều khoản bắt buộc: Điều 1 – Công việc, chức danh, đơn vị công tác; Điều 2 – Thời hạn hợp đồng, ngày có hiệu lực; Điều 3 – Tiền lương (hệ số, bậc, cách tính), phụ cấp, hình thức trả lương, kỳ trả lương; Điều 4 – Thời giờ làm việc, thời giờ nghỉ ngơi; Điều 5 – Quyền và nghĩa vụ của người lao động / viên chức; Điều 6 – Quyền và nghĩa vụ của đơn vị sử dụng lao động (nhà trường); Điều 7 – Điều khoản thi hành (hiệu lực, số bản hợp đồng).",
+   "inputs": [
+    "cong_viec"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "căn cứ pháp lý ở phần mở đầu phải đúng loại hợp đồng đã xác định ở Bước 1; nội dung Điều 3 phải khớp bảng tiền lương ở Bước 3.",
+   "ket_qua": "dự thảo hợp đồng đầy đủ 7 điều khoản."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra và chuẩn bị trình ký",
+   "lam_gi": "kiểm tra lần cuối: hệ số lương đúng ngạch/chức danh, thời hạn đúng quy định, đầy đủ thông tin định danh hai bên, đủ 7 điều khoản, số bản hợp đồng ghi trong Điều 7; hoàn thiện dự thảo để trình Hiệu trưởng ký, đóng dấu.",
+   "inputs": [
+    "nguoi_dai_dien"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) chuẩn bị, Hiệu trưởng phê duyệt · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "dùng danh mục kiểm tra trước khi trình ký; hợp đồng chỉ có hiệu lực pháp lý sau khi ký và đóng dấu đầy đủ.",
+   "ket_qua": "dự thảo hợp đồng đã kiểm tra + danh mục kiểm tra (trình ký tại Human gate; sau khi ký: lập đủ số bản — thường 03 bản: Bên A giữ 02, Bên B giữ 01 — lưu 01 bản vào hồ sơ cán bộ)."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và cấu trúc theo references/quy-cach-dau-ra.md và căn cứ đã chọn tại references/phap-ly.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+  "CCCD hết hạn phải yêu cầu cập nhật trước khi ký",
+  "Tra sai bậc/hệ số so với ngạch là lỗi phổ biến nhất — phải đối chiếu trực tiếp bảng lương",
+  "Căn cứ pháp lý ở phần mở đầu phải đúng loại hợp đồng đã xác định ở Bước 1"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hợp đồng làm việc viên chức, hợp đồng lao động: điều khoản theo mẫu và quy định Trường cung cấp; chưa có thì giữ chỗ trống.",
+  "Giảng viên, chuyên gia nước ngoài: điều kiện lao động và giấy phép có quy định riêng; skill không soạn mà đánh dấu chuyển pháp chế (C2).",
+  "Điều khoản ngôn ngữ giảng dạy, tiêu chuẩn ngoại ngữ chỉ ghi khi Trường đã quy định."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu hợp đồng và phân cấp ký (C1, C8).",
+  "Quy định về người nước ngoài (C2)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "Phân biệt hợp đồng làm việc viên chức với hợp đồng lao động/dịch vụ. Hợp đồng làm việc dùng mẫu xác định hoặc không xác định thời hạn trong phụ lục Nghị định 259/2026/NĐ-CP khi thuộc phạm vi áp dụng; giữ thông tin hai bên, điều khoản nhiệm vụ/thời hạn, quyền và nghĩa vụ, chấm dứt, điều khoản thi hành và chữ ký. Hợp đồng lao động/dịch vụ chọn căn cứ tương ứng, gồm Nghị định 235/2026 khi áp dụng; nhà giáo kiểm tra quy định riêng. Nguồn mẫu: https://xaydungchinhsach.chinhphu.vn/mau-hop-dong-lam-viec-doi-voi-vien-chuc-119260707111306746.htm",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-259-2026-nd-cp-quy-dinh-ve-tuyen-dung-su-dung-va-quan-ly-vien-chuc-119260707070701707.htm\n\nCập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n\n## Nghị định 235/2026/NĐ-CP; phạm vi: Hợp đồng lao động và dịch vụ thực hiện công việc trong đơn vị sự nghiệp công lập\n\nNguồn: https://baochinhphu.vn/quy-dinh-moi-ve-hop-dong-thuc-hien-cong-viec-trong-don-vi-su-nghiep-cong-lap-102260630062226594.htm\n\nPhân biệt hợp đồng làm việc của viên chức với hợp đồng lao động/dịch vụ. NĐ 235 cho công việc quản lý/chuyên môn/nghiệp vụ/hỗ trợ; công việc phục vụ như bảo vệ, lái xe ưu tiên tổ chức cung cấp dịch vụ theo điều kiện nghị định, không mặc định tất cả là hợp đồng lao động. Kiểm tra thẩm quyền ký theo nhóm vị trí.\n\n## Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/huong-dan-quan-ly-doi-ngu-nha-giao-sap-xep-bo-nhiem-chuc-danh-thuc-hien-che-do-chinh-sach-xep-luong-119260811083919821.htm\n\nThêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n",
+ "outputs_dir": "skills/vnuis-nhansu-soan-hop-dong-lam-viec/references"
+}

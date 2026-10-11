@@ -1,0 +1,4 @@
+interface:
+  display_name: KHCN · Biên soạn giáo trình / bài giảng – VNU-IS
+  short_description: Hỗ trợ biên soạn giáo trình / bài giảng (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-khcn-bien-soan-giao-trinh để hỗ trợ công việc: Biên soạn giáo trình / bài giảng; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

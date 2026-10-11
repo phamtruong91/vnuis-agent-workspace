@@ -1,0 +1,4 @@
+interface:
+  display_name: Viện ĐMST · Đánh giá hiệu quả chương trình VNU-IS
+  short_description: Đánh giá hiệu quả chương trình VNU-IS
+  default_prompt: 'Hãy dùng $vnuis-dmst-danh-gia-hieu-qua-chuong-trinh-du-an để hỗ trợ công việc: Đánh giá hiệu quả chương trình hoặc dự án của Trường Quốc tế – ĐHQGHN; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

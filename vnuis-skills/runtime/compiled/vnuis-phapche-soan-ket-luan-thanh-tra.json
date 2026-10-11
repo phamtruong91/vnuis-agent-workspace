@@ -1,0 +1,201 @@
+{
+ "name": "vnuis-phapche-soan-ket-luan-thanh-tra",
+ "title": "Soạn kết luận thanh tra",
+ "description": "Dùng khi Đoàn thanh tra đã xác minh xong một cuộc thanh tra nội bộ và cần ban hành kết luận chính thức: căn cứ, nhận xét từng nội dung, kết luận chung, kiến nghị xử lý.",
+ "group": "phapche",
+ "group_label": "Pháp chế – thanh tra",
+ "previous_name": "vnuis-ket-luan-thanh-tra",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (thanh tra – pháp chế)",
+ "when": "Khi một cuộc thanh tra nội bộ đã hoàn tất việc xác minh, thu thập chứng cứ và cần ban hành\nkết luận chính thức: nêu rõ căn cứ, nội dung đã thanh tra, nhận xét đánh giá từng nội dung,\nkết luận chung và kiến nghị xử lý, khắc phục.",
+ "inputs": [
+  {
+   "key": "so_quyet_dinh",
+   "desc": "Số, ký hiệu, ngày ban hành quyết định thanh tra",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong_thanh_tra",
+   "desc": "Đơn vị/cá nhân được thanh tra",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung_thanh_tra",
+   "desc": "Các nội dung đã thanh tra (theo quyết định thanh tra)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_qua_xac_minh",
+   "desc": "Số liệu, chứng cứ, biên bản làm việc thu thập được",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nhan_xet_danh_gia",
+   "desc": "Nhận xét, đánh giá ưu điểm và tồn tại của từng nội dung",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kien_nghi_xu_ly",
+   "desc": "Kiến nghị xử lý, khắc phục, thời hạn báo cáo kết quả khắc phục",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Người ra quyết định thanh tra (Hiệu trưởng)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (thanh tra – pháp chế)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tổng hợp kết quả xác minh theo quyết định thanh tra",
+   "lam_gi": "hệ thống hóa số liệu, chứng cứ, biên bản làm việc đã thu thập; đối chiếu từng nội dung với quyết định thanh tra để bảo đảm không bỏ sót nội dung, không kết luận vượt phạm vi; đánh dấu chứng cứ còn thiếu hoặc chưa được xác minh.",
+   "inputs": [
+    "so_quyet_dinh",
+    "noi_dung_thanh_tra",
+    "ket_qua_xac_minh",
+    "doi_tuong_thanh_tra"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "chỉ dùng chứng cứ đã được xác minh; nội dung không có chứng cứ thì ghi rõ \"chưa đủ cơ sở kết luận\", tuyệt đối không suy diễn.",
+   "ket_qua": "Bảng đối chiếu nội dung – chứng cứ (đầy đủ / còn thiếu)."
+  },
+  {
+   "n": 2,
+   "title": "Nhận xét, đánh giá từng nội dung",
+   "lam_gi": "với từng nội dung đã thanh tra, viết nhận xét gồm ưu điểm và tồn tại/hạn chế; mỗi nhận xét gắn số liệu, dẫn chứng cụ thể lấy từ bảng đối chiếu Bước 1.",
+   "inputs": [
+    "nhan_xet_danh_gia"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "tồn tại nào không có dẫn chứng thì không đưa vào kết luận; phân biệt tồn tại do vi phạm quy định với tồn tại do quy định chưa rõ; tránh nhận xét chung chung, thiếu căn cứ.",
+   "ket_qua": "Bản nhận xét, đánh giá từng nội dung kèm dẫn chứng."
+  },
+  {
+   "n": 3,
+   "title": "Xác định nguyên nhân và trách nhiệm",
+   "lam_gi": "phân tích nguyên nhân khách quan, chủ quan của từng tồn tại; xác định trách nhiệm của tập thể, cá nhân (đơn vị trực tiếp thực hiện, cấp quản lý) gắn với từng tồn tại cụ thể.",
+   "inputs": [
+    "ket_qua_xac_minh",
+    "nhan_xet_danh_gia"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: tính toán, phân tích số liệu",
+   "luu_y": "trách nhiệm phải gắn với vai trò, nhiệm vụ cụ thể, không quy chụp chung; phân biệt trách nhiệm trực tiếp và trách nhiệm quản lý.",
+   "ket_qua": "Bảng tồn tại – nguyên nhân – trách nhiệm."
+  },
+  {
+   "n": 4,
+   "title": "Viết kết luận chung",
+   "lam_gi": "tổng hợp thành đánh giá tổng thể về mức độ tuân thủ pháp luật, quy chế, quy định nội bộ của đối tượng được thanh tra; nêu ngắn gọn ưu điểm chính và tồn tại chính.",
+   "inputs": [
+    "doi_tuong_thanh_tra"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: soạn dự thảo, tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "kết luận chung không được đưa nội dung mới chưa có ở phần nhận xét, đánh giá.",
+   "ket_qua": "Đoạn kết luận chung."
+  },
+  {
+   "n": 5,
+   "title": "Viết kiến nghị xử lý",
+   "lam_gi": "với từng tồn tại, viết kiến nghị: biện pháp khắc phục cụ thể, đơn vị/cá nhân thực hiện, thời hạn báo cáo kết quả khắc phục; kiến nghị kiểm điểm trách nhiệm tập thể, cá nhân; xử lý kỷ luật nếu có dấu hiệu vi phạm nghiêm trọng.",
+   "inputs": [
+    "kien_nghi_xu_ly"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "kiến nghị phải đúng thẩm quyền của người ra quyết định thanh tra, khả thi, có thời hạn cụ thể; không kiến nghị vượt thẩm quyền.",
+   "ket_qua": "Danh sách kiến nghị xử lý (biện pháp – đơn vị thực hiện – thời hạn)."
+  },
+  {
+   "n": 6,
+   "title": "Soạn kết luận theo bố cục chuẩn",
+   "lam_gi": "lắp các bán thành phẩm vào bố cục: phần căn cứ (quyết định thanh tra, báo cáo kết quả xác minh) → I. Nội dung đã thanh tra → II. Nhận xét, đánh giá → III. Kết luận → IV. Kiến nghị xử lý → nơi nhận, chữ ký.",
+   "inputs": [
+    "so_quyet_dinh",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "kiểm tra nhất quán số liệu giữa các phần; tên đối tượng, số quyết định viết thống nhất toàn văn bản.",
+   "ket_qua": "Dự thảo Kết luận thanh tra."
+  },
+  {
+   "n": 7,
+   "title": "Trình ký, ban hành và theo dõi",
+   "lam_gi": "trình người ra quyết định thanh tra ký; gửi kết luận đến đối tượng được thanh tra và đơn vị liên quan; lập bảng theo dõi thực hiện kiến nghị (tồn tại – kiến nghị – đơn vị – thời hạn – trạng thái).",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) (chuẩn bị hồ sơ trình); Hiệu trưởng (người ký) ban hành · AI hỗ trợ: lập bảng biểu, định dạng, chuẩn bị hồ sơ trình đầy đủ",
+   "luu_y": "theo dõi đến khi kiến nghị hoàn thành; quá thời hạn phải đôn đốc và báo cáo người ra quyết định.",
+   "ket_qua": "Kết luận thanh tra đã ban hành + bảng theo dõi kiến nghị."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Kết luận thanh tra hoàn chỉnh (sẵn sàng trình ký)",
+  "Có đầy đủ sản phẩm: Bảng tổng hợp tồn tại – nguyên nhân – trách nhiệm – kiến nghị xử lý",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Chỉ dùng chứng cứ đã được xác minh",
+  "Tồn tại nào không có dẫn chứng thì không đưa vào kết luận > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Soạn kết luận từ hồ sơ xác minh và quyết định thanh tra đã có; mọi nhận định phải truy được về chứng cứ trong hồ sơ.",
+  "Nội dung liên quan chương trình liên kết cần đối chiếu thỏa thuận với đối tác (C2).",
+  "Kết luận hạn chế phát hành; chỉ chia sẻ theo danh sách người có thẩm quyền."
+ ],
+ "cho_xac_nhan": [
+  "Quyết định thanh tra và quy chế thanh tra nội bộ (C2).",
+  "Người ký kết luận (C1)."
+ ],
+ "output_structure": [
+  "Phần đầu: quốc hiệu – tiêu ngữ, tên đơn vị lập, số/ký hiệu, địa danh – ngày tháng, tên văn bản \"KẾT LUẬN THANH TRA\" + trích yếu (về nội dung gì, tại đơn vị nào).",
+  "Phần căn cứ: quyết định thanh tra (số, ký hiệu, ngày), báo cáo kết quả xác minh của Đoàn thanh tra.",
+  "I. Nội dung đã thanh tra (liệt kê theo quyết định thanh tra).",
+  "II. Nhận xét, đánh giá: từng nội dung gồm ưu điểm – tồn tại kèm số liệu, dẫn chứng.",
+  "III. Kết luận: đánh giá tổng thể mức độ tuân thủ; nguyên nhân; trách nhiệm tập thể, cá nhân.",
+  "IV. Kiến nghị xử lý: biện pháp khắc phục, đơn vị/cá nhân thực hiện, thời hạn báo cáo kết quả.",
+  "Phần cuối: nơi nhận, chữ ký của người ra quyết định thanh tra. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần đầu: quốc hiệu – tiêu ngữ, tên đơn vị lập, số/ký hiệu, địa danh – ngày tháng, tên văn bản \"KẾT LUẬN THANH TRA\" + trích yếu (về nội dung gì, tại đơn vị nào).\n\n2. Phần căn cứ: quyết định thanh tra (số, ký hiệu, ngày), báo cáo kết quả xác minh của Đoàn thanh tra.\n\n3. I. Nội dung đã thanh tra (liệt kê theo quyết định thanh tra).\n\n4. II. Nhận xét, đánh giá: từng nội dung gồm ưu điểm – tồn tại kèm số liệu, dẫn chứng.\n\n5. III. Kết luận: đánh giá tổng thể mức độ tuân thủ; nguyên nhân; trách nhiệm tập thể, cá nhân.\n\n6. IV. Kiến nghị xử lý: biện pháp khắc phục, đơn vị/cá nhân thực hiện, thời hạn báo cáo kết quả.\n\n7. Phần cuối: nơi nhận, chữ ký của người ra quyết định thanh tra.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (thanh tra – pháp chế). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-phapche-soan-ket-luan-thanh-tra/references"
+}

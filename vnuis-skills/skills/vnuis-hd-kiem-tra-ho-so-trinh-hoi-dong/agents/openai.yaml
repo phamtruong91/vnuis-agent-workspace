@@ -1,0 +1,4 @@
+interface:
+  display_name: Hội đồng · Kiểm tra hồ sơ trình Hội đồng VNU-IS
+  short_description: Kiểm tra hồ sơ trình Hội đồng KH&ĐT
+  default_prompt: 'Hãy dùng $vnuis-hd-kiem-tra-ho-so-trinh-hoi-dong để hỗ trợ công việc: Kiểm tra hồ sơ trình Hội đồng của Trường Quốc tế – ĐHQGHN; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

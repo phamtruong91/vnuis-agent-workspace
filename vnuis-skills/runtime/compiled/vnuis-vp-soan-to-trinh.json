@@ -1,0 +1,250 @@
+{
+ "name": "vnuis-vp-soan-to-trinh",
+ "title": "Soạn tờ trình",
+ "description": "Dùng khi đơn vị hoặc cá nhân cần xin chủ trương, phê duyệt từ Ban Giám hiệu hoặc cấp trên trước khi triển khai: mở ngành, tổ chức sự kiện, mua sắm, cử đi công tác, ban hành văn bản.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-soan-to-trinh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường; gửi Ban Giám hiệu hoặc ĐHQGHN",
+ "when": "Khi một đơn vị/cá nhân cần trình lãnh đạo xem xét, quyết định một chủ trương, kế hoạch, dự án,\nkinh phí...: mở ngành, tổ chức sự kiện, mua sắm, cử đi công tác, ban hành văn bản...",
+ "inputs": [
+  {
+   "key": "ten_to_trinh",
+   "desc": "Tên tờ trình (ngắn gọn, nêu việc đề xuất)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kinh_gui",
+   "desc": "Ban Giám hiệu / cấp có thẩm quyền (C6) / Hiệu trưởng...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_trinh",
+   "desc": "Đơn vị trình tờ trình",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu",
+   "desc": "Các căn cứ pháp lý, thực tiễn (quy định, công văn, tình hình)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung_de_xuat",
+   "desc": "Nội dung đề xuất chi tiết, dạng gạch đầu dòng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kien_nghi",
+   "desc": "Kiến nghị cụ thể mong lãnh đạo quyết định",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tai_lieu_kem_theo",
+   "desc": "Danh mục tài liệu đính kèm (dự thảo, dự toán...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "co_quan_chu_quan",
+   "desc": "Cơ quan chủ quản: Đại học Quốc gia Hà Nội (đã điền sẵn)",
+   "required": false,
+   "note": "Không (mặc định: ĐHQGHN)"
+  },
+  {
+   "key": "co_quan_ban_hanh",
+   "desc": "Cơ quan ban hành: Trường Quốc tế – ĐHQGHN (đã điền sẵn); ghi thêm đơn vị soạn thảo nếu khác",
+   "required": false,
+   "note": "Không (mặc định: Trường Quốc tế – ĐHQGHN)"
+  },
+  {
+   "key": "dia_danh",
+   "desc": "Địa danh ghi ở dòng ngày tháng năm (mặc định: Hà Nội)",
+   "required": false,
+   "note": "Không (mặc định: Hà Nội)"
+  },
+  {
+   "key": "so_van_ban",
+   "desc": "Số, ký hiệu văn bản đã được cấp (để trống nếu chưa cấp; không tự đặt)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Danh sách nơi nhận, gồm cả nơi lưu (VT, đơn vị soạn)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Chức danh, họ tên người ký; hình thức TM./KT./TL./TUQ. chỉ khi có căn cứ",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường; gửi Ban Giám hiệu hoặc ĐHQGHN"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định việc đề xuất và thẩm quyền phê duyệt",
+   "lam_gi": "Đọc `ten_to_trinh` và `noi_dung_de_xuat`, tóm tắt việc đề xuất trong một câu (làm gì – cho ai – để đạt gì); đọc `kinh_gui` để xác định cấp phê duyệt (Ban Giám hiệu / Hiệu trưởng / cấp có thẩm quyền (C6) / cấp trên) vì cấp phê duyệt quyết định độ chi tiết số liệu và căn cứ cần viện dẫn; kiểm tra `don_vi_trinh` có đúng là đơn vị được giao nhiệm vụ liên quan không.",
+   "inputs": [
+    "ten_to_trinh",
+    "kinh_gui",
+    "don_vi_trinh",
+    "noi_dung_de_xuat"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "Việc vượt thẩm quyền của Ban Giám hiệu (vd: mở ngành mới, chiến lược dài hạn) phải trình cấp có thẩm quyền (C6) — xác định sai cấp phê duyệt là lỗi nghiêm trọng khiến tờ trình bị trả lại.",
+   "ket_qua": "Xác nhận việc đề xuất + cấp phê duyệt phù hợp."
+  },
+  {
+   "n": 2,
+   "title": "Thu thập và sắp xếp căn cứ",
+   "lam_gi": "Từ `can_cu`, liệt kê từng văn bản pháp lý/quy định/công văn liên quan, kiểm tra hiệu lực (văn bản còn hiệu lực, không bị thay thế), sắp xếp từ văn bản có hiệu lực cao xuống thấp (luật → nghị định/thông tư → quy chế trường → nghị quyết hội đồng trường → công văn), bổ sung căn cứ thực tiễn (số liệu năm trước, tình hình thực tế) nếu `can_cu` còn thiếu.",
+   "inputs": [
+    "can_cu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Bẫy thường gặp — viện dẫn văn bản đã hết hiệu lực hoặc bị thay thế; căn cứ thực tiễn thiếu số liệu khiến lý do đề xuất yếu. Mỗi căn cứ phải ghi đủ tên văn bản, số/ký hiệu, ngày ban hành.",
+   "ket_qua": "Danh sách căn cứ đã kiểm chuẩn, sắp xếp đúng thứ tự hiệu lực."
+  },
+  {
+   "n": 3,
+   "title": "Xây dựng nội dung đề xuất chi tiết",
+   "lam_gi": "Chuyển từng gạch đầu dòng trong `noi_dung_de_xuat` thành các mục đánh số 1., 2., 3..., mỗi mục một nội dung trọn vẹn; với nội dung liên quan kinh phí/nhân sự/thời gian, bổ sung số liệu cụ thể (tổng số, mức tăng/giảm so với năm trước, mốc thời gian); kiểm tra số liệu giữa các mục có nhất quán không; đối chiếu `tai_lieu_kem_theo` để đảm bảo tài liệu đính kèm khớp với nội dung đề xuất.",
+   "inputs": [
+    "noi_dung_de_xuat",
+    "tai_lieu_kem_theo"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Đề xuất xin kinh phí phải có dự toán chi tiết ở tài liệu kèm theo, không dồn hết số liệu vào thân tờ trình; tránh đề xuất chung chung kiểu \"tổ chức hiệu quả\" mà thiếu chỉ tiêu đo được.",
+   "ket_qua": "Dự thảo nội dung đề xuất có số liệu nhất quán + danh mục tài liệu kèm theo đã đối chiếu."
+  },
+  {
+   "n": 4,
+   "title": "Viết mở đầu và kiến nghị",
+   "lam_gi": "Viết đoạn mở đầu sau dòng \"Kính gửi\": nêu lý do, sự cần thiết của việc đề xuất (gắn với nhiệm vụ của đơn vị và tình hình thực tế); sau phần nội dung đề xuất, viết kiến nghị: nêu dứt khoát trong 1–2 câu điều mong lãnh đạo xem xét, quyết định (phê duyệt cái gì, giao cho ai triển khai), lấy nguyên văn ý từ `kien_nghi`.",
+   "inputs": [
+    "ten_to_trinh",
+    "don_vi_trinh",
+    "kien_nghi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Kiến nghị phải là câu cầu khiến rõ ràng (\"Kính đề nghị ... phê duyệt ...\"), không viết lưng chừng kiểu \"mong lãnh đạo cho ý kiến\"; kiến nghị phải khớp đúng phạm vi nội dung đã đề xuất ở Bước 3.",
+   "ket_qua": "Đoạn mở đầu + đoạn kiến nghị hoàn chỉnh."
+  },
+  {
+   "n": 5,
+   "title": "Dựng thể thức và phần kết thúc",
+   "lam_gi": "Lắp ráp phần đầu: tên trường + quốc hiệu – tiêu ngữ, tên `don_vi_trinh`, số/ký hiệu tờ trình (ký hiệu TTr), địa danh ngày tháng, dòng chữ \"TỜ TRÌNH\" + tên tờ trình (in hoa, căn giữa), dòng \"Kính gửi\" + `kinh_gui`; phần kết thúc: câu kết \"./.\", nơi nhận (\"- [cấp phê duyệt];\", \"- Lưu: VT, [mã đơn vị].\"), danh mục tài liệu kèm theo, khối chữ ký người đứng đầu đơn vị trình (chức danh + họ tên). Phần đầu văn bản lấy từ `co_quan_chu_quan` (nếu có), `co_quan_ban_hanh`, `dia_danh`, `so_van_ban` (để dòng dấu chấm nếu chưa cấp số). Nơi nhận lấy từ `noi_nhan`. Khối ký lấy từ `nguoi_ky`.",
+   "inputs": [
+    "don_vi_trinh",
+    "ten_to_trinh",
+    "kinh_gui",
+    "tai_lieu_kem_theo",
+    "co_quan_chu_quan",
+    "co_quan_ban_hanh",
+    "dia_danh",
+    "so_van_ban",
+    "noi_nhan",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Người ký tờ trình là thủ trưởng đơn vị trình (Trưởng phòng/Trưởng khoa), không phải Hiệu trưởng; ký hiệu ghi \"TTr\"; số tờ trình chỉ ghi khi người dùng cung cấp, nếu chưa có thì để dòng dấu chấm (văn thư cấp số khi đăng ký sổ văn bản đi).",
+   "ket_qua": "Khung tờ trình hoàn chỉnh về thể thức, đã lắp đủ mở đầu – căn cứ – đề xuất – kiến nghị – kết thúc."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra logic và số liệu",
+   "lam_gi": "Đọc liền mạch từ lý do → căn cứ → đề xuất → kiến nghị, kiểm tra: lý do có dẫn tới đúng nội dung đề xuất không; căn cứ có đủ cơ sở pháp lý cho nội dung đề xuất không; kiến nghị có bao quát hết nội dung đề xuất không; số liệu trong thân tờ trình có khớp với tài liệu kèm theo không; chính tả, tên văn bản viện dẫn chính xác.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "Lỗi phổ biến — kiến nghị xin phê duyệt nội dung không có trong phần đề xuất, hoặc đề xuất có nội dung nhưng kiến nghị không nhắc tới; số liệu tổng trong thân không khớp bảng chi tiết đính kèm.",
+   "ket_qua": "Kết quả đối chiếu logic và số liệu (nội bộ, không xuất kèm file) + danh sách lỗi cần sửa (nếu có), trả về bước tương ứng để chỉnh."
+  },
+  {
+   "n": 7,
+   "title": "Xuất bản tờ trình trình ký",
+   "lam_gi": "Ghép toàn bộ thành tờ trình hoàn chỉnh file theo định dạng đầu ra của skill; đính kèm ghi chú các tài liệu cần đính kèm theo tờ trình; chuyển cho thủ trưởng đơn vị trình duyệt (human gate) trước khi trình lên cấp phê duyệt.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên chuẩn bị, thủ trưởng đơn vị trình ký · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "Không sửa nội dung đề xuất sau khi thủ trưởng đơn vị đã ký nháy/duyệt mà không xin ý kiến lại.",
+   "ket_qua": "Tờ trình hoàn chỉnh + ghi chú tài liệu đính kèm, sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức văn bản theo Nghị định 30/2020/NĐ-CP (đối chiếu hiệu lực tại ngày nghiệp vụ) và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Mỗi căn cứ phải ghi đủ tên văn bản, số/ký hiệu, ngày ban hành",
+  "Đề xuất xin kinh phí phải có dự toán chi tiết ở tài liệu kèm theo, không dồn hết số liệu vào thân tờ trình",
+  "Tránh đề xuất chung chung kiểu \"tổ chức hiệu quả\" mà thiếu chỉ tiêu đo được"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Xác định nơi nhận: Hiệu trưởng hay ĐHQGHN. Việc nào phải xin ý kiến ĐHQGHN, việc nào Trường tự quyết chưa có văn bản phân cấp trong gói này; ghi `[CẦN XÁC MINH]` (C1, C6).",
+  "Tờ trình về chương trình liên kết, song bằng hoặc thỏa thuận quốc tế: nêu rõ nội dung cần trường đối tác chấp thuận để người duyệt thấy ràng buộc.",
+  "Với đề xuất có số liệu (chỉ tiêu, người học), ghi nguồn và kỳ; không dùng số tự công bố trên website."
+ ],
+ "cho_xac_nhan": [
+  "Phân cấp thẩm quyền giữa Hiệu trưởng, Hội đồng KH&ĐT và ĐHQGHN (C6).",
+  "Mẫu tờ trình (C8)."
+ ],
+ "output_structure": [
+  "Tên trường + Quốc hiệu \"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\"",
+  "Tên đơn vị trình + Tiêu ngữ \"Độc lập - Tự do - Hạnh phúc\"",
+  "Số, ký hiệu tờ trình (ký hiệu \"TTr\"); địa danh, ngày tháng năm",
+  "Tên loại \"TỜ TRÌNH\" (in hoa, căn giữa) + tên tờ trình",
+  "Dòng \"Kính gửi\" + cấp phê duyệt",
+  "Phần mở đầu: lý do, sự cần thiết của việc đề xuất",
+  "Chuỗi căn cứ pháp lý và thực tiễn, sắp xếp từ văn bản có hiệu lực cao xuống thấp, kết bằng mệnh đề \"Xét...\"",
+  "Nội dung đề xuất: đánh số 1., 2., 3..., có số liệu cụ thể (kinh phí/nhân sự/thời gian)",
+  "Kiến nghị: 1–2 câu dứt khoát nêu điều mong lãnh đạo phê duyệt, kết bằng \"./.\"",
+  "Nơi nhận; danh mục tài liệu kèm theo",
+  "Khối chữ ký: chức danh người đứng đầu đơn vị trình + họ tên Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tên trường + Quốc hiệu \"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\"\n\n2. Tên đơn vị trình + Tiêu ngữ \"Độc lập - Tự do - Hạnh phúc\"\n\n3. Số, ký hiệu tờ trình (ký hiệu \"TTr\"); địa danh, ngày tháng năm\n\n4. Tên loại \"TỜ TRÌNH\" (in hoa, căn giữa) + tên tờ trình\n\n5. Dòng \"Kính gửi\" + cấp phê duyệt\n\n6. Phần mở đầu: lý do, sự cần thiết của việc đề xuất\n\n7. Chuỗi căn cứ pháp lý và thực tiễn, sắp xếp từ văn bản có hiệu lực cao xuống thấp, kết bằng mệnh đề \"Xét...\"\n\n8. Nội dung đề xuất: đánh số 1., 2., 3..., có số liệu cụ thể (kinh phí/nhân sự/thời gian)\n\n9. Kiến nghị: 1–2 câu dứt khoát nêu điều mong lãnh đạo phê duyệt, kết bằng \"./.\"\n\n10. Nơi nhận; danh mục tài liệu kèm theo\n\n11. Khối chữ ký: chức danh người đứng đầu đơn vị trình + họ tên",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-soan-to-trinh/references"
+}

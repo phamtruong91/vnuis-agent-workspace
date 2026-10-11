@@ -1,0 +1,223 @@
+{
+ "name": "vnuis-dt-bao-cao-dao-tao-dinh-ky",
+ "title": "Báo cáo công tác đào tạo định kỳ",
+ "description": "Dùng khi cần báo cáo sơ kết học kỳ, tổng kết năm học hoặc báo cáo cơ quan quản lý về công tác đào tạo: quy mô sinh viên, kết quả học tập, tốt nghiệp, giảng viên, cơ sở vật chất, thuận lợi, khó khăn.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-bao-cao-dao-tao-dinh-ky",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (báo cáo đào tạo)",
+ "when": "Khi cần tổng hợp và báo cáo công tác đào tạo theo định kỳ: sơ kết học kỳ, tổng kết năm học,\nhoặc báo cáo gửi cơ quan tiếp nhận (ĐHQGHN hoặc Bộ GD&ĐT, chờ C2). Báo cáo phản ánh đầy đủ quy mô đào tạo, chất lượng,\nđội ngũ, cơ sở vật chất, những thuận lợi – khó khăn và phương hướng nhiệm vụ kỳ tiếp theo.",
+ "inputs": [
+  {
+   "key": "ky_bao_cao",
+   "desc": "Học kỳ / năm học báo cáo (ví dụ: Học kỳ 1 năm học 2026–2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_mo_sv",
+   "desc": "Số liệu SV theo khóa, ngành, hệ đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_qua_hoc_tap",
+   "desc": "Tỷ lệ SV đạt loại khá/giỏi, số SV bị cảnh báo học vụ, thôi học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tot_nghiep",
+   "desc": "Số SV tốt nghiệp trong kỳ, tỷ lệ theo xếp loại",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_ngu_gv",
+   "desc": "Số lượng, trình độ giảng viên (GS/PGS/TS/ThS), tỷ lệ GV/SV",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "co_so_vat_chat",
+   "desc": "Phòng học, phòng thí nghiệm, thư viện, học liệu phục vụ đào tạo",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "thuan_loi_kho_khan",
+   "desc": "Đánh giá thuận lợi, khó khăn, tồn tại trong kỳ",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "phuong_huong",
+   "desc": "Nhiệm vụ, giải pháp trọng tâm kỳ tiếp theo",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng phụ trách đào tạo",
+   "required": false,
+   "note": "Không (mặc định: Phó Hiệu trưởng)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (báo cáo đào tạo)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tổng hợp quy mô đào tạo",
+   "lam_gi": "lấy từ hệ thống quản lý đào tạo: tổng số SV theo khóa, ngành, hệ đào tạo; số lớp học phần đã mở trong kỳ; tính tỷ lệ tăng/giảm (%) so với kỳ trước và so với cùng kỳ năm trước.",
+   "inputs": [
+    "ky_bao_cao",
+    "quy_mo_sv"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: tổng hợp số liệu quy mô đào tạo từ hệ thống quản lý",
+   "luu_y": "chốt số liệu tại cùng một thời điểm cho mọi ngành để so sánh được; tách riêng SV chính quy và các hệ đào tạo khác (nếu có); ghi rõ thời điểm chốt số liệu.",
+   "ket_qua": "bảng quy mô SV theo khóa, ngành, hệ đào tạo kèm tỷ lệ biến động so với kỳ trước."
+  },
+  {
+   "n": 2,
+   "title": "Tổng hợp kết quả học tập",
+   "lam_gi": "phân loại kết quả học tập toàn trường theo các mức (xuất sắc/giỏi/khá/trung bình/yếu) tính theo %; thống kê số SV bị cảnh báo học vụ, buộc thôi học trong kỳ; phân tích nguyên nhân chính (năm nhất chưa thích nghi, nợ học phí, vắng học...).",
+   "inputs": [
+    "ky_bao_cao",
+    "ket_qua_hoc_tap"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: phân loại kết quả học tập theo các mức, tính toán tỷ lệ",
+   "luu_y": "tỷ lệ phân loại phải cộng đủ 100%; nguyên nhân phân tích phải dựa trên số liệu cụ thể (số trường hợp), không nêu chung chung.",
+   "ket_qua": "bảng phân loại kết quả học tập theo % + danh sách số liệu cảnh báo/thôi học và phân tích nguyên nhân chính."
+  },
+  {
+   "n": 3,
+   "title": "Tổng hợp công tác tốt nghiệp",
+   "lam_gi": "thống kê số SV tốt nghiệp trong kỳ theo từng ngành và theo xếp loại; tính tỷ lệ tốt nghiệp đúng hạn của các khóa đến hạn tốt nghiệp.",
+   "inputs": [
+    "ky_bao_cao",
+    "tot_nghiep"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: thống kê số SV tốt nghiệp theo ngành và xếp loại",
+   "luu_y": "\"tốt nghiệp đúng hạn\" tính theo thời gian đào tạo chuẩn của khóa, không tính các trường hợp gia hạn; đối chiếu với quyết định công nhận tốt nghiệp của kỳ.",
+   "ket_qua": "bảng tốt nghiệp theo ngành và xếp loại + tỷ lệ tốt nghiệp đúng hạn các khóa."
+  },
+  {
+   "n": 4,
+   "title": "Tổng hợp đội ngũ giảng viên và cơ sở vật chất",
+   "lam_gi": "lấy từ Phòng TC&QT (nhân sự): tổng số GV cơ hữu, cơ cấu trình độ (GS/PGS/TS/ThS), tính tỷ lệ SV/GV; lấy từ Phòng TC&QT (cơ sở vật chất): số phòng học lý thuyết, phòng máy, phòng thí nghiệm, số đầu sách thư viện và tình trạng đáp ứng đào tạo.",
+   "inputs": [
+    "ky_bao_cao",
+    "doi_ngu_gv",
+    "co_so_vat_chat"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (số liệu từ Phòng TC&QT (nhân sự) và đơn vị CSVC) · AI hỗ trợ: tổng hợp bảng số liệu đội ngũ và cơ sở vật chất",
+   "luu_y": "tỷ lệ GV có trình độ tiến sĩ trở lên là chỉ tiêu quan trọng cần nêu rõ; CSVC nêu cả số lượng và tình trạng (đáp ứng / xuống cấp cần nâng cấp).",
+   "ket_qua": "bảng đội ngũ GV (số lượng, trình độ, tỷ lệ SV/GV) + bảng CSVC phục vụ đào tạo."
+  },
+  {
+   "n": 5,
+   "title": "Đánh giá thuận lợi – khó khăn",
+   "lam_gi": "dựa trên số liệu 4 bước trên, nêu rõ: (a) thuận lợi và kết quả đạt được trong kỳ; (b) khó khăn, tồn tại, hạn chế; (c) nguyên nhân của từng tồn tại — phân biệt nguyên nhân khách quan và chủ quan.",
+   "inputs": [
+    "thuan_loi_kho_khan"
+   ],
+   "vai_tro": "Trưởng phòng Đào tạo · AI hỗ trợ: phác thảo nội dung đánh giá thuận lợi và hạn chế",
+   "luu_y": "mỗi tồn tại nêu ra phải gắn với số liệu cụ thể (không đánh giá định tính suông); nguyên nhân chủ quan phải đi kèm trách nhiệm đơn vị liên quan để làm cơ sở cho phương hướng.",
+   "ket_qua": "phần đánh giá thuận lợi/khó khăn có số liệu minh chứng và phân tích nguyên nhân."
+  },
+  {
+   "n": 6,
+   "title": "Đề xuất phương hướng kỳ tới",
+   "lam_gi": "từ các tồn tại ở Bước 5, đề xuất nhiệm vụ trọng tâm, giải pháp khắc phục cụ thể và chỉ tiêu phấn đấu định lượng cho kỳ tiếp theo (ví dụ: giảm x% SV bị cảnh báo, nâng tỷ lệ tốt nghiệp đúng hạn lên y%).",
+   "inputs": [
+    "phuong_huong"
+   ],
+   "vai_tro": "Lãnh đạo phụ trách đào tạo · AI hỗ trợ: gợi ý phương hướng, giải pháp khắc phục để chốt",
+   "luu_y": "mỗi giải pháp phải gắn với đơn vị chịu trách nhiệm và mốc thời gian; chỉ tiêu phấn đấu phải khả thi, có cơ sở từ số liệu kỳ này.",
+   "ket_qua": "danh mục nhiệm vụ trọng tâm, giải pháp và chỉ tiêu phấn đấu kỳ tới."
+  },
+  {
+   "n": 7,
+   "title": "Trình bày báo cáo và kiểm tra nhất quán số liệu",
+   "lam_gi": "trình bày báo cáo theo cấu trúc chuẩn (mở đầu – nội dung theo từng mảng – đánh giá – phương hướng) kèm bảng số liệu tổng hợp; kiểm tra chéo: mọi con số trong văn bản phải khớp với bảng tổng hợp và với số liệu gốc từ các bước 1–4; rà chính tả, thể thức trước khi trình ký.",
+   "inputs": [
+    "ky_bao_cao",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: kiểm tra chéo tính nhất quán số liệu toàn báo cáo",
+   "luu_y": "bẫy thường gặp nhất là số liệu trong văn bản và trong bảng không khớp nhau (do cập nhật một nơi, quên nơi kia); kiểm tra lần cuối sau khi đã chốt toàn bộ nội dung.",
+   "ket_qua": "báo cáo công tác đào tạo hoàn chỉnh, số liệu nhất quán giữa văn bản và bảng, sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu/nội dung trong output khớp với Input đã cho (kỳ báo cáo, quy mô SV, kết quả học tập, tốt nghiệp, đội ngũ GV, CSVC).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng bố cục văn bản hành chính chuẩn của báo cáo định kỳ.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (văn bản hiện hành nêu tại phap-ly.md, chế độ báo cáo thống kê giáo dục của Bộ GD&ĐT); ghi rõ nguồn và thời điểm chốt số liệu.",
+  "Đã qua Human gate: lãnh đạo (Hiệu trưởng/Phó Hiệu trưởng phụ trách đào tạo) đã duyệt báo cáo.",
+  "Mọi con số trong phần văn bản khớp với bảng số liệu tổng hợp và số liệu gốc; tỷ lệ phân loại kết quả học tập cộng đủ 100%.",
+  "Mỗi tồn tại nêu ra gắn với số liệu cụ thể, phân biệt nguyên nhân khách quan/chủ quan kèm trách nhiệm đơn vị liên quan.",
+  "Giải pháp gắn đơn vị chịu trách nhiệm và mốc thời gian; chỉ tiêu phấn đấu khả thi, có cơ sở từ số liệu kỳ này."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Tuyến báo cáo: VNU-IS là đơn vị thành viên của ĐHQGHN; báo cáo gửi ĐHQGHN hay Bộ GD&ĐT chờ xác nhận (C2). Trong skill này \"cơ quan tiếp nhận\" là nơi nhận báo cáo theo tuyến đó.",
+  "Mục lục mặc định theo 5 mảng của Phòng Đào tạo: đào tạo, sau đại học, công tác sinh viên, khảo thí, đảm bảo chất lượng; mảng nào chưa có số liệu thì để trống.",
+  "Số liệu tách theo kiểu chương trình; dùng một nguồn số liệu duy nhất (C4).",
+  "Chạy vnuis-dc-kiem-tra-chat-luong-du-lieu-bao-cao trước khi lập báo cáo."
+ ],
+ "cho_xac_nhan": [
+  "Biểu mẫu báo cáo của ĐHQGHN và định nghĩa chỉ tiêu (C2, C8).",
+  "Chu kỳ báo cáo (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề báo cáo: tên báo cáo + kỳ báo cáo (học kỳ/năm học) + tên trường.",
+  "Phần I. Quy mô đào tạo: tổng số SV theo khóa, ngành, hệ đào tạo; số lớp học phần đã mở; so sánh với kỳ trước/cùng kỳ năm trước.",
+  "Phần II. Kết quả học tập: phân loại kết quả theo %; số SV bị cảnh báo học vụ, buộc thôi học; phân tích nguyên nhân chính.",
+  "Phần III. Công tác tốt nghiệp: số SV tốt nghiệp trong kỳ theo ngành và xếp loại; tỷ lệ tốt nghiệp đúng hạn các khóa.",
+  "Phần IV. Đội ngũ giảng viên và cơ sở vật chất: số lượng, cơ cấu trình độ GV, tỷ lệ SV/GV; phòng học, phòng thí nghiệm, thư viện.",
+  "Phần V. Đánh giá chung: thuận lợi, kết quả đạt được; khó khăn, tồn tại và nguyên nhân (khách quan, chủ quan).",
+  "Phần VI. Phương hướng kỳ tới: nhiệm vụ trọng tâm, giải pháp khắc phục, chỉ tiêu phấn đấu.",
+  "Phụ lục: bảng số liệu tổng hợp chi tiết (các chỉ tiêu của kỳ này và kỳ so sánh). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề báo cáo: tên báo cáo + kỳ báo cáo (học kỳ/năm học) + tên trường.\n\n2. Phần I. Quy mô đào tạo: tổng số SV theo khóa, ngành, hệ đào tạo; số lớp học phần đã mở;\n   so sánh với kỳ trước/cùng kỳ năm trước.\n\n3. Phần II. Kết quả học tập: phân loại kết quả theo %; số SV bị cảnh báo học vụ, buộc thôi học;\n   phân tích nguyên nhân chính.\n\n4. Phần III. Công tác tốt nghiệp: số SV tốt nghiệp trong kỳ theo ngành và xếp loại;\n   tỷ lệ tốt nghiệp đúng hạn các khóa.\n\n5. Phần IV. Đội ngũ giảng viên và cơ sở vật chất: số lượng, cơ cấu trình độ GV, tỷ lệ SV/GV;\n   phòng học, phòng thí nghiệm, thư viện.\n\n6. Phần V. Đánh giá chung: thuận lợi, kết quả đạt được; khó khăn, tồn tại và nguyên nhân\n   (khách quan, chủ quan).\n\n7. Phần VI. Phương hướng kỳ tới: nhiệm vụ trọng tâm, giải pháp khắc phục, chỉ tiêu phấn đấu.\n\n8. Phụ lục: bảng số liệu tổng hợp chi tiết (các chỉ tiêu của kỳ này và kỳ so sánh).",
+ "human_gate_check": "Đã qua Human gate: lãnh đạo (Hiệu trưởng/Phó Hiệu trưởng phụ trách đào tạo) đã duyệt báo cáo.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (báo cáo đào tạo). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n",
+ "outputs_dir": "skills/vnuis-dt-bao-cao-dao-tao-dinh-ky/references"
+}

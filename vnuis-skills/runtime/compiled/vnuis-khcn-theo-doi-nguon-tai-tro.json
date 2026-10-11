@@ -1,0 +1,158 @@
+{
+ "name": "vnuis-khcn-theo-doi-nguon-tai-tro",
+ "title": "Theo dõi nguồn tài trợ nghiên cứu",
+ "description": "Dùng khi nhóm nghiên cứu chuẩn bị hồ sơ xin tài trợ nghiên cứu hoặc đang thực hiện nguồn tài trợ và cần đối chiếu điều kiện của thông báo gọi đề xuất (call), theo dõi mốc, sản phẩm, kinh phí. Dùng chung mọi trường.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-theo-doi-grant-nghien-cuu",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+ "when": "Khi chuẩn bị hồ sơ đề xuất xin tài trợ nghiên cứu, hoặc đang thực hiện nguồn tài trợ cần theo dõi\nmốc/sản phẩm bàn giao/kinh phí. Dùng chung cho chủ nhiệm đề tài (PI), nhóm nghiên cứu,\nPhòng KHCN&HTPT ở mọi trường.",
+ "inputs": [
+  {
+   "key": "thong_bao_call",
+   "desc": "Thông báo mời nộp: điều kiện tham gia, yêu cầu hồ sơ, hạn chót, mẫu biểu",
+   "required": true,
+   "note": "Có (giai đoạn đề xuất)"
+  },
+  {
+   "key": "ho_so_du_thao",
+   "desc": "Hồ sơ dự thảo hiện có",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "grant_dang_thuc_hien",
+   "desc": "Thông tin nguồn tài trợ đang chạy: mốc, sản phẩm bàn giao, tiến độ, kinh phí đã dùng",
+   "required": false,
+   "note": "Không (giai đoạn theo dõi)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Lập danh mục kiểm điều kiện tham gia (eligibility)",
+   "lam_gi": "Đọc `thong_bao_call`, tách từng điều kiện (tư cách chủ nhiệm, lĩnh vực ưu tiên, kinh phí tối đa, thời gian thực hiện, yêu cầu đặc thù); đối chiếu với năng lực và đề xuất hiện có; đánh dấu từng điều kiện: đạt / chưa đạt / cần làm rõ.",
+   "inputs": [
+    "thong_bao_call"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài (PI) · AI hỗ trợ: đọc call, tách và đánh dấu sơ bộ từng điều kiện để PI xác nhận",
+   "luu_y": "điều kiện \"cần làm rõ\" phải kèm câu hỏi cụ thể để hỏi đơn vị tài trợ, không đoán; kinh phí và thời gian kiểm tra cả số tuyệt đối lẫn cách tính.",
+   "ket_qua": "Eligibility danh mục kiểm (đạt/chưa đạt/cần làm rõ từng điều kiện)."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu hồ sơ dự thảo, liệt kê gap",
+   "lam_gi": "So từng hạng mục trong `ho_so_du_thao` với danh mục yêu cầu của call (thuyết minh, dự toán, CV chủ nhiệm, cam kết đơn vị...); liệt kê gap: thiếu tài liệu gì, mục nào chưa đúng mẫu, mục nào còn sơ sài; gắn mức độ cho từng gap (thiếu bắt buộc / cần bổ sung).",
+   "inputs": [
+    "thong_bao_call",
+    "ho_so_du_thao"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: đối chiếu hồ sơ với yêu cầu call, liệt kê gap (thiếu/sai mẫu/sơ sài) theo mức độ",
+   "luu_y": "phân biệt \"thiếu tài liệu\" với \"có nhưng sai mẫu\" — cách khắc phục khác nhau; mục còn sơ sài phải chỉ rõ cần bổ sung nội dung gì.",
+   "ket_qua": "Gap list hồ sơ (thiếu/sai mẫu/sơ sài + mức độ)."
+  },
+  {
+   "n": 3,
+   "title": "Dự thảo outline đề xuất theo cấu trúc call",
+   "lam_gi": "Dự thảo outline đề xuất bám đúng thứ tự các mục mà call yêu cầu (tính cấp thiết, mục tiêu, nội dung & phương pháp, sản phẩm, tiến độ, dự toán, năng lực nhóm); mỗi mục ghi gợi ý nội dung cần viết — không viết hộ nội dung khoa học, không bịa số liệu.",
+   "inputs": [
+    "thong_bao_call"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài (PI) · AI hỗ trợ: dự thảo outline theo đúng thứ tự cấu trúc call",
+   "luu_y": "thứ tự các mục phải y hệt call yêu cầu — sai thứ tự có thể bị loại về hành chính; outline chỉ là khung gợi ý, nội dung khoa học do PI viết.",
+   "ket_qua": "Outline đề xuất theo đúng cấu trúc call."
+  },
+  {
+   "n": 4,
+   "title": "Lập tracker mốc và cảnh báo hạn chót",
+   "lam_gi": "Nếu có `grant_dang_thuc_hien`: dựng bảng mốc → sản phẩm bàn giao → hạn chót → trạng thái → kinh phí đã dùng; đánh dấu các hạng mục trễ hạn/sắp đến hạn. Nếu đang ở giai đoạn đề xuất: ghi hạn chót nộp hồ sơ và các mốc chuẩn bị tính ngược từ hạn chót.",
+   "inputs": [
+    "grant_dang_thuc_hien",
+    "thong_bao_call"
+   ],
+   "vai_tro": "Chủ nhiệm đề tài (PI) · AI hỗ trợ: dựng bảng tracker mốc/sản phẩm bàn giao và cảnh báo hạn chót từ số liệu đã cho",
+   "luu_y": "không tự ý điều chỉnh kinh phí/mốc đã được phê duyệt; cảnh báo trễ hạn phải nêu rõ số ngày và hạng mục bị ảnh hưởng.",
+   "ket_qua": "Tracker mốc/sản phẩm bàn giao + cảnh báo hạn chót."
+  },
+  {
+   "n": 5,
+   "title": "Tổng hợp nhắc việc",
+   "lam_gi": "Gộp danh mục kiểm, gap list và tracker thành danh sách việc cần làm: hạn chót sắp tới, hạng mục còn thiếu, người phụ trách đề xuất; sắp xếp theo độ khẩn cấp.",
+   "inputs": [],
+   "vai_tro": "Chủ nhiệm đề tài (PI) · AI hỗ trợ: tổng hợp danh sách nhắc việc, sắp xếp theo độ khẩn cấp",
+   "luu_y": "mỗi việc phải có hạn chót cụ thể và đầu mối rõ ràng; nhắc việc chỉ là hỗ trợ — không thay PI ra quyết định nộp hay điều chỉnh hồ sơ.",
+   "ket_qua": "Danh sách nhắc việc theo độ khẩn cấp — sản phẩm cuối."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Thông tin call (hạn mức, thời gian, hạn chót) khớp đúng thông báo call trong Input.",
+  "Eligibility danh mục kiểm đánh dấu đầy đủ từng điều kiện: đạt / chưa đạt / cần làm rõ (điều kiện \"cần làm rõ\" kèm câu hỏi cụ thể để hỏi đơn vị tài trợ).",
+  "Gap list phân biệt rõ thiếu tài liệu / sai mẫu / sơ sài, kèm mức độ bắt buộc.",
+  "Outline đúng thứ tự các mục call yêu cầu; chỉ là khung gợi ý — không viết hộ nội dung khoa học, không bịa số liệu.",
+  "Không tự ý điều chỉnh kinh phí/mốc đã phê duyệt trong tracker; cảnh báo trễ hạn nêu rõ số ngày và hạng mục bị ảnh hưởng.",
+  "Mỗi việc trong danh sách nhắc việc có hạn chót cụ thể và đầu mối đề xuất, sắp xếp theo độ khẩn cấp.",
+  "Đã qua Human gate: PI duyệt toàn bộ hồ sơ; Phòng KHCN&HTPT kiểm tra tính đầy đủ, đúng mẫu. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Chủ nhiệm đề tài (PI)** duyệt toàn bộ hồ sơ trước khi nộp.",
+  "**Phòng KHCN&HTPT** kiểm tra tính đầy đủ, đúng mẫu của hồ sơ.",
+  "Hội đồng (nếu có) quyết định việc nộp/điều chỉnh."
+ ],
+ "guardrails": [
+  "Không viết hoặc sáng tạo dữ liệu nghiên cứu giả (số liệu, kết quả) để \"làm đẹp\" hồ sơ.",
+  "Không nộp hồ sơ, không ký thay, không cam kết thay đơn vị/chủ nhiệm.",
+  "Không tự ý điều chỉnh kinh phí/mốc đã được phê duyệt trong tracker."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Chương trình tài trợ chỉ lấy từ thông báo người dùng cung cấp; không tự tra điều kiện từ nguồn khác.",
+  "Hạn nộp và ngôn ngữ hồ sơ ghi rõ; nhiều chương trình quốc tế dùng tiếng Anh."
+ ],
+ "cho_xac_nhan": [
+  "Các nguồn tài trợ Trường theo dõi (C8).",
+  "Người phụ trách (C7)."
+ ],
+ "output_structure": [
+  "Thông tin call: tên quỹ, hạn mức kinh phí, thời gian thực hiện, hạn chót nộp hồ sơ.",
+  "Eligibility danh mục kiểm: từng điều kiện — đạt/chưa đạt/cần làm rõ.",
+  "Gap list hồ sơ: thiếu tài liệu gì / mục nào sai mẫu / mục nào còn sơ sài (+ mức độ).",
+  "Outline đề xuất theo đúng cấu trúc call yêu cầu.",
+  "Tracker mốc/sản phẩm bàn giao + cảnh báo hạn chót (nếu theo dõi nguồn tài trợ đang chạy).",
+  "Danh sách nhắc việc: hạn chót sắp tới + hạng mục còn thiếu, sắp xếp theo độ khẩn cấp."
+ ],
+ "output_structure_raw": "1. Thông tin call: tên quỹ, hạn mức kinh phí, thời gian thực hiện, hạn chót nộp hồ sơ.\n\n2. Eligibility danh mục kiểm: từng điều kiện — đạt/chưa đạt/cần làm rõ.\n\n3. Gap list hồ sơ: thiếu tài liệu gì / mục nào sai mẫu / mục nào còn sơ sài (+ mức độ).\n\n4. Outline đề xuất theo đúng cấu trúc call yêu cầu.\n\n5. Tracker mốc/sản phẩm bàn giao + cảnh báo hạn chót (nếu theo dõi nguồn tài trợ đang chạy).\n\n6. Danh sách nhắc việc: hạn chót sắp tới + hạng mục còn thiếu, sắp xếp theo độ khẩn cấp.",
+ "human_gate_check": "Đã qua Human gate: PI duyệt toàn bộ hồ sơ; Phòng KHCN&HTPT kiểm tra tính đầy đủ, đúng mẫu. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-khcn-theo-doi-nguon-tai-tro/references"
+}

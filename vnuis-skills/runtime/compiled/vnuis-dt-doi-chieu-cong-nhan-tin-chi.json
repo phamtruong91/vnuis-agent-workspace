@@ -1,0 +1,160 @@
+{
+ "name": "vnuis-dt-doi-chieu-cong-nhan-tin-chi",
+ "title": "Đối chiếu học phần khi công nhận chuyển tiếp",
+ "description": "Dùng khi sinh viên chuyển tiếp, trao đổi hoặc học theo mô hình 2+2 và cần bảng đối chiếu học phần nơi đi với chương trình nơi đến (tín chỉ, giờ, chuẩn đầu ra, ngôn ngữ) để người có thẩm quyền quyết định công nhận.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-cong-nhan-tin-chi-chuyen-tiep",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo; Phòng KHCN và Hợp tác phát triển; các khoa",
+ "when": "Khi sinh viên đến hoặc đi theo chương trình trao đổi, liên kết hoặc chuyển tiếp và cần hồ sơ đối chiếu học phần. Mục này không có trong phiếu CES; được đề xuất từ website (mục công nhận chuyển tiếp, mô hình 2+2) và cần xác nhận khi khảo sát.",
+ "inputs": [
+  {
+   "key": "bang_diem_noi_di",
+   "desc": "Bảng điểm của sinh viên ở nơi đi, đã che định danh nếu không cần",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "de_cuong_noi_di",
+   "desc": "Đề cương hoặc mô tả học phần nơi đi (tín chỉ, giờ, nội dung, chuẩn đầu ra, ngôn ngữ)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ctdt_noi_den",
+   "desc": "Khung chương trình và đề cương học phần nơi đến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_dinh_cong_nhan",
+   "desc": "Quy định công nhận và quy đổi do Trường hoặc đối tác ban hành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bang_quy_doi",
+   "desc": "Bảng quy đổi tín chỉ và điểm nếu có",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo; Phòng KHCN và Hợp tác phát triển; các khoa"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chuẩn hóa dữ liệu hai phía",
+   "lam_gi": "Lập bảng học phần nơi đi và nơi đến với cùng các cột: mã, tên (Việt, Anh), tín chỉ, giờ, chuẩn đầu ra, ngôn ngữ giảng dạy.",
+   "inputs": [
+    "bang_diem_noi_di",
+    "de_cuong_noi_di",
+    "ctdt_noi_den"
+   ],
+   "vai_tro": "Chuyên viên đào tạo · AI hỗ trợ: chuẩn hóa",
+   "luu_y": "Học phần thiếu đề cương ghi \"chưa có đề cương\".",
+   "ket_qua": "Hai bảng học phần chuẩn hóa."
+  },
+  {
+   "n": 2,
+   "title": "Ghép học phần tương đương",
+   "lam_gi": "Đề xuất ghép theo nội dung và chuẩn đầu ra; mỗi cặp ghi mức: tương đương, một phần, không tương đương, chưa đủ dữ liệu; nêu lý do ngắn.",
+   "inputs": [
+    "de_cuong_noi_di",
+    "ctdt_noi_den",
+    "quy_dinh_cong_nhan"
+   ],
+   "vai_tro": "Chuyên viên đào tạo · AI hỗ trợ: đề xuất ghép",
+   "luu_y": "Chỉ là đề xuất; không có kết luận công nhận.",
+   "ket_qua": "Bảng đối chiếu đề xuất."
+  },
+  {
+   "n": 3,
+   "title": "So tín chỉ và điểm",
+   "lam_gi": "So tín chỉ, giờ; quy đổi tín chỉ và điểm chỉ khi có bảng quy đổi do Trường hoặc đối tác ban hành.",
+   "inputs": [
+    "bang_diem_noi_di",
+    "bang_quy_doi",
+    "quy_dinh_cong_nhan"
+   ],
+   "vai_tro": "Chuyên viên đào tạo · AI hỗ trợ: tính theo bảng quy đổi",
+   "luu_y": "Không có bảng quy đổi thì để trống cột quy đổi.",
+   "ket_qua": "Bảng tín chỉ và điểm."
+  },
+  {
+   "n": 4,
+   "title": "Tổng hợp hồ sơ trình",
+   "lam_gi": "Tóm tắt số học phần đề xuất công nhận, thiếu minh chứng, cần ý kiến chuyên môn.",
+   "inputs": [
+    "quy_dinh_cong_nhan"
+   ],
+   "vai_tro": "Trưởng khoa · AI hỗ trợ: dự thảo tóm tắt",
+   "luu_y": "Người có thẩm quyền quyết định theo quy định.",
+   "ket_qua": "Hồ sơ đối chiếu trình người có thẩm quyền."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi cặp ghép có lý do và minh chứng.",
+  "Không có cột quy đổi khi chưa có bảng quy đổi.",
+  "Không có kết luận công nhận.",
+  "Thông tin sinh viên đã che hoặc tối thiểu.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng khoa hoặc hội đồng chuyên môn** xét mức tương đương.",
+  "**Người có thẩm quyền của Trường** quyết định công nhận."
+ ],
+ "guardrails": [
+  "KHÔNG tự quy đổi tín chỉ hay điểm khi chưa có bảng quy đổi chính thức.",
+  "KHÔNG kết luận công nhận."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Quy định công nhận chuyển tiếp của Trường và của đối tác (C2).",
+  "Người có thẩm quyền xét mức tương đương (C6)."
+ ],
+ "output_structure": [
+  "Sheet Học phần nơi đi và Học phần nơi đến.",
+  "Sheet Đối chiếu: cặp học phần, mức tương đương đề xuất, lý do, minh chứng còn thiếu.",
+  "Sheet Tín chỉ và điểm: chỉ điền khi có bảng quy đổi.",
+  "Sheet Tóm tắt: số học phần theo mức, việc cần xử lý."
+ ],
+ "output_structure_raw": "1. Sheet Học phần nơi đi và Học phần nơi đến.\n\n2. Sheet Đối chiếu: cặp học phần, mức tương đương đề xuất, lý do, minh chứng còn thiếu.\n\n3. Sheet Tín chỉ và điểm: chỉ điền khi có bảng quy đổi.\n\n4. Sheet Tóm tắt: số học phần theo mức, việc cần xử lý.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dt-doi-chieu-cong-nhan-tin-chi/references"
+}

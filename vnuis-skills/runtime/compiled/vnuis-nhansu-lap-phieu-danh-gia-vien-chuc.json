@@ -1,0 +1,184 @@
+{
+ "name": "vnuis-nhansu-lap-phieu-danh-gia-vien-chuc",
+ "title": "Phiếu đánh giá, xếp loại viên chức",
+ "description": "Dùng khi tổ chức đánh giá, xếp loại viên chức cuối năm (thường tháng 11–12) theo Nghị định 233/2026/NĐ-CP: phiếu tự đánh giá và hướng dẫn tiêu chí chấm.",
+ "group": "nhansu",
+ "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+ "previous_name": "vnuis-phieu-danh-gia-vien-chuc",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị",
+ "when": "Khi tổ chức đánh giá, xếp loại viên chức hằng năm (thường vào tháng 11–12) tại các đơn vị:\nviên chức tự đánh giá → tập thể đơn vị nhận xét → người đứng đầu đơn vị đánh giá →\nHội đồng đánh giá của trường tổng hợp, trình Hiệu trưởng quyết định xếp loại.",
+ "inputs": [
+  {
+   "key": "loai_vien_chuc",
+   "desc": "Quản lý (giữ chức vụ lãnh đạo, quản lý) / Không giữ chức vụ quản lý",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_ten",
+   "desc": "Họ tên viên chức được đánh giá",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuc_vu",
+   "desc": "Chức vụ (nếu là viên chức quản lý) / chức danh nghề nghiệp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi",
+   "desc": "Đơn vị công tác",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nam_danh_gia",
+   "desc": "Năm đánh giá",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nhiem_vu_chu_yeu",
+   "desc": "Các nhiệm vụ chính được giao trong năm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_qua_thuc_hien",
+   "desc": "Kết quả nổi bật đạt được trong năm",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo: Cập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n- Nghị định 233/2026/NĐ-CP; phạm vi: Đánh giá đơn vị sự nghiệp công lập và viên chức: Dùng khung tiêu chí và quy chế đánh giá của đơn vị; bổ sung dữ liệu theo dõi/chấm điểm tháng hoặc quý, nhiệm vụ được giao, sản phẩm công việc, minh chứng, kết quả giám sát. Không tạo thang điểm từ trí nhớ, không tiếp tục ghi Mẫu03 của NĐ 90 là mẫu hiện hành. Tính điểm và xếp loại phải từ tiêu chí được phê duyệt; báo cáo liệt kê thiếu minh chứng.\n- Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo: Thêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại viên chức và chọn mẫu phiếu",
+   "lam_gi": "phân loại viên chức: quản lý (giữ chức vụ lãnh đạo, quản lý) hay không giữ chức vụ quản lý; chọn đúng mẫu phiếu — viên chức quản lý dùng mẫu có thêm tiêu chí về năng lực lãnh đạo, quản lý và kết quả hoạt động của đơn vị được giao phụ trách; viên chức không quản lý đánh giá theo 4 nhóm tiêu chí chung + kết quả thực hiện nhiệm vụ.",
+   "inputs": [
+    "loai_vien_chuc",
+    "chuc_vu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "dùng nhầm mẫu phiếu là lỗi phổ biến; viên chức quản lý kiêm nhiệm chuyên môn thì đánh giá cả hai vai trò.",
+   "ket_qua": "mẫu phiếu đúng loại viên chức."
+  },
+  {
+   "n": 2,
+   "title": "Điền thông tin chung (Phần I)",
+   "lam_gi": "điền họ tên, chức danh nghề nghiệp, đơn vị công tác, năm đánh giá; liệt kê các nhiệm vụ chính được giao trong năm (trích từ kế hoạch công tác / phân công nhiệm vụ đầu năm của đơn vị).",
+   "inputs": [
+    "ho_ten",
+    "chuc_vu",
+    "don_vi",
+    "nam_danh_gia",
+    "nhiem_vu_chu_yeu"
+   ],
+   "vai_tro": "Viên chức/Cá nhân liên quan (người điền thông tin) · AI hỗ trợ: hướng dẫn điền, kiểm tra đầy đủ các mục",
+   "luu_y": "nhiệm vụ phải là nhiệm vụ ĐÃ GIAO từ đầu năm, không tự kê thêm nhiệm vụ mới để \"làm đẹp\" hồ sơ.",
+   "ket_qua": "Phần I – Thông tin chung hoàn chỉnh."
+  },
+  {
+   "n": 3,
+   "title": "Tự đánh giá theo nhóm tiêu chí (Phần II)",
+   "lam_gi": "tự đánh giá lần lượt 5 nhóm tiêu chí: (1) Chính trị tư tưởng; (2) Đạo đức, lối sống; (3) Tác phong, lề lối làm việc; (4) Ý thức tổ chức kỷ luật; (5) Kết quả thực hiện chức trách, nhiệm vụ được giao — mỗi nhóm nêu nhận định kèm minh chứng cụ thể (số liệu, văn bản, kết quả đạt được).",
+   "inputs": [
+    "nhiem_vu_chu_yeu",
+    "ket_qua_thuc_hien"
+   ],
+   "vai_tro": "Viên chức (tự đánh giá/xếp loại) · AI hỗ trợ: gợi ý cách viết, kiểm tra tính đầy đủ các mục",
+   "luu_y": "mỗi nhận định phải có minh chứng đi kèm, tránh chung chung kiểu \"hoàn thành tốt\" mà không có số liệu; viên chức quản lý bổ sung phần đánh giá năng lực lãnh đạo, quản lý và kết quả hoạt động của đơn vị được giao phụ trách.",
+   "ket_qua": "Phần II – Tự đánh giá có minh chứng cụ thể."
+  },
+  {
+   "n": 4,
+   "title": "Tự xếp loại (Phần III)",
+   "lam_gi": "đối chiếu kết quả tự đánh giá với điều kiện 4 mức xếp loại theo văn bản hiện hành nêu tại phap-ly.md (Hoàn thành xuất sắc nhiệm vụ / Hoàn thành tốt nhiệm vụ / Hoàn thành nhiệm vụ / Không hoàn thành nhiệm vụ); chọn 01 mức và ghi lý do.",
+   "inputs": [
+    "ket_qua_thuc_hien"
+   ],
+   "vai_tro": "Viên chức (tự đánh giá/xếp loại) · AI hỗ trợ: gợi ý cách viết, kiểm tra tính đầy đủ các mục",
+   "luu_y": "viên chức bị xử lý kỷ luật trong năm đánh giá thì bắt buộc xếp \"Không hoàn thành nhiệm vụ\"; mức Hoàn thành xuất sắc nhiệm vụ yêu cầu hoàn thành 100% nhiệm vụ trong đó ≥ 50% vượt mức và có đổi mới, sáng tạo.",
+   "ket_qua": "mức tự xếp loại + lý do."
+  },
+  {
+   "n": 5,
+   "title": "Lấy ý kiến tập thể đơn vị (Phần IV)",
+   "lam_gi": "tổ chức họp đơn vị để tập thể nhận xét, bỏ phiếu (nếu có) đối với viên chức được đánh giá; ghi ý kiến của tập thể vào Phần IV; hoàn thiện phiếu để trình người đứng đầu đơn vị.",
+   "inputs": [
+    "ho_ten",
+    "don_vi"
+   ],
+   "vai_tro": "Tập thể/cá nhân được lấy ý kiến; Chuyên viên Phòng TC&QT (nhân sự) tổng hợp · AI hỗ trợ: tổng hợp ý kiến thành báo cáo",
+   "luu_y": "ý kiến tập thể phải được ghi trung thực, không \"làm tròn\" để né tránh; thiếu chữ ký xác nhận của tập thể thì trả về bổ sung.",
+   "ket_qua": "phiếu đánh giá đã có ý kiến tập thể (Phần IV hoàn chỉnh)."
+  },
+  {
+   "n": 6,
+   "title": "Lập hướng dẫn tiêu chí chấm và kiểm tra toàn bộ",
+   "lam_gi": "soạn bản hướng dẫn tiêu chí chấm cho từng nhóm tiêu chí (nội dung đánh giá, căn cứ chấm/minh chứng) và điều kiện từng mức xếp loại theo văn bản hiện hành nêu tại phap-ly.md; kiểm tra lần cuối: đúng mẫu theo loại viên chức, đủ chữ ký các cấp (cá nhân → tập thể → người đứng đầu), thời gian đánh giá trong năm.",
+   "inputs": [
+    "loai_vien_chuc",
+    "nam_danh_gia"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "minh chứng bắt buộc đối với mức Hoàn thành xuất sắc nhiệm vụ; đơn vị chấm mức Xuất sắc còn cảm tính, thiếu minh chứng định lượng là tồn tại phổ biến cần chấn chỉnh.",
+   "ket_qua": "bản hướng dẫn tiêu chí đánh giá + phiếu đã kiểm tra, sẵn sàng trình người đứng đầu ký đánh giá (Phần V)."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và cấu trúc theo references/quy-cach-dau-ra.md và căn cứ đã chọn tại references/phap-ly.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+  "Nhiệm vụ phải là nhiệm vụ ĐÃ GIAO từ đầu năm, không tự kê thêm nhiệm vụ mới để \"làm đẹp\" hồ sơ",
+  "Mỗi nhận định phải có minh chứng đi kèm, tránh chung chung kiểu \"hoàn thành tốt\" mà không có số liệu",
+  "Viên chức bị xử lý kỷ luật trong năm đánh giá thì bắt buộc xếp \"Không hoàn thành nhiệm vụ\""
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Tiêu chí đánh giá theo văn bản hiện hành do Trường cung cấp; skill gốc nêu căn cứ chung, VNU-IS có thể có hướng dẫn riêng của ĐHQGHN (C2).",
+  "Viên chức kiêm nhiệm (Phó Hiệu trưởng kiêm Trưởng phòng): phiếu ghi rõ đánh giá theo vai trò nào và ai là người đánh giá.",
+  "Giảng viên có hoạt động quốc tế, giảng dạy tiếng Anh: tiêu chí do Trường quy định, skill không tự thêm."
+ ],
+ "cho_xac_nhan": [
+  "Hướng dẫn đánh giá viên chức của ĐHQGHN và VNU-IS (C2).",
+  "Mẫu phiếu (C8)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "Phiếu đánh giá theo Nghị định 233/2026/NĐ-CP và quy chế/biểu mẫu được cấp có thẩm quyền ban hành: thông tin viên chức và kỳ; kết quả thực hiện nhiệm vụ và sản phẩm; tiêu chí chung, tiêu chí kết quả và điểm; tự đánh giá; ý kiến đơn vị; kết quả đánh giá/xếp loại của cấp có thẩm quyền; ngày và các khối ký theo mẫu áp dụng. Không tự gán Mẫu 03 của Nghị định 90/2020 là mẫu hiện hành; không tạo điểm/xếp loại khi thiếu dữ liệu. Nguồn gốc: https://vanban.chinhphu.vn/?docid=218616&pageid=27160",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-259-2026-nd-cp-quy-dinh-ve-tuyen-dung-su-dung-va-quan-ly-vien-chuc-119260707070701707.htm\n\nCập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n\n## Nghị định 233/2026/NĐ-CP; phạm vi: Đánh giá đơn vị sự nghiệp công lập và viên chức\n\nNguồn: https://baochinhphu.vn/cham-diem-danh-gia-vien-chuc-hang-thang-hoac-hang-quy-102260630052951335.htm\n\nDùng khung tiêu chí và quy chế đánh giá của đơn vị; bổ sung dữ liệu theo dõi/chấm điểm tháng hoặc quý, nhiệm vụ được giao, sản phẩm công việc, minh chứng, kết quả giám sát. Không tạo thang điểm từ trí nhớ, không tiếp tục ghi Mẫu03 của NĐ 90 là mẫu hiện hành. Tính điểm và xếp loại phải từ tiêu chí được phê duyệt; báo cáo liệt kê thiếu minh chứng.\n\n## Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/huong-dan-quan-ly-doi-ngu-nha-giao-sap-xep-bo-nhiem-chuc-danh-thuc-hien-che-do-chinh-sach-xep-luong-119260811083919821.htm\n\nThêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n",
+ "outputs_dir": "skills/vnuis-nhansu-lap-phieu-danh-gia-vien-chuc/references"
+}

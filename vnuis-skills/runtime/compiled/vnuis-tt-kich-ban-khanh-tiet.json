@@ -1,0 +1,189 @@
+{
+ "name": "vnuis-tt-kich-ban-khanh-tiet",
+ "title": "Xây dựng kịch bản lễ tân, khánh tiết",
+ "description": "Dùng khi Phòng TC&QT tổ chức lễ khai giảng, kỷ niệm, hội nghị hoặc đón đoàn khách và cần kịch bản lễ tân, khánh tiết: đón đại biểu, điều hành chương trình theo giờ, phân công hậu cần.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-kich-ban-khanh-tiet",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi tổ chức các sự kiện cần lễ tân, khánh tiết: lễ khai giảng / bế giảng, lễ kỷ niệm,\nhội nghị – hội thảo, đón đoàn khách cấp trên / quốc tế.",
+ "inputs": [
+  {
+   "key": "ten_su_kien",
+   "desc": "Tên sự kiện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Giờ, ngày tổ chức",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Địa điểm (chọn cơ sở: Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dai_bieu",
+   "desc": "Thành phần đại biểu (lãnh đạo cấp trên, khách mời, CBVC, SV)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuong_trinh",
+   "desc": "Các nội dung chính theo thứ tự",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "mc",
+   "desc": "Người dẫn chương trình",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "yeu_cau_dac_biet",
+   "desc": "Nghi thức đặc biệt: cắt băng khánh thành, trao bằng khen, đánh trống...",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tổng hợp thông tin sự kiện, chốt quy mô tổ chức",
+   "lam_gi": "thu thập `ten_su_kien`, `thoi_gian`, `dia_diem`, `dai_bieu`, `chuong_trinh`, `yeu_cau_dac_biet`; đối chiếu với kế hoạch tổ chức đã phê duyệt; ước tính quy mô (số lượng đại biểu từng nhóm) để xác định quy mô lễ tân, sơ đồ chỗ ngồi, lực lượng hậu cần cần huy động.",
+   "inputs": [
+    "ten_su_kien",
+    "thoi_gian",
+    "dia_diem",
+    "dai_bieu",
+    "chuong_trinh",
+    "yeu_cau_dac_biet"
+   ],
+   "vai_tro": "Phòng TC&QT (văn phòng – văn thư) chủ trì, các đơn vị phối hợp · AI hỗ trợ: lập kế hoạch, phân công nhiệm vụ",
+   "luu_y": "số lượng đại biểu quyết định mọi phân công sau — bẫy là ước tính thiếu khiến thiếu chỗ ngồi, thiếu lễ tân; ghi nhận yêu cầu đặc biệt (đoàn quốc tế cần cờ, phiên dịch; lãnh đạo cấp trên cần bố trí an ninh).",
+   "ket_qua": "bảng thông tin sự kiện tổng hợp (quy mô, thành phần, yêu cầu đặc biệt)."
+  },
+  {
+   "n": 2,
+   "title": "Dựng timeline chương trình chi tiết",
+   "lam_gi": "từ `thoi_gian` và `chuong_trinh`, chia giờ cụ thể cho từng nội dung: đón tiếp đại biểu trước giờ khai mạc 30–45 phút; mỗi phát biểu giới hạn thời gian; nghi thức đặc biệt có khung giờ riêng; ghi rõ người thực hiện từng mục (MC, diễn giả, tổ lễ tân).",
+   "inputs": [
+    "thoi_gian",
+    "chuong_trinh",
+    "mc"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "tổng thời lượng các mục không vượt quá khung giờ sự kiện — bẫy là nhồi quá nhiều nội dung khiến chương trình kéo dài; để 5–10 phút dự phòng giữa các mục; giờ đón tiếp phải sớm hơn giờ khai mạc đủ để ổn định tổ chức.",
+   "ket_qua": "bảng timeline (Giờ – Nội dung – Người thực hiện)."
+  },
+  {
+   "n": 3,
+   "title": "Thiết kế kịch bản điều hành và lời dẫn MC",
+   "lam_gi": "viết kịch bản điều hành cho `mc`: lời tuyên bố lý do, giới thiệu đại biểu (theo thứ tự chức vụ từ cao xuống thấp), lời dẫn chuyển giữa các nội dung, lời dẫn các nghi thức đặc biệt (`yeu_cau_dac_biet`), lời bế mạc – cảm ơn – mời chụp ảnh – tiễn đại biểu; ghi chú thời điểm MC nhắc tắt/chế độ im lặng điện thoại.",
+   "inputs": [
+    "mc",
+    "dai_bieu",
+    "chuong_trinh",
+    "yeu_cau_dac_biet"
+   ],
+   "vai_tro": "Phòng TC&QT (văn phòng – văn thư) chủ trì, các đơn vị phối hợp · AI hỗ trợ: lập kế hoạch, phân công nhiệm vụ",
+   "luu_y": "thứ tự giới thiệu đại biểu tuyệt đối theo chức vụ từ cao xuống thấp — sai thứ tự là lỗi nghi thức nghiêm trọng; họ tên, chức danh đại biểu phải kiểm tra chính xác; lời dẫn ngắn gọn, trang trọng.",
+   "ket_qua": "kịch bản lời dẫn MC chi tiết theo từng mục timeline."
+  },
+  {
+   "n": 4,
+   "title": "Lập bảng phân công hậu cần",
+   "lam_gi": "phân công từng hạng mục: âm thanh – ánh sáng – màn LED; backdrop – bandroll – hoa tươi; sơ đồ chỗ ngồi (in, đặt trước 01 ngày); y tế thường trực; an ninh – giữ xe; chụp ảnh – quay phim; ghi rõ người/tổ phụ trách và thời hạn hoàn thành chuẩn bị.",
+   "inputs": [
+    "dia_diem",
+    "dai_bieu",
+    "yeu_cau_dac_biet"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: lập bảng tính toán",
+   "luu_y": "mỗi hạng mục chỉ một đầu mối chịu trách nhiệm, tránh chồng chéo; sơ đồ chỗ ngồi đại biểu cấp trên phải được duyệt trước; kiểm tra nguồn điện, phương án dự phòng khi mất điện/mưa (sự kiện ngoài trời).",
+   "ket_qua": "bảng phân công hậu cần (hạng mục – người phụ trách – thời hạn)."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra kỹ thuật, duyệt kịch bản",
+   "lam_gi": "kiểm tra âm thanh, trình chiếu, màn LED trước giờ khai mạc (ít nhất 01 giờ); chạy thử các nghi thức đặc biệt; trình Trưởng ban tổ chức duyệt toàn bộ kịch bản (timeline, lời dẫn MC, phân công hậu cần, sơ đồ chỗ ngồi).",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "không bỏ qua bước chạy thử — đa số sự cố (mic hú, slide lỗi, nhạc sai) phát hiện ở bước này; mọi thay đổi sau khi duyệt phải báo lại Trưởng ban tổ chức.",
+   "ket_qua": "kịch bản khánh tiết đã được duyệt."
+  },
+  {
+   "n": 6,
+   "title": "Điều hành sự kiện, rút kinh nghiệm",
+   "lam_gi": "điều hành chương trình đúng timeline; xử lý tình huống phát sinh (đại biểu đến muộn, kéo dài phát biểu, sự cố kỹ thuật); sau sự kiện tổng hợp đánh giá, ghi nhận sự cố và bài học.",
+   "inputs": [],
+   "vai_tro": "Phòng TC&QT (văn phòng – văn thư) chủ trì, các đơn vị phối hợp · AI hỗ trợ: lập kế hoạch, phân công nhiệm vụ",
+   "luu_y": "MC giữ nhịp chương trình, linh hoạt rút gọn khi trễ giờ nhưng không cắt nghi thức quan trọng; biên bản rút kinh nghiệm là đầu vào cải tiến cho sự kiện sau.",
+   "ket_qua": "sự kiện diễn ra theo kịch bản + biên bản rút kinh nghiệm."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng cấu trúc và thể thức theo references/quy-cach-dau-ra.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Giờ đón tiếp phải sớm hơn giờ khai mạc đủ để ổn định tổ chức",
+  "Họ tên, chức danh đại biểu phải kiểm tra chính xác",
+  "Mỗi hạng mục chỉ một đầu mối chịu trách nhiệm, tránh chồng chéo"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kịch bản khánh tiết (lễ khai giảng, tốt nghiệp, lễ ký kết) ghi thứ tự đại biểu theo chức danh do Phòng cung cấp; có thể song ngữ khi có khách nước ngoài.",
+  "Địa điểm tổ chức theo từng cơ sở."
+ ],
+ "cho_xac_nhan": [
+  "Nghi thức đã áp dụng của Trường (C8).",
+  "Người duyệt kịch bản (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề: tên kịch bản + tên sự kiện + đơn vị tổ chức;",
+  "Bảng timeline chương trình: Giờ | Nội dung | Người thực hiện (theo đúng trình tự: đón tiếp – ổn định – khai mạc – nội dung chính – nghi thức đặc biệt – bế mạc);",
+  "Kịch bản lời dẫn MC theo từng mục timeline (tuyên bố lý do, giới thiệu đại biểu theo thứ tự chức vụ, lời dẫn nghi thức, lời bế mạc);",
+  "Bảng phân công hậu cần: hạng mục – người/tổ phụ trách – thời hạn chuẩn bị;",
+  "Lưu ý điều hành: kiểm tra kỹ thuật trước giờ G, sơ đồ chỗ ngồi, xử lý tình huống phát sinh."
+ ],
+ "output_structure_raw": "1. Tiêu đề: tên kịch bản + tên sự kiện + đơn vị tổ chức;\n\n2. Bảng timeline chương trình: Giờ | Nội dung | Người thực hiện (theo đúng trình tự: đón tiếp – ổn định – khai mạc – nội dung chính – nghi thức đặc biệt – bế mạc);\n\n3. Kịch bản lời dẫn MC theo từng mục timeline (tuyên bố lý do, giới thiệu đại biểu theo thứ tự chức vụ, lời dẫn nghi thức, lời bế mạc);\n\n4. Bảng phân công hậu cần: hạng mục – người/tổ phụ trách – thời hạn chuẩn bị;\n\n5. Lưu ý điều hành: kiểm tra kỹ thuật trước giờ G, sơ đồ chỗ ngồi, xử lý tình huống phát sinh.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-kich-ban-khanh-tiet/references"
+}

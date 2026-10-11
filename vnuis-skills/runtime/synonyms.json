@@ -1,0 +1,34 @@
+{
+ "viet_tat": {
+  "tkb":"thời khóa biểu","nckh":"nghiên cứu khoa học","sđh":"sau đại học","sdh":"sau đại học","ctđt":"chương trình đào tạo","ctdt":"chương trình đào tạo",
+  "đbcl":"đảm bảo chất lượng","dbcl":"đảm bảo chất lượng","ctsv":"công tác sinh viên","ktx":"ký túc xá","qđ":"quyết định","tb":"thông báo","cv":"công văn",
+  "bc":"báo cáo","hđ":"hợp đồng","hp":"học phần","sv":"sinh viên","gv":"giảng viên","shtt":"sở hữu trí tuệ","đmst":"đổi mới sáng tạo","dmst":"đổi mới sáng tạo",
+  "cgcn":"chuyển giao công nghệ","khcn":"khoa học công nghệ","htqt":"hợp tác quốc tế","cntt":"công nghệ thông tin","mou":"biên bản ghi nhớ","moa":"thỏa thuận hợp tác",
+  "hđkhđt":"hội đồng khoa học và đào tạo","đhqghn":"đại học quốc gia hà nội","dhqghn":"đại học quốc gia hà nội","faq":"hỏi đáp","tcqt":"tổ chức và quản trị",
+  "gs":"giáo sư","pgs":"phó giáo sư","tthc":"thủ tục hành chính","clo":"chuẩn đầu ra học phần","plo":"chuẩn đầu ra chương trình","ncs":"nghiên cứu sinh","kpi":"chỉ số đánh giá",
+  "hcsn":"hành chính sự nghiệp","tscđ":"tài sản cố định","tscd":"tài sản cố định","vbqppl":"văn bản quy phạm pháp luật"
+ },
+ "tu_khoa_them": {
+  "vnuis-ts-theo-doi-pheu-thi-sinh": ["funnel","phễu","lead","thí sinh quan tâm","chuyển đổi","đăng ký nhập học"],
+  "vnuis-ctsv-phan-loai-yeu-cau-sinh-vien": ["triage","ticket","phản ánh","khiếu nại","kiến nghị","ưu tiên","SLA"],
+  "vnuis-cntt-phan-loai-yeu-cau-ho-tro": ["helpdesk","triage","ticket","sự cố","hỏng","lỗi máy","mật khẩu","wifi","email"],
+  "vnuis-dc-quan-tri-du-an": ["PMO","tiến độ","rủi ro","phạm vi","milestone","sổ theo dõi"],
+  "vnuis-khcn-theo-doi-nguon-tai-tro": ["grant","quỹ","tài trợ","call for proposals","học bổng nghiên cứu","hạn nộp"],
+  "vnuis-tt-bo-tai-lieu-bao-chi-su-kien": ["press kit","thông cáo","họp báo","fact sheet"],
+  "vnuis-tt-lap-lich-noi-dung": ["content calendar","lịch đăng bài","fanpage","mạng xã hội","kênh"],
+  "vnuis-ts-de-bai-chien-dich-tuyen-sinh": ["campaign brief","chiến dịch","quảng bá","facebook ads","ngân sách quảng cáo"],
+  "vnuis-vp-tom-tat-trinh-lanh-dao": ["executive brief","tóm tắt","một trang","lãnh đạo đọc nhanh","quyết định"],
+  "vnuis-dt-ra-soat-tien-do-tot-nghiep": ["audit","xét tốt nghiệp","thiếu tín chỉ","đủ điều kiện ra trường","năm cuối"],
+  "vnuis-ts-hoi-dap-tuyen-sinh": ["FAQ","phụ huynh","câu hỏi thường gặp","thí sinh hỏi"],
+  "vnuis-dc-hoi-dap-chinh-sach-co-trich-nguon": ["FAQ","chính sách","quy định","trích điều khoản","hỏi quy chế"],
+  "vnuis-dc-dong-goi-skill-tu-quy-trinh": ["meta-skill","tạo skill","đóng gói quy trình","SOP"],
+  "vnuis-vp-soan-bien-ban-hop": ["ghi chép họp","tóm tắt cuộc họp","kết luận cuộc họp"],
+  "vnuis-hd-soan-bien-ban-hop": ["phiên họp hội đồng","biểu quyết","Hội đồng KH&ĐT"],
+  "vnuis-vp-chuan-bi-hop-theo-doi-nhiem-vu": ["action tracker","giao ban","việc sau họp","chuẩn bị họp"],
+  "vnuis-dc-quan-ly-phien-ban-tai-lieu": ["bản mới nhất","final","so sánh phiên bản","version"],
+  "vnuis-dc-kiem-tra-chat-luong-du-lieu-bao-cao": ["data quality","làm sạch dữ liệu","ô trống","trùng lặp","file excel"],
+  "vnuis-dc-lap-danh-muc-kho-tri-thuc": ["knowledge base","kho tài liệu","biểu mẫu","hồ sơ mẫu"],
+  "vnuis-dt-theo-doi-tieng-anh-du-bi": ["dự bị","foundation","IELTS","điểm đầu vào","2+2"],
+  "vnuis-dt-theo-doi-chuong-trinh-lien-ket": ["liên kết quốc tế","song bằng","đối tác nước ngoài","nghĩa vụ","mốc"]
+ }
+}

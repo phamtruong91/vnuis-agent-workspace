@@ -1,0 +1,240 @@
+{
+ "name": "vnuis-dt-soan-de-an-mo-nganh",
+ "title": "Soạn đề án mở ngành đào tạo",
+ "description": "Dùng khi chuẩn bị hồ sơ đề nghị cơ quan có thẩm quyền cho phép mở ngành đào tạo đại học mới: sự cần thiết, điều kiện đội ngũ và cơ sở vật chất, chương trình dự kiến, kế hoạch tuyển sinh.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-de-an-mo-nganh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (đào tạo); Hội đồng KH&ĐT; Khoa đề xuất",
+ "when": "Khi nhà trường (Phòng Đào tạo phối hợp khoa dự kiến) cần lập đề án đề nghị cơ quan có thẩm quyền (chờ C2, C6)\ncho phép mở ngành đào tạo mới trình độ đại học: tổng hợp sự cần thiết, minh chứng điều kiện đội ngũ\ngiảng viên, cơ sở vật chất, chương trình đào tạo dự kiến và kế hoạch tuyển sinh.",
+ "inputs": [
+  {
+   "key": "ten_nganh",
+   "desc": "Tên ngành đào tạo dự kiến mở mới",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ma_nganh",
+   "desc": "Mã ngành theo danh mục (nếu đã xác định)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "trinh_do",
+   "desc": "Trình độ đào tạo (đại học)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngon_ngu",
+   "desc": "Ngôn ngữ giảng dạy (tiếng Việt / song ngữ / tiếng Anh)",
+   "required": false,
+   "note": "Không (mặc định: tiếng Việt)"
+  },
+  {
+   "key": "su_can_thiet",
+   "desc": "Luận cứ nhu cầu xã hội: phân tích cung – cầu nhân lực, chiến lược phát triển",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_ngu",
+   "desc": "Danh sách giảng viên cơ hữu: họ tên, học hàm/học vị, chuyên môn đào tạo, thâm niên",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "csvct",
+   "desc": "Mô tả cơ sở vật chất: phòng học, phòng thí nghiệm, thư viện, học liệu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuong_trinh_du_kien",
+   "desc": "Khung CTĐT dự kiến: tổng số tín chỉ, các khối kiến thức",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ke_hoach_tuyen_sinh",
+   "desc": "Chỉ tiêu, phương thức tuyển sinh, đối tượng, lộ trình các năm đầu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dam_bao_chat_luong",
+   "desc": "Cơ chế đảm bảo chất lượng: chuẩn đầu ra, đánh giá, khảo sát việc làm",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "minh_chung",
+   "desc": "Danh mục hồ sơ minh chứng kèm theo (bằng cấp, hợp đồng, biên bản khảo sát...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_chu_tri",
+   "desc": "Khoa/bộ môn chủ trì xây dựng đề án",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (đào tạo); Hội đồng KH&ĐT; Khoa đề xuất"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 54/2026/TT-BGDĐT, hiệu lực 30/06/2026: Phân loại xây dựng chương trình, chuẩn đầu ra hay mở ngành; yêu cầu chuẩn ngành/trình độ, trạng thái chương trình và ngày tiếp nhận hồ sơ. Đọc toàn văn và điều khoản chuyển tiếp trước khi đổi chuẩn/mẫu; chưa xác minh toàn văn thì ghi điều kiện chưa xác nhận, không tự đặt thời hạn chuyển đổi.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xây dựng luận cứ sự cần thiết mở ngành",
+   "lam_gi": "phân tích từ `su_can_thiet`: nhu cầu nhân lực của ngành trên thị trường lao động (số liệu khảo sát doanh nghiệp, dự báo nhân lực, định hướng chiến lược của Nhà nước); thống kê các trường đang đào tạo ngành này (số cơ sở, tổng chỉ tiêu) để chỉ ra khoảng trống nhân lực; khẳng định sự phù hợp với chiến lược phát triển của trường.",
+   "inputs": [
+    "ten_nganh",
+    "trinh_do",
+    "su_can_thiet",
+    "don_vi_chu_tri"
+   ],
+   "vai_tro": "Chuyên viên đơn vị chủ trì (khoa/viện) · AI hỗ trợ: soạn dự thảo luận cứ, tổng hợp số liệu nhu cầu nhân lực",
+   "luu_y": "luận cứ phải có số liệu định lượng (không viết chung chung \"nhu cầu lớn\"); nguồn số liệu phải ghi rõ (khảo sát nào, thời gian nào, quy mô mẫu); tránh dùng số liệu đã quá cũ (trên 3 năm) vì cơ quan thẩm định sẽ chất vấn tính thời sự.",
+   "ket_qua": "phần \"Sự cần thiết mở ngành\" hoàn chỉnh (bối cảnh – khoảng trống đào tạo – sự phù hợp với định hướng trường) kèm số liệu minh chứng."
+  },
+  {
+   "n": 2,
+   "title": "Lập hồ sơ đội ngũ giảng viên cơ hữu",
+   "lam_gi": "liệt kê từ `doi_ngu` toàn bộ giảng viên cơ hữu đúng chuyên môn ngành: họ tên, học hàm/học vị, chuyên ngành được đào tạo, thâm niên; đối chiếu từng người với yêu cầu của văn bản hiện hành nêu tại phap-ly.md (số lượng tối thiểu, trình độ tối thiểu, ngành đào tạo đúng chuyên môn); lập bảng tổng hợp kèm danh mục bản sao bằng cấp trong `minh_chung`.",
+   "inputs": [
+    "doi_ngu",
+    "minh_chung",
+    "ten_nganh"
+   ],
+   "vai_tro": "Chuyên viên đơn vị chủ trì (khoa/viện) · AI hỗ trợ: lập bảng sơ bộ, đối chiếu hồ sơ gốc và bằng cấp",
+   "luu_y": "bẫy thường gặp — giảng viên \"đúng chuyên môn\" phải có bằng đúng ngành hoặc ngành gần được cơ quan thẩm định chấp nhận, không tính giảng viên trái ngành dù có kinh nghiệm; giảng viên thỉnh giảng không được tính vào đội ngũ cơ hữu; kiểm tra mỗi giảng viên chỉ kê khai cho một ngành trong cùng đợt mở ngành.",
+   "ket_qua": "bảng tổng hợp đội ngũ giảng viên cơ hữu đúng chuyên môn (đạt/không đạt yêu cầu văn bản hiện hành nêu tại phap-ly.md) kèm danh mục bằng cấp minh chứng."
+  },
+  {
+   "n": 3,
+   "title": "Mô tả điều kiện cơ sở vật chất",
+   "lam_gi": "mô tả từ `csvct`: phòng học lý thuyết, phòng thí nghiệm/thực hành chuyên ngành, thư viện (đầu sách, cơ sở dữ liệu số), ký túc xá, địa điểm thực tập; nêu kế hoạch đầu tư bổ sung (hạng mục, kinh phí, tiến độ); đối chiếu với yêu cầu tối thiểu của văn bản hiện hành nêu tại phap-ly.md.",
+   "inputs": [
+    "csvct",
+    "minh_chung",
+    "ten_nganh"
+   ],
+   "vai_tro": "Chuyên viên đơn vị chủ trì (khoa/viện) · AI hỗ trợ: soạn dự thảo mô tả CSVC, đối chiếu minh chứng",
+   "luu_y": "mỗi hạng mục CSVC phải có minh chứng tương ứng (quyết định đầu tư, biên bản nghiệm thu, ảnh hiện trạng) — mô tả \"trên giấy\" không có minh chứng sẽ bị đánh trượt; kế hoạch đầu tư bổ sung phải có mốc thời gian cụ thể, không viết \"sẽ đầu tư trong tương lai\".",
+   "ket_qua": "phần \"Điều kiện cơ sở vật chất\" hoàn chỉnh kèm kế hoạch đầu tư bổ sung và danh mục minh chứng."
+  },
+  {
+   "n": 4,
+   "title": "Xây dựng chương trình đào tạo dự kiến",
+   "lam_gi": "xây dựng từ `chuong_trinh_du_kien`: mục tiêu đào tạo, chuẩn đầu ra dự kiến, tổng số tín chỉ, cấu trúc khối kiến thức (đại cương – cơ sở ngành – chuyên ngành – thực tập – tốt nghiệp) với số tín chỉ từng khối, danh mục học phần dự kiến; kiểm tra tổng tín chỉ các khối bằng tổng số tín chỉ công bố.",
+   "inputs": [
+    "chuong_trinh_du_kien",
+    "ten_nganh",
+    "trinh_do",
+    "ngon_ngu"
+   ],
+   "vai_tro": "Chuyên viên đơn vị chủ trì (khoa/viện) · AI hỗ trợ: soạn dự thảo CTĐT dự kiến, kiểm tra theo chuẩn văn bản hiện hành nêu tại phap-ly.md",
+   "luu_y": "CTĐT dự kiến phải tuân chuẩn chương trình đào tạo (văn bản hiện hành nêu tại phap-ly.md); tổng tín chỉ các khối phải cộng đúng 100%; danh mục học phần phải thể hiện được đặc thù của ngành mới, tránh \"copy\" nguyên CTĐT ngành gần rồi đổi tên.",
+   "ket_qua": "phần \"Chương trình đào tạo dự kiến\" hoàn chỉnh (mục tiêu, chuẩn đầu ra, cấu trúc khối kiến thức, danh mục học phần)."
+  },
+  {
+   "n": 5,
+   "title": "Lập kế hoạch tuyển sinh và đảm bảo chất lượng",
+   "lam_gi": "từ `ke_hoach_tuyen_sinh` quy định chỉ tiêu năm đầu và lộ trình 3 năm tiếp theo, phương thức tuyển sinh, tổ hợp xét tuyển; từ `dam_bao_chat_luong` xây dựng cơ chế đảm bảo chất lượng: công bố chuẩn đầu ra, khảo thí, phản hồi người học, khảo sát việc làm sau tốt nghiệp với chỉ tiêu cụ thể.",
+   "inputs": [
+    "ke_hoach_tuyen_sinh",
+    "dam_bao_chat_luong",
+    "ten_nganh"
+   ],
+   "vai_tro": "Chuyên viên đơn vị chủ trì (khoa/viện) · AI hỗ trợ: soạn dự thảo kế hoạch tuyển sinh và ĐBCL, kiểm tra chỉ tiêu và lộ trình",
+   "luu_y": "chỉ tiêu năm đầu phải thận trọng, phù hợp với đội ngũ và CSVC hiện có (bẫy: đề xuất chỉ tiêu năm đầu quá cao so với năng lực thực tế sẽ bị chất vấn); lộ trình tăng chỉ tiêu phải có căn cứ (bổ sung giảng viên, đầu tư CSVC theo năm).",
+   "ket_qua": "phần \"Kế hoạch tuyển sinh và đảm bảo chất lượng\" hoàn chỉnh (chỉ tiêu từng năm, phương thức, cơ chế ĐBCL)."
+  },
+  {
+   "n": 6,
+   "title": "Hoàn thiện hồ sơ đề án và trình duyệt",
+   "lam_gi": "ráp kết quả Bước 1–5 thành hồ sơ hoàn chỉnh theo mục lục chuẩn: tờ trình của Hiệu trưởng gửi cơ quan có thẩm quyền – đề án (các phần I–VI) – phụ lục minh chứng; kiểm tra tính nhất quán số liệu giữa các phần (số giảng viên, số tín chỉ, chỉ tiêu phải khớp nhau mọi nơi); lấy ý kiến khoa và Hội đồng khoa học – đào tạo; trình Hiệu trưởng ký gửi cơ quan có thẩm quyền.",
+   "inputs": [
+    "minh_chung",
+    "don_vi_chu_tri",
+    "ma_nganh"
+   ],
+   "vai_tro": "Hội đồng KH–ĐT góp ý; Hiệu trưởng ký tờ trình; chuyên viên đơn vị chủ trì ráp hồ sơ · AI hỗ trợ: ráp hồ sơ, kiểm tra nhất quán số liệu giữa các phần",
+   "luu_y": "số liệu trong đề án phải nhất quán tuyệt đối giữa các phần và khớp với minh chứng — sai lệch một con số là lý do phổ biến khiến hồ sơ bị yêu cầu bổ sung; kiểm tra lại toàn bộ file minh chứng đã ký/đóng dấu trước khi gửi.",
+   "ket_qua": "hồ sơ đề án mở ngành hoàn chỉnh (tờ trình – đề án – phụ lục minh chứng), đã qua ý kiến Hội đồng KH–ĐT và Hiệu trưởng ký."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Đội ngũ giảng viên cơ hữu đúng chuyên môn, đáp ứng yêu cầu số lượng và trình độ theo văn bản hiện hành nêu tại phap-ly.md (giảng viên thỉnh giảng không được tính).",
+  "Mỗi hạng mục cơ sở vật chất có minh chứng tương ứng; kế hoạch đầu tư bổ sung có hạng mục, kinh phí và mốc thời gian cụ thể.",
+  "Tổng tín chỉ các khối kiến thức bằng tổng công bố; CTĐT dự kiến tuân chuẩn văn bản hiện hành nêu tại phap-ly.md.",
+  "Chỉ tiêu năm đầu thận trọng, phù hợp với đội ngũ và CSVC hiện có; lộ trình tăng chỉ tiêu có căn cứ.",
+  "Số liệu nhất quán tuyệt đối giữa các phần và khớp với hồ sơ minh chứng.",
+  "Luận cứ sự cần thiết có số liệu định lượng, ghi rõ nguồn, còn thời sự (không quá 3 năm); khớp Input đã cho.",
+  "Không bịa đặt số liệu khảo sát, minh chứng, bằng cấp hay trích dẫn văn bản.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (văn bản hiện hành nêu tại phap-ly.md; Luật Giáo dục đại học 2025 (Luật số 125/2025/QH15)).",
+  "Đã qua Human gate: Hội đồng KH–ĐT đã cho ý kiến, Hiệu trưởng đã ký tờ trình đề án gửi cơ quan có thẩm quyền."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Theo Luật 125/2025/QH15 (hiệu lực 01/01/2026), cơ sở đào tạo được cấp phép theo quy định của Chính phủ và Hiệu trưởng phê duyệt chương trình đào tạo (Điều 21, 24); Hội đồng KH&ĐT chỉ tư vấn (Điều 18). Cơ quan nhận hồ sơ và thẩm quyền mở ngành của VNU-IS chờ xác nhận (C2, C6); không viết cứng \"gửi Bộ GD&ĐT\".",
+  "Đề án mở ngành cần xác định mô hình (ĐHQGHN cấp bằng, liên kết, song bằng); điều kiện và thẩm quyền khác nhau (C2).",
+  "Điều kiện về giảng viên, cơ sở vật chất chỉ ghi số liệu Trường cung cấp; không lấy từ website."
+ ],
+ "cho_xac_nhan": [
+  "Quy định mở ngành hiện hành và tuyến duyệt (C2, C6).",
+  "Mẫu đề án (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề hành chính: quốc hiệu, tiêu ngữ, tên đơn vị trình, số ký hiệu, địa điểm – ngày tháng.",
+  "Tên văn bản: ĐỀ ÁN MỞ NGÀNH ĐÀO TẠO — NGÀNH ... — TRÌNH ĐỘ ...",
+  "Phần I – Sự cần thiết mở ngành: bối cảnh và nhu cầu xã hội; khoảng trống đào tạo; sự phù hợp với định hướng phát triển của trường.",
+  "Phần II – Điều kiện đội ngũ giảng viên: số lượng, trình độ, bảng tổng hợp đội ngũ cơ hữu đúng chuyên môn (đối chiếu căn cứ hiện hành nêu tại phap-ly.md).",
+  "Phần III – Điều kiện cơ sở vật chất: phòng học, phòng thí nghiệm/thực hành, thư viện, học liệu và kế hoạch đầu tư bổ sung.",
+  "Phần IV – Chương trình đào tạo dự kiến: mục tiêu, chuẩn đầu ra, tổng số tín chỉ, cấu trúc khối kiến thức, danh mục học phần dự kiến.",
+  "Phần V – Kế hoạch tuyển sinh và đảm bảo chất lượng: chỉ tiêu năm đầu và lộ trình các năm tiếp theo, phương thức tuyển sinh, cơ chế đảm bảo chất lượng.",
+  "Phần VI – Hồ sơ minh chứng kèm theo (phụ lục): danh sách đội ngũ + bằng cấp; danh mục học phần; biên bản khảo sát nhu cầu; quyết định đầu tư CSVC; danh mục học liệu.",
+  "Chữ ký người ký (KT. Hiệu trưởng) và con dấu.",
+  "Tài liệu kèm theo: Tờ trình gửi Bộ GD&ĐT; Danh mục kiểm đối chiếu điều kiện mở ngành. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề hành chính: quốc hiệu, tiêu ngữ, tên đơn vị trình, số ký hiệu, địa điểm – ngày tháng.\n\n2. Tên văn bản: ĐỀ ÁN MỞ NGÀNH ĐÀO TẠO — NGÀNH ... — TRÌNH ĐỘ ...\n\n3. Phần I – Sự cần thiết mở ngành: bối cảnh và nhu cầu xã hội; khoảng trống đào tạo; sự\n   phù hợp với định hướng phát triển của trường.\n\n4. Phần II – Điều kiện đội ngũ giảng viên: số lượng, trình độ, bảng tổng hợp đội ngũ cơ\n   hữu đúng chuyên môn (đối chiếu căn cứ hiện hành nêu tại phap-ly.md).\n\n5. Phần III – Điều kiện cơ sở vật chất: phòng học, phòng thí nghiệm/thực hành, thư viện,\n   học liệu và kế hoạch đầu tư bổ sung.\n\n6. Phần IV – Chương trình đào tạo dự kiến: mục tiêu, chuẩn đầu ra, tổng số tín chỉ, cấu\n   trúc khối kiến thức, danh mục học phần dự kiến.\n\n7. Phần V – Kế hoạch tuyển sinh và đảm bảo chất lượng: chỉ tiêu năm đầu và lộ trình các\n   năm tiếp theo, phương thức tuyển sinh, cơ chế đảm bảo chất lượng.\n\n8. Phần VI – Hồ sơ minh chứng kèm theo (phụ lục): danh sách đội ngũ + bằng cấp; danh mục\n   học phần; biên bản khảo sát nhu cầu; quyết định đầu tư CSVC; danh mục học liệu.\n\n9. Chữ ký người ký (KT. Hiệu trưởng) và con dấu.\n\n10. Tài liệu kèm theo: Tờ trình gửi Bộ GD&ĐT; Danh mục kiểm đối chiếu điều kiện mở ngành.",
+ "human_gate_check": "Đã qua Human gate: Hội đồng KH–ĐT đã cho ý kiến, Hiệu trưởng đã ký tờ trình đề án gửi cơ quan có thẩm quyền.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (đào tạo). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 54/2026/TT-BGDĐT, hiệu lực 30/06/2026\n\nNguồn: https://congbao.chinhphu.vn/van-ban/thong-tu-so-54-2026-tt-bgddt-470099.htm\n\nPhân loại xây dựng chương trình, chuẩn đầu ra hay mở ngành; yêu cầu chuẩn ngành/trình độ, trạng thái chương trình và ngày tiếp nhận hồ sơ. Đọc toàn văn và điều khoản chuyển tiếp trước khi đổi chuẩn/mẫu; chưa xác minh toàn văn thì ghi điều kiện chưa xác nhận, không tự đặt thời hạn chuyển đổi.\n",
+ "outputs_dir": "skills/vnuis-dt-soan-de-an-mo-nganh/references"
+}

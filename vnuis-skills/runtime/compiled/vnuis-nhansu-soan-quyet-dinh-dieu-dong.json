@@ -1,0 +1,211 @@
+{
+ "name": "vnuis-nhansu-soan-quyet-dinh-dieu-dong",
+ "title": "Soạn quyết định điều động, luân chuyển, biệt phái",
+ "description": "Dùng khi cần ban hành quyết định điều động, luân chuyển hoặc biệt phái viên chức, cán bộ quản lý giữa các đơn vị, đúng thể thức Nghị định 30/2020/NĐ-CP.",
+ "group": "nhansu",
+ "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+ "previous_name": "vnuis-quyet-dinh-dieu-dong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị",
+ "when": "Khi Nhà trường cần ban hành Quyết định về nhân sự thuộc một trong ba trường hợp:\n- **Điều động**: chuyển viên chức từ đơn vị này sang đơn vị khác (trong trường hoặc đến đơn vị ngoài trường\n  theo thỏa thuận), thay đổi vị trí việc làm;\n- **Luân chuyển**: chuyển cán bộ lãnh đạo, quản lý sang giữ chức vụ khác (thường cùng cấp hoặc để đào tạo,\n  rèn luyện qua thực tiễn);\n- **Biệt phái**: cử viên chức đến làm việc có thời hạn tại cơ quan, đơn vị khác để thực hiện nhiệm vụ\n  cụ thể, hết thời hạn trở về đơn vị cũ.",
+ "inputs": [
+  {
+   "key": "loai_quyet_dinh",
+   "desc": "Điều động / Luân chuyển / Biệt phái",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_ten",
+   "desc": "Họ tên, học hàm/học vị, chức danh nghề nghiệp (giả lập khi mô phỏng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_hien_tai",
+   "desc": "Đơn vị đang công tác + vị trí việc làm hiện tại",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_moi",
+   "desc": "Đơn vị tiếp nhận + vị trí việc làm / chức vụ mới",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han",
+   "desc": "Thời hạn (biệt phái: từ ngày – đến ngày; điều động/luân chuyển: \"kể từ ngày...\")",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ly_do",
+   "desc": "Lý do: nhu cầu công tác / nguyện vọng cá nhân / thực hiện nhiệm vụ...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "che_do",
+   "desc": "Chế độ được hưởng: lương, phụ cấp giữ nguyên hay thay đổi; đơn vị chi trả (đối với biệt phái)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu",
+   "desc": "Căn cứ pháp lý, tờ trình/đề nghị của đơn vị (số, ngày)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hieu_luc",
+   "desc": "Ngày quyết định có hiệu lực",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo: Cập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n- Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo: Thêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại quyết định",
+   "lam_gi": "căn cứ bản chất của việc chuyển đổi để phân loại: Điều động (chuyển đơn vị, thay đổi vị trí việc làm lâu dài), Luân chuyển (chuyển cán bộ quản lý sang giữ chức vụ khác), hay Biệt phái (cử đi làm việc có thời hạn, giữ nguyên biên chế đơn vị cũ).",
+   "inputs": [
+    "loai_quyet_dinh",
+    "don_vi_hien_tai",
+    "don_vi_moi",
+    "thoi_han"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "chọn sai loại thì sai toàn bộ điều khoản — điều động không có điều khoản \"trở về đơn vị cũ\"; biệt phái bắt buộc ghi thời hạn và đơn vị chi trả lương.",
+   "ket_qua": "phiếu xác định loại quyết định."
+  },
+  {
+   "n": 2,
+   "title": "Thu thập căn cứ",
+   "lam_gi": "thu thập tờ trình/đề nghị của đơn vị có nhu cầu hoặc của Phòng TC&QT (nhân sự); văn bản thể hiện ý kiến thống nhất của đơn vị tiếp nhận (điều động đến đơn vị ngoài trường phải có văn bản thỏa thuận tiếp nhận); văn bản thể hiện nguyện vọng của viên chức (đối với điều động theo nguyện vọng).",
+   "inputs": [
+    "can_cu",
+    "ly_do",
+    "don_vi_moi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "điều động đến đơn vị ngoài trường mà chưa có văn bản thỏa thuận tiếp nhận thì dừng lại, không soạn quyết định.",
+   "ket_qua": "bộ căn cứ pháp lý và tờ trình/đề nghị đã đầy đủ."
+  },
+  {
+   "n": 3,
+   "title": "Xác định chế độ",
+   "lam_gi": "đối chiếu vị trí việc làm mới để xác định tiền lương, phụ cấp chức vụ, phụ cấp thâm niên được bảo lưu hay điều chỉnh; đối với biệt phái: xác định đơn vị chi trả lương/phụ cấp và chế độ công tác phí trong thời gian biệt phái.",
+   "inputs": [
+    "che_do",
+    "thoi_han",
+    "don_vi_moi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "biệt phái bắt buộc ghi rõ đơn vị chi trả; điều động gắn với thay đổi ngạch/chức danh thì đối chiếu bảng lương văn bản hiện hành nêu tại phap-ly.md.",
+   "ket_qua": "bảng chế độ (lương, phụ cấp cũ → mới; đơn vị chi trả)."
+  },
+  {
+   "n": 4,
+   "title": "Soạn thảo quyết định theo thể thức NĐ 30/2020",
+   "lam_gi": "soạn quyết định đầy đủ các phần: Quốc hiệu – Tiêu ngữ; tên cơ quan; số/ký hiệu; địa danh, ngày tháng; tên loại \"QUYẾT ĐỊNH\" + trích yếu; phần \"Căn cứ...\"; phần \"Xét...\"; nội dung \"QUYẾT ĐỊNH:\" với các điều đánh số — Điều 1: họ tên, chức danh, đơn vị hiện tại → đơn vị/vị trí mới (ghi rõ loại: điều động/luân chuyển/biệt phái + thời hạn); Điều 2: chế độ lương, phụ cấp, đơn vị chi trả (nếu biệt phái); Điều 3: hiệu lực thi hành, trách nhiệm bàn giao công việc (biệt phái: điều khoản trở về đơn vị cũ khi hết hạn); Điều 4: nơi nhận — các đơn vị và cá nhân chịu trách nhiệm thi hành.",
+   "inputs": [
+    "loai_quyet_dinh",
+    "ho_ten",
+    "don_vi_hien_tai",
+    "don_vi_moi",
+    "thoi_han",
+    "ly_do",
+    "che_do",
+    "can_cu",
+    "hieu_luc"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Điều 1 phải ghi đúng thuật ngữ loại quyết định đã xác định ở Bước 1; thời hạn biệt phái ghi cụ thể \"từ ngày – đến ngày\".",
+   "ket_qua": "dự thảo quyết định hoàn chỉnh."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra và chuẩn bị trình ký",
+   "lam_gi": "kiểm tra lần cuối: thẩm quyền ký (Hiệu trưởng), thời hạn biệt phái, chế độ chính sách, nơi nhận (đơn vị cũ, đơn vị mới, cá nhân, lưu hồ sơ cán bộ); ngày hiệu lực không sớm hơn ngày ký; hoàn thiện dự thảo để trình Hiệu trưởng ký, đóng dấu.",
+   "inputs": [
+    "nguoi_ky",
+    "hieu_luc"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) chuẩn bị, Hiệu trưởng phê duyệt · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "dùng danh mục kiểm tra trước khi trình ký; quyết định chưa ký, đóng dấu thì chưa có hiệu lực pháp lý.",
+   "ket_qua": "dự thảo quyết định đã kiểm tra + danh mục kiểm tra (trình ký tại Human gate; sau khi ký: ban hành, gửi các đơn vị, lưu hồ sơ cán bộ)."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và cấu trúc theo references/quy-cach-dau-ra.md và căn cứ đã chọn tại references/phap-ly.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+  "Biệt phái bắt buộc ghi thời hạn và đơn vị chi trả lương",
+  "Biệt phái bắt buộc ghi rõ đơn vị chi trả",
+  "Điều 1 phải ghi đúng thuật ngữ loại quyết định đã xác định ở Bước 1"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Điều động giữa các đơn vị của Trường (phòng, khoa, Viện): ghi đơn vị đi, đến theo tên đầy đủ trên website.",
+  "Điều động liên quan chức danh do ĐHQGHN bổ nhiệm cần ghi `[CẦN XÁC MINH]` thẩm quyền (C2).",
+  "Không điền ngày hiệu lực hay người ký khi chưa có."
+ ],
+ "cho_xac_nhan": [
+  "Phân cấp thẩm quyền điều động (C1, C2).",
+  "Mẫu quyết định (C8)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ;",
+  "Tên cơ quan ban hành;",
+  "Số, ký hiệu văn bản;",
+  "Địa danh, ngày tháng năm ban hành;",
+  "Tên loại văn bản \"QUYẾT ĐỊNH\" + trích yếu nội dung;",
+  "Người ban hành (HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC A);",
+  "Phần \"Căn cứ...\" (căn cứ pháp lý + tờ trình/đề nghị của đơn vị);",
+  "Phần \"Xét...\" (nhu cầu công tác / nguyện vọng);",
+  "Nội dung \"QUYẾT ĐỊNH:\": Điều 1 (điều động/luân chuyển/biệt phái — họ tên, chức danh, đơn vị hiện tại → đơn vị/vị trí mới, thời hạn), Điều 2 (chế độ lương, phụ cấp; đơn vị chi trả), Điều 3 (hiệu lực thi hành; trách nhiệm bàn giao công việc), Điều 4 (trách nhiệm thi hành);",
+  "Nơi nhận;",
+  "Chữ ký, đóng dấu. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ;\n\n2. Tên cơ quan ban hành;\n\n3. Số, ký hiệu văn bản;\n\n4. Địa danh, ngày tháng năm ban hành;\n\n5. Tên loại văn bản \"QUYẾT ĐỊNH\" + trích yếu nội dung;\n\n6. Người ban hành (HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC A);\n\n7. Phần \"Căn cứ...\" (căn cứ pháp lý + tờ trình/đề nghị của đơn vị);\n\n8. Phần \"Xét...\" (nhu cầu công tác / nguyện vọng);\n\n9. Nội dung \"QUYẾT ĐỊNH:\": Điều 1 (điều động/luân chuyển/biệt phái — họ tên, chức danh, đơn vị hiện tại\n→ đơn vị/vị trí mới, thời hạn), Điều 2 (chế độ lương, phụ cấp; đơn vị chi trả), Điều 3 (hiệu lực thi hành;\ntrách nhiệm bàn giao công việc), Điều 4 (trách nhiệm thi hành);\n\n10. Nơi nhận;\n\n11. Chữ ký, đóng dấu.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-259-2026-nd-cp-quy-dinh-ve-tuyen-dung-su-dung-va-quan-ly-vien-chuc-119260707070701707.htm\n\nCập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n\n## Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/huong-dan-quan-ly-doi-ngu-nha-giao-sap-xep-bo-nhiem-chuc-danh-thuc-hien-che-do-chinh-sach-xep-luong-119260811083919821.htm\n\nThêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n",
+ "outputs_dir": "skills/vnuis-nhansu-soan-quyet-dinh-dieu-dong/references"
+}

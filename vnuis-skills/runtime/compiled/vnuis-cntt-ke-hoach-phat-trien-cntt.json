@@ -1,0 +1,188 @@
+{
+ "name": "vnuis-cntt-ke-hoach-phat-trien-cntt",
+ "title": "Kế hoạch phát triển CNTT",
+ "description": "Dùng khi cần lập kế hoạch phát triển công nghệ thông tin hằng năm hoặc trung hạn: nâng cấp hạ tầng mạng, máy chủ, phần mềm quản lý đào tạo, học trực tuyến, số hóa quy trình.",
+ "group": "cntt",
+ "group_label": "Hạ tầng CNTT, an toàn thông tin, chuyển đổi số",
+ "previous_name": "vnuis-ke-hoach-phat-trien-cntt",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin, chuyển đổi số)",
+ "when": "Khi cần lập kế hoạch đầu tư, nâng cấp hạ tầng và phần mềm CNTT của trường\ntheo năm hoặc theo giai đoạn (3–5 năm).",
+ "inputs": [
+  {
+   "key": "giai_doan",
+   "desc": "Năm / giai đoạn kế hoạch (VD: 2026–2030)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hien_trang",
+   "desc": "Hiện trạng hạ tầng, phần mềm (điểm mạnh, hạn chế)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hang_muc",
+   "desc": "Danh sách hạng mục: hạ tầng mạng, SIS, LMS, tuyển sinh online, số hóa quy trình, ATTT...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_tieu",
+   "desc": "Mục tiêu từng hạng mục",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kinh_phi_du_kien",
+   "desc": "Kinh phí dự kiến từng hạng mục",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "don_vi_thuc_hien",
+   "desc": "Bộ phận hạ tầng CNTT (Phòng TC&QT) phối hợp các đơn vị",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin, chuyển đổi số)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office; LMS; cổng sinh viên; cổng việc làm; tra cứu văn bằng; thư viện; kho tài nguyên số; E-GOV. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Đánh giá hiện trạng và xác định điểm nghẽn",
+   "lam_gi": "từ `hien_trang`, rà soát chi tiết: hạ tầng mạng (băng thông, độ phủ), phòng máy chủ, từng phần mềm (SIS, LMS, tuyển sinh...); đo/ghi nhận điểm nghẽn cụ thể (giờ cao điểm nghẽn ở đâu, dữ liệu chưa tích hợp ở khâu nào, nhân sự ATTT thiếu bao nhiêu người).",
+   "inputs": [
+    "hien_trang"
+   ],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "điểm nghẽn phải mô tả bằng số liệu đo được, không cảm tính (\"chậm\" là chậm bao nhiêu, ở đâu).",
+   "ket_qua": "Báo cáo hiện trạng (điểm mạnh – điểm nghẽn có số liệu)."
+  },
+  {
+   "n": 2,
+   "title": "Xác định mục tiêu theo giai đoạn",
+   "lam_gi": "từ `muc_tieu`, viết mục tiêu cho từng mốc năm trong `giai_doan` (mốc 2028, mốc 2030...); mỗi mục tiêu gắn chỉ số đo được (VD: LMS phủ 100% học phần); đối chiếu với chiến lược phát triển trường và chương trình chuyển đổi số quốc gia.",
+   "inputs": [
+    "muc_tieu",
+    "giai_doan"
+   ],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "mục tiêu phải giải quyết đúng điểm nghẽn đã xác định ở Bước 1; tránh mục tiêu \"treo\" không có chỉ số đo.",
+   "ket_qua": "Khung mục tiêu theo năm (mốc thời gian – chỉ số đo)."
+  },
+  {
+   "n": 3,
+   "title": "Chi tiết hóa danh mục hạng mục",
+   "lam_gi": "từ `hang_muc`, mỗi hạng mục viết: nội dung chi tiết, phạm vi triển khai, đơn vị thụ hưởng, điều kiện tiên quyết (hạng mục nào phải xong trước); sắp xếp thứ tự ưu tiên: nền tảng (hạ tầng, ATTT) trước, ứng dụng sau.",
+   "inputs": [
+    "hang_muc"
+   ],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "bẫy phổ biến là triển khai ứng dụng khi hạ tầng chưa sẵn sàng — quy tắc \"nền tảng trước, ứng dụng sau\" là bắt buộc.",
+   "ket_qua": "Danh mục hạng mục chi tiết (nội dung – phạm vi – thụ hưởng – tiên quyết)."
+  },
+  {
+   "n": 4,
+   "title": "Lập tiến độ thực hiện",
+   "lam_gi": "chia từng hạng mục theo năm/quý trong `giai_doan`; xác định hạng mục gối đầu (làm song song được) và hạng mục nối tiếp (phải chờ hạng mục trước); đánh dấu các mốc giám sát (mốc) để báo cáo.",
+   "inputs": [
+    "giai_doan"
+   ],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: lập bảng biểu, định dạng",
+   "luu_y": "tiến độ phải khớp năm tài chính và kế hoạch mua sắm; để dự phòng 10–15% thời gian cho hạng mục phức tạp.",
+   "ket_qua": "Bảng tiến độ (hạng mục – năm/quý – mốc giám sát)."
+  },
+  {
+   "n": 5,
+   "title": "Dự toán kinh phí và xác định nguồn vốn",
+   "lam_gi": "từ `kinh_phi_du_kien`, chi tiết hóa kinh phí từng hạng mục (thiết bị, phần mềm, triển khai, đào tạo, dự phòng); xác định nguồn vốn cho từng hạng mục (ngân sách, đề án, xã hội hóa); tổng hợp và đối chiếu với khả năng cân đối.",
+   "inputs": [
+    "kinh_phi_du_kien"
+   ],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "chi phí đào tạo và vận hành sau triển khai thường bị bỏ quên — phải đưa vào dự toán; ghi rõ cơ sở tính từng khoản.",
+   "ket_qua": "Bảng dự toán kinh phí (hạng mục – chi tiết – nguồn vốn)."
+  },
+  {
+   "n": 6,
+   "title": "Phân công trách nhiệm và cơ chế giám sát",
+   "lam_gi": "từ `don_vi_thuc_hien`, mỗi hạng mục ghi đơn vị chủ trì, đơn vị phối hợp, đầu mối chịu trách nhiệm; quy định chế độ báo cáo (6 tháng/lần), mẫu báo cáo tiến độ và người nhận báo cáo.",
+   "inputs": [
+    "don_vi_thuc_hien"
+   ],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "mỗi hạng mục chỉ có 1 đơn vị chủ trì duy nhất để tránh đùn đẩy; mốc giám sát gắn với mốc giải ngân.",
+   "ket_qua": "Bảng phân công (hạng mục – chủ trì – phối hợp – chế độ báo cáo)."
+  },
+  {
+   "n": 7,
+   "title": "Tổng hợp và hoàn thiện văn bản kế hoạch",
+   "lam_gi": "ghép các bán thành phẩm Bước 1–6 thành văn bản kế hoạch theo thể thức (số ký hiệu, nơi nhận, chữ ký); rà soát nhất quán: mục tiêu – hạng mục – tiến độ – kinh phí – phân công.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Bộ phận hạ tầng CNTT (Phòng TC&QT) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "kiểm tra tổng kinh phí khớp giữa các bảng; số ký hiệu không trùng.",
+   "ket_qua": "Văn bản kế hoạch phát triển CNTT hoàn chỉnh (sẵn sàng trình phê duyệt)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Văn bản kế hoạch phát triển CNTT hoàn chỉnh",
+  "Có đầy đủ sản phẩm: Bảng hạng mục chi tiết (nội dung – tiến độ – kinh phí – đơn vị thực hiện)",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Điểm nghẽn phải mô tả bằng số liệu đo được, không cảm tính (\"chậm\" là chậm bao nhiêu, ở đâu).",
+  "Mục tiêu phải giải quyết đúng điểm nghẽn đã xác định ở Bước 1 > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hệ thống hiện có theo website gồm E-Office, LMS, cổng sinh viên, việc làm, tra cứu văn bằng, thư viện, repository, E-Gov và nền tảng tư vấn AI; việc nào Trường tự vận hành chưa xác nhận (C5).",
+  "Đề xuất phát triển phải tính nguồn lực của một trường quy mô nhỏ; ưu tiên việc giải quyết điểm nghẽn đã có."
+ ],
+ "cho_xac_nhan": [
+  "Sơ đồ hệ thống và đơn vị vận hành (C5).",
+  "Ngân sách CNTT (C6)."
+ ],
+ "output_structure": [
+  "Phần mở đầu hành chính (tên trường, đơn vị, số ký hiệu, ngày tháng).",
+  "Tên kế hoạch + giai đoạn áp dụng.",
+  "Hiện trạng (hạ tầng, phần mềm, hạn chế — có số liệu).",
+  "Mục tiêu (theo mốc năm, có chỉ số đo).",
+  "Bảng hạng mục thực hiện (STT – hạng mục – nội dung chính – tiến độ – kinh phí – đơn vị thực hiện).",
+  "Tổ chức thực hiện (đầu mối, chế độ báo cáo, trách nhiệm các đơn vị).",
+  "Nơi nhận, chữ ký. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần mở đầu hành chính (tên trường, đơn vị, số ký hiệu, ngày tháng).\n\n2. Tên kế hoạch + giai đoạn áp dụng.\n\n3. Hiện trạng (hạ tầng, phần mềm, hạn chế — có số liệu).\n\n4. Mục tiêu (theo mốc năm, có chỉ số đo).\n\n5. Bảng hạng mục thực hiện (STT – hạng mục – nội dung chính – tiến độ – kinh phí – đơn vị thực hiện).\n\n6. Tổ chức thực hiện (đầu mối, chế độ báo cáo, trách nhiệm các đơn vị).\n\n7. Nơi nhận, chữ ký.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin, chuyển đổi số). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-cntt-ke-hoach-phat-trien-cntt/references"
+}

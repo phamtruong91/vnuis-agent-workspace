@@ -1,0 +1,175 @@
+{
+ "name": "vnuis-tt-lap-lich-noi-dung",
+ "title": "Lịch nội dung truyền thông",
+ "description": "Dùng khi cần lên lịch đăng bài theo tuần hoặc tháng cho website, fanpage, TikTok, YouTube sao cho bám chiến dịch trong kế hoạch truyền thông năm: chủ đề, định dạng, kênh, người phụ trách.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-content-calendar-truyen-thong",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi cần lên lịch đăng bài chi tiết theo tuần hoặc tháng cho các kênh (website, fanpage, TikTok,\nYouTube...), đảm bảo nội dung bám chiến dịch trong kế hoạch truyền thông năm.",
+ "inputs": [
+  {
+   "key": "ky",
+   "desc": "Tuần/tháng áp dụng (VD: tuần 3 tháng 10/2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chien_dich",
+   "desc": "Chiến dịch đang chạy trong kỳ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kenh",
+   "desc": "Các kênh cần lên lịch",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tan_suat",
+   "desc": "Số bài/tuần theo từng kênh",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chu_de_uu_tien",
+   "desc": "Chủ đề/sự kiện cần ưu tiên trong kỳ",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "doi_ngu",
+   "desc": "Danh sách người phụ trách (biên tập, thiết kế, quay dựng)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định khung kỳ và mốc quan trọng",
+   "lam_gi": "xác định số ngày trong kỳ; liệt kê sự kiện/mốc quan trọng (ngày lễ, hạn chót tuyển sinh, sự kiện của trường, ngày diễn ra chiến dịch); đánh dấu những ngày bắt buộc phải có bài.",
+   "inputs": [
+    "ky",
+    "chien_dich",
+    "chu_de_uu_tien"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "ngày diễn ra sự kiện phải có bài trước (nhá hàng), trong (tường thuật), sau (recap); không để trống ngày cao điểm của chiến dịch.",
+   "ket_qua": "Khung kỳ với các mốc bắt buộc phải có bài."
+  },
+  {
+   "n": 2,
+   "title": "Phân bổ chủ đề theo tỉ lệ",
+   "lam_gi": "tính tổng số bài = tần suất × số kênh; phân bổ chủ đề theo tỉ lệ gợi ý: 40% tuyển sinh/đào tạo, 30% đời sống sinh viên, 20% nghiên cứu/khoa học, 10% thương hiệu; ưu tiên đưa chủ đề trong `chu_de_uu_tien` vào lịch.",
+   "inputs": [
+    "tan_suat",
+    "kenh",
+    "chu_de_uu_tien",
+    "chien_dich"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: tính toán, phân tích số liệu",
+   "luu_y": "tỉ lệ là gợi ý — cao điểm tuyển sinh thì tăng tỉ trọng tuyển sinh; không trùng chủ đề trong cùng kỳ.",
+   "ket_qua": "Danh sách chủ đề đã phân bổ theo tỉ lệ."
+  },
+  {
+   "n": 3,
+   "title": "Gán định dạng cho từng bài",
+   "lam_gi": "với từng chủ đề, chọn định dạng phù hợp kênh và nguồn lực: bài viết, infographic, video ngắn, livestream, album ảnh...; ghi yêu cầu sản xuất sơ bộ cho từng bài.",
+   "inputs": [
+    "kenh",
+    "doi_ngu"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "định dạng nặng (video, livestream) phải đặt lịch sản xuất sớm; mỗi kênh nên đa dạng định dạng trong kỳ, tránh một màu.",
+   "ket_qua": "Danh sách bài với định dạng đã gán."
+  },
+  {
+   "n": 4,
+   "title": "Gán kênh, người phụ trách và hạn chót",
+   "lam_gi": "với từng bài: gán kênh đăng, người phụ trách (biên tập/thiết kế/quay dựng), hạn chót hoàn thành trước ngày đăng ít nhất 1–2 ngày; cân đối khối lượng, tránh dồn việc cho một người.",
+   "inputs": [
+    "doi_ngu",
+    "kenh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: lập bảng biểu, định dạng",
+   "luu_y": "hạn chót sản xuất phải trừ thời gian duyệt bài; người phụ trách phải xác nhận đã nhận việc.",
+   "ket_qua": "Bảng phân công (bài – kênh – người phụ trách – hạn chót)."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra và chốt calendar",
+   "lam_gi": "kiểm tra 4 điểm: không trùng chủ đề, phủ đủ chiến dịch, cân đối tải việc giữa các thành viên, có ít nhất 1–2 bài dự phòng cho tình huống đột xuất; xuất bảng calendar + danh sách việc theo từng người.",
+   "inputs": [],
+   "vai_tro": "Trưởng Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "bài dự phòng là bắt buộc; lịch đã duyệt chỉ được thay đổi khi có phê duyệt.",
+   "ket_qua": "Nội dung calendar hoàn chỉnh + danh sách việc theo người phụ trách."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Bảng nội dung calendar: ngày, chủ đề, định dạng, kênh, người phụ trách, trạng…",
+  "Có đầy đủ sản phẩm: Danh sách việc theo từng người phụ trách",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Ngày diễn ra sự kiện phải có bài trước (nhá hàng), trong (tường thuật), sau (recap)",
+  "Tỉ lệ là gợi ý — cao điểm tuyển sinh thì tăng tỉ trọng tuyển sinh > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Trưởng phòng duyệt nội dung calendar trước khi giao sản xuất.",
+  "Biên tập viên duyệt từng bài trước khi đăng theo lịch."
+ ],
+ "guardrails": [
+  "Không tự đăng bài lên bất kỳ kênh nào.",
+  "Không dùng hình ảnh, âm thanh không rõ bản quyền.",
+  "Không tự ý thay đổi lịch đã duyệt khi chưa có phê duyệt."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Lịch nội dung phân theo kênh (website, Facebook, bản tin, kênh khác của Trường) và theo nhóm đối tượng: thí sinh, phụ huynh, đối tác, sinh viên.",
+  "Nội dung song ngữ ghi rõ bài nào có bản Anh."
+ ],
+ "cho_xac_nhan": [
+  "Danh sách kênh Trường đang vận hành (C5).",
+  "Người duyệt nội dung (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề: \"CONTENT CALENDAR — TUẦN/THÁNG ...\" + tên trường + dòng chiến dịch (+ ghi chú giả lập nếu mô phỏng).",
+  "Bảng calendar với các cột: Ngày – Chủ đề – Định dạng – Kênh – Phụ trách – Trạng thái.",
+  "Danh sách việc theo từng người phụ trách."
+ ],
+ "output_structure_raw": "1. Tiêu đề: \"CONTENT CALENDAR — TUẦN/THÁNG ...\" + tên trường + dòng chiến dịch (+ ghi chú giả lập nếu mô phỏng).\n\n2. Bảng calendar với các cột: Ngày – Chủ đề – Định dạng – Kênh – Phụ trách – Trạng thái.\n\n3. Danh sách việc theo từng người phụ trách.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-lap-lich-noi-dung/references"
+}

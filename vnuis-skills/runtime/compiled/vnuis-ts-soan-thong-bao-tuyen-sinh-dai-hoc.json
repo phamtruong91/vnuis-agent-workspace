@@ -1,0 +1,238 @@
+{
+ "name": "vnuis-ts-soan-thong-bao-tuyen-sinh-dai-hoc",
+ "title": "Soạn thông báo tuyển sinh theo phương thức",
+ "description": "Dùng khi Phòng Đào tạo công bố thông tin tuyển sinh đại học cho một phương thức xét tuyển hoặc một đợt bổ sung, rút từ đề án đã duyệt: đối tượng, điều kiện, hồ sơ, thời gian, lệ phí.",
+ "group": "ts",
+ "group_label": "Tuyển sinh",
+ "previous_name": "vnuis-thong-bao-tuyen-sinh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi cần ban hành thông báo tuyển sinh cho một phương thức xét tuyển cụ thể (xét điểm thi\nTN THPT, xét học bạ, xét tuyển thẳng, xét kết quả ĐGNL/ĐGTD...) hoặc một đợt tuyển sinh bổ\nsung, dựa trên đề án tuyển sinh đã được phê duyệt.",
+ "inputs": [
+  {
+   "key": "phuong_thuc",
+   "desc": "Phương thức xét tuyển của thông báo (vd: Xét tuyển theo kết quả học tập THPT)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "de_an_can_cu",
+   "desc": "Số, ngày ký của đề án tuyển sinh đã duyệt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong",
+   "desc": "Đối tượng được đăng ký xét tuyển",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dieu_kien",
+   "desc": "Điều kiện xét tuyển (ngưỡng điểm, hạnh kiểm, tốt nghiệp...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nganh_tuyen",
+   "desc": "Danh sách ngành tuyển theo phương thức + chỉ tiêu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_so",
+   "desc": "Thành phần hồ sơ đăng ký",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Thời gian nhận hồ sơ, xét tuyển, công bố kết quả, nhập học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "le_phi",
+   "desc": "Lệ phí xét tuyển",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "dia_chi_nop",
+   "desc": "Địa chỉ nộp hồ sơ trực tiếp / qua bưu điện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "link_dang_ky",
+   "desc": "Link đăng ký trực tuyến",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "lien_he",
+   "desc": "Điện thoại, email tư vấn tuyển sinh",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Biểu mẫu tuyển sinh; nền tảng AI tư vấn (ai.vnuis.edu.vn); hotline và is@vnu.edu.vn. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 06/2026/TT-BGDĐT, hiệu lực 15/02/2026: Yêu cầu năm tuyển sinh, phương thức, trình độ và đề án đã duyệt. Đối chiếu quy chế 06/2026 và hướng dẫn năm tuyển sinh về điều kiện, quy đổi điểm, điểm cộng, thứ tự nguyện vọng; không giữ công thức cũ hoặc cộng hai lần chứng chỉ. Không tự đặt chỉ tiêu/ngưỡng khi chưa có quyết định và căn cứ.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Rút trích thông tin từ đề án đã duyệt",
+   "lam_gi": "mở đề án tuyển sinh đã được phê duyệt (số, ngày ký trong `de_an_can_cu`); chỉ lấy đúng các thông tin đã duyệt cho `phuong_thuc` cần thông báo: danh sách ngành, chỉ tiêu, ngưỡng đầu vào, lệ phí; lập bảng đối chiếu nguồn để mỗi con số trong thông báo đều truy được về điều/mục tương ứng trong đề án.",
+   "inputs": [
+    "phuong_thuc",
+    "de_an_can_cu",
+    "nganh_tuyen",
+    "dieu_kien",
+    "le_phi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: rút trích sơ bộ thông tin, lập bảng đối chiếu nguồn với đề án",
+   "luu_y": "tuyệt đối không tự ý thêm ngành, thay đổi chỉ tiêu hoặc hạ ngưỡng so với đề án — đây là lỗi pháp lý nghiêm trọng; nếu phát hiện đề án thiếu thông tin cần thiết thì dừng lại, xin điều chỉnh đề án bằng văn bản trước khi viết thông báo.",
+   "ket_qua": "bảng rút trích thông tin đã duyệt cho phương thức cần thông báo (có ghi nguồn điều/mục trong đề án)."
+  },
+  {
+   "n": 2,
+   "title": "Xác định rõ phương thức, đối tượng và điều kiện",
+   "lam_gi": "ghi tên đầy đủ của `phuong_thuc`; diễn giải `doi_tuong` và `dieu_kien` bằng câu văn dễ hiểu cho thí sinh và phụ huynh (tránh thuật ngữ hành chính khó hiểu); nêu cụ thể cách tính điểm xét tuyển của phương thức này (công thức, hệ số nếu có).",
+   "inputs": [
+    "phuong_thuc",
+    "doi_tuong",
+    "dieu_kien"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: diễn giải văn phong phổ thông, kiểm tra tính đo lường được của điều kiện",
+   "luu_y": "điều kiện phải đo lường được (vd: \"điểm trung bình lớp 12 ≥ 6,5\" chứ không viết \"học lực khá trở lên\" gây tranh cãi); mọi ngưỡng trong thông báo phải bằng đúng ngưỡng trong đề án.",
+   "ket_qua": "mục \"Đối tượng và điều kiện xét tuyển\" hoàn chỉnh, văn phong phổ thông."
+  },
+  {
+   "n": 3,
+   "title": "Liệt kê hồ sơ đăng ký đầy đủ",
+   "lam_gi": "liệt kê từng loại giấy tờ trong `ho_so`: phiếu đăng ký (ghi rõ theo mẫu nào, lấy ở đâu), bản sao học bạ/bằng tốt nghiệp/CCCD (ghi rõ bản chính hay bản sao, có cần công chứng không), giấy chứng nhận ưu tiên; ghi số lượng bản của từng loại; đánh số thứ tự để thí sinh tự kiểm tra.",
+   "inputs": [
+    "ho_so"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: soạn danh mục giấy tờ, kiểm tra loại bản và số lượng",
+   "luu_y": "bẫy thường gặp — quên ghi \"bản sao công chứng\" hay \"bản chính\" khiến thí sinh nộp sai phải bổ sung; thiếu mục giấy tờ ưu tiên làm thí sinh mất quyền lợi; hồ sơ nộp trực tuyến và nộp trực tiếp có thể khác nhau, phải ghi riêng nếu khác.",
+   "ket_qua": "danh mục hồ sơ đánh số thứ tự, ghi rõ loại bản và số lượng từng loại."
+  },
+  {
+   "n": 4,
+   "title": "Ghi rõ thời gian, lệ phí và cách nộp",
+   "lam_gi": "ghi cụ thể từ `thoi_gian`: ngày bắt đầu/kết thúc nhận hồ sơ, lịch xét tuyển, ngày công bố kết quả, thời gian nhập học; ghi mức `le_phi` và hình thức nộp; ghi `dia_chi_nop` (nộp trực tiếp/qua bưu điện) và `link_dang_ky` (nộp trực tuyến); kiểm tra link truy cập được trước khi đưa vào văn bản.",
+   "inputs": [
+    "thoi_gian",
+    "le_phi",
+    "dia_chi_nop",
+    "link_dang_ky",
+    "lien_he"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: soạn các mục thời gian/lệ phí/cách nộp, kiểm tra link và địa chỉ liên hệ",
+   "luu_y": "thời gian phải ghi đủ ngày/tháng/năm, tránh \"trong tháng 7\"; kiểm tra link đăng ký hoạt động thật (bẫy: link sai/chết là lỗi công bố nghiêm trọng); số điện thoại, email tư vấn phải có người trực trong suốt đợt nhận hồ sơ.",
+   "ket_qua": "các mục thời gian, lệ phí, cách thức nộp hồ sơ hoàn chỉnh và đã kiểm tra link/liên hệ."
+  },
+  {
+   "n": 5,
+   "title": "Soạn thảo theo văn phong và thể thức hành chính",
+   "lam_gi": "ráp các mục đã chuẩn bị ở Bước 2–4 thành văn bản hoàn chỉnh; đảm bảo đầy đủ thể thức: quốc hiệu, tiêu ngữ, tên cơ quan ban hành, số ký hiệu, địa điểm – ngày tháng, tên văn bản, căn cứ đề án, nội dung các mục, nơi nhận, chữ ký; văn phong rõ ràng, ngắn gọn, thu hút nhưng chuẩn hành chính, không quảng cáo quá đà.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: ráp dự thảo đầy đủ thể thức văn bản hành chính",
+   "luu_y": "phần \"Căn cứ\" phải trích đúng số, ngày ký của đề án đã duyệt; tên phương thức trong tiêu đề phải khớp 100% tên phương thức trong đề án.",
+   "ket_qua": "dự thảo thông báo tuyển sinh đầy đủ thể thức văn bản hành chính."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra đối chiếu trước khi ban hành",
+   "lam_gi": "đối chiếu từng con số trong dự thảo với đề án đã duyệt (ngành, chỉ tiêu, ngưỡng, lệ phí); kiểm tra lại link đăng ký, số điện thoại, địa chỉ nộp hồ sơ; rà chính tả và thể thức; lập danh mục kiểm đánh dấu từng nội dung đã kiểm tra.",
+   "inputs": [
+    "de_an_can_cu",
+    "link_dang_ky",
+    "lien_he",
+    "dia_chi_nop"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (người thứ hai đọc soát độc lập) · AI hỗ trợ: đối chiếu sơ bộ số liệu với đề án, lập danh mục kiểm tra",
+   "luu_y": "đây là cổng chặn lỗi cuối — sai một con số chỉ tiêu hay một ký tự trong link đăng ký đều gây hậu quả công khai; nên có người thứ hai đọc soát độc lập.",
+   "ket_qua": "danh mục kiểm tra trước khi công bố có đánh dấu đạt từng nội dung; dự thảo đã sửa lỗi (nếu có)."
+  },
+  {
+   "n": 7,
+   "title": "Ban hành và công bố",
+   "lam_gi": "trình người có thẩm quyền (Trưởng phòng Đào tạo) ký ban hành; đăng thông báo lên website trường, fanpage và các kênh truyền thông; chuyển file sang định dạng Word để lưu hồ sơ và gửi các khoa phối hợp.",
+   "inputs": [
+    "phuong_thuc"
+   ],
+   "vai_tro": "Trưởng phòng Đào tạo ký ban hành; chuyên viên Phòng Đào tạo đăng công khai · AI hỗ trợ: chuẩn bị tài liệu trình ký và đăng tải lên các kênh",
+   "luu_y": "ghi lại ngày giờ đăng công khai để làm bằng chứng đã công bố đúng hạn; mọi điều chỉnh sau công bố phải ban hành thông báo sửa đổi, không được sửa lặng lẽ.",
+   "ket_qua": "thông báo tuyển sinh hoàn chỉnh đã ký, đã đăng công khai và lưu hồ sơ."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Tên phương thức, danh sách ngành, chỉ tiêu, ngưỡng, lệ phí khớp 100% đề án đã duyệt (đúng số, ngày ký nêu trong phần Căn cứ).",
+  "Không tự ý thêm ngành, thay đổi chỉ tiêu hay hạ ngưỡng so với đề án.",
+  "Điều kiện xét tuyển diễn đạt dễ hiểu, đo lường được (không gây tranh cãi khi áp dụng).",
+  "Hồ sơ ghi rõ loại bản (bản chính/bản sao công chứng) và số lượng từng loại giấy tờ.",
+  "Thời gian ghi đủ ngày/tháng/năm; link đăng ký trực tuyến truy cập được; số điện thoại/email tư vấn có người trực.",
+  "Mọi số liệu, địa chỉ, link, thông tin liên hệ khớp với Input đã cho; không bịa đặt.",
+  "Đúng thể thức văn bản hành chính theo NĐ 30/2020/NĐ-CP.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (đề án đã duyệt + Quy chế tuyển sinh văn bản hiện hành nêu tại phap-ly.md).",
+  "Đã qua Human gate: Trưởng phòng Đào tạo đã ký ban hành."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thông báo tuyển sinh lấy dữ kiện từ đề án và quyết định đã ban hành; số liệu không khớp thì gắn cờ, không chọn số.",
+  "Bản tiếng Anh cho thí sinh quốc tế dùng bảng thuật ngữ."
+ ],
+ "cho_xac_nhan": [
+  "Kênh đăng thông báo (C5).",
+  "Người ký (C1)."
+ ],
+ "output_structure": [
+  "Tiêu đề hành chính: quốc hiệu, tiêu ngữ, tên cơ quan ban hành, số ký hiệu, địa điểm – ngày tháng.",
+  "Tên văn bản: THÔNG BÁO TUYỂN SINH ĐẠI HỌC NĂM ... (ghi rõ phương thức xét tuyển).",
+  "Căn cứ: số, ngày ký của đề án tuyển sinh đã duyệt.",
+  "Mục 1 – Đối tượng và điều kiện xét tuyển.",
+  "Mục 2 – Ngành tuyển sinh và chỉ tiêu: bảng (TT, ngành, mã ngành, chỉ tiêu).",
+  "Mục 3 – Hồ sơ đăng ký xét tuyển: danh mục đánh số thứ tự, ghi rõ loại bản và số lượng.",
+  "Mục 4 – Thời gian: nhận hồ sơ, xét tuyển, công bố kết quả, nhập học.",
+  "Mục 5 – Lệ phí xét tuyển.",
+  "Mục 6 – Cách thức nộp hồ sơ: trực tiếp/qua bưu điện (địa chỉ), trực tuyến (link).",
+  "Thông tin liên hệ tư vấn (điện thoại, email).",
+  "Nơi nhận, chữ ký người ký ban hành và con dấu. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề hành chính: quốc hiệu, tiêu ngữ, tên cơ quan ban hành, số ký hiệu, địa điểm –\n   ngày tháng.\n\n2. Tên văn bản: THÔNG BÁO TUYỂN SINH ĐẠI HỌC NĂM ... (ghi rõ phương thức xét tuyển).\n\n3. Căn cứ: số, ngày ký của đề án tuyển sinh đã duyệt.\n\n4. Mục 1 – Đối tượng và điều kiện xét tuyển.\n\n5. Mục 2 – Ngành tuyển sinh và chỉ tiêu: bảng (TT, ngành, mã ngành, chỉ tiêu).\n\n6. Mục 3 – Hồ sơ đăng ký xét tuyển: danh mục đánh số thứ tự, ghi rõ loại bản và số lượng.\n\n7. Mục 4 – Thời gian: nhận hồ sơ, xét tuyển, công bố kết quả, nhập học.\n\n8. Mục 5 – Lệ phí xét tuyển.\n\n9. Mục 6 – Cách thức nộp hồ sơ: trực tiếp/qua bưu điện (địa chỉ), trực tuyến (link).\n\n10. Thông tin liên hệ tư vấn (điện thoại, email).\n\n11. Nơi nhận, chữ ký người ký ban hành và con dấu.",
+ "human_gate_check": "Đã qua Human gate: Trưởng phòng Đào tạo đã ký ban hành.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 06/2026/TT-BGDĐT, hiệu lực 15/02/2026\n\nNguồn: https://vanban.chinhphu.vn/?docid=217071&pageid=27160\n\nYêu cầu năm tuyển sinh, phương thức, trình độ và đề án đã duyệt. Đối chiếu quy chế 06/2026 và hướng dẫn năm tuyển sinh về điều kiện, quy đổi điểm, điểm cộng, thứ tự nguyện vọng; không giữ công thức cũ hoặc cộng hai lần chứng chỉ. Không tự đặt chỉ tiêu/ngưỡng khi chưa có quyết định và căn cứ.\n",
+ "outputs_dir": "skills/vnuis-ts-soan-thong-bao-tuyen-sinh-dai-hoc/references"
+}

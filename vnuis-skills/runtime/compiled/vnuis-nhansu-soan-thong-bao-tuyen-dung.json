@@ -1,0 +1,232 @@
+{
+ "name": "vnuis-nhansu-soan-thong-bao-tuyen-dung",
+ "title": "Soạn thông báo tuyển dụng",
+ "description": "Dùng khi kế hoạch tuyển dụng viên chức đã được Hiệu trưởng phê duyệt và cần soạn thông báo đăng công khai: vị trí, chỉ tiêu, tiêu chuẩn, hồ sơ, thời hạn, lệ phí.",
+ "group": "nhansu",
+ "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+ "previous_name": "vnuis-thong-bao-tuyen-dung",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị",
+ "when": "Khi kế hoạch tuyển dụng viên chức đã được Hiệu trưởng phê duyệt và cần ban hành Thông báo tuyển dụng\nđể đăng công khai trên website trường, niêm yết tại trụ sở và gửi các kênh truyền thông: liệt kê đầy đủ\nvị trí, chỉ tiêu, tiêu chuẩn từng vị trí, thành phần hồ sơ, thời gian – địa điểm – lệ phí nhận hồ sơ,\nhình thức và nội dung xét/thi tuyển.",
+ "inputs": [
+  {
+   "key": "dot_tuyen_dung",
+   "desc": "Tên đợt tuyển dụng (VD: tuyển dụng viên chức năm 2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "vi_tri_chi_tieu",
+   "desc": "Danh sách vị trí: tên vị trí + chức danh nghề nghiệp/mã số + số lượng chỉ tiêu + đơn vị sử dụng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tieu_chuan_chung",
+   "desc": "Điều kiện chung: quốc tịch, tuổi, sức khỏe, lý lịch, văn bằng...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tieu_chuan_rieng",
+   "desc": "Tiêu chuẩn riêng từng vị trí: trình độ, ngành đào tạo, chứng chỉ, kinh nghiệm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_so_gom",
+   "desc": "Thành phần hồ sơ: Phiếu đăng ký dự tuyển (mẫu văn bản hiện hành nêu tại phap-ly.md) + các giấy tờ kèm theo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han_nhan",
+   "desc": "Thời gian nhận hồ sơ (từ ngày – đến ngày, tối thiểu 30 ngày)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem_nhan",
+   "desc": "Địa điểm nhận hồ sơ trực tiếp / địa chỉ nhận qua bưu điện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hinh_thuc_tuyen",
+   "desc": "Xét tuyển / Thi tuyển; nội dung vòng 1, vòng 2; thang điểm, điểm liệt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "le_phi",
+   "desc": "Mức lệ phí dự tuyển (nếu thu)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "lien_he",
+   "desc": "Đầu mối liên hệ: đơn vị, điện thoại, email, website tra cứu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng (thừa ủy quyền)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo: Cập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n- Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo: Thêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Rà soát căn cứ pháp lý và kế hoạch",
+   "lam_gi": "lấy số lượng, cơ cấu vị trí từ Kế hoạch tuyển dụng đã được phê duyệt; đối chiếu `tieu_chuan_chung`, `tieu_chuan_rieng` với đề án vị trí việc làm và điều kiện đăng ký dự tuyển tại văn bản hiện hành nêu tại phap-ly.md; lập bảng đối chiếu (chỉ tiêu kế hoạch – chỉ tiêu dự thảo thông báo) để đảm bảo khớp nhau.",
+   "inputs": [
+    "dot_tuyen_dung",
+    "vi_tri_chi_tieu",
+    "tieu_chuan_chung",
+    "tieu_chuan_rieng"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "thông báo chỉ được ban hành sau khi kế hoạch đã phê duyệt — ban hành trước là sai trình tự; tổng chỉ tiêu trong thông báo phải khớp 100% kế hoạch; tiêu chuẩn không được đặt thêm điều kiện trái quy định (VD: giới hạn độ tuổi, giới tính khi không có căn cứ).",
+   "ket_qua": "bảng đối chiếu căn cứ (kế hoạch – đề án VTVL – văn bản hiện hành nêu tại phap-ly.md)."
+  },
+  {
+   "n": 2,
+   "title": "Liệt kê vị trí – chỉ tiêu dạng bảng",
+   "lam_gi": "từ `vi_tri_chi_tieu`, trình bày dạng bảng: STT | Vị trí việc làm | Chức danh nghề nghiệp (mã số) | Đơn vị sử dụng | Số lượng; tính tổng chỉ tiêu và đối chiếu với kế hoạch đã duyệt.",
+   "inputs": [
+    "vi_tri_chi_tieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "ghi đúng mã số chức danh nghề nghiệp (VD: V.07.01.03) — sai mã số là lỗi nghiêm trọng; tên vị trí việc làm phải khớp đề án vị trí việc làm; kiểm tra tổng số lượng từng dòng cộng lại bằng tổng chỉ tiêu.",
+   "ket_qua": "bảng vị trí – chỉ tiêu – đơn vị (mục 1 của thông báo)."
+  },
+  {
+   "n": 3,
+   "title": "Viết điều kiện, tiêu chuẩn",
+   "lam_gi": "tách 2 mục — (a) Điều kiện chung cho mọi vị trí từ `tieu_chuan_chung` (quốc tịch, tuổi, lý lịch, sức khỏe, không vi phạm pháp luật); (b) Tiêu chuẩn cụ thể từng vị trí từ `tieu_chuan_rieng` (trình độ, ngành/chuyên ngành đào tạo, chứng chỉ ngoại ngữ – tin học, kinh nghiệm, yêu cầu khác).",
+   "inputs": [
+    "tieu_chuan_chung",
+    "tieu_chuan_rieng"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "điều kiện chung bám sát luật viên chức và nghị định hướng dẫn hiện hành, theo văn bản hiện hành nêu tại phap-ly.md, không tự sáng tạo thêm; tiêu chuẩn riêng phải tương ứng đúng từng vị trí trong bảng Bước 2 — bẫy là viết tiêu chuẩn của vị trí này gán nhầm sang vị trí khác.",
+   "ket_qua": "dự thảo mục 2 (điều kiện chung) và mục 3 (tiêu chuẩn từng vị trí)."
+  },
+  {
+   "n": 4,
+   "title": "Mô tả hồ sơ dự tuyển",
+   "lam_gi": "từ `ho_so_gom`, liệt kê đầy đủ thành phần hồ sơ: Phiếu đăng ký dự tuyển (theo mẫu văn bản hiện hành nêu tại phap-ly.md); bản sao văn bằng, chứng chỉ; giấy khám sức khỏe; ảnh; bản sao CCCD...; ghi rõ hồ sơ nộp bản sao, khi trúng tuyển xuất trình bản gốc để đối chiếu.",
+   "inputs": [
+    "ho_so_gom"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "liệt kê đúng tên từng loại giấy tờ theo quy định — thiếu thành phần hồ sơ gây khiếu nại; ghi rõ thời hạn hiệu lực của giấy khám sức khỏe (06 tháng); không yêu cầu giấy tờ ngoài quy định.",
+   "ket_qua": "dự thảo mục 4 (hồ sơ đăng ký dự tuyển)."
+  },
+  {
+   "n": 5,
+   "title": "Ghi thời gian – địa điểm – lệ phí nhận hồ sơ",
+   "lam_gi": "từ `thoi_han_nhan`, ghi rõ thời gian nhận (từ ngày – đến ngày, giờ hành chính), đảm bảo **ít nhất 30 ngày** kể từ ngày thông báo; từ `dia_diem_nhan`, ghi địa điểm nộp trực tiếp và/hoặc gửi qua bưu điện (ghi rõ tính theo dấu bưu điện); từ `le_phi`, ghi mức lệ phí (nếu thu).",
+   "inputs": [
+    "thoi_han_nhan",
+    "dia_diem_nhan",
+    "le_phi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "đếm đủ 30 ngày theo lịch — bẫy là tính thiếu ngày nghỉ; địa chỉ nhận hồ sơ phải chính xác, có số điện thoại liên hệ; lệ phí theo đúng quy định, không tự đặt mức.",
+   "ket_qua": "dự thảo mục 5 (thời gian, địa điểm, lệ phí)."
+  },
+  {
+   "n": 6,
+   "title": "Mô tả hình thức, nội dung tuyển dụng",
+   "lam_gi": "từ `hinh_thuc_tuyen`, mô tả rõ: xét tuyển (vòng 1 kiểm tra điều kiện + vòng 2 phỏng vấn/thực hành) hoặc thi tuyển (các vòng thi, môn thi); ghi thang điểm (100), điểm liệt (dưới 50), cách tính điểm ưu tiên; ghi kênh công khai danh sách vòng 2 và kết quả trúng tuyển.",
+   "inputs": [
+    "hinh_thuc_tuyen",
+    "lien_he"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "nội dung vòng 2 phải khớp với phương án đã phê duyệt trong kế hoạch; điểm liệt và cách cộng điểm ưu tiên ghi đúng quy định văn bản hiện hành nêu tại phap-ly.md; cam kết công khai kết quả trên website để đảm bảo minh bạch.",
+   "ket_qua": "dự thảo mục 6 (hình thức, nội dung tuyển dụng)."
+  },
+  {
+   "n": 7,
+   "title": "Kiểm tra thể thức, ký ban hành và đăng công khai",
+   "lam_gi": "kiểm tra toàn văn: thể thức theo NĐ 30/2020 (tiêu đề \"THÔNG BÁO\", không có trích yếu \"V/v\"); chính tả; số liệu chỉ tiêu khớp kế hoạch; thẩm quyền ký (`nguoi_ky`); nơi nhận (đăng website, niêm yết, lưu); trình `nguoi_ky` ký ban hành; đăng lên website trường, niêm yết tại trụ sở, lưu bằng chứng đăng tải.",
+   "inputs": [
+    "lien_he",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Hiệu trưởng (người ký) · AI hỗ trợ: chuẩn bị hồ sơ trình ký đầy đủ để xem xét nhanh",
+   "luu_y": "kiểm tra lần cuối số ký hiệu, ngày tháng ban hành trước khi ký; lưu ảnh chụp trang web đã đăng và biên bản niêm yết làm bằng chứng đã công khai đúng quy định.",
+   "ket_qua": "Thông báo tuyển dụng đã ký ban hành, đăng website và niêm yết."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và cấu trúc theo references/quy-cach-dau-ra.md và căn cứ đã chọn tại references/phap-ly.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+  "Tổng chỉ tiêu trong thông báo phải khớp 100% kế hoạch",
+  "Tiêu chuẩn không được đặt thêm điều kiện trái quy định (VD: giới hạn độ tuổi, giới tính khi không có căn cứ)",
+  "Ghi đúng mã số chức danh nghề nghiệp (VD: V.07.01.03) — sai mã số là lỗi nghiêm trọng"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thông báo đăng tại mục Tuyển dụng của website; tiêu chuẩn và chỉ tiêu theo kế hoạch tuyển dụng đã duyệt.",
+  "Yêu cầu ngoại ngữ cho vị trí giảng dạy bằng tiếng Anh ghi theo quy định của Trường.",
+  "Cần bản tiếng Anh khi đăng tuyển quốc tế; dùng vnuis-tt-dich-song-ngu-va-thuat-ngu."
+ ],
+ "cho_xac_nhan": [
+  "Kế hoạch tuyển dụng và người ký (C1).",
+  "Hình thức tuyển dụng (C2)."
+ ],
+ "output_structure": [
+  "Quốc hiệu, tiêu ngữ (\"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\" / \"Độc lập - Tự do - Hạnh phúc\");",
+  "Tên cơ quan ban hành + số ký hiệu văn bản; địa danh, ngày tháng năm ban hành;",
+  "Tiêu đề \"THÔNG BÁO\" + tên đợt tuyển dụng;",
+  "Căn cứ pháp lý (căn cứ hiện hành đã chọn; Kế hoạch tuyển dụng đã phê duyệt);",
+  "Mục 1. Số lượng, vị trí tuyển dụng (bảng: STT | Vị trí việc làm | Chức danh nghề nghiệp | Đơn vị | Số lượng);",
+  "Mục 2. Điều kiện đăng ký dự tuyển (điều kiện chung);",
+  "Mục 3. Tiêu chuẩn cụ thể từng vị trí;",
+  "Mục 4. Hồ sơ đăng ký dự tuyển (thành phần; nộp bản sao, đối chiếu bản gốc khi trúng tuyển);",
+  "Mục 5. Thời gian, địa điểm nhận hồ sơ (+ lệ phí dự tuyển);",
+  "Mục 6. Hình thức, nội dung tuyển dụng (vòng 1, vòng 2, thang điểm, điểm liệt, điểm ưu tiên);",
+  "Mục 7. Thông tin liên hệ + kênh công khai kết quả;",
+  "Nơi nhận; chữ ký người có thẩm quyền (chức danh, họ tên). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu, tiêu ngữ (\"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\" / \"Độc lập - Tự do - Hạnh phúc\");\n\n2. Tên cơ quan ban hành + số ký hiệu văn bản; địa danh, ngày tháng năm ban hành;\n\n3. Tiêu đề \"THÔNG BÁO\" + tên đợt tuyển dụng;\n\n4. Căn cứ pháp lý (căn cứ hiện hành đã chọn; Kế hoạch tuyển dụng đã phê duyệt);\n\n5. Mục 1. Số lượng, vị trí tuyển dụng (bảng: STT | Vị trí việc làm | Chức danh nghề nghiệp | Đơn vị | Số lượng);\n\n6. Mục 2. Điều kiện đăng ký dự tuyển (điều kiện chung);\n\n7. Mục 3. Tiêu chuẩn cụ thể từng vị trí;\n\n8. Mục 4. Hồ sơ đăng ký dự tuyển (thành phần; nộp bản sao, đối chiếu bản gốc khi trúng tuyển);\n\n9. Mục 5. Thời gian, địa điểm nhận hồ sơ (+ lệ phí dự tuyển);\n\n10. Mục 6. Hình thức, nội dung tuyển dụng (vòng 1, vòng 2, thang điểm, điểm liệt, điểm ưu tiên);\n\n11. Mục 7. Thông tin liên hệ + kênh công khai kết quả;\n\n12. Nơi nhận; chữ ký người có thẩm quyền (chức danh, họ tên).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-259-2026-nd-cp-quy-dinh-ve-tuyen-dung-su-dung-va-quan-ly-vien-chuc-119260707070701707.htm\n\nCập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n\n## Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/huong-dan-quan-ly-doi-ngu-nha-giao-sap-xep-bo-nhiem-chuc-danh-thuc-hien-che-do-chinh-sach-xep-luong-119260811083919821.htm\n\nThêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n",
+ "outputs_dir": "skills/vnuis-nhansu-soan-thong-bao-tuyen-dung/references"
+}

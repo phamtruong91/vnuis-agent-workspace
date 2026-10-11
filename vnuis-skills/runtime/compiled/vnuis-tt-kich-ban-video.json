@@ -1,0 +1,185 @@
+{
+ "name": "vnuis-tt-kich-ban-video",
+ "title": "Kịch bản video truyền thông",
+ "description": "Dùng khi cần kịch bản video truyền thông theo từng cảnh (giới thiệu trường, ngành, quảng bá tuyển sinh, tóm tắt sự kiện, phỏng vấn, video ngắn TikTok/Reels): hình ảnh, lời thoại, âm thanh, thời lượng.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-kich-ban-video-truyen-thong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi cần kịch bản video: giới thiệu trường/ngành, quảng bá tuyển sinh, recap sự kiện,\nphỏng vấn, viral ngắn cho TikTok/Reels.",
+ "inputs": [
+  {
+   "key": "chu_de",
+   "desc": "Chủ đề video",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dinh_dang",
+   "desc": "TVC 60–90s / viral 30–60s / phóng sự 3–5 phút / recap",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kenh",
+   "desc": "TikTok / YouTube / fanpage (quyết định tỉ lệ khung hình)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thong_diep",
+   "desc": "Thông điệp chính cần truyền tải",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nhan_vat",
+   "desc": "Nhân vật xuất hiện (sinh viên, giảng viên, cựu SV...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Bối cảnh quay (giảng đường, lab, ký túc xá...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "facts",
+   "desc": "Số liệu, thông tin bắt buộc phải xuất hiện",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định cấu trúc và chia cảnh",
+   "lam_gi": "chọn cấu trúc theo định dạng: hook 3 giây đầu (viral) → thân → lời kêu gọi hành động cuối; chia số cảnh phù hợp tổng thời lượng; mỗi cảnh dự kiến: STT, thời lượng, ý chính.",
+   "inputs": [
+    "chu_de",
+    "dinh_dang",
+    "kenh",
+    "thong_diep"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "tổng thời lượng các cảnh phải khớp định dạng (viral 30–60s, TVC 60–90s, phóng sự 3–5 phút); hook 3 giây đầu quyết định người xem có ở lại không.",
+   "ket_qua": "Khung cảnh (số cảnh, thời lượng, ý chính từng cảnh)."
+  },
+  {
+   "n": 2,
+   "title": "Viết chi tiết từng cảnh",
+   "lam_gi": "với từng cảnh, mô tả cụ thể 5 yếu tố: hình ảnh (khung hình, góc quay, nhân vật, bối cảnh), lời thoại/voice-over, âm thanh/nhạc, chữ trên màn hình, thời lượng chính xác.",
+   "inputs": [
+    "nhan_vat",
+    "dia_diem",
+    "facts",
+    "thong_diep"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "số liệu phải có nguồn, không bịa; lời thoại không gây hiểu lầm về cam kết (VD: \"đảm bảo việc làm\"); mỗi cảnh chỉ truyền tải một ý chính.",
+   "ket_qua": "Bảng kịch bản chi tiết từng cảnh."
+  },
+  {
+   "n": 3,
+   "title": "Viết lời thoại, voice-over theo brand voice",
+   "lam_gi": "hoàn thiện toàn bộ lời thoại nhân vật và voice-over theo brand voice trẻ trung, học thuật; kiểm tra độ dài đọc khớp thời lượng từng cảnh (mỗi câu VO đọc trong ~5 giây).",
+   "inputs": [
+    "thong_diep"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "đọc thử ước lượng thời gian; câu dài quá thời lượng cảnh thì cắt gọn, không nói nhanh.",
+   "ket_qua": "Lời thoại/VO hoàn chỉnh, khớp thời lượng từng cảnh."
+  },
+  {
+   "n": 4,
+   "title": "Ghi yêu cầu quay dựng",
+   "lam_gi": "tổng hợp yêu cầu kỹ thuật: tỉ lệ khung hình theo kênh, phong cách màu, nhạc nền, phụ đề, định dạng file xuất.",
+   "inputs": [
+    "kenh",
+    "dinh_dang"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, lập bảng biểu, định dạng",
+   "luu_y": "nhạc và hình ảnh sử dụng phải rõ bản quyền; quay hình sinh viên phải được người xuất hiện đồng ý.",
+   "ket_qua": "Danh sách yêu cầu quay dựng."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra tổng thể",
+   "lam_gi": "kiểm tra 4 điểm: facts có nguồn, tổng thời lượng khớp định dạng, lời kêu gọi hành động rõ ràng, thông điệp xuyên suốt các cảnh; lập danh mục kiểm facts; phát hiện lỗi thì quay lại bước tương ứng sửa.",
+   "inputs": [
+    "facts"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "số liệu trong kịch bản phải được đơn vị sở hữu số liệu xác nhận trước khi bấm máy.",
+   "ket_qua": "Kịch bản hoàn chỉnh + danh mục kiểm facts + yêu cầu quay dựng."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Kịch bản chi tiết từng cảnh (dạng bảng)",
+  "Có đầy đủ sản phẩm: Danh sách yêu cầu quay dựng + danh mục kiểm facts",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Tổng thời lượng các cảnh phải khớp định dạng (viral 30–60s, TVC 60–90s, phóng sự 3–5 phút)",
+  "Số liệu phải có nguồn, không bịa > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Trưởng phòng duyệt kịch bản trước khi bấm máy.",
+  "Số liệu trong kịch bản phải được đơn vị sở hữu số liệu xác nhận."
+ ],
+ "guardrails": [
+  "Không dùng hình ảnh, âm thanh không rõ bản quyền.",
+  "Không bịa số liệu, thành tích.",
+  "Không quay hình sinh viên khi chưa được đồng ý.",
+  "Không đưa lời thoại gây hiểu lầm về cam kết (VD: \"đảm bảo việc làm\")."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kịch bản video giới thiệu có thể có phụ đề tiếng Anh; ghi rõ cảnh nào cần quyền hình ảnh.",
+  "Số liệu trong video lấy từ nguồn chính thức (C4); không dùng số website mâu thuẫn."
+ ],
+ "cho_xac_nhan": [
+  "Quy định quyền hình ảnh người xuất hiện (C2).",
+  "Người duyệt video (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề: \"KỊCH BẢN VIDEO — ...\" (tên video, thời lượng, tỉ lệ khung hình) + tên trường (+ ghi chú giả lập nếu mô phỏng).",
+  "Bảng kịch bản từng cảnh với các cột: Cảnh – Thời lượng – Hình ảnh – Lời thoại/VO – Âm thanh/Chữ màn hình.",
+  "Yêu cầu quay dựng (tỉ lệ khung hình, phong cách màu, nhạc nền, phụ đề).",
+  "Danh mục kiểm facts (phần kèm theo)."
+ ],
+ "output_structure_raw": "1. Tiêu đề: \"KỊCH BẢN VIDEO — ...\" (tên video, thời lượng, tỉ lệ khung hình) + tên trường (+ ghi chú giả lập nếu mô phỏng).\n\n2. Bảng kịch bản từng cảnh với các cột: Cảnh – Thời lượng – Hình ảnh – Lời thoại/VO – Âm thanh/Chữ màn hình.\n\n3. Yêu cầu quay dựng (tỉ lệ khung hình, phong cách màu, nhạc nền, phụ đề).\n\n4. Danh mục kiểm facts (phần kèm theo).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-kich-ban-video/references"
+}

@@ -1,0 +1,203 @@
+{
+ "name": "vnuis-dt-ke-hoach-dao-tao-nam-hoc",
+ "title": "Lập kế hoạch năm học",
+ "description": "Dùng khi Phòng Đào tạo xây dựng kế hoạch năm học mới hoặc điều chỉnh kế hoạch hiện hành: khai giảng, học kỳ, lịch thi, nghỉ lễ Tết, xét tốt nghiệp, mốc tuyển sinh, phân công đơn vị.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-ke-hoach-nam-hoc",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (kế hoạch đào tạo)",
+ "when": "Khi cần xây dựng kế hoạch năm học mới (năm học đào tạo hệ chính quy) hoặc điều chỉnh\nkế hoạch năm học hiện hành: xác định khung thời gian khai giảng, các học kỳ, lịch thi\nkết thúc học phần, các kỳ nghỉ lễ/Tết, lịch bảo vệ khóa luận/đồ án tốt nghiệp, các đợt\nxét và công nhận tốt nghiệp, mốc tuyển sinh và phân công đơn vị thực hiện từng đầu việc.",
+ "inputs": [
+  {
+   "key": "nam_hoc",
+   "desc": "Năm học cần lập kế hoạch (ví dụ: 2026–2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_hoc_ky",
+   "desc": "Số học kỳ trong năm (2 hoặc 3, kể cả học kỳ hè nếu có)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngay_khai_giang",
+   "desc": "Ngày dự kiến khai giảng năm học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "lich_nghi_le_tet",
+   "desc": "Các đợt nghỉ lễ, Tết trong năm (Tết Dương lịch, Tết Nguyên đán, 30/4–1/5, Giỗ Tổ...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "moc_tuyen_sinh",
+   "desc": "Các mốc tuyển sinh (nhập học tân sinh viên, xét tuyển đợt bổ sung...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dot_xet_tot_nghiep",
+   "desc": "Các đợt xét và công nhận tốt nghiệp dự kiến trong năm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "he_dao_tao",
+   "desc": "Hệ đào tạo áp dụng (chính quy / vừa làm vừa học / từ xa...)",
+   "required": false,
+   "note": "Không (mặc định: chính quy)"
+  },
+  {
+   "key": "don_vi_phoi_hop",
+   "desc": "Các đơn vị phối hợp thực hiện (các khoa, Phòng Đào tạo (công tác sinh viên), Phòng Đào tạo (khảo thí, đảm bảo chất lượng)...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng phụ trách đào tạo",
+   "required": false,
+   "note": "Không (mặc định: Phó Hiệu trưởng)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (kế hoạch đào tạo)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác lập khung thời gian năm học",
+   "lam_gi": "từ `nam_hoc`, `ngay_khai_giang`, `so_hoc_ky`, `lich_nghi_le_tet` dựng khung thời gian: ngày khai giảng; ngày bắt đầu – kết thúc từng học kỳ (học kỳ 1, học kỳ 2, học kỳ hè nếu có); lịch thi kết thúc học phần cuối mỗi học kỳ (thường 2–3 tuần) kèm lịch thi lại/thi cải thiện; các kỳ nghỉ lễ/Tết; lịch bảo vệ khóa luận/đồ án tốt nghiệp theo từng đợt.",
+   "inputs": [
+    "nam_hoc",
+    "ngay_khai_giang",
+    "so_hoc_ky",
+    "lich_nghi_le_tet",
+    "he_dao_tao"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: dựng khung sơ bộ, đối chiếu khung kế hoạch thời gian của Bộ GD&ĐT",
+   "luu_y": "khung thời gian năm học của trường phải nằm trong khung kế hoạch thời gian năm học do Bộ GD&ĐT ban hành hằng năm; đảm bảo đủ số tuần học theo quy định (thường ≥ 15 tuần/học kỳ chính); học kỳ hè không được đè lên thời gian của học kỳ chính.",
+   "ket_qua": "khung thời gian năm học (khai giảng, các học kỳ, lịch thi, nghỉ lễ/Tết, bảo vệ tốt nghiệp) dạng bảng sơ bộ."
+  },
+  {
+   "n": 2,
+   "title": "Xác định các mốc tuyển sinh",
+   "lam_gi": "từ `moc_tuyen_sinh` đưa vào khung thời gian Bước 1 các mốc: nhập học tân sinh viên (các đợt), xét tuyển bổ sung; kiểm tra mốc nhập học không trùng với tuần thi kết thúc học phần của sinh viên đang học.",
+   "inputs": [
+    "moc_tuyen_sinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: chèn mốc tuyển sinh vào khung, kiểm tra xung đột lịch",
+   "luu_y": "mốc xét tuyển bổ sung phải sau khi có kết quả xét tuyển đợt chính và còn trong thời hạn Bộ cho phép; tuần sinh hoạt công dân đầu khóa của tân sinh viên phải được bố trí ngay sau nhập học.",
+   "ket_qua": "các mốc tuyển sinh đã chèn vào khung thời gian năm học."
+  },
+  {
+   "n": 3,
+   "title": "Xác định các đợt xét và công nhận tốt nghiệp",
+   "lam_gi": "từ `dot_xet_tot_nghiep` xác định số đợt trong năm (thường 2–4 đợt), thời điểm họp Hội đồng xét tốt nghiệp và thời điểm trao bằng từng đợt; đặt các đợt xét sau khi đã có đủ điểm thi và điểm bảo vệ khóa luận của đợt tương ứng.",
+   "inputs": [
+    "dot_xet_tot_nghiep"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: chèn mốc xét tốt nghiệp vào khung, kiểm tra thứ tự điểm thi/bảo vệ",
+   "luu_y": "bẫy thường gặp — đặt lịch họp Hội đồng xét tốt nghiệp trước khi có đủ điểm thi/bảo vệ, phải dời lịch; đợt xét cuối năm học phải xong trước ngày kết thúc năm học để kịp báo cáo.",
+   "ket_qua": "các đợt xét tốt nghiệp đã chèn vào khung thời gian năm học."
+  },
+  {
+   "n": 4,
+   "title": "Phân công đơn vị thực hiện",
+   "lam_gi": "với mỗi đầu việc chính trong khung thời gian, phân công từ `don_vi_phoi_hop`: đơn vị chủ trì và đơn vị phối hợp — Phòng Đào tạo chủ trì chung; các khoa (lên lịch học phần, phân công giảng viên); Phòng Đào tạo (khảo thí, đảm bảo chất lượng) (tổ chức thi); Phòng Đào tạo (công tác sinh viên) (công tác tân sinh viên); Phòng TC&QT (kế hoạch – tài chính) (thu học phí).",
+   "inputs": [
+    "don_vi_phoi_hop"
+   ],
+   "vai_tro": "Trưởng phòng Đào tạo quyết định phân công đơn vị · AI hỗ trợ: đề xuất phương án phân công chủ trì/phối hợp",
+   "luu_y": "mỗi đầu việc chỉ có một đơn vị chủ trì (tránh \"cha chung không ai khóc\"); đầu việc liên quan thu học phí phải gắn với Phòng TC&QT (kế hoạch – tài chính) ngay từ đầu để tránh chậm thu.",
+   "ket_qua": "bảng phân công đơn vị thực hiện (đầu việc – đơn vị chủ trì – đơn vị phối hợp)."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra logic toàn bộ lịch trình",
+   "lam_gi": "rà soát chéo khung thời gian: không trùng lịch thi với nghỉ lễ; học kỳ hè không đè lên học kỳ chính; đủ số tuần học theo quy định; thời gian xét tốt nghiệp đặt sau khi có đủ điểm; mốc tuyển sinh không xung đột với lịch thi; sửa các điểm chưa hợp lý.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: rà soát sơ bộ logic lịch trình, phát hiện xung đột",
+   "luu_y": "đây là cổng chặn lỗi cuối — nên vẽ lịch trên trục thời gian trực quan để phát hiện xung đột; đặc biệt kiểm tra các tuần \"cao điểm\" (vừa thi vừa nhập học vừa xét tốt nghiệp) để điều phối nguồn lực.",
+   "ket_qua": "khung thời gian năm học đã kiểm tra logic, danh sách điều chỉnh (nếu có)."
+  },
+  {
+   "n": 6,
+   "title": "Hoàn thiện và trình ban hành kế hoạch",
+   "lam_gi": "xuất bản bảng tiến độ kế hoạch năm học hoàn chỉnh theo tháng/tuần (mốc thời gian – nội dung – đơn vị thực hiện) kèm bảng phân công và ghi chú điều chỉnh (học kỳ hè, nhiều đợt tuyển sinh nếu có); trình `nguoi_ky` (mặc định Phó Hiệu trưởng phụ trách đào tạo, hoặc Hiệu trưởng) phê duyệt ban hành; gửi các đơn vị triển khai.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Phó Hiệu trưởng (phụ trách đào tạo) hoặc Hiệu trưởng phê duyệt; chuyên viên Phòng Đào tạo gửi các đơn vị · AI hỗ trợ: hoàn thiện kế hoạch, chuẩn bị tài liệu trình ký",
+   "luu_y": "kế hoạch phải được ban hành trước khi năm học bắt đầu đủ thời gian để các đơn vị chuẩn bị; mọi điều chỉnh sau ban hành phải có văn bản điều chỉnh, không sửa lặng lẽ.",
+   "ket_qua": "kế hoạch năm học hoàn chỉnh đã ký ban hành, đã gửi các đơn vị."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Khung thời gian nằm trong khung kế hoạch thời gian năm học của Bộ GD&ĐT; đủ số tuần học theo quy định (≥ 15 tuần/học kỳ chính).",
+  "Không xung đột lịch: lịch thi không trùng nghỉ lễ; học kỳ hè không đè học kỳ chính; xét tốt nghiệp đặt sau khi có đủ điểm thi/bảo vệ; mốc tuyển sinh không xung đột với lịch thi.",
+  "Mỗi đầu việc chỉ có một đơn vị chủ trì duy nhất; đầu việc thu học phí gắn với đơn vị tài chính.",
+  "Thời gian, nội dung, đơn vị thực hiện khớp với Input đã cho.",
+  "Không bịa đặt ngày tháng, văn bản của Bộ hay trích dẫn quy định.",
+  "Kế hoạch được ban hành trước khi năm học bắt đầu; mọi điều chỉnh sau ban hành có văn bản điều chỉnh.",
+  "Đã qua Human gate: Hiệu trưởng đã phê duyệt ban hành."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Tách nhóm người học: chính quy ĐHQGHN, liên kết quốc tế (lịch có thể theo đối tác), tiếng Anh dự bị, sau đại học.",
+  "Ghi cơ sở học (Xuân Thủy, Phan Tây Nhạc, Hòa Lạc) khi kế hoạch có phân bổ lớp; không giả định.",
+  "Mốc năm học (khai giảng, tổng kết) lấy từ lịch do ĐHQGHN hoặc Trường ban hành; không lấy từ tin tức trên website.",
+  "Ràng buộc đầu vào theo phiếu: khung thời gian, danh sách học phần, quy mô lớp."
+ ],
+ "cho_xac_nhan": [
+  "Số học kỳ mỗi năm và lịch của đối tác liên kết (C2).",
+  "Phân bổ các nhóm người học theo cơ sở (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề: KẾ HOẠCH NĂM HỌC ... (ghi rõ tên trường và hệ đào tạo áp dụng).",
+  "Bảng tiến độ kế hoạch năm học: các cột Tháng – Thời gian – Nội dung công việc – Đơn vị thực hiện; sắp xếp theo trình tự thời gian từ khai giảng đến kết thúc năm học; bao gồm khai giảng, các học kỳ, lịch thi, nghỉ lễ/Tết, bảo vệ tốt nghiệp, các mốc tuyển sinh, các đợt xét tốt nghiệp.",
+  "Bảng phân công đơn vị thực hiện: các cột Đầu việc – Đơn vị chủ trì – Đơn vị phối hợp.",
+  "Ghi chú điều chỉnh (nếu có): học kỳ hè, nhiều đợt tuyển sinh hoặc nội dung đặc thù khác. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề: KẾ HOẠCH NĂM HỌC ... (ghi rõ tên trường và hệ đào tạo áp dụng).\n\n2. Bảng tiến độ kế hoạch năm học: các cột Tháng – Thời gian – Nội dung công việc – Đơn vị\n   thực hiện; sắp xếp theo trình tự thời gian từ khai giảng đến kết thúc năm học; bao gồm\n   khai giảng, các học kỳ, lịch thi, nghỉ lễ/Tết, bảo vệ tốt nghiệp, các mốc tuyển sinh,\n   các đợt xét tốt nghiệp.\n\n3. Bảng phân công đơn vị thực hiện: các cột Đầu việc – Đơn vị chủ trì – Đơn vị phối hợp.\n\n4. Ghi chú điều chỉnh (nếu có): học kỳ hè, nhiều đợt tuyển sinh hoặc nội dung đặc thù khác.",
+ "human_gate_check": "Đã qua Human gate: Hiệu trưởng đã phê duyệt ban hành.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (kế hoạch đào tạo). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n",
+ "outputs_dir": "skills/vnuis-dt-ke-hoach-dao-tao-nam-hoc/references"
+}

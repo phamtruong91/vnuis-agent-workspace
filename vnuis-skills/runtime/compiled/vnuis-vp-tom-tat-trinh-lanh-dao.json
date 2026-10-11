@@ -1,0 +1,178 @@
+{
+ "name": "vnuis-vp-tom-tat-trinh-lanh-dao",
+ "title": "Tóm tắt trình lãnh đạo",
+ "description": "Dùng khi lãnh đạo cần nắm nhanh một vấn đề phức tạp từ nhiều nguồn (báo cáo, tờ trình, số liệu) để ra quyết định: bản tóm tắt 1–2 trang kèm bảng vấn đề cần quyết định.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-executive-brief-trinh-lanh-dao",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Ban Giám hiệu và người trình báo; mọi đơn vị",
+ "when": "Khi lãnh đạo cần quyết định một vấn đề phức tạp có nhiều nguồn thông tin: phê duyệt đề án,\nchọn phương án đầu tư, xử lý vụ việc... Thay vì đọc cả chồng tài liệu, lãnh đạo chỉ đọc\nbản yêu cầu 1–2 trang + bảng vấn đề cần quyết định.",
+ "inputs": [
+  {
+   "key": "van_de",
+   "desc": "Vấn đề cần quyết định (1 câu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguon_tai_lieu",
+   "desc": "Danh sách nguồn: báo cáo, tờ trình, bảng số liệu, văn bản liên quan",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tieu_chi_quyet_dinh",
+   "desc": "Các tiêu chí lãnh đạo sẽ dùng để quyết (VD: chi phí, tiến độ, rủi ro, phù hợp chiến lược)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "phuong_an_hien_co",
+   "desc": "Các phương án đang được đề xuất (nếu đã có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "thoi_han_quyet_dinh",
+   "desc": "Hạn chót cần ra quyết định",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Ban Giám hiệu và người trình báo; mọi đơn vị"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Kiểm kê nguồn tài liệu",
+   "lam_gi": "liệt kê toàn bộ nguồn trong `nguon_tai_lieu`; kiểm tra mỗi nguồn có đủ thông tin trích dẫn (tên, số/ký hiệu, ngày); nêu rõ nguồn nào còn thiếu và ảnh hưởng của việc thiếu đó đến độ tin cậy của bản yêu cầu.",
+   "inputs": [
+    "nguon_tai_lieu",
+    "van_de"
+   ],
+   "vai_tro": "Thư ký lãnh đạo (hoặc chuyên viên đơn vị trình vấn đề) · AI hỗ trợ: kiểm kê nguồn, ghi nhận nguồn thiếu và mâu thuẫn",
+   "luu_y": "nguồn thiếu không được \"bù\" bằng suy đoán — phải ghi rõ trong bản yêu cầu; các nguồn mâu thuẫn nhau phải được ghi nhận ngay từ bước này để xử lý ở Bước 3–4.",
+   "ket_qua": "danh mục nguồn (đủ/thiếu) + ghi chú ảnh hưởng của nguồn thiếu."
+  },
+  {
+   "n": 2,
+   "title": "Tóm tắt từng nguồn",
+   "lam_gi": "mỗi nguồn tóm tắt 3–5 dòng: sự kiện chính, số liệu chính, kết luận/quan điểm của nguồn; giữ nguyên ý của nguồn, không trộn ý kiến cá nhân.",
+   "inputs": [
+    "nguon_tai_lieu"
+   ],
+   "vai_tro": "Thư ký lãnh đạo (hoặc chuyên viên đơn vị trình vấn đề) · AI hỗ trợ: tóm tắt từng nguồn 3–5 dòng, giữ nguyên ý và ghi nguồn số liệu",
+   "luu_y": "tóm tắt phải trung thành — không \"làm mềm\" số liệu bất lợi của bất kỳ phương án nào; mỗi số liệu ghi rõ lấy từ nguồn nào.",
+   "ket_qua": "bộ tóm tắt từng nguồn (3–5 dòng/nguồn)."
+  },
+  {
+   "n": 3,
+   "title": "So sánh phương án theo tiêu chí",
+   "lam_gi": "lập bảng ma trận — hàng là các tiêu chí trong `tieu_chi_quyet_dinh`, cột là từng phương án trong `phuong_an_hien_co`; nếu chưa có phương án thì đề xuất các phương án hiển nhiên rút ra từ nguồn (làm / không làm / hoãn); mỗi ô điền đánh giá và ghi nguồn số liệu.",
+   "inputs": [
+    "phuong_an_hien_co",
+    "tieu_chi_quyet_dinh"
+   ],
+   "vai_tro": "Thư ký lãnh đạo (hoặc chuyên viên đơn vị trình vấn đề) · AI hỗ trợ: lập bảng ma trận so sánh phương án theo tiêu chí, mỗi ô có nguồn",
+   "luu_y": "ô nào không có số liệu thì ghi \"chưa có số liệu\", không bịa; mọi phương án phải được đánh giá trên cùng một bộ tiêu chí để so sánh công bằng.",
+   "ket_qua": "bảng so sánh phương án theo tiêu chí (mỗi ô có nguồn)."
+  },
+  {
+   "n": 4,
+   "title": "Nêu vấn đề còn mở, giả định và rủi ro",
+   "lam_gi": "liệt kê thông tin chưa có, giả định đang phải dùng tạm, rủi ro chưa lượng hóa được; đánh giá mức độ ảnh hưởng của từng điểm mở đến quyết định.",
+   "inputs": [],
+   "vai_tro": "Thư ký lãnh đạo (hoặc chuyên viên đơn vị trình vấn đề) · AI hỗ trợ: liệt kê thông tin thiếu, giả định tạm dùng, rủi ro chưa lượng hóa",
+   "luu_y": "đây là phần bảo vệ lãnh đạo khỏi quyết định mù — phải trung thực, không giấu điểm yếu của phương án đang được \"ưa thích\".",
+   "ket_qua": "danh sách vấn đề mở + giả định + rủi ro chưa lượng hóa."
+  },
+  {
+   "n": 5,
+   "title": "Lập bảng vấn đề cần quyết định",
+   "lam_gi": "với mỗi điểm cần lãnh đạo chốt, viết một câu hỏi quyết định cụ thể; liệt kê các phương án; đưa khuyến nghị TRUNG LẬP kèm căn cứ (trích từ Bước 3–4); ghi `thoi_han_quyet_dinh` nếu có.",
+   "inputs": [
+    "van_de",
+    "thoi_han_quyet_dinh"
+   ],
+   "vai_tro": "Thư ký lãnh đạo (hoặc chuyên viên đơn vị trình vấn đề) · AI hỗ trợ: lập bảng vấn đề cần quyết định với khuyến nghị trung lập kèm căn cứ",
+   "luu_y": "khuyến nghị trung lập = trình bày cân bằng, luôn kèm căn cứ, cấm thiên vị phương án; câu hỏi phải đủ cụ thể để lãnh đạo trả lời được ngay, tránh câu hỏi chung chung.",
+   "ket_qua": "bảng vấn đề cần quyết định (câu hỏi | phương án | khuyến nghị trung lập + căn cứ)."
+  },
+  {
+   "n": 6,
+   "title": "Xuất bản yêu cầu và decision memo",
+   "lam_gi": "viết bản tóm tắt cho lãnh đạo tối đa 2 trang gồm: bối cảnh, số liệu chính, bảng so sánh rút gọn, vấn đề mở, bảng vấn đề cần quyết định; đính kèm decision memo — mẫu để lãnh đạo ghi: quyết định, người quyết định, ngày quyết định, ý kiến chỉ đạo.",
+   "inputs": [],
+   "vai_tro": "Thư ký lãnh đạo (hoặc chuyên viên đơn vị trình vấn đề) · AI hỗ trợ: xuất bản yêu cầu tối đa 2 trang + decision memo có chỗ ký xác nhận",
+   "luu_y": "bản yêu cầu tốt = ngắn + đủ + trung thực; chi tiết đầy đủ để ở phụ lục nguồn, không nhồi vào bản yêu cầu; decision memo phải có chỗ ký/xác nhận của lãnh đạo.",
+   "ket_qua": "bản tóm tắt cho lãnh đạo (tối đa 2 trang) + decision memo."
+  }
+ ],
+ "checks": [
+  "Bản yêu cầu đầy đủ 7 phần theo cấu trúc sản phẩm tại references/quy-cach-dau-ra.md: tiêu đề + vấn đề 1 câu + thời hạn; bối cảnh (3–5 dòng); số liệu chính; bảng so sánh phương án; vấn đề còn mở; bảng vấn đề cần quyết định; phụ lục danh mục nguồn.",
+  "Bản yêu cầu không quá 2 trang; chi tiết đầy đủ để ở phụ lục nguồn, không nhồi vào bản yêu cầu.",
+  "Mọi số liệu khớp với Input; mỗi số ghi rõ nguồn; ô không có số liệu ghi \"chưa có số liệu\", không bịa.",
+  "Khuyến nghị trung lập: trình bày cân bằng các phương án, luôn kèm căn cứ; không thiên vị phương án nào.",
+  "Vấn đề mở, giả định, rủi ro chưa lượng hóa được nêu trung thực — không giấu điểm yếu của bất kỳ phương án nào.",
+  "Decision memo có đủ ô: quyết định, người quyết định, ngày quyết định, ý kiến chỉ đạo, chỗ ký/xác nhận.",
+  "Câu hỏi quyết định đủ cụ thể để lãnh đạo trả lời được ngay.",
+  "Đã qua Human gate: thư ký/văn phòng lãnh đạo đã kiểm tra nguồn trích dẫn đầy đủ, chính xác, không sót nguồn quan trọng. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [
+  "KHÔNG ra quyết định thay lãnh đạo dưới bất kỳ hình thức nào.",
+  "Khuyến nghị trong bản yêu cầu phải TRUNG LẬP, luôn kèm căn cứ; cấm thiên vị phương án.",
+  "KHÔNG giấu rủi ro, thông tin bất lợi của bất kỳ phương án nào.",
+  "KHÔNG bịa số liệu, trích dẫn; nguồn nào thiếu phải nêu rõ."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Người nhận thường là Hiệu trưởng hoặc Phó Hiệu trưởng kiêm Trưởng phòng; bản yêu cầu mở đầu bằng việc cần quyết định và hạn.",
+  "Số liệu mâu thuẫn giữa các nguồn đưa vào mục riêng, không chọn số.",
+  "Nội dung liên quan ĐHQGHN hoặc đối tác quốc tế ghi riêng \"cần ý kiến bên ngoài Trường\"."
+ ],
+ "cho_xac_nhan": [
+  "Định dạng bản yêu cầu lãnh đạo ưa dùng (C8).",
+  "Tuyến báo cáo lên Ban Giám hiệu (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề: EXECUTIVE BRIEF + vấn đề cần quyết định (1 câu) + thời hạn quyết định.",
+  "Bối cảnh (3–5 dòng): vì sao vấn đề phát sinh, ai đề xuất.",
+  "Số liệu chính: các con số quyết định, mỗi số ghi nguồn.",
+  "So sánh phương án: bảng theo tiêu chí quyết định (mỗi ô có nguồn).",
+  "Vấn đề còn mở: thông tin thiếu, giả định đang dùng, rủi ro chưa lượng hóa.",
+  "Bảng vấn đề cần quyết định: câu hỏi | phương án | khuyến nghị trung lập + căn cứ."
+ ],
+ "output_structure_raw": "1. Tiêu đề: EXECUTIVE BRIEF + vấn đề cần quyết định (1 câu) + thời hạn quyết định.\n\n2. Bối cảnh (3–5 dòng): vì sao vấn đề phát sinh, ai đề xuất.\n\n3. Số liệu chính: các con số quyết định, mỗi số ghi nguồn.\n\n4. So sánh phương án: bảng theo tiêu chí quyết định (mỗi ô có nguồn).\n\n5. Vấn đề còn mở: thông tin thiếu, giả định đang dùng, rủi ro chưa lượng hóa.\n\n6. Bảng vấn đề cần quyết định: câu hỏi | phương án | khuyến nghị trung lập + căn cứ.",
+ "human_gate_check": "Đã qua Human gate: thư ký/văn phòng lãnh đạo đã kiểm tra nguồn trích dẫn đầy đủ, chính xác, không sót nguồn quan trọng. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Ban Giám hiệu và người trình báo. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-tom-tat-trinh-lanh-dao/references"
+}

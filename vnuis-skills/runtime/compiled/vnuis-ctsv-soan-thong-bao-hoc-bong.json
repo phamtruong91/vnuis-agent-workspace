@@ -1,0 +1,263 @@
+{
+ "name": "vnuis-ctsv-soan-thong-bao-hoc-bong",
+ "title": "Soạn thông báo học bổng",
+ "description": "Dùng khi cần công bố cho sinh viên một chương trình học bổng (khuyến khích học tập, tài trợ của doanh nghiệp, chính sách): điều kiện, mức học bổng, hồ sơ, hạn nộp.",
+ "group": "ctsv",
+ "group_label": "Công tác sinh viên",
+ "previous_name": "vnuis-thong-bao-hoc-bong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (công tác sinh viên)",
+ "when": "Khi cần ban hành thông báo công khai về một chương trình học bổng: học bổng khuyến khích học tập\ncủa trường, học bổng tài trợ của doanh nghiệp/tổ chức/cá nhân, học bổng chính sách xã hội theo quy\nđịnh của Nhà nước, để sinh viên biết, đăng ký và nộp hồ sơ đúng hạn.",
+ "inputs": [
+  {
+   "key": "ten_hoc_bong",
+   "desc": "Tên đầy đủ của chương trình học bổng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "loai_hoc_bong",
+   "desc": "Khuyến khích học tập / Tài trợ doanh nghiệp–tổ chức / Chính sách xã hội",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong",
+   "desc": "Đối tượng được xét (khóa, hệ đào tạo, khoa, điều kiện chung)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dieu_kien",
+   "desc": "Các điều kiện cụ thể để được xét (điểm học tập, điểm rèn luyện, hoàn cảnh...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_hoc_bong",
+   "desc": "Mức học bổng theo từng loại/hạng + số suất (nếu có)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_so",
+   "desc": "Thành phần hồ sơ đăng ký xét học bổng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han",
+   "desc": "Thời hạn nộp hồ sơ (ngày bắt đầu – ngày kết thúc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_nop",
+   "desc": "Nơi nộp hồ sơ (phòng, địa chỉ, hình thức trực tiếp/trực tuyến)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu",
+   "desc": "Căn cứ ban hành (quyết định phê duyệt, văn bản tài trợ, quy chế...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "lien_he",
+   "desc": "Đầu mối liên hệ giải đáp (họ tên, điện thoại, email)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Trưởng Phòng Đào tạo (công tác sinh viên) (thừa ủy quyền) / Phó Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "co_quan_chu_quan",
+   "desc": "Cơ quan chủ quản: Đại học Quốc gia Hà Nội (đã điền sẵn)",
+   "required": false,
+   "note": "Không (mặc định: ĐHQGHN)"
+  },
+  {
+   "key": "co_quan_ban_hanh",
+   "desc": "Cơ quan ban hành: Trường Quốc tế – ĐHQGHN (đã điền sẵn); ghi thêm đơn vị soạn thảo nếu khác",
+   "required": false,
+   "note": "Không (mặc định: Trường Quốc tế – ĐHQGHN)"
+  },
+  {
+   "key": "dia_danh",
+   "desc": "Địa danh ghi ở dòng ngày tháng năm (mặc định: Hà Nội)",
+   "required": false,
+   "note": "Không (mặc định: Hà Nội)"
+  },
+  {
+   "key": "so_van_ban",
+   "desc": "Số, ký hiệu văn bản đã được cấp (để trống nếu chưa cấp; không tự đặt)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Danh sách nơi nhận, gồm cả nơi lưu (VT, đơn vị soạn)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (công tác sinh viên)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Cổng sinh viên; cổng việc làm; tra cứu văn bằng. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại học bổng và nội dung trọng tâm",
+   "lam_gi": "căn cứ `loai_hoc_bong` để chốt hướng soạn: Khuyến khích học tập thì nhấn mạnh tiêu chí điểm học tập, điểm rèn luyện, số suất theo khoa/khóa; Tài trợ doanh nghiệp–tổ chức thì nêu tên đơn vị tài trợ, tổng giá trị, điều kiện riêng của nhà tài trợ; Chính sách xã hội thì viện dẫn văn bản quy phạm của Nhà nước và đối tượng chính sách được hưởng.",
+   "inputs": [
+    "loai_hoc_bong",
+    "ten_hoc_bong",
+    "can_cu"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: phân tích loại học bổng và chốt định hướng nội dung",
+   "luu_y": "học bổng tài trợ không được tự ý sửa điều kiện của nhà tài trợ; học bổng chính sách phải viện dẫn văn bản quy phạm còn hiệu lực — sai tên văn bản hoặc văn bản hết hiệu lực là lỗi nghiêm trọng.",
+   "ket_qua": "định hướng nội dung theo loại học bổng (trọng tâm cần nhấn mạnh)."
+  },
+  {
+   "n": 2,
+   "title": "Dựng khung thể thức thông báo",
+   "lam_gi": "dựng khung theo Nghị định 30/2020/NĐ-CP: Quốc hiệu – Tiêu ngữ → tên cơ quan, đơn vị ban hành → số, ký hiệu → địa danh, ngày tháng năm → tiêu đề \"THÔNG BÁO\" → trích yếu (\"V/v ...\") → khung nơi nhận → khối chữ ký theo `nguoi_ky` (Trưởng Phòng Đào tạo (công tác sinh viên) thừa ủy quyền / Phó Hiệu trưởng). Phần đầu văn bản lấy từ `co_quan_chu_quan` (nếu có), `co_quan_ban_hanh`, `dia_danh`, `so_van_ban` (để dòng dấu chấm nếu chưa cấp số). Nơi nhận lấy từ `noi_nhan`.",
+   "inputs": [
+    "can_cu",
+    "nguoi_ky",
+    "ten_hoc_bong",
+    "co_quan_chu_quan",
+    "co_quan_ban_hanh",
+    "dia_danh",
+    "so_van_ban",
+    "noi_nhan"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: dựng khung thể thức thông báo theo Nghị định 30/2020",
+   "luu_y": "thẩm quyền ký phải khớp loại học bổng và phân cấp ủy quyền của trường; số, ký hiệu văn bản lấy theo sổ văn thư, không tự đặt.",
+   "ket_qua": "khung thể thức thông báo (đầy đủ các yếu tố hình thức, chưa có nội dung chi tiết)."
+  },
+  {
+   "n": 3,
+   "title": "Viết nội dung theo 6 mục bắt buộc",
+   "lam_gi": "viết đầy đủ 6 mục, mỗi mục một tiêu đề rõ ràng: 1. Đối tượng; 2. Điều kiện xét (liệt kê dạng gạch đầu dòng, sắp xếp theo thứ tự ưu tiên xét); 3. Mức học bổng và số suất (dạng bảng nếu có nhiều hạng); 4. Hồ sơ đăng ký (đánh số thứ tự từng loại giấy tờ; ghi rõ bản chính/bản sao, có công chứng hay không); 5. Thời hạn và nơi nộp hồ sơ; 6. Thông tin liên hệ giải đáp (nếu có).",
+   "inputs": [
+    "doi_tuong",
+    "dieu_kien",
+    "muc_hoc_bong",
+    "ho_so",
+    "thoi_han",
+    "noi_nop",
+    "lien_he"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo nội dung 6 mục bắt buộc",
+   "luu_y": "điều kiện nào xét trước thì liệt kê trước; hồ sơ phải ghi rõ bản chính hay bản sao (công chứng hay không) — thiếu chi tiết này sinh viên sẽ nộp sai và phải bổ sung; mục 6 được bỏ qua chỉ khi `lien_he` không cung cấp.",
+   "ket_qua": "dự thảo nội dung 6 mục của thông báo."
+  },
+  {
+   "n": 4,
+   "title": "Đối chiếu minh bạch với văn bản căn cứ",
+   "lam_gi": "đối chiếu từng điều kiện, mức học bổng, số suất, thời hạn trong dự thảo với `can_cu` (quyết định phê duyệt, văn bản tài trợ, quy chế); đảm bảo không thêm điều kiện ngoài căn cứ; thời hạn nộp hồ sơ ghi cả ngày bắt đầu và ngày kết thúc kèm giờ hành chính.",
+   "inputs": [
+    "can_cu",
+    "dieu_kien",
+    "muc_hoc_bong",
+    "thoi_han"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: đối chiếu từng điều khoản với văn bản căn cứ",
+   "luu_y": "mọi con số (mức tiền, số suất, ngày tháng) phải lấy đúng từ văn bản căn cứ — đây là điểm kiểm tra đầu tiên khi có khiếu nại; nếu phát hiện căn cứ và yêu cầu thực tế vênh nhau thì báo lại đơn vị ban hành, không tự điều chỉnh trong thông báo.",
+   "ket_qua": "bảng đối chiếu căn cứ (nội dung dự thảo – điều khoản căn cứ tương ứng – điểm đã xử lý)."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra thể thức, số liệu và thẩm quyền",
+   "lam_gi": "kiểm tra thể thức theo Nghị định 30/2020/NĐ-CP, chính tả, tính nhất quán số liệu (mức tiền, số suất, ngày tháng giữa các mục), thẩm quyền ký, nơi nhận đầy đủ (các khoa, website trường, bảng tin sinh viên, lưu hồ sơ).",
+   "inputs": [
+    "nguoi_ky",
+    "muc_hoc_bong",
+    "thoi_han",
+    "noi_nop"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: kiểm tra tự động thể thức và số liệu",
+   "luu_y": "nơi nhận thiếu \"website trường\" thì thông báo không đến được sinh viên — kiểm tra kỹ; ngày ban hành thông báo phải trước ngày bắt đầu nhận hồ sơ.",
+   "ket_qua": "kết quả đối chiếu nội bộ (đủ 6 mục, thể thức, số liệu, nơi nhận); không xuất kèm file."
+  },
+  {
+   "n": 6,
+   "title": "Xuất bản thông báo",
+   "lam_gi": "hoàn thiện văn bản thông báo file theo định dạng đầu ra của skill, sẵn sàng trình ký và đăng tải (website trường, bảng tin).",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: chuẩn bị hồ sơ trình ký, nhắc lịch và theo dõi tiến độ",
+   "luu_y": "sau khi ký, phải đăng tải đồng thời trên website và gửi các khoa — thông báo ký mà không đăng thì coi như chưa ban hành đến sinh viên.",
+   "ket_qua": "văn bản thông báo học bổng hoàn chỉnh, sẵn sàng trình ký / đăng tải."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Đủ 6 mục nội dung: đối tượng; điều kiện xét; mức học bổng và số suất; hồ sơ đăng ký; thời hạn và nơi nộp hồ sơ; thông tin liên hệ giải đáp.",
+  "Số liệu/nội dung khớp Input và văn bản căn cứ: mức tiền, số suất, ngày tháng; không thêm điều kiện ngoài căn cứ.",
+  "Không bịa đặt số hiệu, ngày ban hành của văn bản căn cứ, tên đơn vị tài trợ, điều kiện xét.",
+  "Thể thức đúng Nghị định 30/2020/NĐ-CP; số, ký hiệu lấy theo sổ văn thư; thẩm quyền ký khớp phân cấp.",
+  "Hồ sơ ghi rõ bản chính/bản sao, công chứng hay không; nơi nhận có website trường; ngày ban hành trước ngày bắt đầu nhận hồ sơ.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (học bổng chính sách viện dẫn văn bản quy phạm còn hiệu lực).",
+  "Đã qua Human gate: Trưởng Phòng Đào tạo (công tác sinh viên) (thừa ủy quyền) hoặc Phó Hiệu trưởng ký duyệt. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thông báo học bổng cho sinh viên quốc tế hoặc liên kết thêm bản tiếng Anh khi cần.",
+  "Điều kiện, hạn nộp, mức chỉ ghi theo văn bản học bổng; thiếu thì để trống."
+ ],
+ "cho_xac_nhan": [
+  "Kênh thông báo và người ký (C1, C5).",
+  "Mẫu thông báo (C8)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ; tên cơ quan, đơn vị ban hành; số, ký hiệu văn bản; địa danh, ngày tháng năm.",
+  "Tiêu đề \"THÔNG BÁO\" + trích yếu (xét học bổng...).",
+  "Căn cứ ban hành (quyết định phê duyệt / văn bản tài trợ / văn bản quy phạm).",
+  "Nội dung 6 mục bắt buộc: (1) Đối tượng; (2) Điều kiện xét; (3) Mức học bổng và số suất; (4) Hồ sơ đăng ký; (5) Thời hạn và nơi nộp hồ sơ; (6) Thông tin liên hệ giải đáp.",
+  "Câu kết (đề nghị các khoa thông báo đến sinh viên).",
+  "Nơi nhận (các khoa, website trường, bảng tin sinh viên, lưu hồ sơ).",
+  "Khối chữ ký theo thẩm quyền (Trưởng Phòng Đào tạo (công tác sinh viên) thừa ủy quyền / Phó Hiệu trưởng). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ; tên cơ quan, đơn vị ban hành; số, ký hiệu văn bản; địa danh, ngày tháng năm.\n\n2. Tiêu đề \"THÔNG BÁO\" + trích yếu (xét học bổng...).\n\n3. Căn cứ ban hành (quyết định phê duyệt / văn bản tài trợ / văn bản quy phạm).\n\n4. Nội dung 6 mục bắt buộc:\n   (1) Đối tượng; (2) Điều kiện xét; (3) Mức học bổng và số suất;\n   (4) Hồ sơ đăng ký; (5) Thời hạn và nơi nộp hồ sơ; (6) Thông tin liên hệ giải đáp.\n\n5. Câu kết (đề nghị các khoa thông báo đến sinh viên).\n\n6. Nơi nhận (các khoa, website trường, bảng tin sinh viên, lưu hồ sơ).\n\n7. Khối chữ ký theo thẩm quyền (Trưởng Phòng Đào tạo (công tác sinh viên) thừa ủy quyền / Phó Hiệu trưởng).",
+ "human_gate_check": "Đã qua Human gate: Trưởng Phòng Đào tạo (công tác sinh viên) (thừa ủy quyền) hoặc Phó Hiệu trưởng ký duyệt. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (công tác sinh viên). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ctsv-soan-thong-bao-hoc-bong/references"
+}

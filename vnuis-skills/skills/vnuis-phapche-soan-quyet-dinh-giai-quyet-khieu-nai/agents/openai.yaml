@@ -1,0 +1,4 @@
+interface:
+  display_name: Pháp chế · Soạn quyết định giải quyết khiếu nại / tố cáo – VNU-IS
+  short_description: Hỗ trợ soạn quyết định giải quyết khiếu nại / tố cáo (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-phapche-soan-quyet-dinh-giai-quyet-khieu-nai để hỗ trợ công việc: Soạn quyết định giải quyết khiếu nại / tố cáo; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

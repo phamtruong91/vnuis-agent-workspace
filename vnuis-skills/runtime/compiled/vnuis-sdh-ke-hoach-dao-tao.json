@@ -1,0 +1,229 @@
+{
+ "name": "vnuis-sdh-ke-hoach-dao-tao",
+ "title": "Kế hoạch đào tạo sau đại học (tiến độ học viên/NCS)",
+ "description": "Dùng khi Phòng Đào tạo (sau đại học) cần kế hoạch và theo dõi tiến độ cho một khóa cao học hoặc một nghiên cứu sinh: mốc học phần, đề cương, seminar, bảo vệ, người hướng dẫn.",
+ "group": "sdh",
+ "group_label": "Sau đại học",
+ "previous_name": "vnuis-ke-hoach-dao-tao-sdh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (sau đại học)",
+ "when": "Khi cần lập kế hoạch đào tạo và theo dõi tiến độ cho một khóa/lớp cao học hoặc một\nnghiên cứu sinh: xác định khung thời gian toàn khóa, các mốc quan trọng, phân công người\nhướng dẫn và lịch kiểm tra tiến độ định kỳ.",
+ "inputs": [
+  {
+   "key": "trinh_do",
+   "desc": "Thạc sĩ / Tiến sĩ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "khoa_lop",
+   "desc": "Khóa/lớp cao học hoặc tên NCS và khóa đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nganh",
+   "desc": "Ngành đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_bat_dau",
+   "desc": "Thời điểm bắt đầu khóa đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_dao_tao",
+   "desc": "Thời gian đào tạo chuẩn (thạc sĩ 2 năm; tiến sĩ 3–4 năm)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_huong_dan",
+   "desc": "Người hướng dẫn khoa học (đủ tiêu chuẩn theo quy chế)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoc_phan",
+   "desc": "Danh mục học phần và học kỳ dự kiến hoàn thành",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "moc_quan_trong",
+   "desc": "Các mốc: bảo vệ đề cương, seminar chuyên đề, bảo vệ luận văn/luận án",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "chu_ky_bao_cao",
+   "desc": "Chu kỳ báo cáo tiến độ (6 tháng / hằng năm)",
+   "required": false,
+   "note": "Không (mặc định: 6 tháng)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (sau đại học)"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định khung thời gian toàn khóa",
+   "lam_gi": "xác định thời điểm bắt đầu (ngày nhập học) và thời điểm kết thúc dự kiến (bảo vệ luận văn/luận án); đối chiếu tổng thời gian với thời gian đào tạo chuẩn theo quy chế (thạc sĩ 2 năm; tiến sĩ 3–4 năm tùy đối tượng đầu vào).",
+   "inputs": [
+    "trinh_do",
+    "khoa_lop",
+    "thoi_gian_bat_dau",
+    "thoi_gian_dao_tao"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: xác định khung thời gian toàn khóa từ ngày nhập học",
+   "luu_y": "khung thời gian phải nằm trong giới hạn tối đa của quy chế (kể cả thời gian được gia hạn); ghi rõ hình thức đào tạo (tập trung/không tập trung).",
+   "ket_qua": "khung thời gian toàn khóa đã chốt (ngày bắt đầu – ngày kết thúc dự kiến)."
+  },
+  {
+   "n": 2,
+   "title": "Lập tiến độ học các học phần",
+   "lam_gi": "phân bổ các học phần bắt buộc và tự chọn vào từng học kỳ; ghi rõ học phần nào là điều kiện tiên quyết của học phần sau (nếu có); sắp xếp sao cho học viên hoàn thành học phần trước khi bước vào giai đoạn làm luận văn/luận án.",
+   "inputs": [
+    "hoc_phan",
+    "trinh_do"
+   ],
+   "vai_tro": "Khoa quản lý chuyên ngành/Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: phân bổ học phần bắt buộc và tự chọn vào từng học kỳ",
+   "luu_y": "học phần phương pháp nghiên cứu khoa học nên xếp sớm để phục vụ làm đề cương; tránh dồn quá nhiều học phần vào một học kỳ.",
+   "ket_qua": "bảng phân bổ học phần theo từng học kỳ (học kỳ – thời gian – danh mục học phần)."
+  },
+  {
+   "n": 3,
+   "title": "Xác định các mốc quan trọng",
+   "lam_gi": "liệt kê đầy đủ các mốc theo trình độ, gắn thời hạn dự kiến cho từng mốc: - Học viên cao học: hoàn thành học phần → giao đề tài → bảo vệ đề cương luận văn → seminar giữa kỳ → nộp luận văn hoàn chỉnh → bảo vệ luận văn; - Nghiên cứu sinh: hoàn thành học phần tiến sĩ → bảo vệ đề cương luận án → thực hiện chuyên đề tiến sĩ/seminar → công bố khoa học theo quy định → viết luận án → bảo vệ luận án cấp cơ sở → bảo vệ luận án cấp trường.",
+   "inputs": [
+    "moc_quan_trong",
+    "trinh_do"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: liệt kê các mốc (báo cáo tiến độ, bảo vệ) theo trình độ",
+   "luu_y": "các mốc phải sắp xếp logic, không chồng chéo thời gian; mốc bảo vệ luận án cấp trường của NCS phải sau bảo vệ cấp cơ sở và sau khi hoàn thành công bố khoa học.",
+   "ket_qua": "bảng các mốc quan trọng (mốc công việc – thời hạn dự kiến) theo trình độ."
+  },
+  {
+   "n": 4,
+   "title": "Phân công người hướng dẫn",
+   "lam_gi": "ghi rõ họ tên, học hàm/học vị, đơn vị công tác của người hướng dẫn chính (và đồng hướng dẫn nếu có) cho từng học viên/NCS; kiểm tra người hướng dẫn đủ tiêu chuẩn theo quy chế và không vượt số lượng học viên/NCS được hướng dẫn đồng thời.",
+   "inputs": [
+    "nguoi_huong_dan",
+    "khoa_lop"
+   ],
+   "vai_tro": "Phòng Đào tạo (sau đại học) · AI hỗ trợ: lập danh sách đề xuất người hướng dẫn, kiểm tra tiêu chuẩn và giới hạn số HV/NCS hướng dẫn",
+   "luu_y": "người hướng dẫn tiến sĩ phải đáp ứng tiêu chuẩn cao hơn (có công trình công bố, đã hướng dẫn thành công); kiểm tra số lượng đang hướng dẫn tại thời điểm phân công, không chỉ dựa vào khai báo.",
+   "ket_qua": "danh sách phân công người hướng dẫn (học viên/NCS – người hướng dẫn – số lượng đang hướng dẫn)."
+  },
+  {
+   "n": 5,
+   "title": "Quy định theo dõi tiến độ định kỳ",
+   "lam_gi": "quy định chu kỳ báo cáo tiến độ (mặc định 6 tháng); quy định trách nhiệm: học viên/NCS nộp báo cáo theo mẫu, người hướng dẫn nhận xét và đánh giá, Phòng Đào tạo (sau đại học) tổng hợp; quy định cơ chế cảnh báo các trường hợp chậm tiến độ và biện pháp xử lý (gia hạn, cảnh báo học vụ, thôi học theo quy chế).",
+   "inputs": [
+    "chu_ky_bao_cao"
+   ],
+   "vai_tro": "Phòng Đào tạo (sau đại học) · AI hỗ trợ: soạn dự thảo quy định chu kỳ báo cáo tiến độ và trách nhiệm các bên",
+   "luu_y": "phải quy định rõ \"chậm tiến độ\" được đo bằng tiêu chí nào (chậm bao nhiêu mốc/ bao lâu); biện pháp xử lý phải có căn cứ quy chế, không xử lý cảm tính.",
+   "ket_qua": "quy định theo dõi tiến độ định kỳ (chu kỳ, trách nhiệm các bên, cơ chế cảnh báo và xử lý)."
+  },
+  {
+   "n": 6,
+   "title": "Lập bảng tiến độ mẫu",
+   "lam_gi": "lập bảng theo dõi với các cột: họ tên học viên/NCS – đề tài – người hướng dẫn – từng mốc công việc (hoàn thành học phần, bảo vệ đề cương, seminar, nộp luận văn/luận án, bảo vệ) – ghi chú; bảng này được cập nhật sau mỗi kỳ báo cáo.",
+   "inputs": [
+    "khoa_lop",
+    "nguoi_huong_dan"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: lập bảng theo dõi tiến độ mẫu đầy đủ các cột",
+   "luu_y": "bảng phải bao phủ đầy đủ 100% học viên/NCS của khóa; các mốc trong bảng phải khớp với bảng mốc ở Bước 3.",
+   "ket_qua": "bảng theo dõi tiến độ mẫu (sẵn sàng điền và cập nhật định kỳ)."
+  },
+  {
+   "n": 7,
+   "title": "Kiểm tra khung thời gian, mốc và tiêu chuẩn người hướng dẫn",
+   "lam_gi": "kiểm tra lần cuối: khung thời gian toàn khóa đúng thời gian đào tạo chuẩn theo quy chế; các mốc quan trọng đầy đủ, logic, không chồng chéo; người hướng dẫn đủ tiêu chuẩn và trong giới hạn số lượng; bảng tiến độ đầy đủ học viên/NCS. Nội dung chưa đạt thì hiệu chỉnh rồi kiểm tra lại.",
+   "inputs": [
+    "thoi_gian_dao_tao",
+    "nguoi_huong_dan",
+    "moc_quan_trong"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (sau đại học) · AI hỗ trợ: kiểm tra chéo khung thời gian, học phần và quy chế",
+   "luu_y": "đây là điểm kiểm tra cuối trước khi trình duyệt — lỗi mốc chồng chéo hoặc người hướng dẫn quá tải nếu lọt qua sẽ gây khó khăn cho cả khóa đào tạo.",
+   "ket_qua": "kế hoạch đã qua kiểm tra, đạt yêu cầu, sẵn sàng trình phê duyệt."
+  },
+  {
+   "n": 8,
+   "title": "Xuất bản và triển khai kế hoạch",
+   "lam_gi": "hoàn thiện kế hoạch file theo định dạng đầu ra của skill kèm bảng tiến độ mẫu; trình lãnh đạo phê duyệt; sau khi duyệt, gửi kế hoạch đến lớp/khóa, người hướng dẫn và các đơn vị liên quan để triển khai.",
+   "inputs": [
+    "khoa_lop",
+    "nganh"
+   ],
+   "vai_tro": "Hiệu trưởng/Phó Hiệu trưởng phụ trách phê duyệt · AI hỗ trợ: chuẩn bị hồ sơ trình ký, soạn thông báo triển khai",
+   "luu_y": "lưu bản kế hoạch đã phê duyệt làm căn cứ đối chiếu tiến độ các kỳ sau; mọi điều chỉnh kế hoạch sau phê duyệt phải được ghi nhận bằng văn bản.",
+   "ket_qua": "kế hoạch đào tạo SĐH đã phê duyệt, đã gửi các bên liên quan để triển khai."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu/nội dung trong output khớp với Input đã cho (trình độ, khóa/lớp, ngành, thời gian, người hướng dẫn, học phần, các mốc, chu kỳ báo cáo).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng thể thức văn bản hành chính của kế hoạch.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Thông tư 23/2021/TT-BGDĐT đối với thạc sĩ; Thông tư 18/2021/TT-BGDĐT đối với tiến sĩ).",
+  "Đã qua Human gate: lãnh đạo đã phê duyệt kế hoạch; bản đã phê duyệt được lưu làm căn cứ đối chiếu tiến độ.",
+  "Khung thời gian toàn khóa nằm trong giới hạn tối đa của quy chế (kể cả thời gian được gia hạn); các mốc sắp xếp logic, không chồng chéo.",
+  "Mốc bảo vệ luận án cấp trường sau bảo vệ cấp cơ sở và sau khi hoàn thành công bố khoa học (đối với NCS); các mốc trong bảng tiến độ khớp bảng mốc ở mục III.",
+  "Người hướng dẫn đủ tiêu chuẩn quy chế và không vượt số lượng HV/NCS được hướng dẫn đồng thời; bảng tiến độ bao phủ 100% học viên/NCS của khóa; \"chậm tiến độ\" có tiêu chí đo cụ thể, biện pháp xử lý có căn cứ quy chế. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kế hoạch học kỳ chương trình sau đại học gắn lịch giảng của giảng viên nước ngoài nếu có; ghi múi giờ khi dạy trực tuyến.",
+  "Không tự đặt thời gian tối đa hoàn thành; theo quy chế (C2)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế đào tạo sau đại học áp dụng (C2).",
+  "Người phụ trách sau đại học (C7)."
+ ],
+ "output_structure": [
+  "Phần đầu văn bản: tên trường + đơn vị (Phòng Đào tạo (sau đại học)); quốc hiệu – tiêu ngữ; số, ký hiệu; địa danh, ngày tháng năm ban hành.",
+  "Tên kế hoạch + đối tượng áp dụng (khóa/lớp cao học hoặc NCS, ngành, thời gian đào tạo).",
+  "Phần căn cứ: Quy chế tuyển sinh và đào tạo trình độ thạc sĩ (TT 23/2021) / tiến sĩ (TT 18/2021).",
+  "Nội dung chính theo thứ tự: I. Khung thời gian toàn khóa; II. Tiến độ học các học phần (bảng theo học kỳ); III. Các mốc quan trọng (bảng mốc công việc – thời hạn dự kiến); IV. Phân công người hướng dẫn; V. Theo dõi tiến độ định kỳ (chu kỳ, trách nhiệm, cơ chế cảnh báo); VI. Bảng theo dõi tiến độ (mẫu).",
+  "Phần cuối: nơi nhận; chữ ký, họ tên người ký. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần đầu văn bản: tên trường + đơn vị (Phòng Đào tạo (sau đại học)); quốc hiệu – tiêu ngữ;\n   số, ký hiệu; địa danh, ngày tháng năm ban hành.\n\n2. Tên kế hoạch + đối tượng áp dụng (khóa/lớp cao học hoặc NCS, ngành, thời gian đào tạo).\n\n3. Phần căn cứ: Quy chế tuyển sinh và đào tạo trình độ thạc sĩ (TT 23/2021) / tiến sĩ (TT 18/2021).\n\n4. Nội dung chính theo thứ tự: I. Khung thời gian toàn khóa; II. Tiến độ học các học phần\n   (bảng theo học kỳ); III. Các mốc quan trọng (bảng mốc công việc – thời hạn dự kiến);\n   IV. Phân công người hướng dẫn; V. Theo dõi tiến độ định kỳ (chu kỳ, trách nhiệm, cơ chế\n   cảnh báo); VI. Bảng theo dõi tiến độ (mẫu).\n\n5. Phần cuối: nơi nhận; chữ ký, họ tên người ký.",
+ "human_gate_check": "Đã qua Human gate: lãnh đạo đã phê duyệt kế hoạch; bản đã phê duyệt được lưu làm căn cứ đối chiếu tiến độ.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (sau đại học). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-sdh-ke-hoach-dao-tao/references"
+}

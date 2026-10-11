@@ -1,0 +1,187 @@
+---
+name: "vnuis-khcn-bao-cao-khcn-htqt-nam"
+description: "Dùng khi tổng kết năm về khoa học công nghệ và hợp tác quốc tế: báo cáo ĐHQGHN/Bộ GD&ĐT, báo cáo năm học, phục vụ kiểm định; gồm đề tài, công bố, sở hữu trí tuệ, hội thảo, số liệu bảng biểu."
+---
+
+# Báo cáo KHCN & HTQT hằng năm
+
+## Khi nào dùng
+Khi cần tổng kết công tác khoa học công nghệ (KHCN) và hợp tác quốc tế (HTQT) của
+Trường trong một năm: báo cáo ĐHQGHN/Bộ Giáo dục và Đào tạo (chờ C2), báo cáo tổng kết năm học của
+Trường, phục vụ kiểm định chất lượng, hoặc báo cáo cấp có thẩm quyền (C6).
+
+## Định dạng và file đầu ra
+Định dạng đầu ra có thể chọn theo sản phẩm/yêu cầu: .docx, .pdf. Đọc mục “Định dạng bổ sung” trong quy cách đầu ra trước khi chọn.
+
+**Phải tạo file thực tế để tải xuống, không chỉ trả nội dung trong chat.** Định dạng mặc định của skill: **.docx**. Nếu có bảng số liệu nghiệp vụ yêu cầu file bảng tính riêng, tạo thêm Excel theo yêu cầu; không tự tạo file kiểm tra. Không chờ người dùng yêu cầu xuất file lần nữa. Ưu tiên định dạng người dùng chỉ định; đọc quy tắc xuất file tại references/quy-cach-dau-ra.md.
+
+**Chạy qua API (không có công cụ tạo file):** trả đủ nội dung dạng văn bản có tiêu đề, bảng; ứng dụng gọi sẽ xuất file.
+
+## Quy cách đầu ra và thông tin thiếu
+Khi dựng file Word/Excel, áp dụng mục “Thể thức và bảng biểu khi dựng file” trong quy cách đầu ra (cỡ chữ từng thành phần, bảng nhiều trang, số trang, phụ lục). Đọc [quy cách và cấu trúc sản phẩm](references/quy-cach-dau-ra.md) trước khi soạn/xuất. File giao chỉ gồm sản phẩm nghiệp vụ được yêu cầu; kiểm tra nội bộ không xuất kèm. Thiếu thông tin thì giữ nguyên trường/mục và chỗ điền theo mẫu gốc (dòng dấu chấm, dấu gạch hoặc ô trống); không tự điền dữ liệu mẫu, số 0, mã chờ xác minh hay dòng chờ ký. Mẫu chuyên ngành còn áp dụng được ưu tiên về cấu trúc, mã biểu và người ký. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+Khi người dùng yêu cầu bộ slide (.pptx), đọc mục “Xuất PowerPoint (.pptx) khi được yêu cầu” trong quy cách đầu ra.
+
+Khi báo cáo có số liệu cần so sánh hoặc nêu xu hướng, đọc mục “Biểu đồ và hình trong báo cáo số liệu” trong quy cách đầu ra trước khi vẽ.
+
+## Kiểm soát áp dụng và phê duyệt
+Trước khi chạy, xác định `ngay_ap_dung`, `loai_hinh_truong`, `quy_che_noi_bo`, `nguon_du_lieu`, `nguoi_kiem_duyet`; chỉ hỏi thông tin liên quan nghiệp vụ, không dùng giá trị giả định thay dữ liệu bắt buộc. Đối chiếu căn cứ pháp lý với văn bản gốc, hiệu lực, điều khoản áp dụng và chuyển tiếp. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+Nếu có cập nhật pháp lý dưới đây, đọc [căn cứ và điều kiện áp dụng](references/phap-ly.md) trước khi làm. Quy trình dưới đây giữ nghiệp vụ từ bản gốc; mọi viện dẫn văn bản, mẫu biểu, điều khoản phải theo căn cứ đã chọn trong phap-ly.md, không theo văn bản cũ.
+
+## Giới hạn và human gate
+AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Bối cảnh riêng của VNU-IS
+
+Bản chỉnh cho Trường Quốc tế – ĐHQGHN (VNU-IS), v0.4.2. Dựng từ website công khai và phiếu khảo sát CES còn trống; **chưa có dữ liệu khảo sát thực tế của đơn vị**. Đọc [bối cảnh VNU-IS](references/boi-canh-vnuis.md) trước khi chạy; các mã C1–C8 nằm ở mục 6 của file đó.
+
+- **Đơn vị thường dùng:** Phòng KHCN và Hợp tác phát triển.
+- **Nghiệp vụ trong phiếu CES:** "Báo cáo KHCN: Lập báo cáo hoạt động nghiên cứu định kỳ" (sheet `06_KS_KHCN_HTPT`). Tần suất gợi ý: Định kỳ. Đầu vào gợi ý: Dữ liệu đề tài; công bố; hội thảo; sản phẩm; mẫu. Khó khăn gợi ý: Tài liệu phân tán, nhiều định dạng; Đọc và đối chiếu thủ công mất thời gian; Khó kiểm tra chênh lệch, trùng lặp và nguồn số liệu; Đầu ra phụ thuộc kinh nghiệm từng cá nhân. Đây là gợi ý có sẵn của CES, chưa phải xác nhận của đơn vị.
+
+**Điều chỉnh khi dùng cho VNU-IS**
+- Tuyến báo cáo: VNU-IS là đơn vị thành viên của ĐHQGHN; báo cáo gửi ĐHQGHN hay Bộ GD&ĐT chờ xác nhận (C2). Trong skill này "cơ quan tiếp nhận" là nơi nhận báo cáo theo tuyến đó.
+- Mục lục gợi ý theo cấu trúc mục KHCN trên website: sản phẩm KHCN, năng lực nghiên cứu (nhà khoa học, nhóm nghiên cứu), hội nghị và hội thảo, đề tài và dự án theo cấp, NCKH sinh viên.
+- Bước chuẩn hóa dữ liệu công bố (phiếu nêu danh mục bài báo, DOI, hồ sơ giảng viên): kiểm tra trùng, thiếu DOI, cách ghi tên đơn vị của tác giả (affiliation) không thống nhất; lập bảng cần rà.
+- Không tự tra DOI hay xếp hạng tạp chí; chỉ ghi theo dữ liệu người dùng cung cấp.
+
+**Chờ xác nhận khi khảo sát**
+- Tiêu chí tính công bố của Trường và mẫu báo cáo (C2, C8).
+- Nguồn danh mục công bố chính thức (C4).
+
+Nếu người dùng chưa trả lời mục chờ xác nhận liên quan, hỏi lại; không tự điền giả định.
+
+## Đầu vào (Input)
+| Trường | Mô tả | Bắt buộc |
+|---|---|---|
+| `nam_bao_cao` | Năm báo cáo (ví dụ: 2026) | Có |
+| `de_tai_cac_cap` | Đề tài NCKH: cấp Nhà nước / cấp Bộ / cấp tỉnh / cấp trường – tên đề tài, chủ nhiệm, kinh phí, tình trạng | Có |
+| `cong_bo_khoa_hoc` | Bài báo: tạp chí quốc tế uy tín (WoS/Scopus), tạp chí trong nước, kỷ yếu hội thảo – số lượng theo đơn vị | Có |
+| `so_huu_tri_tue` | Sáng chế, giải pháp hữu ích, nhãn hiệu, bản quyền (đã được cấp / đang xét) | Có |
+| `hoi_thao` | Hội thảo khoa học đã tổ chức và tham dự: tên, cấp (quốc tế/quốc gia), số báo cáo | Có |
+| `hop_tac_quoc_te` | MOU/MOA đã ký, đoàn ra, đoàn vào, chương trình trao đổi, chuyên gia nước ngoài | Có |
+| `giai_thuong` | Giải thưởng KHCN các cấp (nếu có) | Không |
+| `ton_tai_han_che` | Tồn tại, hạn chế và nguyên nhân | Có |
+| `phuong_huong` | Phương hướng, nhiệm vụ năm tiếp theo | Có |
+| `nguoi_ky` | Người ký báo cáo (thường là Hiệu trưởng hoặc Phó Hiệu trưởng phụ trách) | Có |
+
+### Thông tin VNU-IS đã điền sẵn (không hỏi lại)
+
+| Mục | Giá trị mặc định |
+|---|---|
+| Cơ quan chủ quản; Trường; địa danh | Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội |
+| Đơn vị sử dụng và phối hợp | Phòng KHCN và Hợp tác phát triển |
+| Cơ sở | Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm |
+| Ngôn ngữ đầu ra | Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu |
+| Hệ thống nguồn dữ liệu có trên website | Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5) |
+| Người duyệt và ký | Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6 |
+
+Nguồn: website và phiếu CES; đổi theo khảo sát thì sửa tại đây và trong `references/boi-canh-vnuis.md`.
+
+## Quy trình
+
+*⏱ là ước tính ban đầu của bộ gốc, chưa đo tại VNU-IS; hiệu chỉnh sau khảo sát.*
+
+**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):
+- Luật 93/2025/QH15; Nghị định 265/2025 và 267/2025, hiệu lực 14/10/2025: Yêu cầu cấp nhiệm vụ, nguồn kinh phí, tài trợ/đặt hàng, ngày phê duyệt, quy chế cơ quan tài trợ, phương thức khoán và quyền sử dụng kết quả. Đối chiếu NĐ 265 về tài chính và NĐ 267 về nhiệm vụ; không cố định thang xếp loại hoặc thu hồi toàn bộ kinh phí cho mọi đề tài. Nghiệm thu dựa hợp đồng và tiêu chí được duyệt, hội đồng có thẩm quyền xác nhận.
+- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.
+- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.
+
+**Bước 1. Thu thập số liệu từ các đơn vị**
+- Làm gì: gửi biểu mẫu thống kê KHCN & HTQT đến các khoa, viện, trung tâm theo đúng các nhóm input (đề tài các cấp, công bố khoa học, sở hữu trí tuệ, hội thảo, hợp tác quốc tế, giải thưởng); quy định thời hạn nộp; Phòng KHCN&HTPT làm đầu mối tổng hợp và đôn đốc đơn vị chưa nộp.
+- Dùng input: `nam_bao_cao` (xác định kỳ báo cáo trên biểu mẫu).
+- Vai trò: Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn biểu mẫu thống kê · ⏱ ~1–2 giờ soạn biểu mẫu + 3–5 ngày chờ đơn vị nộp (ước tính)
+- Lưu ý nghiệp vụ: biểu mẫu phải yêu cầu đơn vị gửi kèm minh chứng ngay từ đầu (bản sao bài báo, quyết định nghiệm thu, văn bằng SHTT, văn bản ký kết) — thu minh chứng sau sẽ kéo dài thời gian đối chiếu; chốt số liệu với các đơn vị trước 31/12 để kịp hạn nộp Bộ (thường trước 15/01 năm sau).
+- → Kết quả bước: bộ số liệu thô các đơn vị (kèm minh chứng) + danh sách đơn vị chưa nộp đã đôn đốc.
+
+**Bước 2. Phân loại và đối chiếu số liệu với minh chứng**
+- Làm gì: phân loại đề tài theo cấp quản lý (Nhà nước/Bộ/tỉnh/trường) và tình trạng (đang thực hiện/đã nghiệm thu); phân loại công bố theo loại tạp chí (WoS/Scopus, trong nước có ISSN, kỷ yếu hội thảo); đối chiếu từng số liệu với minh chứng; loại khỏi báo cáo chính thức mọi số liệu không có minh chứng.
+- Dùng input: `de_tai_cac_cap`, `cong_bo_khoa_hoc`, `so_huu_tri_tue`, `hoi_thao`, `hop_tac_quoc_te`, `giai_thuong`.
+- Vai trò: Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: phân loại và đối chiếu số liệu · ⏱ ~1–2 ngày làm việc (ước tính)
+- Lưu ý nghiệp vụ: bài báo "đã chấp nhận đăng" nhưng chưa xuất bản thì không được tính vào số công bố của năm; đề tài nghiệm thu phải có quyết định nghiệm thu, không tính theo báo cáo miệng của chủ nhiệm.
+- → Kết quả bước: bảng phân loại số liệu đã xác thực + danh sách số liệu bị loại kèm lý do (thiếu minh chứng).
+
+**Bước 3. Lập các bảng tổng hợp và so sánh**
+- Làm gì: lập mỗi nhóm nội dung một bảng tổng hợp (đề tài theo cấp, công bố theo loại, SHTT, hội thảo tổ chức/tham dự, HTQT); tính tổng toàn trường; thêm cột so sánh với năm trước (tăng/giảm %) để đánh giá xu hướng.
+- Dùng input: kết quả Bước 2 (số liệu đã xác thực).
+- Vai trò: Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: lập bảng, tính tổng và so sánh tỷ lệ với năm trước · ⏱ ~1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: tổng các dòng chi tiết phải khớp dòng tổng cộng — kiểm tra bằng công thức, không cộng tay; tỷ lệ % so sánh phải ghi rõ cơ sở (so với năm nào).
+- → Kết quả bước: bộ bảng tổng hợp số liệu (mỗi nhóm một bảng, có tổng toàn trường và cột so sánh năm trước).
+
+**Bước 4. Viết phần đánh giá chung**
+- Làm gì: nêu kết quả nổi bật, định lượng bằng số liệu từ các bảng Bước 3 (ví dụ tăng % công bố, số MOU mới); sau đó phân tích tồn tại, hạn chế và nguyên nhân một cách thẳng thắn, cụ thể, lấy từ `ton_tai_han_che`.
+- Dùng input: `ton_tai_han_che`, kết quả Bước 3.
+- Vai trò: Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn dự thảo đánh giá · ⏱ ~1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: tồn tại phải gắn với số liệu (ví dụ "tỷ lệ bài báo quốc tế/giảng viên còn thấp: 0,35 bài/người/năm"), không viết chung chung kiểu "còn một số hạn chế"; nguyên nhân phải chỉ rõ là chủ quan hay khách quan.
+- → Kết quả bước: dự thảo phần II. Đánh giá chung (1. Kết quả nổi bật; 2. Tồn tại, hạn chế và nguyên nhân).
+
+**Bước 5. Xây dựng phương hướng năm tới**
+- Làm gì: cụ thể hóa `phuong_huong` thành các nhiệm vụ có chỉ tiêu định lượng (ví dụ: 50 bài báo quốc tế, 02 đề tài cấp Bộ mới, 03 MOU mới, 01 hội thảo quốc tế), mỗi nhiệm vụ gắn với đơn vị thực hiện.
+- Dùng input: `phuong_huong`.
+- Vai trò: Trưởng Phòng KHCN&HTPT · AI hỗ trợ: soạn dự thảo phương hướng · ⏱ ~1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: chỉ tiêu phải khả thi dựa trên xu hướng số liệu Bước 3 (không đặt tăng 50% khi năm trước chỉ tăng 10%); nhiệm vụ nào không gắn đơn vị thực hiện thì coi như chưa hoàn thiện.
+- → Kết quả bước: dự thảo phần III. Phương hướng (nhiệm vụ – chỉ tiêu định lượng – đơn vị thực hiện).
+
+**Bước 6. Hoàn thiện, thẩm định và ban hành báo cáo**
+- Làm gì: ráp báo cáo đầy đủ theo bố cục I. Kết quả (theo bảng) → II. Đánh giá chung → III. Phương hướng; Trưởng Phòng KHCN&HTPT thẩm định; `nguoi_ky` (Hiệu trưởng hoặc Phó Hiệu trưởng phụ trách) ký ban hành; tách bộ bảng tổng hợp ra file Excel nếu cần nộp cơ quan tiếp nhận.
+- Dùng input: `nguoi_ky`, kết quả các Bước 3–5.
+- Vai trò: Trưởng Phòng KHCN&HTPT · AI hỗ trợ: chuẩn bị hồ sơ trình ký, nhắc lịch và theo dõi tiến độ · ⏱ ~1 ngày làm việc (ước tính)
+- Lưu ý nghiệp vụ: số liệu trong phần đánh giá và phương hướng phải khớp với bảng tổng hợp — kiểm tra chéo lần cuối trước khi trình ký; báo cáo năm nộp cơ quan tiếp nhận (bản gốc ghi thường trước ngày 15/01 năm sau, chưa xác minh cho VNU-IS).
+- → Kết quả bước: báo cáo tổng kết KHCN & HTQT năm hoàn chỉnh đã ký ban hành + bộ bảng tổng hợp (file Excel tách riêng nếu cần).
+
+## Luồng quy trình (Workflow)
+```mermaid
+flowchart TD
+    IN[/"Số liệu các đơn vị gửi về"/]
+    A["Bước 1: Thu thập số liệu từ các khoa, viện, trung tâm"]
+    B["Bước 2: Phân loại và đối chiếu số liệu với minh chứng"]
+    C{"Số liệu có đủ minh chứng?"}
+    E["Loại số liệu thiếu minh chứng"]
+    D["Bước 3: Lập bảng tổng hợp, so sánh với năm trước"]
+    F["Bước 4: Viết đánh giá chung: kết quả, tồn tại, nguyên nhân"]
+    G["Bước 5: Xây dựng phương hướng năm tới"]
+    HG["👤 Trưởng Phòng KHCN&HTPT thẩm định"]
+    H["Bước 6: Hiệu trưởng ký ban hành"]
+    OUT[/"Báo cáo tổng kết KHCN và HTQT năm"/]
+    IN --> A --> B --> C
+    C -->|Không| E --> D
+    C -->|Có| D
+    D --> F --> G --> HG --> H --> OUT
+```
+
+## Đầu ra
+- Báo cáo tổng kết KHCN & HTQT năm hoàn chỉnh (văn bản + các bảng số liệu).
+- Bộ bảng tổng hợp số liệu (có thể tách file Excel để nộp cơ quan tiếp nhận).
+
+File nghiệp vụ thực tế theo định dạng mặc định ở đầu skill hoặc định dạng người dùng yêu cầu, kèm liên kết tải trong phản hồi cuối.
+
+Sản phẩm nghiệp vụ hoàn chỉnh theo [quy cách và cấu trúc](references/quy-cach-dau-ra.md), giữ các trường chưa có dữ liệu ở trạng thái trống. Không xuất kèm danh mục kiểm/phụ lục kiểm tra đầu ra.
+
+## Kiểm tra nội bộ trước khi giao
+Các tiêu chí sau dùng để tự đối chiếu; không sao chép vào file xuất. Mục thiếu dữ liệu được để trống, không đánh dấu đã đạt hoặc đã duyệt.
+
+- [ ] Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).
+- [ ] Số liệu trong output khớp với Input đã cho (đề tài, công bố, SHTT, hội thảo, HTQT, giải thưởng).
+- [ ] Tổng các dòng chi tiết khớp dòng tổng cộng trong mỗi bảng; số liệu trong phần đánh giá và phương hướng khớp với bảng tổng hợp.
+- [ ] Mọi số liệu đều có minh chứng (quyết định nghiệm thu, bài báo, văn bằng SHTT, văn bản ký kết); không đưa số liệu thiếu minh chứng vào báo cáo chính thức.
+- [ ] Không bịa đặt số liệu, tỷ lệ tăng/giảm, tên đối tác, văn bằng, giải thưởng.
+- [ ] Bài báo "đã chấp nhận đăng nhưng chưa xuất bản" không được tính vào số công bố của năm.
+- [ ] Căn cứ pháp lý đầy đủ, còn hiệu lực; chốt số liệu trước 31/12 và nộp Bộ trước 15/01 năm sau.
+- [ ] Đã qua Human gate: Trưởng Phòng KHCN&HTPT thẩm định; Hiệu trưởng hoặc Phó Hiệu trưởng phụ trách ký ban hành.
+
+## Căn cứ & lưu ý
+- Thông tư quy định về thống kê, báo cáo hoạt động KHCN của Bộ GD&ĐT; Quy chế quản lý
+  hoạt động KHCN của Trường Quốc tế – ĐHQGHN.
+- Số liệu báo cáo phải có minh chứng (quyết định nghiệm thu, bản sao bài báo, văn bằng
+  SHTT, văn bản ký kết); số liệu không có minh chứng không được đưa vào báo cáo chính thức.
+- Thời hạn nộp báo cáo năm cho cơ quan tiếp nhận (bản gốc ghi thường trước ngày 15/01 năm sau, chưa xác minh cho VNU-IS) – cần chốt số
+  liệu với các đơn vị trước 31/12.
+- Ví dụ trong skill chỉ để minh họa; không đưa dữ liệu cá nhân thật vào ví dụ. Tên Trường, cơ quan chủ quản và địa danh dùng đúng bảng thông tin VNU-IS đã điền sẵn.
+
+## Tư liệu đối chiếu
+Bản gốc trước cập nhật pháp lý (kèm ví dụ giả lập) lưu tại `references/quy-trinh-lich-su.md`, chỉ để đối chiếu hồ sơ lịch sử; không dùng căn cứ, mẫu hay số liệu trong đó làm chỉ dẫn hiện hành.
+
+## Quản trị phiên bản
+- Phiên bản gói VNU-IS `0.4.2` (cập nhật 2026-10-11), dựa trên skill gốc `bao-cao-khcn-nam` bản `1.3.2`; hồ sơ đầy đủ tại [references/version.json](references/version.json).
+- Người phê duyệt nghiệp vụ: **chưa chỉ định**. Trạng thái: dự thảo nghiệp vụ; kiểm tra pháp lý trước thực thi. Ngày cập nhật không đồng nghĩa mọi văn bản đã được rà soát toàn văn.
+- Giấy phép theo LICENSE của kho (bản quyền CES Global). Lịch sử thay đổi: CHANGELOG.md.

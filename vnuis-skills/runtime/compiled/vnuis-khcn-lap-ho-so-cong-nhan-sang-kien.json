@@ -1,0 +1,210 @@
+{
+ "name": "vnuis-khcn-lap-ho-so-cong-nhan-sang-kien",
+ "title": "Hồ sơ đề nghị công nhận sáng kiến kinh nghiệm",
+ "description": "Dùng khi cán bộ, giảng viên đăng ký công nhận sáng kiến kinh nghiệm cấp trường hoặc cấp ngành và cần đơn đề nghị, bản mô tả sáng kiến, ý kiến đơn vị, danh mục hồ sơ.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-ho-so-cong-nhan-sang-kien",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Hội đồng sáng kiến",
+ "when": "Khi cán bộ, giảng viên, nhân viên VNU-IS đăng ký công nhận sáng kiến kinh nghiệm:\nsoạn đơn đề nghị, bản mô tả sáng kiến, lấy ý kiến đơn vị, chuẩn bị hồ sơ nộp Hội đồng\nsáng kiến cấp trường (hoặc cấp trên).",
+ "inputs": [
+  {
+   "key": "ten_sang_kien",
+   "desc": "Tên sáng kiến kinh nghiệm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tac_gia",
+   "desc": "Họ tên, chức danh, đơn vị công tác của tác giả (đồng tác giả nếu có)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "linh_vuc",
+   "desc": "Lĩnh vực áp dụng (đào tạo, quản lý, NCKH, phục vụ...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thuc_trang",
+   "desc": "Thực trạng vấn đề trước khi có sáng kiến: hạn chế, khó khăn, số liệu minh họa",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "giai_phap",
+   "desc": "Nội dung giải pháp: cách làm mới, các bước triển khai",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_ap_dung",
+   "desc": "Thời gian và phạm vi đã áp dụng thử (từ–đến, đơn vị áp dụng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hieu_qua",
+   "desc": "Hiệu quả áp dụng: số liệu so sánh trước–sau, lợi ích kinh tế/xã hội (nếu có)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cap_cong_nhan",
+   "desc": "Cấp Trường / cấp Bộ, ngành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "y_kien_don_vi",
+   "desc": "Ý kiến nhận xét, đánh giá của thủ trưởng đơn vị",
+   "required": false,
+   "note": "Không (soạn mẫu để xin ký)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Hội đồng sáng kiến"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Soạn Đơn đề nghị công nhận sáng kiến",
+   "lam_gi": "điền họ tên, chức danh, đơn vị từ `tac_gia`; ghi `ten_sang_kien`, `linh_vuc`, `thoi_gian_ap_dung`, `cap_cong_nhan`; viết lời cam kết: sáng kiến do tác giả nghiên cứu, triển khai, chưa được công nhận ở cấp đăng ký, nội dung trung thực; để trống chỗ ký, ghi rõ họ tên và ngày tháng.",
+   "inputs": [
+    "tac_gia",
+    "ten_sang_kien",
+    "linh_vuc",
+    "thoi_gian_ap_dung",
+    "cap_cong_nhan"
+   ],
+   "vai_tro": "Tác giả sáng kiến · AI hỗ trợ: soạn dự thảo đơn từ thông tin tác giả và lời cam kết",
+   "luu_y": "cam kết \"chưa được công nhận ở cấp đăng ký\" là điều kiện bắt buộc — sáng kiến đã được công nhận ở cùng cấp thì không đăng ký lại; có đồng tác giả thì tất cả cùng ký đơn.",
+   "ket_qua": "dự thảo Đơn đề nghị công nhận sáng kiến."
+  },
+  {
+   "n": 2,
+   "title": "Soạn Bản mô tả sáng kiến – phần Thực trạng",
+   "lam_gi": "từ `thuc_trang` viết phần I: mô tả vấn đề tồn tại trước khi có sáng kiến, nguyên nhân, hậu quả, kèm số liệu minh họa cụ thể.",
+   "inputs": [
+    "thuc_trang"
+   ],
+   "vai_tro": "Tác giả sáng kiến · AI hỗ trợ: viết phần I có minh họa cụ thể",
+   "luu_y": "thực trạng càng cụ thể (số liệu, thời gian, phạm vi) thì phần hiệu quả sau này càng dễ chứng minh — tránh mô tả chung chung kiểu \"chất lượng chưa cao\".",
+   "ket_qua": "dự thảo phần I – Thực trạng."
+  },
+  {
+   "n": 3,
+   "title": "Soạn Bản mô tả sáng kiến – phần Giải pháp",
+   "lam_gi": "từ `giai_phap` viết phần II: nội dung đổi mới, điểm mới so với cách làm cũ, các bước triển khai cụ thể theo trình tự thực hiện.",
+   "inputs": [
+    "giai_phap"
+   ],
+   "vai_tro": "Tác giả sáng kiến · AI hỗ trợ: viết phần II theo trình tự triển khai",
+   "luu_y": "phải chỉ rõ \"tính mới\" — cái gì khác so với cách làm cũ, vì đây là tiêu chí đầu tiên hội đồng chấm; các bước triển khai phải đủ chi tiết để đơn vị khác có thể làm theo (căn cứ đánh giá khả năng nhân rộng).",
+   "ket_qua": "dự thảo phần II – Giải pháp."
+  },
+  {
+   "n": 4,
+   "title": "Soạn Bản mô tả sáng kiến – phần Hiệu quả áp dụng",
+   "lam_gi": "từ `hieu_qua` và `thoi_gian_ap_dung` viết phần III: kết quả đạt được với số liệu so sánh trước–sau (lấy các chỉ số ở bước 2 làm mốc so sánh), phạm vi đã áp dụng, khả năng nhân rộng.",
+   "inputs": [
+    "hieu_qua",
+    "thoi_gian_ap_dung"
+   ],
+   "vai_tro": "Tác giả sáng kiến · AI hỗ trợ: lập bảng so sánh và viết phần III",
+   "luu_y": "số liệu trước–sau phải cùng đơn vị đo và cùng phương pháp đo thì so sánh mới có giá trị; hiệu quả nên có cả định lượng (%, số liệu) và định tính (phản hồi người dùng).",
+   "ket_qua": "dự thảo phần III – Hiệu quả áp dụng (có số liệu so sánh trước–sau)."
+  },
+  {
+   "n": 5,
+   "title": "Soạn mẫu Ý kiến của đơn vị và đối chiếu tiêu chí công nhận",
+   "lam_gi": "soạn mẫu ý kiến từ `y_kien_don_vi` (hoặc soạn mới nếu chưa có): nhận xét về tính mới, tính hiệu quả, khả năng nhân rộng; đề nghị mức công nhận; để trống phần ký tên, đóng dấu của thủ trưởng đơn vị; đối chiếu 4 tiêu chí công nhận: có tính mới / đã được áp dụng thử / mang lại hiệu quả (có số liệu) / có khả năng áp dụng rộng rãi.",
+   "inputs": [
+    "y_kien_don_vi",
+    "cap_cong_nhan"
+   ],
+   "vai_tro": "Thủ trưởng đơn vị · AI hỗ trợ: soạn mẫu ý kiến và đối chiếu 4 tiêu chí",
+   "luu_y": "thiếu 1 trong 4 tiêu chí thì hồ sơ chắc chắn bị loại — phát hiện sớm ở bước này để bổ sung (quay lại bước 2–4) thay vì nộp rồi bị trả về.",
+   "ket_qua": "mẫu Ý kiến của đơn vị + bảng đối chiếu 4 tiêu chí công nhận (đạt/chưa đạt từng tiêu chí)."
+  },
+  {
+   "n": 6,
+   "title": "Lập danh mục kiểm và hoàn thiện hồ sơ",
+   "lam_gi": "lập danh mục kiểm: đơn đề nghị, bản mô tả (đủ 3 phần), ý kiến đơn vị, minh chứng kèm theo (số liệu, hình ảnh, văn bản áp dụng...); trình thủ trưởng đơn vị ký nhận xét; xuất bộ hồ sơ hoàn chỉnh file theo định dạng đầu ra của skill, sẵn sàng in/ký và nộp Hội đồng sáng kiến.",
+   "inputs": [],
+   "vai_tro": "Tác giả sáng kiến · AI hỗ trợ: lập danh mục kiểm hồ sơ",
+   "luu_y": "minh chứng kèm theo (bảng điểm, kết quả khảo sát, văn bản áp dụng) phải được đơn vị xác nhận — minh chứng không có xác nhận dễ bị nghi ngờ tính xác thực.",
+   "ket_qua": "bộ hồ sơ đề nghị công nhận sáng kiến hoàn chỉnh."
+  }
+ ],
+ "checks": [
+  "Đủ cấu trúc 3 văn bản theo chuẩn: Đơn đề nghị 6 phần (Quốc hiệu – Tiêu ngữ → tiêu đề → thông tin tác giả → tên/lĩnh vực/thời gian/cấp công nhận → cam kết → chữ ký) + Bản mô tả (tiêu đề → phần I, II, III) + Ý kiến đơn vị 4 phần",
+  "Nội dung trong output khớp Input: tên sáng kiến, tác giả, lĩnh vực, thời gian áp dụng = `ten_sang_kien`, `tac_gia`, `linh_vuc`, `thoi_gian_ap_dung`",
+  "Không bịa đặt số liệu so sánh trước–sau, minh chứng hiệu quả, ý kiến đánh giá",
+  "Số liệu trước–sau cùng đơn vị đo và cùng phương pháp đo; bản mô tả có số liệu cụ thể, không nhận định chung chung",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Nghị định 13/2012/NĐ-CP, văn bản hướng dẫn công nhận sáng kiến của trường)",
+  "Đáp ứng đủ 4 tiêu chí công nhận: có tính mới / đã được áp dụng thử / mang lại hiệu quả có số liệu / có khả năng áp dụng rộng rãi",
+  "Phần Giải pháp nêu rõ \"tính mới\" so với cách làm cũ và các bước đủ chi tiết để đơn vị khác làm theo; minh chứng kèm theo được đơn vị xác nhận",
+  "Lời cam kết hợp lệ: sáng kiến do tác giả thực hiện, chưa được công nhận ở cấp đăng ký, nội dung trung thực; đồng tác giả (nếu có) cùng ký đơn",
+  "Đã qua Human gate: tác giả ký đơn; thủ trưởng đơn vị ký nhận xét, đóng dấu Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hồ sơ sáng kiến ghi phạm vi áp dụng và hiệu quả theo số liệu người đề xuất cung cấp; không tự tính hiệu quả.",
+  "Hội đồng chấm do Trường quyết (C6)."
+ ],
+ "cho_xac_nhan": [
+  "Quy định công nhận sáng kiến (C2).",
+  "Mẫu hồ sơ (C8)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ",
+  "Tiêu đề \"ĐƠN ĐỀ NGHỊ CÔNG NHẬN SÁNG KIẾN KINH NGHIỆM\" + Kính gửi Hội đồng sáng kiến",
+  "Thông tin tác giả (họ tên, chức danh, đơn vị)",
+  "Tên sáng kiến, lĩnh vực áp dụng, thời gian áp dụng, cấp công nhận đề nghị",
+  "Lời cam kết (do tác giả thực hiện, chưa được công nhận ở cấp này, nội dung trung thực)",
+  "Địa danh, ngày tháng năm + chữ ký người đề nghị (ghi rõ họ tên) - Văn bản 2 – Bản mô tả sáng kiến:",
+  "Tiêu đề \"BẢN MÔ TẢ SÁNG KIẾN KINH NGHIỆM\" + tên sáng kiến, tác giả",
+  "Phần I. Thực trạng (vấn đề, nguyên nhân, hậu quả, số liệu minh họa)",
+  "Phần II. Giải pháp (nội dung đổi mới, tính mới so với cách làm cũ, các bước triển khai)",
+  "Phần III. Hiệu quả áp dụng (số liệu so sánh trước–sau, phạm vi áp dụng, khả năng nhân rộng) - Văn bản 3 – Ý kiến của đơn vị:",
+  "Tiêu đề \"Ý KIẾN CỦA ĐƠN VỊ\"",
+  "Nhận xét về tính mới, tính hiệu quả, khả năng nhân rộng",
+  "Đề nghị mức công nhận",
+  "Chữ ký, đóng dấu của thủ trưởng đơn vị"
+ ],
+ "output_structure_raw": "**Cấu trúc output chuẩn:** khung cố định của bộ hồ sơ (3 văn bản), các phần bắt buộc theo đúng thứ tự xuất hiện:\n- Văn bản 1 – Đơn đề nghị công nhận sáng kiến:\n  1. Quốc hiệu – Tiêu ngữ\n  2. Tiêu đề \"ĐƠN ĐỀ NGHỊ CÔNG NHẬN SÁNG KIẾN KINH NGHIỆM\" + Kính gửi Hội đồng sáng kiến\n  3. Thông tin tác giả (họ tên, chức danh, đơn vị)\n  4. Tên sáng kiến, lĩnh vực áp dụng, thời gian áp dụng, cấp công nhận đề nghị\n  5. Lời cam kết (do tác giả thực hiện, chưa được công nhận ở cấp này, nội dung trung thực)\n  6. Địa danh, ngày tháng năm + chữ ký người đề nghị (ghi rõ họ tên)\n- Văn bản 2 – Bản mô tả sáng kiến:\n  1. Tiêu đề \"BẢN MÔ TẢ SÁNG KIẾN KINH NGHIỆM\" + tên sáng kiến, tác giả\n  2. Phần I. Thực trạng (vấn đề, nguyên nhân, hậu quả, số liệu minh họa)\n  3. Phần II. Giải pháp (nội dung đổi mới, tính mới so với cách làm cũ, các bước triển khai)\n  4. Phần III. Hiệu quả áp dụng (số liệu so sánh trước–sau, phạm vi áp dụng, khả năng nhân rộng)\n- Văn bản 3 – Ý kiến của đơn vị:\n  1. Tiêu đề \"Ý KIẾN CỦA ĐƠN VỊ\"\n  2. Nhận xét về tính mới, tính hiệu quả, khả năng nhân rộng\n  3. Đề nghị mức công nhận\n  4. Chữ ký, đóng dấu của thủ trưởng đơn vị",
+ "human_gate_check": "Đã qua Human gate: tác giả ký đơn; thủ trưởng đơn vị ký nhận xét, đóng dấu Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-khcn-lap-ho-so-cong-nhan-sang-kien/references"
+}

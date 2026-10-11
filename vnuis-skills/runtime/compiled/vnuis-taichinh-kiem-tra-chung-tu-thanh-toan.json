@@ -1,0 +1,155 @@
+{
+ "name": "vnuis-taichinh-kiem-tra-chung-tu-thanh-toan",
+ "title": "Lập danh mục kiểm tra chứng từ thanh toán",
+ "description": "Dùng khi Phòng TC&QT kiểm soát bộ chứng từ của một khoản chi (lương, học bổng, đề tài, mua sắm, công tác phí, hội nghị) trước khi trình ký chi tiền.",
+ "group": "taichinh",
+ "group_label": "Kế hoạch – tài chính",
+ "previous_name": "vnuis-checklist-chung-tu-thanh-toan",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (mảng kế hoạch – tài chính sau hợp nhất 2025)",
+ "when": "Khi kiểm tra, đối chiếu bộ chứng từ của một khoản chi trước khi trình ký thanh toán:\nxác định chứng từ bắt buộc theo từng loại chi, đơn vị lập, và các điểm kiểm soát trọng yếu.",
+ "inputs": [
+  {
+   "key": "loai_chi",
+   "desc": "Một trong 6 loại: (a) lương–phụ cấp, (b) học bổng–hỗ trợ SV, (c) đề tài NCKH, (d) mua sắm tài sản–thiết bị, (e) công tác phí, (f) tiếp khách–hội nghị",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung_chi",
+   "desc": "Nội dung cụ thể của khoản chi (vd: thanh toán đợt 2 hợp đồng mua máy chiếu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_tien",
+   "desc": "Số tiền đề nghị thanh toán",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chung_tu_hien_co",
+   "desc": "Danh sách chứng từ đơn vị đã nộp (để đánh dấu đủ/thiếu)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "don_vi_de_nghi",
+   "desc": "Đơn vị đề nghị thanh toán",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (mảng kế hoạch – tài chính sau hợp nhất 2025)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định đúng loại chi",
+   "lam_gi": "căn cứ `loai_chi` đã khai báo và đối chiếu với `noi_dung_chi`, `so_tien` thực tế; nếu nội dung chi không thuộc nhóm đã chọn (ví dụ khai (d) mua sắm nhưng thực chất là thuê dịch vụ tổ chức hội nghị), phân loại lại cho đúng trước khi lập danh mục kiểm.",
+   "inputs": [
+    "loai_chi",
+    "noi_dung_chi",
+    "so_tien"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "phân loại sai loại chi dẫn đến áp sai danh mục chứng từ — kiểm tra bản chất khoản chi (mua tài sản, thuê dịch vụ, chi cho con người), không chỉ dựa vào tên gọi của đơn vị đề nghị.",
+   "ket_qua": "phiếu phân loại chi (loại chi đã xác định trong 6 nhóm + nội dung chi)."
+  },
+  {
+   "n": 2,
+   "title": "Liệt kê chứng từ bắt buộc, đơn vị lập và lưu ý kiểm soát theo loại chi",
+   "lam_gi": "lấy danh mục chứng từ chuẩn của loại chi đã xác định ở Bước 1 (xem chi tiết (a)–(f) bên dưới); với mỗi chứng từ ghi rõ đơn vị lập và các điểm kiểm soát trọng yếu.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "danh mục chứng từ của từng loại chi là cố định theo quy định — không được tự ý bớt chứng từ bắt buộc; chứng từ do đơn vị nào lập thì đơn vị đó chịu trách nhiệm về tính đúng đắn.",
+   "ket_qua": "danh mục chứng từ bắt buộc của loại chi (kèm đơn vị lập và lưu ý kiểm soát từng chứng từ). Danh mục chi tiết theo từng loại chi: **(a) Chi lương – phụ cấp** - Chứng từ: Quyết định nâng lương/chuyển ngạch/bổ nhiệm (nếu có thay đổi); bảng chấm công (đơn vị lập: các đơn vị, Phòng TC&QT (nhân sự) tổng hợp); bảng thanh toán tiền lương, phụ cấp (Phòng TC&QT (kế hoạch – tài chính) lập theo mẫu); danh sách ký nhận/ủy nhiệm chi chuyển khoản; quyết định phê duyệt quỹ lương tháng/quý của Hiệu trưởng. - Đơn vị lập: Phòng TC&QT (nhân sự) (chấm công, biến động nhân sự); Phòng TC&QT (kế hoạch – tài chính) (bảng lương)."
+  },
+  {
+   "n": 3,
+   "title": "Đối chiếu chứng từ hiện có, đánh dấu Đủ/Thiếu",
+   "lam_gi": "đối chiếu từng chứng từ trong `chung_tu_hien_co` với danh mục bắt buộc ở Bước 2; đánh dấu từng dòng \"Đủ\" hoặc \"Thiếu\"; chứng từ chưa đến hạn theo tiến độ hợp đồng (ví dụ biên bản thanh lý khi chưa thanh toán đợt cuối) ghi rõ \"chưa đến hạn\", không tính là thiếu.",
+   "inputs": [
+    "chung_tu_hien_co"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, tính toán, phân tích số liệu",
+   "luu_y": "chứng từ thiếu → trả lại đơn vị bổ sung, tuyệt đối không trình ký thanh toán khi thiếu chứng từ bắt buộc.",
+   "ket_qua": "bảng đối chiếu chứng từ (từng chứng từ bắt buộc + trạng thái Đủ/Thiếu)."
+  },
+  {
+   "n": 4,
+   "title": "Kiểm tra tính hợp lệ của nội dung chứng từ",
+   "lam_gi": "với các chứng từ đã \"Đủ\", kiểm tra: số tiền khớp `so_tien`/hợp đồng; chữ ký người lập, người duyệt và con dấu đầy đủ; hóa đơn hợp lệ (MST, nội dung, số tiền khớp hợp đồng); thời hiệu chứng từ đúng niên độ ngân sách; áp dụng các lưu ý kiểm soát đặc thù của loại chi tại Bước 2.",
+   "inputs": [
+    "so_tien"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, tính toán, phân tích số liệu",
+   "luu_y": "chứng từ đủ nhưng sai nội dung (số tiền, chữ ký, con dấu) → yêu cầu đơn vị điều chỉnh, không tự sửa thay; nguyên tắc kiểm soát: người lập, người kiểm tra và người phê duyệt thanh toán phải độc lập nhau.",
+   "ket_qua": "danh sách lỗi chứng từ đã phân loại (thiếu chứng từ / sai nội dung)."
+  },
+  {
+   "n": 5,
+   "title": "Kết luận kiểm soát và trả kết quả cho đơn vị",
+   "lam_gi": "tổng hợp kết quả Bước 3 – 4 thành kết luận: đủ điều kiện trình ký thanh toán, hoặc chưa đủ điều kiện kèm danh mục cụ thể cần bổ sung/điều chỉnh; gửi trả `don_vi_de_nghi` để thực hiện; sau khi đơn vị bổ sung đầy đủ thì trình ký thanh toán.",
+   "inputs": [
+    "don_vi_de_nghi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, chuẩn bị hồ sơ trình đầy đủ",
+   "luu_y": "kết luận phải nêu đích danh từng chứng từ cần bổ sung, không ghi chung chung \"bổ sung hồ sơ\"; lưu vết các lần trả lại để theo dõi.",
+   "ket_qua": "kết luận kiểm soát (đủ điều kiện trình ký / yêu cầu bổ sung chi tiết)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Bảng danh mục kiểm chứng từ đầy đủ cho loại chi được yêu cầu, gồm các cột: TT, Chứng từ bắt",
+  "Có đầy đủ sản phẩm: Kết luận kiểm soát: đủ điều kiện trình ký thanh toán hay phải bổ sung",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Phân loại sai loại chi dẫn đến áp sai danh mục chứng từ — kiểm tra bản",
+  "Danh mục chứng từ của từng loại chi là cố định theo quy định — không > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Phân loại nguồn kinh phí trước khi chọn bộ chứng từ: ngân sách, ngoài ngân sách, đề tài, dự án hợp tác. Website nêu tự chủ tài chính là một trụ cột nên nhiều khoản ngoài ngân sách; mỗi nguồn có bộ chứng từ riêng do Trường quy định, skill không tự đặt.",
+  "Chứng từ, hợp đồng có yếu tố nước ngoài (đối tác, chuyên gia, hội thảo quốc tế): đánh dấu cần bản dịch và quy đổi tiền tệ; không tự tính tỷ giá.",
+  "Kết quả là bảng đủ/thiếu/không rõ theo từng chứng từ, không kết luận hồ sơ hợp lệ."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế chi tiêu nội bộ và bộ chứng từ theo từng nguồn (C2, C8).",
+  "Người kiểm tra và người duyệt chi (C1, C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề danh mục kiểm (loại chi, nội dung chi, số tiền, đơn vị đề nghị);",
+  "Bảng danh mục kiểm (cột: TT, chứng từ bắt buộc, đơn vị lập, Đủ/Thiếu, ghi chú kiểm soát);",
+  "Kết luận kiểm soát (đủ điều kiện trình ký thanh toán, hoặc chưa đủ điều kiện kèm danh mục chứng từ cụ thể cần bổ sung/điều chỉnh);",
+  "(Phụ lục) Bảng danh mục kiểm tương tự cho các loại chi còn lại theo danh mục chứng từ tại mục Quy trình."
+ ],
+ "output_structure_raw": "1. Tiêu đề danh mục kiểm (loại chi, nội dung chi, số tiền, đơn vị đề nghị);\n\n2. Bảng danh mục kiểm (cột: TT, chứng từ bắt buộc, đơn vị lập, Đủ/Thiếu, ghi chú kiểm soát);\n\n3. Kết luận kiểm soát (đủ điều kiện trình ký thanh toán, hoặc chưa đủ điều kiện kèm danh\n   mục chứng từ cụ thể cần bổ sung/điều chỉnh);\n\n4. (Phụ lục) Bảng danh mục kiểm tương tự cho các loại chi còn lại theo danh mục chứng từ\n   tại mục Quy trình.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (mảng kế hoạch – tài chính sau hợp nhất 2025). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-taichinh-kiem-tra-chung-tu-thanh-toan/references"
+}

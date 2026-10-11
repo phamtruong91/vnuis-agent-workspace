@@ -1,0 +1,242 @@
+{
+ "name": "vnuis-dt-soan-de-cuong-hoc-phan",
+ "title": "Soạn đề cương chi tiết học phần",
+ "description": "Dùng khi giảng viên, bộ môn cần soạn mới hoặc cập nhật đề cương chi tiết một học phần đại học: mục tiêu, chuẩn đầu ra, nội dung theo tuần, phương pháp giảng dạy, cách đánh giá, tài liệu.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-de-cuong-chi-tiet-hoc-phan",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Sáu khoa; Phòng Đào tạo",
+ "when": "Khi giảng viên/bộ môn cần soạn mới hoặc cập nhật đề cương chi tiết của một học phần:\nxác định thông tin chung, mục tiêu và chuẩn đầu ra học phần (CLO), phân bổ nội dung theo\ntuần/chương, phương pháp giảng dạy và cách thức đánh giá người học.",
+ "inputs": [
+  {
+   "key": "ten_hoc_phan",
+   "desc": "Tên học phần (tiếng Việt, có thể kèm tên tiếng Anh)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ma_hoc_phan",
+   "desc": "Mã học phần theo quy định của trường",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_tin_chi",
+   "desc": "Số tín chỉ và phân bổ (lý thuyết – thực hành – tự học)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoc_ky",
+   "desc": "Học kỳ bố trí trong CTĐT",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoc_phan_tien_quyet",
+   "desc": "Học phần tiên quyết / song hành (nếu có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "muc_tieu",
+   "desc": "Mục tiêu của học phần",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "clo",
+   "desc": "Danh sách chuẩn đầu ra học phần (CLO), gắn với PLO tương ứng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung_tuan",
+   "desc": "Nội dung chi tiết theo từng tuần/chương",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ppgd",
+   "desc": "Phương pháp giảng dạy (thuyết trình, thảo luận nhóm, dự án, lab...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_gia",
+   "desc": "Các thành phần đánh giá và trọng số (chuyên cần, giữa kỳ, cuối kỳ...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tai_lieu",
+   "desc": "Giáo trình chính, tài liệu tham khảo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "giang_vien",
+   "desc": "Giảng viên phụ trách soạn đề cương",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Sáu khoa; Phòng Đào tạo"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Thông tư 54/2026/TT-BGDĐT, hiệu lực 30/06/2026: Phân loại xây dựng chương trình, chuẩn đầu ra hay mở ngành; yêu cầu chuẩn ngành/trình độ, trạng thái chương trình và ngày tiếp nhận hồ sơ. Đọc toàn văn và điều khoản chuyển tiếp trước khi đổi chuẩn/mẫu; chưa xác minh toàn văn thì ghi điều kiện chưa xác nhận, không tự đặt thời hạn chuyển đổi.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Ghi thông tin chung của học phần",
+   "lam_gi": "ghi đầy đủ từ các trường input: tên học phần (`ten_hoc_phan`, kèm tên tiếng Anh nếu có), mã học phần (`ma_hoc_phan`), số tín chỉ và phân bổ lý thuyết – thực hành – tự học (`so_tin_chi`), học kỳ bố trí (`hoc_ky`), học phần tiên quyết/song hành (`hoc_phan_tien_quyet`), đơn vị phụ trách (bộ môn/khoa).",
+   "inputs": [
+    "ten_hoc_phan",
+    "ma_hoc_phan",
+    "so_tin_chi",
+    "hoc_ky",
+    "hoc_phan_tien_quyet"
+   ],
+   "vai_tro": "Giảng viên soạn đề cương (bộ môn) · AI hỗ trợ: soạn mục thông tin, đối chiếu khớp khung CTĐT",
+   "luu_y": "mã và tên học phần phải khớp 100% với danh mục học phần trong khung CTĐT đã ban hành; số tiết quy đổi từ tín chỉ phải đúng quy định (1 tín chỉ lý thuyết = 15 tiết, thực hành/thí nghiệm tính theo hệ số của trường); học phần tiên quyết phải thực sự được bố trí ở học kỳ trước.",
+   "ket_qua": "mục \"Thông tin chung\" hoàn chỉnh của đề cương."
+  },
+  {
+   "n": 2,
+   "title": "Xác định mục tiêu và chuẩn đầu ra học phần (CLO)",
+   "lam_gi": "viết mục tiêu tổng quát của học phần từ `muc_tieu`; cụ thể hóa thành các CLO trong `clo` bằng động từ hành động đo lường được; mỗi CLO ghi rõ đóng góp vào PLO nào của CTĐT và ở mức I/R/M nào.",
+   "inputs": [
+    "muc_tieu",
+    "clo"
+   ],
+   "vai_tro": "Giảng viên bộ môn · AI hỗ trợ: soạn dự thảo mục tiêu và CLO, kiểm tra động từ đo lường được",
+   "luu_y": "số CLO vừa phải (thường 3–5 cho một học phần); mỗi CLO phải có ít nhất một hình thức đánh giá tương ứng ở Bước 5 — CLO nào không đo được thì phải viết lại; tránh CLO trùng lặp nội dung với nhau.",
+   "ket_qua": "mục \"Mục tiêu\" và \"Chuẩn đầu ra học phần (CLO)\" hoàn chỉnh, mỗi CLO gắn với PLO tương ứng."
+  },
+  {
+   "n": 3,
+   "title": "Phân bổ nội dung theo tuần/chương",
+   "lam_gi": "chia `noi_dung_tuan` thành các tuần (hoặc chương): mỗi tuần ghi chủ đề, số tiết lý thuyết/thực hành, hoạt động của giảng viên và của sinh viên; đảm bảo tổng số tiết các tuần khớp với số tín chỉ ở Bước 1 và nội dung bao phủ hết các CLO ở Bước 2.",
+   "inputs": [
+    "noi_dung_tuan"
+   ],
+   "vai_tro": "Giảng viên bộ môn · AI hỗ trợ: chia nội dung theo tuần/chương, kiểm tra thứ tự và tổng số tiết",
+   "luu_y": "bẫy thường gặp — tổng số tiết các tuần không khớp số tín chỉ; nội dung tuần sau dùng kiến thức tuần trước nhưng chưa sắp xếp đúng thứ tự; tuần kiểm tra giữa kỳ và tuần dự án phải được tính vào tổng số tuần của học phần.",
+   "ket_qua": "bảng phân bổ nội dung theo tuần (chủ đề, số tiết LT/TH, hoạt động GV–SV)."
+  },
+  {
+   "n": 4,
+   "title": "Xác định phương pháp giảng dạy (PPGD)",
+   "lam_gi": "từ `ppgd`, lựa chọn PPGD phù hợp cho từng khối nội dung ở Bước 3 (thuyết trình, dạy học theo dự án, học theo tình huống, thực hành phòng lab, seminar...); ưu tiên phương pháp lấy người học làm trung tâm; ghi rõ PPGD nào phục vụ CLO nào.",
+   "inputs": [
+    "ppgd"
+   ],
+   "vai_tro": "Giảng viên bộ môn · AI hỗ trợ: đề xuất PPGD theo nội dung và CLO, đối chiếu điều kiện thực tế",
+   "luu_y": "PPGD phải tương thích với điều kiện thực tế (sĩ số lớp, phòng lab, thiết bị); mỗi CLO kỹ năng/thực hành phải có PPGD thực hành tương ứng — không thể đạt CLO thực hành chỉ bằng thuyết trình.",
+   "ket_qua": "mục \"Phương pháp giảng dạy\" hoàn chỉnh, mỗi PPGD gắn với nội dung và CLO tương ứng."
+  },
+  {
+   "n": 5,
+   "title": "Thiết kế phương pháp và trọng số đánh giá",
+   "lam_gi": "từ `danh_gia`, xác định các thành phần đánh giá (chuyên cần, bài tập/thực hành, kiểm tra giữa kỳ, thi/dự án cuối kỳ); phân bổ trọng số từng thành phần (tổng đúng 100%); với mỗi thành phần ghi hình thức, tiêu chí đánh giá (thang tiêu chí chấm) và CLO được đánh giá.",
+   "inputs": [
+    "danh_gia"
+   ],
+   "vai_tro": "Giảng viên bộ môn · AI hỗ trợ: soạn bảng đánh giá và thang tiêu chí chấm, kiểm tra trọng số cộng đúng 100%",
+   "luu_y": "tổng trọng số phải đúng 100% — lỗi cộng sai trọng số rất phổ biến; mỗi CLO phải được ít nhất một thành phần đánh giá đo lường; trọng số phải phản ánh đúng mức độ quan trọng (thành phần đánh giá CLO cốt lõi không thể chỉ chiếm 5%); ghi rõ thang điểm và cách làm tròn.",
+   "ket_qua": "bảng đánh giá hoàn chỉnh (thành phần, hình thức, trọng số, CLO đánh giá, tổng 100%) kèm thang tiêu chí chấm."
+  },
+  {
+   "n": 6,
+   "title": "Liệt kê tài liệu học tập",
+   "lam_gi": "liệt kê từ `tai_lieu`: giáo trình chính (bắt buộc, ghi rõ tên, tác giả, năm xuất bản), tài liệu tham khảo, nguồn học liệu số (cơ sở dữ liệu, website, bộ dữ liệu mở).",
+   "inputs": [
+    "tai_lieu"
+   ],
+   "vai_tro": "Giảng viên bộ môn · AI hỗ trợ: liệt kê sơ bộ tài liệu, kiểm tra tính khả dụng và cập nhật",
+   "luu_y": "giáo trình chính phải có thật và sinh viên tiếp cận được (thư viện trường có đủ số lượng hoặc có bản số); tài liệu tham khảo nên cập nhật trong 5 năm gần nhất đối với lĩnh vực công nghệ; ghi rõ tài liệu nào bắt buộc, tài liệu nào tham khảo.",
+   "ket_qua": "mục \"Tài liệu học tập\" hoàn chỉnh (giáo trình chính, tài liệu tham khảo, học liệu số)."
+  },
+  {
+   "n": 7,
+   "title": "Kiểm tra nhất quán và trình phê duyệt",
+   "lam_gi": "kiểm tra tính nhất quán 4 chiều: CLO – nội dung (mỗi CLO có nội dung dạy) – PPGD (mỗi CLO có phương pháp phù hợp) – đánh giá (mỗi CLO có thành phần đo lường); sửa các điểm chưa khớp; ghi thông tin `giang_vien` soạn đề cương; trình bộ môn/khoa thông qua trước khi đưa vào giảng dạy.",
+   "inputs": [
+    "giang_vien"
+   ],
+   "vai_tro": "Bộ môn/khoa họp thông qua bằng biên bản · AI hỗ trợ: đối chiếu nhất quán 4 chiều (CLO – nội dung – PPGD – đánh giá), chuẩn bị tài liệu họp",
+   "luu_y": "đây là cổng chặn lỗi cuối — dùng bảng đối sánh CLO–PLO và CLO–đánh giá để kiểm tra trực quan; đề cương phải được bộ môn/khoa thông qua bằng biên bản trước khi áp dụng.",
+   "ket_qua": "đề cương chi tiết học phần hoàn chỉnh kèm bảng đối sánh CLO–PLO và CLO–đánh giá, đã được bộ môn/khoa thông qua."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Mã, tên học phần khớp 100% danh mục học phần trong khung CTĐT đã ban hành; số tiết quy đổi từ tín chỉ đúng quy định.",
+  "Nhất quán 4 chiều: mỗi CLO đều có nội dung dạy – PPGD phù hợp – thành phần đánh giá đo lường.",
+  "Tổng trọng số các thành phần đánh giá đúng 100%; trọng số phản ánh đúng mức độ quan trọng của CLO.",
+  "Tổng số tiết các tuần khớp số tín chỉ; nội dung bao phủ hết các CLO, sắp xếp đúng thứ tự tiến trình.",
+  "Giáo trình chính có thật và sinh viên tiếp cận được; tài liệu tham khảo còn thời sự; phân biệt rõ bắt buộc/tham khảo.",
+  "Mỗi CLO ghi rõ đóng góp vào PLO nào ở mức I/R/M; thông tin khớp Input đã cho.",
+  "Không bịa đặt số liệu, tài liệu, minh chứng hay trích dẫn văn bản.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (văn bản hiện hành nêu tại phap-ly.md; văn bản hiện hành nêu tại phap-ly.md).",
+  "Đã qua Human gate: bộ môn/khoa đã thông qua bằng biên bản trước khi đưa vào giảng dạy."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Đề cương song ngữ (mã học phần, tên học phần, chuẩn đầu ra); học phần của chương trình liên kết giữ đề cương gốc của đối tác.",
+  "Đối chiếu với vnuis-dt-xay-dung-khung-chuong-trinh: tín chỉ, giờ, chuẩn đầu ra, học phần tiên quyết.",
+  "Cấp thẩm định đề cương (khoa, Phòng Đào tạo hay Hội đồng KH&ĐT) chưa rõ (C6)."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu đề cương hiện dùng (C8).",
+  "Ngôn ngữ từng học phần (C3)."
+ ],
+ "output_structure": [
+  "Tiêu đề: tên trường, tên khoa/bộ môn; dòng \"ĐỀ CƯƠNG CHI TIẾT HỌC PHẦN\".",
+  "Mục 1 – Thông tin chung: tên học phần (kèm tên tiếng Anh nếu có), mã học phần, số tín chỉ (lý thuyết – thực hành – tự học), học kỳ, học phần tiên quyết/song hành, đơn vị phụ trách.",
+  "Mục 2 – Mục tiêu học phần.",
+  "Mục 3 – Chuẩn đầu ra học phần (CLO): liệt kê đánh số, mỗi CLO ghi rõ đóng góp vào PLO nào (mức I/R/M).",
+  "Mục 4 – Tóm tắt nội dung theo tuần/chương: bảng hoặc danh sách (tuần, chủ đề, số tiết LT/TH, hoạt động GV–SV).",
+  "Mục 5 – Phương pháp giảng dạy (PPGD).",
+  "Mục 6 – Phương pháp và trọng số đánh giá: bảng (thành phần, hình thức, trọng số, CLO đánh giá) với tổng trọng số 100%; thang điểm và cách làm tròn.",
+  "Mục 7 – Tài liệu học tập: giáo trình chính (bắt buộc), tài liệu tham khảo, học liệu số.",
+  "Mục 8 – Thông tin giảng viên soạn đề cương; địa điểm – ngày tháng; chữ ký (trưởng khoa, người soạn).",
+  "Phụ lục kèm theo: Bảng đối sánh CLO – PLO."
+ ],
+ "output_structure_raw": "1. Tiêu đề: tên trường, tên khoa/bộ môn; dòng \"ĐỀ CƯƠNG CHI TIẾT HỌC PHẦN\".\n\n2. Mục 1 – Thông tin chung: tên học phần (kèm tên tiếng Anh nếu có), mã học phần, số tín\n   chỉ (lý thuyết – thực hành – tự học), học kỳ, học phần tiên quyết/song hành, đơn vị\n   phụ trách.\n\n3. Mục 2 – Mục tiêu học phần.\n\n4. Mục 3 – Chuẩn đầu ra học phần (CLO): liệt kê đánh số, mỗi CLO ghi rõ đóng góp vào PLO\n   nào (mức I/R/M).\n\n5. Mục 4 – Tóm tắt nội dung theo tuần/chương: bảng hoặc danh sách (tuần, chủ đề, số tiết\n   LT/TH, hoạt động GV–SV).\n\n6. Mục 5 – Phương pháp giảng dạy (PPGD).\n\n7. Mục 6 – Phương pháp và trọng số đánh giá: bảng (thành phần, hình thức, trọng số, CLO\n   đánh giá) với tổng trọng số 100%; thang điểm và cách làm tròn.\n\n8. Mục 7 – Tài liệu học tập: giáo trình chính (bắt buộc), tài liệu tham khảo, học liệu số.\n\n9. Mục 8 – Thông tin giảng viên soạn đề cương; địa điểm – ngày tháng; chữ ký (trưởng khoa,\n   người soạn).\n\n10. Phụ lục kèm theo: Bảng đối sánh CLO – PLO.",
+ "human_gate_check": "Đã qua Human gate: bộ môn/khoa đã thông qua bằng biên bản trước khi đưa vào giảng dạy.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Sáu khoa. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n\n## Thông tư 54/2026/TT-BGDĐT, hiệu lực 30/06/2026\n\nNguồn: https://congbao.chinhphu.vn/van-ban/thong-tu-so-54-2026-tt-bgddt-470099.htm\n\nPhân loại xây dựng chương trình, chuẩn đầu ra hay mở ngành; yêu cầu chuẩn ngành/trình độ, trạng thái chương trình và ngày tiếp nhận hồ sơ. Đọc toàn văn và điều khoản chuyển tiếp trước khi đổi chuẩn/mẫu; chưa xác minh toàn văn thì ghi điều kiện chưa xác nhận, không tự đặt thời hạn chuyển đổi.\n",
+ "outputs_dir": "skills/vnuis-dt-soan-de-cuong-hoc-phan/references"
+}

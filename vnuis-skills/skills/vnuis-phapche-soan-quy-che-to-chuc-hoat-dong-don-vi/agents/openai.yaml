@@ -1,0 +1,4 @@
+interface:
+  display_name: Pháp chế · Soạn quy chế tổ chức và hoạt động của đơn vị trực thuộc – VNU-IS
+  short_description: Hỗ trợ soạn quy chế tổ chức và hoạt động của đơn vị trực thuộc
+  default_prompt: 'Hãy dùng $vnuis-phapche-soan-quy-che-to-chuc-hoat-dong-don-vi để hỗ trợ công việc: Soạn quy chế tổ chức và hoạt động của đơn vị trực thuộc; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

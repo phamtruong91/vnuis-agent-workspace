@@ -1,0 +1,229 @@
+{
+ "name": "vnuis-vp-soan-giay-moi",
+ "title": "Soạn giấy mời",
+ "description": "Dùng khi đơn vị tổ chức họp, hội nghị, hội thảo, lễ khai giảng, bế giảng, kỷ niệm và cần giấy mời trang trọng gửi đại biểu, khách mời: thành phần, thời gian, địa điểm, chương trình.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-soan-giay-moi",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường; Phòng Truyền thông và Tuyển sinh (sự kiện)",
+ "when": "Khi mời đại biểu, khách mời dự họp, hội nghị, hội thảo, lễ khai giảng / bế giảng /\nkỷ niệm, và các sự kiện khác của trường.",
+ "inputs": [
+  {
+   "key": "su_kien",
+   "desc": "Tên sự kiện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Giờ, ngày, tháng, năm tổ chức",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Địa điểm tổ chức (chọn cơ sở: Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thanh_phan",
+   "desc": "Đối tượng được mời",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuong_trinh",
+   "desc": "Chương trình tóm tắt (nếu cần)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "xac_nhan",
+   "desc": "Yêu cầu xác nhận tham dự (đầu mối, hạn)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "don_vi_moi",
+   "desc": "Đơn vị đứng tên mời, người ký",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "co_quan_chu_quan",
+   "desc": "Cơ quan chủ quản: Đại học Quốc gia Hà Nội (đã điền sẵn)",
+   "required": false,
+   "note": "Không (mặc định: ĐHQGHN)"
+  },
+  {
+   "key": "co_quan_ban_hanh",
+   "desc": "Cơ quan ban hành: Trường Quốc tế – ĐHQGHN (đã điền sẵn); ghi thêm đơn vị soạn thảo nếu khác",
+   "required": false,
+   "note": "Không (mặc định: Trường Quốc tế – ĐHQGHN)"
+  },
+  {
+   "key": "dia_danh",
+   "desc": "Địa danh ghi ở dòng ngày tháng năm (mặc định: Hà Nội)",
+   "required": false,
+   "note": "Không (mặc định: Hà Nội)"
+  },
+  {
+   "key": "so_van_ban",
+   "desc": "Số, ký hiệu văn bản đã được cấp (để trống nếu chưa cấp; không tự đặt)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Danh sách nơi nhận, gồm cả nơi lưu (VT, đơn vị soạn)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_duoc_moi",
+   "desc": "Họ tên, chức danh từng người được mời (nếu có danh sách)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường; Phòng Truyền thông và Tuyển sinh (sự kiện)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Rà soát thông tin sự kiện, lập danh sách khách mời",
+   "lam_gi": "đối chiếu `su_kien`, `thoi_gian`, `dia_diem` với kế hoạch tổ chức đã phê duyệt (kiểm tra ngày giờ còn trống lịch, địa điểm đã được đặt giữ chỗ); lập danh sách khách mời theo `thanh_phan`, phân loại ưu tiên (lãnh đạo cấp trên – khách mời quan trọng – đại biểu nội bộ); chốt thời điểm gửi (sự kiện lớn gửi trước ít nhất 07 ngày, sự kiện trọng thể trước 14 ngày).",
+   "inputs": [
+    "su_kien",
+    "thoi_gian",
+    "dia_diem",
+    "thanh_phan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "kiểm tra chức danh, học hàm, học vị của khách mời — bẫy thường gặp là ghi sai chức danh; địa điểm phải đủ chi tiết để tìm được (số nhà, đường, quận/huyện); không gửi trùng một khách qua 2 kênh.",
+   "ket_qua": "danh sách khách mời đã phân loại + lịch kiểm tra (ngày gửi – ngày sự kiện)."
+  },
+  {
+   "n": 2,
+   "title": "Soạn tiêu đề và lời mời",
+   "lam_gi": "viết tiêu đề \"GIẤY MỜI\" kèm tên sự kiện in hoa, căn giữa, trình bày trang trọng; viết lời mời \"Trân trọng kính mời: ...\" ghi đúng đối tượng; chọn cách xưng hô phù hợp từng loại khách mời. Dòng \"Kính mời\" lấy từ `nguoi_duoc_moi`; thiếu thì để dòng dấu chấm.",
+   "inputs": [
+    "su_kien",
+    "thanh_phan",
+    "don_vi_moi",
+    "nguoi_duoc_moi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "tên sự kiện phải khớp đúng tên trong kế hoạch đã duyệt; với lãnh đạo cấp trên dùng \"Kính mời\" kèm chức danh đầy đủ; không viết tắt tên đơn vị mời.",
+   "ket_qua": "dự thảo phần đầu giấy mời (tiêu đề + lời mời)."
+  },
+  {
+   "n": 3,
+   "title": "Ghi thông tin sự kiện và chương trình tóm tắt",
+   "lam_gi": "ghi đầy đủ `thoi_gian` (giờ, ngày, tháng, năm) và `dia_diem` (tên hội trường + địa chỉ chi tiết); nếu có `chuong_trinh`, trình bày các nội dung chính theo thứ tự thời gian, đánh số thứ tự.",
+   "inputs": [
+    "thoi_gian",
+    "dia_diem",
+    "chuong_trinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "đối chiếu thứ trong tuần với ngày dương lịch — bẫy sai thứ/ngày rất hay gặp; chương trình tóm tắt chỉ nêu ý chính, không sao chép nguyên văn diễn văn; với hội nghị nhỏ có thể bỏ chương trình.",
+   "ket_qua": "dự thảo phần thân giấy mời (thời gian – địa điểm – chương trình)."
+  },
+  {
+   "n": 4,
+   "title": "Bổ sung thông tin xác nhận tham dự (nếu cần)",
+   "lam_gi": "nếu có `xac_nhan`, ghi rõ đầu mối liên hệ (họ tên, số điện thoại, email) và hạn xác nhận; nếu không yêu cầu xác nhận thì bỏ qua bước này.",
+   "inputs": [
+    "xac_nhan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "hạn xác nhận đặt trước sự kiện ít nhất 02–03 ngày để tổng hợp số lượng; số điện thoại đầu mối phải là số thật đã kiểm tra gọi được.",
+   "ket_qua": "dự thảo phần cuối giấy mời (lời cảm ơn + thông tin xác nhận)."
+  },
+  {
+   "n": 5,
+   "title": "Rà soát thể thức, trình ký",
+   "lam_gi": "kiểm tra chính tả, thể thức trang trọng (font chữ, căn lề, logo đơn vị); đối chiếu lần cuối ngày giờ, địa điểm, danh sách khách mời; trình thủ trưởng `don_vi_moi` ký, đóng dấu; ghi số lưu hành nội bộ nếu cần. Phần đầu văn bản lấy từ `co_quan_chu_quan` (nếu có), `co_quan_ban_hanh`, `dia_danh`, `so_van_ban` (để dòng dấu chấm nếu chưa cấp số). Nơi nhận lấy từ `noi_nhan`.",
+   "inputs": [
+    "don_vi_moi",
+    "co_quan_chu_quan",
+    "co_quan_ban_hanh",
+    "dia_danh",
+    "so_van_ban",
+    "noi_nhan"
+   ],
+   "vai_tro": "Chuyên viên chuẩn bị, thủ trưởng đơn vị tổ chức ký · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "chữ ký phải đúng người có thẩm quyền — giấy mời cấp trường do Hiệu trưởng hoặc người được ủy quyền ký; kiểm tra dấu đóng rõ nét, đúng vị trí.",
+   "ket_qua": "giấy mời đã ký, đóng dấu."
+  },
+  {
+   "n": 6,
+   "title": "Phát hành giấy mời",
+   "lam_gi": "gửi giấy mời tới từng khách mời trong danh sách Bước 1 (trực tiếp, chuyển phát, email công vụ); đánh dấu đã gửi từng người; tổng hợp xác nhận tham dự gửi lại đơn vị tổ chức.",
+   "inputs": [
+    "xac_nhan"
+   ],
+   "vai_tro": "Văn thư Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: định dạng bản chính, cập nhật sổ phát hành",
+   "luu_y": "khách mời quan trọng ưu tiên gửi tay hoặc chuyển phát nhanh; lưu biên nhận gửi để đối chiếu khi cần; chốt danh sách xác nhận trước sự kiện 01 ngày.",
+   "ket_qua": "giấy mời đã phát hành + danh sách xác nhận tham dự."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức văn bản theo Nghị định 30/2020/NĐ-CP (đối chiếu hiệu lực tại ngày nghiệp vụ) và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Kiểm tra chức danh, học hàm, học vị của khách mời — bẫy thường gặp là ghi sai chức danh",
+  "Địa điểm phải đủ chi tiết để tìm được (số nhà, đường, quận/huyện)",
+  "Tên sự kiện phải khớp đúng tên trong kế hoạch đã duyệt"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Giấy mời đại biểu ĐHQGHN hoặc đối tác nước ngoài: ghi chức danh đúng như người dùng cung cấp, không tự sửa; bản tiếng Anh dùng bảng thuật ngữ trong bối cảnh VNU-IS.",
+  "Ghi rõ cơ sở và phòng họp; Trường có ba cơ sở nên thiếu địa điểm cụ thể là lỗi thường gặp.",
+  "Giấy mời hội thảo quốc tế phối hợp vnuis-khcn-ke-hoach-hoi-thao."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu giấy mời hiện dùng và người ký (C1, C8).",
+  "Quy tắc về thứ tự chức danh khi mời (C8)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "GIẤY MỜI (GM) theo Mẫu 1.7 Phụ lục III: cơ quan chủ quản/cơ quan ban hành; quốc hiệu/tiêu ngữ; số, ký hiệu; địa danh/ngày; GIẤY MỜI và trích yếu; trân trọng kính mời và đối tượng; nội dung; thời gian; địa điểm; thông tin xác nhận tham dự nếu có; nơi nhận và khối ký.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-soan-giay-moi/references"
+}

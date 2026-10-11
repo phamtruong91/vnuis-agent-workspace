@@ -1,0 +1,63 @@
+SV0334: Học liệu tiếng Anh cần cập nhật.
+SV0367: Thời khóa biểu thay đổi sát ngày học, khó sắp xếp.
+SV0051: Giảng viên nhiệt tình, hỗ trợ tốt.
+SV0187: Wifi chập chờn, vào LMS hay lỗi.
+SV0238: Giảng viên nhiệt tình, hỗ trợ tốt.
+SV0257: Học phí cao so với chất lượng cơ sở vật chất.
+SV0079: Lịch thi dày, nhiều môn thi sát nhau.
+SV0097: Học phí cao so với chất lượng cơ sở vật chất.
+SV0279: Wifi chập chờn, vào LMS hay lỗi.
+SV0081: Mong thư viện mở cửa muộn hơn vào mùa thi.
+SV0303: Wifi ở cơ sở Hòa Lạc hay mất kết nối, nhất là buổi chiều.
+SV0245: Phòng học ở Phan Tây Nhạc nóng, điều hòa hỏng.
+SV0268: Hài lòng với môi trường học tập quốc tế.
+SV0384: Học phí cao so với chất lượng cơ sở vật chất.
+SV0041: Thời khóa biểu thay đổi sát ngày học, khó sắp xếp.
+SV0314: Phản hồi của phòng đào tạo chậm khi gửi email.
+SV0377: Mong có thêm học bổng cho sinh viên năm cuối.
+SV0364: Nên có thêm phòng tự học yên tĩnh.
+SV0283: Wifi chập chờn, vào LMS hay lỗi.
+SV0089: Phản hồi của phòng đào tạo chậm khi gửi email.
+SV0020: Học phí cao so với chất lượng cơ sở vật chất.
+SV0251: Giảng viên nhiệt tình, hỗ trợ tốt.
+SV0094: Học phí cao so với chất lượng cơ sở vật chất.
+SV0373: Thủ tục xin giấy xác nhận sinh viên mất nhiều ngày.
+SV0334: Thủ tục xin giấy xác nhận sinh viên mất nhiều ngày.
+SV0359: Cần chỗ để xe rộng hơn.
+SV0116: Học liệu tiếng Anh cần cập nhật.
+SV0104: Học liệu tiếng Anh cần cập nhật.
+SV0085: Học phí cao so với chất lượng cơ sở vật chất.
+SV0250: Hài lòng với môi trường học tập quốc tế.
+SV0213: Wifi chập chờn, vào LMS hay lỗi.
+SV0094: Mong thư viện mở cửa muộn hơn vào mùa thi.
+SV0187: Ký túc xá thiếu chỗ, giá cao.
+SV0317: Thủ tục xin giấy xác nhận sinh viên mất nhiều ngày.
+SV0002: Wifi chập chờn, vào LMS hay lỗi.
+SV0365: Cổng đăng ký học phần bị treo vào giờ mở đăng ký, phải thử nhiều lần.
+SV0146: Ký túc xá thiếu chỗ, giá cao.
+SV0393: Wifi ở cơ sở Hòa Lạc hay mất kết nối, nhất là buổi chiều.
+SV0191: Cổng đăng ký học phần bị treo vào giờ mở đăng ký, phải thử nhiều lần.
+SV0068: Phòng học ở Phan Tây Nhạc nóng, điều hòa hỏng.
+SV0079: Mong thư viện mở cửa muộn hơn vào mùa thi.
+SV0253: Nội dung môn học trùng lặp giữa các học phần.
+SV0092: Thủ tục xin giấy xác nhận sinh viên mất nhiều ngày.
+SV0165: Nội dung môn học trùng lặp giữa các học phần.
+SV0124: Học liệu tiếng Anh cần cập nhật.
+SV0338: Wifi chập chờn, vào LMS hay lỗi.
+SV0298: Ký túc xá thiếu chỗ, giá cao.
+SV0024: Phản hồi của phòng đào tạo chậm khi gửi email.
+SV0257: Thủ tục xin giấy xác nhận sinh viên mất nhiều ngày.
+SV0287: Wifi ở cơ sở Hòa Lạc hay mất kết nối, nhất là buổi chiều.
+SV0160: Lịch thi dày, nhiều môn thi sát nhau.
+SV0312: Mong thư viện mở cửa muộn hơn vào mùa thi.
+SV0033: Phòng học ở Phan Tây Nhạc nóng, điều hòa hỏng.
+SV0243: Cần thêm câu lạc bộ và hoạt động ngoại khóa.
+SV0084: Lịch thi dày, nhiều môn thi sát nhau.
+SV0377: Hài lòng với môi trường học tập quốc tế.
+SV0007: Wifi chập chờn, vào LMS hay lỗi.
+SV0257: Ký túc xá thiếu chỗ, giá cao.
+SV0154: Cần thêm câu lạc bộ và hoạt động ngoại khóa.
+SV0072: Mong có thêm học bổng cho sinh viên năm cuối.
+SV0123: Thầy T. dạy môn kế toán quản trị rất tệ, không bao giờ trả lời email. Liên hệ em qua 0912 345 678 nếu cần thêm thông tin.
+SV0256: Em có hoàn cảnh khó khăn (mẹ mất, bố bệnh nặng), mong được xem xét miễn giảm học phí. Email em: demo.sinhvien@example.com
+SV0301: Cô H. phòng đào tạo thái độ khó chịu, cần xử lý nghiêm.

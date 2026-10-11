@@ -1,0 +1,159 @@
+{
+ "name": "vnuis-phapche-theo-doi-thay-doi-van-ban-phap-quy",
+ "title": "Theo dõi thay đổi văn bản pháp quy",
+ "description": "Dùng khi có văn bản pháp quy mới thay thế hoặc sửa đổi văn bản đang áp dụng và cần so sánh điều khoản cũ – mới, đánh giá tác động, lập danh mục cập nhật nội bộ. Dùng chung mọi đơn vị.",
+ "group": "phapche",
+ "group_label": "Pháp chế – thanh tra",
+ "previous_name": "vnuis-theo-doi-thay-doi-van-ban-phap-quy",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (pháp chế – tuân thủ); các phòng liên quan",
+ "when": "Khi có văn bản pháp quy mới ban hành thay thế/sửa đổi/bổ sung văn bản đang áp dụng\n(quy chế đào tạo, quy định tài chính, quy chế văn thư...), cần đánh giá tác động và\ncập nhật hệ thống văn bản nội bộ. Dùng chung cho Phòng TC&QT (thanh tra – pháp chế) và mọi\nđơn vị chịu tác động.",
+ "inputs": [
+  {
+   "key": "van_ban_cu",
+   "desc": "Tên, số/ký hiệu, ngày ban hành, nội dung các điều khoản liên quan",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "van_ban_moi",
+   "desc": "Tên, số/ký hiệu, ngày ban hành, ngày hiệu lực, nội dung",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "linh_vuc",
+   "desc": "Đào tạo / tài chính / tổ chức cán bộ / văn thư...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "van_ban_noi_bo_lien_quan",
+   "desc": "Danh sách văn bản/quy trình nội bộ đang viện dẫn văn bản cũ",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (pháp chế – tuân thủ); các phòng liên quan"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Trích xuất điều khoản",
+   "lam_gi": "đọc `van_ban_cu` và `van_ban_moi`, trích các điều khoản liên quan đến `linh_vuc` theo từng nội dung (không cần toàn văn nếu văn bản dài); với mỗi điều khoản ghi rõ số điều/khoản và trích từ bản nào.",
+   "inputs": [
+    "van_ban_cu",
+    "van_ban_moi",
+    "linh_vuc"
+   ],
+   "vai_tro": "Cán bộ Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: trích xuất điều khoản hai bản, ghi rõ số điều/khoản và nguồn trích",
+   "luu_y": "luôn dẫn chiếu số/ký hiệu văn bản và ngày hiệu lực của bản mới; không dùng văn bản đã hết hiệu lực làm căn cứ so sánh mà không ghi chú rõ.",
+   "ket_qua": "\"danh sách điều khoản liên quan hai bản\" (nội dung + số điều/khoản + nguồn trích)."
+  },
+  {
+   "n": 2,
+   "title": "So sánh và đánh dấu",
+   "lam_gi": "đối chiếu từng nội dung giữa hai bản, gắn nhãn: GIỮ NGUYÊN / SỬA ĐỔI / BÃI BỎ / BỔ SUNG MỚI; với nội dung SỬA ĐỔI ghi ngắn gọn điểm khác biệt.",
+   "inputs": [],
+   "vai_tro": "Cán bộ Phòng TC&QT (thanh tra – pháp chế) (xác nhận nhãn và điều khoản mơ hồ) · AI hỗ trợ: gắn nhãn so sánh sơ bộ từng nội dung",
+   "luu_y": "nội dung chỉ đổi cách diễn đạt mà không đổi nghĩa vụ → GIỮ NGUYÊN (ghi chú diễn đạt mới), tránh gắn nhầm SỬA ĐỔI; điều khoản mơ hồ ghi \"cần ý kiến pháp chế\", không tự diễn giải theo hướng có lợi/bất lợi cho một bên.",
+   "ket_qua": "\"bảng so sánh điều khoản cũ/mới có gắn nhãn\"."
+  },
+  {
+   "n": 3,
+   "title": "Lập ma trận nghĩa vụ thay đổi",
+   "lam_gi": "với mỗi nội dung SỬA ĐỔI / BÃI BỎ / BỔ SUNG MỚI ở bước 2, xác định: đơn vị hoặc cá nhân nào phải làm gì khác so với trước đây; ghi thời hạn áp dụng theo ngày hiệu lực của văn bản mới.",
+   "inputs": [
+    "van_ban_moi",
+    "van_ban_noi_bo_lien_quan"
+   ],
+   "vai_tro": "Cán bộ Phòng TC&QT (thanh tra – pháp chế) phối hợp đơn vị nghiệp vụ (xác nhận đơn vị thực hiện và thời hạn) · AI hỗ trợ: lập ma trận nghĩa vụ dự thảo",
+   "luu_y": "nghĩa vụ phải cụ thể đến mức đơn vị biết phải làm gì (\"sửa quy trình X\", \"bổ sung biểu mẫu Y\"); thời hạn áp dụng không được muộn hơn ngày văn bản mới có hiệu lực.",
+   "ket_qua": "\"ma trận nghĩa vụ thay đổi\" (thay đổi → đơn vị → việc phải làm khác → thời hạn)."
+  },
+  {
+   "n": 4,
+   "title": "Đánh giá tác động",
+   "lam_gi": "rà soát các quy trình, biểu mẫu, phần mềm của trường đang viện dẫn văn bản cũ để xác định cái nào bị ảnh hưởng bởi các thay đổi ở bước 3; phân loại mức tác động: phải sửa ngay / sửa trong kỳ / chỉ theo dõi.",
+   "inputs": [
+    "van_ban_noi_bo_lien_quan"
+   ],
+   "vai_tro": "Cán bộ Phòng TC&QT (thanh tra – pháp chế) (xác nhận mức tác động) · AI hỗ trợ: rà soát tra cứu chéo văn bản nội bộ đang viện dẫn văn bản cũ",
+   "luu_y": "kiểm tra cả văn bản nội bộ không nằm trong danh sách đầu vào nhưng có viện dẫn số/ký hiệu văn bản cũ (tra cứu chéo); không bỏ sót phần mềm quản lý có hard-code quy định cũ.",
+   "ket_qua": "\"bảng đánh giá tác động\" (quy trình / biểu mẫu / phần mềm → mức tác động)."
+  },
+  {
+   "n": 5,
+   "title": "Lập danh mục kiểm cập nhật",
+   "lam_gi": "tổng hợp từ bước 4 danh sách văn bản nội bộ / biểu mẫu / quy trình cần sửa; với mỗi mục ghi đơn vị chủ trì và hạn chót đề xuất.",
+   "inputs": [],
+   "vai_tro": "Cán bộ Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: tổng hợp danh mục kiểm cập nhật nội bộ từ bảng đánh giá tác động",
+   "luu_y": "hạn chót đề xuất phải trước ngày văn bản mới có hiệu lực; danh mục kiểm là đầu vào để thủ trưởng đơn vị duyệt phân công — phải đầy đủ, không thiếu mục.",
+   "ket_qua": "\"danh mục kiểm cập nhật nội bộ\" → cùng các sản phẩm trước tạo Output cuối (change bản yêu cầu)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi điều khoản dẫn chiếu số/ký hiệu, ngày ban hành và ngày hiệu lực của văn bản mới; không dùng văn bản hết hiệu lực làm căn cứ mà không ghi chú rõ.",
+  "Bảng so sánh gắn nhãn đúng: nội dung chỉ đổi diễn đạt mà không đổi nghĩa vụ → GIỮ NGUYÊN (ghi chú diễn đạt mới), không gắn nhầm SỬA ĐỔI.",
+  "Ma trận nghĩa vụ cụ thể đến mức đơn vị biết phải làm gì (\"sửa quy trình X\", \"bổ sung biểu mẫu Y\"); thời hạn không muộn hơn ngày văn bản mới có hiệu lực.",
+  "Đánh giá tác động bao phủ quy trình/biểu mẫu/phần mềm đang viện dẫn văn bản cũ, kể cả văn bản nội bộ ngoài danh sách đầu vào (đã tra cứu chéo) và phần mềm có hard-code quy định cũ.",
+  "Danh mục kiểm cập nhật đầy đủ mục, mỗi mục có đơn vị chủ trì và hạn chót trước ngày văn bản mới có hiệu lực.",
+  "Không đưa kết luận pháp lý cuối cùng (\"đúng/sai\", \"hợp pháp/không hợp pháp\"); điều khoản mơ hồ ghi \"cần ý kiến pháp chế\" — mọi nhận định ghi rõ \"để tham khảo\".",
+  "Đã qua Human gate: pháp chế/nghiệp vụ duyệt change bản yêu cầu và ma trận nghĩa vụ; thủ trưởng đơn vị duyệt danh mục kiểm thuộc phạm vi đơn vị mình. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Pháp chế / cán bộ phụ trách nghiệp vụ** duyệt change bản yêu cầu và ma trận nghĩa vụ trước khi triển khai cập nhật.",
+  "Thủ trưởng đơn vị duyệt danh mục kiểm cập nhật thuộc phạm vi đơn vị mình."
+ ],
+ "guardrails": [
+  "Không đưa ra kết luận pháp lý cuối cùng (\"đúng/sai\", \"hợp pháp/không hợp pháp\") — mọi nhận định ghi rõ \"để tham khảo, cần ý kiến pháp chế\".",
+  "Không tự ý diễn giải điều khoản mơ hồ theo hướng có lợi/bất lợi cho một bên.",
+  "Không thay thế việc tra cứu văn bản gốc — luôn dẫn chiếu số/ký hiệu văn bản."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Ba tầng văn bản: văn bản Nhà nước; văn bản của ĐHQGHN (cơ quan chủ quản); quy định nội bộ VNU-IS. Chương trình liên kết còn chịu quy định của trường đối tác. Tầng nào chưa có file thì ghi \"chưa có tài liệu\".",
+  "Kết quả là bảng ảnh hưởng theo đơn vị (phòng, khoa, Viện, Hội đồng) kèm đầu việc và hạn; không phải ý kiến pháp lý.",
+  "Skill không tự khẳng định hiệu lực; chỉ ghi hiệu lực theo văn bản người dùng tải lên và `[CẦN XÁC MINH]` với nguồn chính thức."
+ ],
+ "cho_xac_nhan": [
+  "Danh mục quy định nội bộ hiện hành (C2).",
+  "Kênh nhận văn bản mới từ ĐHQGHN (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề (tên văn bản mới, văn bản được thay thế, ngày hiệu lực).",
+  "Tóm tắt thay đổi chính (1 trang: bao nhiêu nội dung sửa đổi / bãi bỏ / bổ sung).",
+  "Bảng so sánh điều khoản cũ/mới (nội dung | bản cũ | bản mới | đánh dấu).",
+  "Ma trận nghĩa vụ thay đổi (thay đổi | đơn vị phải làm gì khác | thời hạn).",
+  "Đánh giá tác động (quy trình / biểu mẫu / phần mềm bị ảnh hưởng, mức tác động).",
+  "Danh mục kiểm cập nhật nội bộ (việc cần sửa | đơn vị chủ trì | hạn chót)."
+ ],
+ "output_structure_raw": "1. Tiêu đề (tên văn bản mới, văn bản được thay thế, ngày hiệu lực).\n\n2. Tóm tắt thay đổi chính (1 trang: bao nhiêu nội dung sửa đổi / bãi bỏ / bổ sung).\n\n3. Bảng so sánh điều khoản cũ/mới (nội dung | bản cũ | bản mới | đánh dấu).\n\n4. Ma trận nghĩa vụ thay đổi (thay đổi | đơn vị phải làm gì khác | thời hạn).\n\n5. Đánh giá tác động (quy trình / biểu mẫu / phần mềm bị ảnh hưởng, mức tác động).\n\n6. Danh mục kiểm cập nhật nội bộ (việc cần sửa | đơn vị chủ trì | hạn chót).",
+ "human_gate_check": "Đã qua Human gate: pháp chế/nghiệp vụ duyệt change bản yêu cầu và ma trận nghĩa vụ; thủ trưởng đơn vị duyệt danh mục kiểm thuộc phạm vi đơn vị mình. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (pháp chế – tuân thủ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-phapche-theo-doi-thay-doi-van-ban-phap-quy/references"
+}

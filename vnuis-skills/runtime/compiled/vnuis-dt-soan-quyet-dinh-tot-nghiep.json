@@ -1,0 +1,192 @@
+{
+ "name": "vnuis-dt-soan-quyet-dinh-tot-nghiep",
+ "title": "Soạn quyết định công nhận tốt nghiệp",
+ "description": "Dùng khi hội đồng xét tốt nghiệp đã họp xong và cần soạn quyết định công nhận tốt nghiệp theo từng đợt, kèm danh sách xếp loại làm căn cứ in bằng, cấp bảng điểm.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-quyet-dinh-tot-nghiep",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (đào tạo)",
+ "when": "Khi hội đồng xét tốt nghiệp của trường đã họp và kết luận danh sách sinh viên đủ điều kiện\ntốt nghiệp trong đợt xét: cần soạn quyết định công nhận tốt nghiệp (kèm danh sách SV, xếp loại\ntốt nghiệp) để làm căn cứ in bằng, cấp bảng điểm và tổ chức lễ trao bằng.",
+ "inputs": [
+  {
+   "key": "dot_xet",
+   "desc": "Đợt xét tốt nghiệp (ví dụ: Đợt 2 tháng 6/2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_sv",
+   "desc": "Danh sách SV đủ điều kiện (mã SV, họ tên, lớp, ngành, ĐTB toàn khóa, xếp loại)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bien_ban_hoi_dong",
+   "desc": "Biên bản họp hội đồng xét tốt nghiệp (số, ngày họp, kết luận)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu_quy_che",
+   "desc": "Điều, khoản quy chế đào tạo về điều kiện tốt nghiệp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng phụ trách đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_quyet_dinh",
+   "desc": "Số quyết định (nếu đã cấp số; nếu chưa, để trống để điền khi ban hành)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ngay_trao_bang",
+   "desc": "Ngày dự kiến tổ chức lễ trao bằng (để ghi chú phối hợp)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (đào tạo)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Thông tư 10/2026/TT-BGDĐT – Quy chế văn bằng, chứng chỉ: Đối chiếu văn bản gốc, ngày hiệu lực và chuyển tiếp trước khi chọn mẫu, sổ, quy trình cấp/chỉnh sửa/thu hồi; không dùng mẫu 21/2019 như mẫu hiện hành. Yêu cầu hồ sơ gốc, quyết định và thẩm quyền. AI chỉ chuẩn bị hồ sơ, không cấp bằng, gán số hay tự xác nhận chữ ký.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Rà soát điều kiện tốt nghiệp của từng SV",
+   "lam_gi": "đối chiếu từng SV trong danh sách dự kiến với 5 nhóm điều kiện: (a) tích lũy đủ số tín chỉ của chương trình đào tạo; (b) điểm trung bình chung toàn khóa đạt ngưỡng tốt nghiệp (thường ≥ 2.00); (c) có chứng chỉ ngoại ngữ, tin học đạt chuẩn đầu ra của ngành; (d) hoàn thành nghĩa vụ học phí, thư viện, ký túc xá, điểm rèn luyện (nếu quy định); (e) không bị kỷ luật ở mức đình chỉ học tập trong thời gian xét. Trích xuất số liệu từ hệ thống quản lý đào tạo, Phòng TC&QT (kế hoạch – tài chính), thư viện.",
+   "inputs": [
+    "danh_sach_sv",
+    "can_cu_quy_che",
+    "dot_xet"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: đối chiếu tự động 5 nhóm điều kiện, cảnh báo trường hợp thiếu",
+   "luu_y": "SV không đủ bất kỳ điều kiện nào thì loại khỏi danh sách xét đợt này (không trình hội đồng); chứng chỉ ngoại ngữ/tin học phải còn hiệu lực tại thời điểm xét; đối chiếu họ tên, ngày sinh với hồ sơ gốc (CCCD) ngay từ bước này để tránh sai sót khi in bằng.",
+   "ket_qua": "danh sách SV đủ điều kiện tốt nghiệp (đã loại các trường hợp chưa đủ) kèm bảng kiểm tra điều kiện của từng SV."
+  },
+  {
+   "n": 2,
+   "title": "Hội đồng xét tốt nghiệp họp, biểu quyết và xếp loại",
+   "lam_gi": "Phòng Đào tạo trình danh sách đủ điều kiện kèm hồ sơ minh chứng lên hội đồng xét tốt nghiệp; hội đồng họp, biểu quyết từng trường hợp, xác định xếp loại tốt nghiệp (Xuất sắc / Giỏi / Khá / Trung bình) theo thang điểm quy chế; thư ký lập biên bản ghi kết luận từng trường hợp.",
+   "inputs": [
+    "bien_ban_hoi_dong",
+    "danh_sach_sv",
+    "can_cu_quy_che"
+   ],
+   "vai_tro": "Hội đồng xét tốt nghiệp · AI hỗ trợ: chuẩn bị tài liệu, tổng hợp hồ sơ minh chứng trước phiên họp",
+   "luu_y": "đây là Human gate — xếp loại phải tính đúng thang điểm quy chế, lưu ý các trường hợp bị hạ xếp loại do kỷ luật; biên bản là căn cứ pháp lý bắt buộc của quyết định.",
+   "ket_qua": "biên bản họp hội đồng xét tốt nghiệp (số, ngày họp, kết luận và xếp loại từng SV)."
+  },
+  {
+   "n": 3,
+   "title": "Soạn quyết định theo thể thức NĐ 30/2020",
+   "lam_gi": "soạn quyết định gồm: quốc hiệu – tiêu ngữ, tên cơ quan, số/ký hiệu, địa danh – ngày tháng năm ban hành, trích yếu (công nhận tốt nghiệp đợt…), phần căn cứ (quy chế đào tạo, biên bản hội đồng, đề nghị của Trưởng phòng Đào tạo), các điều khoản: Điều 1 công nhận tốt nghiệp và cấp bằng (ghi rõ số lượng SV, danh sách kèm theo); Điều 2 giao Phòng Đào tạo phối hợp in bằng và tổ chức lễ trao bằng (ghi ngày dự kiến nếu có); Điều 3 trách nhiệm thi hành; nơi nhận; chữ ký người có thẩm quyền.",
+   "inputs": [
+    "dot_xet",
+    "danh_sach_sv",
+    "bien_ban_hoi_dong",
+    "can_cu_quy_che",
+    "nguoi_ky",
+    "so_quyet_dinh",
+    "ngay_trao_bang"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: soạn dự thảo đúng thể thức NĐ 30/2020",
+   "luu_y": "kiểm tra thẩm quyền ký; số lượng SV trong Điều 1 phải khớp biên bản hội đồng và danh sách kèm theo; nếu chưa cấp số quyết định thì để trống để điền khi ban hành.",
+   "ket_qua": "dự thảo quyết định công nhận tốt nghiệp đúng thể thức NĐ 30/2020."
+  },
+  {
+   "n": 4,
+   "title": "Lập danh sách SV kèm theo quyết định",
+   "lam_gi": "lập danh sách đầy đủ các cột: STT, mã SV, họ tên, ngày sinh, lớp, ngành, ĐTB toàn khóa, xếp loại; sắp xếp theo ngành/khoa để thuận tiện in bằng; đối chiếu từng dòng với biên bản hội đồng và hồ sơ gốc của SV.",
+   "inputs": [
+    "danh_sach_sv",
+    "bien_ban_hoi_dong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: lập danh sách trích ngang tự động từ hệ thống",
+   "luu_y": "sai sót tên, ngày sinh, xếp loại dẫn đến phải thu hồi, cấp lại bằng — đối chiếu kỹ với hồ sơ gốc; không để sót hoặc thừa SV so với biên bản hội đồng.",
+   "ket_qua": "danh sách SV được công nhận tốt nghiệp (đầy đủ thông tin, có xếp loại), sắp xếp theo ngành."
+  },
+  {
+   "n": 5,
+   "title": "Chuyển in bằng, công bố và tổ chức trao bằng",
+   "lam_gi": "chuyển danh sách cho đơn vị in phôi bằng; thông báo đến SV; phối hợp tổ chức lễ trao bằng theo ngày dự kiến; lưu hồ sơ tốt nghiệp (quyết định + biên bản + danh sách kèm theo).",
+   "inputs": [
+    "danh_sach_sv",
+    "ngay_trao_bang"
+   ],
+   "vai_tro": "Phòng Đào tạo · AI hỗ trợ: chuẩn bị danh sách in bằng, soạn thông báo gửi SV",
+   "luu_y": "kiểm tra phôi bằng in thử trước khi in hàng loạt; lưu hồ sơ tốt nghiệp đầy đủ để phục vụ xác minh văn bằng sau này.",
+   "ket_qua": "quyết định đã ban hành; phôi bằng đã in; hồ sơ tốt nghiệp đã lưu trữ đầy đủ."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu/nội dung trong output khớp với Input đã cho (mã SV, họ tên, ngày sinh, lớp, ngành, ĐTB toàn khóa, xếp loại, đợt xét).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng thể thức văn bản hành chính theo Nghị định 30/2020/NĐ-CP.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (văn bản hiện hành nêu tại phap-ly.md, quy chế đào tạo của trường, biên bản họp hội đồng).",
+  "Đã qua Human gate: hội đồng xét tốt nghiệp đã họp, biểu quyết và xếp loại từng SV; người có thẩm quyền đã ký duyệt.",
+  "SV thiếu bất kỳ điều kiện tốt nghiệp nào đã bị loại khỏi danh sách xét; chứng chỉ ngoại ngữ/tin học còn hiệu lực tại thời điểm xét.",
+  "Họ tên, ngày sinh đã đối chiếu với hồ sơ gốc (CCCD); xếp loại đúng thang điểm quy chế (kể cả hạ xếp loại do kỷ luật).",
+  "Số lượng SV trong Điều 1 khớp biên bản hội đồng và danh sách kèm theo."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "Soạn quyết định từ biên bản và danh sách xét tốt nghiệp đã xác nhận. Không tự triệu tập hội đồng lần nữa, đổi xếp loại hoặc loại sinh viên. Sai lệch với hồ sơ được đối chiếu nội bộ để cơ quan có thẩm quyền xử lý; không kèm bảng kiểm tra vào quyết định.\n\nAI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Điều kiện xét tốt nghiệp phụ thuộc mô hình: ĐHQGHN cấp bằng, liên kết (bằng do đối tác cấp), song bằng, tích hợp; skill chỉ rà theo quy chế người dùng chọn (C2).",
+  "Chuẩn đầu ra ngoại ngữ ghi theo quy định hiện hành của từng chương trình; không đoán (C3)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế và điều kiện tốt nghiệp từng mô hình (C2).",
+  "Thẩm quyền ký quyết định (C1)."
+ ],
+ "output_structure": [
+  "Phần đầu văn bản: quốc hiệu – tiêu ngữ; tên cơ quan ban hành; số, ký hiệu quyết định; địa danh, ngày tháng năm ban hành.",
+  "Tên loại và trích yếu: \"QUYẾT ĐỊNH\" + \"Về việc công nhận tốt nghiệp…\" (ghi rõ đợt xét).",
+  "Thẩm quyền ban hành: chức danh người ký (HIỆU TRƯỞNG / KT. HIỆU TRƯỞNG – PHÓ HIỆU TRƯỞNG).",
+  "Phần căn cứ: quy chế đào tạo (điều, khoản về điều kiện tốt nghiệp); biên bản họp hội đồng xét tốt nghiệp (số, ngày họp); đề nghị của Trưởng phòng Đào tạo.",
+  "Phần quyết định: Điều 1 (công nhận tốt nghiệp và cấp bằng cho số lượng SV có tên trong danh sách kèm theo); Điều 2 (giao Phòng Đào tạo phối hợp in bằng, tổ chức lễ trao bằng — ghi ngày dự kiến nếu có); Điều 3 (trách nhiệm thi hành).",
+  "Phần cuối: nơi nhận; chữ ký, họ tên người ký.",
+  "Phụ lục kèm theo: danh sách SV (STT, mã SV, họ tên, ngày sinh, lớp, ngành, ĐTB toàn khóa, xếp loại) sắp xếp theo ngành; bảng thống kê số SV tốt nghiệp theo ngành và theo xếp loại. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần đầu văn bản: quốc hiệu – tiêu ngữ; tên cơ quan ban hành; số, ký hiệu quyết định;\n   địa danh, ngày tháng năm ban hành.\n\n2. Tên loại và trích yếu: \"QUYẾT ĐỊNH\" + \"Về việc công nhận tốt nghiệp…\" (ghi rõ đợt xét).\n\n3. Thẩm quyền ban hành: chức danh người ký (HIỆU TRƯỞNG / KT. HIỆU TRƯỞNG – PHÓ HIỆU TRƯỞNG).\n\n4. Phần căn cứ: quy chế đào tạo (điều, khoản về điều kiện tốt nghiệp); biên bản họp hội đồng\n   xét tốt nghiệp (số, ngày họp); đề nghị của Trưởng phòng Đào tạo.\n\n5. Phần quyết định: Điều 1 (công nhận tốt nghiệp và cấp bằng cho số lượng SV có tên trong danh\n   sách kèm theo); Điều 2 (giao Phòng Đào tạo phối hợp in bằng, tổ chức lễ trao bằng — ghi ngày\n   dự kiến nếu có); Điều 3 (trách nhiệm thi hành).\n\n6. Phần cuối: nơi nhận; chữ ký, họ tên người ký.\n\n7. Phụ lục kèm theo: danh sách SV (STT, mã SV, họ tên, ngày sinh, lớp, ngành, ĐTB toàn khóa,\n   xếp loại) sắp xếp theo ngành; bảng thống kê số SV tốt nghiệp theo ngành và theo xếp loại.",
+ "human_gate_check": "Đã qua Human gate: hội đồng xét tốt nghiệp đã họp, biểu quyết và xếp loại từng SV; người có thẩm quyền đã ký duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (đào tạo). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n\n## Thông tư 10/2026/TT-BGDĐT – Quy chế văn bằng, chứng chỉ\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/quy-che-moi-ve-van-bang-chung-chi-cua-he-thong-giao-duc-quoc-dan-119260304120550185.htm\n\nĐối chiếu văn bản gốc, ngày hiệu lực và chuyển tiếp trước khi chọn mẫu, sổ, quy trình cấp/chỉnh sửa/thu hồi; không dùng mẫu 21/2019 như mẫu hiện hành. Yêu cầu hồ sơ gốc, quyết định và thẩm quyền. AI chỉ chuẩn bị hồ sơ, không cấp bằng, gán số hay tự xác nhận chữ ký.\n",
+ "outputs_dir": "skills/vnuis-dt-soan-quyet-dinh-tot-nghiep/references"
+}

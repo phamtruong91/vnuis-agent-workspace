@@ -1,0 +1,145 @@
+{
+ "name": "vnuis-dc-kiem-tra-chat-luong-du-lieu-bao-cao",
+ "title": "Kiểm tra chất lượng dữ liệu báo cáo",
+ "description": "Dùng khi có file Excel hoặc CSV xuất từ hệ thống để lập báo cáo và cần kiểm tra trước: ô trống, bản ghi trùng, tổng không khớp, giá trị ngoài danh mục, hai nguồn cho số khác nhau.",
+ "group": "dc",
+ "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+ "previous_name": "vnuis-kiem-tra-chat-luong-du-lieu-bao-cao",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (đảm bảo chất lượng, báo cáo); mọi đơn vị lập báo cáo số liệu",
+ "when": "Khi có file Excel hoặc CSV xuất từ hệ thống dùng để lập báo cáo, và cần biết dữ liệu có đủ tin cậy trước khi tổng hợp; khi hai nguồn báo cáo cùng một chỉ tiêu cho số khác nhau.",
+ "inputs": [
+  {
+   "key": "file_du_lieu",
+   "desc": "File Excel hoặc CSV cần kiểm tra (đã che thông tin định danh nếu không cần)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "data_dictionary",
+   "desc": "Mô tả từng cột: tên, kiểu, miền giá trị, bắt buộc hay không",
+   "required": false,
+   "note": "Không (nếu thiếu, skill đề xuất từ dữ liệu và chờ xác nhận)"
+  },
+  {
+   "key": "quy_tac_kiem_tra",
+   "desc": "Quy tắc nghiệp vụ: ví dụ tổng theo chương trình bằng tổng theo khoa; mã chương trình thuộc danh mục",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ky_bao_cao",
+   "desc": "Kỳ và ngày chốt số liệu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguon_doi_chieu",
+   "desc": "File hoặc số liệu khác cùng chỉ tiêu để đối chiếu",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (đảm bảo chất lượng, báo cáo); mọi đơn vị lập báo cáo số liệu"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Đọc cấu trúc và đối chiếu data dictionary",
+   "lam_gi": "Liệt kê cột, kiểu, tỷ lệ ô trống; so với data dictionary; cột không có trong dictionary đưa vào danh sách chờ xác nhận.",
+   "inputs": [
+    "file_du_lieu",
+    "data_dictionary"
+   ],
+   "vai_tro": "Chuyên viên phụ trách dữ liệu · AI hỗ trợ: quét cấu trúc",
+   "luu_y": "Không đoán ý nghĩa cột; hỏi lại.",
+   "ket_qua": "Bảng cấu trúc và chênh lệch với dictionary."
+  },
+  {
+   "n": 2,
+   "title": "Chạy bộ kiểm tra",
+   "lam_gi": "Ô trống ở cột bắt buộc, kiểu sai, giá trị ngoài miền, bản ghi trùng, ngày vô lý, tổng phụ khác tổng, mã chương trình ngoài danh mục.",
+   "inputs": [
+    "file_du_lieu",
+    "quy_tac_kiem_tra"
+   ],
+   "vai_tro": "Chuyên viên phụ trách dữ liệu · AI hỗ trợ: chạy kiểm tra",
+   "luu_y": "Mỗi lỗi ghi vị trí (sheet, dòng, cột), loại lỗi và mức độ.",
+   "ket_qua": "Bảng lỗi."
+  },
+  {
+   "n": 3,
+   "title": "Đối chiếu giữa các nguồn",
+   "lam_gi": "So số liệu cùng chỉ tiêu giữa file này và nguồn đối chiếu; nêu chênh lệch tuyệt đối và tương đối.",
+   "inputs": [
+    "file_du_lieu",
+    "nguon_doi_chieu"
+   ],
+   "vai_tro": "Chuyên viên phụ trách dữ liệu · AI hỗ trợ: đối chiếu",
+   "luu_y": "Không chọn số nào là đúng; ghi nguồn từng số.",
+   "ket_qua": "Bảng chênh lệch giữa nguồn."
+  },
+  {
+   "n": 4,
+   "title": "Tổng hợp và đề xuất xử lý",
+   "lam_gi": "Tóm tắt số lỗi theo loại; đề xuất ai cần xác nhận hoặc sửa; kết luận mức sẵn sàng của dữ liệu cho báo cáo (đủ, đủ có điều kiện, chưa đủ).",
+   "inputs": [
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Trưởng đơn vị · AI hỗ trợ: dự thảo kết luận",
+   "luu_y": "Kết luận do người phụ trách xác nhận.",
+   "ket_qua": "Bản tóm tắt và danh sách việc cần làm."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi lỗi truy được về dòng và cột gốc.",
+  "Không sửa dữ liệu gốc trong file giao.",
+  "Không chọn số nào đúng khi hai nguồn lệch.",
+  "Số lỗi trong sheet Tóm tắt khớp sheet Lỗi.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Người phụ trách dữ liệu của đơn vị** xác nhận từng lỗi và quyết định cách xử lý.",
+  "**Trưởng đơn vị** quyết định có dùng dữ liệu để báo cáo."
+ ],
+ "guardrails": [
+  "KHÔNG tự sửa hay xóa dữ liệu gốc.",
+  "KHÔNG tải dữ liệu người học hoặc nhân sự lên dịch vụ ngoài khi chưa có quyền (C5)."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Data dictionary của các file xuất từ hệ thống (C8).",
+  "Nguồn số liệu chính thức khi hai nguồn lệch (C4)."
+ ],
+ "output_structure": [
+  "Sheet Tóm tắt: kỳ, file, số dòng, số lỗi theo loại, mức sẵn sàng.",
+  "Sheet Lỗi: vị trí, loại, mô tả, mức độ, người cần xác nhận.",
+  "Sheet Đối chiếu nguồn: chỉ tiêu, nguồn A, nguồn B, chênh lệch.",
+  "Sheet Chờ xác nhận: cột hoặc quy tắc chưa rõ."
+ ],
+ "output_structure_raw": "1. Sheet Tóm tắt: kỳ, file, số dòng, số lỗi theo loại, mức sẵn sàng.\n\n2. Sheet Lỗi: vị trí, loại, mô tả, mức độ, người cần xác nhận.\n\n3. Sheet Đối chiếu nguồn: chỉ tiêu, nguồn A, nguồn B, chênh lệch.\n\n4. Sheet Chờ xác nhận: cột hoặc quy tắc chưa rõ.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (đảm bảo chất lượng, báo cáo). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dc-kiem-tra-chat-luong-du-lieu-bao-cao/references"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: Hợp tác QT · Soạn biên bản ghi nhớ / thỏa thuận hợp tác (MOU/MOA) song ngữ Việt–Anh – VNU-IS
+  short_description: Hỗ trợ soạn biên bản ghi nhớ / thỏa thuận hợp tác (MOU/MOA) song
+  default_prompt: 'Hãy dùng $vnuis-htqt-soan-mou-moa-song-ngu để hỗ trợ công việc: Soạn biên bản ghi nhớ / thỏa thuận hợp tác (MOU/MOA) song ngữ Việt–Anh; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

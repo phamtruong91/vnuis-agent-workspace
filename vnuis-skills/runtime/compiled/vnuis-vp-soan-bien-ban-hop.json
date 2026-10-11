@@ -1,0 +1,247 @@
+{
+ "name": "vnuis-vp-soan-bien-ban-hop",
+ "title": "Soạn biên bản cuộc họp",
+ "description": "Dùng sau mỗi cuộc họp, hội nghị, phiên họp hội đồng (giao ban, hội đồng, họp đơn vị) khi cần lập biên bản ghi nhận thành phần, diễn biến, kết luận từ ghi chép.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-soan-bien-ban-hop",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường",
+ "when": "Sau mỗi cuộc họp, hội nghị, phiên họp hội đồng cần lập biên bản ghi nhận diễn biến và kết luận\nlàm căn cứ triển khai.",
+ "inputs": [
+  {
+   "key": "ten_cuoc_hop",
+   "desc": "Tên cuộc họp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Ngày, giờ bắt đầu – kết thúc",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Địa điểm họp (chọn cơ sở: Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chu_tri",
+   "desc": "Người chủ trì",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thu_ky",
+   "desc": "Thư ký ghi biên bản",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thanh_phan",
+   "desc": "Thành phần tham dự (và vắng mặt có lý do)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung",
+   "desc": "Nội dung họp: từng vấn đề, ý kiến phát biểu chính",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_luan",
+   "desc": "Kết luận / phân công nhiệm vụ của chủ trì",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "co_quan_chu_quan",
+   "desc": "Cơ quan chủ quản: Đại học Quốc gia Hà Nội (đã điền sẵn)",
+   "required": false,
+   "note": "Không (mặc định: ĐHQGHN)"
+  },
+  {
+   "key": "co_quan_ban_hanh",
+   "desc": "Cơ quan ban hành: Trường Quốc tế – ĐHQGHN (đã điền sẵn); ghi thêm đơn vị soạn thảo nếu khác",
+   "required": false,
+   "note": "Không (mặc định: Trường Quốc tế – ĐHQGHN)"
+  },
+  {
+   "key": "dia_danh",
+   "desc": "Địa danh ghi ở dòng ngày tháng năm (mặc định: Hà Nội)",
+   "required": false,
+   "note": "Không (mặc định: Hà Nội)"
+  },
+  {
+   "key": "so_van_ban",
+   "desc": "Số, ký hiệu văn bản đã được cấp (để trống nếu chưa cấp; không tự đặt)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Danh sách nơi nhận, gồm cả nơi lưu (VT, đơn vị soạn)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập và đối chiếu ghi chép cuộc họp",
+   "lam_gi": "Thu thập ghi chép/bản ghi âm cuộc họp; đối chiếu thông tin hành chính: `ten_cuoc_hop`, `thoi_gian` (giờ bắt đầu – kết thúc), `dia_diem`, `chu_tri`, `thu_ky`, `thanh_phan` (người dự, người vắng mặt và lý do); kiểm tra tên, chức danh người dự có chính xác không (đối chiếu danh sách triệu tập).",
+   "inputs": [
+    "ten_cuoc_hop",
+    "thoi_gian",
+    "dia_diem",
+    "chu_tri",
+    "thu_ky",
+    "thanh_phan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: đối chiếu chéo tự động",
+   "luu_y": "Tên người và chức danh sai là lỗi nghiêm trọng trong biên bản — kiểm tra kỹ từng tên; người vắng mặt phải ghi rõ lý do (vắng có phép/vắng không phép/đi công tác).",
+   "ket_qua": "Khung thông tin hành chính cuộc họp đã kiểm chuẩn."
+  },
+  {
+   "n": 2,
+   "title": "Ghi phần mở đầu biên bản",
+   "lam_gi": "Viết phần đầu theo Mẫu 1.9: cơ quan chủ quản nếu có, cơ quan ban hành, quốc hiệu – tiêu ngữ, số/ký hiệu BB và địa danh/ngày (chưa có để trống), dòng \"BIÊN BẢN\" + tên cuộc họp (in hoa, căn giữa), các dòng Thời gian / Địa điểm / Chủ trì / Thư ký / Thành phần (ghi số lượng người dự, liệt kê người vắng mặt kèm lý do). Phần đầu văn bản lấy từ `co_quan_chu_quan` (nếu có), `co_quan_ban_hanh`, `dia_danh`, `so_van_ban` (để dòng dấu chấm nếu chưa cấp số).",
+   "inputs": [
+    "ten_cuoc_hop",
+    "thoi_gian",
+    "dia_diem",
+    "chu_tri",
+    "thu_ky",
+    "thanh_phan",
+    "co_quan_chu_quan",
+    "co_quan_ban_hanh",
+    "dia_danh",
+    "so_van_ban"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Giờ họp ghi đầy đủ theo dạng \"…h… – …h…, ngày … tháng … năm …\" từ `thoi_gian` (chỗ nào input chưa có thì để dòng dấu chấm); chủ trì và thư ký ghi đủ học hàm/học vị + họ tên + chức danh.",
+   "ket_qua": "Phần mở đầu biên bản hoàn chỉnh."
+  },
+  {
+   "n": 3,
+   "title": "Ghi diễn biến theo từng nội dung",
+   "lam_gi": "Với từng vấn đề trong `noi_dung`, ghi thành mục đánh số 1., 2., 3...; mỗi mục ghi: nội dung vấn đề được trình bày + ý kiến phát biểu chính (ghi tên người phát biểu + ý chính, không ghi nguyên văn dài dòng trừ phát biểu cần lưu chính xác); giữ giọng văn khách quan, trung thực, không bình luận.",
+   "inputs": [
+    "noi_dung"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Chỉ ghi ý kiến có giá trị (đề xuất, phản biện, số liệu) — bỏ qua phát biểu mang tính xã giao; ý kiến trái chiều phải ghi đầy đủ cả hai phía, không thiên lệch; không tự ý \"làm đẹp\" lời phát biểu.",
+   "ket_qua": "Dự thảo phần diễn biến theo từng nội dung."
+  },
+  {
+   "n": 4,
+   "title": "Tổng hợp kết luận thành nhiệm vụ cụ thể",
+   "lam_gi": "Từ `ket_luan`, chuyển từng kết luận/phân công của chủ trì thành mục đánh số, mỗi mục giữ việc gì – đơn vị/cá nhân thực hiện (đầu mối) – thời hạn hoàn thành theo ghi chép đã cung cấp; kiểm tra mỗi nhiệm vụ có đầu mối rõ ràng và hạn chót cụ thể (ngày/tháng/năm), để trống đầu mối hoặc thời hạn chưa được xác nhận.",
+   "inputs": [
+    "ket_luan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: tổng hợp và chuẩn hóa dữ liệu",
+   "luu_y": "Bẫy thường gặp — kết luận ghi \"các đơn vị triển khai\" mà không chỉ rõ đơn vị nào; hạn chót ghi \"sớm\" hoặc \"trong thời gian tới\". Ghi đầu mối và thời hạn đúng kết luận nguồn; chưa có để trống, không tự giao việc hoặc đặt hạn.",
+   "ket_qua": "Dự thảo phần kết luận với nhiệm vụ đã gắn đầu mối và thời hạn."
+  },
+  {
+   "n": 5,
+   "title": "Hoàn thiện phần kết thúc và chữ ký",
+   "lam_gi": "Ghi dòng thời gian kết thúc cuộc họp (\"Cuộc họp kết thúc lúc ... cùng ngày./.\"); bố trí khối chữ ký: bên trái \"THƯ KÝ\", bên phải \"CHỦ TRÌ\", họ tên người ký bên dưới (chừa khoảng trống ký ở bản trình ký). Nơi nhận lấy từ `noi_nhan`.",
+   "inputs": [
+    "thoi_gian",
+    "chu_tri",
+    "thu_ky",
+    "noi_nhan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: áp dụng góp ý, hoàn thiện bản thảo",
+   "luu_y": "Giờ kết thúc phải khớp thực tế (không sớm hơn giờ bắt đầu đã ghi); biên bản hợp lệ cần chữ ký của cả chủ trì và thư ký.",
+   "ket_qua": "Phần kết thúc + khối chữ ký hoàn chỉnh."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra tính khả thi và chính xác",
+   "lam_gi": "Kiểm tra từng nhiệm vụ trong kết luận: có khả thi không (đầu mối có năng lực/thẩm quyền thực hiện, hạn chót có thực tế không); đối chiếu tên người, chức danh, số liệu với ghi chép gốc; đọc soát chính tả toàn văn.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "Nhiệm vụ giao cho đơn vị không dự họp phải được xác nhận lại với đơn vị đó trước khi ban hành biên bản; hạn chót đã qua so với ngày lập biên bản là lỗi phải sửa ngay.",
+   "ket_qua": "Kết quả đối chiếu nội bộ (không xuất kèm file) + danh sách chỗ cần sửa (nếu có), trả về bước tương ứng để chỉnh."
+  },
+  {
+   "n": 7,
+   "title": "Trình ký xác nhận và ban hành",
+   "lam_gi": "Ghép toàn bộ thành biên bản hoàn chỉnh theo quy cách đầu ra, bổ sung nơi nhận theo mẫu; chuyển cho thư ký và chủ trì ký xác nhận (human gate); sau khi ký, gửi biên bản cho các thành phần dự họp và đơn vị được phân công nhiệm vụ.",
+   "inputs": [],
+   "vai_tro": "Thư ký chuẩn bị, chủ trì và thư ký cuộc họp ký · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "Không sửa nội dung diễn biến/kết luận sau khi chủ trì đã ký mà không có ý kiến đồng ý bằng văn bản.",
+   "ket_qua": "Biên bản cuộc họp đã ký xác nhận, gửi đến các bên liên quan."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức văn bản theo Nghị định 30/2020/NĐ-CP (đối chiếu hiệu lực tại ngày nghiệp vụ) và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Tên người và chức danh sai là lỗi nghiêm trọng trong biên bản — kiểm tra kỹ từng tên",
+  "Người vắng mặt phải ghi rõ lý do (vắng có phép/vắng không phép/đi công tác)",
+  "Giờ họp ghi đầy đủ theo dạng \"…h… – …h…, ngày … tháng … năm …\" từ `thoi_gian` (chỗ nào input chưa có thì để dòng dấu chấm)"
+ ],
+ "gates": [],
+ "guardrails": [
+  "Không ghi cả quyết định cũ lẫn mới như hai quyết định khi chủ trì đổi ý trong họp: ghi quyết định cuối cùng và nêu ngắn diễn biến đổi ý.",
+  "Không ghi một việc là đã quyết nếu thuộc thẩm quyền cấp trên (Ban Giám hiệu, Hiệu trưởng); ghi \"đề xuất\" hoặc \"trình\", và không ban hành thông báo trước khi có quyết định. Chủ trì nói hai điều trái nhau thì ghi theo hướng thận trọng và nêu trong ghi chú nội bộ.",
+  "Không tự sửa số phiếu biểu quyết khi không khớp số người có mặt: giữ đúng số theo ghi chép và nêu trong ghi chú nội bộ.",
+  "Không ghi người vắng mặt là đã nhận việc: ghi \"chờ xác nhận\". Việc chưa có đầu mối hoặc thời hạn cụ thể (\"tuần sau\", \"sớm\") để trống, không tự đặt ngày.",
+  "Không đưa vào biên bản chung thông tin sức khỏe, hoàn cảnh gia đình, kỷ luật của cá nhân sinh viên hay cán bộ; ghi \"một trường hợp cần hỗ trợ\" nếu chủ trì yêu cầu. Không ghi chuyện ngoài lề.",
+  "Không chọn ngày họp theo giấy mời khi ghi chép nêu ngày khác: dùng ngày chủ trì xác nhận trong họp và nêu trong ghi chú nội bộ. Các điểm cần xác nhận đặt sau dòng \"=== GHI CHÚ NỘI BỘ ===\", không nằm trong biên bản giao đi."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Biên bản họp giao ban, họp đơn vị, họp hội đồng: ghi người dự theo chức danh; người kiêm nhiệm ghi cả hai vai trò.",
+  "Họp có tiếng Anh hoặc đối tác nước ngoài: giữ nguyên thuật ngữ gốc, nêu rõ ngôn ngữ họp.",
+  "Chuyển nhiệm vụ sau họp sang vnuis-vp-chuan-bi-hop-theo-doi-nhiem-vu; biên bản Hội đồng KH&ĐT dùng vnuis-hd-soan-bien-ban-hop."
+ ],
+ "cho_xac_nhan": [
+  "Có ghi âm họp hay không (C5).",
+  "Mẫu biên bản (C8)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "BIÊN BẢN (BB) theo Mẫu 1.9 Phụ lục III: cơ quan chủ quản nếu có/cơ quan ban hành; quốc hiệu/tiêu ngữ; số, ký hiệu; địa danh/ngày; BIÊN BẢN và tên cuộc họp; thời gian bắt đầu; địa điểm; thành phần; chủ tọa/chủ trì; thư ký; nội dung diễn biến và kết luận có trong nguồn; thời gian kết thúc; THƯ KÝ bên trái, CHỦ TỌA/CHỦ TRÌ bên phải; họ tên nếu có; nơi nhận. Không tự thêm câu “đã thông qua”, số bản, kết luận, người chịu trách nhiệm hoặc thời hạn khi ghi chép chưa xác nhận.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-soan-bien-ban-hop/references"
+}

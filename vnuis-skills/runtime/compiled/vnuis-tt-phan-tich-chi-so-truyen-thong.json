@@ -1,0 +1,148 @@
+{
+ "name": "vnuis-tt-phan-tich-chi-so-truyen-thong",
+ "title": "Phân tích chỉ số truyền thông",
+ "description": "Dùng khi có file số liệu xuất từ nhiều kênh (website, mạng xã hội, email) và Phòng Truyền thông và Tuyển sinh cần báo cáo tuần, tháng hoặc đánh giá chiến dịch: so theo kỳ, kênh, chiến dịch, nêu điểm bất thường.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-phan-tich-chi-so-truyen-thong",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi có file xuất chỉ số từ nhiều kênh và cần bảng so sánh thống nhất; khi cần đánh giá chiến dịch theo số liệu.",
+ "inputs": [
+  {
+   "key": "file_chi_so",
+   "desc": "File xuất từ từng kênh: tên kênh, ngày, lượt hiển thị, tương tác, truy cập, đăng ký",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dinh_nghia_chi_so",
+   "desc": "Định nghĩa chỉ số mỗi kênh dùng (các kênh đếm khác nhau)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ke_hoach_chien_dich",
+   "desc": "Chiến dịch, thời gian, mục tiêu do đơn vị đặt",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "du_lieu_dang_ky",
+   "desc": "Số đăng ký hoặc hồ sơ tuyển sinh cùng kỳ nếu có",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ky_phan_tich",
+   "desc": "Kỳ phân tích và kỳ so sánh",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chuẩn hóa chỉ số theo kênh",
+   "lam_gi": "Đưa file từng kênh về cùng cấu trúc; chỉ số cùng tên nhưng định nghĩa khác được tách riêng, không cộng chung.",
+   "inputs": [
+    "file_chi_so",
+    "dinh_nghia_chi_so"
+   ],
+   "vai_tro": "Chuyên viên truyền thông · AI hỗ trợ: chuẩn hóa",
+   "luu_y": "Không cộng lượt xem giữa kênh khi định nghĩa khác.",
+   "ket_qua": "Bảng chỉ số chuẩn hóa."
+  },
+  {
+   "n": 2,
+   "title": "So kỳ và so kênh",
+   "lam_gi": "So với kỳ trước và giữa các kênh; xu hướng chỉ nêu khi có từ 3 mốc.",
+   "inputs": [
+    "ky_phan_tich"
+   ],
+   "vai_tro": "Chuyên viên truyền thông · AI hỗ trợ: tính và so sánh",
+   "luu_y": "Không suy nhân quả từ tương quan.",
+   "ket_qua": "Bảng so sánh."
+  },
+  {
+   "n": 3,
+   "title": "Gắn chiến dịch và đăng ký",
+   "lam_gi": "Gắn chỉ số vào chiến dịch theo thời gian; nếu có dữ liệu đăng ký thì nêu mối liên hệ theo thời gian, không kết luận nguyên nhân.",
+   "inputs": [
+    "ke_hoach_chien_dich",
+    "du_lieu_dang_ky"
+   ],
+   "vai_tro": "Trưởng bộ phận · AI hỗ trợ: ghép dữ liệu",
+   "luu_y": "Nguồn đăng ký phải là dữ liệu chính thức (C4).",
+   "ket_qua": "Bảng chiến dịch và kết quả."
+  },
+  {
+   "n": 4,
+   "title": "Nêu bất thường và đề xuất",
+   "lam_gi": "Liệt kê giá trị bất thường, nêu giả thuyết gắn nhãn, đề xuất việc cần kiểm tra.",
+   "inputs": [
+    "file_chi_so"
+   ],
+   "vai_tro": "Trưởng bộ phận · AI hỗ trợ: dự thảo nhận xét",
+   "luu_y": "Giả thuyết phải ghi rõ là chưa kiểm chứng.",
+   "ket_qua": "Báo cáo chỉ số và đề xuất."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Chỉ số khác định nghĩa không bị cộng chung.",
+  "Xu hướng chỉ nêu khi có từ 3 mốc.",
+  "Mọi giả thuyết có nhãn chưa kiểm chứng.",
+  "Số liệu truy được về file gốc.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng bộ phận truyền thông** xác nhận số liệu và nhận xét.",
+  "**Trưởng phòng Truyền thông và Tuyển sinh** duyệt báo cáo."
+ ],
+ "guardrails": [
+  "KHÔNG kết luận chiến dịch gây ra số đăng ký khi chỉ có tương quan.",
+  "KHÔNG dùng số liệu của đối thủ hoặc ngoài nguồn được cung cấp."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Danh sách kênh và quyền xuất dữ liệu (C5).",
+  "Nguồn số liệu đăng ký chính thức (C4)."
+ ],
+ "output_structure": [
+  "Sheet Tổng quan: kỳ, kênh, chỉ số chính.",
+  "Sheet Theo kênh và Sheet Theo chiến dịch.",
+  "Sheet Bất thường: giá trị, giả thuyết, việc cần kiểm tra.",
+  "Sheet Định nghĩa chỉ số đã dùng."
+ ],
+ "output_structure_raw": "1. Sheet Tổng quan: kỳ, kênh, chỉ số chính.\n\n2. Sheet Theo kênh và Sheet Theo chiến dịch.\n\n3. Sheet Bất thường: giá trị, giả thuyết, việc cần kiểm tra.\n\n4. Sheet Định nghĩa chỉ số đã dùng.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-phan-tich-chi-so-truyen-thong/references"
+}

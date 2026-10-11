@@ -1,0 +1,3232 @@
+[
+ {
+  "name": "vnuis-cntt-bao-cao-chuyen-doi-so",
+  "title": "Báo cáo hiện trạng & kết quả chuyển đổi số",
+  "description": "Dùng khi cần tổng hợp hiện trạng và kết quả chuyển đổi số của trường (hạ tầng số, số hóa quy trình, dữ liệu, nhân lực số) để báo cáo Ban Giám hiệu hoặc cơ quan quản lý, thường vào cuối năm.",
+  "group": "cntt",
+  "group_label": "Hạ tầng CNTT, an toàn thông tin, chuyển đổi số",
+  "previous_name": "vnuis-bao-cao-chuyen-doi-so",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin, chuyển đổi số)",
+  "required_inputs": [
+   "nam_bao_cao",
+   "so_lieu_ha_tang",
+   "so_lieu_so_hoa",
+   "so_lieu_du_lieu",
+   "so_lieu_nhan_luc"
+  ],
+  "n_steps": 4,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-cntt-ke-hoach-phat-trien-cntt",
+  "title": "Kế hoạch phát triển CNTT",
+  "description": "Dùng khi cần lập kế hoạch phát triển công nghệ thông tin hằng năm hoặc trung hạn: nâng cấp hạ tầng mạng, máy chủ, phần mềm quản lý đào tạo, học trực tuyến, số hóa quy trình.",
+  "group": "cntt",
+  "group_label": "Hạ tầng CNTT, an toàn thông tin, chuyển đổi số",
+  "previous_name": "vnuis-ke-hoach-phat-trien-cntt",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin, chuyển đổi số)",
+  "required_inputs": [
+   "giai_doan",
+   "hien_trang",
+   "hang_muc",
+   "muc_tieu"
+  ],
+  "n_steps": 7,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-cntt-phan-loai-yeu-cau-ho-tro",
+  "title": "Phân loại yêu cầu hỗ trợ CNTT",
+  "description": "Dùng khi bộ phận CNTT tiếp nhận yêu cầu hỗ trợ (hỏng mạng, mất mật khẩu, lỗi phần mềm, thiết bị) và cần phân loại phiếu hỗ trợ (ticket), xếp ưu tiên, định hướng xử lý. Dùng chung cho mọi đơn vị.",
+  "group": "cntt",
+  "group_label": "Hạ tầng CNTT, an toàn thông tin, chuyển đổi số",
+  "previous_name": "vnuis-helpdesk-cntt-triage",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin)",
+  "required_inputs": [
+   "mo_ta_su_co",
+   "nguoi_bao"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-cntt-soan-quy-che-an-toan-thong-tin",
+  "title": "Quy chế an toàn thông tin mạng",
+  "description": "Dùng khi cần ban hành mới hoặc rà soát quy chế an toàn thông tin mạng, quy định bảo mật thông tin của trường: quản lý tài khoản, phân quyền, bảo vệ dữ liệu, sao lưu, ứng phó sự cố.",
+  "group": "cntt",
+  "group_label": "Hạ tầng CNTT, an toàn thông tin, chuyển đổi số",
+  "previous_name": "vnuis-quy-che-an-toan-thong-tin",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin, chuyển đổi số)",
+  "required_inputs": [
+   "pham_vi",
+   "cac_he_thong"
+  ],
+  "n_steps": 4,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-csvc-ke-hoach-bao-tri",
+  "title": "Lập kế hoạch bảo trì cơ sở vật chất",
+  "description": "Dùng khi Phòng TC&QT (mảng cơ sở vật chất) lập kế hoạch bảo trì, bảo dưỡng, sửa chữa cơ sở vật chất hằng năm hoặc đột xuất khi hư hỏng ảnh hưởng an toàn, giảng dạy: hiện trạng, ưu tiên, dự toán, tiến độ.",
+  "group": "csvc",
+  "group_label": "Cơ sở vật chất – mua sắm, tài sản",
+  "previous_name": "vnuis-ke-hoach-bao-tri-csvc",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (cơ sở vật chất)",
+  "required_inputs": [
+   "nam_ke_hoach",
+   "hang_muc",
+   "du_toan"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-csvc-ke-hoach-mua-sam",
+  "title": "Lập kế hoạch mua sắm trang thiết bị",
+  "description": "Dùng khi Phòng TC&QT (mảng cơ sở vật chất) tổng hợp nhu cầu mua sắm trang thiết bị của các đơn vị thành kế hoạch năm, hoặc điều chỉnh, bổ sung kế hoạch giữa năm.",
+  "group": "csvc",
+  "group_label": "Cơ sở vật chất – mua sắm, tài sản",
+  "previous_name": "vnuis-ke-hoach-mua-sam",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (cơ sở vật chất)",
+  "required_inputs": [
+   "nam_ke_hoach",
+   "nhu_cau_don_vi",
+   "nguon_von"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-csvc-lap-bien-ban-kiem-ke-tai-san",
+  "title": "Lập biên bản kiểm kê tài sản",
+  "description": "Dùng khi kiểm kê tài sản cố định, công cụ dụng cụ cuối năm hoặc đột xuất (bàn giao, sáp nhập đơn vị) và cần lập biên bản đối chiếu sổ sách với thực tế, ghi chênh lệch, kiến nghị xử lý.",
+  "group": "csvc",
+  "group_label": "Cơ sở vật chất – mua sắm, tài sản",
+  "previous_name": "vnuis-bien-ban-kiem-ke-tai-san",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (cơ sở vật chất)",
+  "required_inputs": [
+   "don_vi",
+   "danh_muc",
+   "tinh_trang",
+   "ban_kiem_ke",
+   "thoi_gian"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-csvc-lap-bien-ban-nghiem-thu-thiet-bi",
+  "title": "Lập biên bản nghiệm thu thiết bị",
+  "description": "Dùng khi nhà thầu đã giao, lắp đặt xong thiết bị mua sắm và cần lập biên bản nghiệm thu, bàn giao: đối chiếu hợp đồng, kiểm tra số lượng, chủng loại, chạy thử, ghi đạt hoặc không đạt.",
+  "group": "csvc",
+  "group_label": "Cơ sở vật chất – mua sắm, tài sản",
+  "previous_name": "vnuis-bien-ban-nghiem-thu-thiet-bi",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (cơ sở vật chất)",
+  "required_inputs": [
+   "hop_dong",
+   "danh_muc",
+   "ket_qua_kiem_tra",
+   "thanh_phan",
+   "thoi_gian_dia_diem"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-csvc-soan-hop-dong-mua-sam",
+  "title": "Soạn hợp đồng mua sắm thiết bị",
+  "description": "Dùng khi đã có kết quả lựa chọn nhà thầu và cần soạn hợp đồng mua sắm trang thiết bị (giao hàng, nghiệm thu, thanh toán, bảo hành, phạt vi phạm) hoặc phụ lục điều chỉnh hợp đồng.",
+  "group": "csvc",
+  "group_label": "Cơ sở vật chất – mua sắm, tài sản",
+  "previous_name": "vnuis-hop-dong-mua-sam",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (cơ sở vật chất); pháp chế",
+  "required_inputs": [
+   "ben_a",
+   "ben_b",
+   "goi_thau",
+   "danh_muc",
+   "gia_tri",
+   "giao_hang",
+   "thanh_toan",
+   "bao_hanh"
+  ],
+  "n_steps": 7,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-ctsv-bao-cao-cong-tac-sinh-vien-nam",
+  "title": "Soạn báo cáo công tác sinh viên năm học",
+  "description": "Dùng khi Phòng Đào tạo (mảng công tác sinh viên) lập báo cáo tổng kết cả năm học: học bổng, rèn luyện, ký túc xá, phong trào, việc làm, y tế – bảo hiểm, để trình Ban Giám hiệu.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-bao-cao-ctsv-nam",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (công tác sinh viên)",
+  "required_inputs": [
+   "nam_hoc",
+   "tong_sv",
+   "so_lieu_mang"
+  ],
+  "n_steps": 5,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-ctsv-ke-hoach-ngay-hoi-viec-lam",
+  "title": "Kế hoạch Ngày hội việc làm",
+  "description": "Dùng khi tổ chức Ngày hội việc làm hoặc kết nối doanh nghiệp cho sinh viên năm cuối và sinh viên mới tốt nghiệp: gian hàng tuyển dụng, phỏng vấn thử, tọa đàm kỹ năng nghề nghiệp.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-ke-hoach-ngay-hoi-viec-lam",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh; Phòng Đào tạo (CTSV)",
+  "required_inputs": [
+   "ten_su_kien",
+   "doi_tuong_sv",
+   "so_luong_dn",
+   "thoi_gian",
+   "dia_diem"
+  ],
+  "n_steps": 7,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-ctsv-ke-hoach-tuan-sinh-hoat-cong-dan",
+  "title": "Kế hoạch Tuần sinh hoạt công dân",
+  "description": "Dùng khi đầu khóa hoặc đầu năm học cần lập kế hoạch Tuần sinh hoạt công dân cho sinh viên mới: học nội quy, quy chế đào tạo, an ninh pháp luật, kỹ năng học đại học, sinh hoạt Đoàn – Hội.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-ke-hoach-tuan-shcd",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (công tác sinh viên)",
+  "required_inputs": [
+   "doi_tuong",
+   "so_luong_sv",
+   "thoi_gian",
+   "dia_diem"
+  ],
+  "n_steps": 6,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-ctsv-khao-sat-viec-lam-sau-tot-nghiep",
+  "title": "Khảo sát tình trạng việc làm sinh viên sau tốt nghiệp",
+  "description": "Dùng khi cần khảo sát cựu sinh viên sau 6–12 tháng ra trường (đã có việc làm chưa, đúng ngành không, thu nhập, thời gian tìm việc): thiết kế phiếu và báo cáo kết quả theo khóa tốt nghiệp.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-khao-sat-viec-lam-sv-tot-nghiep",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (công tác sinh viên); Phòng TT&TS (kết nối việc làm)",
+  "required_inputs": [
+   "khoa_tot_nghiep",
+   "thoi_diem_khao_sat",
+   "tong_sv_tn",
+   "nganh_dao_tao"
+  ],
+  "n_steps": 7,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-ctsv-lap-phieu-danh-gia-ren-luyen",
+  "title": "Lập phiếu đánh giá kết quả rèn luyện sinh viên + hướng dẫn chấm",
+  "description": "Dùng khi cuối học kỳ cần tổ chức đánh giá kết quả rèn luyện sinh viên: lập phiếu tự đánh giá và hướng dẫn chấm điểm theo Thông tư 16/2015/TT-BGDĐT cho lớp, cố vấn học tập và hội đồng khoa.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-phieu-danh-gia-ren-luyen",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (công tác sinh viên)",
+  "required_inputs": [
+   "hoc_ky",
+   "nam_hoc"
+  ],
+  "n_steps": 6,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-ctsv-phan-loai-yeu-cau-sinh-vien",
+  "title": "Phân loại yêu cầu của sinh viên",
+  "description": "Dùng khi đơn vị nhận phản ánh, khiếu nại, đề nghị của sinh viên qua email, phiếu, biểu mẫu trực tuyến (điểm số, học phí, ký túc xá, xin xác nhận) và cần phân loại, xếp ưu tiên, chuyển đúng đơn vị xử lý.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-triage-case-sinh-vien",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (hỗ trợ người học, công tác sinh viên)",
+  "required_inputs": [
+   "kenh_tiep_nhan",
+   "noi_dung_case",
+   "thong_tin_sv",
+   "quy_dinh_lien_quan"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-ctsv-soan-quyet-dinh-cap-hoc-bong",
+  "title": "Soạn quyết định cấp học bổng / miễn giảm học phí",
+  "description": "Dùng khi hội đồng đã thống nhất danh sách sinh viên đủ điều kiện và cần soạn quyết định của Hiệu trưởng cấp học bổng hoặc miễn, giảm học phí kèm danh sách.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-quyet-dinh-cap-hoc-bong",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (công tác sinh viên); phối hợp Phòng TC&QT (nguồn kinh phí)",
+  "required_inputs": [
+   "loai_quyet_dinh",
+   "ten_dot",
+   "danh_sach",
+   "can_cu",
+   "tong_kinh_phi",
+   "nguon_kinh_phi",
+   "thoi_gian_ap_dung",
+   "don_vi_thuc_hien",
+   "nguoi_ky",
+   "noi_nhan"
+  ],
+  "n_steps": 7,
+  "n_inputs": 14
+ },
+ {
+  "name": "vnuis-ctsv-soan-quyet-dinh-khen-thuong-ky-luat",
+  "title": "Quyết định khen thưởng / kỷ luật sinh viên",
+  "description": "Dùng khi cần ban hành quyết định kỷ luật sinh viên (đã có biên bản vi phạm) hoặc quyết định khen thưởng sinh viên theo đợt, theo quy chế công tác sinh viên.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-quyet-dinh-ky-luat-sv",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (công tác sinh viên)",
+  "required_inputs": [
+   "loai_quyet_dinh",
+   "ho_ten_sv",
+   "ma_sv",
+   "lop_khoa",
+   "hanh_vi_vi_pham",
+   "bien_ban",
+   "thanh_tich",
+   "muc_khen_thuong",
+   "hoi_dong",
+   "nguoi_ky"
+  ],
+  "n_steps": 6,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-ctsv-soan-thong-bao-hoc-bong",
+  "title": "Soạn thông báo học bổng",
+  "description": "Dùng khi cần công bố cho sinh viên một chương trình học bổng (khuyến khích học tập, tài trợ của doanh nghiệp, chính sách): điều kiện, mức học bổng, hồ sơ, hạn nộp.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-thong-bao-hoc-bong",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (công tác sinh viên)",
+  "required_inputs": [
+   "ten_hoc_bong",
+   "loai_hoc_bong",
+   "doi_tuong",
+   "dieu_kien",
+   "muc_hoc_bong",
+   "ho_so",
+   "thoi_han",
+   "noi_nop",
+   "can_cu",
+   "nguoi_ky",
+   "noi_nhan"
+  ],
+  "n_steps": 6,
+  "n_inputs": 16
+ },
+ {
+  "name": "vnuis-ctsv-tong-hop-diem-ren-luyen",
+  "title": "Tổng hợp điểm rèn luyện toàn trường theo học kỳ",
+  "description": "Dùng khi các khoa đã chấm xong điểm rèn luyện học kỳ và cần gộp toàn trường: bảng theo khoa (số sinh viên từng mức xếp loại, tỷ lệ %), kèm nhận xét, kiến nghị gửi Ban Giám hiệu.",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên",
+  "previous_name": "vnuis-tong-hop-diem-ren-luyen",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo (công tác sinh viên)",
+  "required_inputs": [
+   "hoc_ky",
+   "nam_hoc",
+   "du_lieu_khoa",
+   "nguoi_ky"
+  ],
+  "n_steps": 8,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-dbcl-bao-cao-dam-bao-chat-luong-nam",
+  "title": "Báo cáo công tác đảm bảo chất lượng năm",
+  "description": "Dùng khi kết thúc năm học và cần tổng hợp toàn bộ hoạt động đảm bảo chất lượng (khảo thí, tự đánh giá, kiểm định, khảo sát các bên liên quan, cải tiến) thành báo cáo gửi Ban Giám hiệu, cơ quan quản lý.",
+  "group": "dbcl",
+  "group_label": "Đảm bảo chất lượng, kiểm định",
+  "previous_name": "vnuis-bao-cao-dbcl-nam",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (đảm bảo chất lượng)",
+  "required_inputs": [
+   "nam_hoc",
+   "so_lieu_khao_thi",
+   "so_lieu_tdg_kiem_dinh",
+   "so_lieu_khao_sat",
+   "tien_do_cai_tien",
+   "nguoi_ky"
+  ],
+  "n_steps": 5,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-dbcl-bao-cao-tu-danh-gia",
+  "title": "Báo cáo tự đánh giá (kiểm định chất lượng)",
+  "description": "Dùng khi chuẩn bị kiểm định và cần viết báo cáo tự đánh giá cơ sở giáo dục hoặc chương trình đào tạo theo bộ tiêu chuẩn hiện hành (Thông tư 20/2026/TT-BGDĐT, Thông tư 04/2025/TT-BGDĐT).",
+  "group": "dbcl",
+  "group_label": "Đảm bảo chất lượng, kiểm định",
+  "previous_name": "vnuis-bao-cao-tu-danh-gia",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (đảm bảo chất lượng); mọi đơn vị cung cấp minh chứng",
+  "required_inputs": [
+   "doi_tuong",
+   "bo_tieu_chuan",
+   "chu_ky",
+   "minh_chung"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dbcl-ke-hoach-cai-tien-chat-luong",
+  "title": "Kế hoạch cải tiến chất lượng",
+  "description": "Dùng khi đã có kết quả tự đánh giá hoặc kết luận đánh giá ngoài và cần chuyển các khuyến nghị, tồn tại thành kế hoạch cải tiến có đơn vị thực hiện, thời hạn, kinh phí, tiêu chí đánh giá.",
+  "group": "dbcl",
+  "group_label": "Đảm bảo chất lượng, kiểm định",
+  "previous_name": "vnuis-ke-hoach-cai-tien-chat-luong",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (đảm bảo chất lượng)",
+  "required_inputs": [
+   "nguon_khuyen_nghi",
+   "danh_sach_ton_tai",
+   "don_vi_thuc_hien",
+   "thoi_han_chung"
+  ],
+  "n_steps": 7,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dbcl-lap-danh-muc-minh-chung",
+  "title": "Lập danh mục minh chứng kiểm định",
+  "description": "Dùng khi chuẩn bị minh chứng cho tự đánh giá và đón đoàn đánh giá ngoài: liệt kê minh chứng theo từng tiêu chí, mã hóa, phân công thu thập.",
+  "group": "dbcl",
+  "group_label": "Đảm bảo chất lượng, kiểm định",
+  "previous_name": "vnuis-checklist-minh-chung-kiem-dinh",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo (đảm bảo chất lượng)",
+  "required_inputs": [
+   "doi_tuong",
+   "bo_tieu_chuan"
+  ],
+  "n_steps": 6,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-dc-dong-goi-skill-tu-quy-trinh",
+  "title": "Đóng gói skill từ quy trình",
+  "description": "Dùng khi đơn vị muốn biến một quy trình công việc đang làm thủ công thành skill AI dùng lại được: vẽ lại quy trình, viết đặc tả skill, soạn bộ tình huống kiểm thử.",
+  "group": "dc",
+  "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+  "previous_name": "vnuis-dong-goi-skill-tu-quy-trinh",
+  "format": "zip",
+  "unit": "CES GLOBAL và đầu mối VNU-IS",
+  "required_inputs": [
+   "mo_ta_quy_trinh",
+   "mau_input",
+   "mau_output",
+   "tieu_chi_nghiem_thu"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dc-hoi-dap-chinh-sach-co-trich-nguon",
+  "title": "Hỏi đáp chính sách có trích nguồn",
+  "description": "Dùng khi xây dựng hoặc vận hành kênh hỏi đáp về chính sách, quy định của trường (học phí, học bổng, quy chế đào tạo, chế độ cán bộ, ký túc xá) mà mỗi câu trả lời phải trích đúng điều, khoản, ngày hiệu lực.",
+  "group": "dc",
+  "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+  "previous_name": "vnuis-faq-chinh-sach-co-trich-nguon",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường; viên chức, giảng viên, người học",
+  "required_inputs": [
+   "van_ban_nguon",
+   "chu_de"
+  ],
+  "n_steps": 5,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-dc-kiem-tra-chat-luong-du-lieu-bao-cao",
+  "title": "Kiểm tra chất lượng dữ liệu báo cáo",
+  "description": "Dùng khi có file Excel hoặc CSV xuất từ hệ thống để lập báo cáo và cần kiểm tra trước: ô trống, bản ghi trùng, tổng không khớp, giá trị ngoài danh mục, hai nguồn cho số khác nhau.",
+  "group": "dc",
+  "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+  "previous_name": "vnuis-kiem-tra-chat-luong-du-lieu-bao-cao",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo (đảm bảo chất lượng, báo cáo); mọi đơn vị lập báo cáo số liệu",
+  "required_inputs": [
+   "file_du_lieu",
+   "ky_bao_cao"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dc-kiem-tra-day-du-ho-so",
+  "title": "Kiểm tra đầy đủ hồ sơ",
+  "description": "Dùng khi tiếp nhận bất kỳ bộ hồ sơ nào (tuyển dụng, bổ nhiệm, khen thưởng, học bổng, tốt nghiệp, thanh quyết toán) và cần đối chiếu danh mục thành phần để biết đủ hay thiếu, giấy tờ nào không hợp lệ.",
+  "group": "dc",
+  "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+  "previous_name": "vnuis-kiem-tra-day-du-ho-so",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường",
+  "required_inputs": [
+   "loai_ho_so",
+   "checklist",
+   "ho_so_hien_co"
+  ],
+  "n_steps": 6,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-dc-lap-danh-muc-kho-tri-thuc",
+  "title": "Danh mục kho tri thức và hồ sơ mẫu",
+  "description": "Dùng khi biểu mẫu, hướng dẫn, hồ sơ mẫu nằm rải rác nhiều nơi và cần lập danh mục: phân loại, gắn nhãn đơn vị, tìm bản trùng và bản cũ, chọn bản dùng chính để các đơn vị dùng lại.",
+  "group": "dc",
+  "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+  "previous_name": "vnuis-kho-tri-thuc-ho-so-mau",
+  "format": "xlsx",
+  "unit": "Viện ĐMST&CGCN; Phòng KHCN và Hợp tác phát triển; Văn phòng (TC&QT)",
+  "required_inputs": [
+   "danh_sach_tai_lieu",
+   "khung_phan_loai",
+   "quyen_truy_cap"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dc-phan-tich-ket-qua-khao-sat",
+  "title": "Phân tích kết quả khảo sát",
+  "description": "Dùng khi đã thu xong phiếu khảo sát (sinh viên, giảng viên, cựu sinh viên, nhà tuyển dụng) và cần phân tích dữ liệu thô thành báo cáo có số liệu, so sánh nhóm, kết luận, đề xuất cải tiến.",
+  "group": "dc",
+  "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+  "previous_name": "vnuis-phan-tich-ket-qua-khao-sat",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo (đảm bảo chất lượng); các khoa",
+  "required_inputs": [
+   "doi_tuong",
+   "muc_dich_khao_sat",
+   "so_phieu_hop_le",
+   "du_lieu_tong_hop"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dc-quan-ly-phien-ban-tai-lieu",
+  "title": "Quản lý file & phiên bản (chỉ đọc)",
+  "description": "Dùng khi thư mục tài liệu lộn xộn (nhiều bản final, final2, mới nhất) và cần kiểm kê, tìm file trùng và bản cũ, đề xuất quy tắc đặt tên mà không xóa, đổi tên hay di chuyển file nào.",
+  "group": "dc",
+  "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+  "previous_name": "vnuis-quan-ly-phien-ban-tai-lieu",
+  "format": "xlsx",
+  "unit": "Mọi đơn vị trong Trường; Viện ĐMST&CGCN (quản trị hồ sơ, tri thức)",
+  "required_inputs": [
+   "mo_ta_thu_muc",
+   "danh_sach_file"
+  ],
+  "n_steps": 6,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-dc-quan-tri-du-an",
+  "title": "Quản trị dự án",
+  "description": "Dùng khi Viện ĐMST&CGCN hoặc đơn vị tương đương cần theo dõi một dự án đang chạy: tiến độ từng gói việc, vấn đề, rủi ro, bài học, và bảng theo dõi một trang để trình lãnh đạo.",
+  "group": "dc",
+  "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+  "previous_name": "vnuis-pmo-quan-tri-du-an",
+  "format": "xlsx",
+  "unit": "Viện ĐMST&CGCN; Phòng KHCN&HTPT",
+  "required_inputs": [
+   "ten_du_an",
+   "chu_du_an",
+   "muc_tieu",
+   "workplan"
+  ],
+  "n_steps": 7,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-dc-thiet-ke-phieu-khao-sat",
+  "title": "Thiết kế phiếu khảo sát các bên liên quan",
+  "description": "Dùng khi cần thu thập ý kiến sinh viên, giảng viên, cựu sinh viên hoặc nhà tuyển dụng về chương trình đào tạo, giảng dạy, dịch vụ và phải thiết kế bộ câu hỏi, phiếu khảo sát.",
+  "group": "dc",
+  "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+  "previous_name": "vnuis-thiet-ke-phieu-khao-sat",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (đảm bảo chất lượng); mọi đơn vị cần khảo sát",
+  "required_inputs": [
+   "doi_tuong",
+   "muc_dich",
+   "linh_vuc"
+  ],
+  "n_steps": 5,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dmst-bao-cao-dich-vu",
+  "title": "Báo cáo dịch vụ KHCN",
+  "description": "Dùng khi cuối quý hoặc cuối năm đơn vị làm dịch vụ khoa học công nghệ (trung tâm, viện, Phòng KHCN&HTPT) báo cáo lãnh đạo trường: hợp đồng đã ký, doanh thu, khách hàng, khó khăn, kế hoạch kỳ tới.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-bao-cao-dich-vu-khcn",
+  "format": "docx",
+  "unit": "Viện ĐMST&CGCN",
+  "required_inputs": [
+   "ky_bao_cao",
+   "don_vi",
+   "hop_dong",
+   "doanh_thu",
+   "ke_hoach_ky_toi"
+  ],
+  "n_steps": 5,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-dmst-bao-cao-du-an-dinh-ky",
+  "title": "Báo cáo dự án định kỳ",
+  "description": "Dùng khi dự án của Viện đến kỳ báo cáo theo hợp đồng hoặc thỏa thuận (tháng, quý, giai đoạn) gửi khách hàng, đối tác, nhà tài trợ: tiến độ, sản phẩm bàn giao, chỉ số, vấn đề, kế hoạch tiếp theo.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-bao-cao-du-an-dinh-ky",
+  "format": "docx",
+  "unit": "Viện ĐMST&CGCN; chủ nhiệm dự án",
+  "required_inputs": [
+   "ten_du_an",
+   "ky_bao_cao",
+   "tien_do",
+   "deliverables",
+   "kpi",
+   "ke_hoach_tiep"
+  ],
+  "n_steps": 6,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-dmst-cap-chung-chi-dao-tao-lien-tuc",
+  "title": "Cấp chứng chỉ đào tạo liên tục",
+  "description": "Dùng khi khóa bồi dưỡng ngắn hạn kết thúc và cần xét điều kiện hoàn thành của từng học viên, lập quyết định cấp chứng chỉ hoặc chứng nhận, ghi sổ và quản lý phôi.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-cap-chung-chi-dao-tao-lien-tuc",
+  "format": "docx",
+  "unit": "Viện ĐMST&CGCN",
+  "required_inputs": [
+   "ten_khoa",
+   "danh_sach_hv",
+   "dieu_kien_cap",
+   "mau_chung_chi",
+   "so_phoi"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dmst-danh-gia-hieu-qua-chuong-trinh-du-an",
+  "title": "Đánh giá hiệu quả chương trình hoặc dự án",
+  "description": "Dùng khi chương trình, khóa bồi dưỡng, dự án hoặc đợt thử nghiệm đã xong và cần đánh giá bằng số liệu: so chỉ số cam kết với kết quả thực tế, phản hồi người tham gia, chi phí, bài học.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-danh-gia-hieu-qua-chuong-trinh-du-an",
+  "format": "docx",
+  "unit": "Viện ĐMST&CGCN; Phòng KHCN và Hợp tác phát triển",
+  "required_inputs": [
+   "muc_tieu_chi_so",
+   "ket_qua_thuc_te",
+   "ky_danh_gia"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dmst-ke-hoach-dao-tao-lien-tuc",
+  "title": "Kế hoạch đào tạo liên tục",
+  "description": "Dùng khi Trung tâm Đào tạo liên tục hoặc Trường bồi dưỡng lập kế hoạch cả năm hoặc điều chỉnh giữa kỳ: khảo sát nhu cầu, danh mục khóa ngắn hạn cho người đi làm và doanh nghiệp, lịch khai giảng, dự toán thu chi.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-ke-hoach-dao-tao-lien-tuc",
+  "format": "docx",
+  "unit": "Viện ĐMST&CGCN",
+  "required_inputs": [
+   "nam_ke_hoach",
+   "ket_qua_khao_sat",
+   "danh_muc_khoa",
+   "nguon_luc"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dmst-ke-hoach-uom-tao",
+  "title": "Kế hoạch ươm tạo ĐMST",
+  "description": "Dùng khi Viện tổ chức đợt ươm tạo đổi mới sáng tạo (startup của sinh viên, giảng viên, dự án khởi nghiệp) và cần kế hoạch: tiêu chí tuyển chọn, lộ trình theo giai đoạn, nguồn lực, chỉ tiêu đầu ra.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-ke-hoach-uom-tao-dmst",
+  "format": "docx",
+  "unit": "Viện ĐMST&CGCN",
+  "required_inputs": [
+   "ten_chuong_trinh",
+   "doi_tuong",
+   "nguon_luc",
+   "thoi_gian"
+  ],
+  "n_steps": 5,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-dmst-lap-ho-so-chuyen-giao-cong-nghe",
+  "title": "Hồ sơ chuyển giao công nghệ",
+  "description": "Dùng khi kết quả nghiên cứu (sáng chế, giải pháp, quy trình, phần mềm) sẵn sàng chuyển giao cho doanh nghiệp, tổ chức và cần bộ hồ sơ: mô tả công nghệ, định giá, điều khoản thương thảo, biên bản chuyển giao.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-ho-so-chuyen-giao-cong-nghe",
+  "format": "docx",
+  "unit": "Viện ĐMST&CGCN; Phòng KHCN và HTPT",
+  "required_inputs": [
+   "ten_cong_nghe",
+   "mo_ta",
+   "quyen_so_huu",
+   "doi_tac_nhan",
+   "hinh_thuc",
+   "pham_vi"
+  ],
+  "n_steps": 6,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-dmst-lap-ho-so-hop-dong-dich-vu",
+  "title": "Hồ sơ hợp đồng dịch vụ KHCN",
+  "description": "Dùng khi trung tâm, viện hoặc Phòng KHCN&HTPT nhận dịch vụ khoa học công nghệ cho khách hàng ngoài trường (tư vấn, phân tích mẫu, đào tạo theo đặt hàng) và cần báo giá, hợp đồng, nghiệm thu, thanh lý.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-ho-so-hop-dong-dich-vu-khcn",
+  "format": "docx",
+  "unit": "Viện ĐMST&CGCN",
+  "required_inputs": [
+   "ten_dich_vu",
+   "khach_hang",
+   "don_vi_thuc_hien",
+   "pham_vi_cong_viec",
+   "don_gia",
+   "thoi_gian"
+  ],
+  "n_steps": 6,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-dmst-sang-loc-sang-kien",
+  "title": "Sàng lọc và xếp ưu tiên sáng kiến đổi mới sáng tạo",
+  "description": "Dùng khi Viện nhận nhiều sáng kiến hoặc nhu cầu đổi mới sáng tạo cùng lúc và cần chuẩn hóa, chấm sơ bộ theo tiêu chí Viện đặt, xếp nhóm ưu tiên thành bảng so sánh để lãnh đạo chọn việc làm trước.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-sang-loc-sang-kien-dmst",
+  "format": "xlsx",
+  "unit": "Viện ĐMST&CGCN",
+  "required_inputs": [
+   "danh_sach_sang_kien",
+   "tieu_chi_cham",
+   "nguon_luc_hien_co",
+   "ky_xet"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dmst-to-chuc-khoa-boi-duong-ngan-han",
+  "title": "Tổ chức khóa bồi dưỡng ngắn hạn",
+  "description": "Dùng khi triển khai (mở lớp) một khóa bồi dưỡng ngắn hạn cụ thể trong kế hoạch năm và cần kế hoạch chi tiết: giảng viên, học liệu, tuyển sinh, hậu cần, đánh giá, cấp chứng chỉ.",
+  "group": "dmst",
+  "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+  "previous_name": "vnuis-to-chuc-khoa-boi-duong-ngan-han",
+  "format": "docx",
+  "unit": "Viện ĐMST&CGCN; Khoa",
+  "required_inputs": [
+   "ten_khoa",
+   "muc_tieu",
+   "doi_tuong",
+   "thoi_luong",
+   "chuong_trinh",
+   "giang_vien",
+   "hoc_phi",
+   "phuong_thuc_danh_gia"
+  ],
+  "n_steps": 7,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-dt-bao-cao-3-cong-khai",
+  "title": "Soạn báo cáo 3 công khai",
+  "description": "Dùng khi đến kỳ công bố hằng năm trên website và cần tổng hợp báo cáo ba công khai toàn trường: cam kết chất lượng đào tạo, điều kiện đảm bảo chất lượng, thu chi tài chính (Thông tư 09/2024/TT-BGDĐT).",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-bao-cao-3-cong-khai",
+  "format": "docx",
+  "unit": "Phòng Đào tạo; phối hợp Phòng KHCN và HTPT, Phòng TC&QT",
+  "required_inputs": [
+   "nam_hoc",
+   "cam_ket_chat_luong",
+   "dieu_kien_dam_bao",
+   "thu_chi_tai_chinh"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dt-bao-cao-dao-tao-dinh-ky",
+  "title": "Báo cáo công tác đào tạo định kỳ",
+  "description": "Dùng khi cần báo cáo sơ kết học kỳ, tổng kết năm học hoặc báo cáo cơ quan quản lý về công tác đào tạo: quy mô sinh viên, kết quả học tập, tốt nghiệp, giảng viên, cơ sở vật chất, thuận lợi, khó khăn.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-bao-cao-dao-tao-dinh-ky",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (báo cáo đào tạo)",
+  "required_inputs": [
+   "ky_bao_cao",
+   "quy_mo_sv",
+   "ket_qua_hoc_tap",
+   "tot_nghiep",
+   "doi_ngu_gv"
+  ],
+  "n_steps": 7,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-dt-doi-chieu-cong-nhan-tin-chi",
+  "title": "Đối chiếu học phần khi công nhận chuyển tiếp",
+  "description": "Dùng khi sinh viên chuyển tiếp, trao đổi hoặc học theo mô hình 2+2 và cần bảng đối chiếu học phần nơi đi với chương trình nơi đến (tín chỉ, giờ, chuẩn đầu ra, ngôn ngữ) để người có thẩm quyền quyết định công nhận.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-cong-nhan-tin-chi-chuyen-tiep",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo; Phòng KHCN và Hợp tác phát triển; các khoa",
+  "required_inputs": [
+   "bang_diem_noi_di",
+   "de_cuong_noi_di",
+   "ctdt_noi_den",
+   "quy_dinh_cong_nhan"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dt-ke-hoach-dao-tao-nam-hoc",
+  "title": "Lập kế hoạch năm học",
+  "description": "Dùng khi Phòng Đào tạo xây dựng kế hoạch năm học mới hoặc điều chỉnh kế hoạch hiện hành: khai giảng, học kỳ, lịch thi, nghỉ lễ Tết, xét tốt nghiệp, mốc tuyển sinh, phân công đơn vị.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-ke-hoach-nam-hoc",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (kế hoạch đào tạo)",
+  "required_inputs": [
+   "nam_hoc",
+   "so_hoc_ky",
+   "ngay_khai_giang",
+   "lich_nghi_le_tet",
+   "moc_tuyen_sinh",
+   "dot_xet_tot_nghiep"
+  ],
+  "n_steps": 6,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-dt-lap-ma-tran-chuan-dau-ra",
+  "title": "Lập ma trận đối sánh chuẩn đầu ra học phần – chương trình (CLO–PLO)",
+  "description": "Dùng khi thẩm định, rà soát hoặc kiểm định chương trình đào tạo và cần ma trận đối sánh chuẩn đầu ra học phần với chuẩn đầu ra chương trình (CLO–PLO), tìm chuẩn chưa được học phần nào đạt.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-ma-tran-chuan-dau-ra",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo (đào tạo); Khoa",
+  "required_inputs": [
+   "ten_nganh",
+   "plo",
+   "hoc_phan"
+  ],
+  "n_steps": 6,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-dt-lap-thoi-khoa-bieu",
+  "title": "Lập thời khóa biểu học kỳ",
+  "description": "Dùng khi lập mới hoặc điều chỉnh thời khóa biểu học kỳ: mở lớp theo sĩ số, phân công giảng viên, xếp phòng học, kiểm tra trùng lịch giảng viên, phòng và sinh viên trước khi công bố.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-lap-thoi-khoa-bieu",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo (xếp lịch học, lịch thi)",
+  "required_inputs": [
+   "hoc_ky",
+   "dang_ky_hoc_phan",
+   "si_so_toi_da",
+   "danh_sach_gv",
+   "danh_sach_phong",
+   "khung_tiet"
+  ],
+  "n_steps": 6,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-dt-phan-cong-giang-day",
+  "title": "Phân công giảng dạy học kỳ",
+  "description": "Dùng khi bắt đầu học kỳ và khoa, bộ môn cần phân công giảng viên theo học phần, lớp học phần dựa trên chuyên môn và định mức giờ giảng.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-phan-cong-giang-day",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo (đào tạo); Khoa",
+  "required_inputs": [
+   "hoc_ky",
+   "danh_muc_hoc_phan",
+   "danh_sach_giang_vien"
+  ],
+  "n_steps": 5,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-dt-ra-soat-tien-do-tot-nghiep",
+  "title": "Rà soát tiến độ tốt nghiệp",
+  "description": "Dùng khi cuối học kỳ hoặc trước đợt xét tốt nghiệp cần rà nhanh sinh viên đã đủ điều kiện tốt nghiệp chưa: đối chiếu bảng điểm với chương trình đào tạo, liệt kê học phần còn thiếu. Dùng chung cho Phòng Đào tạo, khoa, cố vấn học tập.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-audit-tien-do-tot-nghiep",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (tốt nghiệp, cố vấn học tập)",
+  "required_inputs": [
+   "bang_diem",
+   "khung_ctdt",
+   "phien_ban_quy_tac"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dt-soan-de-an-mo-nganh",
+  "title": "Soạn đề án mở ngành đào tạo",
+  "description": "Dùng khi chuẩn bị hồ sơ đề nghị cơ quan có thẩm quyền cho phép mở ngành đào tạo đại học mới: sự cần thiết, điều kiện đội ngũ và cơ sở vật chất, chương trình dự kiến, kế hoạch tuyển sinh.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-de-an-mo-nganh",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (đào tạo); Hội đồng KH&ĐT; Khoa đề xuất",
+  "required_inputs": [
+   "ten_nganh",
+   "trinh_do",
+   "su_can_thiet",
+   "doi_ngu",
+   "csvct",
+   "chuong_trinh_du_kien",
+   "ke_hoach_tuyen_sinh",
+   "minh_chung",
+   "don_vi_chu_tri"
+  ],
+  "n_steps": 6,
+  "n_inputs": 12
+ },
+ {
+  "name": "vnuis-dt-soan-de-cuong-hoc-phan",
+  "title": "Soạn đề cương chi tiết học phần",
+  "description": "Dùng khi giảng viên, bộ môn cần soạn mới hoặc cập nhật đề cương chi tiết một học phần đại học: mục tiêu, chuẩn đầu ra, nội dung theo tuần, phương pháp giảng dạy, cách đánh giá, tài liệu.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-de-cuong-chi-tiet-hoc-phan",
+  "format": "docx",
+  "unit": "Sáu khoa; Phòng Đào tạo",
+  "required_inputs": [
+   "ten_hoc_phan",
+   "ma_hoc_phan",
+   "so_tin_chi",
+   "hoc_ky",
+   "muc_tieu",
+   "clo",
+   "noi_dung_tuan",
+   "ppgd",
+   "danh_gia",
+   "tai_lieu"
+  ],
+  "n_steps": 7,
+  "n_inputs": 12
+ },
+ {
+  "name": "vnuis-dt-soan-quy-che-dao-tao",
+  "title": "Soạn/sửa đổi quy chế đào tạo của trường",
+  "description": "Dùng khi nhà trường ban hành lần đầu hoặc sửa đổi, bổ sung quy chế đào tạo trình độ đại học theo quy chế khung (Thông tư 56/2026/TT-BGDĐT): tổ chức đào tạo, đánh giá học phần, học vụ, tốt nghiệp, xử lý vi phạm.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-quy-che-dao-tao",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (đào tạo); Hội đồng KH&ĐT",
+  "required_inputs": [
+   "loai_van_ban",
+   "noi_dung_sua_doi",
+   "hinh_thuc_dao_tao",
+   "don_vi_lay_y_kien",
+   "nguoi_trinh"
+  ],
+  "n_steps": 5,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-dt-soan-quyet-dinh-tot-nghiep",
+  "title": "Soạn quyết định công nhận tốt nghiệp",
+  "description": "Dùng khi hội đồng xét tốt nghiệp đã họp xong và cần soạn quyết định công nhận tốt nghiệp theo từng đợt, kèm danh sách xếp loại làm căn cứ in bằng, cấp bảng điểm.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-quyet-dinh-tot-nghiep",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (đào tạo)",
+  "required_inputs": [
+   "dot_xet",
+   "danh_sach_sv",
+   "bien_ban_hoi_dong",
+   "can_cu_quy_che",
+   "nguoi_ky"
+  ],
+  "n_steps": 5,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-dt-soan-quyet-dinh-xu-ly-hoc-vu",
+  "title": "Soạn quyết định xử lý học vụ",
+  "description": "Dùng khi kết thúc học kỳ hoặc năm học cần ban hành quyết định xử lý học vụ sinh viên: cảnh báo học vụ, buộc thôi học, bảo lưu kết quả học tập, chuyển trường.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-quyet-dinh-hoc-vu",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (quản lý học vụ)",
+  "required_inputs": [
+   "loai_xu_ly",
+   "hoc_ky",
+   "danh_sach_sv",
+   "can_cu_quy_che",
+   "bien_ban_hoi_dong",
+   "nguoi_ky"
+  ],
+  "n_steps": 5,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-dt-theo-doi-chuong-trinh-lien-ket",
+  "title": "Theo dõi nghĩa vụ chương trình liên kết",
+  "description": "Dùng khi Phòng Đào tạo cần nắm cam kết với từng đối tác của các chương trình liên kết hoặc song bằng: mốc báo cáo, kiểm định, thù lao, chỉ tiêu, ai làm gì, việc nào đến hạn, nhất là trước khi gặp đối tác hoặc báo cáo ĐHQGHN.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-quan-ly-chuong-trinh-lien-ket",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (liên kết quốc tế); Phòng KHCN và Hợp tác phát triển",
+  "required_inputs": [
+   "thoa_thuan_lien_ket",
+   "danh_sach_chuong_trinh",
+   "ngay_chot"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dt-theo-doi-tieng-anh-du-bi",
+  "title": "Theo dõi lớp tiếng Anh dự bị",
+  "description": "Dùng khi Phòng Đào tạo cần theo dõi người học tiếng Anh dự bị: kết quả đầu vào và các lần kiểm tra, chuyên cần, điều kiện chuyển lên chương trình chính, danh sách có nguy cơ chưa đạt trước các mốc xét chuyển tiếp.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-tieng-anh-du-bi",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo (tiếng Anh dự bị)",
+  "required_inputs": [
+   "danh_sach_lop",
+   "ket_qua_kiem_tra",
+   "dieu_kien_chuyen_tiep",
+   "moc_xet"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-dt-tong-hop-so-lieu-3-cong-khai",
+  "title": "Tổng hợp số liệu 3 công khai mảng đào tạo",
+  "description": "Dùng khi đến kỳ công khai hằng năm và cần lập bộ bảng số liệu ba công khai riêng mảng đào tạo (chất lượng đào tạo, điều kiện đảm bảo chất lượng, thu chi tài chính mảng đào tạo) theo Thông tư 09/2024/TT-BGDĐT.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-so-lieu-3-cong-khai-dt",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo",
+  "required_inputs": [
+   "nam_hoc",
+   "so_lieu_chat_luong",
+   "so_lieu_dieu_kien",
+   "so_lieu_tai_chinh"
+  ],
+  "n_steps": 5,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-dt-xay-dung-khung-chuong-trinh",
+  "title": "Xây dựng khung chương trình đào tạo",
+  "description": "Dùng khi xây dựng mới, rà soát hoặc cập nhật khung chương trình đào tạo đại học của một ngành theo Thông tư 54/2026/TT-BGDĐT: mục tiêu, chuẩn đầu ra, khối kiến thức, tổng số tín chỉ, danh mục học phần.",
+  "group": "dt",
+  "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+  "previous_name": "vnuis-khung-chuong-trinh-dao-tao",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (quản lý chương trình); các khoa",
+  "required_inputs": [
+   "ten_nganh",
+   "trinh_do",
+   "muc_tieu_dao_tao",
+   "plo",
+   "tong_tin_chi",
+   "khoi_kien_thuc",
+   "danh_muc_hoc_phan",
+   "don_vi_xay_dung"
+  ],
+  "n_steps": 6,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-hd-kiem-tra-ho-so-trinh-hoi-dong",
+  "title": "Kiểm tra hồ sơ trình Hội đồng",
+  "description": "Dùng khi thư ký Hội đồng Khoa học và Đào tạo nhận tờ trình, đề án, chương trình đào tạo, quy chế và cần kiểm tra hồ sơ đã đủ để đưa vào chương trình phiên họp chưa, lập phiếu tiếp nhận và danh sách cần bổ sung.",
+  "group": "hd",
+  "group_label": "Hội đồng KH&ĐT",
+  "previous_name": "vnuis-ho-so-trinh-hoi-dong",
+  "format": "docx",
+  "unit": "Hội đồng Khoa học và Đào tạo (thư ký); đơn vị trình hồ sơ",
+  "required_inputs": [
+   "ho_so_trinh",
+   "danh_muc_thanh_phan",
+   "quy_che_hoi_dong"
+  ],
+  "n_steps": 4,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-hd-lap-phieu-lay-y-kien",
+  "title": "Phiếu lấy ý kiến hội đồng",
+  "description": "Dùng khi cần xin ý kiến thành viên Hội đồng Khoa học và Đào tạo bằng văn bản vì không họp tập trung: nội dung phát sinh giữa hai kỳ họp hoặc cần ý kiến nhanh.",
+  "group": "hd",
+  "group_label": "Hội đồng KH&ĐT",
+  "previous_name": "vnuis-phieu-lay-y-kien-hoi-dong",
+  "format": "docx",
+  "unit": "Hội đồng Khoa học và Đào tạo (thư ký, người xử lý hồ sơ)",
+  "required_inputs": [
+   "noi_dung_xin_y_kien",
+   "tai_lieu_kem",
+   "thanh_vien",
+   "han_tra_loi"
+  ],
+  "n_steps": 5,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-hd-soan-bien-ban-hop",
+  "title": "Biên bản họp Hội đồng KH&ĐT",
+  "description": "Dùng khi vừa kết thúc phiên họp Hội đồng Khoa học và Đào tạo (định kỳ hoặc đột xuất) và cần lập biên bản: diễn biến, ý kiến từng thành viên, kết quả biểu quyết từng nội dung.",
+  "group": "hd",
+  "group_label": "Hội đồng KH&ĐT",
+  "previous_name": "vnuis-bien-ban-hop-hoi-dong-khdt",
+  "format": "docx",
+  "unit": "Hội đồng Khoa học và Đào tạo (thư ký)",
+  "required_inputs": [
+   "phien_hop",
+   "thoi_gian",
+   "dia_diem",
+   "chu_tich",
+   "thu_ky",
+   "thanh_vien",
+   "noi_dung",
+   "bieu_quyet"
+  ],
+  "n_steps": 5,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-hd-soan-nghi-quyet",
+  "title": "Nghị quyết Hội đồng KH&ĐT",
+  "description": "Dùng khi Hội đồng Khoa học và Đào tạo đã biểu quyết thông qua các nội dung (chương trình đào tạo, đề tài, công nhận chức danh, định hướng khoa học công nghệ) và cần ban hành nghị quyết làm căn cứ để Hiệu trưởng quyết định.",
+  "group": "hd",
+  "group_label": "Hội đồng KH&ĐT",
+  "previous_name": "vnuis-nghi-quyet-hoi-dong-khdt",
+  "format": "docx",
+  "unit": "Hội đồng Khoa học và Đào tạo; Văn phòng Trường",
+  "required_inputs": [
+   "so_nghi_quyet",
+   "phien_hop",
+   "can_cu",
+   "dieu_quyet_nghi",
+   "hieu_luc",
+   "noi_nhan"
+  ],
+  "n_steps": 4,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-hd-theo-doi-thuc-hien-ket-luan",
+  "title": "Theo dõi thực hiện kết luận",
+  "description": "Dùng khi sau phiên họp có nghị quyết, kết luận của Hội đồng Khoa học và Đào tạo cần giao việc và theo dõi: đơn vị chủ trì, hạn, minh chứng, trạng thái, cảnh báo quá hạn, báo cáo tình hình thực hiện qua nhiều phiên.",
+  "group": "hd",
+  "group_label": "Hội đồng KH&ĐT",
+  "previous_name": "vnuis-theo-doi-thuc-hien-ket-luan",
+  "format": "xlsx",
+  "unit": "Hội đồng Khoa học và Đào tạo (thư ký); đơn vị được giao thực hiện",
+  "required_inputs": [
+   "ket_luan",
+   "ngay_doi_chieu"
+  ],
+  "n_steps": 4,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-htqt-bao-cao-hop-tac-quoc-te",
+  "title": "Báo cáo hợp tác quốc tế",
+  "description": "Dùng khi Phòng KHCN và Hợp tác phát triển báo cáo hoạt động hợp tác quốc tế theo tháng, quý, năm cho Ban Giám hiệu hoặc ĐHQGHN, hoặc cần trả nhanh số thỏa thuận, số đối tác, số lượt trao đổi theo năm.",
+  "group": "htqt",
+  "group_label": "Hợp tác quốc tế",
+  "previous_name": "vnuis-bao-cao-doi-ngoai",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển",
+  "required_inputs": [
+   "danh_sach_hoat_dong",
+   "danh_muc_thoa_thuan",
+   "mau_bao_cao",
+   "ky_bao_cao"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-htqt-ke-hoach-doan-ra-vao",
+  "title": "Kế hoạch đoàn ra / đoàn vào",
+  "description": "Dùng khi chuẩn bị chuyến công tác, học tập, dự hội nghị nước ngoài của cán bộ (đoàn ra) hoặc đón đoàn đối tác, chuyên gia quốc tế (đoàn vào): mục đích, thành phần, chương trình theo ngày, kinh phí, trình duyệt.",
+  "group": "htqt",
+  "group_label": "Hợp tác quốc tế",
+  "previous_name": "vnuis-ke-hoach-doan-ra-vao",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (hợp tác quốc tế); phối hợp TC&QT",
+  "required_inputs": [
+   "loai_doan",
+   "muc_dich",
+   "doi_tac",
+   "thoi_gian",
+   "thanh_phan",
+   "chuong_trinh",
+   "nguon_kinh_phi"
+  ],
+  "n_steps": 6,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-htqt-ke-hoach-trao-doi-nguoi-hoc",
+  "title": "Kế hoạch trao đổi người học và giảng viên",
+  "description": "Dùng khi chuẩn bị một đợt trao đổi người học hoặc giảng viên theo thỏa thuận đã có với đối tác (sinh viên đi trao đổi một học kỳ, đoàn đến): chỉ tiêu, điều kiện, lịch, công nhận học phần, hồ sơ, mốc việc.",
+  "group": "htqt",
+  "group_label": "Hợp tác quốc tế",
+  "previous_name": "vnuis-ke-hoach-trao-doi-nguoi-hoc",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển; Phòng Đào tạo",
+  "required_inputs": [
+   "thoa_thuan_trao_doi",
+   "danh_sach_ung_vien",
+   "dieu_kien_va_chi_tieu",
+   "lich_dot_trao_doi"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-htqt-lap-ho-so-doi-tac",
+  "title": "Hồ sơ tóm tắt đối tác quốc tế",
+  "description": "Dùng khi chuẩn bị đón tiếp, đàm phán hoặc ký MOU, MOA với một đối tác quốc tế và cần hồ sơ tóm tắt đối tác (tên Việt – Anh, quốc gia, lĩnh vực, lịch sử hợp tác, đầu mối, tình trạng thỏa thuận), mỗi thông tin kèm nguồn.",
+  "group": "htqt",
+  "group_label": "Hợp tác quốc tế",
+  "previous_name": "vnuis-ho-so-doi-tac-quoc-te",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển; Viện ĐMST&CGCN; các khoa",
+  "required_inputs": [
+   "ten_doi_tac",
+   "tai_lieu_nguon",
+   "muc_dich"
+  ],
+  "n_steps": 4,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-htqt-soan-mou-moa-song-ngu",
+  "title": "Soạn biên bản ghi nhớ / thỏa thuận hợp tác (MOU/MOA) song ngữ Việt–Anh",
+  "description": "Dùng khi VNU-IS chuẩn bị ký kết hợp tác với đối tác trong nước hoặc quốc tế và cần soạn biên bản ghi nhớ (MOU) hay thỏa thuận hợp tác (MOA) song ngữ Việt–Anh: mục đích, lĩnh vực, trách nhiệm hai bên, thời hạn.",
+  "group": "htqt",
+  "group_label": "Hợp tác quốc tế",
+  "previous_name": "vnuis-soan-mou-moa",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển; Viện ĐMST&CGCN; các khoa",
+  "required_inputs": [
+   "loai_van_ban",
+   "ten_doi_tac",
+   "muc_dich",
+   "linh_vuc_hop_tac",
+   "trach_nhiem_ben_a",
+   "trach_nhiem_ben_b",
+   "thoi_han",
+   "nguoi_ky"
+  ],
+  "n_steps": 6,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-khaothi-ke-hoach-to-chuc-thi",
+  "title": "Kế hoạch tổ chức kỳ thi",
+  "description": "Dùng khi chuẩn bị một kỳ thi (kết thúc học phần, tốt nghiệp, tuyển sinh sau đại học) và cần kế hoạch tổng thể: lịch thi, phân công, đề thi, phòng thi, chấm thi, công bố kết quả.",
+  "group": "khaothi",
+  "group_label": "Khảo thí",
+  "previous_name": "vnuis-ke-hoach-to-chuc-thi",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (khảo thí)",
+  "required_inputs": [
+   "ky_thi",
+   "thoi_gian",
+   "so_luong_thi_sinh",
+   "danh_muc_mon_thi",
+   "nguoi_ky"
+  ],
+  "n_steps": 8,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-khaothi-lap-bien-ban-phong-thi",
+  "title": "Biên bản phòng thi & bàn giao bài thi",
+  "description": "Dùng khi kết thúc mỗi ca thi và cán bộ coi thi cần lập biên bản phòng thi (số thí sinh, diễn biến, vi phạm nếu có) và biên bản bàn giao bài thi cho thư ký hội đồng.",
+  "group": "khaothi",
+  "group_label": "Khảo thí",
+  "previous_name": "vnuis-bien-ban-phong-thi",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (khảo thí)",
+  "required_inputs": [
+   "ky_thi",
+   "mon_thi",
+   "ngay_thi",
+   "phong_thi",
+   "can_bo_coi_thi",
+   "tong_so_thi_sinh",
+   "so_thi_sinh_du_thi",
+   "so_bai_thi_ban_giao"
+  ],
+  "n_steps": 5,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-khaothi-phan-tich-ket-qua-thi",
+  "title": "Phân tích kết quả thi (phổ điểm, độ khó, độ phân biệt)",
+  "description": "Dùng khi kỳ thi kết thúc, đã có bảng điểm và cần đánh giá chất lượng đề: phổ điểm, câu quá khó hay quá dễ, độ phân biệt, đề xuất điều chỉnh cho lần sau.",
+  "group": "khaothi",
+  "group_label": "Khảo thí",
+  "previous_name": "vnuis-phan-tich-ket-qua-thi",
+  "format": "xlsx",
+  "unit": "Phòng Đào tạo (khảo thí); Khoa liên quan",
+  "required_inputs": [
+   "hoc_phan",
+   "hinh_thuc_thi",
+   "bang_diem",
+   "so_sinh_vien"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-khaothi-quy-trinh-ngan-hang-de-thi",
+  "title": "Quy trình xây dựng ngân hàng đề thi",
+  "description": "Dùng khi cần ban hành hoặc rà soát quy trình quản lý ngân hàng đề thi: biên soạn, phản biện, phê duyệt, lưu trữ bảo mật, rút đề theo ma trận.",
+  "group": "khaothi",
+  "group_label": "Khảo thí",
+  "previous_name": "vnuis-quy-trinh-ngan-hang-de-thi",
+  "format": "docx",
+  "unit": "Sáu khoa; Phòng Đào tạo (khảo thí)",
+  "required_inputs": [
+   "pham_vi",
+   "hinh_thuc_thi"
+  ],
+  "n_steps": 7,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-khaothi-soan-quyet-dinh-phan-cong-thi",
+  "title": "Quyết định phân công coi thi / chấm thi",
+  "description": "Dùng khi cần ban hành quyết định phân công cán bộ coi thi, chấm thi, thanh tra thi cho một kỳ thi cụ thể, đúng thể thức Nghị định 30/2020/NĐ-CP.",
+  "group": "khaothi",
+  "group_label": "Khảo thí",
+  "previous_name": "vnuis-quyet-dinh-phan-cong-thi",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (khảo thí)",
+  "required_inputs": [
+   "ky_thi",
+   "thoi_gian",
+   "danh_sach_phan_cong",
+   "can_cu",
+   "nguoi_ky"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-khaothi-soan-quyet-dinh-phuc-khao",
+  "title": "Quyết định kết quả phúc khảo bài thi",
+  "description": "Dùng khi hội đồng đã chấm phúc khảo xong và cần ban hành quyết định công nhận kết quả (giữ nguyên hoặc điều chỉnh điểm), đúng thể thức Nghị định 30/2020/NĐ-CP.",
+  "group": "khaothi",
+  "group_label": "Khảo thí",
+  "previous_name": "vnuis-quyet-dinh-phuc-khao",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (khảo thí)",
+  "required_inputs": [
+   "ky_thi",
+   "danh_sach_phuc_khao",
+   "hoi_dong_phuc_khao",
+   "can_cu",
+   "nguoi_ky"
+  ],
+  "n_steps": 5,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-khcn-bao-cao-khcn-htqt-nam",
+  "title": "Báo cáo KHCN & HTQT hằng năm",
+  "description": "Dùng khi tổng kết năm về khoa học công nghệ và hợp tác quốc tế: báo cáo ĐHQGHN/Bộ GD&ĐT, báo cáo năm học, phục vụ kiểm định; gồm đề tài, công bố, sở hữu trí tuệ, hội thảo, số liệu bảng biểu.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-bao-cao-khcn-nam",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển",
+  "required_inputs": [
+   "nam_bao_cao",
+   "de_tai_cac_cap",
+   "cong_bo_khoa_hoc",
+   "so_huu_tri_tue",
+   "hoi_thao",
+   "hop_tac_quoc_te",
+   "ton_tai_han_che",
+   "phuong_huong",
+   "nguoi_ky"
+  ],
+  "n_steps": 6,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-khcn-bao-cao-nghiem-thu-de-tai",
+  "title": "Báo cáo nghiệm thu đề tài NCKH (tổng kết + biên bản hội đồng)",
+  "description": "Dùng khi đề tài NCKH hết thời gian thực hiện và cần bộ hồ sơ nghiệm thu: báo cáo tổng kết của chủ nhiệm và biên bản nghiệm thu của hội đồng, làm căn cứ thanh lý hợp đồng.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-bao-cao-nghiem-thu-de-tai",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+  "required_inputs": [
+   "ten_de_tai",
+   "ma_so_de_tai",
+   "chu_nhiem",
+   "co_quan_chu_tri",
+   "thoi_gian_thuc_hien",
+   "tom_tat",
+   "ket_qua_chi_tiet",
+   "san_pham_doi_chieu",
+   "hieu_qua",
+   "quyet_toan_kinh_phi",
+   "hoi_dong",
+   "ngay_hop",
+   "dia_diem",
+   "dien_bien",
+   "ket_qua_danh_gia"
+  ],
+  "n_steps": 11,
+  "n_inputs": 17
+ },
+ {
+  "name": "vnuis-khcn-bao-cao-tien-do-de-tai",
+  "title": "Báo cáo tiến độ đề tài NCKH (6 tháng / năm)",
+  "description": "Dùng khi đề tài NCKH đang thực hiện và đến kỳ báo cáo tiến độ (6 tháng hoặc năm) gửi Phòng KHCN&HTPT hay cơ quan quản lý: việc đã làm, kinh phí đã dùng, vướng mắc, kế hoạch kỳ sau.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-bao-cao-tien-do-de-tai",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển",
+  "required_inputs": [
+   "ten_de_tai",
+   "ma_so_de_tai",
+   "chu_nhiem",
+   "ky_bao_cao",
+   "noi_dung_da_lam",
+   "ket_qua_dat_duoc",
+   "kinh_phi_da_cap",
+   "kinh_phi_da_dung",
+   "ke_hoach_tiep_theo"
+  ],
+  "n_steps": 9,
+  "n_inputs": 11
+ },
+ {
+  "name": "vnuis-khcn-bien-soan-giao-trinh",
+  "title": "Biên soạn giáo trình / bài giảng",
+  "description": "Dùng khi giảng viên hoặc bộ môn được giao biên soạn giáo trình, bài giảng cho một học phần: đề cương chi tiết, cấu trúc chương, phản biện, nghiệm thu.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-bien-soan-giao-trinh",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Khoa",
+  "required_inputs": [
+   "ten_giao_trinh",
+   "hoc_phan",
+   "tac_gia",
+   "de_cuong_hoc_phan"
+  ],
+  "n_steps": 8,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-khcn-bien-tap-ky-yeu-hoi-thao",
+  "title": "Biên tập kỷ yếu hội thảo khoa học",
+  "description": "Dùng khi cần biên tập và xuất bản kỷ yếu sau hội thảo khoa học: gom bài toàn văn, chuẩn hóa định dạng và trích dẫn, sắp xếp theo phiên, soạn lời nói đầu và mục lục.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-ky-yeu-hoi-thao",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+  "required_inputs": [
+   "ten_hoi_thao",
+   "thoi_gian",
+   "dia_diem",
+   "don_vi_to_chuc",
+   "danh_sach_bai",
+   "so_phien",
+   "chu_tich_hoi_thao"
+  ],
+  "n_steps": 7,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-khcn-bien-tap-xuat-ban-an-pham",
+  "title": "Biên tập & xuất bản ấn phẩm",
+  "description": "Dùng khi Nhà xuất bản hoặc ban biên tập của trường xuất bản giáo trình, sách chuyên khảo, kỷ yếu, tài liệu nội bộ và cần đi từ bản thảo đến sách in đúng quy định xuất bản.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-bien-tap-xuat-ban-an-pham",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+  "required_inputs": [
+   "ten_an_pham",
+   "tac_gia",
+   "ban_thao",
+   "so_luong_in",
+   "muc_dich"
+  ],
+  "n_steps": 6,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-khcn-ke-hoach-hoi-thao",
+  "title": "Kế hoạch tổ chức hội thảo khoa học",
+  "description": "Dùng khi khoa, phòng được giao hoặc đề xuất tổ chức hội thảo khoa học và cần kế hoạch trình lãnh đạo: chủ đề, thời gian, thành phần, chương trình, dự toán, thư mời.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-ke-hoach-hoi-thao-khoa-hoc",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Khoa hoặc Viện chủ trì",
+  "required_inputs": [
+   "ten_hoi_thao",
+   "cap_hoi_thao",
+   "chu_de",
+   "thoi_gian",
+   "dia_diem",
+   "don_vi_to_chuc",
+   "thanh_phan",
+   "nguon_kinh_phi"
+  ],
+  "n_steps": 7,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-khcn-lap-cau-truc-bai-bao",
+  "title": "Cấu trúc bài báo khoa học",
+  "description": "Dùng khi giảng viên, nghiên cứu sinh, học viên cao học cần dàn ý và hoàn thiện bản thảo bài báo khoa học trước khi gửi tạp chí trong nước hoặc quốc tế.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-cau-truc-bai-bao-khoa-hoc",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Khoa",
+  "required_inputs": [
+   "ten_bai_bao",
+   "tac_gia",
+   "tom_tat_du_kien",
+   "dat_van_de",
+   "phuong_phap",
+   "ket_qua",
+   "ket_luan"
+  ],
+  "n_steps": 7,
+  "n_inputs": 11
+ },
+ {
+  "name": "vnuis-khcn-lap-ho-so-cong-nhan-sang-kien",
+  "title": "Hồ sơ đề nghị công nhận sáng kiến kinh nghiệm",
+  "description": "Dùng khi cán bộ, giảng viên đăng ký công nhận sáng kiến kinh nghiệm cấp trường hoặc cấp ngành và cần đơn đề nghị, bản mô tả sáng kiến, ý kiến đơn vị, danh mục hồ sơ.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-ho-so-cong-nhan-sang-kien",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Hội đồng sáng kiến",
+  "required_inputs": [
+   "ten_sang_kien",
+   "tac_gia",
+   "linh_vuc",
+   "thuc_trang",
+   "giai_phap",
+   "thoi_gian_ap_dung",
+   "hieu_qua",
+   "cap_cong_nhan"
+  ],
+  "n_steps": 6,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-khcn-lap-ho-so-quyet-toan-de-tai",
+  "title": "Hồ sơ thanh quyết toán kinh phí đề tài",
+  "description": "Dùng khi đề tài NCKH cần thanh toán đợt hoặc quyết toán kinh phí: phân loại chứng từ theo nội dung chi, đối chiếu dự toán được duyệt, kiểm tra hồ sơ trước khi nộp Phòng KHCN&HTPT, Phòng TC&QT.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-ho-so-quyet-toan-de-tai",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); phối hợp Phòng TC&QT",
+  "required_inputs": [
+   "ten_de_tai",
+   "chu_nhiem",
+   "cap_de_tai",
+   "tong_kinh_phi",
+   "du_toan_chi_tiet",
+   "chung_tu",
+   "dot_thanh_toan"
+  ],
+  "n_steps": 6,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-khcn-lap-ho-so-so-huu-tri-tue",
+  "title": "Hồ sơ đăng ký sáng chế / giải pháp hữu ích",
+  "description": "Dùng khi giảng viên, nhóm nghiên cứu muốn bảo hộ kết quả nghiên cứu bằng sáng chế hoặc giải pháp hữu ích tại Cục Sở hữu trí tuệ: tờ khai, bản mô tả, yêu cầu bảo hộ, hình vẽ.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-ho-so-dang-ky-shtt",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (sở hữu trí tuệ)",
+  "required_inputs": [
+   "loai_don",
+   "ten_giai_phap",
+   "tac_gia",
+   "chu_don",
+   "linh_vuc_ky_thuat",
+   "tinh_trang_ky_thuat",
+   "ban_chat_giai_phap",
+   "hieu_qua",
+   "vi_du_thuc_hien"
+  ],
+  "n_steps": 8,
+  "n_inputs": 11
+ },
+ {
+  "name": "vnuis-khcn-quan-tri-tap-chi",
+  "title": "Quản trị tạp chí khoa học",
+  "description": "Dùng khi Ban biên tập tạp chí khoa học của trường vận hành một số tạp chí: nhận bản thảo, phân công phản biện, theo dõi bình duyệt, hiệu đính, xuất bản, quản lý ISSN.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-quan-tri-tap-chi-khoa-hoc",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Hội đồng biên tập (nếu có)",
+  "required_inputs": [
+   "ten_tap_chi",
+   "so_tap_chi",
+   "ban_thao",
+   "hoi_dong_bien_tap",
+   "thoi_han"
+  ],
+  "n_steps": 7,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-khcn-soan-hop-dong-thuc-hien-de-tai",
+  "title": "Soạn hợp đồng thực hiện đề tài KHCN",
+  "description": "Dùng khi đề tài NCKH đã có quyết định phê duyệt và cần soạn hợp đồng giữa bên giao (trường hoặc cơ quan quản lý) và chủ nhiệm đề tài, trước khi triển khai và cấp kinh phí.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-hop-dong-thuc-hien-de-tai",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); pháp chế",
+  "required_inputs": [
+   "so_hop_dong",
+   "ben_giao",
+   "ben_nhan",
+   "ten_de_tai",
+   "ma_so_de_tai",
+   "quyet_dinh_phe_duyet",
+   "thoi_gian_thuc_hien",
+   "tong_kinh_phi",
+   "tien_do_cap_kinh_phi",
+   "san_pham_nghiem_thu",
+   "ngay_ky"
+  ],
+  "n_steps": 9,
+  "n_inputs": 12
+ },
+ {
+  "name": "vnuis-khcn-soan-thong-bao-dang-ky-de-tai",
+  "title": "Thông báo đăng ký đề tài NCKH các cấp",
+  "description": "Dùng khi Phòng KHCN&HTPT mở đợt đăng ký đề tài NCKH (cấp trường, bộ/tỉnh, nhà nước) và cần soạn thông báo gửi các đơn vị: thời hạn, hồ sơ, định mức kinh phí, nơi nhận.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-thong-bao-dang-ky-de-tai",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+  "required_inputs": [
+   "dot_dang_ky",
+   "cap_de_tai",
+   "doi_tuong",
+   "so_luong_chi_tieu",
+   "dinh_muc_kinh_phi",
+   "ho_so_yeu_cau",
+   "thoi_han_nop",
+   "noi_nop",
+   "nguoi_ky",
+   "noi_nhan"
+  ],
+  "n_steps": 8,
+  "n_inputs": 12
+ },
+ {
+  "name": "vnuis-khcn-soan-thuyet-minh-de-tai",
+  "title": "Soạn thuyết minh đề tài NCKH",
+  "description": "Dùng khi chủ nhiệm đề tài chuẩn bị hồ sơ đăng ký hoặc bảo vệ trước hội đồng xét duyệt và cần soạn thuyết minh đề tài NCKH: tính cấp thiết, mục tiêu, nội dung, sản phẩm, kinh phí, tiến độ.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-thuyet-minh-de-tai-nckh",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển; các khoa, nhóm nghiên cứu",
+  "required_inputs": [
+   "ten_de_tai",
+   "cap_de_tai",
+   "chu_nhiem",
+   "co_quan_chu_tri",
+   "thoi_gian_thuc_hien",
+   "tong_kinh_phi",
+   "y_tinh_cap_thiet",
+   "muc_tieu",
+   "noi_dung_nghien_cuu",
+   "phuong_phap",
+   "san_pham_du_kien",
+   "du_toan_kinh_phi",
+   "tien_do"
+  ],
+  "n_steps": 10,
+  "n_inputs": 14
+ },
+ {
+  "name": "vnuis-khcn-theo-doi-nguon-tai-tro",
+  "title": "Theo dõi nguồn tài trợ nghiên cứu",
+  "description": "Dùng khi nhóm nghiên cứu chuẩn bị hồ sơ xin tài trợ nghiên cứu hoặc đang thực hiện nguồn tài trợ và cần đối chiếu điều kiện của thông báo gọi đề xuất (call), theo dõi mốc, sản phẩm, kinh phí. Dùng chung mọi trường.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-theo-doi-grant-nghien-cuu",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+  "required_inputs": [
+   "thong_bao_call"
+  ],
+  "n_steps": 5,
+  "n_inputs": 3
+ },
+ {
+  "name": "vnuis-khcn-tong-quan-tai-lieu",
+  "title": "Tổng quan tài liệu khoa học",
+  "description": "Dùng khi viết phần tổng quan nghiên cứu cho đề tài, luận văn, luận án hoặc bài báo từ tài liệu đã có: so sánh phương pháp và kết quả, tìm khoảng trống nghiên cứu, trích dẫn chuẩn. Dùng chung mọi đơn vị.",
+  "group": "khcn",
+  "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+  "previous_name": "vnuis-tong-quan-tai-lieu-khoa-hoc",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Khoa",
+  "required_inputs": [
+   "cau_hoi_nghien_cuu",
+   "tai_lieu"
+  ],
+  "n_steps": 5,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-khoa-bao-cao-tong-ket-nam-hoc",
+  "title": "Báo cáo tổng kết năm học của khoa",
+  "description": "Dùng khi kết thúc năm học và khoa hoặc bộ môn cần tổng hợp đào tạo, NCKH, công tác sinh viên, đội ngũ, cơ sở vật chất thành báo cáo gửi Ban Giám hiệu.",
+  "group": "khoa",
+  "group_label": "Khoa, bộ môn",
+  "previous_name": "vnuis-bao-cao-tong-ket-khoa",
+  "format": "docx",
+  "unit": "Sáu khoa",
+  "required_inputs": [
+   "khoa",
+   "nam_hoc",
+   "so_lieu_dao_tao",
+   "so_lieu_nckh",
+   "so_lieu_doi_ngu"
+  ],
+  "n_steps": 6,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-khoa-ke-hoach-hoat-dong-trung-tam-thuc-hanh",
+  "title": "Kế hoạch hoạt động trung tâm thực hành",
+  "description": "Dùng đầu năm học khi trung tâm thực hành nghề nghiệp (thực hành pháp luật, sư phạm, phòng khám, xưởng) cần kế hoạch năm: lịch thực hành, tiếp nhận ca thực tế, phân công giảng viên, đánh giá sinh viên.",
+  "group": "khoa",
+  "group_label": "Khoa, bộ môn",
+  "previous_name": "vnuis-ke-hoach-hoat-dong-trung-tam-thuc-hanh",
+  "format": "docx",
+  "unit": "Sáu khoa hoặc Viện (trung tâm thực hành nếu có)",
+  "required_inputs": [
+   "ten_trung_tam",
+   "nam_hoc",
+   "hoc_phan_lien_quan",
+   "so_luong_sv",
+   "giang_vien"
+  ],
+  "n_steps": 6,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-khoa-ke-hoach-nckh",
+  "title": "Kế hoạch NCKH cấp khoa",
+  "description": "Dùng đầu năm học khi khoa cần kế hoạch nghiên cứu khoa học cho giảng viên và sinh viên: đề tài, bài báo, hội thảo, giáo trình, làm căn cứ giao việc và đánh giá cuối năm.",
+  "group": "khoa",
+  "group_label": "Khoa, bộ môn",
+  "previous_name": "vnuis-ke-hoach-nckh-khoa",
+  "format": "docx",
+  "unit": "Sáu khoa",
+  "required_inputs": [
+   "khoa",
+   "nam_hoc",
+   "dinh_huong",
+   "chi_tieu"
+  ],
+  "n_steps": 7,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-khoa-tro-ly-giang-day",
+  "title": "Trợ lý giảng dạy",
+  "description": "Dùng khi giảng viên chuẩn bị bài giảng, cần thang tiêu chí chấm hoặc soạn nhận xét phản hồi cho sinh viên. Dùng chung mọi khoa; giảng viên duyệt toàn bộ trước khi dùng.",
+  "group": "khoa",
+  "group_label": "Khoa, bộ môn",
+  "previous_name": "vnuis-tro-ly-giang-day",
+  "format": "docx",
+  "unit": "Sáu khoa (giảng viên, trưởng bộ môn)",
+  "required_inputs": [
+   "de_cuong_hoc_phan",
+   "chu_de_buoi_hoc"
+  ],
+  "n_steps": 4,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-nhansu-bao-cao-thi-dua-khen-thuong",
+  "title": "Báo cáo tổng kết công tác thi đua, khen thưởng",
+  "description": "Dùng khi cần tổng hợp dự thảo báo cáo công tác thi đua, khen thưởng từ quyết định và số liệu đã xác nhận trong kỳ. Không dùng để chấm điểm, xếp hạng cá nhân hay quyết định người được khen.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-bao-cao-thi-dua",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (thi đua – khen thưởng)",
+  "required_inputs": [
+   "ky_bao_cao",
+   "quyet_dinh_khen_thuong",
+   "bao_cao_don_vi",
+   "thong_tin_trinh_ky"
+  ],
+  "n_steps": 6,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-nhansu-bao-cao-thong-ke-nhan-su",
+  "title": "Báo cáo thống kê nhân sự",
+  "description": "Dùng khi Phòng Tổ chức và Quản trị lập báo cáo nhân sự theo kỳ (tuần, quý, năm) hoặc theo yêu cầu ĐHQGHN, Ban Giám hiệu từ file Excel nhân sự: cơ cấu theo đơn vị, chức danh, trình độ, hợp đồng.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-bao-cao-thong-ke-nhan-su",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "file_nhan_su",
+   "dinh_nghia_chi_tieu",
+   "mau_bao_cao",
+   "ky_bao_cao"
+  ],
+  "n_steps": 5,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-nhansu-de-an-vi-tri-viec-lam",
+  "title": "Xây dựng đề án vị trí việc làm",
+  "description": "Dùng khi VNU-IS hoặc đơn vị trực thuộc cần xây dựng, rà soát đề án vị trí việc làm (đối chiếu Nghị định 232/2026/NĐ-CP): mô tả công việc, khung năng lực, số lượng người làm việc.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-de-an-vi-tri-viec-lam",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "pham_vi",
+   "chuc_nang_nhiem_vu",
+   "hien_trang_nhan_su",
+   "danh_muc_vi_tri",
+   "nguoi_ky"
+  ],
+  "n_steps": 9,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-nhansu-ke-hoach-dao-tao-boi-duong-can-bo",
+  "title": "Kế hoạch đào tạo, bồi dưỡng cán bộ năm",
+  "description": "Dùng khi Phòng TC&QT tổng hợp nhu cầu các đơn vị để lập kế hoạch năm đào tạo, bồi dưỡng cán bộ, giảng viên trình Hiệu trưởng: đối tượng, nội dung, hình thức, kinh phí.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-ke-hoach-boi-duong",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "nam_ke_hoach",
+   "muc_tieu",
+   "nhu_cau_don_vi",
+   "noi_dung_boi_duong",
+   "hinh_thuc",
+   "kinh_phi_du_kien",
+   "nguoi_ky"
+  ],
+  "n_steps": 6,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-nhansu-lap-ho-so-de-nghi-khen-thuong",
+  "title": "Hồ sơ đề nghị khen thưởng các cấp",
+  "description": "Dùng khi cần đề nghị khen thưởng cá nhân hoặc tập thể lên Hội đồng thi đua – khen thưởng các cấp: tờ trình, báo cáo thành tích, danh sách trích ngang.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-ho-so-de-nghi-khen-thuong",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (thi đua – khen thưởng)",
+  "required_inputs": [
+   "doi_tuong",
+   "ho_ten_tap_the",
+   "chuc_vu_don_vi",
+   "hinh_thuc_khen",
+   "cap_trinh",
+   "thanh_tich",
+   "thoi_gian_xet",
+   "can_cu",
+   "nguoi_ky"
+  ],
+  "n_steps": 7,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-nhansu-lap-phieu-danh-gia-vien-chuc",
+  "title": "Phiếu đánh giá, xếp loại viên chức",
+  "description": "Dùng khi tổ chức đánh giá, xếp loại viên chức cuối năm (thường tháng 11–12) theo Nghị định 233/2026/NĐ-CP: phiếu tự đánh giá và hướng dẫn tiêu chí chấm.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-phieu-danh-gia-vien-chuc",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "loai_vien_chuc",
+   "ho_ten",
+   "chuc_vu",
+   "don_vi",
+   "nam_danh_gia",
+   "nhiem_vu_chu_yeu"
+  ],
+  "n_steps": 6,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-nhansu-quy-trinh-bo-nhiem",
+  "title": "Quy trình bổ nhiệm, bổ nhiệm lại, miễn nhiệm",
+  "description": "Dùng khi Nhà trường bổ nhiệm mới, bổ nhiệm lại hoặc miễn nhiệm cán bộ quản lý (trưởng, phó khoa, phòng, ban, trung tâm) và cần danh mục kiểm các bước cùng bộ hồ sơ: tờ trình, biên bản lấy phiếu tín nhiệm, quyết định.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-quy-trinh-bo-nhiem",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "loai_ho_so",
+   "ho_ten",
+   "chuc_vu_du_kien",
+   "don_vi",
+   "nhiem_ky",
+   "tieu_chuan",
+   "ly_do_mien_nhiem",
+   "nguoi_ky"
+  ],
+  "n_steps": 5,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-nhansu-quy-trinh-tuyen-dung",
+  "title": "Quy trình tuyển dụng viên chức",
+  "description": "Dùng khi Nhà trường có nhu cầu tuyển mới viên chức (giảng viên, chuyên viên, kỹ thuật viên) và cần triển khai trọn một đợt tuyển dụng theo Nghị định 259/2026/NĐ-CP, từ kế hoạch đến ký hợp đồng.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-quy-trinh-tuyen-dung",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (tuyển dụng, hồ sơ cán bộ)",
+  "required_inputs": [
+   "don_vi_de_xuat",
+   "vi_tri_tuyen",
+   "tieu_chuan",
+   "hinh_thuc_xet_tuyen",
+   "noi_dung_vong2",
+   "thoi_gian_du_kien"
+  ],
+  "n_steps": 9,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-nhansu-soan-hop-dong-lam-viec",
+  "title": "Soạn hợp đồng làm việc / hợp đồng lao động",
+  "description": "Dùng khi cần soạn hợp đồng làm việc cho viên chức (mới trúng tuyển, hết tập sự, ký lại, chuyển loại hợp đồng) hoặc hợp đồng lao động cho người lao động như bảo vệ, tạp vụ, lái xe.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-hop-dong-lam-viec",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "loai_hop_dong",
+   "ho_ten_nld",
+   "ngay_sinh",
+   "cccd",
+   "dia_chi",
+   "trinh_do",
+   "chuc_danh",
+   "don_vi",
+   "cong_viec",
+   "thoi_han",
+   "ngay_bat_dau",
+   "he_so_luong",
+   "muc_luong_toi_thieu",
+   "nguoi_dai_dien"
+  ],
+  "n_steps": 5,
+  "n_inputs": 16
+ },
+ {
+  "name": "vnuis-nhansu-soan-quyet-dinh-cu-di-dao-tao",
+  "title": "Quyết định cử cán bộ đi đào tạo / tập huấn",
+  "description": "Dùng khi cần cử cán bộ, viên chức, giảng viên đi đào tạo, bồi dưỡng, tập huấn trong hoặc ngoài nước và ban hành quyết định làm căn cứ chế độ, kinh phí.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-quyet-dinh-cu-di-hoc",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị; Phòng KHCN và HTPT (đi học, công tác nước ngoài)",
+  "required_inputs": [
+   "ho_ten",
+   "chuc_vu",
+   "don_vi",
+   "khoa_hoc",
+   "don_vi_to_chuc",
+   "thoi_gian",
+   "dia_diem",
+   "kinh_phi",
+   "can_cu",
+   "nguoi_ky"
+  ],
+  "n_steps": 6,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-nhansu-soan-quyet-dinh-dieu-dong",
+  "title": "Soạn quyết định điều động, luân chuyển, biệt phái",
+  "description": "Dùng khi cần ban hành quyết định điều động, luân chuyển hoặc biệt phái viên chức, cán bộ quản lý giữa các đơn vị, đúng thể thức Nghị định 30/2020/NĐ-CP.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-quyet-dinh-dieu-dong",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "loai_quyet_dinh",
+   "ho_ten",
+   "don_vi_hien_tai",
+   "don_vi_moi",
+   "thoi_han",
+   "ly_do",
+   "che_do",
+   "can_cu",
+   "hieu_luc",
+   "nguoi_ky"
+  ],
+  "n_steps": 5,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-nhansu-soan-quyet-dinh-khen-thuong-ky-luat-vien-chuc",
+  "title": "Quyết định khen thưởng / kỷ luật viên chức",
+  "description": "Dùng khi Hội đồng thi đua – khen thưởng hoặc Hội đồng kỷ luật đã có kết luận và cần ban hành quyết định chính thức của Hiệu trưởng về khen thưởng hoặc kỷ luật viên chức, người lao động.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-quyet-dinh-khen-thuong-kl",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (thi đua – khen thưởng)",
+  "required_inputs": [
+   "loai_quyet_dinh",
+   "ho_ten",
+   "chuc_vu_don_vi",
+   "hinh_thuc",
+   "ly_do",
+   "can_cu",
+   "so_quyet_dinh",
+   "ngay_ky",
+   "nguoi_ky"
+  ],
+  "n_steps": 7,
+  "n_inputs": 11
+ },
+ {
+  "name": "vnuis-nhansu-soan-quyet-dinh-nang-luong",
+  "title": "Soạn quyết định nâng lương, phụ cấp thâm niên, chuyển ngạch",
+  "description": "Dùng khi đến kỳ xét nâng bậc lương, nâng lương trước hạn, phụ cấp thâm niên vượt khung hoặc chuyển ngạch, chức danh nghề nghiệp cho viên chức và cần soạn quyết định.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-quyet-dinh-nang-luong",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "loai_qd",
+   "danh_sach",
+   "luong_cu",
+   "luong_moi",
+   "thoi_diem_huong",
+   "thoi_gian_giu_bac",
+   "nguoi_ky"
+  ],
+  "n_steps": 4,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-nhansu-soan-thong-bao-tuyen-dung",
+  "title": "Soạn thông báo tuyển dụng",
+  "description": "Dùng khi kế hoạch tuyển dụng viên chức đã được Hiệu trưởng phê duyệt và cần soạn thông báo đăng công khai: vị trí, chỉ tiêu, tiêu chuẩn, hồ sơ, thời hạn, lệ phí.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-thong-bao-tuyen-dung",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "dot_tuyen_dung",
+   "vi_tri_chi_tieu",
+   "tieu_chuan_chung",
+   "tieu_chuan_rieng",
+   "ho_so_gom",
+   "thoi_han_nhan",
+   "dia_diem_nhan",
+   "hinh_thuc_tuyen",
+   "lien_he",
+   "nguoi_ky"
+  ],
+  "n_steps": 7,
+  "n_inputs": 11
+ },
+ {
+  "name": "vnuis-nhansu-tong-hop-danh-gia-vien-chuc",
+  "title": "Tổng hợp kết quả đánh giá viên chức toàn trường",
+  "description": "Dùng khi các đơn vị đã đánh giá viên chức xong (tháng 11–12) và Phòng TC&QT cần tổng hợp toàn trường theo 4 mức xếp loại để báo cáo Ban Giám hiệu, cấp có thẩm quyền.",
+  "group": "nhansu",
+  "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+  "previous_name": "vnuis-bao-cao-danh-gia-vc",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "nam_danh_gia",
+   "ket_qua_don_vi",
+   "tong_so_vc",
+   "nguoi_ky"
+  ],
+  "n_steps": 5,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-phapche-ke-hoach-thanh-tra-nam",
+  "title": "Lập kế hoạch thanh tra nội bộ năm",
+  "description": "Dùng khi Phòng TC&QT lập kế hoạch thanh tra nội bộ hằng năm trình Hiệu trưởng: lĩnh vực, đối tượng, thời gian, đoàn thanh tra, kể cả điều chỉnh giữa năm.",
+  "group": "phapche",
+  "group_label": "Pháp chế – thanh tra",
+  "previous_name": "vnuis-ke-hoach-thanh-tra-nam",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (thanh tra – pháp chế)",
+  "required_inputs": [
+   "nam_ke_hoach",
+   "linh_vuc",
+   "doi_tuong",
+   "thoi_gian",
+   "doan_thanh_tra"
+  ],
+  "n_steps": 7,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-phapche-soan-ket-luan-thanh-tra",
+  "title": "Soạn kết luận thanh tra",
+  "description": "Dùng khi Đoàn thanh tra đã xác minh xong một cuộc thanh tra nội bộ và cần ban hành kết luận chính thức: căn cứ, nhận xét từng nội dung, kết luận chung, kiến nghị xử lý.",
+  "group": "phapche",
+  "group_label": "Pháp chế – thanh tra",
+  "previous_name": "vnuis-ket-luan-thanh-tra",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (thanh tra – pháp chế)",
+  "required_inputs": [
+   "so_quyet_dinh",
+   "doi_tuong_thanh_tra",
+   "noi_dung_thanh_tra",
+   "ket_qua_xac_minh",
+   "nhan_xet_danh_gia",
+   "kien_nghi_xu_ly",
+   "nguoi_ky"
+  ],
+  "n_steps": 7,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-phapche-soan-quy-che-to-chuc-hoat-dong-don-vi",
+  "title": "Soạn quy chế tổ chức và hoạt động của đơn vị trực thuộc",
+  "description": "Dùng khi thành lập, chia tách, sáp nhập hoặc rà soát một đơn vị trực thuộc (phòng, khoa, trung tâm, viện) và cần soạn quy chế tổ chức và hoạt động của đơn vị đó.",
+  "group": "phapche",
+  "group_label": "Pháp chế – thanh tra",
+  "previous_name": "vnuis-quy-che-to-chuc-hoat-dong",
+  "format": "docx",
+  "unit": "Ban Giám hiệu; Phòng Tổ chức và Quản trị; đơn vị cần soạn quy chế",
+  "required_inputs": [
+   "ten_don_vi",
+   "chuc_nang",
+   "nhiem_vu",
+   "co_cau",
+   "so_quyet_dinh",
+   "ngay_ky",
+   "nguoi_ky"
+  ],
+  "n_steps": 7,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-phapche-soan-quyet-dinh-giai-quyet-khieu-nai",
+  "title": "Soạn quyết định giải quyết khiếu nại / tố cáo",
+  "description": "Dùng khi Hiệu trưởng giải quyết khiếu nại lần đầu hoặc tố cáo thuộc thẩm quyền, đã xác minh đầy đủ và cần soạn quyết định theo Luật Khiếu nại 2011, Luật Tố cáo 2018.",
+  "group": "phapche",
+  "group_label": "Pháp chế – thanh tra",
+  "previous_name": "vnuis-quyet-dinh-giai-quyet-kn",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (thanh tra – pháp chế)",
+  "required_inputs": [
+   "loai_don",
+   "nguoi_kn_tc",
+   "tom_tat_don",
+   "qua_trinh_xac_minh",
+   "can_cu_phap_ly",
+   "noi_dung_quyet_dinh",
+   "quyen_kn_tiep"
+  ],
+  "n_steps": 7,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-phapche-tham-dinh-phap-ly-van-ban",
+  "title": "Thẩm định pháp lý dự thảo văn bản nội bộ",
+  "description": "Dùng khi một đơn vị trình dự thảo văn bản nội bộ (quy định, quy chế, hướng dẫn) và cần ý kiến pháp lý về thẩm quyền, căn cứ, tính thống nhất, thể thức trước khi Hiệu trưởng ký.",
+  "group": "phapche",
+  "group_label": "Pháp chế – thanh tra",
+  "previous_name": "vnuis-tham-dinh-phap-ly-van-ban",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (thanh tra – pháp chế)",
+  "required_inputs": [
+   "ten_du_thao",
+   "don_vi_soan_thao",
+   "noi_dung_du_thao",
+   "can_cu_du_thao_trich",
+   "nguoi_tham_dinh"
+  ],
+  "n_steps": 7,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-phapche-theo-doi-thay-doi-van-ban-phap-quy",
+  "title": "Theo dõi thay đổi văn bản pháp quy",
+  "description": "Dùng khi có văn bản pháp quy mới thay thế hoặc sửa đổi văn bản đang áp dụng và cần so sánh điều khoản cũ – mới, đánh giá tác động, lập danh mục cập nhật nội bộ. Dùng chung mọi đơn vị.",
+  "group": "phapche",
+  "group_label": "Pháp chế – thanh tra",
+  "previous_name": "vnuis-theo-doi-thay-doi-van-ban-phap-quy",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (pháp chế – tuân thủ); các phòng liên quan",
+  "required_inputs": [
+   "van_ban_cu",
+   "van_ban_moi",
+   "linh_vuc"
+  ],
+  "n_steps": 5,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-sdh-bao-cao-dao-tao",
+  "title": "Báo cáo đào tạo sau đại học hằng năm",
+  "description": "Dùng khi Phòng Đào tạo (sau đại học) tổng kết năm về đào tạo thạc sĩ, tiến sĩ để báo cáo Ban Giám hiệu, Bộ GD&ĐT: tuyển sinh, quy mô, tiến độ bảo vệ, văn bằng, đội ngũ hướng dẫn.",
+  "group": "sdh",
+  "group_label": "Sau đại học",
+  "previous_name": "vnuis-bao-cao-dao-tao-sdh",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (sau đại học)",
+  "required_inputs": [
+   "nam_bao_cao",
+   "tuyen_sinh",
+   "quy_mo",
+   "tien_do_bao_ve",
+   "van_bang",
+   "doi_ngu_hd",
+   "kho_khan_kien_nghi"
+  ],
+  "n_steps": 6,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-sdh-ke-hoach-dao-tao",
+  "title": "Kế hoạch đào tạo sau đại học (tiến độ học viên/NCS)",
+  "description": "Dùng khi Phòng Đào tạo (sau đại học) cần kế hoạch và theo dõi tiến độ cho một khóa cao học hoặc một nghiên cứu sinh: mốc học phần, đề cương, seminar, bảo vệ, người hướng dẫn.",
+  "group": "sdh",
+  "group_label": "Sau đại học",
+  "previous_name": "vnuis-ke-hoach-dao-tao-sdh",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (sau đại học)",
+  "required_inputs": [
+   "trinh_do",
+   "khoa_lop",
+   "nganh",
+   "thoi_gian_bat_dau",
+   "thoi_gian_dao_tao",
+   "nguoi_huong_dan"
+  ],
+  "n_steps": 8,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-sdh-lap-bien-ban-bao-ve-luan-van",
+  "title": "Biên bản bảo vệ luận văn / luận án",
+  "description": "Dùng ngay sau buổi bảo vệ luận văn thạc sĩ hoặc luận án tiến sĩ, khi thư ký hội đồng cần lập biên bản: diễn biến, phiếu đánh giá, kết luận đạt hay không, yêu cầu chỉnh sửa.",
+  "group": "sdh",
+  "group_label": "Sau đại học",
+  "previous_name": "vnuis-bien-ban-bao-ve-luan-van",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (sau đại học)",
+  "required_inputs": [
+   "bac_dao_tao",
+   "ho_ten_hv",
+   "ten_de_tai",
+   "quyet_dinh_hd",
+   "thanh_phan_tham_du",
+   "dien_bien",
+   "phieu_danh_gia",
+   "ket_luan",
+   "thoi_gian_dia_diem"
+  ],
+  "n_steps": 5,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-sdh-soan-quyet-dinh-hoi-dong-bao-ve",
+  "title": "Quyết định thành lập hội đồng bảo vệ luận văn / luận án",
+  "description": "Dùng khi học viên cao học hoặc nghiên cứu sinh đã đủ điều kiện bảo vệ và cần ban hành quyết định thành lập hội đồng đánh giá luận văn, luận án, đúng thể thức Nghị định 30/2020/NĐ-CP.",
+  "group": "sdh",
+  "group_label": "Sau đại học",
+  "previous_name": "vnuis-quyet-dinh-hoi-dong-bao-ve",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (sau đại học)",
+  "required_inputs": [
+   "bac_dao_tao",
+   "ho_ten_hv",
+   "ma_hv",
+   "nganh",
+   "ten_de_tai",
+   "nguoi_huong_dan",
+   "thanh_phan_hd",
+   "thoi_gian_dia_diem",
+   "nguoi_ky"
+  ],
+  "n_steps": 5,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-sdh-soan-thong-bao-tuyen-sinh",
+  "title": "Thông báo tuyển sinh thạc sĩ / tiến sĩ",
+  "description": "Dùng khi Phòng Đào tạo (sau đại học) công bố tuyển sinh thạc sĩ, tiến sĩ cho từng đợt: chỉ tiêu ngành, điều kiện dự tuyển, hồ sơ, hình thức tuyển, học phí.",
+  "group": "sdh",
+  "group_label": "Sau đại học",
+  "previous_name": "vnuis-thong-bao-tuyen-sinh-sdh",
+  "format": "docx",
+  "unit": "Phòng Đào tạo (sau đại học); phối hợp Phòng TT&TS",
+  "required_inputs": [
+   "trinh_do",
+   "dot_tuyen",
+   "chi_tieu_sdh",
+   "dieu_kien_du_tuyen",
+   "hinh_thuc_tuyen",
+   "ho_so",
+   "thoi_gian_dao_tao",
+   "thoi_gian",
+   "dia_chi_nop"
+  ],
+  "n_steps": 9,
+  "n_inputs": 12
+ },
+ {
+  "name": "vnuis-taichinh-bao-cao-cong-khai-tai-chinh",
+  "title": "Soạn báo cáo công khai tài chính",
+  "description": "Dùng khi Phòng TC&QT cần công bố công khai tài chính trên cổng thông tin điện tử (học phí, tổng thu – chi, chi cho người học, kiểm toán) theo Thông tư 09/2024/TT-BGDĐT.",
+  "group": "taichinh",
+  "group_label": "Kế hoạch – tài chính",
+  "previous_name": "vnuis-bao-cao-cong-khai-tai-chinh",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)",
+  "required_inputs": [
+   "nam_hoc",
+   "nam_tai_chinh",
+   "hoc_phi_cac_nganh",
+   "tong_thu_chi",
+   "chi_cho_nguoi_hoc",
+   "hinh_thuc_cong_khai",
+   "thoi_gian_cong_khai",
+   "nguoi_ky"
+  ],
+  "n_steps": 5,
+  "n_inputs": 9
+ },
+ {
+  "name": "vnuis-taichinh-bao-cao-quyet-toan",
+  "title": "Soạn báo cáo quyết toán ngân sách năm",
+  "description": "Dùng khi kết thúc năm ngân sách và Phòng TC&QT cần báo cáo quyết toán trình duyệt: đối chiếu dự toán với thực hiện, giải trình chênh lệch lớn, kiến nghị năm sau.",
+  "group": "taichinh",
+  "group_label": "Kế hoạch – tài chính",
+  "previous_name": "vnuis-bao-cao-quyet-toan",
+  "format": "xlsx",
+  "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)",
+  "required_inputs": [
+   "nam_quyet_toan",
+   "du_toan",
+   "thuc_hien",
+   "nguoi_ky",
+   "don_vi_trinh"
+  ],
+  "n_steps": 6,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-taichinh-bao-cao-tai-chinh",
+  "title": "Lập báo cáo tài chính (chế độ kế toán HCSN)",
+  "description": "Dùng khi khóa sổ năm và Phòng TC&QT lập bộ báo cáo tài chính theo chế độ kế toán hành chính sự nghiệp (Thông tư 24/2024/TT-BTC): cân đối kế toán, kết quả hoạt động, lưu chuyển tiền tệ, thuyết minh.",
+  "group": "taichinh",
+  "group_label": "Kế hoạch – tài chính",
+  "previous_name": "vnuis-bao-cao-tai-chinh",
+  "format": "xlsx",
+  "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)",
+  "required_inputs": [
+   "nam_tai_chinh",
+   "so_du_tai_khoan",
+   "so_dau_nam",
+   "nguoi_lap",
+   "ke_toan_truong",
+   "nguoi_ky"
+  ],
+  "n_steps": 6,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-taichinh-kiem-tra-chung-tu-thanh-toan",
+  "title": "Lập danh mục kiểm tra chứng từ thanh toán",
+  "description": "Dùng khi Phòng TC&QT kiểm soát bộ chứng từ của một khoản chi (lương, học bổng, đề tài, mua sắm, công tác phí, hội nghị) trước khi trình ký chi tiền.",
+  "group": "taichinh",
+  "group_label": "Kế hoạch – tài chính",
+  "previous_name": "vnuis-checklist-chung-tu-thanh-toan",
+  "format": "xlsx",
+  "unit": "Phòng Tổ chức và Quản trị (mảng kế hoạch – tài chính sau hợp nhất 2025)",
+  "required_inputs": [
+   "loai_chi",
+   "noi_dung_chi",
+   "so_tien",
+   "don_vi_de_nghi"
+  ],
+  "n_steps": 5,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-taichinh-lap-du-toan-nam",
+  "title": "Lập dự toán thu – chi ngân sách năm",
+  "description": "Dùng khi Phòng TC&QT xây dựng dự toán thu – chi ngân sách cho năm học hoặc năm tài chính mới, cân đối thu bằng chi và trình cấp có thẩm quyền duyệt.",
+  "group": "taichinh",
+  "group_label": "Kế hoạch – tài chính",
+  "previous_name": "vnuis-lap-du-toan-nam",
+  "format": "xlsx",
+  "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính); các đơn vị gửi nhu cầu",
+  "required_inputs": [
+   "nam_ngan_sach",
+   "so_lieu_thu",
+   "so_lieu_chi",
+   "don_vi_trinh"
+  ],
+  "n_steps": 5,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-taichinh-phan-tich-chenh-lech-ngan-sach",
+  "title": "Phân tích chênh lệch ngân sách",
+  "description": "Dùng cuối quý hoặc năm khi cần đối chiếu dự toán với thực hiện theo từng mục, tìm khoản vượt ngưỡng, phân loại nguyên nhân và dự thảo giải trình. Dùng chung mọi đơn vị có ngân sách.",
+  "group": "taichinh",
+  "group_label": "Kế hoạch – tài chính",
+  "previous_name": "vnuis-phan-tich-chenh-lech-ngan-sach",
+  "format": "xlsx",
+  "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)",
+  "required_inputs": [
+   "du_toan",
+   "thuc_hien",
+   "ky_bao_cao"
+  ],
+  "n_steps": 5,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-taichinh-soan-thong-bao-muc-thu-hoc-phi",
+  "title": "Soạn thông báo mức thu học phí / lệ phí",
+  "description": "Dùng khi ban hành hoặc cập nhật mức thu học phí, lệ phí năm học mới theo khối ngành và hệ đào tạo (chính quy, vừa làm vừa học), kèm thời hạn và hình thức nộp.",
+  "group": "taichinh",
+  "group_label": "Kế hoạch – tài chính",
+  "previous_name": "vnuis-thong-bao-muc-thu-hoc-phi",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính); Phòng Đào tạo",
+  "required_inputs": [
+   "nam_hoc",
+   "can_cu",
+   "khoi_nganh",
+   "he_dao_tao",
+   "muc_thu",
+   "thoi_han_nop",
+   "hinh_thuc_nop",
+   "nguoi_ky"
+  ],
+  "n_steps": 6,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-thuvien-bao-cao-cong-tac",
+  "title": "Báo cáo công tác thư viện",
+  "description": "Dùng khi kết thúc năm học và thư viện cần báo cáo tổng kết: vốn tài liệu, phục vụ bạn đọc, số hóa, cơ sở dữ liệu điện tử; cũng dùng làm minh chứng học liệu cho kiểm định.",
+  "group": "thuvien",
+  "group_label": "Thông tin thư viện",
+  "previous_name": "vnuis-bao-cao-cong-tac-thu-vien",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (thư viện)",
+  "required_inputs": [
+   "nam_bao_cao",
+   "so_lieu_von_tai_lieu",
+   "so_lieu_phuc_vu",
+   "nguoi_ky"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-thuvien-ke-hoach-bo-sung-hoc-lieu",
+  "title": "Kế hoạch bổ sung, số hóa học liệu",
+  "description": "Dùng khi thư viện lập kế hoạch năm mua sắm, tiếp nhận và số hóa học liệu (sách, giáo trình, cơ sở dữ liệu điện tử) theo nhu cầu đào tạo, nghiên cứu của các khoa.",
+  "group": "thuvien",
+  "group_label": "Thông tin thư viện",
+  "previous_name": "vnuis-ke-hoach-bo-sung-hoc-lieu",
+  "format": "docx",
+  "unit": "Phòng KHCN và Hợp tác phát triển (thư viện)",
+  "required_inputs": [
+   "nam_ke_hoach",
+   "nhu_cau_cac_khoa",
+   "hinh_thuc_bo_sung"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-ts-bao-cao-ket-qua-tuyen-sinh",
+  "title": "Báo cáo kết quả tuyển sinh gửi cơ quan tiếp nhận",
+  "description": "Dùng khi kết thúc đợt tuyển sinh đại học và Phòng Đào tạo cần báo cáo ĐHQGHN hoặc Bộ GD&ĐT: số đăng ký, trúng tuyển, nhập học theo phương thức và ngành, so chỉ tiêu, điểm chuẩn.",
+  "group": "ts",
+  "group_label": "Tuyển sinh",
+  "previous_name": "vnuis-bao-cao-ket-qua-tuyen-sinh",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "nam_tuyen_sinh",
+   "chi_tieu_duyet",
+   "so_lieu_dang_ky",
+   "so_lieu_trung_tuyen",
+   "so_lieu_nhap_hoc",
+   "diem_chuan"
+  ],
+  "n_steps": 9,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-ts-de-bai-chien-dich-tuyen-sinh",
+  "title": "Đề bài chiến dịch tuyển sinh",
+  "description": "Dùng trước mỗi đợt chiến dịch tuyển sinh (mở đợt, cao điểm, xét tuyển bổ sung) khi cần một bản yêu cầu thống nhất cho cả nhóm và trình lãnh đạo: mục tiêu, đối tượng, thông điệp, kênh, ngân sách, chỉ số.",
+  "group": "ts",
+  "group_label": "Tuyển sinh",
+  "previous_name": "vnuis-campaign-brief-tuyen-sinh",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "ten_chien_dich",
+   "thoi_gian",
+   "muc_tieu",
+   "doi_tuong",
+   "thong_diep",
+   "kenh",
+   "ngan_sach",
+   "kpi"
+  ],
+  "n_steps": 7,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-ts-hoi-dap-tuyen-sinh",
+  "title": "Hỏi đáp tuyển sinh",
+  "description": "Dùng khi cần bộ hỏi đáp tuyển sinh cho website, chatbot hoặc tư vấn viên về phương thức, chỉ tiêu, học phí, học bổng, hồ sơ; mỗi câu trả lời trích nguồn và năm áp dụng.",
+  "group": "ts",
+  "group_label": "Tuyển sinh",
+  "previous_name": "vnuis-faq-tuyen-sinh",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "nam_tuyen_sinh",
+   "nguon",
+   "nhom_cau_hoi"
+  ],
+  "n_steps": 5,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-ts-kich-ban-tu-van-tuyen-sinh",
+  "title": "Xây dựng kịch bản tư vấn tuyển sinh & hướng nghiệp",
+  "description": "Dùng trước mùa tuyển sinh khi cần kịch bản cho đội tư vấn (ngày hội, livestream, tư vấn tại trường THPT, hotline, fanpage) theo từng đối tượng học sinh, phụ huynh.",
+  "group": "ts",
+  "group_label": "Tuyển sinh",
+  "previous_name": "vnuis-kich-ban-tu-van-tuyen-sinh",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "doi_tuong",
+   "kenh_tu_van",
+   "chinh_sach"
+  ],
+  "n_steps": 7,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-ts-ra-soat-nhat-quan-thong-tin",
+  "title": "Rà soát nhất quán thông tin tuyển sinh",
+  "description": "Dùng khi chuẩn bị mùa tuyển sinh, phát hành brochure, cập nhật website hay nền tảng AI tư vấn, hoặc khi hai tài liệu nêu số liệu khác nhau: đối chiếu chỉ tiêu, phương thức, học phí, học bổng, mã chương trình, mốc thời gian.",
+  "group": "ts",
+  "group_label": "Tuyển sinh",
+  "previous_name": "vnuis-ra-soat-nhat-quan-thong-tin-tuyen-sinh",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "tai_lieu_can_ra_soat",
+   "nguon_chinh_thuc"
+  ],
+  "n_steps": 4,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-ts-soan-de-an-tuyen-sinh",
+  "title": "Soạn đề án tuyển sinh hằng năm",
+  "description": "Dùng đầu năm khi Phòng Đào tạo xây dựng hoặc điều chỉnh đề án tuyển sinh đại học chính quy trình Hiệu trưởng, Bộ GD&ĐT: chỉ tiêu theo năng lực đào tạo, phương thức, tổ hợp môn, ngưỡng đầu vào, chính sách ưu tiên.",
+  "group": "ts",
+  "group_label": "Tuyển sinh",
+  "previous_name": "vnuis-de-an-tuyen-sinh",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh; phối hợp Phòng Đào tạo",
+  "required_inputs": [
+   "nam_tuyen_sinh",
+   "nang_luc_dao_tao",
+   "danh_sach_nganh",
+   "phuong_thuc_xet_tuyen",
+   "to_hop_mon",
+   "nguong_dau_vao"
+  ],
+  "n_steps": 8,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-ts-soan-thong-bao-tuyen-sinh-dai-hoc",
+  "title": "Soạn thông báo tuyển sinh theo phương thức",
+  "description": "Dùng khi Phòng Đào tạo công bố thông tin tuyển sinh đại học cho một phương thức xét tuyển hoặc một đợt bổ sung, rút từ đề án đã duyệt: đối tượng, điều kiện, hồ sơ, thời gian, lệ phí.",
+  "group": "ts",
+  "group_label": "Tuyển sinh",
+  "previous_name": "vnuis-thong-bao-tuyen-sinh",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "phuong_thuc",
+   "de_an_can_cu",
+   "doi_tuong",
+   "dieu_kien",
+   "nganh_tuyen",
+   "ho_so",
+   "thoi_gian",
+   "dia_chi_nop"
+  ],
+  "n_steps": 7,
+  "n_inputs": 11
+ },
+ {
+  "name": "vnuis-ts-theo-doi-pheu-thi-sinh",
+  "title": "Theo dõi phễu thí sinh",
+  "description": "Dùng trong chiến dịch tuyển sinh khi cần quản lý thí sinh tiềm năng theo từng giai đoạn (biết đến, quan tâm, nộp hồ sơ, trúng tuyển, nhập học), đôn đốc hồ sơ và báo cáo tỷ lệ chuyển đổi.",
+  "group": "ts",
+  "group_label": "Tuyển sinh",
+  "previous_name": "vnuis-funnel-theo-doi-thi-sinh",
+  "format": "xlsx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "chien_dich",
+   "du_lieu_lead",
+   "moc_thoi_gian"
+  ],
+  "n_steps": 5,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-tt-bo-tai-lieu-bao-chi-su-kien",
+  "title": "Bộ tài liệu báo chí cho sự kiện",
+  "description": "Dùng khi tổ chức sự kiện lớn cần mời báo chí (khai giảng, kỷ niệm, hội thảo, ký kết, ngày hội tuyển sinh) và cần bộ tài liệu báo chí (press kit): thông cáo, thông tin tóm tắt, tiểu sử diễn giả, đầu mối liên hệ.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-press-kit-su-kien",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "ten_su_kien",
+   "thoi_gian_dia_diem",
+   "noi_dung_chinh",
+   "lien_he_bao_chi"
+  ],
+  "n_steps": 6,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-tt-dich-song-ngu-va-thuat-ngu",
+  "title": "Dịch song ngữ & quản lý thuật ngữ",
+  "description": "Dùng khi cần bản tiếng Anh (hoặc tiếng Việt) của văn bản trường học như MOU, thông báo tuyển sinh, văn bằng, nội dung website, hồ sơ kiểm định: dịch theo bảng thuật ngữ, đối chiếu số liệu và tên riêng.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-dich-thuat-song-ngu-va-thuat-ngu",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh; Phòng KHCN và HTPT; các khoa",
+  "required_inputs": [
+   "van_ban_goc",
+   "huong_dich"
+  ],
+  "n_steps": 6,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-tt-ke-hoach-hoat-dong-bao-chi",
+  "title": "Kế hoạch hoạt động báo chí",
+  "description": "Dùng đầu năm khi tòa soạn hoặc ban biên tập của báo in, tạp chí nội bộ, bản tin điện tử của trường lập kế hoạch năm: số kỳ, chuyên mục, phân công biên tập, dự toán.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-ke-hoach-hoat-dong-bao-chi",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "ten_an_pham",
+   "nam_ke_hoach",
+   "ky_xuat_ban",
+   "chuyen_muc",
+   "nhan_su"
+  ],
+  "n_steps": 6,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-tt-ke-hoach-quan-tri-thuong-hieu",
+  "title": "Lập kế hoạch quản trị thương hiệu",
+  "description": "Dùng khi đơn vị phụ trách truyền thông lập kế hoạch quản trị thương hiệu năm hoặc quý, hoặc củng cố hình ảnh sau sự kiện, chiến dịch lớn: định vị, bộ nhận diện, giám sát hình ảnh, xử lý khủng hoảng truyền thông.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-ke-hoach-quan-tri-thuong-hieu",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "muc_tieu",
+   "dinh_vi",
+   "doi_tuong"
+  ],
+  "n_steps": 8,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-tt-ke-hoach-to-chuc-su-kien",
+  "title": "Kế hoạch tổ chức sự kiện",
+  "description": "Dùng khi bất kỳ đơn vị nào tổ chức hội nghị, hội thảo, lễ khai giảng hoặc bế giảng, ngày hội việc làm, lễ kỷ niệm và cần kế hoạch: tiến độ lùi từ ngày diễn ra, phân công, kịch bản chi tiết, dự toán, báo cáo sau sự kiện.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-ke-hoach-to-chuc-su-kien",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh; đơn vị chủ trì sự kiện",
+  "required_inputs": [
+   "ten_su_kien",
+   "muc_tieu",
+   "quy_mo",
+   "thoi_gian",
+   "dia_diem"
+  ],
+  "n_steps": 6,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-tt-ke-hoach-truyen-thong-nam",
+  "title": "Kế hoạch truyền thông năm",
+  "description": "Dùng khi Phòng Truyền thông và Tuyển sinh lập hoặc điều chỉnh kế hoạch truyền thông năm học: mục tiêu, thông điệp, kênh, lịch chiến dịch theo đợt tuyển sinh và sự kiện, ngân sách, chỉ số đánh giá.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-ke-hoach-truyen-thong-nam",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "nam_hoc",
+   "muc_tieu",
+   "thong_diep_chu_dao",
+   "doi_tuong",
+   "kenh",
+   "chien_dich",
+   "kpi"
+  ],
+  "n_steps": 7,
+  "n_inputs": 8
+ },
+ {
+  "name": "vnuis-tt-kich-ban-khanh-tiet",
+  "title": "Xây dựng kịch bản lễ tân, khánh tiết",
+  "description": "Dùng khi Phòng TC&QT tổ chức lễ khai giảng, kỷ niệm, hội nghị hoặc đón đoàn khách và cần kịch bản lễ tân, khánh tiết: đón đại biểu, điều hành chương trình theo giờ, phân công hậu cần.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-kich-ban-khanh-tiet",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "ten_su_kien",
+   "thoi_gian",
+   "dia_diem",
+   "dai_bieu",
+   "chuong_trinh"
+  ],
+  "n_steps": 6,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-tt-kich-ban-video",
+  "title": "Kịch bản video truyền thông",
+  "description": "Dùng khi cần kịch bản video truyền thông theo từng cảnh (giới thiệu trường, ngành, quảng bá tuyển sinh, tóm tắt sự kiện, phỏng vấn, video ngắn TikTok/Reels): hình ảnh, lời thoại, âm thanh, thời lượng.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-kich-ban-video-truyen-thong",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "chu_de",
+   "dinh_dang",
+   "kenh",
+   "thong_diep"
+  ],
+  "n_steps": 5,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-tt-lap-lich-noi-dung",
+  "title": "Lịch nội dung truyền thông",
+  "description": "Dùng khi cần lên lịch đăng bài theo tuần hoặc tháng cho website, fanpage, TikTok, YouTube sao cho bám chiến dịch trong kế hoạch truyền thông năm: chủ đề, định dạng, kênh, người phụ trách.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-content-calendar-truyen-thong",
+  "format": "xlsx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "ky",
+   "chien_dich",
+   "kenh",
+   "tan_suat"
+  ],
+  "n_steps": 5,
+  "n_inputs": 6
+ },
+ {
+  "name": "vnuis-tt-phan-tich-chi-so-truyen-thong",
+  "title": "Phân tích chỉ số truyền thông",
+  "description": "Dùng khi có file số liệu xuất từ nhiều kênh (website, mạng xã hội, email) và Phòng Truyền thông và Tuyển sinh cần báo cáo tuần, tháng hoặc đánh giá chiến dịch: so theo kỳ, kênh, chiến dịch, nêu điểm bất thường.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-phan-tich-chi-so-truyen-thong",
+  "format": "xlsx",
+  "unit": "Phòng Truyền thông và Tuyển sinh",
+  "required_inputs": [
+   "file_chi_so",
+   "dinh_nghia_chi_so",
+   "ky_phan_tich"
+  ],
+  "n_steps": 4,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-tt-viet-bai-truyen-thong",
+  "title": "Bài viết truyền thông",
+  "description": "Dùng khi cần viết bài cho website, fanpage, bản tin: tin sự kiện, gương sinh viên, giảng viên tiêu biểu, giới thiệu ngành, thông tin tuyển sinh, thành tựu nghiên cứu, theo giọng thương hiệu của trường.",
+  "group": "tt",
+  "group_label": "Truyền thông, thương hiệu, sự kiện",
+  "previous_name": "vnuis-bai-viet-truyen-thong",
+  "format": "docx",
+  "unit": "Phòng Truyền thông và Tuyển sinh (website, mạng xã hội, bản tin)",
+  "required_inputs": [
+   "chu_de",
+   "dinh_dang",
+   "kenh",
+   "thong_tin",
+   "muc_dich"
+  ],
+  "n_steps": 4,
+  "n_inputs": 7
+ },
+ {
+  "name": "vnuis-vp-bao-cao-tong-ket-nam-hoc-toan-truong",
+  "title": "Soạn báo cáo tổng kết năm học toàn trường",
+  "description": "Dùng khi Văn phòng tổng hợp báo cáo tổng kết năm học toàn trường từ báo cáo các phòng ban, khoa để trình Hội nghị cán bộ viên chức, cơ quan chủ quản, Bộ GD&ĐT.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-bao-cao-tong-ket-nam-truong",
+  "format": "docx",
+  "unit": "Ban Giám hiệu; Phòng Tổ chức và Quản trị (tổng hợp)",
+  "required_inputs": [
+   "nam_hoc",
+   "bao_cao_don_vi"
+  ],
+  "n_steps": 7,
+  "n_inputs": 3
+ },
+ {
+  "name": "vnuis-vp-bao-cao-tong-ket-van-phong",
+  "title": "Soạn báo cáo tổng kết công tác văn phòng",
+  "description": "Dùng khi Phòng TC&QT (văn phòng – văn thư) tổng kết công tác văn phòng theo quý, 6 tháng, năm hoặc báo cáo chuyên đề về văn thư, cải cách hành chính.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-bao-cao-tong-ket-vp",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (hành chính, văn thư, lưu trữ, thi đua)",
+  "required_inputs": [
+   "ky_bao_cao",
+   "so_lieu"
+  ],
+  "n_steps": 6,
+  "n_inputs": 3
+ },
+ {
+  "name": "vnuis-vp-chuan-bi-hop-theo-doi-nhiem-vu",
+  "title": "Chuẩn bị họp và theo dõi nhiệm vụ",
+  "description": "Dùng trước họp khi cần tóm tắt chồng tài liệu thành chương trình họp ngắn, hoặc sau họp khi cần trích kết luận, tách đầu việc có người phụ trách và hạn, theo dõi đến khi xong.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-chuan-bi-hop-va-action-tracker",
+  "format": "xlsx",
+  "unit": "Phòng Tổ chức và Quản trị (họp, sự kiện); mọi đơn vị tổ chức họp",
+  "required_inputs": [
+   "loai_hop",
+   "agenda",
+   "tai_lieu_hop",
+   "bien_ban_hoac_ghi_chep"
+  ],
+  "n_steps": 7,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-vp-hop-nhat-bao-cao-don-vi",
+  "title": "Hợp nhất báo cáo nhiều đơn vị",
+  "description": "Dùng khi nhiều khoa, phòng, trung tâm nộp báo cáo rời rạc, mẫu không thống nhất và cần hợp nhất thành một báo cáo chung của trường (3 công khai, kiểm định, tổng kết năm học, báo cáo đột xuất), kèm nguồn từng con số.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-hop-nhat-bao-cao-don-vi",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị (tổng hợp); 4 phòng, 6 khoa, Viện, Hội đồng (nộp báo cáo)",
+  "required_inputs": [
+   "mau_bao_cao_chung",
+   "bao_cao_don_vi",
+   "dinh_nghia_chi_tieu",
+   "ky_bao_cao"
+  ],
+  "n_steps": 7,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-vp-ke-hoach-nam-hoc-toan-truong",
+  "title": "Lập kế hoạch năm học toàn trường",
+  "description": "Dùng trước năm học mới (hoặc khi điều chỉnh giữa năm) khi Văn phòng tổng hợp kế hoạch của các đơn vị thành kế hoạch năm học toàn trường: nhiệm vụ trọng tâm, chỉ tiêu, phân công, tiến độ.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-ke-hoach-nam-hoc-truong",
+  "format": "docx",
+  "unit": "Ban Giám hiệu; Phòng Tổ chức và Quản trị (tổng hợp)",
+  "required_inputs": [
+   "nam_hoc",
+   "nhiem_vu_trong_tam",
+   "ke_hoach_don_vi"
+  ],
+  "n_steps": 6,
+  "n_inputs": 4
+ },
+ {
+  "name": "vnuis-vp-lap-lich-cong-tac-tuan",
+  "title": "Lập lịch công tác tuần",
+  "description": "Dùng cuối mỗi tuần khi Văn phòng tổng hợp đầu việc các đơn vị gửi về thành lịch công tác tuần sau của Ban Giám hiệu để ban hành toàn trường.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-lap-lich-cong-tac-tuan",
+  "format": "xlsx",
+  "unit": "Mọi đơn vị trong Trường; Văn phòng (TC&QT) hợp nhất",
+  "required_inputs": [
+   "tuan",
+   "dau_viec"
+  ],
+  "n_steps": 7,
+  "n_inputs": 2
+ },
+ {
+  "name": "vnuis-vp-lap-phieu-trinh-ky",
+  "title": "Lập phiếu trình ký",
+  "description": "Dùng khi đơn vị trình văn bản, hồ sơ (quyết định, kế hoạch, báo cáo, tờ trình, hợp đồng) lên Hiệu trưởng hoặc Phó Hiệu trưởng ký duyệt và cần phiếu trình ký: tóm tắt, ý kiến đề xuất, phần ý kiến lãnh đạo.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-phieu-trinh-ky",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường; Văn phòng (TC&QT)",
+  "required_inputs": [
+   "van_ban_trinh",
+   "don_vi_soan",
+   "tom_tat",
+   "de_xuat"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-vp-quan-ly-so-van-ban-di-den",
+  "title": "Quản lý sổ văn bản đi / đến",
+  "description": "Dùng khi Phòng TC&QT (văn phòng – văn thư) lập sổ văn bản đi, văn bản đến hoặc xây dựng, chuẩn hóa quy trình xử lý văn bản: tiếp nhận, đăng ký, trình, theo dõi, lưu trữ.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-so-van-ban-di-den",
+  "format": "xlsx",
+  "unit": "Phòng Tổ chức và Quản trị (văn thư – lưu trữ); các đơn vị nhận văn bản",
+  "required_inputs": [
+   "loai_so",
+   "don_vi",
+   "nam"
+  ],
+  "n_steps": 8,
+  "n_inputs": 3
+ },
+ {
+  "name": "vnuis-vp-ra-soat-du-thao-van-ban",
+  "title": "Rà soát dự thảo văn bản",
+  "description": "Dùng trước khi trình lãnh đạo ký bất kỳ văn bản nào (công văn, tờ trình, quyết định, thông báo, kế hoạch, báo cáo) để kiểm tra thể thức Nghị định 30/2020/NĐ-CP, logic, thuật ngữ, số liệu. Dùng chung mọi đơn vị.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-ra-soat-du-thao-van-ban",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường; Phòng Tổ chức và Quản trị (văn thư, pháp chế)",
+  "required_inputs": [
+   "loai_van_ban",
+   "du_thao"
+  ],
+  "n_steps": 7,
+  "n_inputs": 5
+ },
+ {
+  "name": "vnuis-vp-soan-bien-ban-hop",
+  "title": "Soạn biên bản cuộc họp",
+  "description": "Dùng sau mỗi cuộc họp, hội nghị, phiên họp hội đồng (giao ban, hội đồng, họp đơn vị) khi cần lập biên bản ghi nhận thành phần, diễn biến, kết luận từ ghi chép.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-soan-bien-ban-hop",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường",
+  "required_inputs": [
+   "ten_cuoc_hop",
+   "thoi_gian",
+   "dia_diem",
+   "chu_tri",
+   "thu_ky",
+   "thanh_phan",
+   "noi_dung",
+   "ket_luan",
+   "noi_nhan"
+  ],
+  "n_steps": 7,
+  "n_inputs": 13
+ },
+ {
+  "name": "vnuis-vp-soan-cong-van",
+  "title": "Soạn công văn đi",
+  "description": "Dùng khi cần ban hành công văn đi đúng thể thức Nghị định 30/2020/NĐ-CP: phúc đáp, đề nghị phối hợp, thông báo, giải trình với cơ quan ngoài trường hoặc giữa các đơn vị trong trường.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-soan-cong-van",
+  "format": "docx",
+  "unit": "Phòng Tổ chức và Quản trị; mọi đơn vị cần phát hành công văn",
+  "required_inputs": [
+   "loai_cong_van",
+   "trich_yeu",
+   "noi_dung",
+   "noi_nhan",
+   "nguoi_ky"
+  ],
+  "n_steps": 7,
+  "n_inputs": 11
+ },
+ {
+  "name": "vnuis-vp-soan-giay-moi",
+  "title": "Soạn giấy mời",
+  "description": "Dùng khi đơn vị tổ chức họp, hội nghị, hội thảo, lễ khai giảng, bế giảng, kỷ niệm và cần giấy mời trang trọng gửi đại biểu, khách mời: thành phần, thời gian, địa điểm, chương trình.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-soan-giay-moi",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường; Phòng Truyền thông và Tuyển sinh (sự kiện)",
+  "required_inputs": [
+   "su_kien",
+   "thoi_gian",
+   "dia_diem",
+   "thanh_phan",
+   "don_vi_moi",
+   "noi_nhan"
+  ],
+  "n_steps": 6,
+  "n_inputs": 13
+ },
+ {
+  "name": "vnuis-vp-soan-ke-hoach-cong-tac",
+  "title": "Soạn kế hoạch công tác",
+  "description": "Dùng khi phòng, khoa lập kế hoạch công tác tháng, quý, năm hoặc kế hoạch triển khai một nhiệm vụ, đợt công tác cụ thể: mục đích, nhiệm vụ, phân công, thời gian, kinh phí.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-soan-ke-hoach-ct",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường",
+  "required_inputs": [
+   "don_vi",
+   "thoi_gian",
+   "muc_tieu",
+   "nhiem_vu",
+   "noi_nhan",
+   "nguoi_ky"
+  ],
+  "n_steps": 7,
+  "n_inputs": 11
+ },
+ {
+  "name": "vnuis-vp-soan-quyet-dinh-hanh-chinh",
+  "title": "Soạn quyết định hành chính",
+  "description": "Dùng khi Hiệu trưởng hoặc cấp có thẩm quyền ban hành quyết định cá biệt: thành lập, giải thể đơn vị, ban hành quy chế, điều động, bổ nhiệm, khen thưởng hoặc kỷ luật sinh viên, phê duyệt kế hoạch, đề án.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-soan-quyet-dinh-hc",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường; Phòng Tổ chức và Quản trị",
+  "required_inputs": [
+   "loai_quyet_dinh",
+   "can_cu",
+   "noi_dung",
+   "nguoi_ky",
+   "noi_nhan"
+  ],
+  "n_steps": 7,
+  "n_inputs": 10
+ },
+ {
+  "name": "vnuis-vp-soan-thong-bao",
+  "title": "Soạn thông báo",
+  "description": "Dùng khi cần thông tin chính thức tới toàn trường hoặc một nhóm đối tượng: lịch nghỉ, triệu tập họp, quy định mới, học bổng, tuyển dụng, kết quả; ngắn gọn, rõ đối tượng và thời hạn.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-soan-thong-bao",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường; Phòng Tổ chức và Quản trị rà thể thức",
+  "required_inputs": [
+   "tieu_de",
+   "doi_tuong",
+   "noi_dung",
+   "don_vi_ban_hanh",
+   "nguoi_ky",
+   "noi_nhan"
+  ],
+  "n_steps": 7,
+  "n_inputs": 11
+ },
+ {
+  "name": "vnuis-vp-soan-to-trinh",
+  "title": "Soạn tờ trình",
+  "description": "Dùng khi đơn vị hoặc cá nhân cần xin chủ trương, phê duyệt từ Ban Giám hiệu hoặc cấp trên trước khi triển khai: mở ngành, tổ chức sự kiện, mua sắm, cử đi công tác, ban hành văn bản.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-soan-to-trinh",
+  "format": "docx",
+  "unit": "Mọi đơn vị trong Trường; gửi Ban Giám hiệu hoặc ĐHQGHN",
+  "required_inputs": [
+   "ten_to_trinh",
+   "kinh_gui",
+   "don_vi_trinh",
+   "can_cu",
+   "noi_dung_de_xuat",
+   "kien_nghi",
+   "noi_nhan",
+   "nguoi_ky"
+  ],
+  "n_steps": 7,
+  "n_inputs": 13
+ },
+ {
+  "name": "vnuis-vp-tom-tat-trinh-lanh-dao",
+  "title": "Tóm tắt trình lãnh đạo",
+  "description": "Dùng khi lãnh đạo cần nắm nhanh một vấn đề phức tạp từ nhiều nguồn (báo cáo, tờ trình, số liệu) để ra quyết định: bản tóm tắt 1–2 trang kèm bảng vấn đề cần quyết định.",
+  "group": "vp",
+  "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+  "previous_name": "vnuis-executive-brief-trinh-lanh-dao",
+  "format": "docx",
+  "unit": "Ban Giám hiệu và người trình báo; mọi đơn vị",
+  "required_inputs": [
+   "van_de",
+   "nguon_tai_lieu",
+   "tieu_chi_quyet_dinh"
+  ],
+  "n_steps": 6,
+  "n_inputs": 5
+ }
+]

@@ -1,0 +1,4 @@
+interface:
+  display_name: Công tác SV · Lập phiếu đánh giá kết quả rèn luyện sinh viên + hướng dẫn chấm – VNU-IS
+  short_description: Hỗ trợ lập phiếu đánh giá kết quả rèn luyện sinh viên + hướng dẫ
+  default_prompt: 'Hãy dùng $vnuis-ctsv-lap-phieu-danh-gia-ren-luyen để hỗ trợ công việc: Lập phiếu đánh giá kết quả rèn luyện sinh viên + hướng dẫn chấm; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

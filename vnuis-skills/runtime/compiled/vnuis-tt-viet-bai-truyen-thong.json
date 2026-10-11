@@ -1,0 +1,169 @@
+{
+ "name": "vnuis-tt-viet-bai-truyen-thong",
+ "title": "Bài viết truyền thông",
+ "description": "Dùng khi cần viết bài cho website, fanpage, bản tin: tin sự kiện, gương sinh viên, giảng viên tiêu biểu, giới thiệu ngành, thông tin tuyển sinh, thành tựu nghiên cứu, theo giọng thương hiệu của trường.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-bai-viet-truyen-thong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh (website, mạng xã hội, bản tin)",
+ "when": "Khi cần bài viết cho website, fanpage, bản tin: tin sự kiện, gương sinh viên/giảng viên tiêu biểu,\ngiới thiệu ngành học, thông tin tuyển sinh, thành tựu nghiên cứu.",
+ "inputs": [
+  {
+   "key": "chu_de",
+   "desc": "Chủ đề bài viết",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dinh_dang",
+   "desc": "Tin ngắn / bài phỏng vấn / bài giới thiệu / bài PR",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kenh",
+   "desc": "Website / fanpage (quyết định độ dài, giọng văn)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thong_tin",
+   "desc": "Facts đầu vào: sự kiện, nhân vật, số liệu, trích dẫn (dạng gạch đầu dòng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_dich",
+   "desc": "Thông tin / tuyển sinh / xây dựng thương hiệu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "do_dai",
+   "desc": "Số từ mong muốn (website 600–900, fanpage 150–300)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "cta",
+   "desc": "Lời kêu gọi hành động cuối bài (đăng ký tư vấn, xem thêm...)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh (website, mạng xã hội, bản tin)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định góc viết và cấu trúc",
+   "lam_gi": "chọn góc viết phù hợp brand voice (trẻ trung + học thuật) và mục đích bài (thông tin / tuyển sinh / xây dựng thương hiệu); dựng cấu trúc: tiêu đề thu hút → mở bài (hook) → thân bài (facts sắp xếp theo logic) → kết + lời kêu gọi hành động.",
+   "inputs": [
+    "chu_de",
+    "dinh_dang",
+    "muc_dich",
+    "kenh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo, lập bảng biểu, định dạng",
+   "luu_y": "góc viết phải phục vụ đúng mục đích; fanpage ưu tiên cảm xúc và hook nhanh, website ưu tiên đầy đủ 5W1H.",
+   "ket_qua": "Dàn ý bài viết (góc viết + cấu trúc các phần)."
+  },
+  {
+   "n": 2,
+   "title": "Viết bản thảo",
+   "lam_gi": "viết bài theo dàn ý: câu ngắn, đoạn ngắn cho fanpage (150–300 từ); đầy đủ 5W1H cho website (600–900 từ); trích dẫn giữ nguyên văn lời nhân vật; chèn lời kêu gọi hành động cuối bài.",
+   "inputs": [
+    "thong_tin",
+    "do_dai",
+    "cta",
+    "kenh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "không thêm số liệu, thành tích, trích dẫn ngoài input; không dùng từ ngữ tuyệt đối hóa (\"nhất\", \"duy nhất\") khi chưa có căn cứ; không so sánh với trường khác.",
+   "ket_qua": "Bản thảo bài viết."
+  },
+  {
+   "n": 3,
+   "title": "Kiểm chứng facts",
+   "lam_gi": "đối chiếu từng tên người/chức danh/số liệu/ngày tháng/trích dẫn trong bản thảo với nguồn đầu vào; fact nào thiếu nguồn thì đánh dấu [cần xác minh] hoặc loại bỏ; lập danh mục kiểm chứng.",
+   "inputs": [
+    "thong_tin"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "trích dẫn phải được nhân vật xác nhận; ảnh phải được đồng ý sử dụng; mọi số liệu tuyển sinh phải khớp với đề án tuyển sinh đã ban hành.",
+   "ket_qua": "Danh mục kiểm chứng facts (từng fact: đã có nguồn / cần xác minh)."
+  },
+  {
+   "n": 4,
+   "title": "Rà soát và hoàn thiện",
+   "lam_gi": "rà soát bản thảo theo danh mục kiểm: loại bỏ fact chưa xác minh (hoặc giữ dấu [cần xác minh]), kiểm tra brand voice, chính tả, hashtag/lời kêu gọi hành động; hoàn thiện bài viết cuối cùng; danh mục kiểm chỉ dùng nội bộ.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "không trình duyệt/bàn giao bài khi còn fact [cần xác minh] liên quan đến số liệu hoặc trích dẫn quan trọng.",
+   "ket_qua": "Bài viết hoàn chỉnh + danh mục kiểm chứng facts."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Bài viết hoàn chỉnh theo độ dài kênh",
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Góc viết phải phục vụ đúng mục đích",
+  "Không thêm số liệu, thành tích, trích dẫn ngoài input > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Biên tập viên kiểm chứng facts theo danh mục kiểm trước khi trình.",
+  "Trưởng phòng duyệt bài cuối cùng trước khi đăng.",
+  "Nhân vật trong bài phải xác nhận trích dẫn và đồng ý sử dụng hình ảnh."
+ ],
+ "guardrails": [
+  "Không bịa số liệu, thành tích, trích dẫn.",
+  "Không tự đăng bài lên bất kỳ kênh nào.",
+  "Không dùng hình ảnh chưa được nhân vật đồng ý hoặc không rõ bản quyền.",
+  "Không dùng ngôn từ tuyệt đối hóa, so sánh thiếu căn cứ với trường khác."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Tin về hội thảo, hợp tác, nghiên cứu: ghi đúng tên đơn vị đối tác, tên sự kiện, ngày; không thêm trích dẫn phát biểu mà người dùng không cung cấp.",
+  "Con số về xếp hạng, việc làm, người học chỉ đưa vào khi có nguồn Phòng xác nhận.",
+  "Ảnh, video có người: xác nhận đã được đồng ý sử dụng.",
+  "Guideline thương hiệu của Trường do người dùng nạp; chưa có thì dùng văn phong trung tính."
+ ],
+ "cho_xac_nhan": [
+  "Guideline thương hiệu và mẫu bài tiêu biểu (C8).",
+  "Quy trình duyệt bài trước khi đăng (C6)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "Bài đăng: tiêu đề; mở bài; nội dung đã xác minh; kết bài và lời kêu gọi phù hợp; hashtag nếu kênh yêu cầu. Không xuất danh mục kiểm chứng, ghi chú AI hoặc danh sách nguồn chưa xác minh.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh (website, mạng xã hội, bản tin). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-viet-bai-truyen-thong/references"
+}

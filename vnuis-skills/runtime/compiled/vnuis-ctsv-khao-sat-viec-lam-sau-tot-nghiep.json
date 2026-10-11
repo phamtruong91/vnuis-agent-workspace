@@ -1,0 +1,206 @@
+{
+ "name": "vnuis-ctsv-khao-sat-viec-lam-sau-tot-nghiep",
+ "title": "Khảo sát tình trạng việc làm sinh viên sau tốt nghiệp",
+ "description": "Dùng khi cần khảo sát cựu sinh viên sau 6–12 tháng ra trường (đã có việc làm chưa, đúng ngành không, thu nhập, thời gian tìm việc): thiết kế phiếu và báo cáo kết quả theo khóa tốt nghiệp.",
+ "group": "ctsv",
+ "group_label": "Công tác sinh viên",
+ "previous_name": "vnuis-khao-sat-viec-lam-sv-tot-nghiep",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (công tác sinh viên); Phòng TT&TS (kết nối việc làm)",
+ "when": "Khi Phòng Đào tạo (công tác sinh viên) (hoặc bộ phận hỗ trợ sinh viên) cần:\n- Thiết kế phiếu khảo sát tình trạng việc làm của sinh viên đã tốt nghiệp (thường theo khóa tốt nghiệp năm N, khảo sát sau 6–12 tháng);\n- Thu thập, tổng hợp và phân tích kết quả khảo sát;\n- Lập báo cáo phân tích phục vụ báo cáo năm học, kiểm định chất lượng chương trình đào tạo, cải tiến công tác hỗ trợ việc làm.",
+ "inputs": [
+  {
+   "key": "khoa_tot_nghiep",
+   "desc": "Năm tốt nghiệp của đối tượng khảo sát (ví dụ: 2025)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_diem_khao_sat",
+   "desc": "Thời điểm khảo sát so với tốt nghiệp (sau 6 tháng / sau 12 tháng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tong_sv_tn",
+   "desc": "Tổng số sinh viên tốt nghiệp của khóa",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nganh_dao_tao",
+   "desc": "Danh sách ngành đào tạo cần khảo sát (hoặc \"toàn trường\")",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kenh_thu_thap",
+   "desc": "Hình thức thu thập: biểu mẫu trực tuyến / điện thoại / trực tiếp / kết hợp",
+   "required": false,
+   "note": "Không (mặc định: biểu mẫu trực tuyến + điện thoại)"
+  },
+  {
+   "key": "so_cau_hoi",
+   "desc": "Số câu hỏi của phiếu khảo sát",
+   "required": false,
+   "note": "Không (mặc định: 8–10)"
+  },
+  {
+   "key": "don_vi_bao_cao",
+   "desc": "Đơn vị trình báo cáo (ví dụ: Phòng Đào tạo (công tác sinh viên) trình Ban Giám hiệu)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (công tác sinh viên); Phòng TT&TS (kết nối việc làm)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Cổng sinh viên; cổng việc làm; tra cứu văn bằng. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026: Yêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định đối tượng và phạm vi khảo sát",
+   "lam_gi": "chốt khóa tốt nghiệp năm N, toàn bộ sinh viên tốt nghiệp các ngành đào tạo (hoặc danh sách ngành cụ thể); xác định thời điểm khảo sát (sau 6 tháng và/hoặc sau 12 tháng tốt nghiệp).",
+   "inputs": [
+    "khoa_tot_nghiep",
+    "thoi_diem_khao_sat",
+    "tong_sv_tn",
+    "nganh_dao_tao"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn khung dự thảo",
+   "luu_y": "khảo sát sau 12 tháng cho số liệu việc làm ổn định hơn sau 6 tháng; phạm vi phải bao phủ đủ các ngành để so sánh được với nhau.",
+   "ket_qua": "khung đối tượng và phạm vi khảo sát đã chốt."
+  },
+  {
+   "n": 2,
+   "title": "Chuẩn bị danh sách liên lạc",
+   "lam_gi": "trích xuất họ tên, ngành đào tạo, số điện thoại, email của sinh viên khóa tốt nghiệp từ phần mềm quản lý đào tạo; rà soát, cập nhật thông tin liên hệ (loại bỏ trùng lặp, số không liên lạc được).",
+   "inputs": [
+    "tong_sv_tn",
+    "nganh_dao_tao"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: rà soát kỹ thuật, tổng hợp và lưu trữ hồ sơ",
+   "luu_y": "bảo mật thông tin cá nhân; danh sách là cơ sở tính tỷ lệ phản hồi nên phải chính xác.",
+   "ket_qua": "danh sách liên lạc sinh viên tốt nghiệp đã rà soát, cập nhật."
+  },
+  {
+   "n": 3,
+   "title": "Thiết kế phiếu khảo sát",
+   "lam_gi": "thiết kế phiếu 8–10 câu hỏi, đảm bảo đủ 5 nhóm nội dung bắt buộc: (a) tình trạng việc làm hiện tại (đã có việc làm / đang tìm việc / đang học tiếp / chưa tìm việc); (b) mức độ phù hợp với ngành đào tạo (đúng ngành / gần ngành / trái ngành); (c) mức thu nhập hiện tại theo khoảng; (d) thời gian tìm được việc làm đầu tiên sau tốt nghiệp; (e) đánh giá chương trình đào tạo và đề xuất cải tiến (mức độ trang bị kiến thức/kỹ năng, hỗ trợ của nhà trường); kèm phần thông tin người trả lời.",
+   "inputs": [
+    "so_cau_hoi",
+    "thoi_diem_khao_sat"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo phiếu khảo sát đủ 5 nhóm nội dung bắt buộc",
+   "luu_y": "câu hỏi đóng là chính để dễ tổng hợp; câu hỏi mở chỉ dành cho đề xuất cải tiến; thử nghiệm phiếu với 10–20 người trước khi phát hành chính thức.",
+   "ket_qua": "phiếu khảo sát mẫu hoàn chỉnh (kèm phần thông tin người trả lời)."
+  },
+  {
+   "n": 4,
+   "title": "Triển khai thu thập và nhắc nhở",
+   "lam_gi": "gửi phiếu qua email/zalo/SMS theo `kenh_thu_thap`; gọi điện thoại nhắc nhở đối tượng chưa trả lời theo đợt; theo dõi tỷ lệ phản hồi hằng ngày.",
+   "inputs": [
+    "kenh_thu_thap"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: tổng hợp và đối chiếu dữ liệu thu thập được",
+   "luu_y": "đặt chỉ tiêu tỷ lệ phản hồi tối thiểu 70%; nếu chưa đạt thì tiếp tục nhắc nhở, mở rộng kênh (gọi điện trực tiếp) trước khi chốt dữ liệu.",
+   "ket_qua": "tập dữ liệu phản hồi hợp lệ (đạt tối thiểu 70% tổng số SV tốt nghiệp)."
+  },
+  {
+   "n": 5,
+   "title": "Tổng hợp và phân tích số liệu",
+   "lam_gi": "tính tỷ lệ có việc làm sau 6–12 tháng = số có việc làm / số trả lời; tính tỷ lệ đúng ngành (đúng ngành + gần ngành) theo từng ngành đào tạo; tính thu nhập bình quân (lấy điểm giữa các khoảng) và phân bố theo khoảng; thống kê thời gian tìm việc (dưới 1 tháng, 1–3 tháng, 3–6 tháng, trên 6 tháng); tổng hợp ý kiến đánh giá và đề xuất cải tiến theo nhóm chủ đề.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: tính toán, đối chiếu và tổng hợp số liệu phân tích",
+   "luu_y": "loại phiếu trả lời không hợp lệ (thiếu thông tin bắt buộc) trước khi tính; công thức tính phải thống nhất với các năm trước để so sánh được.",
+   "ket_qua": "bộ bảng phân tích (tỷ lệ việc làm, đúng ngành, thu nhập, thời gian tìm việc, ý kiến theo nhóm chủ đề)."
+  },
+  {
+   "n": 6,
+   "title": "Soạn báo cáo phân tích",
+   "lam_gi": "trình bày số liệu theo bảng/biểu đồ; so sánh với năm trước (nếu có); viết nhận xét, đánh giá ưu điểm/hạn chế; đề xuất cải tiến công tác đào tạo và hỗ trợ việc làm.",
+   "inputs": [
+    "don_vi_bao_cao"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "chỉ công bố số liệu tổng hợp, bảo mật thông tin cá nhân người trả lời; nhận xét phải gắn với số liệu cụ thể.",
+   "ket_qua": "báo cáo phân tích tình trạng việc làm hoàn chỉnh."
+  },
+  {
+   "n": 7,
+   "title": "Lưu trữ hồ sơ",
+   "lam_gi": "lưu phiếu khảo sát, dữ liệu gốc và báo cáo vào hồ sơ công tác sinh viên năm học theo quy định lưu trữ.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: rà soát kỹ thuật, tổng hợp và lưu trữ hồ sơ",
+   "luu_y": "dữ liệu gốc phải lưu để phục vụ kiểm định chất lượng và đối chiếu các năm sau.",
+   "ket_qua": "hồ sơ khảo sát việc làm đã lưu trữ đầy đủ (phiếu, dữ liệu gốc, báo cáo)."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Khóa tốt nghiệp, thời điểm khảo sát, tổng số sinh viên, ngành đào tạo trong output khớp với Input đã cho.",
+  "Không bịa đặt số liệu; các tỷ lệ được tính từ tập dữ liệu phản hồi hợp lệ (đã loại phiếu không hợp lệ trước khi tính).",
+  "Đúng định dạng: phiếu 8–10 câu hỏi, câu hỏi đóng là chính, câu mở chỉ dành cho đề xuất cải tiến.",
+  "Căn cứ (văn bản hiện hành nêu tại phap-ly.md) còn hiệu lực; bảo mật thông tin cá nhân, chỉ công bố số liệu tổng hợp.",
+  "Đã qua Human gate: báo cáo được đơn vị phụ trách duyệt trước khi trình Ban Giám hiệu.",
+  "Tỷ lệ phản hồi tối thiểu 70% tổng số sinh viên tốt nghiệp; công thức tính thống nhất với các năm trước để so sánh được.",
+  "Nhận xét gắn với số liệu cụ thể; đề xuất cải tiến gắn với ý kiến người trả lời theo nhóm chủ đề."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Sinh viên chương trình liên kết hoặc quốc tế có thể làm việc ở nước ngoài: thêm lựa chọn phù hợp trong phiếu khảo sát.",
+  "Tỷ lệ có việc làm chỉ nêu khi cỡ mẫu đủ và có cách tính được duyệt; không công bố từ số tự khai nhỏ."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu và thời điểm khảo sát việc làm (C8).",
+  "Kênh liên hệ cựu sinh viên (C5)."
+ ],
+ "output_structure": [
+  "Tiêu đề phiếu: \"PHIẾU KHẢO SÁT TÌNH TRẠNG VIỆC LÀM SINH VIÊN TỐT NGHIỆP\" + ghi chú đối tượng (khóa tốt nghiệp, thời điểm khảo sát).",
+  "Phần I. Thông tin chung: họ tên, năm sinh, số điện thoại, ngành đào tạo, lớp, năm tốt nghiệp, xếp loại tốt nghiệp.",
+  "Phần II. Tình trạng việc làm: (a) tình trạng hiện tại; (b) mức độ phù hợp với ngành đào tạo; (c) thu nhập hiện tại theo khoảng; (d) thời gian tìm được việc làm đầu tiên; (e) kênh tìm việc; (f) đánh giá mức độ trang bị của chương trình đào tạo (thang điểm); (g) đề xuất cải tiến. B. Báo cáo phân tích:",
+  "Tiêu đề báo cáo + kỳ khảo sát (khóa tốt nghiệp, thời điểm sau tốt nghiệp).",
+  "Thông tin chung: tổng số SV tốt nghiệp, số phiếu thu về hợp lệ, tỷ lệ phản hồi.",
+  "Tình trạng việc làm (bảng số lượng, tỷ lệ).",
+  "Mức độ phù hợp với ngành đào tạo (bảng số lượng, tỷ lệ).",
+  "Thu nhập bình quân + phân bố theo khoảng.",
+  "Thời gian tìm việc (bảng + nhận xét).",
+  "Đánh giá chương trình đào tạo.",
+  "Đề xuất cải tiến."
+ ],
+ "output_structure_raw": "A. Phiếu khảo sát mẫu:\n\n1. Tiêu đề phiếu: \"PHIẾU KHẢO SÁT TÌNH TRẠNG VIỆC LÀM SINH VIÊN TỐT NGHIỆP\" + ghi chú đối\n   tượng (khóa tốt nghiệp, thời điểm khảo sát).\n\n2. Phần I. Thông tin chung: họ tên, năm sinh, số điện thoại, ngành đào tạo, lớp, năm tốt\n   nghiệp, xếp loại tốt nghiệp.\n\n3. Phần II. Tình trạng việc làm: (a) tình trạng hiện tại; (b) mức độ phù hợp với ngành đào\n   tạo; (c) thu nhập hiện tại theo khoảng; (d) thời gian tìm được việc làm đầu tiên; (e) kênh\n   tìm việc; (f) đánh giá mức độ trang bị của chương trình đào tạo (thang điểm); (g) đề xuất\n   cải tiến.\nB. Báo cáo phân tích:\n\n1. Tiêu đề báo cáo + kỳ khảo sát (khóa tốt nghiệp, thời điểm sau tốt nghiệp).\n\n2. Thông tin chung: tổng số SV tốt nghiệp, số phiếu thu về hợp lệ, tỷ lệ phản hồi.\n\n3. Tình trạng việc làm (bảng số lượng, tỷ lệ).\n\n4. Mức độ phù hợp với ngành đào tạo (bảng số lượng, tỷ lệ).\n\n5. Thu nhập bình quân + phân bố theo khoảng.\n\n6. Thời gian tìm việc (bảng + nhận xét).\n\n7. Đánh giá chương trình đào tạo.\n\n8. Đề xuất cải tiến.",
+ "human_gate_check": "Đã qua Human gate: báo cáo được đơn vị phụ trách duyệt trước khi trình Ban Giám hiệu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (công tác sinh viên). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026\n\nNguồn: https://congbao.cdnchinhphu.vn/180507251028987904/2026/4/24/469367-1777014846_v1_1777018480_signed.pdf\n\nYêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n",
+ "outputs_dir": "skills/vnuis-ctsv-khao-sat-viec-lam-sau-tot-nghiep/references"
+}

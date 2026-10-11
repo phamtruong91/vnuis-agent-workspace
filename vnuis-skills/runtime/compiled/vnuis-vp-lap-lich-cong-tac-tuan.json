@@ -1,0 +1,164 @@
+{
+ "name": "vnuis-vp-lap-lich-cong-tac-tuan",
+ "title": "Lập lịch công tác tuần",
+ "description": "Dùng cuối mỗi tuần khi Văn phòng tổng hợp đầu việc các đơn vị gửi về thành lịch công tác tuần sau của Ban Giám hiệu để ban hành toàn trường.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-lap-lich-cong-tac-tuan",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường; Văn phòng (TC&QT) hợp nhất",
+ "when": "Cuối mỗi tuần, Văn phòng tổng hợp đầu việc của các đơn vị thành lịch công tác tuần tiếp theo\ncủa Ban Giám hiệu, ban hành cho toàn trường.",
+ "inputs": [
+  {
+   "key": "tuan",
+   "desc": "Tuần thứ mấy, từ ngày–đến ngày",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dau_viec",
+   "desc": "Danh sách đầu việc, mỗi đầu việc gồm: thứ/ngày, giờ, nội dung, địa điểm, thành phần tham dự, đơn vị chủ trì, lãnh đạo chủ trì/dự",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường; Văn phòng (TC&QT) hợp nhất"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập đầu việc từ các đơn vị",
+   "lam_gi": "Nhận danh sách đầu việc các phòng/khoa gửi về (qua email/biểu mẫu) cho tuần trong `tuan`; kiểm tra đơn vị nào chưa gửi thì đôn đốc; ghi nhận thời điểm chốt nhận (thường trước 16h00 thứ Sáu) để làm căn cứ từ chối đầu việc gửi muộn.",
+   "inputs": [
+    "tuan",
+    "dau_viec"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Đầu việc gửi sau giờ chốt chỉ đưa vào lịch khi có xác nhận của Chánh Văn phòng; lưu lại bản gốc đầu việc từng đơn vị gửi để đối chiếu khi có khiếu nại.",
+   "ket_qua": "Danh sách đầu việc thô đã tập hợp đủ từ các đơn vị."
+  },
+  {
+   "n": 2,
+   "title": "Chuẩn hóa mỗi đầu việc đủ 6 yếu tố",
+   "lam_gi": "Với từng đầu việc, kiểm tra và bổ sung cho đủ 6 yếu tố: (1) thứ/ngày, (2) giờ, (3) nội dung, (4) địa điểm, (5) thành phần tham dự, (6) đơn vị chủ trì + lãnh đạo chủ trì/dự; đầu việc thiếu yếu tố nào thì trả về đơn vị bổ sung; chuẩn hóa cách ghi (giờ dạng \"08h00\", ngày dạng \"12/10\").",
+   "inputs": [
+    "dau_viec"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Bẫy thường gặp — thiếu \"lãnh đạo dự\" (không biết xếp lịch cho ai), thiếu địa điểm, nội dung ghi chung chung (\"họp triển khai công việc\" mà không rõ việc gì); không tự suy đoán bổ sung thông tin thiếu.",
+   "ket_qua": "Danh sách đầu việc đã chuẩn hóa, mỗi đầu việc đủ 6 yếu tố."
+  },
+  {
+   "n": 3,
+   "title": "Sắp xếp theo thứ, giờ trong ngày",
+   "lam_gi": "Sắp xếp đầu việc theo thứ trong tuần (Thứ 2 → Thứ 7/Chủ nhật), trong mỗi ngày sắp theo giờ tăng dần; gộp các đầu việc liên tiếp cùng địa điểm/thành phần nếu đơn vị đồng ý; đánh dấu các đầu việc cần Hiệu trưởng quyết hoặc có tính chất đặc biệt (lễ, hội nghị lớn).",
+   "inputs": [
+    "tuan",
+    "dau_viec"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Đầu việc \"cả ngày\" hoặc chưa chốt giờ phải ghi rõ trạng thái, không tự đặt giờ; sự kiện nhiều ngày ghi rõ ngày bắt đầu – kết thúc.",
+   "ket_qua": "Bảng lịch tuần đã sắp xếp theo thời gian."
+  },
+  {
+   "n": 4,
+   "title": "Rà soát xung đột và báo điều chỉnh",
+   "lam_gi": "Quét toàn bảng: một lãnh đạo không được dự 2 việc cùng khung giờ; địa điểm không được xếp 2 việc trùng giờ; phát hiện xung đột thì lập danh sách xung đột (việc nào – trùng với việc nào – lãnh đạo/địa điểm nào), báo ngay cho đơn vị chủ trì để điều chỉnh giờ/địa điểm hoặc xin ý kiến lãnh đạo ưu tiên việc nào.",
+   "inputs": [
+    "dau_viec"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "Ưu tiên giữ nguyên lịch của Hiệu trưởng, điều chỉnh lịch cấp dưới; xung đột không giải quyết được thì ghi chú rõ trong lịch (\"chờ điều chỉnh\") thay vì âm thầm bỏ việc.",
+   "ket_qua": "Danh sách xung đột lịch + phương án điều chỉnh đã thống nhất với đơn vị."
+  },
+  {
+   "n": 5,
+   "title": "Dựng bảng lịch tuần và văn bản ban hành kèm",
+   "lam_gi": "Dựng bảng với các cột: Thứ/Ngày | Giờ | Nội dung | Địa điểm | Thành phần | Chủ trì; viết tiêu đề \"LỊCH CÔNG TÁC TUẦN [số] (từ [ngày] đến [ngày])\" + dòng văn bản ban hành kèm (số thông báo của Phòng TC&QT (văn phòng – văn thư)); viết phần Ghi chú: cơ chế báo thay đổi (báo về Phòng TC&QT (văn phòng – văn thư) trước giờ chốt), đầu mối liên hệ.",
+   "inputs": [
+    "tuan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Tên lãnh đạo trong cột \"Chủ trì\" ghi đúng chức danh (Hiệu trưởng / PHT phụ trách ...); không viết tắt tên đơn vị ở lần xuất hiện đầu tiên trong bảng.",
+   "ket_qua": "Bảng lịch công tác tuần hoàn chỉnh kèm ghi chú."
+  },
+  {
+   "n": 6,
+   "title": "Trình duyệt trước khi ban hành",
+   "lam_gi": "Gửi bảng lịch + danh sách xung đột (nếu còn) cho Chánh Văn phòng rà soát, sau đó trình Hiệu trưởng duyệt (human gate); ghi nhận ý kiến điều chỉnh của lãnh đạo và cập nhật vào bảng lịch.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) chuẩn bị, người có thẩm quyền duyệt lịch (theo quy chế làm việc của trường) · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "Lịch tuần chỉ ban hành sau khi Hiệu trưởng duyệt — không tự phát hành bản nháp; mọi điều chỉnh sau duyệt phải xin ý kiến lại.",
+   "ket_qua": "Bảng lịch tuần đã được lãnh đạo duyệt."
+  },
+  {
+   "n": 7,
+   "title": "Ban hành lịch tuần",
+   "lam_gi": "Phát hành lịch tuần đã duyệt trên các kênh chính thức (website trường, email các đơn vị, bảng tin); lưu bản đã ban hành vào hồ sơ công việc tuần; theo dõi các báo thay đổi trong tuần để cập nhật (nếu có).",
+   "inputs": [],
+   "vai_tro": "Văn thư Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: định dạng bản chính, cập nhật sổ phát hành",
+   "luu_y": "Lịch thường ban hành vào chiều thứ Sáu cho tuần kế tiếp; bản cập nhật (nếu có) phải ghi rõ \"thay thế bản ngày ...\" để tránh nhầm lẫn.",
+   "ket_qua": "Lịch công tác tuần đã ban hành + hồ sơ lưu."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng cấu trúc và thể thức theo references/quy-cach-dau-ra.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Đầu việc \"cả ngày\" hoặc chưa chốt giờ phải ghi rõ trạng thái, không tự đặt giờ",
+  "Tên lãnh đạo trong cột \"Chủ trì\" ghi đúng chức danh (Hiệu trưởng / PHT phụ trách ...)",
+  "Mọi điều chỉnh sau duyệt phải xin ý kiến lại"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Lịch hợp nhất theo cơ sở và phòng họp; xung đột lịch được liệt kê để Văn phòng giải quyết, skill không tự đổi.",
+  "Ghi rõ ai kiêm nhiệm nhiều vai trò để tránh trùng lịch."
+ ],
+ "cho_xac_nhan": [
+  "Cách các đơn vị gửi lịch (C8).",
+  "Người duyệt lịch tuần (C6)."
+ ],
+ "output_structure": [
+  "Tên trường + tiêu đề \"LỊCH CÔNG TÁC TUẦN [số] (từ [ngày] đến [ngày])\"",
+  "Dòng văn bản ban hành kèm (số thông báo của đơn vị ban hành)",
+  "Bảng lịch với đúng 6 cột theo thứ tự: Thứ/Ngày | Giờ | Nội dung | Địa điểm | Thành phần | Chủ trì — các dòng sắp xếp theo thứ trong tuần, rồi theo giờ tăng dần trong ngày",
+  "Phần Ghi chú: cơ chế báo thay đổi (đầu mối, giờ chốt) và các lưu ý khác",
+  "Danh sách xung đột lịch chưa giải quyết (nếu có)"
+ ],
+ "output_structure_raw": "1. Tên trường + tiêu đề \"LỊCH CÔNG TÁC TUẦN [số] (từ [ngày] đến [ngày])\"\n\n2. Dòng văn bản ban hành kèm (số thông báo của đơn vị ban hành)\n\n3. Bảng lịch với đúng 6 cột theo thứ tự: Thứ/Ngày | Giờ | Nội dung | Địa điểm | Thành phần | Chủ trì — các dòng sắp xếp theo thứ trong tuần, rồi theo giờ tăng dần trong ngày\n\n4. Phần Ghi chú: cơ chế báo thay đổi (đầu mối, giờ chốt) và các lưu ý khác\n\n5. Danh sách xung đột lịch chưa giải quyết (nếu có)",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-lap-lich-cong-tac-tuan/references"
+}

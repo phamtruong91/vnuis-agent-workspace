@@ -1,0 +1,177 @@
+---
+name: "vnuis-vp-soan-ke-hoach-cong-tac"
+description: "Dùng khi phòng, khoa lập kế hoạch công tác tháng, quý, năm hoặc kế hoạch triển khai một nhiệm vụ, đợt công tác cụ thể: mục đích, nhiệm vụ, phân công, thời gian, kinh phí."
+---
+
+# Soạn kế hoạch công tác
+
+## Khi nào dùng
+Khi đơn vị cần lập kế hoạch công tác tháng, quý, năm; khi lập kế hoạch triển khai
+một nhiệm vụ, đợt công tác cụ thể.
+
+## Định dạng và file đầu ra
+
+Định dạng đầu ra có thể chọn theo sản phẩm/yêu cầu: .docx, .pdf. Đọc mục “Định dạng bổ sung” trong quy cách đầu ra trước khi chọn.
+
+**Phải tạo file thực tế để tải xuống, không chỉ trả nội dung trong chat.** Định dạng mặc định của skill: **.docx**. Nếu có bảng số liệu nghiệp vụ yêu cầu file bảng tính riêng, tạo thêm Excel theo yêu cầu; không tự tạo file kiểm tra. Không chờ người dùng yêu cầu xuất file lần nữa. Ưu tiên định dạng người dùng chỉ định; đọc quy tắc xuất file tại references/quy-cach-dau-ra.md.
+
+**Chạy qua API (không có công cụ tạo file):** trả đủ nội dung dạng văn bản có tiêu đề, bảng; ứng dụng gọi sẽ xuất file.
+
+## Quy cách đầu ra và thông tin thiếu
+Khi dựng file Word/Excel, áp dụng mục “Thể thức và bảng biểu khi dựng file” trong quy cách đầu ra (cỡ chữ từng thành phần, bảng nhiều trang, số trang, phụ lục). Đọc [quy cách và cấu trúc sản phẩm](references/quy-cach-dau-ra.md) trước khi soạn/xuất. File giao chỉ gồm sản phẩm nghiệp vụ được yêu cầu; kiểm tra nội bộ không xuất kèm. Thiếu thông tin thì giữ nguyên trường/mục và chỗ điền theo mẫu gốc (dòng dấu chấm, dấu gạch hoặc ô trống); không tự điền dữ liệu mẫu, số 0, mã chờ xác minh hay dòng chờ ký. Mẫu chuyên ngành còn áp dụng được ưu tiên về cấu trúc, mã biểu và người ký. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+Khi người dùng yêu cầu bộ slide (.pptx), đọc mục “Xuất PowerPoint (.pptx) khi được yêu cầu” trong quy cách đầu ra.
+
+## Kiểm soát áp dụng và phê duyệt
+Trước khi chạy, xác định `ngay_ap_dung`, `loai_hinh_truong`, `quy_che_noi_bo`, `nguon_du_lieu`, `nguoi_kiem_duyet`; chỉ hỏi thông tin liên quan nghiệp vụ, không dùng giá trị giả định thay dữ liệu bắt buộc. Đối chiếu căn cứ pháp lý với văn bản gốc, hiệu lực, điều khoản áp dụng và chuyển tiếp. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Giới hạn và human gate
+AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Bối cảnh riêng của VNU-IS
+
+Bản chỉnh cho Trường Quốc tế – ĐHQGHN (VNU-IS), v0.4.2. Dựng từ website công khai và phiếu khảo sát CES còn trống; **chưa có dữ liệu khảo sát thực tế của đơn vị**. Đọc [bối cảnh VNU-IS](references/boi-canh-vnuis.md) trước khi chạy; các mã C1–C8 nằm ở mục 6 của file đó.
+
+- **Đơn vị thường dùng:** Mọi đơn vị trong Trường.
+- **Nghiệp vụ trong phiếu CES:** không có dòng riêng trong phiếu CES; đề xuất theo chức năng đơn vị ở sheet 00 và cần xác nhận khi khảo sát.
+
+**Điều chỉnh khi dùng cho VNU-IS**
+- Kế hoạch công tác ghi đơn vị chủ trì theo vai trò (ví dụ Trưởng phòng Đào tạo), tránh gắn vào cá nhân kiêm nhiệm.
+- Mốc thời gian gắn với năm học và chu kỳ do Trường ban hành; không lấy từ tin tức website.
+- Kinh phí chỉ điền khi có dự toán được duyệt; nguồn kinh phí ghi theo phân loại ngân sách, ngoài ngân sách, đề tài, dự án.
+
+**Chờ xác nhận khi khảo sát**
+- Kỳ kế hoạch và mẫu của từng đơn vị (C8).
+- Tuyến duyệt kế hoạch (C6).
+
+Nếu người dùng chưa trả lời mục chờ xác nhận liên quan, hỏi lại; không tự điền giả định.
+
+## Đầu vào (Input)
+
+| Trường | Mô tả | Bắt buộc |
+|---|---|---|
+| `don_vi` | Đơn vị lập kế hoạch | Có |
+| `thoi_gian` | Tháng / quý / năm thực hiện | Có |
+| `muc_tieu` | Mục đích, yêu cầu của kế hoạch | Có |
+| `nhiem_vu` | Bảng nhiệm vụ: nội dung, đơn vị/cá nhân thực hiện, thời gian, kết quả mong đợi | Có |
+| `kinh_phi` | Dự toán kinh phí (nếu có) | Không |
+| `co_quan_chu_quan` | Cơ quan chủ quản: Đại học Quốc gia Hà Nội (đã điền sẵn) | Không (mặc định: ĐHQGHN) |
+| `co_quan_ban_hanh` | Cơ quan ban hành: Trường Quốc tế – ĐHQGHN (đã điền sẵn); ghi thêm đơn vị soạn thảo nếu khác | Không (mặc định: Trường Quốc tế – ĐHQGHN) |
+| `dia_danh` | Địa danh ghi ở dòng ngày tháng năm (mặc định: Hà Nội) | Không (mặc định: Hà Nội) |
+| `so_van_ban` | Số, ký hiệu văn bản đã được cấp (để trống nếu chưa cấp; không tự đặt) | Không |
+| `noi_nhan` | Danh sách nơi nhận, gồm cả nơi lưu (VT, đơn vị soạn) | Có |
+| `nguoi_ky` | Chức danh, họ tên người ký; hình thức TM./KT./TL./TUQ. chỉ khi có căn cứ | Có |
+
+### Thông tin VNU-IS đã điền sẵn (không hỏi lại)
+
+| Mục | Giá trị mặc định |
+|---|---|
+| Cơ quan chủ quản; Trường; địa danh | Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội |
+| Đơn vị sử dụng và phối hợp | Mọi đơn vị trong Trường |
+| Cơ sở | Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm |
+| Ngôn ngữ đầu ra | Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu |
+| Hệ thống nguồn dữ liệu có trên website | E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5) |
+| Người duyệt và ký | Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6 |
+
+Nguồn: website và phiếu CES; đổi theo khảo sát thì sửa tại đây và trong `references/boi-canh-vnuis.md`.
+
+## Quy trình
+
+*⏱ là ước tính ban đầu của bộ gốc, chưa đo tại VNU-IS; hiệu chỉnh sau khảo sát.*
+
+**Bước 1. Xác định phạm vi kế hoạch và yêu cầu đầu ra**
+- Làm gì: Đọc `don_vi` và `thoi_gian` để xác định phạm vi (kế hoạch tháng/quý/năm của đơn vị hay kế hoạch triển khai một nhiệm vụ cụ thể); xác định kế hoạch do thủ trưởng đơn vị ký ban hành hay phải trình cấp trên phê duyệt (kế hoạch vượt thẩm quyền về kinh phí/nhân sự phải trình phê duyệt); đọc `muc_tieu` để nắm mục đích, yêu cầu tổng thể.
+- Dùng input: `don_vi`, `thoi_gian`, `muc_tieu`.
+- Vai trò: Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: phân tích input, xác định yêu cầu · ⏱ ~20–45 phút (ước tính)
+- Lưu ý nghiệp vụ: Phạm vi thời gian quyết định độ chi tiết — kế hoạch năm nêu định hướng theo quý, kế hoạch tháng/quý phải có nhiệm vụ cụ thể từng tuần; xác định sai cấp phê duyệt khiến kế hoạch phải làm lại.
+- → Kết quả bước: Xác nhận phạm vi kế hoạch + cấp ban hành/phê duyệt.
+
+**Bước 2. Xây dựng mục đích, yêu cầu**
+- Làm gì: Từ `muc_tieu`, viết phần "I. MỤC ĐÍCH, YÊU CẦU": nêu rõ kế hoạch nhằm đạt mục tiêu gì (gắn với kế hoạch năm học của trường và chức năng nhiệm vụ của đơn vị), yêu cầu về chất lượng – tiến độ – phối hợp; yêu cầu phải đo được (đúng tiến độ, đúng thể thức) thay vì chung chung.
+- Dùng input: `muc_tieu`, `don_vi`.
+- Vai trò: Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức · ⏱ ~20–45 phút (ước tính)
+- Lưu ý nghiệp vụ: Mục đích phải trả lời "làm kế hoạch này để đạt gì"; tránh sao chép nguyên văn chức năng nhiệm vụ của đơn vị thành mục đích.
+- → Kết quả bước: Dự thảo phần I. Mục đích, yêu cầu.
+
+**Bước 3. Liệt kê và chi tiết hóa nhiệm vụ**
+- Làm gì: Từ `nhiem_vu`, liệt kê từng nhiệm vụ và chi tiết hóa thành bảng với 5 cột: STT | Nội dung | Đơn vị/cá nhân thực hiện | Thời gian | Kết quả mong đợi; mỗi nhiệm vụ phải gắn một đầu mối chịu trách nhiệm chính và một mốc thời gian cụ thể; kết quả mong đợi phải là sản phẩm đo được (báo cáo, danh mục, kịch bản...).
+- Dùng input: `nhiem_vu`.
+- Vai trò: Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình · ⏱ ~20–45 phút (ước tính)
+- Lưu ý nghiệp vụ: Bẫy thường gặp — nhiệm vụ không có đầu mối ("các đơn vị phối hợp" mà không rõ ai chủ trì), thời gian ghi "trong quý" thay vì tháng cụ thể, kết quả mong đợi chung chung ("hoàn thành tốt"). Mỗi nhiệm vụ trong bảng phải đứng độc lập, không trùng lặp.
+- → Kết quả bước: Bảng nhiệm vụ chi tiết (STT, nội dung, thực hiện, thời gian, kết quả).
+
+**Bước 4. Lập dự toán kinh phí theo nhiệm vụ**
+- Làm gì: Nếu có `kinh_phi`: phân bổ dự toán chi tiết theo từng nhiệm vụ trong bảng (nhiệm vụ nào – bao nhiêu – nội dung chi gì), ghi tổng kinh phí và nguồn kinh phí (thường xuyên / đề án / ...); kiểm tra tổng các khoản chi tiết khớp với tổng dự toán.
+- Dùng input: `kinh_phi`, `nhiem_vu` (đã chi tiết hóa ở Bước 3).
+- Vai trò: Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: lập bảng tính toán · ⏱ ~20–45 phút (ước tính)
+- Lưu ý nghiệp vụ: Kinh phí phải gắn với nhiệm vụ cụ thể — không để khoản "chi khác" quá lớn; nếu `kinh_phi` không có thì bỏ qua bước này và đánh số lại các phần tiếp theo.
+- → Kết quả bước: Dự thảo phần Kinh phí: bảng phân bổ theo nhiệm vụ + tổng + nguồn.
+
+**Bước 5. Viết phần tổ chức thực hiện**
+- Làm gì: Viết phần "Tổ chức thực hiện": phân công trách nhiệm (ai chủ trì chung, ai theo dõi từng nhóm nhiệm vụ), cơ chế báo cáo tiến độ (giao ban tuần/tháng của đơn vị), cơ chế kiểm tra, xử lý khi chậm tiến độ; nêu đầu mối tổng hợp báo cáo.
+- Dùng input: `don_vi`, `nhiem_vu` (đã chi tiết hóa).
+- Vai trò: Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức · ⏱ ~20–45 phút (ước tính)
+- Lưu ý nghiệp vụ: Phải có ít nhất một cơ chế kiểm tra tiến độ định kỳ — kế hoạch không có cơ chế giám sát thường không thực hiện được; ghi rõ ai là đầu mối tổng hợp để tránh "mỗi người báo một kiểu".
+- → Kết quả bước: Dự thảo phần Tổ chức thực hiện.
+
+**Bước 6. Kiểm tra tính khả thi trước khi trình ký**
+- Làm gì: Rà soát toàn văn: mỗi nhiệm vụ có đầu mối + thời hạn cụ thể không; thời gian các nhiệm vụ có nằm trong phạm vi `thoi_gian` không; tổng kinh phí có khớp phân bổ chi tiết không; nhiệm vụ có phù hợp năng lực và chức năng của đơn vị không; chính tả, tên đơn vị chính xác.
+- Dùng input: toàn bộ input (đối chiếu chéo).
+- Vai trò: Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm · ⏱ ~15–30 phút (ước tính)
+- Lưu ý nghiệp vụ: Nhiệm vụ có thời hạn nằm ngoài phạm vi kế hoạch (vd kế hoạch quý IV nhưng nhiệm vụ hạn tháng 1 năm sau) phải điều chỉnh; nhiệm vụ vượt năng lực đơn vị phải ghi rõ cần phối hợp/hỗ trợ từ đơn vị nào.
+- → Kết quả bước: Kết quả đối chiếu nội bộ (không xuất kèm file) + danh sách chỗ cần sửa (nếu có); sửa xong thì chuyển Bước 7.
+
+**Bước 7. Dựng thể thức và trình ký ban hành**
+- Làm gì: Lắp ráp phần đầu: tên trường + tên `don_vi` (in hoa), dòng "KẾ HOẠCH CÔNG TÁC [phạm vi thời gian]" (in hoa, căn giữa); sắp xếp các phần theo thứ tự: I. Mục đích, yêu cầu → II. Nhiệm vụ cụ thể → III. Kinh phí (nếu có) → IV. Tổ chức thực hiện; cuối văn bản: địa danh, ngày tháng năm + khối chữ ký thủ trưởng đơn vị (chức danh + họ tên); trình thủ trưởng đơn vị ký ban hành (human gate), hoặc trình cấp trên phê duyệt nếu vượt thẩm quyền. Phần đầu văn bản lấy từ `co_quan_chu_quan` (nếu có), `co_quan_ban_hanh`, `dia_danh`, `so_van_ban` (để dòng dấu chấm nếu chưa cấp số). Nơi nhận lấy từ `noi_nhan`. Khối ký lấy từ `nguoi_ky`.
+- Dùng input: `don_vi`, `thoi_gian`, `co_quan_chu_quan`, `co_quan_ban_hanh`, `dia_danh`, `so_van_ban`, `noi_nhan`, `nguoi_ky`.
+- Vai trò: Chuyên viên chuẩn bị, thủ trưởng đơn vị ký ban hành (hoặc cấp trên phê duyệt nếu vượt thẩm quyền) · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ · ⏱ ~15–30 phút chuẩn bị + chờ duyệt (ước tính)
+- Lưu ý nghiệp vụ: Người ký là thủ trưởng đơn vị lập kế hoạch; nếu kế hoạch trình cấp trên phê duyệt thì đơn vị chỉ ký phần đề xuất, không ghi "ban hành".
+- → Kết quả bước: Văn bản kế hoạch hoàn chỉnh về thể thức, sẵn sàng trình ký.
+
+## Luồng quy trình (Workflow)
+
+```mermaid
+flowchart TD
+    IN[/"Nhiệm vụ cần lập kế hoạch"/] --> B1["Bước 1: Xác định phạm vi kế hoạch và yêu cầu đầu ra"]
+    B1 --> B2["Bước 2: Xây dựng mục đích, yêu cầu"]
+    B2 --> B3["Bước 3: Liệt kê và chi tiết hóa nhiệm vụ"]
+    B3 --> B4["Bước 4: Lập dự toán kinh phí theo nhiệm vụ"]
+    B4 --> B5["Bước 5: Viết phần tổ chức thực hiện"]
+    B5 --> B6["Bước 6: Kiểm tra tính khả thi trước khi trình ký"]
+    B6 --> B7["Bước 7: Dựng thể thức và trình ký ban hành"]
+    B7 --> DP{"Vượt thẩm quyền đơn vị?"}
+    DP -->|Có| B7A["Trình cấp trên phê duyệt"]
+    DP -->|Không| HG
+    B7A --> HG["👤 Thủ trưởng đơn vị ký, cấp trên phê duyệt"]
+    HG --> OUT[["Kế hoạch công tác"]]
+```
+
+## Đầu ra
+
+File nghiệp vụ thực tế theo định dạng mặc định ở đầu skill hoặc định dạng người dùng yêu cầu, kèm liên kết tải trong phản hồi cuối.
+
+Sản phẩm nghiệp vụ hoàn chỉnh theo [quy cách và cấu trúc](references/quy-cach-dau-ra.md), giữ các trường chưa có dữ liệu ở trạng thái trống. Không xuất kèm danh mục kiểm/phụ lục kiểm tra đầu ra.
+
+## Kiểm tra nội bộ trước khi giao
+
+Các tiêu chí sau dùng để tự đối chiếu; không sao chép vào file xuất. Mục thiếu dữ liệu được để trống, không đánh dấu đã đạt hoặc đã duyệt.
+
+- [ ] Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.
+- [ ] Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)
+- [ ] Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ
+- [ ] Đúng cấu trúc và thể thức theo references/quy-cach-dau-ra.md.
+- [ ] Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực
+- [ ] Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt
+- [ ] Phạm vi thời gian quyết định độ chi tiết — kế hoạch năm nêu định hướng theo quý, kế hoạch tháng/quý phải có nhiệm vụ cụ thể từng tuần
+- [ ] Xác định sai cấp phê duyệt khiến kế hoạch phải làm lại
+- [ ] Mục đích phải trả lời "làm kế hoạch này để đạt gì"
+
+## Căn cứ & lưu ý
+- Kế hoạch năm học toàn trường; chức năng nhiệm vụ của đơn vị.
+- Nhiệm vụ phải gắn người chịu trách nhiệm và thời hạn cụ thể, tránh chung chung.
+- Ví dụ trong skill chỉ để minh họa; không đưa dữ liệu cá nhân thật vào ví dụ. Tên Trường, cơ quan chủ quản và địa danh dùng đúng bảng thông tin VNU-IS đã điền sẵn.
+
+## Quản trị phiên bản
+- Phiên bản gói VNU-IS `0.4.2` (cập nhật 2026-10-11), dựa trên skill gốc `soan-ke-hoach-ct` bản `1.3.2`; hồ sơ đầy đủ tại [references/version.json](references/version.json).
+- Người phê duyệt nghiệp vụ: **chưa chỉ định**. Trạng thái: dự thảo nghiệp vụ; kiểm tra pháp lý trước thực thi. Ngày cập nhật không đồng nghĩa mọi văn bản đã được rà soát toàn văn.
+- Giấy phép theo LICENSE của kho (bản quyền CES Global). Lịch sử thay đổi: CHANGELOG.md.

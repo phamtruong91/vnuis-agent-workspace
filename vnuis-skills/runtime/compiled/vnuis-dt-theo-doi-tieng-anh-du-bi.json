@@ -1,0 +1,158 @@
+{
+ "name": "vnuis-dt-theo-doi-tieng-anh-du-bi",
+ "title": "Theo dõi lớp tiếng Anh dự bị",
+ "description": "Dùng khi Phòng Đào tạo cần theo dõi người học tiếng Anh dự bị: kết quả đầu vào và các lần kiểm tra, chuyên cần, điều kiện chuyển lên chương trình chính, danh sách có nguy cơ chưa đạt trước các mốc xét chuyển tiếp.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-tieng-anh-du-bi",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (tiếng Anh dự bị)",
+ "when": "Khi có file kết quả các đợt kiểm tra và chuyên cần của các lớp tiếng Anh dự bị và cần bảng tiến độ, danh sách cần hỗ trợ và điều kiện chuyển tiếp.",
+ "inputs": [
+  {
+   "key": "danh_sach_lop",
+   "desc": "Danh sách người học theo lớp, mã người học, chương trình dự kiến vào",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ket_qua_kiem_tra",
+   "desc": "Điểm đầu vào và các lần kiểm tra theo kỹ năng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuyen_can",
+   "desc": "Dữ liệu chuyên cần theo buổi",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "dieu_kien_chuyen_tiep",
+   "desc": "Điều kiện chuyển lên chương trình chính do Trường quy định",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "moc_xet",
+   "desc": "Ngày các mốc xét chuyển tiếp",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (tiếng Anh dự bị)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chuẩn hóa dữ liệu lớp",
+   "lam_gi": "Ghép danh sách với kết quả và chuyên cần theo mã người học; lập danh sách thiếu dữ liệu.",
+   "inputs": [
+    "danh_sach_lop",
+    "ket_qua_kiem_tra",
+    "chuyen_can"
+   ],
+   "vai_tro": "Chuyên viên đào tạo · AI hỗ trợ: ghép và kiểm tra",
+   "luu_y": "Báo cáo ra ngoài Phòng dùng mã người học, không họ tên.",
+   "ket_qua": "Bảng dữ liệu chuẩn hóa."
+  },
+  {
+   "n": 2,
+   "title": "Tính tiến độ theo điều kiện",
+   "lam_gi": "Đối chiếu từng người với điều kiện chuyển tiếp: đã đạt, đang tiến tới, có nguy cơ; ghi lý do theo từng điều kiện.",
+   "inputs": [
+    "ket_qua_kiem_tra",
+    "dieu_kien_chuyen_tiep"
+   ],
+   "vai_tro": "Chuyên viên đào tạo · AI hỗ trợ: tính và phân loại",
+   "luu_y": "Ngưỡng nguy cơ do Phòng đặt; chưa đặt thì chỉ nêu khoảng cách đến điều kiện.",
+   "ket_qua": "Bảng tiến độ."
+  },
+  {
+   "n": 3,
+   "title": "Tổng hợp theo lớp",
+   "lam_gi": "Thống kê theo lớp và chương trình dự kiến: số người đạt, nguy cơ, thiếu dữ liệu.",
+   "inputs": [
+    "danh_sach_lop",
+    "moc_xet"
+   ],
+   "vai_tro": "Chuyên viên đào tạo · AI hỗ trợ: tổng hợp",
+   "luu_y": "Không so sánh chất lượng giảng viên từ số liệu lớp.",
+   "ket_qua": "Bảng theo lớp."
+  },
+  {
+   "n": 4,
+   "title": "Lập danh sách hỗ trợ và nhận xét",
+   "lam_gi": "Danh sách người cần hỗ trợ trước mốc xét, nhận xét theo số liệu, việc cần làm.",
+   "inputs": [
+    "moc_xet"
+   ],
+   "vai_tro": "Trưởng bộ phận · AI hỗ trợ: dự thảo",
+   "luu_y": "Quyết định hỗ trợ và chuyển tiếp do Phòng.",
+   "ket_qua": "Danh sách hỗ trợ và nhận xét."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Trạng thái từng người khớp điều kiện cung cấp.",
+  "Không có họ tên trong bản tổng hợp.",
+  "Người thiếu dữ liệu được liệt kê riêng.",
+  "Không có kết luận về chất lượng giảng viên.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng phòng Đào tạo** xác nhận điều kiện và danh sách.",
+  "**Người có thẩm quyền** quyết định xét chuyển tiếp."
+ ],
+ "guardrails": [
+  "KHÔNG tự quyết người được chuyển hoặc không được chuyển.",
+  "KHÔNG tải dữ liệu người học lên dịch vụ ngoài khi chưa có quyền (C5)."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Điều kiện chuyển tiếp và thang điểm (C2, C3).",
+  "Hệ thống lưu điểm tiếng Anh dự bị (C5)."
+ ],
+ "output_structure": [
+  "Sheet Tổng quan: số người, số theo trạng thái, mốc xét.",
+  "Sheet Theo lớp.",
+  "Sheet Từng người (mã): kết quả, trạng thái, lý do.",
+  "Sheet Thiếu dữ liệu."
+ ],
+ "output_structure_raw": "1. Sheet Tổng quan: số người, số theo trạng thái, mốc xét.\n\n2. Sheet Theo lớp.\n\n3. Sheet Từng người (mã): kết quả, trạng thái, lý do.\n\n4. Sheet Thiếu dữ liệu.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (tiếng Anh dự bị). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dt-theo-doi-tieng-anh-du-bi/references"
+}

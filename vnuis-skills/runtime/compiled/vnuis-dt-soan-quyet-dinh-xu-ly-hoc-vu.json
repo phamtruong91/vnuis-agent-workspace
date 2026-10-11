@@ -1,0 +1,194 @@
+{
+ "name": "vnuis-dt-soan-quyet-dinh-xu-ly-hoc-vu",
+ "title": "Soạn quyết định xử lý học vụ",
+ "description": "Dùng khi kết thúc học kỳ hoặc năm học cần ban hành quyết định xử lý học vụ sinh viên: cảnh báo học vụ, buộc thôi học, bảo lưu kết quả học tập, chuyển trường.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-quyet-dinh-hoc-vu",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (quản lý học vụ)",
+ "when": "Khi kết thúc mỗi học kỳ hoặc năm học, cần rà soát kết quả học tập của sinh viên và ban hành\nquyết định xử lý học vụ đối với các trường hợp: cảnh báo học vụ, buộc thôi học, cho phép\nbảo lưu kết quả học tập, cho phép chuyển trường — theo quy chế đào tạo của trường.",
+ "inputs": [
+  {
+   "key": "loai_xu_ly",
+   "desc": "Cảnh báo học vụ / Buộc thôi học / Bảo lưu / Chuyển trường",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoc_ky",
+   "desc": "Học kỳ, năm học áp dụng (ví dụ: Học kỳ 1 năm học 2026–2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_sv",
+   "desc": "Danh sách SV đủ điều kiện từng diện (mã SV, họ tên, lớp, ngành, lý do)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu_quy_che",
+   "desc": "Điều, khoản cụ thể của quy chế đào tạo áp dụng cho từng diện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bien_ban_hoi_dong",
+   "desc": "Biên bản họp hội đồng xem xét xử lý học vụ (số, ngày họp, kết luận)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng phụ trách đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_quyet_dinh",
+   "desc": "Số quyết định (nếu đã cấp số; nếu chưa, để trống để điền khi ban hành)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (quản lý học vụ)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Rà soát kết quả học tập của sinh viên",
+   "lam_gi": "trích xuất từ hệ thống quản lý đào tạo của từng SV: điểm trung bình chung học kỳ/năm học, số tín chỉ đã tích lũy, số tín chỉ còn nợ, tổng thời gian đã học so với thời gian đào tạo tối đa; đối chiếu thêm hồ sơ kỷ luật (đình chỉ học tập) nếu có.",
+   "inputs": [
+    "hoc_ky",
+    "danh_sach_sv"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: trích xuất và đối chiếu số liệu tự động từ hệ thống",
+   "luu_y": "số liệu phải chốt tại thời điểm kết thúc học kỳ/năm học và ghi rõ thời điểm chốt để hội đồng đối chiếu; loại khỏi danh sách rà soát các SV đã bảo lưu/thôi học trước đó.",
+   "ket_qua": "bảng số liệu kết quả học tập chi tiết từng SV (mã SV, họ tên, lớp, ngành, ĐTB học kỳ, tín chỉ tích lũy/nợ, thời gian đào tạo còn lại)."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu quy chế, phân loại diện xử lý",
+   "lam_gi": "áp từng dòng số liệu ở Bước 1 vào các điều, khoản của quy chế đào tạo; phân loại SV vào 4 diện: cảnh báo học vụ, buộc thôi học, bảo lưu, chuyển trường; ghi rõ điều, khoản áp dụng cho từng trường hợp.",
+   "inputs": [
+    "danh_sach_sv",
+    "can_cu_quy_che",
+    "loai_xu_ly"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: phân loại sơ bộ theo quy chế, cảnh báo trường hợp chưa khớp",
+   "luu_y": "cảnh báo học vụ khi ĐTB học kỳ dưới ngưỡng quy định (thường < 2.00) hoặc nợ quá số tín chỉ cho phép; buộc thôi học khi vượt số lần cảnh báo quy định hoặc quá thời gian đào tạo tối đa; bảo lưu/chuyển trường chỉ áp dụng khi có đơn của SV với lý do chính đáng và đủ điều kiện; không gộp SV thuộc các diện khác nhau vào cùng một quyết định.",
+   "ket_qua": "danh sách SV phân loại theo từng diện xử lý, kèm điều/khoản quy chế áp dụng cho từng trường hợp."
+  },
+  {
+   "n": 3,
+   "title": "Hội đồng xem xét, biểu quyết từng trường hợp",
+   "lam_gi": "Phòng Đào tạo trình danh sách đã phân loại kèm hồ sơ minh chứng (bảng điểm, đơn của SV, hồ sơ kỷ luật) lên hội đồng xử lý học vụ; hội đồng họp, thảo luận và biểu quyết từng trường hợp; thư ký lập biên bản ghi kết luận từng trường hợp.",
+   "inputs": [
+    "bien_ban_hoi_dong",
+    "danh_sach_sv",
+    "loai_xu_ly"
+   ],
+   "vai_tro": "Hội đồng xử lý học vụ · AI hỗ trợ: chuẩn bị tài liệu, tổng hợp hồ sơ minh chứng trước phiên họp",
+   "luu_y": "đây là Human gate — chỉ các trường hợp được hội đồng thông qua mới được đưa vào quyết định; biên bản phải ghi rõ số, ngày họp và kết luận từng trường hợp; trường hợp không thông qua thì trả hồ sơ, rà soát lại từ Bước 2.",
+   "ket_qua": "biên bản họp hội đồng xử lý học vụ (số, ngày họp, kết luận từng trường hợp) — căn cứ pháp lý bắt buộc của quyết định."
+  },
+  {
+   "n": 4,
+   "title": "Soạn quyết định theo thể thức NĐ 30/2020",
+   "lam_gi": "soạn quyết định gồm: quốc hiệu – tiêu ngữ, tên cơ quan, số/ký hiệu quyết định, địa danh – ngày tháng năm ban hành, tên loại + trích yếu, phần căn cứ (quy chế đào tạo, biên bản hội đồng, đề nghị của Trưởng phòng Đào tạo), các điều khoản (Điều 1: xử lý đối với danh sách SV kèm theo; Điều 2: nghĩa vụ của SV; Điều 3: trách nhiệm thi hành), danh sách SV kèm theo, nơi nhận, chữ ký người có thẩm quyền.",
+   "inputs": [
+    "loai_xu_ly",
+    "hoc_ky",
+    "danh_sach_sv",
+    "can_cu_quy_che",
+    "bien_ban_hoi_dong",
+    "nguoi_ky",
+    "so_quyet_dinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: soạn dự thảo đúng thể thức NĐ 30/2020, kiểm tra căn cứ",
+   "luu_y": "kiểm tra thẩm quyền ký (Hiệu trưởng hoặc Phó Hiệu trưởng được ủy quyền); danh sách SV trong quyết định phải khớp 100% với biên bản hội đồng; nếu chưa cấp số quyết định thì để trống để điền khi ban hành.",
+   "ket_qua": "dự thảo quyết định xử lý học vụ đúng thể thức NĐ 30/2020, kèm danh sách SV theo từng diện."
+  },
+  {
+   "n": 5,
+   "title": "Thông báo và lưu hồ sơ học vụ",
+   "lam_gi": "gửi quyết định đã ký đến từng SV, cố vấn học tập, khoa quản lý SV và các đơn vị liên quan (Phòng Đào tạo (công tác sinh viên); Phòng TC&QT (kế hoạch – tài chính) nếu liên quan học phí/học bổng); cập nhật trạng thái học vụ vào hồ sơ SV trên hệ thống; lưu hồ sơ (quyết định + biên bản + minh chứng) theo quy định lưu trữ.",
+   "inputs": [
+    "danh_sach_sv",
+    "loai_xu_ly"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: soạn mẫu thông báo gửi SV và đơn vị liên quan",
+   "luu_y": "đảm bảo SV được thông báo và biết quyền khiếu nại theo quy định; quyết định buộc thôi học phải lưu bản chính vào hồ sơ SV; cập nhật hệ thống ngay để các đơn vị liên quan đồng bộ trạng thái.",
+   "ket_qua": "quyết định đã được gửi đến các bên liên quan; hồ sơ học vụ SV đã cập nhật và lưu trữ đầy đủ."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu/nội dung trong output khớp với Input đã cho (mã SV, họ tên, lớp, ngành, ĐTB học kỳ, học kỳ áp dụng).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng thể thức văn bản hành chính theo Nghị định 30/2020/NĐ-CP (quốc hiệu, số/ký hiệu, nơi nhận, chữ ký).",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (văn bản hiện hành nêu tại phap-ly.md, quy chế đào tạo của trường, biên bản họp hội đồng).",
+  "Đã qua Human gate: hội đồng xử lý học vụ đã họp, biểu quyết từng trường hợp; người có thẩm quyền (Hiệu trưởng/Phó Hiệu trưởng) đã ký duyệt.",
+  "Không gộp SV thuộc các diện xử lý khác nhau vào cùng một quyết định; mỗi trường hợp ghi rõ điều/khoản quy chế áp dụng.",
+  "Danh sách SV trong quyết định khớp 100% với biên bản họp hội đồng; SV đã bảo lưu/thôi học trước đó đã loại khỏi danh sách rà soát.",
+  "SV đã được thông báo quyết định và biết quyền khiếu nại; quyết định buộc thôi học đã lưu bản chính vào hồ sơ SV."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Skill này soạn dự thảo quyết định sau khi hồ sơ đã được kiểm tra; việc kiểm tra thành phần hồ sơ dùng skill vnuis-dc-kiem-tra-day-du-ho-so.",
+  "Thẩm quyền ký (Hiệu trưởng hay người được ủy quyền) chưa xác nhận; không đoán \"KT. Hiệu trưởng\" (C1).",
+  "Sinh viên chương trình liên kết hoặc song bằng: quyết định bảo lưu, thôi học, học lại có thể cần phối hợp với trường đối tác; gắn cờ để người phụ trách xác nhận (C2).",
+  "Thông tin sinh viên là dữ liệu cá nhân: dùng tối thiểu và che khi làm ví dụ."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu quyết định học vụ và người ký (C1, C8).",
+  "Quy định riêng cho chương trình liên kết (C2)."
+ ],
+ "output_structure": [
+  "Phần đầu văn bản: quốc hiệu – tiêu ngữ; tên cơ quan ban hành; số, ký hiệu quyết định; địa danh, ngày tháng năm ban hành.",
+  "Tên loại và trích yếu: \"QUYẾT ĐỊNH\" + \"Về việc…\" (ghi rõ diện xử lý và học kỳ/năm học).",
+  "Thẩm quyền ban hành: chức danh người ký (HIỆU TRƯỞNG / KT. HIỆU TRƯỞNG – PHÓ HIỆU TRƯỞNG).",
+  "Phần căn cứ: quy chế đào tạo (điều, khoản cụ thể); biên bản họp hội đồng xử lý học vụ (số, ngày họp); đề nghị của Trưởng phòng Đào tạo.",
+  "Phần quyết định: Điều 1 (xử lý đối với các SV có tên trong danh sách kèm theo, ghi rõ diện xử lý và căn cứ điều khoản); Điều 2 (nghĩa vụ của SV sau xử lý); Điều 3 (trách nhiệm thi hành).",
+  "Phần cuối: nơi nhận; chữ ký, họ tên người ký.",
+  "Phụ lục kèm theo: danh sách SV theo từng diện (STT, mã SV, họ tên, lớp, ngành, ĐTB học kỳ, lý do). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần đầu văn bản: quốc hiệu – tiêu ngữ; tên cơ quan ban hành; số, ký hiệu quyết định;\n   địa danh, ngày tháng năm ban hành.\n\n2. Tên loại và trích yếu: \"QUYẾT ĐỊNH\" + \"Về việc…\" (ghi rõ diện xử lý và học kỳ/năm học).\n\n3. Thẩm quyền ban hành: chức danh người ký (HIỆU TRƯỞNG / KT. HIỆU TRƯỞNG – PHÓ HIỆU TRƯỞNG).\n\n4. Phần căn cứ: quy chế đào tạo (điều, khoản cụ thể); biên bản họp hội đồng xử lý học vụ\n   (số, ngày họp); đề nghị của Trưởng phòng Đào tạo.\n\n5. Phần quyết định: Điều 1 (xử lý đối với các SV có tên trong danh sách kèm theo, ghi rõ\n   diện xử lý và căn cứ điều khoản); Điều 2 (nghĩa vụ của SV sau xử lý); Điều 3 (trách nhiệm\n   thi hành).\n\n6. Phần cuối: nơi nhận; chữ ký, họ tên người ký.\n\n7. Phụ lục kèm theo: danh sách SV theo từng diện (STT, mã SV, họ tên, lớp, ngành, ĐTB học kỳ, lý do).",
+ "human_gate_check": "Đã qua Human gate: hội đồng xử lý học vụ đã họp, biểu quyết từng trường hợp; người có thẩm quyền (Hiệu trưởng/Phó Hiệu trưởng) đã ký duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (quản lý học vụ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n",
+ "outputs_dir": "skills/vnuis-dt-soan-quyet-dinh-xu-ly-hoc-vu/references"
+}

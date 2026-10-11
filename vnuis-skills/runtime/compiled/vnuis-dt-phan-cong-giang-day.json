@@ -1,0 +1,164 @@
+{
+ "name": "vnuis-dt-phan-cong-giang-day",
+ "title": "Phân công giảng dạy học kỳ",
+ "description": "Dùng khi bắt đầu học kỳ và khoa, bộ môn cần phân công giảng viên theo học phần, lớp học phần dựa trên chuyên môn và định mức giờ giảng.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-phan-cong-giang-day",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (đào tạo); Khoa",
+ "when": "Khi bắt đầu mỗi học kỳ, khoa/bộ môn cần phân công giảng viên phụ trách các học phần,\nlớp học phần theo thời khóa biểu dự kiến.",
+ "inputs": [
+  {
+   "key": "hoc_ky",
+   "desc": "Học kỳ, năm học (VD: học kỳ 1, năm học 2026–2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_muc_hoc_phan",
+   "desc": "Bảng: mã HP, tên HP, số tín chỉ, số lớp, số SV/lớp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_giang_vien",
+   "desc": "Bảng: họ tên, học hàm/học vị, bộ môn, chuyên môn, định mức giờ/năm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dinh_muc_gio",
+   "desc": "Định mức giờ giảng chuẩn theo chức danh",
+   "required": false,
+   "note": "Không (mặc định theo quy định của trường)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (đào tạo); Khoa"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tổng hợp khối lượng giảng dạy theo bộ môn",
+   "lam_gi": "từ `danh_muc_hoc_phan`, tính tổng số giờ giảng cho từng học phần: giờ lý thuyết + giờ thực hành/thí nghiệm + giờ chấm thi, hướng dẫn (áp hệ số quy đổi giờ chuẩn hiện hành của trường); cộng dồn theo bộ môn; lập bảng \"khối lượng giảng dạy học kỳ\" gồm các cột: học phần (mã, tên) – số lớp – tổng giờ chuẩn.",
+   "inputs": [
+    "danh_muc_hoc_phan",
+    "hoc_ky"
+   ],
+   "vai_tro": "Trợ lý đào tạo Khoa · AI hỗ trợ: tính tổng giờ giảng theo học phần/bộ môn, áp hệ số quy đổi giờ chuẩn hiện hành",
+   "luu_y": "phải dùng đúng hệ số quy đổi giờ chuẩn hiện hành (VD: 1 tiết thực hành quy đổi bao nhiêu giờ chuẩn) — sai hệ số là sai toàn bộ bảng giờ vượt. Lớp ghép, lớp đông có hệ số riêng thì ghi chú rõ từng dòng.",
+   "ket_qua": "bảng khối lượng giảng dạy học kỳ theo học phần/bộ môn (tổng giờ chuẩn cần phân công)."
+  },
+  {
+   "n": 2,
+   "title": "Phân công giảng viên theo nguyên tắc",
+   "lam_gi": "với từng học phần, chọn giảng viên từ `danh_sach_giang_vien` theo thứ tự ưu tiên: (1) đúng chuyên môn được đào tạo; (2) giảng viên cơ hữu còn dưới định mức giờ; (3) cân đối khối lượng giữa các bộ môn, tránh dồn việc; ghi lại lý do phân công cho từng trường hợp đặc biệt (trái chuyên môn, vượt định mức); nếu giảng viên cơ hữu không đủ, lập danh sách học phần cần mời thỉnh giảng.",
+   "inputs": [
+    "danh_sach_giang_vien",
+    "dinh_muc_gio"
+   ],
+   "vai_tro": "Trưởng bộ môn · AI hỗ trợ: đề xuất phương án phân công theo nguyên tắc ưu tiên, Trưởng bộ môn họp quyết định phân công",
+   "luu_y": "không phân công vượt quá 150% định mức nếu chưa có thỏa thuận bằng văn bản với giảng viên. Giảng viên mới (chưa đủ 1 năm công tác) không giao học phần tốt nghiệp/khóa luận. Bẫy: dồn giờ \"dễ\" cho người quen, giờ \"khó\" cho người mới — trưởng bộ môn phải kiểm tra phân bổ công bằng.",
+   "ket_qua": "phương án phân công sơ bộ (học phần – giảng viên – lý do) + danh sách học phần cần mời thỉnh giảng."
+  },
+  {
+   "n": 3,
+   "title": "Mời thỉnh giảng bổ sung (nếu cần)",
+   "lam_gi": "với các học phần thiếu giảng viên cơ hữu, liên hệ giảng viên thỉnh giảng (ưu tiên người đã dạy tốt các kỳ trước, có lý lịch khoa học lưu tại Phòng TC&QT (nhân sự)); xác nhận khả năng nhận lớp và khung giờ giảng dạy; ký hợp đồng thỉnh giảng trước khi đưa tên vào bảng phân công chính thức.",
+   "inputs": [
+    "danh_sach_giang_vien"
+   ],
+   "vai_tro": "Trưởng khoa · AI hỗ trợ: soạn dự thảo văn bản trình ký, kiểm tra thể thức",
+   "luu_y": "giảng viên thỉnh giảng chưa có hợp đồng thì KHÔNG đưa tên vào bảng phân công trình ký — tránh \"treo\" lớp khi người ta từ chối phút chót.",
+   "ket_qua": "danh sách giảng viên thỉnh giảng đã ký hợp đồng/xác nhận nhận lớp."
+  },
+  {
+   "n": 4,
+   "title": "Lập bảng phân công chi tiết và tính giờ vượt định mức",
+   "lam_gi": "lắp ráp bảng phân công chính thức gồm các cột: giảng viên – học phần (mã, tên) – lớp – số giờ (lý thuyết/thực hành) – ghi chú (giảng viên chính/trợ giảng/thỉnh giảng); tính tổng giờ chuẩn từng giảng viên trong học kỳ, cộng dồn với các kỳ trước để ra \"lũy kế dự kiến cả năm\"; tính giờ vượt định mức = lũy kế − định mức (nếu dương); lập bảng tổng hợp giờ giảng/giờ vượt định mức làm căn cứ thanh toán.",
+   "inputs": [
+    "dinh_muc_gio"
+   ],
+   "vai_tro": "Trưởng bộ môn · AI hỗ trợ: lắp bảng phân công và tính giờ vượt định mức, Trưởng bộ môn rà soát và xác nhận",
+   "luu_y": "giờ vượt định mức là căn cứ thanh toán tiền — tính sai là sai tiền lương. Đối chiếu tổng giờ trong bảng phân công với bảng khối lượng ở Bước 1: mọi giờ trong khối lượng đều phải có người nhận, không để giờ \"vô chủ\".",
+   "ket_qua": "bảng phân công giảng dạy chi tiết + bảng tổng hợp giờ giảng/giờ vượt định mức theo giảng viên."
+  },
+  {
+   "n": 5,
+   "title": "Thẩm định, phê duyệt và gửi đơn vị liên quan",
+   "lam_gi": "trưởng bộ môn rà soát (đúng chuyên môn, phân bổ công bằng, không sót giờ); trình trưởng khoa phê duyệt (human gate); gửi bảng đã duyệt cho Phòng Đào tạo (làm căn cứ xếp thời khóa biểu) và Phòng TC&QT (nhân sự) (làm căn cứ tính giờ giảng, thanh toán); lưu hồ sơ phân công.",
+   "inputs": [
+    "hoc_ky"
+   ],
+   "vai_tro": "Trưởng bộ môn · AI hỗ trợ: tổng hợp danh mục kiểm tra, đối chiếu hồ sơ",
+   "luu_y": "phân công phải xong trước khi học kỳ bắt đầu ít nhất 02 tuần để giảng viên chuẩn bị bài giảng. Mọi thay đổi sau phê duyệt (đổi giảng viên, đổi lớp) phải làm văn bản điều chỉnh, không sửa tay trên bảng đã ký.",
+   "ket_qua": "bảng phân công giảng dạy học kỳ đã phê duyệt, đã gửi Phòng Đào tạo và Phòng TC&QT (nhân sự)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Học phần, lớp, số giờ trong bảng phân công khớp với Input (`danh_muc_hoc_phan`, `danh_sach_giang_vien`).",
+  "Mọi giờ trong bảng khối lượng đều có giảng viên nhận; không có giờ \"vô chủ\".",
+  "Không phân công vượt quá 150% định mức nếu chưa có thỏa thuận bằng văn bản với giảng viên.",
+  "Giờ vượt định mức tính đúng công thức và hệ số quy đổi giờ chuẩn hiện hành.",
+  "Đúng thể thức: ngày lập văn bản, chữ ký Trưởng bộ môn và Trưởng khoa.",
+  "Đã qua Human gate: Trưởng khoa đã phê duyệt; bảng đã gửi Phòng Đào tạo và Phòng TC&QT (nhân sự).",
+  "Giảng viên mới (chưa đủ 1 năm công tác) không được giao học phần tốt nghiệp/khóa luận.",
+  "Giảng viên thỉnh giảng trong bảng đã có hợp đồng/xác nhận nhận lớp.",
+  "Mọi thay đổi sau phê duyệt đều có văn bản điều chỉnh, không sửa tay trên bảng đã ký. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Phân công phải tách giảng viên cơ hữu, thỉnh giảng, giảng viên của đối tác nước ngoài; cách tính khối lượng của từng nhóm khác nhau (C2).",
+  "Giảng dạy bằng tiếng Anh: điều kiện năng lực ngoại ngữ do Trường quy định (C3)."
+ ],
+ "cho_xac_nhan": [
+  "Quy định định mức giờ giảng (C2).",
+  "Người phê duyệt phân công (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề hành chính: tên trường – khoa, tên bộ môn.",
+  "Tên văn bản: \"BẢNG PHÂN CÔNG GIẢNG DẠY\" + học kỳ, năm học.",
+  "Bảng phân công chi tiết: các cột STT | Giảng viên | Học phần phụ trách (mã – tên HP) | Lớp | Số giờ (lý thuyết/thực hành) | Ghi chú (giảng viên chính/trợ giảng/thỉnh giảng).",
+  "Bảng tổng hợp giờ giảng: các cột Giảng viên | Định mức (giờ/năm) | Thực hiện học kỳ này | Lũy kế dự kiến cả năm | Giờ vượt định mức.",
+  "Ghi chú về giờ vượt định mức và căn cứ thanh toán.",
+  "Ngày lập văn bản + chữ ký Trưởng bộ môn và Trưởng khoa. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề hành chính: tên trường – khoa, tên bộ môn.\n\n2. Tên văn bản: \"BẢNG PHÂN CÔNG GIẢNG DẠY\" + học kỳ, năm học.\n\n3. Bảng phân công chi tiết: các cột STT | Giảng viên | Học phần phụ trách (mã – tên HP) | Lớp | Số giờ (lý thuyết/thực hành) | Ghi chú (giảng viên chính/trợ giảng/thỉnh giảng).\n\n4. Bảng tổng hợp giờ giảng: các cột Giảng viên | Định mức (giờ/năm) | Thực hiện học kỳ này | Lũy kế dự kiến cả năm | Giờ vượt định mức.\n\n5. Ghi chú về giờ vượt định mức và căn cứ thanh toán.\n\n6. Ngày lập văn bản + chữ ký Trưởng bộ môn và Trưởng khoa.",
+ "human_gate_check": "Đã qua Human gate: Trưởng khoa đã phê duyệt; bảng đã gửi Phòng Đào tạo và Phòng TC&QT (nhân sự).",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (đào tạo). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dt-phan-cong-giang-day/references"
+}

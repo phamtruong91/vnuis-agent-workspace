@@ -1,0 +1,40 @@
+{
+  "name": "vnuis-ctsv-tong-hop-diem-ren-luyen",
+  "version": "0.4.2",
+  "updated_at": "2026-10-11",
+  "source_repository": "https://github.com/phamtruong91/university-skills-framework",
+  "source_commit": "d2a835f00b0dbbafa13a66d56551a4f3102311ac",
+  "maintainer": {
+    "github": "phamtruong91",
+    "name": "Phạm Văn Trường"
+  },
+  "legal_review_status": "requires-applicability-and-fulltext-check",
+  "approval_owner": null,
+  "legal_updates": [],
+  "output_profile": "hanh-chinh",
+  "output_reference": "references/quy-cach-dau-ra.md",
+  "missing_data_policy": "preserve-template-fill-spaces",
+  "qa_attachments": false,
+  "output_delivery": "file-required",
+  "default_output_format": "xlsx",
+  "available_output_formats": [
+    "xlsx",
+    "csv",
+    "pdf"
+  ],
+  "format_selection": "product-and-user-request; requires-working-tools",
+  "based_on": {
+    "skill": "tong-hop-diem-ren-luyen",
+    "version": "1.3.2",
+    "source_commit": "d2a835f00b0dbbafa13a66d56551a4f3102311ac"
+  },
+  "customization": {
+    "organization": "Trường Quốc tế – ĐHQGHN (VNU-IS)",
+    "status": "v0.4.2-chua-co-du-lieu-khao-sat",
+    "survey_item": null,
+    "kind": "chinh-sau"
+  },
+  "previous_name": "vnuis-tong-hop-diem-ren-luyen",
+  "group": "ctsv",
+  "group_label": "Công tác sinh viên"
+}

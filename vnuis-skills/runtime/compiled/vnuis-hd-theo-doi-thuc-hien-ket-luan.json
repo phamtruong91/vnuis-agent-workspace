@@ -1,0 +1,149 @@
+{
+ "name": "vnuis-hd-theo-doi-thuc-hien-ket-luan",
+ "title": "Theo dõi thực hiện kết luận",
+ "description": "Dùng khi sau phiên họp có nghị quyết, kết luận của Hội đồng Khoa học và Đào tạo cần giao việc và theo dõi: đơn vị chủ trì, hạn, minh chứng, trạng thái, cảnh báo quá hạn, báo cáo tình hình thực hiện qua nhiều phiên.",
+ "group": "hd",
+ "group_label": "Hội đồng KH&ĐT",
+ "previous_name": "vnuis-theo-doi-thuc-hien-ket-luan",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Hội đồng Khoa học và Đào tạo (thư ký); đơn vị được giao thực hiện",
+ "when": "Khi có nghị quyết hoặc kết luận mới cần giao việc và theo dõi; khi cần báo cáo tình hình thực hiện qua nhiều phiên; khi cần tra cứu lịch sử quyết nghị theo chủ đề.",
+ "inputs": [
+  {
+   "key": "ket_luan",
+   "desc": "Nghị quyết, kết luận, kiến nghị của từng phiên",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bang_theo_doi_hien_co",
+   "desc": "Bảng theo dõi các phiên trước nếu có",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "bao_cao_phan_hoi",
+   "desc": "Phản hồi, minh chứng của các đơn vị",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ngay_doi_chieu",
+   "desc": "Ngày dùng để tính quá hạn (người dùng cung cấp)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Hội đồng Khoa học và Đào tạo (thư ký); đơn vị được giao thực hiện"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Bóc tách nhiệm vụ",
+   "lam_gi": "Mỗi kết luận tách thành các nhiệm vụ: nội dung, đơn vị chủ trì, phối hợp, hạn, đầu ra; thiếu đầu mối hoặc hạn thì để trống và đưa vào danh sách cần hỏi lại.",
+   "inputs": [
+    "ket_luan"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: bóc tách",
+   "luu_y": "Giữ trích dẫn câu gốc của kết luận cho từng nhiệm vụ.",
+   "ket_qua": "Bảng nhiệm vụ."
+  },
+  {
+   "n": 2,
+   "title": "Cập nhật trạng thái",
+   "lam_gi": "Đối chiếu phản hồi và minh chứng; trạng thái: chưa làm, đang làm, hoàn thành (có minh chứng), quá hạn, cần làm rõ.",
+   "inputs": [
+    "bang_theo_doi_hien_co",
+    "bao_cao_phan_hoi",
+    "ngay_doi_chieu"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: cập nhật theo phản hồi",
+   "luu_y": "Hoàn thành chỉ khi có minh chứng; quá hạn tính theo ngày đối chiếu người dùng cung cấp.",
+   "ket_qua": "Bảng trạng thái."
+  },
+  {
+   "n": 3,
+   "title": "Tổng hợp theo phiên và theo đơn vị",
+   "lam_gi": "Thống kê số nhiệm vụ theo phiên, đơn vị, trạng thái; cảnh báo nhiệm vụ lặp lại qua nhiều phiên mà chưa xong.",
+   "inputs": [
+    "bang_theo_doi_hien_co",
+    "ngay_doi_chieu"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: thống kê",
+   "luu_y": "Số liệu khớp bảng chi tiết.",
+   "ket_qua": "Bảng tổng hợp."
+  },
+  {
+   "n": 4,
+   "title": "Tra cứu theo nội dung",
+   "lam_gi": "Gắn thẻ chủ đề để tra lịch sử quyết nghị.",
+   "inputs": [
+    "ket_luan"
+   ],
+   "vai_tro": "Thư ký Hội đồng · AI hỗ trợ: gắn thẻ",
+   "luu_y": "Thẻ do người dùng duyệt.",
+   "ket_qua": "Chỉ mục chủ đề."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi nhiệm vụ có trích dẫn gốc.",
+  "Hoàn thành đều có minh chứng.",
+  "Số liệu tổng hợp khớp bảng chi tiết.",
+  "Ngày đối chiếu ghi rõ trong file.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Thư ký Hội đồng** xác nhận bảng theo dõi.",
+  "**Người có thẩm quyền** quyết định giao việc và gia hạn."
+ ],
+ "guardrails": [
+  "KHÔNG tự đặt hạn hay đơn vị chủ trì khi kết luận không nêu.",
+  "KHÔNG ghi hoàn thành khi thiếu minh chứng."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Theo Điều 18 Luật 125/2025/QH15, Hội đồng khoa học và đào tạo chỉ tư vấn; \"nghị quyết\", \"kết luận\" của Hội đồng là ý kiến tham mưu, quyết định thuộc Hiệu trưởng hoặc cấp có thẩm quyền (chờ C6). Không viết như quyết định có hiệu lực thi hành. Hội đồng trường công lập đã chấm dứt từ 01/01/2026 (Điều 46)."
+ ],
+ "cho_xac_nhan": [
+  "Cách giao việc sau phiên họp và người đôn đốc (C6).",
+  "Mẫu bảng theo dõi hiện dùng (C8)."
+ ],
+ "output_structure": [
+  "Sheet Nhiệm vụ: phiên, trích dẫn kết luận, nhiệm vụ, chủ trì, phối hợp, hạn, minh chứng, trạng thái.",
+  "Sheet Tổng hợp theo phiên, theo đơn vị.",
+  "Sheet Cần làm rõ: nhiệm vụ thiếu đầu mối hoặc hạn.",
+  "Sheet Chỉ mục chủ đề."
+ ],
+ "output_structure_raw": "1. Sheet Nhiệm vụ: phiên, trích dẫn kết luận, nhiệm vụ, chủ trì, phối hợp, hạn, minh chứng, trạng thái.\n\n2. Sheet Tổng hợp theo phiên, theo đơn vị.\n\n3. Sheet Cần làm rõ: nhiệm vụ thiếu đầu mối hoặc hạn.\n\n4. Sheet Chỉ mục chủ đề.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Hội đồng Khoa học và Đào tạo (thư ký). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-hd-theo-doi-thuc-hien-ket-luan/references"
+}

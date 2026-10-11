@@ -1,0 +1,181 @@
+{
+ "name": "vnuis-vp-ra-soat-du-thao-van-ban",
+ "title": "Rà soát dự thảo văn bản",
+ "description": "Dùng trước khi trình lãnh đạo ký bất kỳ văn bản nào (công văn, tờ trình, quyết định, thông báo, kế hoạch, báo cáo) để kiểm tra thể thức Nghị định 30/2020/NĐ-CP, logic, thuật ngữ, số liệu. Dùng chung mọi đơn vị.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-ra-soat-du-thao-van-ban",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường; Phòng Tổ chức và Quản trị (văn thư, pháp chế)",
+ "when": "Trước khi trình lãnh đạo ký bất kỳ văn bản nào: công văn, tờ trình, quyết định, thông báo,\nkế hoạch, báo cáo... Áp dụng cho mọi phòng ban, khoa, trung tâm — không phụ thuộc tên đơn vị.",
+ "inputs": [
+  {
+   "key": "loai_van_ban",
+   "desc": "Công văn / Tờ trình / Quyết định / Thông báo / Kế hoạch / Báo cáo / Quy chế...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "du_thao",
+   "desc": "Toàn văn dự thảo cần rà soát",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu_phap_ly",
+   "desc": "Các văn bản pháp lý, quy định nội bộ liên quan (để đối chiếu trích dẫn)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "glossary",
+   "desc": "Bảng thuật ngữ chuẩn của trường/đơn vị (nếu có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "muc_do",
+   "desc": "Rà soát nhanh (thể thức + lỗi chính) / Rà soát kỹ (toàn diện 5 lớp)",
+   "required": false,
+   "note": "Không (mặc định: kỹ)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường; Phòng Tổ chức và Quản trị (văn thư, pháp chế)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.\n\nNếu `muc_do` = \"Rà soát nhanh\": chỉ thực hiện Bước 1 (thể thức), Bước 4 (số liệu và trích dẫn chính),\nBước 5 (lỗi chính tả rõ ràng), rồi sang Bước 6–7 rút gọn. Mặc định (`muc_do` = \"kỹ\") thực hiện đủ 7 bước.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Rà soát thể thức theo NĐ 30/2020",
+   "lam_gi": "đối chiếu dự thảo với danh mục thành phần bắt buộc theo đúng `loai_van_ban`: Quốc hiệu, Tiêu ngữ; tên cơ quan ban hành; số, ký hiệu; địa danh, ngày tháng năm; tên loại và trích yếu; kính gửi (nếu có); nội dung; thẩm quyền ký; nơi nhận; chữ ký (chức danh + họ tên); dấu chỉ mức độ khẩn, mật (nếu có). Đánh dấu từng thành phần: đủ / thiếu / sai vị trí.",
+   "inputs": [
+    "du_thao",
+    "loai_van_ban",
+    "muc_do"
+   ],
+   "vai_tro": "Chuyên viên soạn thảo (đơn vị soạn thảo văn bản) · AI hỗ trợ: đối chiếu tự động theo danh mục thành phần NĐ 30/2020, đánh dấu đủ/thiếu/sai vị trí",
+   "luu_y": "mỗi loại văn bản có bộ thành phần riêng (VD: quyết định không có kính gửi, công văn bắt buộc có kính gửi và nơi nhận) — không áp rập khuôn một mẫu cho mọi loại; kiểm tra chính tả tên cơ quan, chức danh người ký.",
+   "ket_qua": "danh sách thành phần thể thức đủ/thiếu/sai vị trí."
+  },
+  {
+   "n": 2,
+   "title": "Rà soát logic nội dung",
+   "lam_gi": "kiểm tra mạch lý do → căn cứ → nội dung → kiến nghị có liền mạch không; các điều/khoản có mâu thuẫn nhau không; phạm vi điều chỉnh và đối tượng áp dụng có được xác định rõ ràng; nội dung có vượt quá thẩm quyền ban hành của người ký không.",
+   "inputs": [
+    "du_thao",
+    "loai_van_ban"
+   ],
+   "vai_tro": "Chuyên viên soạn thảo (đơn vị soạn thảo văn bản) · AI hỗ trợ: rà mạch logic, phát hiện mâu thuẫn giữa các điều/khoản",
+   "luu_y": "bẫy thường gặp là viện dẫn căn cứ nhưng nội dung không dùng đến, hoặc kiến nghị vượt thẩm quyền người ký; với quyết định/quy chế, kiểm tra từng điều không \"đá\" nhau.",
+   "ket_qua": "danh sách điểm mâu thuẫn, thiếu logic kèm vị trí điều/khoản/mục."
+  },
+  {
+   "n": 3,
+   "title": "Kiểm tra thuật ngữ nhất quán",
+   "lam_gi": "quét toàn văn, liệt kê các thuật ngữ chỉ cùng một đối tượng/khái niệm (VD: \"sinh viên\"/\"học viên\", \"khoa\"/\"bộ môn\"); đối chiếu với `glossary` nếu có; kiểm tra tên đơn vị, chức danh, học hàm học vị viết đúng chuẩn.",
+   "inputs": [
+    "du_thao",
+    "glossary"
+   ],
+   "vai_tro": "Chuyên viên soạn thảo (đơn vị soạn thảo văn bản) · AI hỗ trợ: quét toàn văn, lập bảng thuật ngữ lẫn lộn, đối chiếu glossary",
+   "luu_y": "lỗi thuật ngữ thường rải rác các mục do nhiều người cùng soạn; phải chọn MỘT cách viết chuẩn và thống nhất toàn văn, không giữ cả hai.",
+   "ket_qua": "bảng thuật ngữ lẫn lộn (vị trí | các cách viết | cách viết chuẩn đề xuất)."
+  },
+  {
+   "n": 4,
+   "title": "Kiểm tra số liệu và trích dẫn",
+   "lam_gi": "cộng dồn lại mọi số liệu tính toán (tổng, tỷ lệ %) để đối chiếu với con số ghi trong văn bản; kiểm tra đơn vị tính, định dạng ngày tháng nhất quán; tra từng số/ký hiệu văn bản được trích dẫn đối chiếu với `can_cu_phap_ly`; kiểm tra căn cứ còn hiệu lực hay đã bị thay thế.",
+   "inputs": [
+    "du_thao",
+    "can_cu_phap_ly"
+   ],
+   "vai_tro": "Chuyên viên soạn thảo (đơn vị soạn thảo văn bản) · AI hỗ trợ: cộng dồn số liệu, tra cứu trích dẫn; chuyên viên xác nhận trạng thái hiệu lực căn cứ",
+   "luu_y": "bẫy kinh điển là tổng các khoản không khớp tổng ghi trong văn bản, và trích dẫn nhầm số hiệu văn bản (VD: nhầm thông tư tuyển sinh với thông tư đào tạo); căn cứ hết hiệu lực phải cảnh báo ở mức Nghiêm trọng.",
+   "ket_qua": "bảng lỗi số liệu/trích dẫn (vị trí | số liệu ghi | số liệu đúng | nguồn đối chiếu)."
+  },
+  {
+   "n": 5,
+   "title": "Rà soát ngôn ngữ, chính tả",
+   "lam_gi": "kiểm tra chính tả, dấu câu, lỗi đánh máy; câu văn hành chính có rõ ràng, không tối nghĩa, không gây hiểu hai nghĩa.",
+   "inputs": [
+    "du_thao"
+   ],
+   "vai_tro": "Chuyên viên soạn thảo (đơn vị soạn thảo văn bản) · AI hỗ trợ: quét chính tả, dấu câu, phát hiện câu tối nghĩa",
+   "luu_y": "chỉ sửa lỗi ngôn ngữ, KHÔNG viết lại văn phong của người soạn; câu nào tối nghĩa thì đề xuất cách viết lại cụ thể, không tự ý thay đổi ý.",
+   "ket_qua": "danh sách lỗi chính tả, dấu câu, câu tối nghĩa kèm đề xuất sửa."
+  },
+  {
+   "n": 6,
+   "title": "Lập bảng lỗi tổng hợp",
+   "lam_gi": "gộp kết quả 5 bước thành một bảng lỗi duy nhất; mỗi lỗi ghi: vị trí (dòng/điều/mục), loại lỗi, mức độ (Nghiêm trọng / Cần sửa / Gợi ý), đề xuất sửa cụ thể; sắp xếp theo mức độ giảm dần; lập thống kê số lỗi theo mức độ và theo lớp rà soát.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên soạn thảo (đơn vị soạn thảo văn bản) · AI hỗ trợ: gộp bảng lỗi, phân loại mức độ, lập thống kê",
+   "luu_y": "mức Nghiêm trọng = lỗi làm văn bản mất hiệu lực hoặc gây hiểu sai (thiếu thành phần thể thức bắt buộc, số liệu sai, căn cứ hết hiệu lực); phân biệt rõ lỗi \"bắt buộc sửa\" với \"gợi ý hoàn thiện\".",
+   "ket_qua": "bảng lỗi chi tiết đã phân loại, đánh mức độ, có thống kê."
+  },
+  {
+   "n": 7,
+   "title": "Xuất bản sạch đã hiệu đính",
+   "lam_gi": "áp toàn bộ đề xuất sửa trong bảng lỗi lên dự thảo, giữ nguyên ý đồ và văn phong của người soạn; đánh dấu mọi chỗ đã sửa để đối chiếu với số thứ tự lỗi trong bảng; đọc soát lại toàn văn sau hiệu đính.",
+   "inputs": [
+    "du_thao"
+   ],
+   "vai_tro": "Chuyên viên soạn thảo (đơn vị soạn thảo văn bản) + Người ký (Trưởng phòng/Hiệu trưởng theo thẩm quyền) · AI hỗ trợ: áp đề xuất sửa thành bản sạch, đánh dấu chỗ sửa để đối chiếu",
+   "luu_y": "chỗ nào người soạn có thể không đồng ý thì giữ nguyên văn và ghi chú trong bảng lỗi, không tự ý sửa; bản sạch phải ở trạng thái \"trình ký được ngay\" sau khi human gate duyệt.",
+   "ket_qua": "bản sạch sẵn sàng trình ký + kết quả rà soát 5 lớp (giữ nội bộ, không xuất kèm file)."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu, số/ký hiệu văn bản trích dẫn trong output khớp với Input đã cho; căn cứ pháp lý còn hiệu lực, trích dẫn đúng số hiệu.",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn văn bản pháp lý.",
+  "Bản sạch giữ nguyên ý đồ và văn phong của người soạn; chỗ người soạn có thể không đồng ý giữ nguyên văn + ghi chú, không tự ý sửa.",
+  "Đúng thể thức theo NĐ 30/2020/NĐ-CP với loại văn bản tương ứng.",
+  "Đã qua Human gate: chuyên viên soạn thảo đã xác nhận từng lỗi; người ký đã duyệt bản cuối; không còn lỗi Nghiêm trọng chưa được con người xác nhận.",
+  "Bản sạch ở trạng thái \"trình ký được ngay\" sau khi human gate duyệt.",
+  "Mỗi lỗi đánh số, truy vết được vị trí tương ứng trong bản sạch đã hiệu đính."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Rà thể thức theo mẫu của Trường và ĐHQGHN do người dùng cung cấp; chưa có mẫu thì chỉ rà theo Nghị định 30/2020/NĐ-CP như skill gốc và ghi rõ.",
+  "Rà số liệu trong dự thảo với nguồn: đặc biệt số chương trình, chỉ tiêu, người học vì website tự mâu thuẫn (xem bối cảnh mục 3).",
+  "Dự thảo có phần tiếng Anh: rà nhất quán tên đơn vị, tên chương trình với bảng thuật ngữ."
+ ],
+ "cho_xac_nhan": [
+  "Bộ mẫu thể thức đang dùng (C1, C8).",
+  "Người rà thể thức cuối cùng (C6)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "Theo yêu cầu sửa văn bản, giao bản văn bản đã chỉnh theo loại gốc; không kèm bảng lỗi/danh mục kiểm/phụ lục kiểm tra. Chỉ khi người dùng yêu cầu báo cáo rà soát thì lập báo cáo kết quả làm sản phẩm chính: thông tin văn bản, ý kiến cụ thể theo vị trí, đề xuất và kết luận có căn cứ.",
+ "human_gate_check": "Đã qua Human gate: chuyên viên soạn thảo đã xác nhận từng lỗi; người ký đã duyệt bản cuối; không còn lỗi Nghiêm trọng chưa được con người xác nhận.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n",
+ "outputs_dir": "skills/vnuis-vp-ra-soat-du-thao-van-ban/references"
+}

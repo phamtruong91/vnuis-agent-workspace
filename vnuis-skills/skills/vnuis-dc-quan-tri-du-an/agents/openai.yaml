@@ -1,0 +1,4 @@
+interface:
+  display_name: Dùng chung · Quản trị dự án – VNU-IS
+  short_description: Hỗ trợ quản trị dự án (điều phối dự án) (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-dc-quan-tri-du-an để hỗ trợ công việc: Quản trị dự án (điều phối dự án); xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .xlsx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

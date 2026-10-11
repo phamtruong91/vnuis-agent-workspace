@@ -1,0 +1,207 @@
+{
+ "name": "vnuis-csvc-soan-hop-dong-mua-sam",
+ "title": "Soạn hợp đồng mua sắm thiết bị",
+ "description": "Dùng khi đã có kết quả lựa chọn nhà thầu và cần soạn hợp đồng mua sắm trang thiết bị (giao hàng, nghiệm thu, thanh toán, bảo hành, phạt vi phạm) hoặc phụ lục điều chỉnh hợp đồng.",
+ "group": "csvc",
+ "group_label": "Cơ sở vật chất – mua sắm, tài sản",
+ "previous_name": "vnuis-hop-dong-mua-sam",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (cơ sở vật chất); pháp chế",
+ "when": "Khi cần ký hợp đồng mua sắm thiết bị với nhà thầu trúng thầu / được chỉ định;\nkhi lập phụ lục điều chỉnh, bổ sung hợp đồng.",
+ "inputs": [
+  {
+   "key": "ben_a",
+   "desc": "Thông tin trường (tên, địa chỉ, MST, người đại diện, chức vụ)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ben_b",
+   "desc": "Thông tin nhà thầu (tên, địa chỉ, MST, người đại diện)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "goi_thau",
+   "desc": "Tên gói thầu, căn cứ kết quả lựa chọn nhà thầu (số quyết định phê duyệt)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_muc",
+   "desc": "Danh mục thiết bị: tên, model, số lượng, đơn giá",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "gia_tri",
+   "desc": "Giá trị hợp đồng (đồng, đã gồm VAT)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "giao_hang",
+   "desc": "Thời gian, địa điểm giao hàng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thanh_toan",
+   "desc": "Số đợt, tỷ lệ, điều kiện thanh toán",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bao_hanh",
+   "desc": "Thời gian bảo hành, trách nhiệm bảo hành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "phat_vi_pham",
+   "desc": "Mức phạt chậm tiến độ / vi phạm chất lượng",
+   "required": false,
+   "note": "Không (mặc định: theo quy định)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (cơ sở vật chất); pháp chế"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Nghị định 214/2025, sửa đổi 165/2026, 170/2026, 349/2026; VBHN 36/2026/VBHN-NĐ-BTC ngày 23/09/2026: Yêu cầu chủ thể, nguồn vốn, loại gói, dự toán được duyệt, phân cấp thẩm quyền, mua sắm tập trung, điều kiện áp dụng hình thức và thời điểm phát hành. Đối chiếu Luật Đấu thầu hợp nhất 74/VBHN-VPQH ngày 25/03/2026 và nghị định hiện hành. Không suy ra chỉ định thầu/mua sắm trực tiếp chỉ vì nhỏ lẻ hoặc cấp bách; ghi điều khoản và điều kiện từng gói, cán bộ thẩm định xác nhận. Không tự đặt hạn mức.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập căn cứ và thông tin các bên",
+   "lam_gi": "thu thập quyết định phê duyệt kết quả lựa chọn nhà thầu (`goi_thau`: số quyết định, ngày ban hành, tên gói thầu), HSMT và HSDT của nhà thầu trúng thầu; ghi nhận thông tin `ben_a` và `ben_b` (tên đầy đủ, địa chỉ, mã số thuế, tài khoản ngân hàng, người đại diện theo pháp luật, chức vụ); kiểm tra người đại diện có đúng thẩm quyền ký (giấy ủy quyền nếu người ký không phải người đại diện theo pháp luật).",
+   "inputs": [
+    "ben_a",
+    "ben_b",
+    "goi_thau"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "hợp đồng ký với người không có thẩm quyền có nguy cơ vô hiệu — kiểm tra giấy phép/điều lệ hoặc giấy ủy quyền còn hiệu lực của bên B trước khi soạn.",
+   "ket_qua": "hồ sơ căn cứ ký hợp đồng (QĐ phê duyệt KQLCNT, HSMT/HSDT, thông tin pháp lý hai bên đã kiểm tra thẩm quyền)."
+  },
+  {
+   "n": 2,
+   "title": "Soạn phần mở đầu: căn cứ ký kết và thông tin các bên",
+   "lam_gi": "viết phần căn cứ (Luật Đấu thầu, quyết định phê duyệt KQLCNT, HSMT/HSDT) và phần thông tin hai bên (Bên A – Bên mua, Bên B – Bên bán) đầy đủ theo hồ sơ Bước 1; ghi rõ thời gian, địa điểm ký kết.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "trích dẫn căn cứ phải ghi đủ số, ngày, cơ quan ban hành của quyết định phê duyệt KQLCNT — đây là mắt xích pháp lý của toàn bộ hợp đồng.",
+   "ket_qua": "dự thảo phần mở đầu hợp đồng."
+  },
+  {
+   "n": 3,
+   "title": "Soạn Điều 1 – Đối tượng và Điều 2 – Giá trị hợp đồng",
+   "lam_gi": "viết Điều 1 (danh mục thiết bị từ `danh_muc`: tên, model, số lượng, đơn giá, thông số kỹ thuật — khớp với HSDT của nhà thầu trúng thầu) và Điều 2 (giá trị hợp đồng `gia_tri`, đã gồm VAT, ghi cả bằng số và bằng chữ).",
+   "inputs": [
+    "danh_muc",
+    "gia_tri",
+    "goi_thau"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "giá trị hợp đồng phải khớp tuyệt đối với giá trúng thầu trong quyết định phê duyệt KQLCNT; chênh lệch dù nhỏ cũng phải làm rõ trước khi ký.",
+   "ket_qua": "dự thảo Điều 1 – 2."
+  },
+  {
+   "n": 4,
+   "title": "Soạn Điều 3 – Giao hàng, nghiệm thu và Điều 4 – Thanh toán",
+   "lam_gi": "viết Điều 3 (thời gian, địa điểm giao hàng; thành phần và thủ tục nghiệm thu, bàn giao từ `giao_hang`) và Điều 4 (số đợt thanh toán, tỷ lệ, điều kiện từng đợt, hồ sơ thanh toán phải nộp từ `thanh_toan`).",
+   "inputs": [
+    "giao_hang",
+    "thanh_toan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "điều kiện thanh toán phải gắn với mốc nghiệm thu/bàn giao cụ thể, tránh điều khoản \"thanh toán khi có tiền\"; hồ sơ thanh toán liệt kê rõ để sau này làm danh mục kiểm chứng từ.",
+   "ket_qua": "dự thảo Điều 3 – 4."
+  },
+  {
+   "n": 5,
+   "title": "Soạn Điều 5 – 9: bảo hành, phạt vi phạm, chấm dứt, tranh chấp, hiệu lực",
+   "lam_gi": "viết Điều 5 (thời gian bảo hành, trách nhiệm khắc phục từ `bao_hanh`); Điều 6 (mức phạt chậm tiến độ/vi phạm chất lượng từ `phat_vi_pham`, mặc định theo quy định nếu không chỉ định); Điều 7 (chấm dứt hợp đồng); Điều 8 (giải quyết tranh chấp); Điều 9 (hiệu lực, số bản, nơi lưu).",
+   "inputs": [
+    "bao_hanh",
+    "phat_vi_pham"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: soạn dự thảo, lưu trữ hồ sơ",
+   "luu_y": "mức phạt vi phạm có trần tối đa theo quy định — không đặt vượt trần; điều khoản bảo hành ghi rõ thời gian phản ứng (ví dụ khắc phục trong 48 giờ) để có căn cứ xử lý sự cố.",
+   "ket_qua": "dự thảo Điều 5 – 9 (hoàn thành toàn văn hợp đồng)."
+  },
+  {
+   "n": 6,
+   "title": "Rà soát điều khoản theo danh mục kiểm",
+   "lam_gi": "rà soát toàn văn theo danh mục kiểm: giá trị hợp đồng khớp quyết định phê duyệt KQLCNT; danh mục, thông số kỹ thuật khớp HSMT/HSDT; điều khoản giao hàng – nghiệm thu – thanh toán – bảo hành rõ ràng, khả thi; người đại diện hai bên đúng thẩm quyền; đánh dấu từng mục và ghi điểm cần sửa.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "điểm chưa đạt thì quay lại sửa ở đúng điều khoản tương ứng, không sửa chắp vá gây mâu thuẫn giữa các điều.",
+   "ket_qua": "kết quả đối chiếu nội bộ (không xuất kèm file) + danh sách điểm cần sửa (nếu có)."
+  },
+  {
+   "n": 7,
+   "title": "Ký kết và lưu trữ",
+   "lam_gi": "hai bên ký, đóng dấu; lập số bản theo thỏa thuận (mỗi bên giữ số bản như nhau); lưu hồ sơ hợp đồng làm căn cứ cho nghiệm thu, thanh toán và bảo hành về sau.",
+   "inputs": [],
+   "vai_tro": "Đại diện hai bên ký (Bên A: Hiệu trưởng hoặc người được ủy quyền) · AI hỗ trợ: lưu trữ hồ sơ",
+   "luu_y": "hợp đồng chỉ có hiệu lực pháp lý đầy đủ khi đã ký và đóng dấu hợp lệ của cả hai bên.",
+   "ket_qua": "hợp đồng mua sắm thiết bị hoàn chỉnh, đã ký."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Có đầy đủ sản phẩm: Hợp đồng mua sắm thiết bị hoàn chỉnh",
+  "Có đầy đủ sản phẩm: Danh mục kiểm rà soát điều khoản trước khi ký",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Hợp đồng ký với người không có thẩm quyền có nguy cơ vô hiệu — kiểm tra",
+  "Trích dẫn căn cứ phải ghi đủ số, ngày, cơ quan ban hành của quyết định"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hợp đồng soạn theo mẫu của Trường; điều khoản thanh toán, bảo hành chỉ ghi theo thỏa thuận đã có.",
+  "Pháp chế rà trước khi trình ký."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu hợp đồng và thẩm quyền ký (C1, C8).",
+  "Ngưỡng giá trị phải qua hội đồng hoặc ĐHQGHN (C6)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ;",
+  "Tiêu đề hợp đồng + số hợp đồng;",
+  "Căn cứ ký kết (Luật Đấu thầu, quyết định phê duyệt KQLCNT, HSMT/HSDT);",
+  "Thời gian, địa điểm ký kết; thông tin Bên A (Bên mua) và Bên B (Bên bán);",
+  "Các điều khoản: Điều 1 – Đối tượng hợp đồng; Điều 2 – Giá trị hợp đồng; Điều 3 – Giao hàng, nghiệm thu, bàn giao; Điều 4 – Thanh toán; Điều 5 – Bảo hành, bảo trì; Điều 6 – Phạt vi phạm, bồi thường thiệt hại; Điều 7 – Chấm dứt hợp đồng; Điều 8 – Giải quyết tranh chấp; Điều 9 – Hiệu lực (số bản, nơi lưu);",
+  "Chữ ký hai bên (ký, đóng dấu, ghi rõ họ tên, chức vụ);",
+  "(Kèm theo) Danh mục kiểm rà soát điều khoản trước khi ký."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ;\n\n2. Tiêu đề hợp đồng + số hợp đồng;\n\n3. Căn cứ ký kết (Luật Đấu thầu, quyết định phê duyệt KQLCNT, HSMT/HSDT);\n\n4. Thời gian, địa điểm ký kết; thông tin Bên A (Bên mua) và Bên B (Bên bán);\n\n5. Các điều khoản: Điều 1 – Đối tượng hợp đồng; Điều 2 – Giá trị hợp đồng; Điều 3 – Giao\n   hàng, nghiệm thu, bàn giao; Điều 4 – Thanh toán; Điều 5 – Bảo hành, bảo trì; Điều 6 –\n   Phạt vi phạm, bồi thường thiệt hại; Điều 7 – Chấm dứt hợp đồng; Điều 8 – Giải quyết\n   tranh chấp; Điều 9 – Hiệu lực (số bản, nơi lưu);\n\n6. Chữ ký hai bên (ký, đóng dấu, ghi rõ họ tên, chức vụ);\n\n7. (Kèm theo) Danh mục kiểm rà soát điều khoản trước khi ký.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (cơ sở vật chất). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Nghị định 214/2025, sửa đổi 165/2026, 170/2026, 349/2026; VBHN 36/2026/VBHN-NĐ-BTC ngày 23/09/2026\n\nNguồn: https://chinhphu.vn/?docid=219604&pageid=27160\n\nYêu cầu chủ thể, nguồn vốn, loại gói, dự toán được duyệt, phân cấp thẩm quyền, mua sắm tập trung, điều kiện áp dụng hình thức và thời điểm phát hành. Đối chiếu Luật Đấu thầu hợp nhất 74/VBHN-VPQH ngày 25/03/2026 và nghị định hiện hành. Không suy ra chỉ định thầu/mua sắm trực tiếp chỉ vì nhỏ lẻ hoặc cấp bách; ghi điều khoản và điều kiện từng gói, cán bộ thẩm định xác nhận. Không tự đặt hạn mức.\n",
+ "outputs_dir": "skills/vnuis-csvc-soan-hop-dong-mua-sam/references"
+}

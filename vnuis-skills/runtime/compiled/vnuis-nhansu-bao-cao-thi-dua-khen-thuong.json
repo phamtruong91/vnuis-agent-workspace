@@ -1,0 +1,185 @@
+{
+ "name": "vnuis-nhansu-bao-cao-thi-dua-khen-thuong",
+ "title": "Báo cáo tổng kết công tác thi đua, khen thưởng",
+ "description": "Dùng khi cần tổng hợp dự thảo báo cáo công tác thi đua, khen thưởng từ quyết định và số liệu đã xác nhận trong kỳ. Không dùng để chấm điểm, xếp hạng cá nhân hay quyết định người được khen.",
+ "group": "nhansu",
+ "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+ "previous_name": "vnuis-bao-cao-thi-dua",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (thi đua – khen thưởng)",
+ "when": "Tổng hợp kết quả thi đua, khen thưởng đã có quyết định hoặc hồ sơ xác nhận trong kỳ. Chuẩn bị dự thảo báo cáo và bảng đối chiếu để cán bộ phụ trách kiểm tra trước trình lãnh đạo.",
+ "inputs": [
+  {
+   "key": "ky_bao_cao",
+   "desc": "Năm học/năm công tác và thời điểm chốt số liệu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quyet_dinh_khen_thuong",
+   "desc": "Số, ngày, loại danh hiệu/hình thức, đơn vị và số lượng đã được phê duyệt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bao_cao_don_vi",
+   "desc": "Số liệu đã xác nhận của từng đơn vị, nguồn và người xác nhận",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_so_dang_trinh",
+   "desc": "Hồ sơ đang đề nghị; tách khỏi kết quả được tặng",
+   "required": false,
+   "note": "Khi có"
+  },
+  {
+   "key": "so_lieu_ky_truoc",
+   "desc": "Số liệu kỳ trước có cùng phạm vi để so sánh",
+   "required": false,
+   "note": "Khi cần so sánh"
+  },
+  {
+   "key": "nhan_xet_da_duyet",
+   "desc": "Nhận xét về công tác tổ chức đã được cán bộ phụ trách xác nhận",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "phuong_huong_da_duyet",
+   "desc": "Nhiệm vụ và chỉ tiêu kỳ tới đã được lãnh đạo xác nhận",
+   "required": false,
+   "note": "Khi có"
+  },
+  {
+   "key": "thong_tin_trinh_ky",
+   "desc": "Người dự kiến ký, căn cứ thẩm quyền, ngày dự kiến, nơi nhận",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (thi đua – khen thưởng)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Kiểm tra kỳ, thời điểm chốt và nguồn từng dòng",
+   "lam_gi": "Kiểm tra từng dòng số liệu có kỳ, thời điểm chốt và nguồn; dòng thiếu quyết định hoặc xác nhận thì ghi nhận nội bộ [CHƯA XÁC NHẬN] (không đưa vào file giao) và không tính vào kết quả đã ban hành.",
+   "inputs": [
+    "ky_bao_cao",
+    "quyet_dinh_khen_thuong",
+    "bao_cao_don_vi"
+   ],
+   "vai_tro": "Chuyên viên Văn phòng/Phòng Thi đua (đơn vị tổng hợp) · AI hỗ trợ: đối chiếu và tổng hợp số liệu, soạn dự thảo",
+   "luu_y": "Mọi con số phải truy được về quyết định/hồ sơ và người xác nhận.",
+   "ket_qua": "Danh sách dòng số liệu hợp lệ + danh sách dòng chưa xác nhận (nội bộ)."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu số liệu đơn vị với quyết định",
+   "lam_gi": "Lập bảng số liệu nguồn / số liệu báo cáo / chênh lệch / người cần xác nhận. Không tự chọn một nguồn khi có mâu thuẫn.",
+   "inputs": [
+    "quyet_dinh_khen_thuong",
+    "bao_cao_don_vi"
+   ],
+   "vai_tro": "Chuyên viên Văn phòng/Phòng Thi đua (đơn vị tổng hợp) · AI hỗ trợ: đối chiếu và tổng hợp số liệu, soạn dự thảo",
+   "luu_y": "Chênh lệch chưa giải trình được thì giữ ở bảng nội bộ, không đưa vào báo cáo.",
+   "ket_qua": "Bảng đối chiếu (nội bộ) + danh sách cần bổ sung."
+  },
+  {
+   "n": 3,
+   "title": "Tổng hợp số lượng theo danh hiệu, hình thức và đơn vị",
+   "lam_gi": "Tổng hợp theo loại danh hiệu, hình thức khen thưởng và đơn vị; giữ tách biệt tập thể/cá nhân và đã được tặng/đang đề nghị. Tránh đếm trùng người hay hồ sơ; không cộng các đại lượng khác đơn vị tính.",
+   "inputs": [
+    "ho_so_dang_trinh"
+   ],
+   "vai_tro": "Chuyên viên Văn phòng/Phòng Thi đua (đơn vị tổng hợp) · AI hỗ trợ: đối chiếu và tổng hợp số liệu, soạn dự thảo",
+   "luu_y": "Hồ sơ đang đề nghị không được cộng vào kết quả đã được tặng.",
+   "ket_qua": "Bảng thống kê đã tách các nhóm."
+  },
+  {
+   "n": 4,
+   "title": "Tính biến động so với kỳ trước",
+   "lam_gi": "Chỉ tính biến động khi có dữ liệu kỳ trước cùng phạm vi. Nếu mẫu số bằng 0 hoặc không có dữ liệu thì để trống, ghi không tính được; không tự đặt tỷ lệ tăng/giảm.",
+   "inputs": [
+    "so_lieu_ky_truoc"
+   ],
+   "vai_tro": "Chuyên viên Văn phòng/Phòng Thi đua (đơn vị tổng hợp) · AI hỗ trợ: đối chiếu và tổng hợp số liệu, soạn dự thảo",
+   "luu_y": "So sánh khác phạm vi (đơn vị, loại danh hiệu) là so sánh sai.",
+   "ket_qua": "Bảng biến động hoặc ghi chú không tính được."
+  },
+  {
+   "n": 5,
+   "title": "Soạn báo cáo",
+   "lam_gi": "Soạn báo cáo gồm kết quả đã xác nhận, vấn đề đối chiếu còn mở và nhiệm vụ kỳ tới đã được cung cấp. Chỉ trình bày nhận xét từ `nhan_xet_da_duyet` và phương hướng từ `phuong_huong_da_duyet`, ghi rõ nguồn.",
+   "inputs": [
+    "nhan_xet_da_duyet",
+    "phuong_huong_da_duyet",
+    "thong_tin_trinh_ky"
+   ],
+   "vai_tro": "Chuyên viên Văn phòng/Phòng Thi đua (đơn vị tổng hợp) · AI hỗ trợ: đối chiếu và tổng hợp số liệu, soạn dự thảo",
+   "luu_y": "Không suy đoán nguyên nhân hay thành tích cá nhân; không thêm nhận xét khi thiếu dữ liệu.",
+   "ket_qua": "Dự thảo báo cáo đúng bố cục."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra nguồn truy nguyên và chuyển duyệt",
+   "lam_gi": "Kiểm tra mỗi số liệu và phát biểu có nguồn truy nguyên; xuất báo cáo hoàn chỉnh về bố cục, để trống dữ liệu thiếu; bảng đối chiếu và vấn đề cần xác nhận chỉ dùng nội bộ. Cán bộ phụ trách xác nhận nội dung; người có thẩm quyền quyết định ký/phát hành.",
+   "inputs": [
+    "thong_tin_trinh_ky"
+   ],
+   "vai_tro": "Chuyên viên Văn phòng/Phòng Thi đua (đơn vị tổng hợp) chuẩn bị; cán bộ phụ trách xác nhận; người có thẩm quyền duyệt · AI hỗ trợ: đối chiếu và tổng hợp số liệu, soạn dự thảo",
+   "luu_y": "Không tự gửi, công bố, ký hoặc đánh dấu đã duyệt.",
+   "ket_qua": "Báo cáo hoàn chỉnh, sẵn sàng chuyển cán bộ phụ trách kiểm tra."
+  }
+ ],
+ "checks": [
+  "Kỳ, phạm vi và thời điểm chốt thống nhất.",
+  "Mọi số liệu có quyết định/hồ sơ và người xác nhận.",
+  "Tách đã được tặng và đang đề nghị; không đếm trùng.",
+  "Không thêm nhận xét, nguyên nhân hoặc tỷ lệ khi thiếu dữ liệu.",
+  "Báo cáo và bảng thống kê khớp nhau.",
+  "Những điểm chưa xác minh được ghi riêng.",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "Chỉ hỗ trợ tổng hợp và biên tập thông tin đã được xác nhận. Không chấm điểm, xếp hạng, đề xuất cá nhân được/không được khen thưởng hoặc tự quyết định quyền lợi nhân sự. Các đánh giá và quyết định thuộc cán bộ/hội đồng có thẩm quyền.\n\nKhông tự thêm thành tích, tỷ lệ, số phiên họp, quyết định hay nhận xét tuân thủ pháp luật. Không tự gửi báo cáo, công bố, ký hoặc đánh dấu đã duyệt. Hạn chế dữ liệu cá nhân theo mục đích và phân quyền; dùng số liệu tổng hợp khi đủ đáp ứng báo cáo. Kiểm tra Luật 91/2025/QH15 và quy định áp dụng trước xử lý/chia sẻ dữ liệu cá nhân.",
+ "adjustments": [
+  "Chỉ tổng hợp từ quyết định và số liệu đã được xác nhận; không đánh giá lại thành tích.",
+  "Tách khen thưởng viên chức, sinh viên, tập thể (khoa, phòng, Viện).",
+  "Số lượng theo cấp khen thưởng phải khớp danh sách quyết định."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu báo cáo thi đua (C8).",
+  "Danh mục quyết định trong kỳ (C8)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "BÁO CÁO (BC): phần đầu hành chính; trích yếu công tác thi đua, khen thưởng và kỳ; Kính gửi; I. Phạm vi và kỳ; II. Kết quả thi đua/khen thưởng đã xác nhận (bảng tách tập thể/cá nhân, đã được tặng/đang đề nghị); III. Đánh giá công tác tổ chức đã được xác nhận; IV. Phương hướng kỳ tới đã cung cấp; nơi nhận và khối ký. Không tự nhận xét thành tích, chấm điểm hoặc đề xuất người hưởng quyền lợi. Không xuất bảng truy nguyên, vấn đề kiểm tra còn mở hay danh sách thiếu dữ liệu.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (thi đua – khen thưởng). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-nhansu-bao-cao-thi-dua-khen-thuong/references"
+}

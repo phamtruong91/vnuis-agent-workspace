@@ -1,0 +1,4 @@
+interface:
+  display_name: Tài chính · Phân tích chênh lệch ngân sách – VNU-IS
+  short_description: Hỗ trợ phân tích chênh lệch ngân sách (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-taichinh-phan-tich-chenh-lech-ngan-sach để hỗ trợ công việc: Phân tích chênh lệch ngân sách; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .xlsx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

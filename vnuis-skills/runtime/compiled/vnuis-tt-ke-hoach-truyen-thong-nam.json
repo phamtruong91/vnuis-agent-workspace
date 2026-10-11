@@ -1,0 +1,213 @@
+{
+ "name": "vnuis-tt-ke-hoach-truyen-thong-nam",
+ "title": "Kế hoạch truyền thông năm",
+ "description": "Dùng khi Phòng Truyền thông và Tuyển sinh lập hoặc điều chỉnh kế hoạch truyền thông năm học: mục tiêu, thông điệp, kênh, lịch chiến dịch theo đợt tuyển sinh và sự kiện, ngân sách, chỉ số đánh giá.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-ke-hoach-truyen-thong-nam",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi Phòng Truyền thông và Tuyển sinh cần lập kế hoạch truyền thông năm học: định hướng thương hiệu,\ncác đợt chiến dịch (tuyển sinh, khai giảng, kỷ niệm...), phân bổ kênh và ngân sách, Chỉ số đánh giá.",
+ "inputs": [
+  {
+   "key": "nam_hoc",
+   "desc": "Năm học áp dụng (VD: 2026–2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_tieu",
+   "desc": "Mục tiêu truyền thông (nhận diện thương hiệu, chỉ tiêu tuyển sinh...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thong_diep_chu_dao",
+   "desc": "1–3 thông điệp chủ đạo của năm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong",
+   "desc": "Nhóm đối tượng chính (thí sinh THPT, phụ huynh, doanh nghiệp, cựu SV...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kenh",
+   "desc": "Các kênh sử dụng (website, fanpage, TikTok, báo chí, sự kiện...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chien_dich",
+   "desc": "Danh sách chiến dịch dự kiến theo thời gian",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngan_sach",
+   "desc": "Ngân sách dự kiến theo từng chiến dịch/kênh",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "kpi",
+   "desc": "Chỉ tiêu đo lường (lượt tiếp cận, lượt tương tác, thí sinh tiềm năng, bài báo...)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Phân tích bối cảnh truyền thông",
+   "lam_gi": "tổng kết kết quả truyền thông năm trước (số liệu lượt tiếp cận, lượt tương tác, thí sinh tiềm năng, bài báo); xác định điểm mạnh, điểm yếu; rà soát cơ hội năm tới: các đợt tuyển sinh, sự kiện lớn của trường, xu hướng kênh; phân tích đặc điểm đối tượng mục tiêu.",
+   "inputs": [
+    "nam_hoc",
+    "doi_tuong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, tính toán, phân tích số liệu",
+   "luu_y": "số liệu năm trước phải có nguồn xác thực; mỗi cơ hội phải gắn với mốc thời gian cụ thể mới đưa vào lịch được.",
+   "ket_qua": "Báo cáo phân tích bối cảnh (điểm mạnh/yếu, cơ hội, lịch mốc quan trọng)."
+  },
+  {
+   "n": 2,
+   "title": "Xác định mục tiêu SMART",
+   "lam_gi": "viết mục tiêu truyền thông năm theo tiêu chí SMART (cụ thể, đo được, khả thi, liên quan, có thời hạn), gắn với mục tiêu chung của trường (VD: chỉ tiêu tuyển sinh).",
+   "inputs": [
+    "muc_tieu",
+    "doi_tuong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "mỗi mục tiêu phải có chỉ số đo được; không đặt mục tiêu chung chung kiểu \"nâng cao hình ảnh\".",
+   "ket_qua": "Bộ mục tiêu SMART của năm."
+  },
+  {
+   "n": 3,
+   "title": "Xây dựng thông điệp chủ đạo",
+   "lam_gi": "chốt 1–3 thông điệp chủ đạo của năm theo brand voice của trường (trẻ trung, học thuật); mỗi thông điệp gắn với đối tượng và mục tiêu cụ thể.",
+   "inputs": [
+    "thong_diep_chu_dao",
+    "doi_tuong",
+    "muc_tieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: lập bảng biểu, định dạng",
+   "luu_y": "thông điệp phải nhất quán và dùng xuyên suốt các chiến dịch; tránh thông điệp hứa hẹn quá mức, không có căn cứ.",
+   "ket_qua": "Bộ thông điệp chủ đạo của năm."
+  },
+  {
+   "n": 4,
+   "title": "Lập lịch chiến dịch theo quý",
+   "lam_gi": "chia năm thành các chiến dịch theo quý, gắn với mốc tuyển sinh (mở đợt, xét tuyển, nhập học) và sự kiện của trường (khai giảng, kỷ niệm...); mỗi chiến dịch ghi mục tiêu riêng.",
+   "inputs": [
+    "chien_dich",
+    "nam_hoc"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "bám lịch tuyển sinh của Bộ GD&ĐT và lịch năm học của trường; không dồn quá nhiều chiến dịch vào cùng một thời điểm.",
+   "ket_qua": "Lịch chiến dịch theo quý."
+  },
+  {
+   "n": 5,
+   "title": "Phân bổ kênh, ngân sách và người phụ trách",
+   "lam_gi": "với từng chiến dịch: chọn kênh chính/phụ, phân bổ ngân sách, chỉ định đơn vị/người phụ trách; tổng ngân sách không vượt thẩm quyền phê duyệt.",
+   "inputs": [
+    "kenh",
+    "ngan_sach",
+    "chien_dich"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "kênh phải phù hợp đối tượng (Gen Z → TikTok/YouTube; phụ huynh → fanpage/báo điện tử); cân đối ngân sách giữa các chiến dịch, ưu tiên cao điểm tuyển sinh.",
+   "ket_qua": "Bảng phân bổ kênh – ngân sách – phụ trách theo chiến dịch."
+  },
+  {
+   "n": 6,
+   "title": "Thiết lập chỉ số đánh giá và cơ chế báo cáo",
+   "lam_gi": "với từng chiến dịch, đặt chỉ số đánh giá cụ thể (lượt tiếp cận, lượt tương tác, thí sinh tiềm năng, bài báo...); thiết lập cơ chế báo cáo định kỳ (tháng/quý) và đầu mối tổng hợp.",
+   "inputs": [
+    "kpi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "chỉ số đánh giá phải đo được bằng công cụ sẵn có; mỗi chỉ số đánh giá phải gắn với một mục tiêu ở Bước 2.",
+   "ket_qua": "Bảng chỉ số đánh giá theo chiến dịch + lịch báo cáo định kỳ."
+  },
+  {
+   "n": 7,
+   "title": "Kiểm tra nhất quán và hoàn thiện",
+   "lam_gi": "kiểm tra chuỗi mục tiêu → thông điệp → chiến dịch → kênh → chỉ số đánh giá có nhất quán không; ngân sách trong thẩm quyền phê duyệt; hoàn thiện văn bản kế hoạch theo cấu trúc chuẩn.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "phát hiện mâu thuẫn (VD: chỉ số đánh giá không đo được mục tiêu) thì quay lại bước tương ứng điều chỉnh, không cố lấp.",
+   "ket_qua": "Dự thảo Kế hoạch truyền thông năm."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Kế hoạch truyền thông năm hoàn chỉnh: mục tiêu, thông điệp, lịch chiến dịch…",
+  "Có đầy đủ sản phẩm: Bảng chỉ số đánh giá theo dõi định kỳ",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Số liệu năm trước phải có nguồn xác thực",
+  "Mỗi mục tiêu phải có chỉ số đo được > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Trưởng phòng Truyền thông và Tuyển sinh duyệt kế hoạch trước khi trình.",
+  "Ban Giám hiệu phê duyệt kế hoạch và ngân sách.",
+  "Không triển khai chiến dịch khi chưa được phê duyệt."
+ ],
+ "guardrails": [
+  "Không tự phát hành/đăng tải bất kỳ nội dung nào.",
+  "Không cam kết ngân sách vượt thẩm quyền của phòng.",
+  "Không sử dụng số liệu, hình ảnh chưa được xác thực nguồn.",
+  "Không đưa ra tuyên bố so sánh với trường khác khi chưa có căn cứ."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kế hoạch bám mục tiêu tuyển sinh và thương hiệu của Trường; mục tiêu số lượng do Trường đặt, skill không tự đặt.",
+  "Ngân sách chỉ điền khi có dự toán được duyệt."
+ ],
+ "cho_xac_nhan": [
+  "Mục tiêu truyền thông năm (C6).",
+  "Ngân sách (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề: \"KẾ HOẠCH TRUYỀN THÔNG NĂM HỌC ...\" + tên trường (+ ghi chú giả lập nếu mô phỏng).",
+  "I. Mục tiêu (bộ mục tiêu SMART).",
+  "II. Thông điệp chủ đạo (1–3 thông điệp).",
+  "III. Lịch chiến dịch theo quý: bảng Quý – Chiến dịch – Kênh chính – Ngân sách – chỉ số đánh giá.",
+  "IV. Đo lường (cơ chế báo cáo tháng/quý, đầu mối tổng hợp). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề: \"KẾ HOẠCH TRUYỀN THÔNG NĂM HỌC ...\" + tên trường (+ ghi chú giả lập nếu mô phỏng).\n\n2. I. Mục tiêu (bộ mục tiêu SMART).\n\n3. II. Thông điệp chủ đạo (1–3 thông điệp).\n\n4. III. Lịch chiến dịch theo quý: bảng Quý – Chiến dịch – Kênh chính – Ngân sách – chỉ số đánh giá.\n\n5. IV. Đo lường (cơ chế báo cáo tháng/quý, đầu mối tổng hợp).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-ke-hoach-truyen-thong-nam/references"
+}

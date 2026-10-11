@@ -1,0 +1,168 @@
+{
+ "name": "vnuis-vp-bao-cao-tong-ket-van-phong",
+ "title": "Soạn báo cáo tổng kết công tác văn phòng",
+ "description": "Dùng khi Phòng TC&QT (văn phòng – văn thư) tổng kết công tác văn phòng theo quý, 6 tháng, năm hoặc báo cáo chuyên đề về văn thư, cải cách hành chính.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-bao-cao-tong-ket-vp",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (hành chính, văn thư, lưu trữ, thi đua)",
+ "when": "Khi tổng kết công tác của Phòng TC&QT (văn phòng – văn thư) theo quý, 6 tháng, năm;\nkhi báo cáo chuyên đề về công tác văn thư, cải cách hành chính.",
+ "inputs": [
+  {
+   "key": "ky_bao_cao",
+   "desc": "Quý / 6 tháng / năm + thời gian cụ thể",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_lieu",
+   "desc": "Số liệu các mảng: văn bản đi/đến, cuộc họp phục vụ, sự kiện tổ chức, kiến nghị",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi",
+   "desc": "Phòng TC&QT (văn phòng – văn thư) (mặc định)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (hành chính, văn thư, lưu trữ, thi đua)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập, đối chiếu số liệu",
+   "lam_gi": "tập hợp `so_lieu` từ các nguồn (sổ văn bản đi/đến, lịch công tác tuần, biên bản họp, hồ sơ sự kiện); đối chiếu chéo giữa các nguồn để loại số liệu không có căn cứ, số liệu trùng lặp; chốt bộ số liệu chính thức của `ky_bao_cao`.",
+   "inputs": [
+    "so_lieu",
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: đối chiếu chéo tự động",
+   "luu_y": "số liệu phải đối chiếu với sổ văn bản đi/đến trước khi đưa vào báo cáo — bẫy là lấy số liệu miệng chưa kiểm chứng; ghi rõ nguồn của từng con số để truy vết khi bị chất vấn.",
+   "ket_qua": "bảng số liệu đã đối chiếu, có ghi nguồn."
+  },
+  {
+   "n": 2,
+   "title": "Tổng hợp kết quả theo 4 mảng công tác",
+   "lam_gi": "phân loại số liệu và kết quả vào 4 mảng: (1) công tác văn thư (văn bản đi/đến, tỷ lệ đúng hạn); (2) lễ tân, khánh tiết (số cuộc họp, sự kiện đã phục vụ); (3) quản trị hành chính (lịch công tác, quản lý con dấu, giấy tờ); (4) cải cách hành chính, ứng dụng CNTT trong văn phòng; viết thành dự thảo phần \"Kết quả thực hiện\", mỗi mảng có số liệu minh chứng.",
+   "inputs": [
+    "so_lieu",
+    "don_vi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: tổng hợp và chuẩn hóa dữ liệu",
+   "luu_y": "mỗi kết quả nêu ra phải có số liệu đi kèm — bẫy là viết chung chung \"đạt kết quả tốt\" không có con số; mảng nào không có hoạt động trong kỳ thì ghi rõ \"không phát sinh\", không bỏ trống.",
+   "ket_qua": "dự thảo phần I. Kết quả thực hiện (4 mảng, có số liệu)."
+  },
+  {
+   "n": 3,
+   "title": "Đánh giá ưu điểm, kết quả nổi bật",
+   "lam_gi": "so sánh kết quả với kế hoạch công tác của kỳ; chọn 2–3 kết quả nổi bật nhất (có số liệu so sánh với kỳ trước hoặc vượt chỉ tiêu); viết thành dự thảo phần đánh giá ưu điểm.",
+   "inputs": [
+    "so_lieu",
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "\"nổi bật\" phải chứng minh bằng số liệu (tăng bao nhiêu %, rút ngắn bao nhiêu thời gian), không tự phong; gắn kết quả với nỗ lực cụ thể của tập thể/cá nhân.",
+   "ket_qua": "dự thảo phần đánh giá ưu điểm, kết quả nổi bật."
+  },
+  {
+   "n": 4,
+   "title": "Chỉ ra tồn tại, hạn chế và nguyên nhân",
+   "lam_gi": "liệt kê các tồn tại, hạn chế (văn bản quá hạn, sự cố kỹ thuật, phối hợp chậm...); mỗi hạn chế phân tích nguyên nhân cụ thể (chủ quan / khách quan), không đổ lỗi chung chung; xác định hạn chế nào cần khắc phục ngay trong kỳ tới.",
+   "inputs": [
+    "so_lieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "dám nêu hạn chế trung thực — báo cáo chỉ toàn ưu điểm sẽ mất giá trị; nguyên nhân phải chỉ đúng địa chỉ (đơn vị nào, khâu nào), tránh viết \"do khách quan\" chung chung.",
+   "ket_qua": "dự thảo phần II. Tồn tại, hạn chế (kèm nguyên nhân)."
+  },
+  {
+   "n": 5,
+   "title": "Đề xuất phương hướng kỳ tới",
+   "lam_gi": "từ các tồn tại ở Bước 4, đề xuất nhiệm vụ trọng tâm và giải pháp khắc phục tương ứng; đặt chỉ tiêu phấn đấu cụ thể, đo được cho kỳ tới (VD: tỷ lệ văn bản đúng hạn, số sự kiện phục vụ); viết thành dự thảo phần \"Phương hướng\".",
+   "inputs": [
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "mỗi giải pháp phải gắn với một tồn tại đã nêu — bẫy là phương hướng chung chung không liên quan tồn tại; chỉ tiêu phải thực tế, có cơ sở đạt được.",
+   "ket_qua": "dự thảo phần III. Phương hướng kỳ tới (nhiệm vụ, giải pháp, chỉ tiêu)."
+  },
+  {
+   "n": 6,
+   "title": "Soạn báo cáo theo thể thức, trình duyệt",
+   "lam_gi": "ghép các phần theo khung chuẩn (tiêu đề đơn vị – tên báo cáo – kết quả – tồn tại – phương hướng – ngày tháng, chữ ký); kiểm tra thể thức báo cáo hành chính theo Nghị định 30/2020/NĐ-CP; đính kèm phụ lục số liệu chi tiết; trình Trưởng phòng `don_vi` ký, gửi Ban Giám hiệu.",
+   "inputs": [
+    "don_vi",
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) chuẩn bị, Trưởng Phòng TC&QT (văn phòng – văn thư) phê duyệt · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "kiểm tra lần cuối tính nhất quán số liệu giữa phần chính và phụ lục; báo cáo quý/năm phải gửi đúng thời hạn quy định về chế độ báo cáo nội bộ của trường.",
+   "ket_qua": "báo cáo tổng kết công tác văn phòng hoàn chỉnh (+ phụ lục số liệu)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng cấu trúc và thể thức theo references/quy-cach-dau-ra.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Số liệu phải đối chiếu với sổ văn bản đi/đến trước khi đưa vào báo cáo — bẫy là lấy số liệu miệng chưa kiểm chứng",
+  "Mỗi kết quả nêu ra phải có số liệu đi kèm — bẫy là viết chung chung \"đạt kết quả tốt\" không có con số",
+  "\"nổi bật\" phải chứng minh bằng số liệu (tăng bao nhiêu %, rút ngắn bao nhiêu thời gian), không tự phong"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Skill gốc viết cho \"Phòng Hành chính – Tổng hợp\"; tại VNU-IS các mảng này nằm trong Phòng Tổ chức và Quản trị (sau hợp nhất 2025), nên mục lục gồm văn thư, lưu trữ, hành chính, thi đua và các mảng khác của Phòng.",
+  "Số liệu văn bản đến, đi lấy từ sổ theo dõi; chưa rõ sổ là Excel hay E-Office (C5).",
+  "Không tự thêm mảng mà Phòng không báo cáo."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu báo cáo văn phòng (C8).",
+  "Chu kỳ báo cáo (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề đơn vị (tên trường, tên phòng);",
+  "Tiêu đề báo cáo + kỳ báo cáo;",
+  "Phần I. Kết quả thực hiện — theo 4 mảng: công tác văn thư; lễ tân, khánh tiết; quản trị hành chính; cải cách hành chính (mỗi mảng có số liệu minh chứng);",
+  "Phần II. Tồn tại, hạn chế (kèm nguyên nhân cụ thể từng điểm);",
+  "Phần III. Phương hướng kỳ tới (nhiệm vụ trọng tâm, giải pháp khắc phục, chỉ tiêu phấn đấu);",
+  "Địa danh, ngày tháng; chữ ký Trưởng phòng (chức danh, họ tên);",
+  "Phụ lục số liệu chi tiết (kèm theo báo cáo). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề đơn vị (tên trường, tên phòng);\n\n2. Tiêu đề báo cáo + kỳ báo cáo;\n\n3. Phần I. Kết quả thực hiện — theo 4 mảng: công tác văn thư; lễ tân, khánh tiết; quản trị hành chính; cải cách hành chính (mỗi mảng có số liệu minh chứng);\n\n4. Phần II. Tồn tại, hạn chế (kèm nguyên nhân cụ thể từng điểm);\n\n5. Phần III. Phương hướng kỳ tới (nhiệm vụ trọng tâm, giải pháp khắc phục, chỉ tiêu phấn đấu);\n\n6. Địa danh, ngày tháng; chữ ký Trưởng phòng (chức danh, họ tên);\n\n7. Phụ lục số liệu chi tiết (kèm theo báo cáo).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (hành chính, văn thư, lưu trữ, thi đua). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-bao-cao-tong-ket-van-phong/references"
+}

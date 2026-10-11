@@ -1,0 +1,202 @@
+{
+ "name": "vnuis-sdh-bao-cao-dao-tao",
+ "title": "Báo cáo đào tạo sau đại học hằng năm",
+ "description": "Dùng khi Phòng Đào tạo (sau đại học) tổng kết năm về đào tạo thạc sĩ, tiến sĩ để báo cáo Ban Giám hiệu, Bộ GD&ĐT: tuyển sinh, quy mô, tiến độ bảo vệ, văn bằng, đội ngũ hướng dẫn.",
+ "group": "sdh",
+ "group_label": "Sau đại học",
+ "previous_name": "vnuis-bao-cao-dao-tao-sdh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (sau đại học)",
+ "when": "Cuối mỗi năm học / năm dương lịch, khi Phòng Đào tạo (sau đại học) cần tổng hợp toàn bộ hoạt động\nđào tạo thạc sĩ, tiến sĩ trong năm: tuyển sinh, quy mô đào tạo, tiến độ học tập và bảo vệ,\nvăn bằng cấp, đội ngũ giảng viên hướng dẫn — để báo cáo Ban Giám hiệu, cấp có thẩm quyền (C6)\nvà gửi cơ quan tiếp nhận (ĐHQGHN hoặc Bộ GD&ĐT) theo yêu cầu thống kê.",
+ "inputs": [
+  {
+   "key": "nam_bao_cao",
+   "desc": "Năm báo cáo, vd: 2026",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tuyen_sinh",
+   "desc": "Chỉ tiêu, số trúng tuyển, số nhập học thạc sĩ/tiến sĩ theo đợt và theo ngành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_mo",
+   "desc": "Số học viên cao học, NCS đang đào tạo theo ngành, khóa",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tien_do_bao_ve",
+   "desc": "Số luận văn thạc sĩ / luận án tiến sĩ đã bảo vệ, đang chờ bảo vệ, quá hạn",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "van_bang",
+   "desc": "Số văn bằng thạc sĩ / tiến sĩ đã cấp trong năm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_ngu_hd",
+   "desc": "Số giảng viên đủ tiêu chuẩn hướng dẫn SĐH (GS/PGS/TS), số lượng HV/NCS đang hướng dẫn bình quân",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bai_bao_ncs",
+   "desc": "Số bài báo khoa học của NCS công bố trong năm (trong nước / quốc tế)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "kho_khan_kien_nghi",
+   "desc": "Khó khăn, tồn tại và kiến nghị, đề xuất",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (sau đại học)"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tổng hợp tuyển sinh SĐH trong năm",
+   "lam_gi": "lấy số liệu từng đợt tuyển trong năm: chỉ tiêu được giao/phê duyệt, số hồ sơ, số trúng tuyển, số nhập học — tách riêng thạc sĩ và tiến sĩ, chi tiết theo từng đợt tuyển và từng ngành; tính tỷ lệ hoàn thành chỉ tiêu (trúng tuyển/chỉ tiêu, nhập học/chỉ tiêu).",
+   "inputs": [
+    "nam_bao_cao",
+    "tuyen_sinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: tổng hợp số liệu từng đợt tuyển (chỉ tiêu, hồ sơ, trúng tuyển)",
+   "luu_y": "số nhập học (thực học) mới là con số phản ánh đúng quy mô, không dùng số trúng tuyển để báo cáo quy mô; ghi rõ ngành nào không đạt chỉ tiêu và mức độ.",
+   "ket_qua": "bảng tuyển sinh SĐH trong năm (đợt – ngành – trình độ: chỉ tiêu, trúng tuyển, nhập học, tỷ lệ hoàn thành)."
+  },
+  {
+   "n": 2,
+   "title": "Tổng hợp quy mô đào tạo theo ngành, khóa",
+   "lam_gi": "thống kê số học viên cao học và NCS đang theo học theo ngành và khóa; thống kê số bảo lưu, thôi học, chuyển ngành (nếu có) trong năm; so sánh với năm trước để thấy xu hướng tăng/giảm.",
+   "inputs": [
+    "nam_bao_cao",
+    "quy_mo"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: thống kê số học viên cao học và NCS theo ngành, khóa",
+   "luu_y": "số liệu chốt thống nhất đến 30/9 hằng năm; đối chiếu với Phòng Đào tạo (đại học) để tránh trùng lặp khi tổng hợp báo cáo toàn trường.",
+   "ket_qua": "bảng quy mô đào tạo (ngành – khóa: số HV cao học, số NCS) + số liệu bảo lưu/ thôi học + so sánh với năm trước."
+  },
+  {
+   "n": 3,
+   "title": "Tổng hợp tiến độ bảo vệ luận văn, luận án",
+   "lam_gi": "thống kê 3 nhóm: (a) số luận văn thạc sĩ / luận án tiến sĩ đã bảo vệ thành công trong năm; (b) số đang trong quy trình (đã nộp, chờ phản biện, chờ lịch bảo vệ); (c) số quá hạn đào tạo — ghi rõ nguyên nhân chính của từng nhóm quá hạn.",
+   "inputs": [
+    "nam_bao_cao",
+    "tien_do_bao_ve"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: thống kê luận văn/luận án đã bảo vệ thành công",
+   "luu_y": "\"quá hạn\" tính theo thời gian đào tạo tối đa của quy chế (đã trừ thời gian được gia hạn hợp lệ); nguyên nhân quá hạn phải cụ thể để làm cơ sở cho kiến nghị.",
+   "ket_qua": "bảng tiến độ bảo vệ (đã bảo vệ / đang chờ / quá hạn theo trình độ) + phân tích nguyên nhân quá hạn."
+  },
+  {
+   "n": 4,
+   "title": "Tổng hợp văn bằng và đội ngũ hướng dẫn",
+   "lam_gi": "thống kê số văn bằng thạc sĩ/tiến sĩ đã cấp trong năm; lập danh sách giảng viên đủ tiêu chuẩn hướng dẫn SĐH (theo TT 23/2021, TT 18/2021: trình độ TS trở lên, có bài báo khoa học); tính tỷ lệ NCS/giảng viên hướng dẫn; thống kê số bài báo khoa học của NCS công bố trong năm (trong nước / quốc tế).",
+   "inputs": [
+    "nam_bao_cao",
+    "van_bang",
+    "doi_ngu_hd",
+    "bai_bao_ncs"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: thống kê văn bằng đã cấp, lập danh sách GV đủ tiêu chuẩn hướng dẫn",
+   "luu_y": "\"đủ tiêu chuẩn hướng dẫn\" phải kiểm tra cả tiêu chí bài báo khoa học, không chỉ học vị; số văn bằng đã cấp đối chiếu với quyết định công nhận tốt nghiệp trong năm.",
+   "ket_qua": "số liệu văn bằng đã cấp + danh sách GV đủ tiêu chuẩn hướng dẫn + tỷ lệ NCS/GV + số bài báo khoa học của NCS."
+  },
+  {
+   "n": 5,
+   "title": "Đánh giá khó khăn và đề xuất kiến nghị",
+   "lam_gi": "phân tích tồn tại từ số liệu 4 bước trên (ngành nào tuyển sinh chưa đạt chỉ tiêu, tỷ lệ quá hạn, thiếu giảng viên hướng dẫn ngành mới...); đề xuất giải pháp khắc phục và kiến nghị cụ thể gửi Ban Giám hiệu / cơ quan tiếp nhận.",
+   "inputs": [
+    "kho_khan_kien_nghi"
+   ],
+   "vai_tro": "Lãnh đạo phụ trách đào tạo sau đại học · AI hỗ trợ: phân tích tồn tại từ số liệu, phác thảo kiến nghị",
+   "luu_y": "mỗi kiến nghị phải gắn với số liệu minh chứng và đơn vị có thẩm quyền giải quyết; phân biệt kiến nghị thuộc thẩm quyền trường và kiến nghị vượt thẩm quyền (gửi Bộ).",
+   "ket_qua": "phần đánh giá khó khăn, tồn tại + danh mục kiến nghị có căn cứ số liệu."
+  },
+  {
+   "n": 6,
+   "title": "Xuất báo cáo theo bố cục hành chính chuẩn",
+   "lam_gi": "trình bày báo cáo theo bố cục: tiêu đề + kính gửi + căn cứ (kế hoạch công tác, yêu cầu thống kê) → I. Kết quả thực hiện (đánh số 1–5 theo từng nội dung, kèm bảng số liệu chi tiết) → II. Đánh giá chung → III. Kiến nghị → phần kết → nơi nhận, chữ ký; kiểm tra nhất quán số liệu giữa văn bản và bảng trước khi trình ký.",
+   "inputs": [
+    "nam_bao_cao"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: trình bày báo cáo theo bố cục chuẩn, kiểm tra nhất quán số liệu",
+   "luu_y": "bẫy thường gặp là số liệu trong văn bản và bảng tổng hợp không khớp sau nhiều lần chỉnh sửa — kiểm tra chéo lần cuối; báo cáo gửi Bộ phải đúng mẫu và thời hạn thống kê.",
+   "ket_qua": "báo cáo đào tạo SĐH hằng năm hoàn chỉnh, số liệu nhất quán, sẵn sàng trình ký và gửi."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu/nội dung trong output khớp với Input đã cho (năm báo cáo, tuyển sinh, quy mô, tiến độ bảo vệ, văn bằng, đội ngũ hướng dẫn, bài báo NCS, khó khăn – kiến nghị).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng bố cục văn bản hành chính chuẩn của báo cáo hằng năm.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Thông tư 23/2021/TT-BGDĐT, Thông tư 18/2021/TT-BGDĐT, kế hoạch công tác và yêu cầu thống kê của Bộ GD&ĐT).",
+  "Đã qua Human gate: lãnh đạo (Ban Giám hiệu) đã duyệt báo cáo.",
+  "Số liệu chốt thống nhất đến 30/9 hằng năm; đã đối chiếu với Phòng Đào tạo (đại học) để tránh trùng lặp; số nhập học (thực học) dùng cho quy mô, không dùng số trúng tuyển.",
+  "\"Quá hạn\" tính đúng thời gian đào tạo tối đa của quy chế (đã trừ thời gian gia hạn hợp lệ); nguyên nhân quá hạn cụ thể; \"đủ tiêu chuẩn hướng dẫn\" kiểm tra cả tiêu chí bài báo khoa học, không chỉ học vị.",
+  "Mỗi kiến nghị gắn số liệu minh chứng và đơn vị có thẩm quyền giải quyết; phân biệt kiến nghị thuộc thẩm quyền trường và kiến nghị vượt thẩm quyền (gửi Bộ). Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Tuyến báo cáo: VNU-IS là đơn vị thành viên của ĐHQGHN; báo cáo gửi ĐHQGHN hay Bộ GD&ĐT chờ xác nhận (C2). Trong skill này \"cơ quan tiếp nhận\" là nơi nhận báo cáo theo tuyến đó.",
+  "Chỉ dùng khi Trường có đào tạo sau đại học; website nêu tuyển sinh sau đại học nên giữ trong phạm vi nhưng chưa biết quy mô (C2).",
+  "Số học viên tách theo chương trình liên kết và chương trình ĐHQGHN cấp bằng."
+ ],
+ "cho_xac_nhan": [
+  "Danh sách chương trình sau đại học đang vận hành (C2).",
+  "Nguồn số liệu học viên (C4)."
+ ],
+ "output_structure": [
+  "Phần đầu văn bản: tên trường + đơn vị (Phòng Đào tạo (sau đại học)); quốc hiệu – tiêu ngữ; số, ký hiệu báo cáo; địa danh, ngày tháng năm ban hành.",
+  "Tên báo cáo + năm báo cáo: \"BÁO CÁO\" + \"Công tác đào tạo sau đại học năm…\".",
+  "Kính gửi + phần căn cứ: kính gửi Ban Giám hiệu; căn cứ kế hoạch công tác và yêu cầu thống kê của Bộ GD&ĐT.",
+  "Nội dung chính theo thứ tự: I. Kết quả thực hiện — đánh số 1–5 (1. Công tác tuyển sinh;",
+  "Quy mô đào tạo — kèm bảng theo ngành; 3. Tiến độ bảo vệ luận văn, luận án; 4. Cấp văn bằng;",
+  "Đội ngũ giảng viên hướng dẫn — kèm số bài báo khoa học của NCS); II. Đánh giá chung; III. Kiến nghị (đánh số từng kiến nghị).",
+  "Phần kết: câu kết báo cáo, kính báo cáo Ban Giám hiệu xem xét, chỉ đạo.",
+  "Phần cuối: nơi nhận; chữ ký, họ tên người ký.",
+  "Sản phẩm kèm theo: bảng số liệu chi tiết (tuyển sinh, quy mô, bảo vệ, văn bằng, đội ngũ theo ngành). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần đầu văn bản: tên trường + đơn vị (Phòng Đào tạo (sau đại học)); quốc hiệu – tiêu ngữ;\n   số, ký hiệu báo cáo; địa danh, ngày tháng năm ban hành.\n\n2. Tên báo cáo + năm báo cáo: \"BÁO CÁO\" + \"Công tác đào tạo sau đại học năm…\".\n\n3. Kính gửi + phần căn cứ: kính gửi Ban Giám hiệu; căn cứ kế hoạch công tác và yêu cầu thống kê\n   của Bộ GD&ĐT.\n\n4. Nội dung chính theo thứ tự: I. Kết quả thực hiện — đánh số 1–5 (1. Công tác tuyển sinh;\n   2. Quy mô đào tạo — kèm bảng theo ngành; 3. Tiến độ bảo vệ luận văn, luận án; 4. Cấp văn bằng;\n   5. Đội ngũ giảng viên hướng dẫn — kèm số bài báo khoa học của NCS); II. Đánh giá chung;\n   III. Kiến nghị (đánh số từng kiến nghị).\n\n5. Phần kết: câu kết báo cáo, kính báo cáo Ban Giám hiệu xem xét, chỉ đạo.\n\n6. Phần cuối: nơi nhận; chữ ký, họ tên người ký.\n\n7. Sản phẩm kèm theo: bảng số liệu chi tiết (tuyển sinh, quy mô, bảo vệ, văn bằng, đội ngũ\n   theo ngành).",
+ "human_gate_check": "Đã qua Human gate: lãnh đạo (Ban Giám hiệu) đã duyệt báo cáo.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (sau đại học). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-sdh-bao-cao-dao-tao/references"
+}

@@ -1,0 +1,167 @@
+{
+ "name": "vnuis-khaothi-soan-quyet-dinh-phan-cong-thi",
+ "title": "Quyết định phân công coi thi / chấm thi",
+ "description": "Dùng khi cần ban hành quyết định phân công cán bộ coi thi, chấm thi, thanh tra thi cho một kỳ thi cụ thể, đúng thể thức Nghị định 30/2020/NĐ-CP.",
+ "group": "khaothi",
+ "group_label": "Khảo thí",
+ "previous_name": "vnuis-quyet-dinh-phan-cong-thi",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (khảo thí)",
+ "when": "Khi cần ban hành quyết định phân công cán bộ tham gia coi thi, chấm thi, thanh tra thi\ncho một kỳ thi cụ thể.",
+ "inputs": [
+  {
+   "key": "ky_thi",
+   "desc": "Tên kỳ thi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Thời gian diễn ra kỳ thi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_phan_cong",
+   "desc": "Bảng: họ tên, đơn vị, nhiệm vụ (coi thi/chấm thi/thanh tra/thư ký), ghi chú",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu",
+   "desc": "Các văn bản căn cứ (quy chế đào tạo, kế hoạch tổ chức kỳ thi...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (khảo thí)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tập hợp danh sách phân công",
+   "lam_gi": "Gửi văn bản đề nghị các khoa, phòng cử cán bộ tham gia kỳ thi (ghi rõ số lượng, yêu cầu chuyên môn); Phòng Đào tạo (khảo thí, đảm bảo chất lượng) tổng hợp danh sách: họ tên, chức danh/học vị, đơn vị, nhiệm vụ đề xuất (coi thi/chấm thi/thanh tra/thư ký), ca thi/phạm vi phụ trách; loại khỏi danh sách các cán bộ có người thân dự thi học phần được phân công (tránh xung đột lợi ích).",
+   "inputs": [
+    "ky_thi",
+    "thoi_gian",
+    "danh_sach_phan_cong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: tổng hợp danh sách sơ bộ từ văn bản cử cán bộ của các khoa, rà soát trùng tên và xung đột lợi ích",
+   "luu_y": "cán bộ chấm thi phải đúng chuyên môn học phần; cán bộ thanh tra thi phải độc lập, không kiêm nhiệm coi thi cùng ca; kiểm tra không trùng tên, không sót đơn vị được giao chỉ tiêu.",
+   "ket_qua": "Bảng tổng hợp danh sách cán bộ phân công đã rà soát xung đột lợi ích."
+  },
+  {
+   "n": 2,
+   "title": "Soạn quyết định theo thể thức NĐ 30/2020",
+   "lam_gi": "Soạn thảo văn bản quyết định đúng thể thức Nghị định 30/2020/NĐ-CP với bố cục: (a) Phần căn cứ — Luật Giáo dục đại học 2025 (125/2025/QH15), quy chế đào tạo, kế hoạch tổ chức kỳ thi (trích từ `can_cu`); (b) \"Xét đề nghị của Trưởng Phòng Đào tạo (khảo thí, đảm bảo chất lượng)\"; (c) Điều 1 — phân công cán bộ (danh sách chi tiết kèm theo phụ lục); (d) Điều 2 — nhiệm vụ và trách nhiệm của từng nhóm (thực hiện đúng quy chế thi, chịu trách nhiệm trước Hiệu trưởng); (e) Điều 3 — hiệu lực thi hành và trách nhiệm thi hành; (f) Nơi nhận đầy đủ các đơn vị liên quan + lưu.",
+   "inputs": [
+    "ky_thi",
+    "thoi_gian",
+    "can_cu",
+    "nguoi_ky",
+    "danh_sach_phan_cong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: soạn dự thảo đúng thể thức NĐ 30/2020/NĐ-CP, kiểm tra lỗi chính tả và đánh số/ký hiệu văn bản",
+   "luu_y": "thẩm quyền ký — Hiệu trưởng ký quyết định phân công toàn kỳ thi, Phó Hiệu trưởng ký khi được ủy quyền; số/ký hiệu văn bản đánh số liên tục theo sổ văn thư; trích yếu ghi đúng tên kỳ thi.",
+   "ket_qua": "Dự thảo quyết định phân công + phụ lục danh sách cán bộ."
+  },
+  {
+   "n": 3,
+   "title": "Kiểm tra",
+   "lam_gi": "Đối chiếu từng dòng trong phụ lục danh sách với bảng tổng hợp ở Bước 1: họ tên, đơn vị, nhiệm vụ, ca thi; kiểm tra thẩm quyền ký của `nguoi_ky`; kiểm tra nơi nhận đủ các đơn vị có cán bộ được phân công; hiệu đính lỗi chính tả, số liệu trước khi trình ký.",
+   "inputs": [
+    "danh_sach_phan_cong",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (khảo thí, đảm bảo chất lượng) (rà soát, hiệu đính) · AI hỗ trợ: đối chiếu từng dòng phụ lục với bảng tổng hợp, cảnh báo sai lệch họ tên/nhiệm vụ",
+   "luu_y": "bẫy thường gặp — sai họ tên/học vị cán bộ, thiếu đơn vị trong nơi nhận, nhiệm vụ trong quyết định không khớp với phân công thực tế đã thông báo cho khoa.",
+   "ket_qua": "Dự thảo quyết định đã hiệu đính, sẵn sàng trình ký."
+  },
+  {
+   "n": 4,
+   "title": "Xuất bản",
+   "lam_gi": "Trình `nguoi_ky` ký ban hành; đóng dấu, đánh số, lưu văn thư; gửi quyết định đến tất cả đơn vị trong nơi nhận và từng cán bộ được phân công trước ngày thi ít nhất 03 ngày; lưu 01 bản vào hồ sơ kỳ thi.",
+   "inputs": [
+    "nguoi_ky",
+    "ky_thi"
+   ],
+   "vai_tro": "Hiệu trưởng/Phó Hiệu trưởng ký ban hành, Văn thư đóng dấu và phát hành · AI hỗ trợ: kiểm tra nơi nhận đầy đủ các đơn vị trước khi phát hành",
+   "luu_y": "quyết định là minh chứng kiểm định cho công tác tổ chức thi — phải lưu đầy đủ, mã hóa theo quy tắc của trường.",
+   "ket_qua": "Quyết định phân công coi/chấm thi đã ban hành + phụ lục danh sách cán bộ."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Danh sách cán bộ trong phụ lục khớp 100% với Input (`danh_sach_phan_cong`): họ tên, học vị, đơn vị, nhiệm vụ, ca thi.",
+  "Không bịa đặt họ tên, học vị, chức danh cán bộ.",
+  "Đúng thể thức Nghị định 30/2020/NĐ-CP: mỗi căn cứ một dòng bắt đầu bằng \"Căn cứ\", số/ký hiệu văn bản liên tục theo sổ văn thư, trích yếu ghi đúng tên kỳ thi.",
+  "Căn cứ pháp lý (Luật Giáo dục đại học 2025 (125/2025/QH15), quy chế đào tạo, kế hoạch tổ chức kỳ thi) đầy đủ, còn hiệu lực.",
+  "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+  "Thẩm quyền ký đúng: Hiệu trưởng ký quyết định phân công toàn kỳ thi, Phó Hiệu trưởng ký khi được ủy quyền.",
+  "Đã loại khỏi danh sách cán bộ có người thân dự thi học phần được phân công; cán bộ thanh tra thi độc lập, không kiêm coi thi cùng ca.",
+  "Đã gửi quyết định đến đầy đủ đơn vị trong nơi nhận và từng cán bộ được phân công trước ngày thi ít nhất 03 ngày."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Phân công coi thi theo danh sách cán bộ do đơn vị đề xuất; không phân công người có liên quan đến thí sinh khi đơn vị có quy định.",
+  "Có ba cơ sở: ghi rõ địa điểm phòng thi."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế coi thi và tiêu chí phân công (C2).",
+  "Người phụ trách khảo thí (C7)."
+ ],
+ "output_structure": [
+  "Quốc hiệu, tên cơ quan ban hành, số/ký hiệu văn bản, địa danh và ngày tháng năm ban hành;",
+  "Tên loại văn bản (QUYẾT ĐỊNH) + trích yếu nội dung;",
+  "Thẩm quyền ban hành (chức vụ người ký + tên cơ quan, viết hoa);",
+  "Các căn cứ pháp lý (mỗi căn cứ một dòng, bắt đầu bằng \"Căn cứ\");",
+  "\"Xét đề nghị của...\" (đơn vị đề xuất);",
+  "\"QUYẾT ĐỊNH:\" + các điều: Điều 1 – nội dung phân công (danh sách chi tiết kèm theo); Điều 2 – nhiệm vụ, trách nhiệm của các cá nhân/đơn vị; Điều 3 – hiệu lực thi hành và trách nhiệm thi hành;",
+  "Nơi nhận (đầy đủ các đơn vị liên quan + lưu);",
+  "Chức vụ người ký, chữ ký, họ tên người ký (đóng dấu);",
+  "Phụ lục – Danh sách cán bộ phân công (STT, họ tên, đơn vị, nhiệm vụ, ghi chú). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu, tên cơ quan ban hành, số/ký hiệu văn bản, địa danh và ngày tháng năm ban hành;\n\n2. Tên loại văn bản (QUYẾT ĐỊNH) + trích yếu nội dung;\n\n3. Thẩm quyền ban hành (chức vụ người ký + tên cơ quan, viết hoa);\n\n4. Các căn cứ pháp lý (mỗi căn cứ một dòng, bắt đầu bằng \"Căn cứ\");\n\n5. \"Xét đề nghị của...\" (đơn vị đề xuất);\n\n6. \"QUYẾT ĐỊNH:\" + các điều: Điều 1 – nội dung phân công (danh sách chi tiết kèm theo); Điều 2 – nhiệm vụ, trách nhiệm của các cá nhân/đơn vị; Điều 3 – hiệu lực thi hành và trách nhiệm thi hành;\n\n7. Nơi nhận (đầy đủ các đơn vị liên quan + lưu);\n\n8. Chức vụ người ký, chữ ký, họ tên người ký (đóng dấu);\n\n9. Phụ lục – Danh sách cán bộ phân công (STT, họ tên, đơn vị, nhiệm vụ, ghi chú).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (khảo thí). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n",
+ "outputs_dir": "skills/vnuis-khaothi-soan-quyet-dinh-phan-cong-thi/references"
+}

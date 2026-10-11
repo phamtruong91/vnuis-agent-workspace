@@ -1,0 +1,4 @@
+interface:
+  display_name: Dùng chung · Phân tích kết quả khảo sát – VNU-IS
+  short_description: Hỗ trợ phân tích kết quả khảo sát (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-dc-phan-tich-ket-qua-khao-sat để hỗ trợ công việc: Phân tích kết quả khảo sát; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .xlsx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

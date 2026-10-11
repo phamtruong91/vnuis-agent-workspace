@@ -1,0 +1,183 @@
+{
+ "name": "vnuis-dt-tong-hop-so-lieu-3-cong-khai",
+ "title": "Tổng hợp số liệu 3 công khai mảng đào tạo",
+ "description": "Dùng khi đến kỳ công khai hằng năm và cần lập bộ bảng số liệu ba công khai riêng mảng đào tạo (chất lượng đào tạo, điều kiện đảm bảo chất lượng, thu chi tài chính mảng đào tạo) theo Thông tư 09/2024/TT-BGDĐT.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-so-lieu-3-cong-khai-dt",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo",
+ "when": "Khi đến kỳ công khai thông tin theo năm học (định kỳ hằng năm, thường trước 30/9 theo văn bản hiện hành nêu tại phap-ly.md):\ntổng hợp 3 nhóm nội dung — (1) công khai chất lượng đào tạo, (2) công khai điều kiện đảm bảo chất lượng,\n(3) công khai thu chi tài chính mảng đào tạo — từ số liệu của Phòng Đào tạo, Phòng TC&QT (kế hoạch – tài chính), Phòng TC&QT (nhân sự),\nPhòng TC&QT (cơ sở vật chất) để công bố trên website và báo cáo cơ quan chủ quản.",
+ "inputs": [
+  {
+   "key": "nam_hoc",
+   "desc": "Năm học công khai, vd: 2025–2026",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_lieu_chat_luong",
+   "desc": "Quy mô SV theo ngành/khóa, số tốt nghiệp, tỷ lệ tốt nghiệp, tỷ lệ có việc làm sau 1 năm, tỷ lệ bỏ học/thôi học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_lieu_dieu_kien",
+   "desc": "Đội ngũ giảng viên (số lượng, trình độ, tỷ lệ GV/SV), diện tích sàn, số phòng học, thư viện, trang thiết bị",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_lieu_tai_chinh",
+   "desc": "Học phí theo ngành, tổng thu, tổng chi mảng đào tạo, kinh phí NCKH/sinh viên",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_cap_so_lieu",
+   "desc": "Danh sách đơn vị cung cấp số liệu (Đào tạo, TC&QT (kế hoạch – tài chính), TC&QT (nhân sự), TC&QT (cơ sở vật chất)...) kèm người phụ trách",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ngay_cong_khai",
+   "desc": "Thời điểm dự kiến công bố trên website",
+   "required": false,
+   "note": "Không (mặc định: trước 30/9 năm liền kề)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 09/2024/TT-BGDĐT, hiệu lực 19/07/2024, thay 36/2017: Chuyển từ mẫu ba công khai cũ sang nội dung công khai và báo cáo thường niên theo 09/2024. Đối chiếu phần thông tin chung, phần giáo dục đại học và phụ lục báo cáo thường niên; lưu nội dung trên website tối thiểu 5 năm. Ghi thời điểm, đường dẫn công bố, người duyệt và bằng chứng cập nhật. Không tự thêm số liệu hoặc tự công bố; không coi báo cáo gửi cơ quan quản lý là nghĩa vụ định kỳ nếu không có căn cứ/yêu cầu bằng văn bản.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập 3 nhóm số liệu từ các đơn vị đầu mối",
+   "lam_gi": "gửi yêu cầu và thu thập số liệu từ từng đơn vị đầu mối, đúng 3 nhóm: - *Nhóm 1 – Chất lượng đào tạo* (từ Phòng Đào tạo): quy mô SV theo ngành và khóa; số lượng, tỷ lệ tốt nghiệp theo ngành; tỷ lệ SV thôi học/bỏ học; tỷ lệ SV tốt nghiệp có việc làm sau 12 tháng (từ kết quả khảo sát việc làm). - *Nhóm 2 – Điều kiện đảm bảo chất lượng* (từ Phòng TC&QT (nhân sự), Phòng TC&QT (cơ sở vật chất)): tổng số giảng viên (cơ hữu/thỉnh giảng), trình độ (TS, ThS, ĐH), tỷ lệ SV/GV; diện tích sàn học tập; số phòng học, phòng thí nghiệm; số đầu sách, diện tích thư viện. - *Nhóm 3 – Thu chi tài chính* (từ Phòng TC&QT (kế hoạch – tài chính)): mức học phí từng ngành và hình thức thu; tổng thu – tổng chi hoạt động đào tạo; kinh phí chi cho NCKH, học bổng tính trên đầu SV.",
+   "inputs": [
+    "nam_hoc",
+    "so_lieu_chat_luong",
+    "so_lieu_dieu_kien",
+    "so_lieu_tai_chinh",
+    "don_vi_cap_so_lieu"
+   ],
+   "vai_tro": "Các đơn vị đầu mối (khoa, phòng) cung cấp số liệu · AI hỗ trợ: soạn biểu mẫu thu thập chuẩn hóa",
+   "luu_y": "yêu cầu mỗi đơn vị ghi rõ thời điểm chốt số liệu của mình; kỳ số liệu thống nhất toàn trường (tính đến 30/9 hoặc cuối năm học) — lệch kỳ chốt là lỗi phổ biến nhất ở bước này.",
+   "ket_qua": "3 nhóm số liệu thô đã thu thập đủ từ các đơn vị, kèm ghi chú thời điểm chốt và đơn vị cung cấp của từng nhóm."
+  },
+  {
+   "n": 2,
+   "title": "Chuẩn hóa biểu mẫu theo văn bản hiện hành nêu tại phap-ly.md",
+   "lam_gi": "đưa 3 nhóm số liệu vào đúng biểu mẫu tại Phụ lục văn bản hiện hành nêu tại phap-ly.md: thống nhất đơn vị tính (người, %, triệu đồng/tỷ đồng); thống nhất kỳ số liệu; chuẩn hóa tên ngành đúng theo danh mục ngành được cấp phép đào tạo.",
+   "inputs": [
+    "so_lieu_chat_luong",
+    "so_lieu_dieu_kien",
+    "so_lieu_tai_chinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: chuẩn hóa biểu mẫu đúng Phụ lục văn bản hiện hành nêu tại phap-ly.md, thống nhất đơn vị tính",
+   "luu_y": "tên ngành trên bảng công khai phải khớp tuyệt đối với tên trong quyết định mở ngành và đề án tuyển sinh đã công bố; đơn vị tiền tệ ghi rõ trong tiêu đề từng bảng.",
+   "ket_qua": "bộ bảng 3 công khai đã điền số liệu theo đúng biểu mẫu văn bản hiện hành nêu tại phap-ly.md (bản nháp)."
+  },
+  {
+   "n": 3,
+   "title": "Kiểm tra nhất quán chéo số liệu",
+   "lam_gi": "kiểm tra các đẳng thức bắt buộc: tổng số SV = tổng các ngành/khóa; tổng số tốt nghiệp = tổng các ngành; tổng thu/chi khớp số liệu Phòng TC&QT (kế hoạch – tài chính); đội ngũ GV khớp số liệu Phòng TC&QT (nhân sự); chỉ tiêu tuyển sinh khớp đề án tuyển sinh đã công bố. Ghi rõ nguồn số liệu và thời điểm chốt dưới mỗi bảng.",
+   "inputs": [
+    "so_lieu_chat_luong",
+    "so_lieu_dieu_kien",
+    "so_lieu_tai_chinh",
+    "don_vi_cap_so_lieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: kiểm tra đẳng thức bắt buộc, cảnh báo chênh lệch",
+   "luu_y": "mọi chênh lệch đều phải trả về đơn vị liên quan để đối chiếu, bổ sung — không tự ý điều chỉnh số liệu cho khớp; lập bảng đối chiếu ghi lại từng điểm đã kiểm tra.",
+   "ket_qua": "bảng đối chiếu nhất quán số liệu giữa các đơn vị (từng điểm kiểm tra đạt/không đạt)."
+  },
+  {
+   "n": 4,
+   "title": "Xuất bộ bảng 3 công khai hoàn chỉnh",
+   "lam_gi": "hoàn thiện bộ bảng sau khi đã nhất quán: tiêu đề chung (tên trường + tên bộ công khai + năm học + căn cứ văn bản hiện hành nêu tại phap-ly.md); 3 nhóm nội dung A/B/C với đầy đủ các bảng; ghi chú nguồn số liệu và thời điểm chốt; phần ký xác nhận (địa danh, ngày tháng, chức danh, chữ ký).",
+   "inputs": [
+    "nam_hoc",
+    "ngay_cong_khai"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: xuất bộ bảng hoàn chỉnh, kiểm tra thể thức tiêu đề chung",
+   "luu_y": "đủ cả 3 nhóm nội dung bắt buộc mới được công bố; ngày ký xác nhận không được sau thời hạn công khai quy định (trong 3 tháng đầu năm học mới, thường trước 30/9).",
+   "ket_qua": "bộ bảng 3 công khai hoàn chỉnh, sẵn sàng đăng website và đính kèm báo cáo gửi cơ quan chủ quản."
+  },
+  {
+   "n": 5,
+   "title": "Danh mục kiểm và công bố trên website",
+   "lam_gi": "chạy danh mục kiểm cuối: đủ 3 nhóm nội dung; số liệu nhất quán; có đóng dấu, ký xác nhận; còn trong thời hạn công khai; sau đó đăng bộ bảng lên website trường (mục \"3 công khai\").",
+   "inputs": [
+    "ngay_cong_khai"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: chạy danh mục kiểm cuối (đủ 3 nhóm, số liệu nhất quán, dấu/ký xác nhận)",
+   "luu_y": "kiểm tra lại file đã đăng trên website (định dạng hiển thị đúng, không lỗi font bảng biểu); lưu bản đã công bố để đối chiếu khi thanh tra, kiểm tra.",
+   "ket_qua": "bộ bảng 3 công khai đã công bố trên website + danh mục kiểm tra trước công bố đã hoàn tất."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu/nội dung trong output khớp với Input đã cho (năm học, 3 nhóm số liệu từ các đơn vị).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng biểu mẫu tại Phụ lục văn bản hiện hành nêu tại phap-ly.md; đơn vị tính thống nhất, đơn vị tiền tệ ghi rõ.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (văn bản hiện hành nêu tại phap-ly.md).",
+  "Đã qua Human gate: lãnh đạo đã ký xác nhận công bố (ngày ký không sau thời hạn công khai quy định).",
+  "Tên ngành trên bảng công khai khớp tuyệt đối với quyết định mở ngành và đề án tuyển sinh đã công bố.",
+  "Các đẳng thức bắt buộc đúng: tổng SV = tổng các ngành/khóa; tổng tốt nghiệp = tổng các ngành; tổng thu/chi khớp số liệu Phòng TC&QT (kế hoạch – tài chính); đội ngũ GV khớp số liệu Phòng TC&QT (nhân sự).",
+  "Công bố trong thời hạn quy định (3 tháng đầu năm học mới, thường trước 30/9); file trên website hiển thị đúng, không lỗi font; đã lưu bản công bố để đối chiếu khi thanh tra."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Chỉ lập phần số liệu đào tạo; phần tài chính và cơ sở vật chất do Phòng TC&QT cung cấp.",
+  "Chương trình do đối tác nước ngoài cấp bằng: ghi rõ phạm vi số liệu Trường nắm được."
+ ],
+ "cho_xac_nhan": [
+  "Danh mục chỉ tiêu bắt buộc theo văn bản hiện hành (C2).",
+  "Nguồn dữ liệu người học (C4, C5)."
+ ],
+ "output_structure": [
+  "Tiêu đề chung: tên trường; tên bộ công khai (\"CÔNG KHAI THÔNG TIN…\"); năm học công khai; dòng căn cứ ban hành theo căn cứ hiện hành đã chọn.",
+  "Nhóm A. Công khai chất lượng đào tạo: các bảng theo biểu mẫu (quy mô SV theo ngành/khóa; tốt nghiệp theo ngành; kết quả khảo sát việc làm sau 12 tháng; tỷ lệ thôi học).",
+  "Nhóm B. Công khai điều kiện đảm bảo chất lượng: các bảng theo biểu mẫu (đội ngũ GV cơ hữu theo trình độ, tỷ lệ SV/GV; cơ sở vật chất phục vụ đào tạo).",
+  "Nhóm C. Công khai thu chi tài chính (mảng đào tạo): các bảng theo biểu mẫu (học phí từng ngành; thu – chi hoạt động đào tạo; chi học bổng, chi NCKH trên đầu SV).",
+  "Ghi chú nguồn số liệu và thời điểm chốt số liệu (dưới mỗi bảng hoặc cuối bộ bảng).",
+  "Phần ký xác nhận: địa danh, ngày tháng năm; chức danh, chữ ký và họ tên người ký."
+ ],
+ "output_structure_raw": "1. Tiêu đề chung: tên trường; tên bộ công khai (\"CÔNG KHAI THÔNG TIN…\"); năm học công khai;\n   dòng căn cứ ban hành theo căn cứ hiện hành đã chọn.\n\n2. Nhóm A. Công khai chất lượng đào tạo: các bảng theo biểu mẫu (quy mô SV theo ngành/khóa;\n   tốt nghiệp theo ngành; kết quả khảo sát việc làm sau 12 tháng; tỷ lệ thôi học).\n\n3. Nhóm B. Công khai điều kiện đảm bảo chất lượng: các bảng theo biểu mẫu (đội ngũ GV cơ hữu\n   theo trình độ, tỷ lệ SV/GV; cơ sở vật chất phục vụ đào tạo).\n\n4. Nhóm C. Công khai thu chi tài chính (mảng đào tạo): các bảng theo biểu mẫu (học phí từng\n   ngành; thu – chi hoạt động đào tạo; chi học bổng, chi NCKH trên đầu SV).\n\n5. Ghi chú nguồn số liệu và thời điểm chốt số liệu (dưới mỗi bảng hoặc cuối bộ bảng).\n\n6. Phần ký xác nhận: địa danh, ngày tháng năm; chức danh, chữ ký và họ tên người ký.",
+ "human_gate_check": "Đã qua Human gate: lãnh đạo đã ký xác nhận công bố (ngày ký không sau thời hạn công khai quy định).",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 09/2024/TT-BGDĐT, hiệu lực 19/07/2024, thay 36/2017\n\nNguồn: https://chinhphu.vn/?classid=1&docid=210411&pageid=27160\n\nChuyển từ mẫu ba công khai cũ sang nội dung công khai và báo cáo thường niên theo 09/2024. Đối chiếu phần thông tin chung, phần giáo dục đại học và phụ lục báo cáo thường niên; lưu nội dung trên website tối thiểu 5 năm. Ghi thời điểm, đường dẫn công bố, người duyệt và bằng chứng cập nhật. Không tự thêm số liệu hoặc tự công bố; không coi báo cáo gửi cơ quan quản lý là nghĩa vụ định kỳ nếu không có căn cứ/yêu cầu bằng văn bản.\n",
+ "outputs_dir": "skills/vnuis-dt-tong-hop-so-lieu-3-cong-khai/references"
+}

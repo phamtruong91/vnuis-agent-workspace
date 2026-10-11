@@ -1,0 +1,172 @@
+---
+name: "vnuis-dc-dong-goi-skill-tu-quy-trinh"
+description: "Dùng khi đơn vị muốn biến một quy trình công việc đang làm thủ công thành skill AI dùng lại được: vẽ lại quy trình, viết đặc tả skill, soạn bộ tình huống kiểm thử."
+---
+
+# Đóng gói skill từ quy trình
+
+## Khi nào dùng
+Khi một đơn vị muốn biến quy trình công việc thực tế (đang làm thủ công hoặc nằm trong
+đầu cán bộ) thành skill AI có thể tái dùng, kiểm thử và chuyển giao. Đây là skill
+"dùng để tạo ra các skill khác" — áp dụng chung cho mọi phòng ban.
+
+## Định dạng và file đầu ra
+
+Định dạng đầu ra có thể chọn theo sản phẩm/yêu cầu: .zip, .md, .yaml, .json. Đọc mục “Định dạng bổ sung” trong quy cách đầu ra trước khi chọn.
+
+**Phải tạo file thực tế để tải xuống, không chỉ trả nội dung trong chat.** Định dạng mặc định của skill: **.zip**. Bên trong có SKILL.md và các tài nguyên liên quan theo cấu trúc gói skill. Không chờ người dùng yêu cầu xuất file lần nữa. Ưu tiên định dạng người dùng chỉ định; đọc quy tắc xuất file tại references/quy-cach-dau-ra.md.
+
+**Chạy qua API (không có công cụ tạo file):** trả đủ nội dung dạng văn bản có tiêu đề, bảng; ứng dụng gọi sẽ xuất file.
+
+## Quy cách đầu ra và thông tin thiếu
+Đọc [quy cách và cấu trúc sản phẩm](references/quy-cach-dau-ra.md) trước khi soạn/xuất. File giao chỉ gồm sản phẩm nghiệp vụ được yêu cầu; kiểm tra nội bộ không xuất kèm. Thiếu thông tin thì giữ nguyên trường/mục và chỗ điền theo mẫu gốc (dòng dấu chấm, dấu gạch hoặc ô trống); không tự điền dữ liệu mẫu, số 0, mã chờ xác minh hay dòng chờ ký. Mẫu chuyên ngành còn áp dụng được ưu tiên về cấu trúc, mã biểu và người ký. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Kiểm soát áp dụng và phê duyệt
+Trước khi chạy, xác định `ngay_ap_dung`, `loai_hinh_truong`, `quy_che_noi_bo`, `nguon_du_lieu`, `nguoi_kiem_duyet`; chỉ hỏi thông tin liên quan nghiệp vụ, không dùng giá trị giả định thay dữ liệu bắt buộc. Đối chiếu căn cứ pháp lý với văn bản gốc, hiệu lực, điều khoản áp dụng và chuyển tiếp. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Giới hạn và human gate
+AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Bối cảnh riêng của VNU-IS
+
+Bản chỉnh cho Trường Quốc tế – ĐHQGHN (VNU-IS), v0.4.2. Dựng từ website công khai và phiếu khảo sát CES còn trống; **chưa có dữ liệu khảo sát thực tế của đơn vị**. Đọc [bối cảnh VNU-IS](references/boi-canh-vnuis.md) trước khi chạy; các mã C1–C8 nằm ở mục 6 của file đó.
+
+- **Đơn vị thường dùng:** CES GLOBAL và đầu mối VNU-IS.
+- **Nghiệp vụ trong phiếu CES:** không có dòng riêng trong phiếu CES; đề xuất theo chức năng đơn vị ở sheet 00 và cần xác nhận khi khảo sát.
+
+**Điều chỉnh khi dùng cho VNU-IS**
+- Dùng để biến kết quả khảo sát thành skill mới: lấy khung của phiếu CES (Input, Process, Output, Điểm nghẽn, Thông tin cần bổ sung) làm cấu trúc process map.
+- Mỗi skill mới phải gắn với một nghiệp vụ đã xác nhận trong phiếu và có 01–02 mẫu Input, Output đã ẩn thông tin cá nhân; thiếu thì dừng.
+- Skill mới theo chuẩn của gói VNU-IS: tiền tố `vnuis-`, mục bối cảnh VNU-IS, mã chờ xác nhận.
+
+**Chờ xác nhận khi khảo sát**
+- Danh sách nghiệp vụ ưu tiên sau khảo sát (C8).
+- Người phê duyệt skill phía VNU-IS (C6).
+
+Nếu người dùng chưa trả lời mục chờ xác nhận liên quan, hỏi lại; không tự điền giả định.
+
+## Đầu vào (Input)
+
+| Trường | Mô tả | Bắt buộc |
+|---|---|---|
+| `mo_ta_quy_trinh` | Mô tả quy trình: phỏng vấn cán bộ, SOP hiện có, các bước thực hiện | Có |
+| `mau_input` | Ít nhất 1 mẫu input thực tế (đã ẩn danh) | Có |
+| `mau_output` | Ít nhất 1 mẫu output tương ứng | Có |
+| `tieu_chi_nghiem_thu` | Tiêu chí đánh giá output đạt/không đạt | Có |
+| `ngoai_le` | Các trường hợp ngoại lệ, tình huống đặc biệt đã gặp | Không |
+
+### Thông tin VNU-IS đã điền sẵn (không hỏi lại)
+
+| Mục | Giá trị mặc định |
+|---|---|
+| Cơ quan chủ quản; Trường; địa danh | Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội |
+| Đơn vị sử dụng và phối hợp | CES GLOBAL và đầu mối VNU-IS |
+| Ngôn ngữ đầu ra | Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu |
+| Người duyệt và ký | Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6 |
+
+Nguồn: website và phiếu CES; đổi theo khảo sát thì sửa tại đây và trong `references/boi-canh-vnuis.md`.
+
+## Quy trình
+
+*⏱ là ước tính ban đầu của bộ gốc, chưa đo tại VNU-IS; hiệu chỉnh sau khảo sát.*
+
+**Bước 1. Rà soát mô tả và phân rã IPO**
+- Làm gì: đọc kỹ `mo_ta_quy_trinh`, tách quy trình thành chuỗi Input → các bước xử lý → Output; đánh dấu bước nào mô tả mơ hồ, thiếu điều kiện hoặc chưa rõ người chịu trách nhiệm để hỏi lại process owner.
+- Dùng input: `mo_ta_quy_trinh`, `ngoai_le`.
+- Vai trò: Process owner (chủ quy trình) · AI hỗ trợ: phân rã IPO nháp, đánh dấu điểm mờ cần làm rõ · ⏱ ~30 phút–1 giờ (ước tính)
+- Lưu ý nghiệp vụ: không "AI hóa" quy trình còn tranh cãi — nếu các bên mô tả cách làm khác nhau thì phải thống nhất trước; ghi riêng danh sách ngoại lệ và điểm cần con người quyết định ngay từ bước này.
+- → Kết quả bước: bản phân rã IPO nháp (danh sách bước xử lý + danh sách điểm mờ cần làm rõ).
+
+**Bước 2. Phân tích cặp mẫu input – output**
+- Làm gì: đặt `mau_input` cạnh `mau_output`, đối chiếu từng trường input tạo ra phần nào của output; trích các trường bắt buộc, điều kiện ràng buộc và quy tắc xử lý ngầm mà mô tả chữ không nêu.
+- Dùng input: `mau_input`, `mau_output`, `ngoai_le`.
+- Vai trò: Cán bộ phụ trách đóng gói skill (phối hợp process owner) · AI hỗ trợ: đối chiếu cặp mẫu input–output, trích trường bắt buộc và quy tắc ngầm · ⏱ ~20–30 phút (ước tính)
+- Lưu ý nghiệp vụ: mẫu dữ liệu phải đã được ẩn danh; nếu output có thông tin mà mẫu input không chứa trường tương ứng thì ghi rõ là suy luận cần kiểm chứng, tuyệt đối không bịa quy tắc.
+- → Kết quả bước: bảng đối chiếu input – output + danh sách ngoại lệ và quy tắc xử lý.
+
+**Bước 3. Vẽ process map**
+- Làm gì: vẽ sơ đồ luồng toàn bộ quy trình theo đúng thứ tự các bước, thêm nhánh rẽ cho từng ngoại lệ, đánh dấu điểm kiểm soát và điểm human gate (cần con người quyết định/duyệt).
+- Dùng input: kết quả bước 1–2, `ngoai_le`.
+- Vai trò: Cán bộ phụ trách đóng gói skill · AI hỗ trợ: vẽ process map đầy đủ nhánh ngoại lệ và điểm human gate · ⏱ ~20–30 phút (ước tính)
+- Lưu ý nghiệp vụ: mỗi nhánh ngoại lệ phải có điểm kết thúc rõ ràng (quay lại luồng chính hay dừng và báo cho ai); human gate đặt tại các quyết định không thể tự động (phê duyệt, ký, đánh giá định tính).
+- → Kết quả bước: process map có đầy đủ nhánh ngoại lệ và điểm human gate.
+
+**Bước 4. Viết skill spec theo chuẩn SKILL.md 9 mục**
+- Làm gì: viết đầy đủ 9 mục — frontmatter (name, description), khi nào dùng, input (bảng), quy trình, output, ví dụ mô phỏng, human gate, giới hạn, căn cứ; mỗi mục viết cụ thể, cấm câu chung chung kiểu "xử lý phù hợp".
+- Dùng input: kết quả bước 1–3, `mau_input`, `mau_output`, `tieu_chi_nghiem_thu`.
+- Vai trò: Cán bộ phụ trách đóng gói skill · AI hỗ trợ: viết skill spec đầy đủ 9 mục theo chuẩn, phản ánh đúng process map · ⏱ ~30–45 phút (ước tính)
+- Lưu ý nghiệp vụ: mục Quy trình của spec phải phản ánh đúng process map (kể cả nhánh ngoại lệ); ví dụ mô phỏng dùng đúng cặp mẫu input/output đã phân tích ở bước 2.
+- → Kết quả bước: bản nháp skill spec hoàn chỉnh 9 mục.
+
+**Bước 5. Soạn bộ test case kiểm thử**
+- Làm gì: soạn mỗi test case gồm input mẫu → output kỳ vọng → tiêu chí đạt/không đạt; bao phủ cả case thường, case biên và case ngoại lệ.
+- Dùng input: `mau_input`, `tieu_chi_nghiem_thu`, `ngoai_le`.
+- Vai trò: Cán bộ phụ trách đóng gói skill · AI hỗ trợ: soạn bộ test case (thường + biên + ngoại lệ) theo tiêu chí đo được · ⏱ ~20–30 phút (ước tính)
+- Lưu ý nghiệp vụ: tiêu chí đạt phải đo được (đếm được/kiểm tra được), không dùng từ mơ hồ; test case ngoại lệ bắt buộc phải có — skill không qua test ngoại lệ thì chưa hoàn thành.
+- → Kết quả bước: bộ test case (case thường + case biên + case ngoại lệ).
+
+**Bước 6. Chạy thử, hiệu chỉnh và nghiệm thu**
+- Làm gì: cho AI chạy từng test case với bản nháp spec, so output thực tế với output kỳ vọng theo tiêu chí; sửa spec (quay lại bước 4) đến khi tất cả test case đạt; trình process owner nghiệm thu và ký xác nhận gói skill.
+- Dùng input: `tieu_chi_nghiem_thu`, kết quả bước 4–5.
+- Vai trò: Process owner (chạy thử, hiệu chỉnh spec và ký nghiệm thu) · AI hỗ trợ: chạy thử từng test case với bản nháp spec, hỗ trợ hiệu chỉnh · ⏱ ~1–2 giờ (tùy số case) (ước tính)
+- Lưu ý nghiệp vụ: mỗi lần sửa spec phải chạy lại toàn bộ test case (tránh sửa chỗ này hỏng chỗ khác); không đưa vào sử dụng chính thức khi chưa có chữ ký nghiệm thu.
+- → Kết quả bước: gói skill đã nghiệm thu (skill spec + process map + bộ test case).
+## Luồng quy trình (Workflow)
+```mermaid
+flowchart TD
+    A[/"Quy trình cần đóng gói"/]
+    B["Bước 1: Rà soát mô tả, phân rã IPO + ngoại lệ + điểm human gate"]
+    C["Bước 2: Phân tích cặp mẫu input - output"]
+    D["Bước 3: Vẽ process map có điểm human gate"]
+    E["Bước 4: Viết skill spec theo chuẩn 9 mục"]
+    F["Bước 5: Soạn test case gồm case thường và case ngoại lệ"]
+    G["Bước 6: Chạy thử AI với từng test case"]
+    H{"Đạt tiêu chí nghiệm thu?"}
+    I["Hiệu chỉnh spec"]
+    HG["👤 Process owner nghiệm thu, ký xác nhận gói skill"]
+    J[/"Gói skill đã nghiệm thu (spec + process map + test case)"/]
+    A --> B --> C --> D --> E --> F --> G --> H
+    H -->|Không| I --> E
+    H -->|Có| HG --> J
+```
+
+## Đầu ra
+
+File nghiệp vụ thực tế theo định dạng mặc định ở đầu skill hoặc định dạng người dùng yêu cầu, kèm liên kết tải trong phản hồi cuối.
+
+Sản phẩm nghiệp vụ hoàn chỉnh theo [quy cách và cấu trúc](references/quy-cach-dau-ra.md), giữ các trường chưa có dữ liệu ở trạng thái trống. Không xuất kèm danh mục kiểm/phụ lục kiểm tra đầu ra.
+
+## Kiểm tra nội bộ trước khi giao
+
+- [ ] Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.
+- [ ] Skill spec đủ 9 mục: frontmatter, khi nào dùng, input (bảng), quy trình, output, ví dụ mô phỏng, human gate, giới hạn, căn cứ.
+- [ ] Quy trình trong spec phản ánh đúng process map, kể cả nhánh ngoại lệ và điểm human gate.
+- [ ] Ví dụ mô phỏng dùng đúng cặp mẫu input/output đã phân tích ở bước 2 (dữ liệu giả lập, đã ẩn danh).
+- [ ] Bộ test case bao phủ case thường + case biên + case ngoại lệ; tiêu chí đạt đo được (đếm/kiểm tra được, không từ mơ hồ).
+- [ ] Mọi test case đã chạy thử đạt trước khi nghiệm thu (mỗi lần sửa spec chạy lại toàn bộ); test case ngoại lệ bắt buộc phải có.
+- [ ] Không bịa quy tắc xử lý cho trường hợp mẫu input không chứa thông tin tương ứng; quy trình còn tranh cãi thì thống nhất trước, không "AI hóa" sự lộn xộn.
+- [ ] Đã qua Human gate: process owner nghiệm thu và ký xác nhận gói skill (duyệt spec, duyệt test case).
+
+> Tiêu chí đạt: tất cả các ô được đánh dấu.
+
+## Human gate (người kiểm duyệt)
+- **Process owner** (chủ quy trình — trưởng đơn vị hoặc cán bộ phụ trách nghiệp vụ)
+  nghiệm thu gói skill: duyệt spec, duyệt test case, ký xác nhận.
+- Không đưa skill vào sử dụng chính thức khi chưa nghiệm thu.
+
+## Giới hạn (guardrails)
+- **Không đóng gói khi thiếu mẫu input/output thực tế và tiêu chí kiểm thử rõ ràng** —
+  skill không có test case thì không được coi là hoàn thành.
+- Không đóng gói quy trình mà đơn vị chưa thống nhất (còn tranh cãi về cách làm).
+- Mọi mẫu dữ liệu dùng để đóng gói phải được ẩn danh trước.
+- Skill hướng dẫn tạo skill không thay thế việc chuẩn hóa quy trình — quy trình rối thì phải gỡ rối
+  trước, không "AI hóa" sự lộn xộn.
+
+## Căn cứ & lưu ý
+- Chuẩn SKILL.md 9 mục của khung skill tổng thể (`khung-skill-tong-the.md`).
+- Ví dụ trong skill chỉ để minh họa; không đưa dữ liệu cá nhân thật vào ví dụ. Tên Trường, cơ quan chủ quản và địa danh dùng đúng bảng thông tin VNU-IS đã điền sẵn.
+
+## Quản trị phiên bản
+- Phiên bản gói VNU-IS `0.4.2` (cập nhật 2026-10-11), dựa trên skill gốc `dong-goi-skill-tu-quy-trinh` bản `1.3.2`; hồ sơ đầy đủ tại [references/version.json](references/version.json).
+- Người phê duyệt nghiệp vụ: **chưa chỉ định**. Trạng thái: dự thảo nghiệp vụ; kiểm tra pháp lý trước thực thi. Ngày cập nhật không đồng nghĩa mọi văn bản đã được rà soát toàn văn.
+- Giấy phép theo LICENSE của kho (bản quyền CES Global). Lịch sử thay đổi: CHANGELOG.md.

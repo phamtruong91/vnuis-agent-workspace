@@ -1,0 +1,146 @@
+{
+ "name": "vnuis-ts-ra-soat-nhat-quan-thong-tin",
+ "title": "Rà soát nhất quán thông tin tuyển sinh",
+ "description": "Dùng khi chuẩn bị mùa tuyển sinh, phát hành brochure, cập nhật website hay nền tảng AI tư vấn, hoặc khi hai tài liệu nêu số liệu khác nhau: đối chiếu chỉ tiêu, phương thức, học phí, học bổng, mã chương trình, mốc thời gian.",
+ "group": "ts",
+ "group_label": "Tuyển sinh",
+ "previous_name": "vnuis-ra-soat-nhat-quan-thong-tin-tuyen-sinh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi chuẩn bị mùa tuyển sinh, phát hành brochure, cập nhật website, hỏi đáp hoặc nền tảng AI tư vấn; khi phát hiện hai tài liệu nêu số liệu khác nhau.",
+ "inputs": [
+  {
+   "key": "tai_lieu_can_ra_soat",
+   "desc": "Brochure, nội dung website, hỏi đáp, thông báo, bản tin (file hoặc văn bản dán vào)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguon_chinh_thuc",
+   "desc": "Thông báo hoặc đề án tuyển sinh đã ban hành, quy chế tuyển sinh",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thu_tu_uu_tien_nguon",
+   "desc": "Khi lệch nhau thì ưu tiên nguồn nào; mặc định đề xuất: văn bản tuyển sinh đã ban hành trước, rồi website, rồi brochure; người dùng chốt",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "danh_sach_chuong_trinh",
+   "desc": "Danh sách chương trình chính thức, mã, tên Việt và Anh",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Biểu mẫu tuyển sinh; nền tảng AI tư vấn (ai.vnuis.edu.vn); hotline và is@vnu.edu.vn. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Lập danh mục thông tin cần nhất quán",
+   "lam_gi": "Liệt kê các nhóm thông tin: số chương trình, danh sách chương trình và mã, chỉ tiêu, phương thức, học phí, học bổng, điều kiện tiếng Anh, mốc thời gian, liên hệ.",
+   "inputs": [
+    "danh_sach_chuong_trinh"
+   ],
+   "vai_tro": "Chuyên viên tuyển sinh · AI hỗ trợ: lập danh mục",
+   "luu_y": "Nhóm nào tài liệu không có thì ghi \"tài liệu không nêu\".",
+   "ket_qua": "Danh mục thông tin."
+  },
+  {
+   "n": 2,
+   "title": "Trích và so sánh",
+   "lam_gi": "Trích từng thông tin từ mỗi tài liệu kèm vị trí; so với nguồn chính thức và giữa các tài liệu.",
+   "inputs": [
+    "tai_lieu_can_ra_soat",
+    "nguon_chinh_thuc"
+   ],
+   "vai_tro": "Chuyên viên tuyển sinh · AI hỗ trợ: trích và so sánh",
+   "luu_y": "Giữ nguyên chữ và số như tài liệu.",
+   "ket_qua": "Bảng so sánh."
+  },
+  {
+   "n": 3,
+   "title": "Phân loại mâu thuẫn",
+   "lam_gi": "Mỗi mâu thuẫn ghi nguồn A, nguồn B, mức độ (số liệu, mốc thời gian, tên gọi, cách diễn đạt), đề xuất nguồn nên theo.",
+   "inputs": [
+    "thu_tu_uu_tien_nguon",
+    "nguon_chinh_thuc"
+   ],
+   "vai_tro": "Chuyên viên tuyển sinh · AI hỗ trợ: phân loại",
+   "luu_y": "Mâu thuẫn về học phí, học bổng, chỉ tiêu, mốc thời gian xếp mức cao.",
+   "ket_qua": "Danh sách mâu thuẫn."
+  },
+  {
+   "n": 4,
+   "title": "Lập báo cáo rà soát",
+   "lam_gi": "Tóm tắt, danh sách sửa theo tài liệu, thông tin chưa có nguồn chính thức.",
+   "inputs": [
+    "tai_lieu_can_ra_soat"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: dự thảo báo cáo",
+   "luu_y": "Người dùng quyết định sửa tài liệu nào.",
+   "ket_qua": "Báo cáo rà soát."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi mâu thuẫn ghi đủ hai nguồn và vị trí.",
+  "Không tự chọn số đúng khi chưa có nguồn chính thức.",
+  "Số liệu giữ nguyên như tài liệu.",
+  "Nhóm thông tin không có trong tài liệu được ghi rõ.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng phòng Truyền thông và Tuyển sinh** duyệt danh sách sửa.",
+  "**Người có thẩm quyền** duyệt nội dung tuyển sinh chính thức."
+ ],
+ "guardrails": [
+  "KHÔNG tự điền học phí, chỉ tiêu, điểm chuẩn hoặc điều kiện xét tuyển.",
+  "KHÔNG sửa tài liệu gốc; chỉ đề xuất."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Văn bản tuyển sinh đã ban hành (C2, C4).",
+  "Người duyệt nội dung tuyển sinh (C6)."
+ ],
+ "output_structure": [
+  "Tóm tắt số mâu thuẫn theo mức độ.",
+  "Bảng so sánh theo thông tin: nguồn chính thức, từng tài liệu, kết quả.",
+  "Danh sách mâu thuẫn và đề xuất sửa.",
+  "Thông tin chưa có nguồn chính thức."
+ ],
+ "output_structure_raw": "1. Tóm tắt số mâu thuẫn theo mức độ.\n\n2. Bảng so sánh theo thông tin: nguồn chính thức, từng tài liệu, kết quả.\n\n3. Danh sách mâu thuẫn và đề xuất sửa.\n\n4. Thông tin chưa có nguồn chính thức.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ts-ra-soat-nhat-quan-thong-tin/references"
+}

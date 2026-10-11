@@ -1,0 +1,4 @@
+interface:
+  display_name: Dùng chung · Thiết kế phiếu khảo sát các bên liên quan – VNU-IS
+  short_description: Hỗ trợ thiết kế phiếu khảo sát các bên liên quan (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-dc-thiet-ke-phieu-khao-sat để hỗ trợ công việc: Thiết kế phiếu khảo sát các bên liên quan; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

@@ -1,0 +1,4 @@
+interface:
+  display_name: Văn phòng · Soạn báo cáo tổng kết năm học toàn trường – VNU-IS
+  short_description: Hỗ trợ soạn báo cáo tổng kết năm học toàn trường (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-vp-bao-cao-tong-ket-nam-hoc-toan-truong để hỗ trợ công việc: Soạn báo cáo tổng kết năm học toàn trường; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

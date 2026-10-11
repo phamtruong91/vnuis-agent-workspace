@@ -1,0 +1,263 @@
+{
+ "name": "vnuis-sdh-soan-thong-bao-tuyen-sinh",
+ "title": "Thông báo tuyển sinh thạc sĩ / tiến sĩ",
+ "description": "Dùng khi Phòng Đào tạo (sau đại học) công bố tuyển sinh thạc sĩ, tiến sĩ cho từng đợt: chỉ tiêu ngành, điều kiện dự tuyển, hồ sơ, hình thức tuyển, học phí.",
+ "group": "sdh",
+ "group_label": "Sau đại học",
+ "previous_name": "vnuis-thong-bao-tuyen-sinh-sdh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (sau đại học); phối hợp Phòng TT&TS",
+ "when": "Khi Phòng Đào tạo (sau đại học) cần ban hành thông báo tuyển sinh trình độ thạc sĩ và/hoặc\ntiến sĩ cho từng đợt trong năm, theo chỉ tiêu và kế hoạch đã được phê duyệt.",
+ "inputs": [
+  {
+   "key": "trinh_do",
+   "desc": "Thạc sĩ / Tiến sĩ / Cả hai",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dot_tuyen",
+   "desc": "Đợt tuyển sinh (vd: Đợt 1 năm 2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chi_tieu_sdh",
+   "desc": "Chỉ tiêu tuyển sinh từng ngành, từng trình độ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dieu_kien_du_tuyen",
+   "desc": "Điều kiện dự tuyển: văn bằng, kinh nghiệm công tác, ngoại ngữ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hinh_thuc_tuyen",
+   "desc": "Xét tuyển / Thi tuyển; môn thi hoặc tiêu chí xét tuyển",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_so",
+   "desc": "Thành phần hồ sơ dự tuyển",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_dao_tao",
+   "desc": "Thời gian đào tạo chuẩn từng trình độ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoc_phi",
+   "desc": "Học phí toàn khóa hoặc theo năm/tín chỉ",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Hạn nộp hồ sơ, lịch thi/xét tuyển, lịch nhập học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_chi_nop",
+   "desc": "Địa chỉ nộp hồ sơ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "link_dang_ky",
+   "desc": "Link đăng ký trực tuyến",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Người ký thông báo",
+   "required": false,
+   "note": "Không (mặc định: Trưởng Phòng Đào tạo (sau đại học))"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (sau đại học); phối hợp Phòng TT&TS"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định trình độ và đợt tuyển",
+   "lam_gi": "ghi rõ thông báo áp dụng cho trình độ thạc sĩ, tiến sĩ hay cả hai; ghi rõ đợt tuyển sinh trong năm (ví dụ: Đợt 1 năm 2026); xác định đây là thông báo cho toàn trường hay theo khoa/ngành.",
+   "inputs": [
+    "trinh_do",
+    "dot_tuyen"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: chốt phạm vi trình độ và đợt tuyển sinh trong tiêu đề",
+   "luu_y": "mỗi đợt tuyển chỉ có một thông báo chính thức; nếu tuyển cả hai trình độ thì nội dung các mục sau phải tách riêng rõ ràng theo trình độ, không lẫn lộn.",
+   "ket_qua": "dòng tiêu đề phạm vi thông báo (trình độ + đợt tuyển) đã chốt."
+  },
+  {
+   "n": 2,
+   "title": "Liệt kê chỉ tiêu từng ngành",
+   "lam_gi": "lập bảng chỉ tiêu chi tiết theo từng ngành đào tạo và từng trình độ (gồm mã ngành); đối chiếu tổng chỉ tiêu với kế hoạch tuyển sinh SĐH đã được Hiệu trưởng phê duyệt.",
+   "inputs": [
+    "chi_tieu_sdh",
+    "trinh_do"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: lập bảng chỉ tiêu theo ngành/trình độ, đối chiếu kế hoạch đã duyệt",
+   "luu_y": "chỉ tiêu không được vượt quá năng lực đào tạo sau đại học đã xác định của trường; mã ngành phải đúng danh mục mã ngành đào tạo (thạc sĩ đầu 8, tiến sĩ đầu 9).",
+   "ket_qua": "bảng chỉ tiêu tuyển sinh theo ngành và trình độ (có mã ngành)."
+  },
+  {
+   "n": 3,
+   "title": "Quy định điều kiện dự tuyển",
+   "lam_gi": "soạn điều kiện dự tuyển tách theo trình độ, đúng quy chế: - Thạc sĩ (Thông tư 23/2021/TT-BGDĐT): yêu cầu về văn bằng tốt nghiệp đại học (ngành phù hợp / ngành gần và các trường hợp phải học bổ sung kiến thức); điều kiện ngoại ngữ (bậc 3/6 trở lên hoặc tương đương). - Tiến sĩ (Thông tư 18/2021/TT-BGDĐT): yêu cầu về văn bằng thạc sĩ (hoặc đại học loại giỏi trở lên đối với trường hợp đặc biệt); kinh nghiệm nghiên cứu; công trình khoa học đã công bố; năng lực ngoại ngữ (bậc 4/6 trở lên hoặc tương đương).",
+   "inputs": [
+    "dieu_kien_du_tuyen",
+    "trinh_do"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: soạn điều kiện dự tuyển đúng TT 23/2021, TT 18/2021",
+   "luu_y": "mọi điều kiện ghi trong thông báo phải có căn cứ trong quy chế — không tự đặt thêm điều kiện ngoài quy chế; ghi rõ trường hợp \"ngành gần\" phải học bổ sung để thí sinh biết.",
+   "ket_qua": "mục điều kiện dự tuyển theo từng trình độ, đúng TT 23/2021 và TT 18/2021."
+  },
+  {
+   "n": 4,
+   "title": "Quy định hình thức tuyển",
+   "lam_gi": "ghi rõ hình thức tuyển của từng trình độ: xét tuyển (đánh giá hồ sơ, phỏng vấn, đánh giá đề cương nghiên cứu, bảo vệ đề cương trước tiểu ban — đối với tiến sĩ) hoặc thi tuyển (môn thi, hình thức thi, thang điểm, điểm liệt); nêu rõ cách tính điểm trúng tuyển và nguyên tắc xét trúng tuyển.",
+   "inputs": [
+    "hinh_thuc_tuyen",
+    "trinh_do"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: soạn mục hình thức tuyển (xét tuyển/thi tuyển) theo từng trình độ",
+   "luu_y": "cách tính điểm trúng tuyển phải công khai, không mập mờ; nếu có điểm liệt thì ghi rõ mức điểm liệt từng môn/thành phần.",
+   "ket_qua": "mục hình thức tuyển sinh theo từng trình độ (tiêu chí, thang điểm, cách tính điểm trúng tuyển)."
+  },
+  {
+   "n": 5,
+   "title": "Liệt kê thành phần hồ sơ dự tuyển",
+   "lam_gi": "liệt kê đầy đủ, đánh số từng loại giấy tờ: đơn dự tuyển theo mẫu; sơ yếu lý lịch có xác nhận; bản sao công chứng văn bằng, bảng điểm; bản sao chứng chỉ ngoại ngữ; đề cương nghiên cứu (đối với tiến sĩ); thư giới thiệu của nhà khoa học; minh chứng công trình khoa học (nếu có).",
+   "inputs": [
+    "ho_so",
+    "trinh_do"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: liệt kê đầy đủ, đánh số từng loại giấy tờ hồ sơ",
+   "luu_y": "ghi rõ loại nào cần công chứng, loại nào cần bản gốc để đối chiếu; hồ sơ của tiến sĩ bắt buộc có đề cương nghiên cứu — thiếu là không đủ điều kiện xét.",
+   "ket_qua": "danh mục thành phần hồ sơ dự tuyển đầy đủ, phân biệt theo trình độ."
+  },
+  {
+   "n": 6,
+   "title": "Ghi rõ thời gian đào tạo và học phí",
+   "lam_gi": "ghi thời gian đào tạo chuẩn của từng trình độ (thạc sĩ 2 năm; tiến sĩ 3 năm đối với người đã có bằng thạc sĩ, 4 năm đối với người tốt nghiệp đại học); ghi mức học phí toàn khóa hoặc theo năm học/tín chỉ của từng trình độ.",
+   "inputs": [
+    "thoi_gian_dao_tao",
+    "hoc_phi",
+    "trinh_do"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: soạn mục thời gian đào tạo chuẩn và học phí theo quy định",
+   "luu_y": "mức học phí phải khớp với quyết định học phí hiện hành của trường; ghi rõ học phí đã bao gồm hay chưa bao gồm lệ phí bảo vệ, in ấn luận văn/luận án.",
+   "ket_qua": "mục thời gian đào tạo và học phí theo từng trình độ."
+  },
+  {
+   "n": 7,
+   "title": "Ghi rõ thời gian – địa chỉ nộp hồ sơ",
+   "lam_gi": "ghi đầy đủ mốc thời gian: hạn nộp hồ sơ, lịch thi/xét tuyển, lịch công bố kết quả, lịch nhập học; ghi địa chỉ nộp hồ sơ trực tiếp/qua bưu điện và link đăng ký trực tuyến (nếu có).",
+   "inputs": [
+    "thoi_gian",
+    "dia_chi_nop",
+    "link_dang_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: soạn mục thời gian – địa chỉ, đối chiếu thông tin liên hệ",
+   "luu_y": "các mốc thời gian phải logic (hạn nộp < lịch xét < công bố < nhập học) và khớp với kế hoạch tuyển sinh đã duyệt; kiểm tra link đăng ký trực tuyến còn hoạt động.",
+   "ket_qua": "mục thời gian và địa điểm nộp hồ sơ đầy đủ, logic."
+  },
+  {
+   "n": 8,
+   "title": "Kiểm tra, đối chiếu trước khi duyệt",
+   "lam_gi": "đối chiếu toàn bộ nội dung với quy chế (TT 23/2021, TT 18/2021) và kế hoạch đã duyệt: điều kiện, chỉ tiêu, hình thức tuyển; kiểm tra link, số điện thoại, email, địa chỉ liên hệ; rà chính tả, thể thức văn bản.",
+   "inputs": [
+    "chi_tieu_sdh",
+    "dieu_kien_du_tuyen",
+    "hinh_thuc_tuyen",
+    "link_dang_ky"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (sau đại học) · AI hỗ trợ: đối chiếu toàn bộ nội dung với quy chế TT 23/2021, TT 18/2021",
+   "luu_y": "sai số điện thoại, email, link đăng ký là lỗi phổ biến và gây hậu quả trực tiếp đến thí sinh — kiểm tra bằng cách gọi thử/truy cập thử; mọi nội dung chưa đạt thì chỉnh sửa rồi kiểm tra lại.",
+   "ket_qua": "bản thông báo đã qua kiểm tra, đối chiếu đạt yêu cầu, sẵn sàng trình ký."
+  },
+  {
+   "n": 9,
+   "title": "Xuất bản thông báo",
+   "lam_gi": "hoàn thiện thông báo file theo định dạng đầu ra của skill; trình người có thẩm quyền ký duyệt; đăng lên website trường và xuất file Word để lưu trữ, phát hành.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Hiệu trưởng/Phó Hiệu trưởng phụ trách ký duyệt · AI hỗ trợ: kiểm tra thể thức trước khi trình ký",
+   "luu_y": "lưu bản đã ký (scan/PDF) kèm bản Word để đối chiếu khi có khiếu nại về nội dung tuyển sinh; thông báo trên website phải là bản mới nhất, gỡ bản cũ nếu có sửa đổi.",
+   "ket_qua": "thông báo tuyển sinh SĐH đã ký duyệt, đã đăng website và lưu trữ."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu/nội dung trong output khớp với Input đã cho (trình độ, đợt tuyển, chỉ tiêu từng ngành, điều kiện, hình thức, hồ sơ, học phí, mốc thời gian, địa chỉ).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng thể thức văn bản hành chính của thông báo.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Thông tư 23/2021/TT-BGDĐT đối với thạc sĩ; Thông tư 18/2021/TT-BGDĐT đối với tiến sĩ).",
+  "Đã qua Human gate: người có thẩm quyền (Trưởng Phòng Đào tạo (sau đại học)) đã ký duyệt thông báo.",
+  "Chỉ tiêu không vượt năng lực đào tạo SĐH; mã ngành đúng danh mục (thạc sĩ đầu 8, tiến sĩ đầu 9); mỗi đợt tuyển chỉ một thông báo chính thức, nội dung hai trình độ tách riêng rõ ràng.",
+  "Điều kiện dự tuyển đúng quy chế, không tự đặt thêm điều kiện ngoài quy chế; trường hợp \"ngành gần\" phải học bổ sung được ghi rõ.",
+  "Mốc thời gian logic (nộp hồ sơ < xét tuyển < công bố < nhập học) và khớp kế hoạch đã duyệt; học phí khớp quyết định học phí hiện hành; số điện thoại, email, link đăng ký đã kiểm tra hoạt động thực tế. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [
+  "Chỉ tiêu tuyển sinh sau đại học hằng năm do Hiệu trưởng quyết định trên cơ sở năng lực đào tạo và nhu cầu xã hội."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thông báo tuyển sinh sau đại học lấy chỉ tiêu, điều kiện từ đề án đã duyệt; không lấy từ website.",
+  "Thông báo song ngữ phải nhất quán tên chương trình theo bảng thuật ngữ."
+ ],
+ "cho_xac_nhan": [
+  "Đề án tuyển sinh sau đại học hiện hành (C2).",
+  "Người ký (C1)."
+ ],
+ "output_structure": [
+  "Phần đầu văn bản: tên trường + đơn vị ban hành (Phòng Đào tạo (sau đại học)); quốc hiệu – tiêu ngữ; số, ký hiệu thông báo; địa danh, ngày tháng năm ban hành.",
+  "Tên thông báo và phạm vi: \"THÔNG BÁO TUYỂN SINH SAU ĐẠI HỌC…\" + trình độ (thạc sĩ/tiến sĩ) + đợt tuyển.",
+  "Phần căn cứ: Quy chế tuyển sinh và đào tạo trình độ thạc sĩ (TT 23/2021/TT-BGDĐT); Quy chế tuyển sinh và đào tạo trình độ tiến sĩ (TT 18/2021/TT-BGDĐT).",
+  "Nội dung chính theo thứ tự: I. Chỉ tiêu tuyển sinh (bảng theo ngành, có mã ngành, tách theo trình độ); II. Điều kiện dự tuyển (tách theo trình độ); III. Hình thức tuyển sinh (tách theo trình độ); IV. Hồ sơ dự tuyển; V. Thời gian đào tạo và học phí; VI. Thời gian và địa điểm nộp hồ sơ.",
+  "Thông tin liên hệ: số điện thoại, email.",
+  "Phần cuối: nơi nhận; chữ ký, họ tên người ký. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần đầu văn bản: tên trường + đơn vị ban hành (Phòng Đào tạo (sau đại học)); quốc hiệu – tiêu ngữ;\n   số, ký hiệu thông báo; địa danh, ngày tháng năm ban hành.\n\n2. Tên thông báo và phạm vi: \"THÔNG BÁO TUYỂN SINH SAU ĐẠI HỌC…\" + trình độ (thạc sĩ/tiến sĩ) + đợt tuyển.\n\n3. Phần căn cứ: Quy chế tuyển sinh và đào tạo trình độ thạc sĩ (TT 23/2021/TT-BGDĐT); Quy chế tuyển\n   sinh và đào tạo trình độ tiến sĩ (TT 18/2021/TT-BGDĐT).\n\n4. Nội dung chính theo thứ tự: I. Chỉ tiêu tuyển sinh (bảng theo ngành, có mã ngành, tách theo\n   trình độ); II. Điều kiện dự tuyển (tách theo trình độ); III. Hình thức tuyển sinh (tách theo\n   trình độ); IV. Hồ sơ dự tuyển; V. Thời gian đào tạo và học phí; VI. Thời gian và địa điểm\n   nộp hồ sơ.\n\n5. Thông tin liên hệ: số điện thoại, email.\n\n6. Phần cuối: nơi nhận; chữ ký, họ tên người ký.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền (Trưởng Phòng Đào tạo (sau đại học)) đã ký duyệt thông báo.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (sau đại học). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-sdh-soan-thong-bao-tuyen-sinh/references"
+}

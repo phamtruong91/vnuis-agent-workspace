@@ -1,0 +1,205 @@
+{
+ "name": "vnuis-dc-quan-tri-du-an",
+ "title": "Quản trị dự án",
+ "description": "Dùng khi Viện ĐMST&CGCN hoặc đơn vị tương đương cần theo dõi một dự án đang chạy: tiến độ từng gói việc, vấn đề, rủi ro, bài học, và bảng theo dõi một trang để trình lãnh đạo.",
+ "group": "dc",
+ "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+ "previous_name": "vnuis-pmo-quan-tri-du-an",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Viện ĐMST&CGCN; Phòng KHCN&HTPT",
+ "when": "Khi Viện ĐMST & CGCN (hoặc đơn vị tương đương) cần quản trị một dự án: theo dõi tiến độ các gói\nviệc, ghi nhận vấn đề/rủi ro, rút bài học kinh nghiệm, tổng hợp bảng theo dõi báo cáo.",
+ "inputs": [
+  {
+   "key": "ten_du_an",
+   "desc": "Tên dự án + mã dự án",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chu_du_an",
+   "desc": "Chủ nhiệm / quản lý dự án",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_tieu",
+   "desc": "Mục tiêu và phạm vi dự án",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "workplan",
+   "desc": "Danh sách gói việc: tên, mốc hoàn thành, người phụ trách",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngan_sach",
+   "desc": "Tổng ngân sách và phân bổ theo gói việc",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ky_bao_cao",
+   "desc": "Chu kỳ cập nhật (tuần/tháng)",
+   "required": false,
+   "note": "Không (mặc định: tháng)"
+  },
+  {
+   "key": "nguong_trang_thai",
+   "desc": "Ngưỡng chênh lệch (điểm % thực tế so với kế hoạch) để phân loại 4 trạng thái",
+   "required": false,
+   "note": "Không (thiếu thì chỉ tính chênh lệch, để trống trạng thái chờ chủ nhiệm xác nhận; không tự đặt ngưỡng)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Viện ĐMST&CGCN; Phòng KHCN&HTPT"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thiết lập WBS và baseline dự án",
+   "lam_gi": "Chia dự án thành các gói việc (WP) từ `workplan`; mỗi gói việc ghi rõ: tên, mốc hoàn thành (ngày cụ thể), người phụ trách, sản phẩm bàn giao đo đếm được, ngân sách phân bổ (nếu có `ngan_sach`). Chốt bảng này làm \"baseline\" (kế hoạch gốc) để mọi kỳ sau so sánh.",
+   "inputs": [
+    "ten_du_an",
+    "chu_du_an",
+    "muc_tieu",
+    "workplan",
+    "ngan_sach"
+   ],
+   "vai_tro": "Chủ nhiệm dự án · AI hỗ trợ: soạn bảng WBS dự thảo từ workplan",
+   "luu_y": "mỗi gói việc phải có sản phẩm bàn giao kiểm chứng được (tránh gói việc chung chung kiểu \"hoàn thành giai đoạn\"); một người không nên phụ trách quá nhiều gói việc cùng kỳ; baseline sau khi chốt chỉ đổi khi có phê duyệt thay đổi phạm vi. - Kiểm tra bổ sung: tổng ngân sách phân bổ theo gói việc phải khớp `ngan_sach` tổng; nếu lệch, báo người dùng và giữ nguyên số liệu đã nhập, không tự điều chỉnh.",
+   "ket_qua": "Bảng WBS (mã gói việc, tên, mốc, người phụ trách, sản phẩm bàn giao, ngân sách) — baseline cố định của dự án."
+  },
+  {
+   "n": 2,
+   "title": "Thu thập dữ liệu tiến độ theo kỳ",
+   "lam_gi": "Đến mỗi kỳ (`ky_bao_cao`: tuần/tháng), thu thập % hoàn thành thực tế từng gói việc từ người phụ trách, yêu cầu kèm minh chứng (biên bản, file sản phẩm, ảnh hiện trường). Đối chiếu với baseline bước 1, ghi chênh lệch.",
+   "inputs": [
+    "ky_bao_cao",
+    "workplan"
+   ],
+   "vai_tro": "Chuyên viên điều phối dự án Viện ĐMST · AI hỗ trợ: soạn biểu mẫu và tổng hợp số liệu đối chiếu",
+   "luu_y": "% tiến độ phải gắn minh chứng, không nhận số ước lượng miệng; phát hiện sớm dấu hiệu chậm (trượt mốc quá 10% thời lượng gói việc thì báo ngay chủ nhiệm).",
+   "ket_qua": "Bảng dữ liệu tiến độ thô theo kỳ (gói việc, % kế hoạch, % thực tế, minh chứng)."
+  },
+  {
+   "n": 3,
+   "title": "Phân loại trạng thái và cập nhật tracker",
+   "lam_gi": "Đánh dấu trạng thái mỗi gói việc theo 4 mức: Đúng tiến độ / Chậm / Có nguy cơ chậm / Hoàn thành. Với gói \"Chậm\" hoặc \"Có nguy cơ chậm\": ghi nguyên nhân và mức chênh lệch so với baseline. Phân loại theo `nguong_trang_thai`; gói việc chưa có minh chứng thì không nhận % thực tế và để trống trạng thái.",
+   "inputs": [
+    "workplan",
+    "ky_bao_cao",
+    "nguong_trang_thai"
+   ],
+   "vai_tro": "Chủ nhiệm dự án · AI hỗ trợ: tính chênh lệch và gợi ý phân loại trạng thái",
+   "luu_y": "trạng thái dựa trên số liệu bước 2, không \"làm đẹp\" số liệu; trạng thái do chủ nhiệm dự án xác nhận trước khi đưa vào báo cáo.",
+   "ket_qua": "Bảng tracker tiến độ kỳ hiện tại (chuẩn để báo cáo)."
+  },
+  {
+   "n": 4,
+   "title": "Ghi nhận và phân loại vấn đề nhật ký",
+   "lam_gi": "Thu thập vấn đề phát sinh trong kỳ từ chủ nhiệm/người phụ trách; mỗi vấn đề ghi: mô tả, mức độ (nghiêm trọng/trung bình/nhẹ), người xử lý, hạn xử lý, trạng thái (mở/đang xử lý/đóng). Rà soát vấn đề kỳ trước: vấn đề nào quá hạn chưa đóng thì đánh dấu và yêu cầu giải trình.",
+   "inputs": [
+    "ten_du_an",
+    "chu_du_an"
+   ],
+   "vai_tro": "Chủ nhiệm dự án · AI hỗ trợ: soạn dự thảo vấn đề nhật ký và rà soát vấn đề quá hạn",
+   "luu_y": "vấn đề \"nghiêm trọng\" phải có người xử lý và hạn xử lý ngay trong ngày ghi nhận; không đóng vấn đề khi chưa có minh chứng đã xử lý xong.",
+   "ket_qua": "Vấn đề nhật ký cập nhật (phân loại theo mức độ, trạng thái, hạn xử lý)."
+  },
+  {
+   "n": 5,
+   "title": "Cập nhật risk nhật ký và biện pháp giảm thiểu",
+   "lam_gi": "Rà soát risk nhật ký kỳ trước: rủi ro nào đã xảy ra (chuyển thành vấn đề), rủi ro mới nào xuất hiện; mỗi rủi ro ghi: mô tả, xác suất (cao/trung bình/thấp), mức tác động, biện pháp giảm thiểu, người theo dõi, thời hạn rà soát lại.",
+   "inputs": [
+    "ten_du_an",
+    "workplan"
+   ],
+   "vai_tro": "Chủ nhiệm dự án · AI hỗ trợ: rà soát risk nhật ký và đề xuất rủi ro mới",
+   "luu_y": "với mỗi gói việc sắp đến mốc, đặt câu hỏi \"điều gì có thể làm trượt mốc này\"; biện pháp giảm thiểu phải có người chịu trách nhiệm và thời hạn cụ thể.",
+   "ket_qua": "Risk nhật ký cập nhật (rủi ro + biện pháp giảm thiểu có chủ sở hữu)."
+  },
+  {
+   "n": 6,
+   "title": "Rút lessons learned tại mốc lớn",
+   "lam_gi": "Tại mỗi mốc lớn hoặc khi kết thúc dự án: chọn 3–5 sự kiện đáng chú ý (sự cố hoặc thành công bất ngờ); phân tích theo khung: tình huống → nguyên nhân gốc → bài học → khuyến nghị cụ thể cho dự án sau (ai áp dụng, áp dụng khi nào).",
+   "inputs": [
+    "ten_du_an"
+   ],
+   "vai_tro": "Chuyên viên điều phối dự án Viện ĐMST · AI hỗ trợ: tổng hợp khung sự kiện từ vấn đề/risk nhật ký",
+   "luu_y": "khuyến nghị phải hành động được, tránh chung chung kiểu \"cần phối hợp tốt hơn\"; ghi cả bài học tích cực (điều làm tốt nên lặp lại).",
+   "ket_qua": "Bảng lessons learned (tình huống → bài học → khuyến nghị)."
+  },
+  {
+   "n": 7,
+   "title": "Tổng hợp bảng theo dõi 1 trang và đề xuất quyết định",
+   "lam_gi": "Gộp kết quả các bước 3–6 thành bảng theo dõi 1 trang: tiến độ tổng thể (%), top 3 vấn đề nghiêm trọng nhất, top 3 rủi ro, danh sách quyết định cần lãnh đạo viện (nội dung, phương án đề xuất, hạn quyết định). Kiểm tra số liệu nhất quán giữa tracker, vấn đề nhật ký, risk nhật ký.",
+   "inputs": [
+    "ten_du_an",
+    "chu_du_an",
+    "ngan_sach"
+   ],
+   "vai_tro": "Viện trưởng · AI hỗ trợ: soạn bảng theo dõi 1 trang và kiểm tra nhất quán số liệu",
+   "luu_y": "mỗi \"quyết định cần lãnh đạo\" phải nêu: vấn đề gì, đề xuất phương án gì, cần quyết trước ngày nào và hậu quả nếu không quyết; không đưa việc nhóm tự xử lý được lên lãnh đạo.",
+   "ket_qua": "Bảng theo dõi tóm tắt 1 trang (sản phẩm trình lãnh đạo)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu trong tracker, vấn đề nhật ký, risk nhật ký khớp với Input (workplan, tiến độ theo kỳ) đã cho.",
+  "Không bịa đặt số liệu tiến độ, minh chứng, biên bản không có thật.",
+  "Trạng thái gói việc (đúng tiến độ / chậm / nguy cơ chậm / hoàn thành) dựa trên số liệu, không \"làm đẹp\".",
+  "Mỗi gói việc trong tracker có sản phẩm bàn giao đo đếm được và người phụ trách cụ thể.",
+  "Baseline (WBS) cố định; mọi thay đổi so với baseline đều có phê duyệt thay đổi phạm vi.",
+  "Mỗi quyết định cần lãnh đạo viện đều nêu rõ: vấn đề, phương án đề xuất, hạn quyết định.",
+  "Đã qua Human gate: chủ nhiệm dự án xác nhận số liệu, viện trưởng duyệt bảng theo dõi. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Chủ nhiệm dự án** xác nhận tính chính xác của trạng thái tiến độ, vấn đề, risk trước mỗi kỳ báo cáo.",
+  "**Viện trưởng Viện ĐMST & CGCN** duyệt bảng theo dõi và các quyết định cần lãnh đạo trước khi trình lên Ban Giám hiệu/đối tác."
+ ],
+ "guardrails": [
+  "KHÔNG tự động gửi báo cáo cho khách hàng/đối tác.",
+  "KHÔNG tự ý đổi trạng thái, mốc thời gian trên hệ thống quản lý khi chưa có xác nhận của chủ nhiệm.",
+  "KHÔNG cam kết tiến độ/kinh phí thay mặt nhà trường với đối tác."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Sổ theo dõi dự án (phạm vi, mốc, rủi ro, thay đổi) dùng chung cho dự án của Viện và Phòng; thay đổi phạm vi phải có người duyệt ghi tên vai trò.",
+  "Chỉ dùng khi đơn vị có từ hai dự án chạy cùng lúc, nếu không bảng riêng từng dự án là đủ."
+ ],
+ "cho_xac_nhan": [
+  "Danh sách dự án đang chạy (C8).",
+  "Người quyết định thay đổi phạm vi (C6)."
+ ],
+ "output_structure": [
+  "Bảng tracker tiến độ: gói việc, mốc, người phụ trách, % kế hoạch, % thực tế, trạng thái.",
+  "Vấn đề nhật ký: mã, vấn đề, mức độ, người xử lý, hạn xử lý, trạng thái.",
+  "Risk nhật ký: mã, rủi ro, xác suất, mức tác động, biện pháp giảm thiểu, người theo dõi.",
+  "Bảng lessons learned: tình huống → nguyên nhân → bài học → khuyến nghị (chỉ khi đến mốc lớn hoặc kết thúc dự án).",
+  "Bảng theo dõi tóm tắt 1 trang: tiến độ tổng thể, top 3 vấn đề, top 3 rủi ro, quyết định cần lãnh đạo viện (nội dung, phương án đề xuất, hạn quyết định)."
+ ],
+ "output_structure_raw": "1. Bảng tracker tiến độ: gói việc, mốc, người phụ trách, % kế hoạch, % thực tế, trạng thái.\n\n2. Vấn đề nhật ký: mã, vấn đề, mức độ, người xử lý, hạn xử lý, trạng thái.\n\n3. Risk nhật ký: mã, rủi ro, xác suất, mức tác động, biện pháp giảm thiểu, người theo dõi.\n\n4. Bảng lessons learned: tình huống → nguyên nhân → bài học → khuyến nghị (chỉ khi đến\n   mốc lớn hoặc kết thúc dự án).\n\n5. Bảng theo dõi tóm tắt 1 trang: tiến độ tổng thể, top 3 vấn đề, top 3 rủi ro, quyết định\n   cần lãnh đạo viện (nội dung, phương án đề xuất, hạn quyết định).",
+ "human_gate_check": "Đã qua Human gate: chủ nhiệm dự án xác nhận số liệu, viện trưởng duyệt bảng theo dõi. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Viện ĐMST&CGCN. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dc-quan-tri-du-an/references"
+}

@@ -1,0 +1,166 @@
+{
+ "name": "vnuis-dc-quan-ly-phien-ban-tai-lieu",
+ "title": "Quản lý file & phiên bản (chỉ đọc)",
+ "description": "Dùng khi thư mục tài liệu lộn xộn (nhiều bản final, final2, mới nhất) và cần kiểm kê, tìm file trùng và bản cũ, đề xuất quy tắc đặt tên mà không xóa, đổi tên hay di chuyển file nào.",
+ "group": "dc",
+ "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+ "previous_name": "vnuis-quan-ly-phien-ban-tai-lieu",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường; Viện ĐMST&CGCN (quản trị hồ sơ, tri thức)",
+ "when": "Khi thư mục tài liệu của đơn vị trở nên lộn xộn (nhiều bản \"final\", \"final2\", \"mới nhất\"...),\ncần kiểm kê, sắp xếp lại và xây dựng quy tắc quản lý — nhưng yêu cầu an toàn tuyệt đối:\nAI chỉ phân tích và đề xuất, con người thực hiện thay đổi thủ công.",
+ "inputs": [
+  {
+   "key": "mo_ta_thu_muc",
+   "desc": "Mô tả cấu trúc thư mục hiện tại (các thư mục con, loại tài liệu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_file",
+   "desc": "Liệt kê file (tên, ngày sửa, dung lượng — không cần nội dung)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_tac_hien_tai",
+   "desc": "Quy tắc đặt tên/lưu trữ đang áp dụng (nếu có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "chinh_sach_luu_tru",
+   "desc": "Thời hạn lưu trữ, phân loại mật (nếu có)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường; Viện ĐMST&CGCN (quản trị hồ sơ, tri thức)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Kiểm kê toàn bộ file (inventory)",
+   "lam_gi": "Từ `mo_ta_thu_muc` và `danh_sach_file`, lập bảng kiểm kê: tên file, thư mục chứa, ngày sửa đổi cuối, dung lượng, loại tài liệu suy từ tên/mô tả; đánh dấu file có tên bất thường (ký tự lạ, thiếu đuôi mở rộng) hoặc thiếu ngày sửa.",
+   "inputs": [
+    "mo_ta_thu_muc",
+    "danh_sach_file"
+   ],
+   "vai_tro": "Chủ sở hữu thư mục · AI hỗ trợ: kiểm kê tự động toàn bộ file từ metadata (tên, ngày sửa, dung lượng)",
+   "luu_y": "chỉ làm việc với metadata (tên, ngày, dung lượng) — tuyệt đối không mở nội dung file nhạy cảm; file thiếu ngày sửa ghi rõ \"không xác định\" thay vì đoán.",
+   "ket_qua": "Bảng inventory đầy đủ — đầu vào cho mọi bước sau."
+  },
+  {
+   "n": 2,
+   "title": "Phát hiện trùng lặp và xác định quan hệ phiên bản",
+   "lam_gi": "Nhóm các file có tên gốc tương tự nhau (bỏ hậu tố kiểu final/final2/mới nhất/chốt/sửa) thành từng nhóm phiên bản; sắp xếp trong mỗi nhóm theo ngày sửa đổi; đề xuất \"bản mới nhất dự kiến\" (ngày mới nhất) kèm mức tin cậy; ghi rõ nhóm nào chưa chắc chắn, cần chủ sở hữu xác nhận.",
+   "inputs": [
+    "danh_sach_file",
+    "quy_tac_hien_tai"
+   ],
+   "vai_tro": "Chủ sở hữu thư mục · AI hỗ trợ: nhóm file theo tên gốc, sắp xếp theo ngày, đề xuất bản mới nhất kèm mức tin cậy",
+   "luu_y": "ngày sửa mới nhất chưa chắc là bản đúng nhất (có thể ai đó mở–lưu nhầm) — mọi kết luận đều ghi \"dự kiến, cần xác nhận\"; không suy đoán về khác biệt nội dung giữa các bản khi chưa mở file.",
+   "ket_qua": "Version map sơ bộ (nhóm phiên bản + bản mới nhất dự kiến)."
+  },
+  {
+   "n": 3,
+   "title": "Đề xuất taxonomy cấu trúc thư mục",
+   "lam_gi": "Căn cứ loại tài liệu trong bảng inventory, thiết kế cấu trúc thư mục đề xuất theo loại tài liệu / năm / trạng thái (VD: `/VanBan2026/DaBanHanh/`, `/DuThao/`, `/ThamKhao/`); mỗi thư mục ghi rõ tiêu chí file nào được xếp vào.",
+   "inputs": [
+    "mo_ta_thu_muc",
+    "chinh_sach_luu_tru"
+   ],
+   "vai_tro": "Chủ sở hữu thư mục · AI hỗ trợ: thiết kế taxonomy thư mục đề xuất (không quá 3 cấp) + tiêu chí xếp file",
+   "luu_y": "taxonomy phải đơn giản, không quá 3 cấp sâu; tách riêng thư mục Tham khảo/Lưu trữ để tài liệu cũ không lẫn với văn bản đang hiệu lực; tôn trọng phân loại mật trong `chinh_sach_luu_tru`.",
+   "ket_qua": "Sơ đồ taxonomy đề xuất + tiêu chí xếp file từng thư mục."
+  },
+  {
+   "n": 4,
+   "title": "Đề xuất quy tắc đặt tên chuẩn",
+   "lam_gi": "Xây dựng mẫu tên file chuẩn (VD: `YYYYMMDD_Loai_SoKyHieu_TrichYeu_vN.ext`); quy định đánh phiên bản bằng v1, v2... thay vì \"final2\"; lập bảng chuyển đổi tên cũ → tên mới cho từng nhóm trong version map.",
+   "inputs": [
+    "quy_tac_hien_tai"
+   ],
+   "vai_tro": "Chủ sở hữu thư mục · AI hỗ trợ: xây dựng mẫu tên file chuẩn + bảng chuyển đổi tên cũ → tên mới",
+   "luu_y": "tên file không dấu, không khoảng trắng (dùng gạch nối/gạch dưới), ngày đặt ở đầu để sắp xếp tự động; số/ký hiệu văn bản giữ nguyên định dạng gốc để tra cứu được.",
+   "ket_qua": "Naming plan (mẫu tên chuẩn + bảng đối chiếu tên cũ → tên mới)."
+  },
+  {
+   "n": 5,
+   "title": "Đối chiếu danh mục phải có, lập missing list",
+   "lam_gi": "So bảng inventory với danh mục tài liệu bắt buộc (sổ văn bản đi/đến, danh mục hồ sơ theo quy định lưu trữ trong `chinh_sach_luu_tru`); liệt kê tài liệu còn thiếu theo từng nhóm, ghi rõ thiếu số/ký hiệu nào.",
+   "inputs": [
+    "danh_sach_file",
+    "chinh_sach_luu_tru"
+   ],
+   "vai_tro": "Chuyên viên văn thư / Chủ sở hữu thư mục · AI hỗ trợ: đối chiếu inventory với danh mục bắt buộc, lập missing list",
+   "luu_y": "chỉ liệt kê thiếu khi có căn cứ (danh mục bắt buộc) — không suy đoán \"đáng lẽ phải có\"; phân biệt \"thiếu thật\" với \"đặt tên khác nên chưa nhận ra\".",
+   "ket_qua": "Missing list theo nhóm tài liệu."
+  },
+  {
+   "n": 6,
+   "title": "Xuất báo cáo và hướng dẫn thực hiện thủ công",
+   "lam_gi": "Gộp inventory, version map, naming plan, taxonomy, missing list thành báo cáo quản lý phiên bản theo cấu trúc sản phẩm tại references/quy-cach-dau-ra.md; viết danh mục kiểm hướng dẫn từng bước để chủ sở hữu tự thực hiện (xác nhận bản mới nhất → đổi tên → sắp xếp thư mục), ghi rõ AI không thực hiện bất kỳ thao tác nào trên file.",
+   "inputs": [],
+   "vai_tro": "Chủ sở hữu thư mục · AI hỗ trợ: xuất báo cáo quản lý phiên bản + danh mục kiểm hướng dẫn thực hiện thủ công chi tiết",
+   "luu_y": "hướng dẫn phải chi tiết đến mức người không rành công nghệ cũng làm được; nhấn mạnh sao lưu (backup) trước khi đổi tên/di chuyển; chế độ CHỈ ĐỌC là tuyệt đối.",
+   "ket_qua": "Báo cáo quản lý phiên bản hoàn chỉnh — sản phẩm cuối."
+  }
+ ],
+ "checks": [
+  "Báo cáo đầy đủ 6 phần theo cấu trúc sản phẩm tại references/quy-cach-dau-ra.md: thông tin đợt kiểm kê (phạm vi, thời gian, tổng số file); file bảng tra; version map + mức tin cậy; naming plan + taxonomy đề xuất; missing list; hướng dẫn thực hiện thủ công.",
+  "Version map nhóm đúng các phiên bản của cùng một tài liệu; bản mới nhất ghi \"dự kiến, cần chủ sở hữu xác nhận\", kèm mức tin cậy.",
+  "Naming plan có mẫu tên file chuẩn (ngày ở đầu, không dấu, không khoảng trắng) + bảng chuyển đổi tên cũ → tên mới cho từng nhóm.",
+  "Missing list chỉ liệt kê khi có căn cứ (danh mục bắt buộc trong chính sách lưu trữ); phân biệt \"thiếu thật\" với \"đặt tên khác nên chưa nhận ra\".",
+  "Chế độ CHỈ ĐỌC tuyệt đối: chỉ làm việc với metadata (không mở nội dung file nhạy cảm); không xóa, không đổi tên, không di chuyển, không ghi đè bất kỳ file nào.",
+  "Hướng dẫn thủ công chi tiết đến mức người không rành công nghệ cũng làm được; nhấn mạnh sao lưu (backup) trước khi đổi tên/di chuyển.",
+  "Đã qua Human gate: chủ sở hữu thư mục đã duyệt toàn bộ version map và naming plan trước khi làm bất kỳ thay đổi nào. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [
+  "CHẾ ĐỘ CHỈ ĐỌC là tuyệt đối: KHÔNG xóa, KHÔNG di chuyển, KHÔNG đổi tên, KHÔNG ghi đè bất kỳ file nào dưới mọi hình thức.",
+  "KHÔNG truy cập các thư mục/file được phân loại mật hoặc hạn chế truy cập.",
+  "KHÔNG mở nội dung file nhạy cảm (hồ sơ cá nhân, tài chính chi tiết) — chỉ làm việc với tên file và metadata.",
+  "Khi không chắc file nào là bản mới nhất, ghi rõ \"cần chủ sở hữu xác nhận\", không tự kết luận."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Chạy ở chế độ chỉ đọc trên thư mục người dùng chỉ định; không đổi tên hay xóa file thật.",
+  "Quy tắc đặt tên gợi ý phải gồm đơn vị, loại tài liệu, kỳ hoặc năm học, phiên bản và ngôn ngữ (Việt, Anh) vì tài liệu của Trường thường song ngữ.",
+  "Tài liệu có dữ liệu cá nhân hoặc bí mật đối tác: gắn nhãn hạn chế, không đưa vào bảng tra chung."
+ ],
+ "cho_xac_nhan": [
+  "Nơi lưu tài liệu hiện nay (ổ chung, E-Office, đám mây) (C5).",
+  "Quy tắc phân quyền truy cập (C5)."
+ ],
+ "output_structure": [
+  "Thông tin đợt kiểm kê: phạm vi thư mục, thời gian kiểm kê, tổng số file.",
+  "File bảng tra: danh mục toàn bộ file (tên, thư mục, ngày sửa, dung lượng, loại tài liệu).",
+  "Version map: các nhóm phiên bản, bản mới nhất dự kiến của từng nhóm + mức tin cậy.",
+  "Naming plan + taxonomy đề xuất: mẫu tên file chuẩn, bảng chuyển đổi tên cũ → tên mới, sơ đồ thư mục đề xuất.",
+  "Missing list: tài liệu còn thiếu theo nhóm, ghi rõ thiếu số/ký hiệu nào.",
+  "Hướng dẫn thực hiện thủ công: danh mục kiểm từng bước cho chủ sở hữu (xác nhận bản mới nhất → đổi tên → sắp xếp thư mục)."
+ ],
+ "output_structure_raw": "1. Thông tin đợt kiểm kê: phạm vi thư mục, thời gian kiểm kê, tổng số file.\n\n2. File bảng tra: danh mục toàn bộ file (tên, thư mục, ngày sửa, dung lượng, loại tài liệu).\n\n3. Version map: các nhóm phiên bản, bản mới nhất dự kiến của từng nhóm + mức tin cậy.\n\n4. Naming plan + taxonomy đề xuất: mẫu tên file chuẩn, bảng chuyển đổi tên cũ → tên mới, sơ đồ thư mục đề xuất.\n\n5. Missing list: tài liệu còn thiếu theo nhóm, ghi rõ thiếu số/ký hiệu nào.\n\n6. Hướng dẫn thực hiện thủ công: danh mục kiểm từng bước cho chủ sở hữu (xác nhận bản mới nhất → đổi tên → sắp xếp thư mục).",
+ "human_gate_check": "Đã qua Human gate: chủ sở hữu thư mục đã duyệt toàn bộ version map và naming plan trước khi làm bất kỳ thay đổi nào. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dc-quan-ly-phien-ban-tai-lieu/references"
+}

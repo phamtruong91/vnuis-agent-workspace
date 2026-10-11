@@ -1,0 +1,153 @@
+{
+ "name": "vnuis-htqt-ke-hoach-trao-doi-nguoi-hoc",
+ "title": "Kế hoạch trao đổi người học và giảng viên",
+ "description": "Dùng khi chuẩn bị một đợt trao đổi người học hoặc giảng viên theo thỏa thuận đã có với đối tác (sinh viên đi trao đổi một học kỳ, đoàn đến): chỉ tiêu, điều kiện, lịch, công nhận học phần, hồ sơ, mốc việc.",
+ "group": "htqt",
+ "group_label": "Hợp tác quốc tế",
+ "previous_name": "vnuis-ke-hoach-trao-doi-nguoi-hoc",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển; Phòng Đào tạo",
+ "when": "Khi chuẩn bị một đợt trao đổi theo thỏa thuận có sẵn; khi cần danh sách hồ sơ và mốc cho cả đoàn đi và đoàn đến.",
+ "inputs": [
+  {
+   "key": "thoa_thuan_trao_doi",
+   "desc": "Thỏa thuận hoặc thông báo chương trình trao đổi của đối tác",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_ung_vien",
+   "desc": "Danh sách người học hoặc giảng viên đăng ký, đã che thông tin nhạy cảm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dieu_kien_va_chi_tieu",
+   "desc": "Điều kiện chọn, chỉ tiêu, hạn do đối tác và Trường đặt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_dinh_cong_nhan",
+   "desc": "Quy định công nhận học phần, tín chỉ khi người học về",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "lich_dot_trao_doi",
+   "desc": "Thời gian dự kiến của đợt",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển; Phòng Đào tạo"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chốt điều kiện và chỉ tiêu",
+   "lam_gi": "Từ thỏa thuận và thông báo, lập bảng điều kiện, chỉ tiêu, hạn; điều kiện mơ hồ gắn `[CẦN XÁC MINH]`.",
+   "inputs": [
+    "thoa_thuan_trao_doi",
+    "dieu_kien_va_chi_tieu"
+   ],
+   "vai_tro": "Chuyên viên hợp tác · AI hỗ trợ: trích điều kiện",
+   "luu_y": "Không tự đặt điều kiện cho người học.",
+   "ket_qua": "Bảng điều kiện và chỉ tiêu."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu ứng viên",
+   "lam_gi": "So từng ứng viên với điều kiện; ghi đủ, thiếu, không đủ kèm lý do.",
+   "inputs": [
+    "danh_sach_ung_vien",
+    "dieu_kien_va_chi_tieu"
+   ],
+   "vai_tro": "Chuyên viên hợp tác · AI hỗ trợ: đối chiếu",
+   "luu_y": "Chỉ đánh giá điều kiện hình thức; việc chọn do hội đồng.",
+   "ket_qua": "Bảng đối chiếu."
+  },
+  {
+   "n": 3,
+   "title": "Lập danh mục hồ sơ và lịch",
+   "lam_gi": "Danh mục hồ sơ cho mỗi ứng viên và mốc: nộp hồ sơ, thông báo, chuẩn bị đi, về, công nhận học phần.",
+   "inputs": [
+    "quy_dinh_cong_nhan",
+    "lich_dot_trao_doi"
+   ],
+   "vai_tro": "Chuyên viên hợp tác · AI hỗ trợ: lập lịch",
+   "luu_y": "Thủ tục xuất nhập cảnh theo cơ quan có thẩm quyền; skill chỉ liệt kê, không khẳng định.",
+   "ket_qua": "Danh mục hồ sơ và lịch."
+  },
+  {
+   "n": 4,
+   "title": "Lập kế hoạch và chỗ trống thông tin",
+   "lam_gi": "Ghép kế hoạch: mục tiêu, đối tượng, lịch, phân công, kinh phí nếu có; liệt kê thông tin còn thiếu.",
+   "inputs": [
+    "thoa_thuan_trao_doi"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: dự thảo kế hoạch",
+   "luu_y": "Kinh phí chỉ ghi khi có dự toán duyệt.",
+   "ket_qua": "Kế hoạch trao đổi."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Điều kiện khớp thỏa thuận.",
+  "Ứng viên thiếu hồ sơ được liệt kê.",
+  "Không có thông tin cá nhân nhạy cảm trong kế hoạch tổng hợp.",
+  "Thông tin chưa có để trống và ghi chú.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng phòng KHCN và Hợp tác phát triển** kiểm tra kế hoạch.",
+  "**Hội đồng hoặc lãnh đạo có thẩm quyền** quyết định danh sách được chọn."
+ ],
+ "guardrails": [
+  "KHÔNG tự chọn người đi hoặc đến.",
+  "KHÔNG khẳng định thủ tục xuất nhập cảnh hay visa."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Quy trình xét chọn và thẩm quyền quyết định (C6).",
+  "Quy định công nhận học phần khi trao đổi (C2)."
+ ],
+ "output_structure": [
+  "Tiêu đề, đối tác, đợt, đơn vị lập.",
+  "Điều kiện, chỉ tiêu, hạn.",
+  "Bảng ứng viên và kết quả đối chiếu hình thức.",
+  "Lịch, danh mục hồ sơ, phân công, thông tin còn thiếu."
+ ],
+ "output_structure_raw": "1. Tiêu đề, đối tác, đợt, đơn vị lập.\n\n2. Điều kiện, chỉ tiêu, hạn.\n\n3. Bảng ứng viên và kết quả đối chiếu hình thức.\n\n4. Lịch, danh mục hồ sơ, phân công, thông tin còn thiếu.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-htqt-ke-hoach-trao-doi-nguoi-hoc/references"
+}

@@ -1,0 +1,165 @@
+{
+ "name": "vnuis-dc-thiet-ke-phieu-khao-sat",
+ "title": "Thiết kế phiếu khảo sát các bên liên quan",
+ "description": "Dùng khi cần thu thập ý kiến sinh viên, giảng viên, cựu sinh viên hoặc nhà tuyển dụng về chương trình đào tạo, giảng dạy, dịch vụ và phải thiết kế bộ câu hỏi, phiếu khảo sát.",
+ "group": "dc",
+ "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+ "previous_name": "vnuis-thiet-ke-phieu-khao-sat",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (đảm bảo chất lượng); mọi đơn vị cần khảo sát",
+ "when": "Khi cần khảo sát ý kiến sinh viên / giảng viên / cựu sinh viên / nhà tuyển dụng về\nchương trình đào tạo, chất lượng giảng dạy, dịch vụ hỗ trợ, chuẩn đầu ra...",
+ "inputs": [
+  {
+   "key": "doi_tuong",
+   "desc": "Sinh viên / Giảng viên / Cựu sinh viên / Nhà tuyển dụng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_dich",
+   "desc": "Mục đích khảo sát (VD: đánh giá CTĐT, khảo sát việc làm, lấy ý kiến chuẩn đầu ra)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "linh_vuc",
+   "desc": "Các lĩnh vực cần đánh giá (VD: chương trình, giảng viên, CSVC, dịch vụ)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_cau_hoi",
+   "desc": "Số lượng câu hỏi mong muốn",
+   "required": false,
+   "note": "Không (mặc định: 15–20 câu)"
+  },
+  {
+   "key": "don_vi_thuc_hien",
+   "desc": "Phòng Đào tạo (khảo thí, đảm bảo chất lượng) phối hợp đơn vị liên quan",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (đảm bảo chất lượng); mọi đơn vị cần khảo sát"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026: Yêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n- Thông tư 04/2025/TT-BGDĐT, hiệu lực 04/04/2025: Tách kiểm định chương trình khỏi kiểm định cơ sở. Yêu cầu phiên bản tiêu chuẩn, ngày đăng ký và bộ minh chứng; trích tiêu chí từ phụ lục hiện hành. Không mặc định khung 11 tiêu chuẩn của 04/2016 là khung hiện hành; đối chiếu chuyển tiếp trước khi tiếp tục hồ sơ cũ.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định mục đích và phạm vi",
+   "lam_gi": "Chốt 01 mục đích duy nhất cho phiếu khảo sát từ `muc_dich` (mỗi phiếu chỉ phục vụ 01 mục đích rõ ràng); xác định đối tượng khảo sát (`doi_tuong`), phạm vi (khoa/ngành/khóa hoặc toàn trường), cỡ mẫu tối thiểu và cách chọn mẫu; thống nhất các lĩnh vực cần đánh giá từ `linh_vuc`.",
+   "inputs": [
+    "doi_tuong",
+    "muc_dich",
+    "linh_vuc",
+    "don_vi_thuc_hien"
+   ],
+   "vai_tro": "Phòng Đào tạo (khảo thí, đảm bảo chất lượng) (đơn vị chủ trì) · AI hỗ trợ: tổng hợp đề cương khảo sát (mục đích, đối tượng, phạm vi, cỡ mẫu) để chốt",
+   "luu_y": "bẫy thường gặp — nhồi nhiều mục đích vào 01 phiếu khiến phiếu dài, tỷ lệ phản hồi thấp; cỡ mẫu quá nhỏ làm kết quả không có ý nghĩa thống kê.",
+   "ket_qua": "Đề cương khảo sát (mục đích, đối tượng, phạm vi, cỡ mẫu, các lĩnh vực đánh giá)."
+  },
+  {
+   "n": 2,
+   "title": "Cấu trúc phiếu gồm 03 phần",
+   "lam_gi": "Dựng khung phiếu theo cấu trúc cố định: **Phần A – Thông tin chung** (giới tính, khóa, ngành/đơn vị công tác, năm tốt nghiệp... — không thu thập thông tin định danh cá nhân nhạy cảm); **Phần B – Câu hỏi đánh giá** (thang đo Likert 5 mức: 1=Rất không đồng ý ... 5=Rất đồng ý, nhóm theo lĩnh vực: chương trình đào tạo, đội ngũ giảng viên, CSVC, dịch vụ hỗ trợ, chuẩn đầu ra/kỹ năng); **Phần C – Câu hỏi mở** (02–03 câu lấy ý kiến đề xuất, góp ý tự do).",
+   "inputs": [
+    "linh_vuc",
+    "so_cau_hoi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: dựng khung phiếu 3 phần (A, B, C) theo các lĩnh vực đánh giá",
+   "luu_y": "tổng số câu hỏi nên trong khoảng 15–20 câu để đảm bảo tỷ lệ hoàn thành; Phần A chỉ hỏi thông tin cần thiết cho phân tích theo nhóm, không hỏi thừa.",
+   "ket_qua": "Khung phiếu 3 phần (A, B, C) với số câu hỏi phân bổ theo lĩnh vực."
+  },
+  {
+   "n": 3,
+   "title": "Soạn câu hỏi",
+   "lam_gi": "Viết từng câu hỏi cụ thể theo khung ở Bước 2: mỗi câu hỏi chỉ đo 01 nội dung duy nhất; diễn đạt trung lập, tránh câu hỏi gợi ý/thiên lệch; sắp xếp thứ tự từ chung đến riêng, từ dễ đến khó; đánh mã số câu hỏi (A1, A2... B1, B2... C1, C2...).",
+   "inputs": [
+    "muc_dich",
+    "linh_vuc",
+    "so_cau_hoi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: soạn dự thảo câu hỏi, kiểm tra câu hỏi 02 nội dung/thiên lệch",
+   "luu_y": "bẫy thường gặp — câu hỏi 02 nội dung trong 01 câu (\"giảng viên giảng dạy tốt và nhiệt tình\"), từ ngữ mơ hồ (\"chất lượng cao\"), thang đo không cân đối; mỗi câu hỏi phải gắn được với 01 lĩnh vực đánh giá đã chốt.",
+   "ket_qua": "Dự thảo phiếu khảo sát đầy đủ câu hỏi đã đánh mã."
+  },
+  {
+   "n": 4,
+   "title": "Kiểm thử (pilot)",
+   "lam_gi": "Thử nghiệm dự thảo phiếu trên 10–20 người thuộc đúng đối tượng khảo sát; ghi nhận thời gian hoàn thành trung bình, các câu hỏi bị hiểu sai/trùng lặp/khó trả lời; điều chỉnh, loại bỏ hoặc viết lại câu hỏi có vấn đề; nếu thay đổi lớn thì pilot lại vòng 2.",
+   "inputs": [
+    "doi_tuong"
+   ],
+   "vai_tro": "Nhóm thực hiện khảo sát (Phòng Đào tạo (khảo thí, đảm bảo chất lượng)) · AI hỗ trợ: tổng hợp phản hồi pilot, thống kê thời gian hoàn thành trung bình",
+   "luu_y": "người tham gia pilot không đưa vào mẫu khảo sát chính thức; ghi lại mọi thay đổi sau pilot để giải trình khi cần.",
+   "ket_qua": "Phiếu khảo sát đã hiệu đính sau kiểm thử + biên bản ghi nhận thay đổi."
+  },
+  {
+   "n": 5,
+   "title": "Hoàn thiện",
+   "lam_gi": "Chốt phiếu khảo sát chính thức; soạn hướng dẫn triển khai kèm theo: đối tượng, cỡ mẫu tối thiểu, hình thức (online/giấy), thời gian thực hiện, đơn vị thực hiện, cách đảm bảo tỷ lệ phản hồi (nhắc nhở, động viên); ban hành và gửi đến đơn vị thực hiện.",
+   "inputs": [
+    "doi_tuong",
+    "don_vi_thuc_hien"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (khảo thí, đảm bảo chất lượng) (chốt và ban hành) · AI hỗ trợ: kiểm tra thể thức phiếu và hướng dẫn triển khai trước khi ban hành",
+   "luu_y": "tỷ lệ phản hồi thấp làm sai lệch kết quả — hướng dẫn triển khai phải có kế hoạch nhắc nhở cụ thể; phiếu là minh chứng kiểm định cho tiêu chí thu thập ý kiến các bên liên quan.",
+   "ket_qua": "Phiếu khảo sát chính thức + hướng dẫn triển khai khảo sát."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Phiếu phục vụ đúng 01 mục đích đã chốt trong Input; câu hỏi bao phủ các lĩnh vực đánh giá trong Input.",
+  "Không sao chép nguyên văn phiếu của đơn vị khác mà không điều chỉnh cho phù hợp mục đích.",
+  "Đúng quy định của trường về thu thập ý kiến các bên liên quan; bảo mật thông tin người trả lời: không thu thập thông tin định danh cá nhân nhạy cảm, cam kết chỉ dùng cho cải tiến chất lượng.",
+  "Phiếu và hướng dẫn triển khai phù hợp quy định hiện hành của trường, áp dụng đúng đối tượng và chu kỳ khảo sát.",
+  "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+  "Mỗi câu hỏi chỉ đo 01 nội dung duy nhất, diễn đạt trung lập, đã đánh mã (A1, B1, C1...); tổng số câu trong khoảng 15–20; thang đo Likert 5 mức cân đối, ghi rõ quy ước.",
+  "Đã kiểm thử pilot trên 10–20 người đúng đối tượng; người tham gia pilot không đưa vào mẫu chính thức; mọi thay đổi sau pilot đã được ghi lại.",
+  "Cỡ mẫu tối thiểu đảm bảo ý nghĩa thống kê; hướng dẫn triển khai có kế hoạch nhắc nhở cụ thể để đảm bảo tỷ lệ phản hồi."
+ ],
+ "gates": [],
+ "guardrails": [
+  "Không thu thập thông tin định danh không cần thiết; cam kết bảo mật và chỉ dùng cho mục đích cải tiến chất lượng."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Đối tượng khảo sát có thể gồm sinh viên chương trình ĐHQGHN, liên kết, quốc tế, giảng viên, cựu sinh viên, doanh nghiệp; phiếu cho sinh viên quốc tế cần bản tiếng Anh.",
+  "Tách câu hỏi theo kiểu chương trình để phân tích được; không dồn mọi chương trình vào một mẫu.",
+  "Dữ liệu nhận diện cá nhân chỉ thu khi cần; nêu mục đích và thời hạn lưu."
+ ],
+ "cho_xac_nhan": [
+  "Danh sách khảo sát định kỳ hiện có (C8).",
+  "Quy định về thu thập dữ liệu người học (C5)."
+ ],
+ "output_structure": [
+  "Tiêu đề phiếu (PHIẾU KHẢO SÁT + đối tượng) + đơn vị ban hành;",
+  "Mục đích khảo sát + cam kết bảo mật, chỉ sử dụng cho cải tiến chất lượng;",
+  "Phần A – Thông tin chung (câu hỏi A1, A2...: giới tính, ngành, năm tốt nghiệp, tình trạng việc làm...);",
+  "Phần B – Đánh giá (thang đo Likert 5 mức ghi rõ quy ước; câu hỏi B1, B2... nhóm theo lĩnh vực);",
+  "Phần C – Ý kiến đóng góp (câu hỏi mở C1, C2...);",
+  "Lời cảm ơn. B. Hướng dẫn triển khai (dạng bảng): đối tượng – cỡ mẫu tối thiểu – hình thức – thời gian – đơn vị thực hiện."
+ ],
+ "output_structure_raw": "A. Phiếu khảo sát:\n\n1. Tiêu đề phiếu (PHIẾU KHẢO SÁT + đối tượng) + đơn vị ban hành;\n\n2. Mục đích khảo sát + cam kết bảo mật, chỉ sử dụng cho cải tiến chất lượng;\n\n3. Phần A – Thông tin chung (câu hỏi A1, A2...: giới tính, ngành, năm tốt nghiệp, tình trạng việc làm...);\n\n4. Phần B – Đánh giá (thang đo Likert 5 mức ghi rõ quy ước; câu hỏi B1, B2... nhóm theo lĩnh vực);\n\n5. Phần C – Ý kiến đóng góp (câu hỏi mở C1, C2...);\n\n6. Lời cảm ơn.\nB. Hướng dẫn triển khai (dạng bảng): đối tượng – cỡ mẫu tối thiểu – hình thức – thời gian – đơn vị thực hiện.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (đảm bảo chất lượng). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026\n\nNguồn: https://congbao.cdnchinhphu.vn/180507251028987904/2026/4/24/469367-1777014846_v1_1777018480_signed.pdf\n\nYêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n\n## Thông tư 04/2025/TT-BGDĐT, hiệu lực 04/04/2025\n\nNguồn: https://chinhphu.vn/?classid=1&docid=213005&pageid=27160\n\nTách kiểm định chương trình khỏi kiểm định cơ sở. Yêu cầu phiên bản tiêu chuẩn, ngày đăng ký và bộ minh chứng; trích tiêu chí từ phụ lục hiện hành. Không mặc định khung 11 tiêu chuẩn của 04/2016 là khung hiện hành; đối chiếu chuyển tiếp trước khi tiếp tục hồ sơ cũ.\n",
+ "outputs_dir": "skills/vnuis-dc-thiet-ke-phieu-khao-sat/references"
+}

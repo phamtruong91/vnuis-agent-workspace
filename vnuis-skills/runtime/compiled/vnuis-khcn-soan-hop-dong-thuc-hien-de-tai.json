@@ -1,0 +1,266 @@
+{
+ "name": "vnuis-khcn-soan-hop-dong-thuc-hien-de-tai",
+ "title": "Soạn hợp đồng thực hiện đề tài KHCN",
+ "description": "Dùng khi đề tài NCKH đã có quyết định phê duyệt và cần soạn hợp đồng giữa bên giao (trường hoặc cơ quan quản lý) và chủ nhiệm đề tài, trước khi triển khai và cấp kinh phí.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-hop-dong-thuc-hien-de-tai",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); pháp chế",
+ "when": "Khi đề tài NCKH đã được hội đồng xét duyệt và có quyết định phê duyệt: Phòng KHCN&HTPT\nsoạn hợp đồng để Hiệu trưởng (bên giao) ký với chủ nhiệm đề tài (bên nhận), làm căn cứ\npháp lý cho việc cấp kinh phí, kiểm tra tiến độ, nghiệm thu và thanh lý đề tài.",
+ "inputs": [
+  {
+   "key": "so_hop_dong",
+   "desc": "Số, ký hiệu hợp đồng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ben_giao",
+   "desc": "Tên cơ quan, người đại diện, chức vụ (VD: Hiệu trưởng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ben_nhan",
+   "desc": "Họ tên, học hàm/học vị, đơn vị của chủ nhiệm đề tài",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ten_de_tai",
+   "desc": "Tên đầy đủ của đề tài",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ma_so_de_tai",
+   "desc": "Mã số đề tài theo quyết định phê duyệt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quyet_dinh_phe_duyet",
+   "desc": "Số, ngày quyết định phê duyệt đề tài",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_thuc_hien",
+   "desc": "Từ ngày/tháng/năm đến ngày/tháng/năm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tong_kinh_phi",
+   "desc": "Tổng kinh phí (ghi cả số và chữ)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tien_do_cap_kinh_phi",
+   "desc": "Các đợt cấp kinh phí (tỷ lệ %, điều kiện từng đợt)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "san_pham_nghiem_thu",
+   "desc": "Sản phẩm phải đạt khi nghiệm thu (đối chiếu thuyết minh đã duyệt)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dieu_khoan_dac_biet",
+   "desc": "Thỏa thuận riêng nếu có (sở hữu trí tuệ, bảo mật...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ngay_ky",
+   "desc": "Địa danh, ngày tháng năm ký hợp đồng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); pháp chế"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 93/2025/QH15; Nghị định 265/2025 và 267/2025, hiệu lực 14/10/2025: Yêu cầu cấp nhiệm vụ, nguồn kinh phí, tài trợ/đặt hàng, ngày phê duyệt, quy chế cơ quan tài trợ, phương thức khoán và quyền sử dụng kết quả. Đối chiếu NĐ 265 về tài chính và NĐ 267 về nhiệm vụ; không cố định thang xếp loại hoặc thu hồi toàn bộ kinh phí cho mọi đề tài. Nghiệm thu dựa hợp đồng và tiêu chí được duyệt, hội đồng có thẩm quyền xác nhận.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập và đối chiếu căn cứ",
+   "lam_gi": "thu thập `quyet_dinh_phe_duyet`, thuyết minh và dự toán kinh phí đã duyệt; lập bảng đối chiếu các số liệu then chốt (tên đề tài, mã số, thời gian, tổng kinh phí, danh mục sản phẩm) — mọi số liệu đưa vào hợp đồng phải khớp 100% với các văn bản này; ghi lại số và ngày ban hành của quyết định phê duyệt để dùng ở phần căn cứ.",
+   "inputs": [
+    "quyet_dinh_phe_duyet",
+    "ten_de_tai",
+    "ma_so_de_tai",
+    "thoi_gian_thuc_hien",
+    "tong_kinh_phi",
+    "san_pham_nghiem_thu"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: lập bảng đối chiếu số liệu căn cứ",
+   "luu_y": "sai lệch số liệu giữa hợp đồng và quyết định phê duyệt là căn cứ để từ chối thanh toán sau này — bước này không được làm qua loa.",
+   "ket_qua": "bảng đối chiếu số liệu căn cứ (đã xác nhận khớp)."
+  },
+  {
+   "n": 2,
+   "title": "Soạn phần mở đầu hợp đồng",
+   "lam_gi": "viết tiêu đề \"HỢP ĐỒNG THỰC HIỆN ĐỀ TÀI KHOA HỌC CÔNG NGHỆ\" + `so_hop_dong`; viết các dòng căn cứ (quy chế quản lý đề tài, `quyet_dinh_phe_duyet`, thuyết minh và dự toán kinh phí đã duyệt); điền đầy đủ thông tin `ben_giao` (tên cơ quan, người đại diện, chức vụ) và `ben_nhan` (họ tên, học hàm/học vị, đơn vị); ghi địa điểm và ngày ký trong câu mở đầu \"Hôm nay, ngày...\".",
+   "inputs": [
+    "so_hop_dong",
+    "ben_giao",
+    "ben_nhan",
+    "quyet_dinh_phe_duyet",
+    "ngay_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn dự thảo phần mở đầu (tiêu đề, căn cứ, thông tin hai bên)",
+   "luu_y": "người đại diện bên giao phải có thẩm quyền ký (Hiệu trưởng hoặc người được ủy quyền bằng văn bản); kiểm tra số hợp đồng không trùng với các hợp đồng đã ký.",
+   "ket_qua": "dự thảo phần mở đầu (tiêu đề + căn cứ + thông tin hai bên)."
+  },
+  {
+   "n": 3,
+   "title": "Soạn Điều 1 – Đối tượng của hợp đồng",
+   "lam_gi": "ghi `ten_de_tai`, `ma_so_de_tai`, mục tiêu chính (trích nguyên văn từ thuyết minh đã duyệt), danh mục `san_pham_nghiem_thu` phải hoàn thành.",
+   "inputs": [
+    "ten_de_tai",
+    "ma_so_de_tai",
+    "san_pham_nghiem_thu"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: chép nguyên văn từ thuyết minh đã duyệt",
+   "luu_y": "danh mục sản phẩm ở Điều 1 là căn cứ duy nhất để nghiệm thu — phải chép nguyên văn từ thuyết minh đã duyệt, không được viết lại theo cách hiểu khác.",
+   "ket_qua": "dự thảo Điều 1."
+  },
+  {
+   "n": 4,
+   "title": "Soạn Điều 2 – Thời gian thực hiện",
+   "lam_gi": "ghi ngày bắt đầu – ngày kết thúc từ `thoi_gian_thuc_hien`; quy định các mốc báo cáo tiến độ định kỳ (6 tháng/lần) mà bên nhận phải nộp về Phòng KHCN&HTPT.",
+   "inputs": [
+    "thoi_gian_thuc_hien"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn Điều 2 và quy định mốc báo cáo tiến độ định kỳ",
+   "luu_y": "thời gian trong hợp đồng phải khớp quyết định phê duyệt; nên ghi rõ báo cáo tiến độ là nghĩa vụ gắn với điều kiện cấp kinh phí đợt 2 (liên kết với Điều 3).",
+   "ket_qua": "dự thảo Điều 2."
+  },
+  {
+   "n": 5,
+   "title": "Soạn Điều 3 – Kinh phí",
+   "lam_gi": "ghi `tong_kinh_phi` cả số và chữ, nguồn kinh phí; chi tiết `tien_do_cap_kinh_phi` theo từng đợt (tỷ lệ % + điều kiện cụ thể từng đợt); ghi nguyên tắc sử dụng kinh phí đúng mục đích, đúng chế độ và quyết toán theo quy định.",
+   "inputs": [
+    "tong_kinh_phi",
+    "tien_do_cap_kinh_phi"
+   ],
+   "vai_tro": "Trưởng Phòng KHCN&HTPT · AI hỗ trợ: soạn chi tiết từng đợt cấp",
+   "luu_y": "điều kiện mỗi đợt cấp phải đo lường được (\"sau khi báo cáo giữa kỳ được đánh giá đạt yêu cầu\" — cần rõ ai đánh giá, theo tiêu chí nào); tránh ghi chung chung \"cấp theo tiến độ\".",
+   "ket_qua": "dự thảo Điều 3."
+  },
+  {
+   "n": 6,
+   "title": "Soạn Điều 4 và Điều 5 – Quyền và nghĩa vụ hai bên",
+   "lam_gi": "Điều 4 (Bên giao): cấp kinh phí đúng tiến độ; kiểm tra, giám sát tiến độ và việc sử dụng kinh phí; hỗ trợ thủ tục hành chính; tổ chức nghiệm thu đúng hạn. Điều 5 (Bên nhận): triển khai đúng thuyết minh đã duyệt; nộp báo cáo tiến độ định kỳ và đột xuất khi được yêu cầu; sử dụng kinh phí đúng mục đích, đúng chế độ; chịu trách nhiệm khoa học về kết quả; không được chuyển giao toàn bộ hoặc một phần công việc khi chưa được đồng ý bằng văn bản.",
+   "inputs": [
+    "ben_giao",
+    "ben_nhan"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn dự thảo Điều 4 và Điều 5 theo mẫu chuẩn",
+   "luu_y": "nghĩa vụ của Bên nhận phải tương ứng với quyền giám sát của Bên giao; điều khoản \"không chuyển giao\" cần ghi rõ hình thức đồng ý (bằng văn bản) để tránh tranh chấp.",
+   "ket_qua": "dự thảo Điều 4 và Điều 5."
+  },
+  {
+   "n": 7,
+   "title": "Soạn Điều 6, Điều 7 và điều khoản chung",
+   "lam_gi": "Điều 6 (Nghiệm thu): điều kiện nghiệm thu (hoàn thành sản phẩm, báo cáo tổng kết, quyết toán), thành lập hội đồng, các mức xếp loại (Xuất sắc/Đạt/Không đạt). Điều 7 (Thanh lý): điều kiện thanh lý; xử lý khi không hoàn thành hoặc vi phạm (tạm dừng cấp kinh phí, thu hồi kinh phí đã cấp, xem xét trách nhiệm). Điều khoản chung: hiệu lực hợp đồng, sửa đổi bổ sung phải lập thành văn bản, số bản có giá trị pháp lý như nhau, chữ ký hai bên. Bổ sung `dieu_khoan_dac_biet` (sở hữu trí tuệ, bảo mật...) nếu có.",
+   "inputs": [
+    "san_pham_nghiem_thu",
+    "dieu_khoan_dac_biet",
+    "ngay_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn dự thảo Điều 6, Điều 7 và điều khoản chung",
+   "luu_y": "mức \"Không đạt\" phải gắn hậu quả cụ thể (thu hồi kinh phí) thì điều khoản mới có sức ràng buộc; điều khoản SHTT nên ghi rõ quyền sở hữu kết quả thuộc về bên nào ngay từ đầu.",
+   "ket_qua": "dự thảo Điều 6, Điều 7 và điều khoản chung."
+  },
+  {
+   "n": 8,
+   "title": "Kiểm tra và trình hai bên ký",
+   "lam_gi": "chạy danh mục kiểm tra: số liệu khớp quyết định phê duyệt và thuyết minh đã duyệt, đủ 7 điều khoản + điều khoản chung, chính tả, thẩm quyền ký của hai bên; trình hai bên ký hợp đồng.",
+   "inputs": [],
+   "vai_tro": "Hai bên ký kết · AI hỗ trợ: chuẩn bị hồ sơ trình ký, nhắc lịch và theo dõi tiến độ",
+   "luu_y": "hợp đồng đề tài thường lập thành 04 bản (mỗi bên giữ 02 bản) — kiểm tra số bản ghi trong điều khoản chung khớp thực tế.",
+   "ket_qua": "hợp đồng đã được hai bên ký + danh mục kiểm tra điều khoản."
+  },
+  {
+   "n": 9,
+   "title": "Xuất bản và lưu hồ sơ",
+   "lam_gi": "xuất hợp đồng hoàn chỉnh theo định dạng đầu ra của skill, sẵn sàng in/ký; lưu 01 bản vào hồ sơ quản lý đề tài tại Phòng KHCN&HTPT làm căn cứ cấp kinh phí, kiểm tra tiến độ và nghiệm thu sau này.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: xuất hợp đồng theo định dạng đầu ra của skill và lưu vào hồ sơ quản lý đề tài",
+   "luu_y": "hồ sơ quản lý đề tài phải có đủ: quyết định phê duyệt, thuyết minh đã duyệt, hợp đồng đã ký — thiếu 1 trong 3 thì không đủ căn cứ cấp kinh phí đợt 1.",
+   "ket_qua": "hợp đồng hoàn chỉnh + danh mục kiểm, đã lưu hồ sơ quản lý đề tài."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu trong hợp đồng (tên đề tài, mã số, thời gian, tổng kinh phí, danh mục sản phẩm) khớp 100% với quyết định phê duyệt, thuyết minh và dự toán đã duyệt",
+  "Không bịa đặt số/ngày quyết định phê duyệt, số hợp đồng, thông tin đại diện hai bên",
+  "Đúng mẫu hợp đồng thực hiện đề tài theo quy chế quản lý đề tài của trường/cơ quan quản lý",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (quy chế quản lý đề tài, quyết định phê duyệt, thuyết minh và dự toán kinh phí đã duyệt)",
+  "Điều 1 chép nguyên văn từ thuyết minh đã duyệt; điều kiện cấp từng đợt kinh phí cụ thể, đo lường được; số bản hợp đồng trong điều khoản chung khớp thực tế",
+  "Người đại diện bên giao có thẩm quyền ký (Hiệu trưởng hoặc được ủy quyền bằng văn bản); số hợp đồng không trùng với các hợp đồng đã ký",
+  "Đã qua Human gate: hai bên đã ký hợp đồng; 01 bản đã lưu vào hồ sơ quản lý đề tài"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hợp đồng soạn theo mẫu của cơ quan quản lý đề tài; không tự thêm điều khoản.",
+  "Đề tài hợp tác quốc tế: ghi rõ ngôn ngữ hợp đồng và luật áp dụng khi thỏa thuận có."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu hợp đồng từng nguồn (C8).",
+  "Thẩm quyền ký (C1)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ",
+  "Tiêu đề \"HỢP ĐỒNG THỰC HIỆN ĐỀ TÀI KHOA HỌC CÔNG NGHỆ\" + Số hợp đồng",
+  "Các căn cứ (quy chế quản lý đề tài; quyết định phê duyệt; thuyết minh và dự toán kinh phí đã duyệt)",
+  "Câu mở đầu: thời gian, địa điểm ký + thông tin Bên giao (A) / Bên nhận (B)",
+  "Điều 1. Đối tượng của hợp đồng (tên đề tài, mã số, mục tiêu, danh mục sản phẩm)",
+  "Điều 2. Thời gian thực hiện (ngày bắt đầu – ngày kết thúc, mốc báo cáo tiến độ định kỳ)",
+  "Điều 3. Kinh phí (tổng mức số + chữ, nguồn kinh phí, tiến độ cấp theo đợt, nguyên tắc sử dụng và quyết toán)",
+  "Điều 4. Quyền và nghĩa vụ của Bên A (bên giao)",
+  "Điều 5. Quyền và nghĩa vụ của Bên B (bên nhận)",
+  "Điều 6. Nghiệm thu (điều kiện, hội đồng, các mức xếp loại)",
+  "Điều 7. Thanh lý hợp đồng (điều kiện thanh lý, xử lý vi phạm)",
+  "Điều khoản chung (hiệu lực, sửa đổi bổ sung, số bản có giá trị như nhau)",
+  "Khối chữ ký hai bên (chức danh, ký/đóng dấu, ghi rõ họ tên)"
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ\n\n2. Tiêu đề \"HỢP ĐỒNG THỰC HIỆN ĐỀ TÀI KHOA HỌC CÔNG NGHỆ\" + Số hợp đồng\n\n3. Các căn cứ (quy chế quản lý đề tài; quyết định phê duyệt; thuyết minh và dự toán kinh phí đã duyệt)\n\n4. Câu mở đầu: thời gian, địa điểm ký + thông tin Bên giao (A) / Bên nhận (B)\n\n5. Điều 1. Đối tượng của hợp đồng (tên đề tài, mã số, mục tiêu, danh mục sản phẩm)\n\n6. Điều 2. Thời gian thực hiện (ngày bắt đầu – ngày kết thúc, mốc báo cáo tiến độ định kỳ)\n\n7. Điều 3. Kinh phí (tổng mức số + chữ, nguồn kinh phí, tiến độ cấp theo đợt, nguyên tắc sử dụng và quyết toán)\n\n8. Điều 4. Quyền và nghĩa vụ của Bên A (bên giao)\n\n9. Điều 5. Quyền và nghĩa vụ của Bên B (bên nhận)\n\n10. Điều 6. Nghiệm thu (điều kiện, hội đồng, các mức xếp loại)\n\n11. Điều 7. Thanh lý hợp đồng (điều kiện thanh lý, xử lý vi phạm)\n\n12. Điều khoản chung (hiệu lực, sửa đổi bổ sung, số bản có giá trị như nhau)\n\n13. Khối chữ ký hai bên (chức danh, ký/đóng dấu, ghi rõ họ tên)",
+ "human_gate_check": "Đã qua Human gate: hai bên đã ký hợp đồng; 01 bản đã lưu vào hồ sơ quản lý đề tài",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ và phạm vi áp dụng\n\nNgày cập nhật 2026-10-09; phải kiểm tra toàn văn và chuyển tiếp trước thực thi.\n\n## Luật 93/2025/QH15; Nghị định 265/2025 và 267/2025, hiệu lực 14/10/2025\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=215664&pageid=27160\n\nYêu cầu cấp nhiệm vụ, nguồn kinh phí, tài trợ/đặt hàng, ngày phê duyệt, quy chế cơ quan tài trợ, phương thức khoán và quyền sử dụng kết quả. Đối chiếu NĐ 265 về tài chính và NĐ 267 về nhiệm vụ; không cố định thang xếp loại hoặc thu hồi toàn bộ kinh phí cho mọi đề tài. Nghiệm thu dựa hợp đồng và tiêu chí được duyệt, hội đồng có thẩm quyền xác nhận.\n",
+ "outputs_dir": "skills/vnuis-khcn-soan-hop-dong-thuc-hien-de-tai/references"
+}

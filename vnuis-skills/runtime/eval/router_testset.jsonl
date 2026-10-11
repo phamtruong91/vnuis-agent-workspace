@@ -1,0 +1,167 @@
+{"query": "tổng hợp xem trường đã làm được gì về chuyển đổi số năm nay để báo cáo lên ĐHQGHN", "expected": "vnuis-cntt-bao-cao-chuyen-doi-so"}
+{"query": "lập kế hoạch nâng cấp hệ thống phần mềm và máy chủ cho 3 năm tới", "expected": "vnuis-cntt-ke-hoach-phat-trien-cntt"}
+{"query": "giảng viên báo hỏng wifi, mất mật khẩu email, cần phân loại ticket gửi cho ai xử lý", "expected": "vnuis-cntt-phan-loai-yeu-cau-ho-tro"}
+{"query": "viết quy định bảo mật thông tin, cấm đưa dữ liệu sinh viên lên AI bên ngoài", "expected": "vnuis-cntt-soan-quy-che-an-toan-thong-tin"}
+{"query": "lên lịch bảo dưỡng điều hòa thang máy phòng học các cơ sở", "expected": "vnuis-csvc-ke-hoach-bao-tri"}
+{"query": "khoa cần mua 30 máy tính cho phòng thực hành, lập kế hoạch mua", "expected": "vnuis-csvc-ke-hoach-mua-sam"}
+{"query": "cuối năm kiểm đếm tài sản cố định các phòng, làm biên bản", "expected": "vnuis-csvc-lap-bien-ban-kiem-ke-tai-san"}
+{"query": "nhà cung cấp giao máy chiếu xong, làm biên bản nhận bàn giao đạt hay chưa đạt", "expected": "vnuis-csvc-lap-bien-ban-nghiem-thu-thiet-bi"}
+{"query": "soạn hợp đồng với công ty trúng thầu cung cấp bàn ghế", "expected": "vnuis-csvc-soan-hop-dong-mua-sam"}
+{"query": "viết báo cáo cả năm về hoạt động hỗ trợ sinh viên, rèn luyện, học bổng, kỷ luật", "expected": "vnuis-ctsv-bao-cao-cong-tac-sinh-vien-nam"}
+{"query": "tổ chức ngày hội mời doanh nghiệp đến tuyển sinh viên sắp ra trường", "expected": "vnuis-ctsv-ke-hoach-ngay-hoi-viec-lam"}
+{"query": "lên kế hoạch tuần đầu khóa cho sinh viên mới học nội quy, quy chế", "expected": "vnuis-ctsv-ke-hoach-tuan-sinh-hoat-cong-dan"}
+{"query": "hỏi cựu sinh viên sau 6 tháng ra trường đã đi làm chưa, lương bao nhiêu", "expected": "vnuis-ctsv-khao-sat-viec-lam-sau-tot-nghiep"}
+{"query": "làm mẫu phiếu để sinh viên tự chấm điểm rèn luyện cuối kỳ", "expected": "vnuis-ctsv-lap-phieu-danh-gia-ren-luyen"}
+{"query": "sinh viên gửi email khiếu nại điểm, xin xác nhận, hỏi học phí, phân loại chuyển phòng nào", "expected": "vnuis-ctsv-phan-loai-yeu-cau-sinh-vien"}
+{"query": "có danh sách sinh viên đủ điều kiện, soạn quyết định cấp học bổng khuyến khích học tập", "expected": "vnuis-ctsv-soan-quyet-dinh-cap-hoc-bong"}
+{"query": "sinh viên gian lận trong thi, soạn quyết định kỷ luật", "expected": "vnuis-ctsv-soan-quyet-dinh-khen-thuong-ky-luat"}
+{"query": "thông báo cho sinh viên về học bổng mới, điều kiện và hạn nộp hồ sơ", "expected": "vnuis-ctsv-soan-thong-bao-hoc-bong"}
+{"query": "các lớp gửi file điểm rèn luyện lên, gộp lại toàn trường", "expected": "vnuis-ctsv-tong-hop-diem-ren-luyen"}
+{"query": "báo cáo công tác đảm bảo chất lượng giáo dục trong năm", "expected": "vnuis-dbcl-bao-cao-dam-bao-chat-luong-nam"}
+{"query": "viết báo cáo tự đánh giá chương trình đào tạo để đón đoàn kiểm định", "expected": "vnuis-dbcl-bao-cao-tu-danh-gia"}
+{"query": "sau khảo sát thấy nhiều điểm yếu, lập kế hoạch khắc phục cải tiến", "expected": "vnuis-dbcl-ke-hoach-cai-tien-chat-luong"}
+{"query": "liệt kê và mã hóa các minh chứng cho từng tiêu chí kiểm định", "expected": "vnuis-dbcl-lap-danh-muc-minh-chung"}
+{"query": "tôi có quy trình làm việc muốn biến thành skill cho AI dùng lại", "expected": "vnuis-dc-dong-goi-skill-tu-quy-trinh"}
+{"query": "hỏi quy định nghỉ phép của viên chức, trả lời kèm điều khoản nào", "expected": "vnuis-dc-hoi-dap-chinh-sach-co-trich-nguon"}
+{"query": "file Excel số liệu này có ô trống, trùng, tổng không khớp không, trước khi làm báo cáo", "expected": "vnuis-dc-kiem-tra-chat-luong-du-lieu-bao-cao"}
+{"query": "hồ sơ này đã đủ giấy tờ theo danh mục chưa", "expected": "vnuis-dc-kiem-tra-day-du-ho-so"}
+{"query": "thư mục biểu mẫu lộn xộn, phân loại và tìm bản chính thức dùng lại", "expected": "vnuis-dc-lap-danh-muc-kho-tri-thuc"}
+{"query": "có 400 phiếu trả lời khảo sát hài lòng, tổng hợp và nhận xét", "expected": "vnuis-dc-phan-tich-ket-qua-khao-sat"}
+{"query": "có nhiều bản v1 v2 final final2, xem bản nào mới nhất và khác nhau gì", "expected": "vnuis-dc-quan-ly-phien-ban-tai-lieu"}
+{"query": "theo dõi tiến độ, rủi ro, thay đổi phạm vi của dự án đang chạy", "expected": "vnuis-dc-quan-tri-du-an"}
+{"query": "thiết kế bộ câu hỏi lấy ý kiến doanh nghiệp về sinh viên thực tập", "expected": "vnuis-dc-thiet-ke-phieu-khao-sat"}
+{"query": "Viện tổng hợp các hợp đồng dịch vụ đã làm trong quý, doanh thu, khách hàng", "expected": "vnuis-dmst-bao-cao-dich-vu"}
+{"query": "báo cáo tiến độ tháng của dự án gửi nhà tài trợ", "expected": "vnuis-dmst-bao-cao-du-an-dinh-ky"}
+{"query": "khóa ngắn hạn kết thúc, cấp chứng nhận cho học viên đủ điều kiện", "expected": "vnuis-dmst-cap-chung-chi-dao-tao-lien-tuc"}
+{"query": "chương trình thử nghiệm xong, so kết quả với mục tiêu đặt ra ban đầu", "expected": "vnuis-dmst-danh-gia-hieu-qua-chuong-trinh-du-an"}
+{"query": "lên kế hoạch các lớp bồi dưỡng mở cho doanh nghiệp trong năm", "expected": "vnuis-dmst-ke-hoach-dao-tao-lien-tuc"}
+{"query": "chương trình hỗ trợ nhóm khởi nghiệp sinh viên, lộ trình và các mốc", "expected": "vnuis-dmst-ke-hoach-uom-tao"}
+{"query": "chuẩn bị hồ sơ chuyển giao kết quả nghiên cứu cho doanh nghiệp", "expected": "vnuis-dmst-lap-ho-so-chuyen-giao-cong-nghe"}
+{"query": "khách hàng đặt Viện làm dịch vụ tư vấn, chuẩn bị hồ sơ và hợp đồng", "expected": "vnuis-dmst-lap-ho-so-hop-dong-dich-vu"}
+{"query": "nhận được 20 ý tưởng đổi mới, chấm điểm sơ bộ và xếp cái nào làm trước", "expected": "vnuis-dmst-sang-loc-sang-kien"}
+{"query": "mở lớp 3 ngày về AI cho cán bộ doanh nghiệp, chuẩn bị gì", "expected": "vnuis-dmst-to-chuc-khoa-boi-duong-ngan-han"}
+{"query": "làm báo cáo ba công khai nộp lên Bộ", "expected": "vnuis-dt-bao-cao-3-cong-khai"}
+{"query": "báo cáo kết quả đào tạo học kỳ cho ban giám hiệu", "expected": "vnuis-dt-bao-cao-dao-tao-dinh-ky"}
+{"query": "sinh viên chuyển sang trường đối tác, đối chiếu môn đã học để miễn giảm tín chỉ", "expected": "vnuis-dt-doi-chieu-cong-nhan-tin-chi"}
+{"query": "lập tiến độ học kỳ, tuần học, tuần thi, nghỉ lễ cho năm học tới", "expected": "vnuis-dt-ke-hoach-dao-tao-nam-hoc"}
+{"query": "đối chiếu chuẩn đầu ra từng môn với chuẩn đầu ra chương trình", "expected": "vnuis-dt-lap-ma-tran-chuan-dau-ra"}
+{"query": "xếp lịch học các lớp tín chỉ, không trùng giảng viên và phòng", "expected": "vnuis-dt-lap-thoi-khoa-bieu"}
+{"query": "chia môn học kỳ tới cho giảng viên, tính số giờ chuẩn", "expected": "vnuis-dt-phan-cong-giang-day"}
+{"query": "quét danh sách sinh viên năm cuối xem ai còn thiếu tín chỉ chưa đủ điều kiện ra trường", "expected": "vnuis-dt-ra-soat-tien-do-tot-nghiep"}
+{"query": "khoa muốn mở ngành mới, viết đề án trình hội đồng", "expected": "vnuis-dt-soan-de-an-mo-nganh"}
+{"query": "viết đề cương chi tiết môn Kinh tế vi mô 3 tín chỉ", "expected": "vnuis-dt-soan-de-cuong-hoc-phan"}
+{"query": "sửa quy định đào tạo của trường cho phù hợp thông tư mới", "expected": "vnuis-dt-soan-quy-che-dao-tao"}
+{"query": "công nhận tốt nghiệp đợt tháng 7 cho danh sách sinh viên đủ điều kiện", "expected": "vnuis-dt-soan-quyet-dinh-tot-nghiep"}
+{"query": "sinh viên bị cảnh báo học vụ, buộc thôi học, soạn quyết định", "expected": "vnuis-dt-soan-quyet-dinh-xu-ly-hoc-vu"}
+{"query": "đang có nhiều chương trình với đối tác nước ngoài, theo dõi nghĩa vụ và mốc từng bên", "expected": "vnuis-dt-theo-doi-chuong-trinh-lien-ket"}
+{"query": "theo dõi sinh viên học dự bị tiếng Anh đã đủ điểm lên chương trình chính chưa", "expected": "vnuis-dt-theo-doi-tieng-anh-du-bi"}
+{"query": "tổng hợp số liệu đào tạo: quy mô, tỷ lệ tốt nghiệp, cho báo cáo công khai", "expected": "vnuis-dt-tong-hop-so-lieu-3-cong-khai"}
+{"query": "thiết kế khung chương trình đại học 4 năm, phân bổ tín chỉ các khối kiến thức", "expected": "vnuis-dt-xay-dung-khung-chuong-trinh"}
+{"query": "hồ sơ xin ý kiến hội đồng đã đủ điều kiện đưa ra phiên họp chưa", "expected": "vnuis-hd-kiem-tra-ho-so-trinh-hoi-dong"}
+{"query": "lấy ý kiến các thành viên hội đồng bằng phiếu không họp", "expected": "vnuis-hd-lap-phieu-lay-y-kien"}
+{"query": "ghi biên bản phiên họp Hội đồng Khoa học và Đào tạo có biểu quyết", "expected": "vnuis-hd-soan-bien-ban-hop"}
+{"query": "phát hành nghị quyết của Hội đồng sau phiên họp hôm qua", "expected": "vnuis-hd-soan-nghi-quyet"}
+{"query": "các đơn vị làm đến đâu theo kết luận phiên họp hội đồng tháng trước", "expected": "vnuis-hd-theo-doi-thuc-hien-ket-luan"}
+{"query": "tổng hợp các thỏa thuận, đoàn, trao đổi quốc tế trong năm", "expected": "vnuis-htqt-bao-cao-hop-tac-quoc-te"}
+{"query": "đoàn đại học đối tác sang thăm trường, lập chương trình đón tiếp", "expected": "vnuis-htqt-ke-hoach-doan-ra-vao"}
+{"query": "tổ chức cho sinh viên đi trao đổi một học kỳ ở trường nước ngoài", "expected": "vnuis-htqt-ke-hoach-trao-doi-nguoi-hoc"}
+{"query": "tóm tắt thông tin về trường đại học đối tác ở Pháp trước buổi họp", "expected": "vnuis-htqt-lap-ho-so-doi-tac"}
+{"query": "soạn bản ghi nhớ hợp tác tiếng Việt và tiếng Anh với đại học nước ngoài", "expected": "vnuis-htqt-soan-mou-moa-song-ngu"}
+{"query": "chuẩn bị kỳ thi cuối kỳ: lịch thi, phòng thi, cán bộ coi thi", "expected": "vnuis-khaothi-ke-hoach-to-chuc-thi"}
+{"query": "ca thi xong, ghi biên bản số bài nộp, vắng, vi phạm", "expected": "vnuis-khaothi-lap-bien-ban-phong-thi"}
+{"query": "phân tích điểm thi môn Toán xem đề có quá khó không", "expected": "vnuis-khaothi-phan-tich-ket-qua-thi"}
+{"query": "xây dựng ngân hàng câu hỏi cho các học phần, quy trình duyệt", "expected": "vnuis-khaothi-quy-trinh-ngan-hang-de-thi"}
+{"query": "phân công ai coi thi ai chấm thi đợt này", "expected": "vnuis-khaothi-soan-quyet-dinh-phan-cong-thi"}
+{"query": "sinh viên xin phúc khảo, có điểm chấm lại, ra quyết định kết quả", "expected": "vnuis-khaothi-soan-quyet-dinh-phuc-khao"}
+{"query": "báo cáo hoạt động khoa học công nghệ và hợp tác quốc tế cả năm", "expected": "vnuis-khcn-bao-cao-khcn-htqt-nam"}
+{"query": "đề tài kết thúc, viết báo cáo tổng kết để hội đồng nghiệm thu", "expected": "vnuis-khcn-bao-cao-nghiem-thu-de-tai"}
+{"query": "đề tài cấp cơ sở nửa năm đầu, báo cáo đã làm được gì", "expected": "vnuis-khcn-bao-cao-tien-do-de-tai"}
+{"query": "giảng viên muốn viết giáo trình mới, lập đề cương và tiến độ", "expected": "vnuis-khcn-bien-soan-giao-trinh"}
+{"query": "gom bài báo sau hội thảo thành kỷ yếu, soát định dạng và trích dẫn", "expected": "vnuis-khcn-bien-tap-ky-yeu-hoi-thao"}
+{"query": "biên tập bản thảo sách trước khi in", "expected": "vnuis-khcn-bien-tap-xuat-ban-an-pham"}
+{"query": "tổ chức hội thảo khoa học quốc tế, chương trình, diễn giả, kinh phí", "expected": "vnuis-khcn-ke-hoach-hoi-thao"}
+{"query": "tôi có kết quả nghiên cứu, dựng dàn ý bài báo gửi tạp chí quốc tế", "expected": "vnuis-khcn-lap-cau-truc-bai-bao"}
+{"query": "viết hồ sơ đề nghị công nhận sáng kiến cải tiến trong giảng dạy", "expected": "vnuis-khcn-lap-ho-so-cong-nhan-sang-kien"}
+{"query": "đề tài xong, gom chứng từ chi tiêu để thanh quyết toán kinh phí", "expected": "vnuis-khcn-lap-ho-so-quyet-toan-de-tai"}
+{"query": "đăng ký bảo hộ sáng chế cho kết quả nghiên cứu", "expected": "vnuis-khcn-lap-ho-so-so-huu-tri-tue"}
+{"query": "vận hành tạp chí khoa học của trường: nhận bài, phản biện, xuất bản", "expected": "vnuis-khcn-quan-tri-tap-chi"}
+{"query": "đề tài được duyệt, soạn hợp đồng giao nhiệm vụ cho chủ nhiệm", "expected": "vnuis-khcn-soan-hop-dong-thuc-hien-de-tai"}
+{"query": "thông báo cho giảng viên đăng ký đề tài nghiên cứu năm sau", "expected": "vnuis-khcn-soan-thong-bao-dang-ky-de-tai"}
+{"query": "viết thuyết minh đề tài nghiên cứu để xin kinh phí", "expected": "vnuis-khcn-soan-thuyet-minh-de-tai"}
+{"query": "quét các thông báo quỹ tài trợ nghiên cứu, cái nào hợp với trường và hạn nộp", "expected": "vnuis-khcn-theo-doi-nguon-tai-tro"}
+{"query": "đọc 20 bài báo này và viết phần tổng quan nghiên cứu", "expected": "vnuis-khcn-tong-quan-tai-lieu"}
+{"query": "khoa viết tổng kết cuối năm học gửi trường", "expected": "vnuis-khoa-bao-cao-tong-ket-nam-hoc"}
+{"query": "lên kế hoạch hoạt động cho phòng thực hành của khoa", "expected": "vnuis-khoa-ke-hoach-hoat-dong-trung-tam-thuc-hanh"}
+{"query": "kế hoạch nghiên cứu khoa học của khoa năm tới", "expected": "vnuis-khoa-ke-hoach-nckh"}
+{"query": "giảng viên cần soạn bài giảng, câu hỏi trắc nghiệm, rubric chấm", "expected": "vnuis-khoa-tro-ly-giang-day"}
+{"query": "tổng kết công tác thi đua khen thưởng cuối năm", "expected": "vnuis-nhansu-bao-cao-thi-dua-khen-thuong"}
+{"query": "đếm số cán bộ theo trình độ, chức danh, hợp đồng từ file nhân sự", "expected": "vnuis-nhansu-bao-cao-thong-ke-nhan-su"}
+{"query": "xây dựng đề án xác định vị trí việc làm và cơ cấu chức danh", "expected": "vnuis-nhansu-de-an-vi-tri-viec-lam"}
+{"query": "lập kế hoạch cho cán bộ đi học bồi dưỡng trong năm", "expected": "vnuis-nhansu-ke-hoach-dao-tao-boi-duong-can-bo"}
+{"query": "hồ sơ đề nghị tặng bằng khen, chiến sĩ thi đua cho giảng viên", "expected": "vnuis-nhansu-lap-ho-so-de-nghi-khen-thuong"}
+{"query": "mẫu phiếu cho viên chức tự đánh giá và xếp loại cuối năm", "expected": "vnuis-nhansu-lap-phieu-danh-gia-vien-chuc"}
+{"query": "bổ nhiệm trưởng bộ môn: các bước, hồ sơ cần có", "expected": "vnuis-nhansu-quy-trinh-bo-nhiem"}
+{"query": "tuyển giảng viên mới: trình tự các bước từ thông báo đến ký hợp đồng", "expected": "vnuis-nhansu-quy-trinh-tuyen-dung"}
+{"query": "soạn hợp đồng làm việc cho viên chức mới trúng tuyển", "expected": "vnuis-nhansu-soan-hop-dong-lam-viec"}
+{"query": "cử thầy cô đi học tiến sĩ ở nước ngoài, ra quyết định", "expected": "vnuis-nhansu-soan-quyet-dinh-cu-di-dao-tao"}
+{"query": "chuyển một cán bộ từ phòng này sang phòng khác", "expected": "vnuis-nhansu-soan-quyet-dinh-dieu-dong"}
+{"query": "quyết định kỷ luật một viên chức vi phạm", "expected": "vnuis-nhansu-soan-quyet-dinh-khen-thuong-ky-luat-vien-chuc"}
+{"query": "đến kỳ nâng bậc lương thường xuyên, soạn quyết định cho danh sách", "expected": "vnuis-nhansu-soan-quyet-dinh-nang-luong"}
+{"query": "đăng thông báo tuyển dụng viên chức, nêu điều kiện và hạn nộp", "expected": "vnuis-nhansu-soan-thong-bao-tuyen-dung"}
+{"query": "gộp kết quả đánh giá xếp loại viên chức của tất cả các đơn vị", "expected": "vnuis-nhansu-tong-hop-danh-gia-vien-chuc"}
+{"query": "lên kế hoạch thanh tra nội bộ cho cả năm", "expected": "vnuis-phapche-ke-hoach-thanh-tra-nam"}
+{"query": "đoàn thanh tra đã xác minh xong, viết kết luận", "expected": "vnuis-phapche-soan-ket-luan-thanh-tra"}
+{"query": "viết quy chế tổ chức và hoạt động cho phòng mới thành lập", "expected": "vnuis-phapche-soan-quy-che-to-chuc-hoat-dong-don-vi"}
+{"query": "có đơn tố cáo, ra quyết định giải quyết", "expected": "vnuis-phapche-soan-quyet-dinh-giai-quyet-khieu-nai"}
+{"query": "cho ý kiến pháp lý về dự thảo quy chế này trước khi ban hành", "expected": "vnuis-phapche-tham-dinh-phap-ly-van-ban"}
+{"query": "có luật mới ban hành, trường phải làm gì và theo dõi những văn bản nào", "expected": "vnuis-phapche-theo-doi-thay-doi-van-ban-phap-quy"}
+{"query": "báo cáo đào tạo thạc sĩ tiến sĩ năm qua", "expected": "vnuis-sdh-bao-cao-dao-tao"}
+{"query": "theo dõi tiến độ học viên cao học và nghiên cứu sinh theo từng giai đoạn", "expected": "vnuis-sdh-ke-hoach-dao-tao"}
+{"query": "ghi biên bản buổi bảo vệ luận văn thạc sĩ", "expected": "vnuis-sdh-lap-bien-ban-bao-ve-luan-van"}
+{"query": "thành lập hội đồng chấm luận án tiến sĩ", "expected": "vnuis-sdh-soan-quyet-dinh-hoi-dong-bao-ve"}
+{"query": "thông báo tuyển sinh cao học đợt 1 năm nay", "expected": "vnuis-sdh-soan-thong-bao-tuyen-sinh"}
+{"query": "công khai tài chính theo quy định, đăng website", "expected": "vnuis-taichinh-bao-cao-cong-khai-tai-chinh"}
+{"query": "lập báo cáo quyết toán ngân sách cuối năm tài chính", "expected": "vnuis-taichinh-bao-cao-quyet-toan"}
+{"query": "lập báo cáo tài chính năm theo chế độ kế toán hành chính sự nghiệp", "expected": "vnuis-taichinh-bao-cao-tai-chinh"}
+{"query": "bộ hồ sơ thanh toán này còn thiếu chứng từ gì", "expected": "vnuis-taichinh-kiem-tra-chung-tu-thanh-toan"}
+{"query": "lập dự toán thu chi năm sau từ nhu cầu các đơn vị", "expected": "vnuis-taichinh-lap-du-toan-nam"}
+{"query": "so sánh dự toán với thực chi quý này, khoản nào lệch nhiều", "expected": "vnuis-taichinh-phan-tich-chenh-lech-ngan-sach"}
+{"query": "thông báo mức học phí năm học mới cho các khóa", "expected": "vnuis-taichinh-soan-thong-bao-muc-thu-hoc-phi"}
+{"query": "báo cáo hoạt động thư viện: lượt mượn, tài liệu mới, truy cập", "expected": "vnuis-thuvien-bao-cao-cong-tac"}
+{"query": "khoa đề xuất giáo trình mới, lập kế hoạch mua và số hóa tài liệu", "expected": "vnuis-thuvien-ke-hoach-bo-sung-hoc-lieu"}
+{"query": "báo cáo kết quả tuyển sinh năm nay gửi Bộ Giáo dục", "expected": "vnuis-ts-bao-cao-ket-qua-tuyen-sinh"}
+{"query": "lên ý tưởng chiến dịch quảng bá tuyển sinh trên Facebook: mục tiêu, đối tượng, ngân sách", "expected": "vnuis-ts-de-bai-chien-dich-tuyen-sinh"}
+{"query": "soạn bộ câu trả lời cho phụ huynh hay hỏi về học phí, ngành, xét tuyển", "expected": "vnuis-ts-hoi-dap-tuyen-sinh"}
+{"query": "kịch bản để tư vấn viên nói chuyện với học sinh lớp 12 qua điện thoại", "expected": "vnuis-ts-kich-ban-tu-van-tuyen-sinh"}
+{"query": "so các tài liệu tuyển sinh xem chỉ tiêu, học phí có chỗ nào mâu thuẫn không", "expected": "vnuis-ts-ra-soat-nhat-quan-thong-tin"}
+{"query": "viết đề án tuyển sinh năm nay: phương thức, chỉ tiêu, điều kiện", "expected": "vnuis-ts-soan-de-an-tuyen-sinh"}
+{"query": "thông báo xét tuyển học bạ cho cử nhân", "expected": "vnuis-ts-soan-thong-bao-tuyen-sinh-dai-hoc"}
+{"query": "danh sách thí sinh quan tâm, ai đã đăng ký, ai đã nhập học, theo dõi từng giai đoạn", "expected": "vnuis-ts-theo-doi-pheu-thi-sinh"}
+{"query": "sắp họp báo, chuẩn bị thông cáo, thông tin nhanh và câu hỏi dự kiến", "expected": "vnuis-tt-bo-tai-lieu-bao-chi-su-kien"}
+{"query": "dịch thông báo sang tiếng Anh, giữ thống nhất tên đơn vị và chương trình", "expected": "vnuis-tt-dich-song-ngu-va-thuat-ngu"}
+{"query": "kế hoạch làm việc với các báo năm nay", "expected": "vnuis-tt-ke-hoach-hoat-dong-bao-chi"}
+{"query": "định vị và quản lý hình ảnh thương hiệu của trường", "expected": "vnuis-tt-ke-hoach-quan-tri-thuong-hieu"}
+{"query": "tổ chức lễ khai giảng: phân công, kinh phí, tiến độ", "expected": "vnuis-tt-ke-hoach-to-chuc-su-kien"}
+{"query": "kế hoạch truyền thông cả năm cho các kênh", "expected": "vnuis-tt-ke-hoach-truyen-thong-nam"}
+{"query": "trình tự chương trình, lời dẫn, thứ tự đại biểu cho buổi lễ", "expected": "vnuis-tt-kich-ban-khanh-tiet"}
+{"query": "viết kịch bản video giới thiệu trường 3 phút", "expected": "vnuis-tt-kich-ban-video"}
+{"query": "lên lịch đăng bài các kênh mạng xã hội cho tháng sau", "expected": "vnuis-tt-lap-lich-noi-dung"}
+{"query": "file xuất lượt xem, tương tác của fanpage và website, xem tuần này tốt hơn tuần trước không", "expected": "vnuis-tt-phan-tich-chi-so-truyen-thong"}
+{"query": "viết bài đăng website về hội thảo vừa tổ chức", "expected": "vnuis-tt-viet-bai-truyen-thong"}
+{"query": "tổng kết năm học của toàn trường để báo cáo hội nghị cán bộ", "expected": "vnuis-vp-bao-cao-tong-ket-nam-hoc-toan-truong"}
+{"query": "tổng kết công tác của văn phòng trong năm", "expected": "vnuis-vp-bao-cao-tong-ket-van-phong"}
+{"query": "chuẩn bị nội dung cuộc họp giao ban và theo dõi việc giao sau họp", "expected": "vnuis-vp-chuan-bi-hop-theo-doi-nhiem-vu"}
+{"query": "các phòng khoa gửi báo cáo riêng, gộp thành một báo cáo chung của trường", "expected": "vnuis-vp-hop-nhat-bao-cao-don-vi"}
+{"query": "lập kế hoạch công tác năm học của cả trường", "expected": "vnuis-vp-ke-hoach-nam-hoc-toan-truong"}
+{"query": "gom lịch công tác tuần từ các phòng, xem có trùng lịch lãnh đạo không", "expected": "vnuis-vp-lap-lich-cong-tac-tuan"}
+{"query": "làm phiếu trình ký để lãnh đạo ký văn bản này", "expected": "vnuis-vp-lap-phieu-trinh-ky"}
+{"query": "vào sổ công văn đến, phân loại, chuyển cho đơn vị xử lý", "expected": "vnuis-vp-quan-ly-so-van-ban-di-den"}
+{"query": "đọc lại dự thảo công văn xem sai thể thức, lỗi chính tả, câu chữ không", "expected": "vnuis-vp-ra-soat-du-thao-van-ban"}
+{"query": "đây là ghi chép cuộc họp, viết thành biên bản", "expected": "vnuis-vp-soan-bien-ban-hop"}
+{"query": "viết công văn gửi các đơn vị đề nghị báo cáo số liệu", "expected": "vnuis-vp-soan-cong-van"}
+{"query": "mời đại biểu dự lễ ký kết hợp tác", "expected": "vnuis-vp-soan-giay-moi"}
+{"query": "viết kế hoạch triển khai nhiệm vụ quý này cho đơn vị", "expected": "vnuis-vp-soan-ke-hoach-cong-tac"}
+{"query": "ra quyết định thành lập ban tổ chức sự kiện", "expected": "vnuis-vp-soan-quyet-dinh-hanh-chinh"}
+{"query": "thông báo lịch nghỉ lễ cho toàn thể cán bộ và sinh viên", "expected": "vnuis-vp-soan-thong-bao"}
+{"query": "tờ trình đề nghị Hiệu trưởng phê duyệt chủ trương", "expected": "vnuis-vp-soan-to-trinh"}
+{"query": "tóm tắt tài liệu 30 trang thành 1 trang cho Hiệu trưởng đọc nhanh để quyết", "expected": "vnuis-vp-tom-tat-trinh-lanh-dao"}

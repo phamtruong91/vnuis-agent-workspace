@@ -1,0 +1,183 @@
+{
+ "name": "vnuis-dmst-bao-cao-dich-vu",
+ "title": "Báo cáo dịch vụ KHCN",
+ "description": "Dùng khi cuối quý hoặc cuối năm đơn vị làm dịch vụ khoa học công nghệ (trung tâm, viện, Phòng KHCN&HTPT) báo cáo lãnh đạo trường: hợp đồng đã ký, doanh thu, khách hàng, khó khăn, kế hoạch kỳ tới.",
+ "group": "dmst",
+ "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+ "previous_name": "vnuis-bao-cao-dich-vu-khcn",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Viện ĐMST&CGCN",
+ "when": "Cuối mỗi quý/năm, đơn vị làm dịch vụ KHCN (trung tâm, viện, Phòng KHCN&HTPT) cần tổng hợp báo cáo\nhoạt động dịch vụ: hợp đồng đã ký, doanh thu, khách hàng, tiến độ dự án, khó khăn và kế hoạch\nkỳ tiếp theo để báo cáo lãnh đạo trường.",
+ "inputs": [
+  {
+   "key": "ky_bao_cao",
+   "desc": "Quý/năm báo cáo (VD: Quý III/2026, năm 2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi",
+   "desc": "Đơn vị lập báo cáo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hop_dong",
+   "desc": "Danh sách hợp đồng dịch vụ trong kỳ: tên, khách hàng, giá trị, trạng thái",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doanh_thu",
+   "desc": "Doanh thu thực hiện, đã thu, còn phải thu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "khach_hang_moi",
+   "desc": "Khách hàng mới phát sinh trong kỳ",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "kho_khan",
+   "desc": "Khó khăn, vướng mắc",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ke_hoach_ky_toi",
+   "desc": "Kế hoạch, chỉ tiêu kỳ tiếp theo",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Viện ĐMST&CGCN"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập và kiểm tra số liệu gốc",
+   "lam_gi": "Thu thập từ sổ theo dõi hợp đồng của đơn vị: danh sách hợp đồng trong kỳ (`hop_dong`: tên, khách hàng, giá trị, trạng thái ký/đang thực hiện/đã nghiệm thu); số liệu doanh thu (`doanh_thu`: kế hoạch, thực hiện, đã thu, còn phải thu) và đối chiếu với Phòng TC&QT (kế hoạch – tài chính); danh sách khách hàng mới (`khach_hang_moi`).",
+   "inputs": [
+    "ky_bao_cao",
+    "don_vi",
+    "hop_dong",
+    "doanh_thu",
+    "khach_hang_moi"
+   ],
+   "vai_tro": "Chuyên viên dịch vụ KHCN · AI hỗ trợ: tổng hợp và đối chiếu số liệu với Phòng TC&QT (kế hoạch – tài chính)",
+   "luu_y": "số liệu doanh thu phải khớp sổ kế toán — chênh lệch phải giải trình trước khi đưa vào báo cáo; hợp đồng \"đang thực hiện\" chưa nghiệm thu không tính vào doanh thu đã thực hiện.",
+   "ket_qua": "Bảng số liệu gốc đã đối chiếu (hợp đồng + doanh thu + khách hàng mới)."
+  },
+  {
+   "n": 2,
+   "title": "Phân tích số liệu",
+   "lam_gi": "Tính % hoàn thành chỉ tiêu kế hoạch, so sánh với cùng kỳ năm trước; phân nhóm doanh thu theo loại dịch vụ (tư vấn, phân tích mẫu, chuyển giao, đào tạo); phân tích cơ cấu khách hàng (doanh nghiệp/cơ quan nhà nước/cá nhân); tính tỷ lệ hợp đồng nghiệm thu đúng tiến độ.",
+   "inputs": [
+    "hop_dong",
+    "doanh_thu",
+    "khach_hang_moi"
+   ],
+   "vai_tro": "Chuyên viên dịch vụ KHCN · AI hỗ trợ: tính chỉ tiêu, so sánh cùng kỳ và phân nhóm cơ cấu",
+   "luu_y": "phân tích phải chỉ ra \"tăng/giảm do đâu\" (VD: tăng nhờ 2 khách hàng mới, giảm do 1 hợp đồng lớn chậm tiến độ) — không dừng ở việc nêu con số.",
+   "ket_qua": "Bảng phân tích (chỉ tiêu vs thực hiện vs cùng kỳ; cơ cấu dịch vụ; cơ cấu khách hàng; tỷ lệ đúng tiến độ)."
+  },
+  {
+   "n": 3,
+   "title": "Đánh giá kết quả, tồn tại và bài học",
+   "lam_gi": "Nêu 3–5 kết quả nổi bật nhất trong kỳ; liệt kê tồn tại (`kho_khan`): mô tả, nguyên nhân gốc (chủ quan/khách quan), ảnh hưởng đến chỉ tiêu; rút bài học kinh nghiệm cho kỳ sau.",
+   "inputs": [
+    "kho_khan"
+   ],
+   "vai_tro": "Chuyên viên dịch vụ KHCN · AI hỗ trợ: soạn dự thảo phần đánh giá",
+   "luu_y": "tồn tại phải gắn nguyên nhân cụ thể và số liệu minh họa; tránh liệt kê khó khăn chung chung không kèm giải pháp; ghi cả điểm sáng để nhân rộng.",
+   "ket_qua": "Phần đánh giá (kết quả nổi bật, tồn tại–nguyên nhân, bài học kinh nghiệm)."
+  },
+  {
+   "n": 4,
+   "title": "Đề xuất kiến nghị với lãnh đạo trường",
+   "lam_gi": "Từ tồn tại ở bước 3, đề xuất kiến nghị cụ thể: nội dung đề xuất, lý do, kinh phí dự kiến (nếu có), đơn vị phối hợp, thời hạn mong muốn; đồng thời phác thảo chỉ tiêu và định hướng cho kỳ tiếp theo.",
+   "inputs": [
+    "ke_hoach_ky_toi"
+   ],
+   "vai_tro": "Chuyên viên dịch vụ KHCN · AI hỗ trợ: soạn dự thảo kiến nghị theo mẫu, lãnh đạo đơn vị chốt nội dung và dự toán",
+   "luu_y": "mỗi kiến nghị phải nêu rõ \"đề nghị ai, làm gì, khi nào\"; kiến nghị về kinh phí/đầu tư phải có dự toán sơ bộ; không kiến nghị vượt thẩm quyền của lãnh đạo trường.",
+   "ket_qua": "Danh sách kiến nghị (nội dung, lý do, dự toán, thời hạn) + định hướng kỳ tới."
+  },
+  {
+   "n": 5,
+   "title": "Soạn báo cáo theo cấu trúc chuẩn và trình ký",
+   "lam_gi": "Ghép kết quả các bước 1–4 vào khung báo cáo chuẩn; lập bảng tổng hợp hợp đồng đính kèm; kiểm tra nhất quán số liệu giữa các phần; trình giám đốc đơn vị ký sau khi đối chiếu số liệu với Phòng TC&QT (kế hoạch – tài chính)/KHCN.",
+   "inputs": [
+    "ky_bao_cao",
+    "don_vi"
+   ],
+   "vai_tro": "Viện trưởng · AI hỗ trợ: ghép báo cáo và kiểm tra chéo số liệu",
+   "luu_y": "kiểm tra chéo — tổng doanh thu trong bảng hợp đồng phải khớp số liệu phần kết quả; số thứ tự mục, ngày tháng, tên đơn vị chính xác tuyệt đối.",
+   "ket_qua": "Báo cáo hoạt động dịch vụ KHCN hoàn chỉnh (trình ký)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu doanh thu, hợp đồng khớp với Input và sổ sách; đã đối chiếu với Phòng TC&QT (kế hoạch – tài chính).",
+  "Không bịa đặt hợp đồng, doanh thu, khách hàng; hợp đồng chưa nghiệm thu không tính vào doanh thu đã thực hiện.",
+  "Phân tích nêu được \"tăng/giảm do đâu\", có so sánh cùng kỳ; không dừng ở việc nêu con số.",
+  "Tồn tại gắn nguyên nhân cụ thể và số liệu minh họa; mỗi kiến nghị nêu rõ \"đề nghị ai, làm gì, khi nào\" kèm dự toán sơ bộ.",
+  "Tổng doanh thu trong bảng hợp đồng khớp số liệu phần kết quả; số thứ tự mục, ngày tháng, tên đơn vị chính xác tuyệt đối.",
+  "Đúng thể thức văn bản hành chính: số hiệu, chữ ký, nơi nhận đầy đủ.",
+  "Đã qua Human gate: giám đốc đơn vị ký, Phòng KHCN&HTPT/Phòng TC&QT (kế hoạch – tài chính) đối chiếu số liệu trước khi trình lãnh đạo trường. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Giám đốc đơn vị** ký báo cáo, chịu trách nhiệm về tính chính xác số liệu.",
+  "**Phòng KHCN&HTPT / Phòng TC&QT (kế hoạch – tài chính)** đối chiếu số liệu doanh thu trước khi trình lãnh đạo trường."
+ ],
+ "guardrails": [
+  "AI không tự ý điều chỉnh số liệu doanh thu; mọi con số phải từ sổ sách, hợp đồng thực tế.",
+  "Không công khai thông tin khách hàng khi chưa được phép."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Báo cáo dịch vụ: số hợp đồng, khách hàng, doanh thu, kết quả; số liệu lấy từ hồ sơ và kế toán, không ước lượng.",
+  "Tên khách hàng chỉ nêu khi được phép."
+ ],
+ "cho_xac_nhan": [
+  "Kỳ báo cáo và mẫu (C8).",
+  "Nguồn doanh thu chính thức (C4)."
+ ],
+ "output_structure": [
+  "Tiêu đề: tên đơn vị lập báo cáo, tên báo cáo, kỳ báo cáo.",
+  "Kết quả thực hiện: hợp đồng (số lượng, phân loại, trạng thái) + bảng tổng hợp hợp đồng; doanh thu (kế hoạch/thực hiện/đã thu/phải thu); khách hàng (mới, cũ).",
+  "Đánh giá: kết quả nổi bật, tồn tại, nguyên nhân, bài học kinh nghiệm.",
+  "Kiến nghị với lãnh đạo trường (nội dung, lý do, dự toán, thời hạn).",
+  "Kế hoạch kỳ tiếp theo: chỉ tiêu, nhiệm vụ chính, dịch vụ mới (nếu có).",
+  "Chữ ký: giám đốc đơn vị (ký, ghi rõ họ tên). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề: tên đơn vị lập báo cáo, tên báo cáo, kỳ báo cáo.\n\n2. Kết quả thực hiện: hợp đồng (số lượng, phân loại, trạng thái) + bảng tổng hợp hợp\n   đồng; doanh thu (kế hoạch/thực hiện/đã thu/phải thu); khách hàng (mới, cũ).\n\n3. Đánh giá: kết quả nổi bật, tồn tại, nguyên nhân, bài học kinh nghiệm.\n\n4. Kiến nghị với lãnh đạo trường (nội dung, lý do, dự toán, thời hạn).\n\n5. Kế hoạch kỳ tiếp theo: chỉ tiêu, nhiệm vụ chính, dịch vụ mới (nếu có).\n\n6. Chữ ký: giám đốc đơn vị (ký, ghi rõ họ tên).",
+ "human_gate_check": "Đã qua Human gate: giám đốc đơn vị ký, Phòng KHCN&HTPT/Phòng TC&QT (kế hoạch – tài chính) đối chiếu số liệu trước khi trình lãnh đạo trường. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Viện ĐMST&CGCN. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dmst-bao-cao-dich-vu/references"
+}

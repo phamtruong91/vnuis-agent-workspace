@@ -1,0 +1,215 @@
+{
+ "name": "vnuis-khcn-bien-tap-ky-yeu-hoi-thao",
+ "title": "Biên tập kỷ yếu hội thảo khoa học",
+ "description": "Dùng khi cần biên tập và xuất bản kỷ yếu sau hội thảo khoa học: gom bài toàn văn, chuẩn hóa định dạng và trích dẫn, sắp xếp theo phiên, soạn lời nói đầu và mục lục.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-ky-yeu-hoi-thao",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+ "when": "Khi cần biên tập và xuất bản kỷ yếu (proceedings) sau hội thảo, hội nghị khoa học:\ntổng hợp bài toàn văn của báo cáo viên, chuẩn hoá hình thức, sắp xếp theo phiên,\nsoạn lời nói đầu và mục lục, giao bản in / bản điện tử.",
+ "inputs": [
+  {
+   "key": "ten_hoi_thao",
+   "desc": "Tên đầy đủ của hội thảo (tiếng Việt, có thể kèm tên tiếng Anh)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Ngày tổ chức",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Địa điểm tổ chức (chọn cơ sở: Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_to_chuc",
+   "desc": "Đơn vị chủ trì, đơn vị phối hợp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_bai",
+   "desc": "Danh sách bài viết: tiêu đề, tác giả, đơn vị công tác, phiên thảo luận (mỗi bài 1 dòng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_phien",
+   "desc": "Số phiên thảo luận và tên từng phiên",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chu_tich_hoi_thao",
+   "desc": "Họ tên, học hàm, học vị của Chủ tịch hội thảo (ký Lời nói đầu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuan_dinh_dang",
+   "desc": "Chuẩn trích dẫn yêu cầu (APA / IEEE / Vancouver) và quy định định dạng",
+   "required": false,
+   "note": "Không (mặc định: APA)"
+  },
+  {
+   "key": "loai_xuat_ban",
+   "desc": "Bản in / Bản điện tử (PDF) / Cả hai",
+   "required": false,
+   "note": "Không (mặc định: Bản điện tử)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập và kiểm kê bài viết",
+   "lam_gi": "đối chiếu từng dòng trong `danh_sach_bai` (tiêu đề, tác giả, đơn vị, phiên) với số bài toàn văn thực nhận; lập danh mục bài thiếu và bài nộp sau thời hạn đóng kỷ yếu; báo Ban Tổ chức đôn đốc, loại bài quá hạn.",
+   "inputs": [
+    "danh_sach_bai",
+    "so_phien"
+   ],
+   "vai_tro": "Trưởng Phòng KHCN&HTPT · AI hỗ trợ: tổng hợp đối chiếu",
+   "luu_y": "chỉ đưa vào kỷ yếu bài có xác nhận đồng ý xuất bản của tác giả (Luật Sở hữu trí tuệ); bài thiếu tác giả hoặc thiếu file toàn văn thì ghi vào danh mục bài thiếu, không tự \"vá\" nội dung.",
+   "ket_qua": "bảng đối chiếu kiểm kê (bài trong danh sách – tình trạng thực nhận) + danh mục bài thiếu / bài loại kèm lý do."
+  },
+  {
+   "n": 2,
+   "title": "Chuẩn hoá hình thức từng bài",
+   "lam_gi": "đưa mỗi bài về mẫu thống nhất: tiêu đề, tên tác giả, đơn vị công tác, tóm tắt (tiếng Việt + tiếng Anh), từ khóa, nội dung chính, tài liệu tham khảo; thống nhất font, cỡ chữ, giãn dòng và cách đánh số bảng/biểu/hình toàn kỷ yếu.",
+   "inputs": [
+    "danh_sach_bai",
+    "chuan_dinh_dang"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: chuẩn hoá hình thức",
+   "luu_y": "tên tác giả và đơn vị công tác phải giữ đúng chính tả do tác giả cung cấp — sai tên tác giả là lỗi nghiêm trọng nhất của kỷ yếu; tóm tắt tiếng Anh bắt buộc có dù bài viết bằng tiếng Việt.",
+   "ket_qua": "bộ bài đã chuẩn hoá hình thức + danh sách lỗi hình thức đã sửa."
+  },
+  {
+   "n": 3,
+   "title": "Chuẩn hoá trích dẫn tài liệu tham khảo",
+   "lam_gi": "kiểm tra toàn bộ danh mục tài liệu tham khảo của từng bài theo chuẩn đã chọn (APA/IEEE/Vancouver): sửa lỗi chính tả tên tác giả, năm xuất bản, tên tạp chí; loại bỏ trích dẫn \"ma\" (có trong danh mục nhưng không được trích trong nội dung) và bổ sung vào danh mục các trích dẫn còn thiếu.",
+   "inputs": [
+    "chuan_dinh_dang"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: sửa trích dẫn theo chuẩn",
+   "luu_y": "không tự bịa thêm trích dẫn để \"làm đẹp\" danh mục; trích dẫn \"ma\" phải loại chứ không được giữ; chuẩn trích dẫn phải thống nhất toàn kỷ yếu, không để mỗi bài một chuẩn.",
+   "ket_qua": "danh sách lỗi trích dẫn đã sửa theo chuẩn + danh sách trích dẫn \"ma\" đã loại."
+  },
+  {
+   "n": 4,
+   "title": "Sắp xếp bài theo phiên thảo luận",
+   "lam_gi": "nhóm bài theo từng phiên trong `so_phien`; trong mỗi phiên xếp báo cáo mời (keynote) trước, báo cáo thường sau; đánh số trang liên tục toàn kỷ yếu.",
+   "inputs": [
+    "so_phien",
+    "danh_sach_bai"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: sắp xếp theo phiên và đánh số trang liên tục",
+   "luu_y": "bài nào trong `danh_sach_bai` không ghi rõ phiên thì phải xác nhận lại với Ban Tổ chức, không tự xếp; số trang phải liên tục, không được nhảy số giữa các phiên.",
+   "ket_qua": "danh mục bài theo phiên (thứ tự keynote → báo cáo thường) + dải số trang từng bài."
+  },
+  {
+   "n": 5,
+   "title": "Soạn phần mở đầu kỷ yếu",
+   "lam_gi": "soạn bìa kỷ yếu (tên hội thảo, thời gian, địa điểm, đơn vị tổ chức), lời nói đầu do `chu_tich_hoi_thao` ký, danh sách Ban Tổ chức, chương trình hội thảo tóm tắt, mục lục chi tiết (tên bài – tác giả – số trang lấy từ kết quả Bước 4).",
+   "inputs": [
+    "ten_hoi_thao",
+    "thoi_gian",
+    "dia_diem",
+    "don_vi_to_chuc",
+    "chu_tich_hoi_thao"
+   ],
+   "vai_tro": "Chủ tịch hội thảo · AI hỗ trợ: soạn bìa, lời nói đầu, mục lục",
+   "luu_y": "số trang trong mục lục phải lấy từ bản dàn trang thực tế, không ghi số trang ước tính; lời nói đầu nêu đúng số lượng bài và số phiên đã chốt ở Bước 4.",
+   "ket_qua": "bộ phận mở đầu kỷ yếu (bìa, lời nói đầu, danh sách BTC, chương trình tóm tắt, mục lục)."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra lần cuối và trình duyệt",
+   "lam_gi": "kiểm tra chính tả toàn văn, đối chiếu số trang mục lục với thực tế, xác minh tên tác giả/đơn vị, kiểm tra bản quyền hình ảnh sử dụng trong bài; trình Trưởng Phòng KHCN&HTPT duyệt trước khi xuất bản.",
+   "inputs": [],
+   "vai_tro": "Trưởng Phòng KHCN&HTPT · AI hỗ trợ: rà chính tả",
+   "luu_y": "đây là Human gate bắt buộc — không xuất bản khi chưa có duyệt; hình ảnh không rõ bản quyền phải loại hoặc thay thế trước khi in.",
+   "ket_qua": "biên bản kiểm tra lần cuối + xác nhận phê duyệt của Trưởng Phòng KHCN&HTPT."
+  },
+  {
+   "n": 7,
+   "title": "Xuất bản kỷ yếu",
+   "lam_gi": "xuất file PDF hoàn chỉnh (bản điện tử) và/hoặc file gửi nhà in theo `loai_xuat_ban`; lưu 01 bản tại Phòng KHCN&HTPT và gửi 01 bản cho Thư viện trường.",
+   "inputs": [
+    "loai_xuat_ban"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: xuất file PDF/bản in, lưu trữ và phân phối",
+   "luu_y": "kỷ yếu có mã ISBN phải đăng ký qua Nhà xuất bản trước ít nhất 30 ngày — kiểm tra lại trước khi ghi ISBN lên bìa.",
+   "ket_qua": "file kỷ yếu hoàn chỉnh (PDF và/hoặc bản in) đã lưu trữ và phân phối."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Tên bài, tên tác giả, đơn vị khớp với Input (danh sách bài đã cung cấp).",
+  "Không bịa đặt nội dung bài viết, số liệu, trích dẫn; bài thiếu file toàn văn không tự \"vá\".",
+  "Định dạng thống nhất toàn kỷ yếu (font, cỡ chữ, đánh số bảng/hình); trích dẫn đúng 01 chuẩn đã chọn.",
+  "Căn cứ đầy đủ: quy chế tổ chức hội thảo của Trường, tuân thủ Luật SHTT (chỉ xuất bản bài có xác nhận đồng ý của tác giả).",
+  "Đã qua Human gate: Trưởng Phòng KHCN&HTPT kiểm tra lần cuối và duyệt trước khi xuất bản.",
+  "Số trang mục lục khớp với bản dàn trang thực tế; số trang liên tục toàn kỷ yếu.",
+  "Hình ảnh trong bài rõ bản quyền (đã loại/thay thế ảnh không rõ nguồn).",
+  "Danh mục bài thiếu/loại (nếu có) ghi rõ lý do. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kỷ yếu bài tiếng Anh giữ nguyên ngôn ngữ gốc; kiểm tra thống nhất định dạng trích dẫn.",
+  "Mã số xuất bản và đơn vị in ghi khi có văn bản."
+ ],
+ "cho_xac_nhan": [
+  "Quy tắc xuất bản và nộp lưu chiểu (C2).",
+  "Người biên tập (C7)."
+ ],
+ "output_structure": [
+  "Bìa kỷ yếu: tên hội thảo (tiếng Việt, kèm tiếng Anh nếu có), cấp hội thảo, thời gian, địa điểm, đơn vị tổ chức.",
+  "Lời nói đầu của Chủ tịch hội thảo (ký, ghi rõ họ tên, học hàm, học vị, ngày ký).",
+  "Mục lục chi tiết theo phiên: tên bài – tác giả – đơn vị – số trang.",
+  "Toàn văn các bài báo cáo sắp xếp theo phiên (báo cáo mời trước, báo cáo thường sau), đánh số trang liên tục toàn kỷ yếu.",
+  "Danh sách Ban Tổ chức.",
+  "Chương trình hội thảo (tóm tắt).",
+  "Danh mục bài thiếu / bài loại kèm lý do (phụ lục kèm theo, nếu có)."
+ ],
+ "output_structure_raw": "1. Bìa kỷ yếu: tên hội thảo (tiếng Việt, kèm tiếng Anh nếu có), cấp hội thảo, thời gian, địa điểm, đơn vị tổ chức.\n\n2. Lời nói đầu của Chủ tịch hội thảo (ký, ghi rõ họ tên, học hàm, học vị, ngày ký).\n\n3. Mục lục chi tiết theo phiên: tên bài – tác giả – đơn vị – số trang.\n\n4. Toàn văn các bài báo cáo sắp xếp theo phiên (báo cáo mời trước, báo cáo thường sau), đánh số trang liên tục toàn kỷ yếu.\n\n5. Danh sách Ban Tổ chức.\n\n6. Chương trình hội thảo (tóm tắt).\n\n7. Danh mục bài thiếu / bài loại kèm lý do (phụ lục kèm theo, nếu có).",
+ "human_gate_check": "Đã qua Human gate: Trưởng Phòng KHCN&HTPT kiểm tra lần cuối và duyệt trước khi xuất bản.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-khcn-bien-tap-ky-yeu-hoi-thao/references"
+}

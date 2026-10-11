@@ -1,0 +1,182 @@
+{
+ "name": "vnuis-khaothi-phan-tich-ket-qua-thi",
+ "title": "Phân tích kết quả thi (phổ điểm, độ khó, độ phân biệt)",
+ "description": "Dùng khi kỳ thi kết thúc, đã có bảng điểm và cần đánh giá chất lượng đề: phổ điểm, câu quá khó hay quá dễ, độ phân biệt, đề xuất điều chỉnh cho lần sau.",
+ "group": "khaothi",
+ "group_label": "Khảo thí",
+ "previous_name": "vnuis-phan-tich-ket-qua-thi",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (khảo thí); Khoa liên quan",
+ "when": "Khi kỳ thi kết thúc và đã có bảng điểm: cần đánh giá đề thi có phù hợp không,\ncâu hỏi nào quá khó/quá dễ, cần điều chỉnh gì cho lần sau.",
+ "inputs": [
+  {
+   "key": "hoc_phan",
+   "desc": "Mã + tên học phần",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hinh_thuc_thi",
+   "desc": "Trắc nghiệm / Tự luận",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bang_diem",
+   "desc": "Bảng điểm chi tiết từng sinh viên (điểm tổng + điểm từng câu, nếu có)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_sinh_vien",
+   "desc": "Số sinh viên dự thi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "diem_dat",
+   "desc": "Điểm đạt (mặc định thang 10: ≥ 4.0)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (khảo thí); Khoa liên quan"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026: Yêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thống kê mô tả",
+   "lam_gi": "Từ `bang_diem`, tính: điểm trung bình, trung vị, độ lệch chuẩn, điểm cao nhất, điểm thấp nhất, tỷ lệ đạt (theo `diem_dat`, mặc định thang 10: ≥ 4.0); lập bảng phân bố điểm theo các khoảng: 0–3.9; 4.0–4.9; 5.0–6.4; 6.5–7.9; 8.0–10 (số SV và tỷ lệ % từng khoảng).",
+   "inputs": [
+    "hoc_phan",
+    "bang_diem",
+    "so_sinh_vien",
+    "diem_dat"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: tính điểm TB, trung vị, độ lệch chuẩn và lập bảng phân bố điểm",
+   "luu_y": "kiểm tra số SV trong bảng điểm khớp với `so_sinh_vien` dự thi; loại điểm bất thường do nhập sai (điểm âm, điểm > thang) trước khi tính.",
+   "ket_qua": "Bảng thống kê mô tả + bảng phân bố điểm theo khoảng."
+  },
+  {
+   "n": 2,
+   "title": "Đánh giá phổ điểm",
+   "lam_gi": "Đối chiếu bảng phân bố điểm với phổ chuẩn: phổ điểm tốt có dạng gần chuẩn (hình chuông), tập trung ở khoảng 5.0–7.9; nếu phổ lệch hẳn về điểm cao → đề quá dễ; lệch về điểm thấp → đề quá khó; ghi nhận xét về mức độ phù hợp của đề thi.",
+   "inputs": [
+    "bang_diem",
+    "hinh_thuc_thi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: vẽ phổ điểm và nhận xét sơ bộ mức độ phù hợp của đề thi",
+   "luu_y": "phổ điểm còn phản ánh chất lượng giảng dạy — phổ lệch thấp ở nhiều học phần cùng khóa có thể do dạy chưa tốt, không chỉ do đề khó.",
+   "ket_qua": "Nhận xét đánh giá phổ điểm (phù hợp/quá dễ/quá khó)."
+  },
+  {
+   "n": 3,
+   "title": "Tính độ khó câu hỏi (p)",
+   "lam_gi": "Với từng câu hỏi, tính p = (số SV làm đúng câu) / (tổng số SV); phân loại theo quy ước: p < 0.3 = khó; 0.3–0.7 = trung bình (tốt); p > 0.7 = dễ; lập bảng độ khó từng câu.",
+   "inputs": [
+    "bang_diem",
+    "hinh_thuc_thi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: tính chỉ số độ khó p và phân loại từng câu hỏi",
+   "luu_y": "với bài tự luận, \"làm đúng\" được quy ước là đạt ≥ 50% số điểm của câu; câu hỏi có p cực thấp (< 0.1) cần kiểm tra lại đáp án — có thể đáp án sai.",
+   "ket_qua": "Bảng độ khó (p) từng câu hỏi đã phân loại."
+  },
+  {
+   "n": 4,
+   "title": "Tính độ phân biệt (D)",
+   "lam_gi": "Chia SV thành nhóm cao (27% điểm cao nhất) và nhóm thấp (27% điểm thấp nhất); với từng câu hỏi tính D = p(nhóm cao) – p(nhóm thấp); phân loại theo quy ước: D ≥ 0.3 = tốt; 0.2–0.29 = chấp nhận được; D < 0.2 = kém, cần xem lại câu hỏi.",
+   "inputs": [
+    "bang_diem"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: tính chỉ số độ phân biệt D và phân loại từng câu hỏi",
+   "luu_y": "câu hỏi quá dễ (p > 0.9) thường có D thấp là bình thường; chỉ đánh giá D có ý nghĩa với câu hỏi có p trong khoảng 0.2–0.8.",
+   "ket_qua": "Bảng độ phân biệt (D) từng câu hỏi đã phân loại."
+  },
+  {
+   "n": 5,
+   "title": "Kết luận chất lượng đề thi",
+   "lam_gi": "Tổng hợp 02 chỉ số p và D của toàn bộ câu hỏi: tính % câu hỏi đạt yêu cầu (p trong 0.3–0.7 và D ≥ 0.2), % câu hỏi cần hiệu đính, % câu hỏi đề nghị loại bỏ; đối chiếu với nhận xét phổ điểm ở Bước 2 để kết luận tổng thể về chất lượng đề thi.",
+   "inputs": [
+    "hoc_phan",
+    "hinh_thuc_thi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: tổng hợp bảng chất lượng câu hỏi theo 02 chỉ số p và D",
+   "luu_y": "đề thi đạt yêu cầu khi ≥ 70% câu hỏi đạt cả 02 chỉ số; giữ lại có chủ đích một số câu khó có D tốt để làm câu phân loại.",
+   "ket_qua": "Bảng tổng hợp chất lượng câu hỏi + kết luận tổng thể về đề thi."
+  },
+  {
+   "n": 6,
+   "title": "Đề xuất",
+   "lam_gi": "Lập danh sách câu hỏi cần loại bỏ (D < 0.2 kèm p ngoài khoảng tốt) và câu hỏi cần hiệu đính trước khi đưa lại vào ngân hàng đề thi (ghi rõ đơn vị thực hiện, thời hạn); đề xuất bổ sung câu hỏi ở mức độ/chương còn thiếu; kiến nghị về giảng dạy hoặc phụ đạo bổ sung nếu nhiều SV không đạt ở cùng một nội dung.",
+   "inputs": [
+    "hoc_phan",
+    "so_sinh_vien"
+   ],
+   "vai_tro": "Khoa chuyên môn / Bộ môn (quyết định loại bỏ, hiệu đính câu hỏi) · AI hỗ trợ: lập danh sách loại bỏ/hiệu đính sơ bộ theo ngưỡng p/D",
+   "luu_y": "kết quả phân tích phải được cập nhật vào ngân hàng đề thi (loại bỏ/hiệu đính câu hỏi kém) — đây là khâu bắt buộc trong vòng đời ngân hàng đề; danh sách SV cần phụ đạo chuyển cho khoa xử lý.",
+   "ket_qua": "Danh sách câu hỏi cần loại bỏ/hiệu đính + đề xuất cải tiến đề thi và giảng dạy."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số sinh viên trong bảng điểm khớp với Input (`so_sinh_vien`); điểm bất thường do nhập sai (điểm âm, điểm vượt thang) đã loại trước khi tính.",
+  "Không bịa đặt điểm số, chỉ số p/D, kết luận chất lượng câu hỏi.",
+  "Đúng quy ước phân loại: độ khó p < 0.3 khó / 0.3–0.7 trung bình / p > 0.7 dễ; độ phân biệt D ≥ 0.3 tốt / 0.2–0.29 chấp nhận được / D < 0.2 kém.",
+  "Đề thi đạt yêu cầu khi ≥ 70% câu hỏi đạt cả 02 chỉ số p và D; nhận xét phổ điểm đối chiếu với phổ chuẩn hình chuông.",
+  "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+  "Câu hỏi có p cực thấp (< 0.1) đã kiểm tra lại đáp án; câu hỏi D < 0.2 kèm p ngoài khoảng tốt đã đưa vào danh sách loại bỏ.",
+  "Kết quả phân tích đã được cập nhật vào ngân hàng đề thi (loại bỏ/hiệu đính câu hỏi kém); danh sách sinh viên cần phụ đạo đã chuyển cho khoa xử lý."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Phân tích phổ điểm theo học phần, lớp, giảng viên chỉ ở mức thống kê, không kết luận về chất lượng giảng viên.",
+  "Dữ liệu điểm chỉ lấy từ file hệ thống do Phòng cung cấp (C4, C5)."
+ ],
+ "cho_xac_nhan": [
+  "Thang điểm sử dụng (10, chữ, 4) cho từng mô hình (C2).",
+  "Ngưỡng cảnh báo bất thường (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề báo cáo + học phần (mã + tên) + hình thức thi + kỳ thi + số sinh viên dự thi;",
+  "Phần I – Phổ điểm: bảng phân bố điểm theo khoảng (số SV, tỷ lệ %); điểm trung bình, trung vị, độ lệch chuẩn, tỷ lệ đạt; nhận xét về mức độ phù hợp của đề thi;",
+  "Phần II – Độ khó và độ phân biệt câu hỏi: bảng từng câu (độ khó p, đánh giá p, độ phân biệt D, đánh giá D, kết luận giữ lại/hiệu đính/loại bỏ); tổng hợp % câu hỏi đạt yêu cầu;",
+  "Phần III – Đề xuất: danh sách câu hỏi loại bỏ/hiệu đính (gắn đơn vị thực hiện, thời hạn), bổ sung câu hỏi còn thiếu, kiến nghị giảng dạy/phụ đạo."
+ ],
+ "output_structure_raw": "1. Tiêu đề báo cáo + học phần (mã + tên) + hình thức thi + kỳ thi + số sinh viên dự thi;\n\n2. Phần I – Phổ điểm: bảng phân bố điểm theo khoảng (số SV, tỷ lệ %); điểm trung bình, trung vị, độ lệch chuẩn, tỷ lệ đạt; nhận xét về mức độ phù hợp của đề thi;\n\n3. Phần II – Độ khó và độ phân biệt câu hỏi: bảng từng câu (độ khó p, đánh giá p, độ phân biệt D, đánh giá D, kết luận giữ lại/hiệu đính/loại bỏ); tổng hợp % câu hỏi đạt yêu cầu;\n\n4. Phần III – Đề xuất: danh sách câu hỏi loại bỏ/hiệu đính (gắn đơn vị thực hiện, thời hạn), bổ sung câu hỏi còn thiếu, kiến nghị giảng dạy/phụ đạo.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (khảo thí). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 56/2026/TT-BGDĐT, hiệu lực 07/07/2026\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=219044&pageid=27160&typegroupid=6\n\nYêu cầu khóa tuyển sinh, chương trình, ngày áp dụng và quy chế đào tạo nội bộ. Đối chiếu điều khoản chuyển tiếp trong toàn văn trước khi chọn quy tắc; không tự áp dụng quy định mới hồi tố cho mọi khóa. Không dùng điều/khoản, thang điểm hoặc điều kiện tốt nghiệp cũ như quy định hiện hành nếu chưa đối chiếu.\n",
+ "outputs_dir": "skills/vnuis-khaothi-phan-tich-ket-qua-thi/references"
+}

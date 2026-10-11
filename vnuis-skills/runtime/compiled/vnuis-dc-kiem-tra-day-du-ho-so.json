@@ -1,0 +1,165 @@
+{
+ "name": "vnuis-dc-kiem-tra-day-du-ho-so",
+ "title": "Kiểm tra đầy đủ hồ sơ",
+ "description": "Dùng khi tiếp nhận bất kỳ bộ hồ sơ nào (tuyển dụng, bổ nhiệm, khen thưởng, học bổng, tốt nghiệp, thanh quyết toán) và cần đối chiếu danh mục thành phần để biết đủ hay thiếu, giấy tờ nào không hợp lệ.",
+ "group": "dc",
+ "group_label": "Dùng chung – dữ liệu, khảo sát, dự án, tri thức",
+ "previous_name": "vnuis-kiem-tra-day-du-ho-so",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường",
+ "when": "Khi tiếp nhận bất kỳ bộ hồ sơ nào cần kiểm tra tính đầy đủ, hợp lệ trước khi trình xử lý:\nhồ sơ tuyển dụng, bổ nhiệm, khen thưởng, học bổng, miễn giảm học phí, tốt nghiệp, thanh quyết toán...\nÁp dụng cho mọi phòng ban — chỉ cần có danh mục kiểm danh mục thành phần.",
+ "inputs": [
+  {
+   "key": "loai_ho_so",
+   "desc": "VD: hồ sơ xét học bổng; hồ sơ bổ nhiệm; hồ sơ thanh quyết toán đề tài...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "checklist",
+   "desc": "Danh mục thành phần bắt buộc + tiêu chí hợp lệ của từng thành phần",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_so_hien_co",
+   "desc": "Liệt kê từng thành phần hiện có (tên file/mục + tình trạng sơ bộ)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tieu_chi_hop_le",
+   "desc": "Quy tắc chung: mẫu biểu, thời hạn hiệu lực, chữ ký, công chứng...",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chuẩn hóa danh mục kiểm yêu cầu",
+   "lam_gi": "với mỗi thành phần trong `checklist`, ghi rõ: tên thành phần, bắt buộc hay không bắt buộc, mẫu biểu yêu cầu, điều kiện hợp lệ (chữ ký, dấu, thời hạn hiệu lực), và cách đối chiếu (bản gốc hay bản sao).",
+   "inputs": [
+    "checklist",
+    "tieu_chi_hop_le"
+   ],
+   "vai_tro": "Chuyên viên thụ lý hồ sơ (đơn vị tiếp nhận hồ sơ) · AI hỗ trợ: chuẩn hóa danh mục kiểm; chuyên viên xác nhận các thành phần thiếu tiêu chí hợp lệ",
+   "luu_y": "danh mục kiểm là \"thước đo\" của toàn bộ quy trình — danh mục kiểm mơ hồ thì kết quả đối chiếu vô nghĩa; thành phần nào thiếu tiêu chí hợp lệ thì đánh dấu \"cần làm rõ\" và chuyển chuyên viên xác nhận, không tự suy ra.",
+   "ket_qua": "danh mục kiểm chuẩn hóa (mỗi thành phần có tiêu chí kiểm tra cụ thể)."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu từng thành phần",
+   "lam_gi": "so từng thành phần trong `ho_so_hien_co` với danh mục kiểm chuẩn hóa, đánh dấu: Có / Thiếu / Có nhưng cần kiểm tra kỹ; ghi rõ tên file/mục tương ứng của từng thành phần.",
+   "inputs": [
+    "checklist",
+    "ho_so_hien_co"
+   ],
+   "vai_tro": "Chuyên viên thụ lý hồ sơ (đơn vị tiếp nhận hồ sơ) · AI hỗ trợ: đối chiếu từng thành phần với danh mục kiểm, đánh dấu Có/Thiếu/Có nhưng cần kiểm tra kỹ",
+   "luu_y": "phân biệt \"thiếu thành phần\" (chưa nộp) với \"có nhưng chưa hợp lệ\" (nộp rồi nhưng sai mẫu/hết hạn) — hai trường hợp này dẫn đến câu hỏi bổ sung khác nhau ở Bước 5.",
+   "ket_qua": "bảng đối chiếu sơ bộ (thành phần | trạng thái có/thiếu)."
+  },
+  {
+   "n": 3,
+   "title": "Kiểm tra tính hợp lệ từng thành phần",
+   "lam_gi": "với mỗi thành phần đã đánh dấu \"Có\", kiểm tra 4 điểm: đúng mẫu biểu quy định; còn thời hạn hiệu lực (VD: giấy xác nhận trong 6 tháng); đủ chữ ký, đóng dấu theo yêu cầu; thông tin nhất quán giữa các giấy tờ (họ tên, ngày sinh, mã số...).",
+   "inputs": [
+    "ho_so_hien_co",
+    "tieu_chi_hop_le",
+    "checklist"
+   ],
+   "vai_tro": "Chuyên viên thụ lý hồ sơ (đơn vị tiếp nhận hồ sơ) · AI hỗ trợ: kiểm tra 4 điểm hợp lệ (mẫu biểu, hiệu lực, chữ ký, nhất quán thông tin)",
+   "luu_y": "bẫy thường gặp là giấy tờ \"nhìn có vẻ đủ\" nhưng đã hết hiệu lực hoặc thiếu xác nhận của đơn vị có thẩm quyền; thông tin không khớp giữa các giấy tờ (VD: họ tên viết khác nhau) phải ghi cụ thể chỗ khác nhau.",
+   "ket_qua": "bảng hợp lệ/không hợp lệ từng thành phần kèm lý do cụ thể."
+  },
+  {
+   "n": 4,
+   "title": "Phân loại kết quả tổng thể",
+   "lam_gi": "tổng hợp kết quả Bước 2–3, xếp hồ sơ vào một trong các nhóm: Đủ & hợp lệ / Thiếu thành phần / Có thành phần không hợp lệ; đếm số mục cần bổ sung; nêu kết luận tổng thể dự kiến.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên thụ lý hồ sơ (đơn vị tiếp nhận hồ sơ) · AI hỗ trợ: đề xuất phân loại tổng thể; chuyên viên ra quyết định cuối cùng",
+   "luu_y": "AI chỉ đề xuất phân loại, KHÔNG tự kết luận \"hồ sơ đạt\" hay \"loại hồ sơ\" — quyết định cuối cùng thuộc chuyên viên thụ lý (human gate).",
+   "ket_qua": "kết luận phân loại dự kiến + số lượng mục cần bổ sung."
+  },
+  {
+   "n": 5,
+   "title": "Lập câu hỏi yêu cầu bổ sung",
+   "lam_gi": "với mỗi mục thiếu/không hợp lệ, soạn một câu hỏi rõ ràng gửi người nộp: thiếu cái gì, theo mẫu nào, xin ở đâu, hạn nộp nào; diễn đạt cụ thể đến mức người nộp đọc là làm được ngay (VD: \"Thiếu Giấy xác nhận hộ nghèo năm 2026 — mẫu số 01/XN-UBND, còn hiệu lực 6 tháng\").",
+   "inputs": [
+    "tieu_chi_hop_le"
+   ],
+   "vai_tro": "Chuyên viên thụ lý hồ sơ (đơn vị tiếp nhận hồ sơ) · AI hỗ trợ: soạn câu hỏi yêu cầu bổ sung theo từng thành phần",
+   "luu_y": "mỗi câu hỏi phải gắn đúng thành phần và đúng lý do; không yêu cầu người nộp cung cấp giấy tờ ngoài danh mục `checklist`.",
+   "ket_qua": "danh sách câu hỏi bổ sung theo từng thành phần."
+  },
+  {
+   "n": 6,
+   "title": "Dự thảo phiếu hướng dẫn hoàn thiện hồ sơ",
+   "lam_gi": "soạn phiếu/văn bản hướng dẫn gửi người nộp: liệt kê các mục cần bổ sung (từ Bước 5), ghi rõ hạn bổ sung, nơi nộp bổ sung, và hậu quả nếu quá hạn (nếu quy định có).",
+   "inputs": [
+    "loai_ho_so"
+   ],
+   "vai_tro": "Chuyên viên thụ lý hồ sơ (đơn vị tiếp nhận hồ sơ) · AI hỗ trợ: soạn dự thảo phiếu hướng dẫn; chuyên viên duyệt trước khi gửi",
+   "luu_y": "phiếu hướng dẫn chỉ là dự thảo — chuyên viên thụ lý duyệt trước khi gửi; không tự gửi cho người nộp.",
+   "ket_qua": "dự thảo phiếu hướng dẫn hoàn thiện hồ sơ (ghi hạn bổ sung)."
+  }
+ ],
+ "checks": [
+  "Bảng đối chiếu đầy đủ 4 phần theo cấu trúc sản phẩm tại references/quy-cach-dau-ra.md: tiêu đề (loại hồ sơ, người nộp/đơn vị nộp, ngày kiểm tra, danh mục kiểm áp dụng); bảng đối chiếu (STT | Thành phần | Yêu cầu | Tình trạng | Ghi chú); kết luận tổng thể; danh sách câu hỏi bổ sung + hạn bổ sung.",
+  "Tình trạng từng thành phần khớp với hồ sơ trong Input: phân biệt đúng \"thiếu thành phần\" và \"có nhưng chưa hợp lệ\".",
+  "Không bịa đặt giấy tờ, không suy đoán hay tự điền nội dung còn thiếu trong hồ sơ.",
+  "Mỗi câu hỏi yêu cầu bổ sung gắn đúng thành phần và đúng lý do; không yêu cầu người nộp cung cấp giấy tờ ngoài danh mục kiểm tra.",
+  "Hạn bổ sung rõ ràng (ngày, giờ); nơi nộp bổ sung ghi cụ thể.",
+  "Đã qua Human gate: chuyên viên thụ lý đã ra quyết định cuối cùng (đạt / yêu cầu bổ sung / từ chối tiếp nhận) kèm lý do.",
+  "Dự thảo phiếu hướng dẫn chỉ ở trạng thái dự thảo — chưa gửi cho người nộp.",
+  "Danh mục kiểm danh mục hồ sơ là căn cứ duy nhất; AI không tự thêm/bớt thành phần. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [
+  "KHÔNG tự phê duyệt hoặc từ chối bất kỳ hồ sơ nào.",
+  "KHÔNG suy đoán, tự điền nội dung còn thiếu trong hồ sơ.",
+  "KHÔNG yêu cầu người nộp cung cấp giấy tờ ngoài danh mục quy định.",
+  "KHÔNG lưu trữ bản sao giấy tờ tùy thân vượt quá phạm vi xử lý hồ sơ (bảo vệ dữ liệu cá nhân)."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Danh mục thành phần do người dùng nạp theo loại hồ sơ (học vụ, tuyển sinh, nhân sự, đề tài, thanh toán...); skill không tự đặt danh mục.",
+  "Hồ sơ của người học quốc tế hoặc chương trình liên kết: ghi rõ giấy tờ nào do đối tác hoặc cơ quan nước ngoài cấp, cần bản dịch hoặc hợp pháp hóa theo quy định hiện hành (do người phụ trách xác nhận).",
+  "Kết quả là bảng đủ, thiếu, không rõ; không kết luận hồ sơ hợp lệ."
+ ],
+ "cho_xac_nhan": [
+  "Danh mục thành phần của từng loại hồ sơ (C8).",
+  "Quy định về giấy tờ nước ngoài (C2)."
+ ],
+ "output_structure": [
+  "Tiêu đề: loại hồ sơ, người nộp/đơn vị nộp, ngày kiểm tra, danh mục kiểm áp dụng.",
+  "Bảng đối chiếu: STT | Thành phần | Yêu cầu (mẫu biểu, hiệu lực) | Tình trạng (Đủ & hợp lệ / Thiếu / Không hợp lệ) | Ghi chú cụ thể.",
+  "Kết luận tổng thể: Đủ điều kiện / Chưa đủ điều kiện — thiếu X thành phần, Y thành phần cần bổ sung/đổi mới.",
+  "Danh sách câu hỏi yêu cầu bổ sung + hạn bổ sung."
+ ],
+ "output_structure_raw": "1. Tiêu đề: loại hồ sơ, người nộp/đơn vị nộp, ngày kiểm tra, danh mục kiểm áp dụng.\n\n2. Bảng đối chiếu: STT | Thành phần | Yêu cầu (mẫu biểu, hiệu lực) | Tình trạng (Đủ & hợp lệ / Thiếu / Không hợp lệ) | Ghi chú cụ thể.\n\n3. Kết luận tổng thể: Đủ điều kiện / Chưa đủ điều kiện — thiếu X thành phần, Y thành phần cần bổ sung/đổi mới.\n\n4. Danh sách câu hỏi yêu cầu bổ sung + hạn bổ sung.",
+ "human_gate_check": "Đã qua Human gate: chuyên viên thụ lý đã ra quyết định cuối cùng (đạt / yêu cầu bổ sung / từ chối tiếp nhận) kèm lý do.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dc-kiem-tra-day-du-ho-so/references"
+}

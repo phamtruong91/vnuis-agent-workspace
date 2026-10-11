@@ -1,0 +1,241 @@
+{
+ "name": "vnuis-ts-soan-de-an-tuyen-sinh",
+ "title": "Soạn đề án tuyển sinh hằng năm",
+ "description": "Dùng đầu năm khi Phòng Đào tạo xây dựng hoặc điều chỉnh đề án tuyển sinh đại học chính quy trình Hiệu trưởng, Bộ GD&ĐT: chỉ tiêu theo năng lực đào tạo, phương thức, tổ hợp môn, ngưỡng đầu vào, chính sách ưu tiên.",
+ "group": "ts",
+ "group_label": "Tuyển sinh",
+ "previous_name": "vnuis-de-an-tuyen-sinh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh; phối hợp Phòng Đào tạo",
+ "when": "Khi xây dựng hoặc điều chỉnh đề án tuyển sinh đại học hệ chính quy hằng năm: xác định chỉ tiêu\ntheo năng lực đào tạo thực tế, quy định các phương thức xét tuyển, tổ hợp môn, ngưỡng đảm bảo\nchất lượng đầu vào, chính sách ưu tiên và kế hoạch triển khai.",
+ "inputs": [
+  {
+   "key": "nam_tuyen_sinh",
+   "desc": "Năm tuyển sinh (vd: 2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nang_luc_dao_tao",
+   "desc": "Số SV quy đổi tối đa theo kết quả xác định năng lực đào tạo từng ngành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_nganh",
+   "desc": "Tên ngành, mã ngành, chỉ tiêu dự kiến từng ngành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "phuong_thuc_xet_tuyen",
+   "desc": "Danh sách phương thức (điểm thi TN THPT, học bạ, tuyển thẳng, ĐGNL/ĐGTD...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "to_hop_mon",
+   "desc": "Tổ hợp xét tuyển áp dụng cho từng ngành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguong_dau_vao",
+   "desc": "Ngưỡng đảm bảo chất lượng đầu vào tối thiểu từng phương thức/ngành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chinh_sach_uu_tien",
+   "desc": "Đối tượng ưu tiên, điểm ưu tiên, tuyển thẳng, cộng điểm",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "le_phi_xet_tuyen",
+   "desc": "Mức lệ phí xét tuyển từng phương thức",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "tien_do",
+   "desc": "Các mốc thời gian: công bố đề án, đăng ký, xét tuyển, nhập học",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_phu_trach",
+   "desc": "Người ký/chủ trì đề án",
+   "required": false,
+   "note": "Không (mặc định: Trưởng phòng Đào tạo)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh; phối hợp Phòng Đào tạo"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Biểu mẫu tuyển sinh; nền tảng AI tư vấn (ai.vnuis.edu.vn); hotline và is@vnu.edu.vn. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 06/2026/TT-BGDĐT, hiệu lực 15/02/2026: Yêu cầu năm tuyển sinh, phương thức, trình độ và đề án đã duyệt. Đối chiếu quy chế 06/2026 và hướng dẫn năm tuyển sinh về điều kiện, quy đổi điểm, điểm cộng, thứ tự nguyện vọng; không giữ công thức cũ hoặc cộng hai lần chứng chỉ. Không tự đặt chỉ tiêu/ngưỡng khi chưa có quyết định và căn cứ.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định chỉ tiêu theo năng lực đào tạo",
+   "lam_gi": "thu thập kết quả xác định năng lực đào tạo (NLĐT) năm gần nhất của từng ngành — số giảng viên cơ hữu, quy mô sinh viên/giảng viên, diện tích sàn bình quân trên người học; lấy tổng số sinh viên quy đổi làm \"trần cứng\". Phân bổ chỉ tiêu từng ngành theo 3 căn cứ: (a) nhu cầu xã hội và tỷ lệ việc làm sau tốt nghiệp; (b) kết quả tuyển sinh 2–3 năm gần nhất (tỷ lệ nhập học/chỉ tiêu); (c) định hướng phát triển của trường. Cộng tổng và đối chiếu không vượt NLĐT đã công bố.",
+   "inputs": [
+    "nam_tuyen_sinh",
+    "nang_luc_dao_tao",
+    "danh_sach_nganh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: tổng hợp sơ bộ số liệu NLĐT, cảnh báo tổng vượt trần",
+   "luu_y": "bẫy thường gặp là lấy số liệu NLĐT năm cũ — phải dùng năm gần nhất đã công bố trên website trường; tổng chỉ tiêu vượt trần là lỗi khiến đề án bị Bộ trả về; các ngành thuộc lĩnh vực sức khỏe có cấp chứng chỉ hành nghề và ngành sư phạm còn bị khống chế chỉ tiêu riêng theo văn bản giao của Bộ, phải tách ra kiểm tra riêng.",
+   "ket_qua": "bảng phân bổ chỉ tiêu từng ngành kèm căn cứ (số liệu NLĐT, tỷ lệ đạt chỉ tiêu 2 năm gần nhất)."
+  },
+  {
+   "n": 2,
+   "title": "Xác định phương thức xét tuyển",
+   "lam_gi": "liệt kê đầy đủ các phương thức trường áp dụng trong năm từ `phuong_thuc_xet_tuyen`; với mỗi phương thức quy định tỷ lệ chỉ tiêu phân bổ (tổng các phương thức bằng 100%) và cách quy đổi điểm tương đương giữa các phương thức theo hướng dẫn của Bộ GD&ĐT; kiểm tra mỗi ngành đều được gán ít nhất một phương thức.",
+   "inputs": [
+    "phuong_thuc_xet_tuyen",
+    "danh_sach_nganh",
+    "nguong_dau_vao"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: soạn dự thảo bảng phương thức, đối chiếu quy chế",
+   "luu_y": "không tự đặt công thức quy đổi điểm \"lạ\" ngoài hướng dẫn của Bộ; phương thức mới (kỳ thi ĐGNL/ĐGTD, chứng chỉ ngoại ngữ quốc tế kết hợp) phải ghi rõ đơn vị tổ chức kỳ thi được công nhận; tỷ lệ chỉ tiêu mỗi phương thức phải quy được ra số tuyệt đối để đối chiếu với tổng chỉ tiêu ở Bước 1.",
+   "ket_qua": "bảng phương thức xét tuyển với tỷ lệ chỉ tiêu và quy tắc quy đổi điểm."
+  },
+  {
+   "n": 3,
+   "title": "Quy định tổ hợp môn và ngưỡng đầu vào từng ngành",
+   "lam_gi": "với từng ngành trong `danh_sach_nganh`, gán tổ hợp môn từ `to_hop_mon`; với từng phương thức, ghi ngưỡng đảm bảo chất lượng đầu vào tối thiểu từ `nguong_dau_vao`. Đối chiếu: tổ hợp môn phải phù hợp đặc thù ngành (ngành ngôn ngữ phải có môn ngoại ngữ trong tổ hợp); ngưỡng các ngành sức khỏe/sư phạm không thấp hơn ngưỡng tối thiểu do Bộ quy định.",
+   "inputs": [
+    "danh_sach_nganh",
+    "to_hop_mon",
+    "nguong_dau_vao",
+    "phuong_thuc_xet_tuyen"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: soạn sơ bộ bảng tổ hợp/ngưỡng, kiểm tra tính phù hợp đặc thù ngành",
+   "luu_y": "bẫy thường gặp là tổ hợp môn thiếu môn phù hợp ngành (vd: không có môn Toán cho ngành kỹ thuật) gây tranh cãi khi kiểm định; đặt ngưỡng khác nhau giữa các ngành mà không có lý do thuyết minh; thiếu ngưỡng cho phương thức mới bổ sung ở Bước 2.",
+   "ket_qua": "bảng tổ hợp môn và ngưỡng đầu vào chi tiết theo từng ngành, từng phương thức."
+  },
+  {
+   "n": 4,
+   "title": "Quy định chính sách ưu tiên",
+   "lam_gi": "liệt kê đối tượng ưu tiên (đối tượng chính sách, khu vực) và mức cộng điểm ưu tiên từ `chinh_sach_uu_tien`; quy định đối tượng tuyển thẳng/ưu tiên xét tuyển và ngành áp dụng; ghi rõ cách cộng điểm ưu tiên vào tổng điểm xét tuyển và mức tối đa được cộng.",
+   "inputs": [
+    "chinh_sach_uu_tien"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: soạn dự thảo, đối chiếu văn bản hiện hành nêu tại phap-ly.md",
+   "luu_y": "mức cộng điểm ưu tiên có trần tối đa theo quy chế — kiểm tra văn bản hiện hành nêu tại phap-ly.md và văn bản sửa đổi, bổ sung hiện hành; đối tượng tuyển thẳng phải đúng danh mục Bộ công bố, không tự \"sáng tác\" thêm đối tượng; phải ghi rõ mức cộng tối đa để tránh khiếu nại sau này.",
+   "ket_qua": "mục chính sách ưu tiên hoàn chỉnh (đối tượng, khu vực, mức điểm, điều kiện tuyển thẳng)."
+  },
+  {
+   "n": 5,
+   "title": "Quy định lệ phí xét tuyển",
+   "lam_gi": "quy định mức lệ phí cho từng phương thức từ `le_phi_xet_tuyen` (phương thức xét điểm thi TN THPT tính theo nguyện vọng; xét học bạ/ĐGNL tính theo hồ sơ); ghi rõ hình thức nộp lệ phí và chính sách miễn/giảm (nếu có); đối chiếu mức thu với quy định của Bộ GD&ĐT và Bộ Tài chính.",
+   "inputs": [
+    "le_phi_xet_tuyen",
+    "phuong_thuc_xet_tuyen"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: soạn dự thảo bảng lệ phí, kiểm tra trần mức thu",
+   "luu_y": "mức thu không được vượt trần quy định; phương thức nào miễn phí phải ghi rõ \"miễn phí\" thay vì bỏ trống (bỏ trống dễ bị hiểu là thiếu sót khi kiểm tra).",
+   "ket_qua": "bảng lệ phí xét tuyển theo từng phương thức."
+  },
+  {
+   "n": 6,
+   "title": "Lập kế hoạch tiến độ triển khai",
+   "lam_gi": "dựng lịch triển khai từ `tien_do` theo các mốc bắt buộc: công bố đề án → tư vấn hướng nghiệp → nhận hồ sơ/đăng ký xét tuyển → tổ chức xét tuyển → công bố kết quả → xác nhận nhập học → nhập học chính thức → xét tuyển bổ sung (nếu còn chỉ tiêu); mỗi mốc ghi thời gian cụ thể và đơn vị chủ trì/phối hợp.",
+   "inputs": [
+    "tien_do",
+    "nam_tuyen_sinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: dựng lịch sơ bộ, đối chiếu khớp lịch chung Bộ GD&ĐT",
+   "luu_y": "lịch xét tuyển đợt chính phải khớp lịch chung Bộ GD&ĐT công bố hằng năm — lịch Bộ có thể điều chỉnh, cần cập nhật trước khi ban hành; mốc công bố đề án phải trước thời điểm thí sinh đăng ký nguyện vọng theo quy định.",
+   "ket_qua": "bảng tiến độ triển khai với mốc thời gian, nội dung và đơn vị thực hiện."
+  },
+  {
+   "n": 7,
+   "title": "Kiểm tra tính hợp lệ theo quy chế",
+   "lam_gi": "đối chiếu toàn bộ dự thảo với Quy chế tuyển sinh (văn bản hiện hành nêu tại phap-ly.md): tổng chỉ tiêu không vượt NLĐT; tổ hợp môn phù hợp với từng ngành; ngưỡng đầu vào đúng quy định (đặc biệt ngành sức khỏe, sư phạm); lệ phí đúng mức; thông tin công khai đầy đủ theo danh mục Bộ yêu cầu. Lập danh mục kiểm đánh dấu đạt/chưa đạt từng nội dung.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: đối chiếu sơ bộ toàn văn với văn bản hiện hành nêu tại phap-ly.md, lập danh mục kiểm",
+   "luu_y": "đây là cổng chặn lỗi cuối — sai sót ở đây (nhất là tổng chỉ tiêu vượt NLĐT hoặc ngưỡng thấp hơn quy định) khiến đề án bị trả về; kiểm tra cộng chéo: tổng chỉ tiêu các ngành phải bằng tổng chỉ tiêu các phương thức.",
+   "ket_qua": "danh mục kiểm đối chiếu quy chế có đánh dấu đạt/chưa đạt từng nội dung; danh sách lỗi cần sửa (nếu có) để quay lại các bước tương ứng."
+  },
+  {
+   "n": 8,
+   "title": "Hoàn thiện và xuất bản đề án",
+   "lam_gi": "sửa toàn bộ lỗi phát hiện ở Bước 7; trình `nguoi_phu_trach` (mặc định Trưởng phòng Đào tạo) ký duyệt; xuất bản đề án hoàn chỉnh theo định dạng đầu ra của skill gồm văn bản và các bảng (chỉ tiêu, phương thức, tổ hợp/ngưỡng, tiến độ) kèm danh mục kiểm đối chiếu; đăng công khai trên trang thông tin điện tử của trường.",
+   "inputs": [
+    "nguoi_phu_trach",
+    "nam_tuyen_sinh"
+   ],
+   "vai_tro": "Hiệu trưởng ký duyệt; chuyên viên Phòng Đào tạo hoàn thiện và đăng công khai · AI hỗ trợ: hoàn thiện văn bản, định dạng hồ sơ trình ký",
+   "luu_y": "đề án phải được công bố công khai trước khi thí sinh đăng ký xét tuyển; lưu bản ký (ký số/ký giấy) vào hồ sơ pháp chế của Phòng Đào tạo.",
+   "ket_qua": "đề án tuyển sinh hoàn chỉnh, sẵn sàng trình ký và công bố."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Tổng chỉ tiêu không vượt năng lực đào tạo đã công bố (trần cứng), kể cả ngành sức khỏe/sư phạm bị khống chế riêng.",
+  "Tổng chỉ tiêu theo ngành bằng tổng chỉ tiêu theo phương thức (cộng chéo khớp nhau).",
+  "Tổ hợp môn phù hợp đặc thù từng ngành (ngành ngôn ngữ có môn ngoại ngữ; ngành kỹ thuật có môn Toán).",
+  "Ngưỡng đầu vào ngành sức khỏe/sư phạm không thấp hơn ngưỡng tối thiểu do Bộ quy định.",
+  "Chỉ tiêu, tỷ lệ phương thức, tổ hợp, ngưỡng, lệ phí, tiến độ khớp đúng Input đã cho.",
+  "Không bịa đặt số liệu năng lực đào tạo, căn cứ pháp lý, số văn bản hay trích dẫn.",
+  "Đúng thể thức văn bản hành chính theo NĐ 30/2020/NĐ-CP.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Quy chế tuyển sinh văn bản hiện hành nêu tại phap-ly.md và văn bản sửa đổi, bổ sung hiện hành).",
+  "Đã qua Human gate: đề án đã được người có thẩm quyền duyệt ký trước khi công bố."
+ ],
+ "gates": [],
+ "guardrails": [
+  "Chỉ tiêu tuyển sinh xác định hằng năm không vượt quá năng lực đào tạo của cơ sở đào tạo (khoản 2 Điều 4 Quy chế tuyển sinh)."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Tuyển sinh 2026 có bốn phương thức và 130 chỉ tiêu xét tuyển thẳng cho chương trình đối tác cấp bằng theo website; đây là thông tin chưa xác minh, chỉ dùng khi đối chiếu với đề án chính thức (C4).",
+  "Đề án chia theo nhóm chương trình vì điều kiện và phương thức khác nhau."
+ ],
+ "cho_xac_nhan": [
+  "Đề án tuyển sinh được duyệt (C2).",
+  "Người ký và tuyến duyệt (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề hành chính: quốc hiệu, tiêu ngữ, số ký hiệu văn bản, địa điểm – ngày tháng ban hành.",
+  "Tên văn bản: ĐỀ ÁN TUYỂN SINH ĐẠI HỌC NĂM ... (ghi rõ hệ đào tạo).",
+  "Căn cứ pháp lý: Quy chế tuyển sinh (căn cứ hiện hành đã chọn); năng lực đào tạo của trường trong năm tuyển sinh.",
+  "Phần I – Chỉ tiêu tuyển sinh theo ngành: bảng (TT, tên ngành, mã ngành, chỉ tiêu) kèm dòng tổng.",
+  "Phần II – Phương thức xét tuyển và phân bổ chỉ tiêu: bảng (phương thức, tỷ lệ chỉ tiêu) kèm quy tắc quy đổi điểm tương đương giữa các phương thức.",
+  "Phần III – Tổ hợp môn và ngưỡng đảm bảo chất lượng đầu vào: bảng theo từng ngành × từng phương thức.",
+  "Phần IV – Chính sách ưu tiên: đối tượng, khu vực, mức cộng điểm, điều kiện tuyển thẳng.",
+  "Phần V – Lệ phí xét tuyển: mức thu theo từng phương thức.",
+  "Phần VI – Tiến độ triển khai: bảng mốc thời gian, nội dung, đơn vị thực hiện.",
+  "Chữ ký người ký duyệt và con dấu. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề hành chính: quốc hiệu, tiêu ngữ, số ký hiệu văn bản, địa điểm – ngày tháng ban hành.\n\n2. Tên văn bản: ĐỀ ÁN TUYỂN SINH ĐẠI HỌC NĂM ... (ghi rõ hệ đào tạo).\n\n3. Căn cứ pháp lý: Quy chế tuyển sinh (căn cứ hiện hành đã chọn); năng lực đào tạo của\n   trường trong năm tuyển sinh.\n\n4. Phần I – Chỉ tiêu tuyển sinh theo ngành: bảng (TT, tên ngành, mã ngành, chỉ tiêu) kèm dòng tổng.\n\n5. Phần II – Phương thức xét tuyển và phân bổ chỉ tiêu: bảng (phương thức, tỷ lệ chỉ tiêu)\n   kèm quy tắc quy đổi điểm tương đương giữa các phương thức.\n\n6. Phần III – Tổ hợp môn và ngưỡng đảm bảo chất lượng đầu vào: bảng theo từng ngành × từng phương thức.\n\n7. Phần IV – Chính sách ưu tiên: đối tượng, khu vực, mức cộng điểm, điều kiện tuyển thẳng.\n\n8. Phần V – Lệ phí xét tuyển: mức thu theo từng phương thức.\n\n9. Phần VI – Tiến độ triển khai: bảng mốc thời gian, nội dung, đơn vị thực hiện.\n\n10. Chữ ký người ký duyệt và con dấu.",
+ "human_gate_check": "Đã qua Human gate: đề án đã được người có thẩm quyền duyệt ký trước khi công bố.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 06/2026/TT-BGDĐT, hiệu lực 15/02/2026\n\nNguồn: https://vanban.chinhphu.vn/?docid=217071&pageid=27160\n\nYêu cầu năm tuyển sinh, phương thức, trình độ và đề án đã duyệt. Đối chiếu quy chế 06/2026 và hướng dẫn năm tuyển sinh về điều kiện, quy đổi điểm, điểm cộng, thứ tự nguyện vọng; không giữ công thức cũ hoặc cộng hai lần chứng chỉ. Không tự đặt chỉ tiêu/ngưỡng khi chưa có quyết định và căn cứ.\n",
+ "outputs_dir": "skills/vnuis-ts-soan-de-an-tuyen-sinh/references"
+}

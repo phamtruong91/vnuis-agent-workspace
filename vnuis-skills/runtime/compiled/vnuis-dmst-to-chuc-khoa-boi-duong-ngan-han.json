@@ -1,0 +1,213 @@
+{
+ "name": "vnuis-dmst-to-chuc-khoa-boi-duong-ngan-han",
+ "title": "Tổ chức khóa bồi dưỡng ngắn hạn",
+ "description": "Dùng khi triển khai (mở lớp) một khóa bồi dưỡng ngắn hạn cụ thể trong kế hoạch năm và cần kế hoạch chi tiết: giảng viên, học liệu, tuyển sinh, hậu cần, đánh giá, cấp chứng chỉ.",
+ "group": "dmst",
+ "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+ "previous_name": "vnuis-to-chuc-khoa-boi-duong-ngan-han",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Viện ĐMST&CGCN; Khoa",
+ "when": "Khi Trung tâm Đào tạo liên tục / Trường bồi dưỡng triển khai một khóa học cụ thể:\nchuẩn bị giảng viên, học liệu, tuyển sinh, hậu cần và đánh giá kết quả.",
+ "inputs": [
+  {
+   "key": "ten_khoa",
+   "desc": "Tên khóa bồi dưỡng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_tieu",
+   "desc": "Mục tiêu, chuẩn đầu ra của khóa học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong",
+   "desc": "Đối tượng học viên, điều kiện đầu vào",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_luong",
+   "desc": "Tổng số giờ / buổi, lịch học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuong_trinh",
+   "desc": "Các chuyên đề / module, phân bổ giờ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "giang_vien",
+   "desc": "Danh sách giảng viên dự kiến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoc_phi",
+   "desc": "Mức học phí, chính sách ưu đãi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "phuong_thuc_danh_gia",
+   "desc": "Kiểm tra, bài tập, chuyên cần... và điều kiện cấp chứng chỉ",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Viện ĐMST&CGCN; Khoa"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thiết kế chương trình và học liệu",
+   "lam_gi": "từ `chuong_trinh` (các chuyên đề/module, phân bổ giờ) và `muc_tieu`, viết đề cương chi tiết từng module: mục tiêu module, nội dung, phương pháp giảng dạy, học liệu (slide, tài liệu đọc, bài tập thực hành); kiểm tra tổng giờ các module khớp với `thoi_luong`; đảm bảo mỗi mục tiêu trong `muc_tieu` được ít nhất 1 module \"gánh\".",
+   "inputs": [
+    "chuong_trinh",
+    "muc_tieu",
+    "thoi_luong"
+   ],
+   "vai_tro": "Giảng viên · AI hỗ trợ: soạn đề cương chi tiết từng module và bộ học liệu",
+   "luu_y": "bẫy phổ biến là chương trình \"nặng lý thuyết, nhẹ thực hành\" với khóa bồi dưỡng người đi làm — tỷ lệ thực hành nên ≥ 50%. Học liệu dùng lại từ nguồn khác phải kiểm tra bản quyền trước.",
+   "ket_qua": "đề cương chi tiết từng module + bộ học liệu (slide, tài liệu đọc, bài tập)."
+  },
+  {
+   "n": 2,
+   "title": "Phân công giảng viên và xác nhận lịch",
+   "lam_gi": "đối chiếu chuyên môn từng giảng viên trong `giang_vien` với module được giao; gửi thư mời/xác nhận phân công, chốt lịch giảng dạy khớp với `thoi_luong` (khung giờ, ngày học); giảng viên ký xác nhận nội dung module trước khi giảng dạy; lập danh sách giảng viên dự phòng cho từng module.",
+   "inputs": [
+    "giang_vien",
+    "thoi_luong"
+   ],
+   "vai_tro": "Giảng viên · AI hỗ trợ: lập bảng phân công và thư mời/xác nhận",
+   "luu_y": "phải có xác nhận bằng văn bản (email/thư mời) — thỏa thuận miệng dễ \"vỡ\" lịch sát ngày khai giảng. Giảng viên thỉnh giảng phải có hợp đồng và lý lịch khoa học lưu tại Phòng TC&QT (nhân sự).",
+   "ket_qua": "bảng phân công giảng viên (module – giảng viên – lịch dạy) đã được xác nhận + danh sách giảng viên dự phòng."
+  },
+  {
+   "n": 3,
+   "title": "Tuyển sinh và chốt danh sách lớp",
+   "lam_gi": "soạn thông báo chiêu sinh (tên khóa, mục tiêu, đối tượng, lịch học, `hoc_phi` và chính sách ưu đãi, điều kiện cấp chứng chỉ); đăng trên các kênh của trung tâm; tiếp nhận đăng ký, thu học phí, kiểm tra điều kiện đầu vào theo `doi_tuong`; chốt danh sách lớp khi đủ sĩ số tối thiểu (hoặc đến thời hạn), lập danh sách chính thức.",
+   "inputs": [
+    "ten_khoa",
+    "doi_tuong",
+    "hoc_phi",
+    "phuong_thuc_danh_gia"
+   ],
+   "vai_tro": "Cán bộ Trung tâm · AI hỗ trợ: soạn thông báo chiêu sinh",
+   "luu_y": "công bố điều kiện cấp chứng chỉ NGAY trong thông báo chiêu sinh — tránh tranh chấp cuối khóa (\"sao không nói trước\"). Không nhận vượt sĩ số tối đa đã công bố. Học phí thu phải có biên lai, đúng mức đã phê duyệt.",
+   "ket_qua": "danh sách lớp chính thức (họ tên, liên hệ, tình trạng nộp học phí)."
+  },
+  {
+   "n": 4,
+   "title": "Chuẩn bị hậu cần",
+   "lam_gi": "đặt phòng học theo sĩ số (đối chiếu danh sách lớp ở Bước 3), kiểm tra máy chiếu, âm thanh, wifi/mạng; chuẩn bị tài liệu phát tay, biểu mẫu điểm danh (QR/giấy), danh sách lớp giao cho giảng viên; phân công cán bộ phụ trách lớp làm đầu mối suốt khóa.",
+   "inputs": [
+    "thoi_luong"
+   ],
+   "vai_tro": "Giảng viên · AI hỗ trợ: tổng hợp danh mục kiểm tra, đối chiếu hồ sơ",
+   "luu_y": "kiểm tra thiết bị TRƯỚC buổi khai giảng ít nhất 1 ngày — sự cố kỹ thuật buổi đầu tiên làm giảm uy tín cả khóa học. Với lớp trực tuyến: kiểm tra đường truyền, phòng học ảo và phương án dự phòng.",
+   "ket_qua": "biên bản kiểm tra cơ sở vật chất + bộ hồ sơ lớp (danh sách, biểu mẫu điểm danh, tài liệu phát tay)."
+  },
+  {
+   "n": 5,
+   "title": "Tổ chức giảng dạy và theo dõi",
+   "lam_gi": "khai giảng, phổ biến nội quy và điều kiện cấp chứng chỉ; điểm danh từng buổi theo `phuong_thuc_danh_gia`; giảng viên báo cáo tiến độ sau mỗi module; thu thập phản hồi giữa khóa của học viên (phiếu nhanh) và xử lý ngay các vấn đề phát sinh (giảng viên, học liệu, cơ sở vật chất).",
+   "inputs": [
+    "phuong_thuc_danh_gia"
+   ],
+   "vai_tro": "Giảng viên · AI hỗ trợ: giảng viên tổ chức giảng dạy, AI tổng hợp điểm danh và phản hồi giữa khóa để xử lý kịp thời",
+   "luu_y": "theo dõi chuyên cần theo thời gian thực — học viên sắp vượt ngưỡng nghỉ cho phép phải được cảnh báo sớm, không để cuối khóa mới báo \"không đủ điều kiện\". Mọi điều chỉnh lịch học phải thông báo trước ít nhất 24 giờ.",
+   "ket_qua": "bảng điểm danh/chuyên cần đầy đủ + báo cáo phản hồi giữa khóa đã xử lý."
+  },
+  {
+   "n": 6,
+   "title": "Đánh giá và xét cấp chứng chỉ",
+   "lam_gi": "tổ chức kiểm tra/bài tập cuối khóa theo `phuong_thuc_danh_gia`; chấm và tổng hợp điểm; đối chiếu từng học viên với điều kiện cấp chứng chỉ (chuyên cần + điểm); lập 2 danh sách: đủ điều kiện và không đủ điều kiện (ghi rõ lý do từng người); trình Giám đốc Trung tâm ký duyệt cấp chứng chỉ (human gate).",
+   "inputs": [
+    "ten_khoa",
+    "phuong_thuc_danh_gia"
+   ],
+   "vai_tro": "Giảng viên · AI hỗ trợ: soạn dự thảo văn bản trình ký, kiểm tra thể thức",
+   "luu_y": "tuyệt đối không \"làm tròn\" cho học viên thiếu 1–2% chuyên cần — tiền lệ này phá vỡ kỷ luật các khóa sau. Hồ sơ điểm/chuyên cần phải lưu đầy đủ để đối chiếu khi có khiếu nại.",
+   "ket_qua": "bảng điểm tổng hợp + danh sách đề nghị cấp chứng chỉ (đủ/không đủ điều kiện, có lý do từng người)."
+  },
+  {
+   "n": 7,
+   "title": "Tổng kết khóa học",
+   "lam_gi": "khảo sát hài lòng cuối khóa; tổng hợp kết quả (sĩ số thực tế, tỷ lệ đạt, doanh thu/chi phí thực tế); viết báo cáo tổng kết: kết quả đạt được, tồn tại, bài học kinh nghiệm; lưu hồ sơ khóa học đầy đủ (đề cương, danh sách lớp, điểm danh, điểm, danh sách cấp chứng chỉ).",
+   "inputs": [
+    "ten_khoa"
+   ],
+   "vai_tro": "Giám đốc Trung tâm · AI hỗ trợ: tổng hợp kết quả và soạn báo cáo tổng kết, Giám đốc Trung tâm duyệt và lưu hồ sơ khóa học",
+   "luu_y": "báo cáo tổng kết phải trung thực về tỷ lệ bỏ học/không đạt — đây là dữ liệu đầu vào cho kế hoạch năm sau. Hồ sơ khóa học lưu tối thiểu theo quy định để phục vụ thanh tra, kiểm tra.",
+   "ket_qua": "báo cáo tổng kết khóa học + hồ sơ khóa học hoàn chỉnh đã lưu trữ."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung khớp với Input: tên khóa, mục tiêu/chuẩn đầu ra, đối tượng, thời lượng, chương trình, giảng viên, học phí, phương thức đánh giá.",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Tổng giờ các module khớp thời lượng khóa học; mỗi mục tiêu có ít nhất 1 module \"gánh\"; tỷ lệ thực hành ≥ 50% với khóa bồi dưỡng người đi làm.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (quy chế đào tạo liên tục, bồi dưỡng ngắn hạn; quy định về mẫu và quản lý chứng chỉ).",
+  "Đã qua Human gate: Giám đốc Trung tâm duyệt kế hoạch chi tiết, học phí, danh sách giảng viên và danh sách cấp chứng chỉ.",
+  "Điều kiện cấp chứng chỉ đã công bố trong thông báo chiêu sinh; danh sách đủ/không đủ điều kiện ghi rõ lý do từng người.",
+  "Giảng viên có xác nhận bằng văn bản, có danh sách dự phòng; học liệu kiểm tra bản quyền trước khi dùng.",
+  "Hồ sơ khóa học lưu đầy đủ (đề cương, danh sách lớp, điểm danh, điểm, danh sách cấp chứng chỉ) theo thời hạn quy định. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "Giám đốc Trung tâm duyệt kế hoạch chi tiết, học phí và danh sách giảng viên.",
+  "Giảng viên phụ trách xác nhận nội dung module trước khi giảng dạy."
+ ],
+ "guardrails": [
+  "Không thay đổi học phí, thời lượng, chuẩn đầu ra sau khi đã chiêu sinh nếu chưa được phê duyệt.",
+  "Không cấp chứng chỉ cho học viên không đủ điều kiện; không làm giả hồ sơ chuyên cần/điểm.",
+  "Không sử dụng học liệu vi phạm bản quyền."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Khóa bồi dưỡng ngắn hạn có thể bằng tiếng Việt hoặc Anh; ghi rõ ngôn ngữ và đối tượng.",
+  "Học phí và chứng nhận chỉ ghi theo quyết định đã duyệt."
+ ],
+ "cho_xac_nhan": [
+  "Thẩm quyền mở khóa và cấp chứng nhận (C2).",
+  "Mẫu chứng nhận (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề: tên trung tâm/trường + \"KẾ HOẠCH CHI TIẾT\" + tên khóa bồi dưỡng.",
+  "Phần 1 — Thông tin chung: mục tiêu/chuẩn đầu ra của khóa; thời lượng và lịch học (ngày khai giảng, khung giờ, thứ); đối tượng và sĩ số tối thiểu – tối đa; học phí và chính sách ưu đãi.",
+  "Phần 2 — Chương trình: bảng gồm các cột Module | Nội dung | Số giờ | Giảng viên.",
+  "Phần 3 — Tuyển sinh và hậu cần: mốc thời gian thông báo chiêu sinh, chốt danh sách; phòng học, thiết bị, hình thức điểm danh, tài liệu phát tay.",
+  "Phần 4 — Đánh giá và cấp chứng chỉ: điều kiện cấp (chuyên cần, điểm) và cách xét.",
+  "Phần 5 — Dự toán thu – chi của khóa học. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề: tên trung tâm/trường + \"KẾ HOẠCH CHI TIẾT\" + tên khóa bồi dưỡng.\n\n2. Phần 1 — Thông tin chung: mục tiêu/chuẩn đầu ra của khóa; thời lượng và lịch học (ngày khai giảng, khung giờ, thứ); đối tượng và sĩ số tối thiểu – tối đa; học phí và chính sách ưu đãi.\n\n3. Phần 2 — Chương trình: bảng gồm các cột Module | Nội dung | Số giờ | Giảng viên.\n\n4. Phần 3 — Tuyển sinh và hậu cần: mốc thời gian thông báo chiêu sinh, chốt danh sách; phòng học, thiết bị, hình thức điểm danh, tài liệu phát tay.\n\n5. Phần 4 — Đánh giá và cấp chứng chỉ: điều kiện cấp (chuyên cần, điểm) và cách xét.\n\n6. Phần 5 — Dự toán thu – chi của khóa học.",
+ "human_gate_check": "Đã qua Human gate: Giám đốc Trung tâm duyệt kế hoạch chi tiết, học phí, danh sách giảng viên và danh sách cấp chứng chỉ.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Viện ĐMST&CGCN. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dmst-to-chuc-khoa-boi-duong-ngan-han/references"
+}

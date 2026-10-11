@@ -1,0 +1,169 @@
+{
+ "name": "vnuis-khoa-tro-ly-giang-day",
+ "title": "Trợ lý giảng dạy",
+ "description": "Dùng khi giảng viên chuẩn bị bài giảng, cần thang tiêu chí chấm hoặc soạn nhận xét phản hồi cho sinh viên. Dùng chung mọi khoa; giảng viên duyệt toàn bộ trước khi dùng.",
+ "group": "khoa",
+ "group_label": "Khoa, bộ môn",
+ "previous_name": "vnuis-tro-ly-giang-day",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Sáu khoa (giảng viên, trưởng bộ môn)",
+ "when": "Khi chuẩn bị bài giảng, xây dựng tiêu chí đánh giá (thang tiêu chí chấm), hoặc soạn nhận xét phản hồi\ncho sinh viên. Dùng chung cho giảng viên mọi khoa/bộ môn, mọi học phần.",
+ "inputs": [
+  {
+   "key": "de_cuong_hoc_phan",
+   "desc": "Đề cương học phần: mục tiêu, chuẩn đầu ra, nội dung",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chu_de_buoi_hoc",
+   "desc": "Chủ đề buổi học cần chuẩn bị",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "trinh_do_sinh_vien",
+   "desc": "Năm thứ, trình độ đầu vào của lớp",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "thoi_luong",
+   "desc": "Thời lượng buổi học (phút)",
+   "required": false,
+   "note": "Không (mặc định: 90)"
+  },
+  {
+   "key": "bai_lam_an_danh",
+   "desc": "Bài làm đã ẩn danh cần soạn phản hồi (nếu có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "tieu_chi_danh_gia",
+   "desc": "Các tiêu chí đánh giá cần đưa vào thang tiêu chí chấm",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Sáu khoa (giảng viên, trưởng bộ môn)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Dự thảo kế hoạch bài giảng",
+   "lam_gi": "từ `de_cuong_hoc_phan` xác định mục tiêu và chuẩn đầu ra gắn với `chu_de_buoi_hoc`; chia nội dung thành các hoạt động (mở đầu, triển khai, thực hành, tổng kết); phân bổ `thoi_luong` cho từng hoạt động; soạn câu hỏi gợi mở cho mỗi phần.",
+   "inputs": [
+    "de_cuong_hoc_phan",
+    "chu_de_buoi_hoc",
+    "trinh_do_sinh_vien",
+    "thoi_luong"
+   ],
+   "vai_tro": "Giảng viên phụ trách học phần · AI hỗ trợ: dự thảo kế hoạch bài giảng theo khung giờ từ đề cương học phần",
+   "luu_y": "buổi học kỹ năng nên dành phần lớn thời lượng cho thực hành; ví dụ và mức độ toán phải phù hợp `trinh_do_sinh_vien`, không đưa nội dung vượt trình độ; câu hỏi gợi mở phải bám mục tiêu buổi học.",
+   "ket_qua": "\"dự thảo kế hoạch bài giảng theo khung giờ\" (mục tiêu + các hoạt động + phân bổ thời gian + câu hỏi gợi mở)."
+  },
+  {
+   "n": 2,
+   "title": "Gợi ý học liệu",
+   "lam_gi": "đề xuất ví dụ minh họa, tình huống mẫu, tài liệu đọc thêm (bài báo, video, notebook) phù hợp chủ đề buổi học và trình độ sinh viên; ưu tiên học liệu mở, dễ truy cập.",
+   "inputs": [
+    "de_cuong_hoc_phan",
+    "chu_de_buoi_hoc",
+    "trinh_do_sinh_vien"
+   ],
+   "vai_tro": "Giảng viên phụ trách học phần · AI hỗ trợ: gợi ý học liệu phù hợp chủ đề và trình độ sinh viên",
+   "luu_y": "không bịa tên sách/tác giả/link bài báo — chỉ gợi ý loại học liệu và nguồn kiểm chứng được; mọi học liệu phải bám đề cương học phần.",
+   "ket_qua": "\"danh sách học liệu đề xuất\" (tên/loại + mục đích sử dụng + phù hợp đối tượng nào)."
+  },
+  {
+   "n": 3,
+   "title": "Xây dựng thang tiêu chí chấm",
+   "lam_gi": "từ `tieu_chi_danh_gia` (nếu không có thì suy từ mục tiêu buổi học ở bước 1), lập bảng tiêu chí × 4 mức độ (xuất sắc / tốt / đạt / chưa đạt) với mô tả cụ thể, đo được cho từng mức.",
+   "inputs": [
+    "tieu_chi_danh_gia",
+    "de_cuong_hoc_phan",
+    "chu_de_buoi_hoc"
+   ],
+   "vai_tro": "Giảng viên phụ trách học phần · AI hỗ trợ: lập bảng thang tiêu chí chấm 4 mức độ với mô tả cụ thể từng mức để hiệu chỉnh chuyên môn",
+   "luu_y": "mỗi mức độ phải mô tả hành vi quan sát được, tránh từ mơ hồ (\"khá tốt\", \"tương đối\"); thang điểm thống nhất với quy chế đào tạo của trường.",
+   "ket_qua": "\"dự thảo thang tiêu chí chấm đánh giá\" (bảng tiêu chí × mức độ với mô tả cụ thể)."
+  },
+  {
+   "n": 4,
+   "title": "Dự thảo phản hồi** (chỉ khi có bài làm)\n- Làm gì: đọc từng `bai_lam_an_danh`, đối chiếu với thang tiêu chí chấm ở bước 3; viết nhận xét theo\n  cấu trúc: điểm mạnh → điểm cần cải thiện → gợi ý cụ thể; dùng giọng văn xây dựng,\n  không dán nhãn.\n- Dùng input: `bai_lam_an_danh`, kết quả bước 3\n- Vai trò: Giảng viên phụ trách học phần · AI hỗ trợ: dự thảo phản hồi theo cấu trúc 3 phần cho từng bài đã ẩn danh · ⏱ ~5–10 phút/bài (ước tính)\n- Lưu ý nghiệp vụ: bài làm phải được ẩn danh trước khi đưa vào xử lý; phản hồi chỉ là\n  dự thảo — giảng viên là người gửi chính thức; không chấm điểm cuối cùng thay giảng viên.\n- → Kết quả bước: \"dự thảo phản hồi từng bài\" (nhận xét theo cấu trúc 3 phần).\n\n**Bước 5. Tổng hợp để giảng viên duyệt",
+   "lam_gi": "gom kế hoạch bài giảng (bước 1) + học liệu (bước 2) + thang tiêu chí chấm (bước 3) + phản hồi (bước 4, nếu có) thành một bộ hồ sơ buổi học; đánh dấu các phần cần giảng viên quyết (nội dung chuyên môn, thang điểm, ngôn từ phản hồi) để duyệt/sửa trước khi sử dụng.",
+   "inputs": [],
+   "vai_tro": "Giảng viên phụ trách học phần · AI hỗ trợ: tổng hợp kế hoạch bài giảng + học liệu + thang tiêu chí chấm + phản hồi thành bộ hồ sơ buổi học",
+   "luu_y": "ghi rõ trạng thái \"DỰ THẢO — giảng viên duyệt trước khi dùng\"; không gửi bất kỳ phần nào cho sinh viên khi chưa được duyệt.",
+   "ket_qua": "\"bộ hồ sơ buổi học hoàn chỉnh (dự thảo)\" = Output cuối."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mục tiêu buổi học gắn đúng chuẩn đầu ra trong `de_cuong_hoc_phan`.",
+  "Tiến trình khung giờ khớp tổng `thoi_luong`; nội dung, ví dụ, mức độ phù hợp `trinh_do_sinh_vien`; câu hỏi gợi mở bám mục tiêu buổi học.",
+  "Thang tiêu chí chấm đủ 4 mức độ với mô tả hành vi quan sát được (không từ mơ hồ như \"khá tốt\"); thang điểm thống nhất quy chế đào tạo.",
+  "Học liệu gợi ý kiểm chứng được (không bịa tên sách/tác giả/link) và bám đề cương học phần.",
+  "Phản hồi bài làm chỉ xử lý bài đã ẩn danh, theo cấu trúc điểm mạnh → cần cải thiện → gợi ý cụ thể; không chấm điểm cuối cùng thay giảng viên.",
+  "Bộ hồ sơ ghi rõ trạng thái \"DỰ THẢO — giảng viên duyệt trước khi dùng\"; không gửi bất kỳ phần nào cho sinh viên khi chưa duyệt.",
+  "Đã qua Human gate: giảng viên duyệt toàn bộ (kế hoạch bài giảng, học liệu, thang tiêu chí chấm, phản hồi) trước khi sử dụng. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Giảng viên phụ trách học phần duyệt TOÀN BỘ** (kế hoạch bài giảng, học liệu, thang tiêu chí chấm, phản hồi) trước khi sử dụng hoặc gửi cho sinh viên.",
+  "Khoa/bộ môn duyệt khi thang tiêu chí chấm dùng cho đánh giá chính thức."
+ ],
+ "guardrails": [
+  "Không chấm điểm cuối cùng hay quyết định kết quả học tập thay giảng viên.",
+  "Bài làm của sinh viên phải được ẩn danh trước khi đưa vào xử lý.",
+  "Không sử dụng đề thi/bài kiểm tra có tính bảo mật.",
+  "Phản hồi chỉ mang tính dự thảo — giảng viên là người gửi chính thức.",
+  "Không bịa kiến thức chuyên môn; nội dung phải bám đề cương học phần."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Học liệu bằng tiếng Anh theo website: đầu ra mặc định bằng ngôn ngữ giảng dạy của học phần; người học có trình độ tiếng Anh khác nhau nên hoạt động nên có gợi ý hỗ trợ ngôn ngữ.",
+  "Sáu khoa có đặc thù khác nhau (ví dụ Ngôn ngữ ứng dụng và Kỹ thuật và Công nghệ): phần đặc thù để trống cho từng khoa bổ sung sau khảo sát; không giả định.",
+  "Học phần của chương trình liên kết dùng đề cương và chuẩn của đối tác; skill không sửa các nội dung đó."
+ ],
+ "cho_xac_nhan": [
+  "Ngôn ngữ giảng dạy từng học phần (C3).",
+  "Nghiệp vụ đặc thù từng khoa (khảo sát ngày 2)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "Kế hoạch buổi học: học phần/chủ đề/thời lượng/đối tượng; mục tiêu theo đề cương; tiến trình hoạt động theo thời gian; học liệu; nhiệm vụ và cách đánh giá. Không chèn ghi chú duyệt hay danh mục kiểm tra đầu ra.",
+ "human_gate_check": "Đã qua Human gate: giảng viên duyệt toàn bộ (kế hoạch bài giảng, học liệu, thang tiêu chí chấm, phản hồi) trước khi sử dụng. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Sáu khoa (giảng viên, trưởng bộ môn). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-khoa-tro-ly-giang-day/references"
+}

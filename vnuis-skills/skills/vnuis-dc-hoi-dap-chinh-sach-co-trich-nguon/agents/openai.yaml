@@ -1,0 +1,4 @@
+interface:
+  display_name: Dùng chung · Hỏi đáp chính sách có trích nguồn – VNU-IS
+  short_description: Hỗ trợ hỏi đáp chính sách có trích nguồn (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-dc-hoi-dap-chinh-sach-co-trich-nguon để hỗ trợ công việc: Hỏi đáp chính sách có trích nguồn; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

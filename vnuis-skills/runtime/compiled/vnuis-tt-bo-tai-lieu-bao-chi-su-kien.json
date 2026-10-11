@@ -1,0 +1,189 @@
+{
+ "name": "vnuis-tt-bo-tai-lieu-bao-chi-su-kien",
+ "title": "Bộ tài liệu báo chí cho sự kiện",
+ "description": "Dùng khi tổ chức sự kiện lớn cần mời báo chí (khai giảng, kỷ niệm, hội thảo, ký kết, ngày hội tuyển sinh) và cần bộ tài liệu báo chí (press kit): thông cáo, thông tin tóm tắt, tiểu sử diễn giả, đầu mối liên hệ.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-press-kit-su-kien",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi tổ chức sự kiện cần mời báo chí đưa tin: lễ khai giảng, kỷ niệm thành lập, hội thảo lớn,\nký kết hợp tác, ngày hội tuyển sinh...",
+ "inputs": [
+  {
+   "key": "ten_su_kien",
+   "desc": "Tên sự kiện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_dia_diem",
+   "desc": "Thời gian, địa điểm tổ chức",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung_chinh",
+   "desc": "Các điểm nhấn của sự kiện (diễn giả, nội dung, con số nổi bật)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dien_gia",
+   "desc": "Danh sách diễn giả/khách mời chính + tiểu sử ngắn",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "so_lieu",
+   "desc": "Số liệu bắt buộc có nguồn (quy mô, thành tựu...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "lien_he_bao_chi",
+   "desc": "Đầu mối báo chí của trường (tên, điện thoại, email)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Kiểm định và chuẩn hóa thông tin đầu vào",
+   "lam_gi": "gom toàn bộ các trường input; lập bảng đối chiếu từng số liệu trong `so_lieu` và `noi_dung_chinh` với nguồn kèm theo; kiểm tra `lien_he_bao_chi` đủ tên – điện thoại – email; đối chiếu `thoi_gian_dia_diem` với giấy mời/thông báo chính thức của sự kiện.",
+   "inputs": [
+    "ten_su_kien",
+    "thoi_gian_dia_diem",
+    "noi_dung_chinh",
+    "dien_gia",
+    "so_lieu",
+    "lien_he_bao_chi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, lập bảng biểu, định dạng",
+   "luu_y": "số liệu không có nguồn được đưa vào danh sách \"chờ xác nhận\", tuyệt đối không đưa vào thông cáo; thời gian/địa điểm sai dù một chi tiết cũng gây sự cố với báo chí.",
+   "ket_qua": "Bảng kiểm định dữ liệu (OK / thiếu nguồn / cần xác nhận) + bộ dữ liệu sạch đã chuẩn hóa."
+  },
+  {
+   "n": 2,
+   "title": "Soạn thông cáo báo chí theo tháp ngược",
+   "lam_gi": "viết tiêu đề 1 dòng chứa tin mới nhất; đoạn mở 2–3 câu trả lời 5W1H; thân bài triển khai các điểm nhấn từ `noi_dung_chinh`, chèn trích dẫn lãnh đạo; đoạn nền 2–3 câu giới thiệu trường; khối liên hệ báo chí ở cuối.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "mỗi con số trong bài phải gắn với nguồn đã kiểm định ở Bước 1; trích dẫn phải được người phát ngôn đọc và xác nhận nguyên văn trước khi đưa vào; tránh tính từ tuyệt đối (\"hàng đầu\", \"duy nhất\") nếu không chứng minh được.",
+   "ket_qua": "Dự thảo thông cáo báo chí (mỗi số liệu có đánh dấu nguồn)."
+  },
+  {
+   "n": 3,
+   "title": "Lập fact sheet 1 trang",
+   "lam_gi": "rút gọn dự thảo thông cáo thành bảng 1 trang: tên sự kiện, thời gian, địa điểm, quy mô, diễn giả chính, 3–5 con số nổi bật kèm ghi chú nguồn từng số.",
+   "inputs": [
+    "ten_su_kien",
+    "thoi_gian_dia_diem",
+    "dien_gia",
+    "so_lieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "fact sheet không được chứa số liệu nào không có trong thông cáo; mọi con số phải khớp tuyệt đối giữa hai tài liệu.",
+   "ket_qua": "Fact sheet 1 trang (dự thảo)."
+  },
+  {
+   "n": 4,
+   "title": "Chuẩn bị tiểu sử diễn giả và danh mục ảnh",
+   "lam_gi": "viết tiểu sử 3–5 dòng/người từ `dien_gia` (học vị, chức danh, lĩnh vực); lập danh mục ảnh cần có (chân dung diễn giả, toàn cảnh sự kiện, ảnh điểm nhấn) kèm ghi chú bản quyền và sự đồng ý sử dụng.",
+   "inputs": [
+    "dien_gia"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "học vị, chức danh phải đúng quyết định bổ nhiệm; chỉ dùng ảnh rõ nguồn và đã được đồng ý bằng văn bản.",
+   "ket_qua": "Tiểu sử diễn giả (3–5 dòng/người) + danh mục ảnh kèm ghi chú bản quyền."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra chéo và xin xác nhận",
+   "lam_gi": "đối chiếu 3 chiều — thông cáo ↔ fact sheet ↔ nguồn gốc — cho từng số liệu; gửi trích dẫn cho người phát ngôn xác nhận nguyên văn; kiểm tra lại thông tin liên hệ báo chí.",
+   "inputs": [
+    "so_lieu"
+   ],
+   "vai_tro": "Trưởng Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "quy tắc \"3 nguồn khớp nhau\" cho con số nhạy cảm (quy mô, kinh phí); một lỗi số liệu nhỏ trên báo chí tốn rất nhiều công đính chính.",
+   "ket_qua": "Bộ press kit đã xác nhận (có xác nhận trích dẫn của người phát ngôn) + biên bản kiểm tra."
+  },
+  {
+   "n": 6,
+   "title": "Đóng gói và lập danh mục kiểm phát hành",
+   "lam_gi": "gom thông cáo + fact sheet + tiểu sử diễn giả + danh mục ảnh thành một bộ; lập danh mục kiểm phát hành: gửi trước sự kiện bao lâu, danh sách báo/nhà báo nhận, kênh gửi (email), người gửi.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: chuẩn bị bản phát hành",
+   "luu_y": "gửi trước sự kiện 3–5 ngày cho báo in, 1–2 ngày cho báo điện tử; người gửi phải đúng là đầu mối báo chí đã nêu trong thông cáo.",
+   "ket_qua": "Bộ press kit hoàn chỉnh + danh mục kiểm phát hành."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Thông cáo báo chí hoàn chỉnh",
+  "Có đầy đủ sản phẩm: Fact sheet 1 trang + danh mục ảnh + thông tin liên hệ",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Số liệu không có nguồn được đưa vào danh sách \"chờ xác nhận\", tuyệt đối không đưa vào thông cáo",
+  "Mỗi con số trong bài phải gắn với nguồn đã kiểm định ở Bước 1 > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Trưởng phòng duyệt thông cáo và fact sheet.",
+  "Lãnh đạo trường duyệt trước khi phát hành cho báo chí.",
+  "Người phát ngôn xác nhận mọi trích dẫn mang tên mình."
+ ],
+ "guardrails": [
+  "Không phát hành press kit khi chưa được lãnh đạo duyệt.",
+  "Không đưa số liệu chưa có nguồn xác thực.",
+  "Không dùng ảnh không rõ bản quyền hoặc chưa được đồng ý.",
+  "Không tự gửi thông cáo cho báo chí."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Bộ tài liệu báo chí có bản tiếng Anh khi sự kiện có khách quốc tế.",
+  "Số liệu và thông tin đối tác chỉ ghi khi đã được duyệt công bố."
+ ],
+ "cho_xac_nhan": [
+  "Người duyệt công bố (C6).",
+  "Danh sách báo chí nhận tin (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề (1 dòng, chứa tin mới nhất của sự kiện).",
+  "Đoạn mở đầu (5W1H: ai – việc gì – khi nào – ở đâu – vì sao), 2–3 câu.",
+  "Thân bài (điểm nhấn sự kiện, trích dẫn lãnh đạo, số liệu có ghi nguồn).",
+  "Thông tin nền về trường (2–3 câu).",
+  "Khối liên hệ báo chí (tên, chức danh, điện thoại, email). - Tài liệu kèm bắt buộc: Fact sheet 1 trang (tên sự kiện, thời gian, địa điểm, quy mô, diễn giả, con số nổi bật kèm nguồn) + Tiểu sử diễn giả (3–5 dòng/người) + Danh mục ảnh (kèm ghi chú bản quyền)."
+ ],
+ "output_structure_raw": "1. Tiêu đề (1 dòng, chứa tin mới nhất của sự kiện).\n\n2. Đoạn mở đầu (5W1H: ai – việc gì – khi nào – ở đâu – vì sao), 2–3 câu.\n\n3. Thân bài (điểm nhấn sự kiện, trích dẫn lãnh đạo, số liệu có ghi nguồn).\n\n4. Thông tin nền về trường (2–3 câu).\n\n5. Khối liên hệ báo chí (tên, chức danh, điện thoại, email).\n- Tài liệu kèm bắt buộc: Fact sheet 1 trang (tên sự kiện, thời gian, địa điểm, quy mô, diễn giả, con số nổi bật kèm nguồn) + Tiểu sử diễn giả (3–5 dòng/người) + Danh mục ảnh (kèm ghi chú bản quyền).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-bo-tai-lieu-bao-chi-su-kien/references"
+}

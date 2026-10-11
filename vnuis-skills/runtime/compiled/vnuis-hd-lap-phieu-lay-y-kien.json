@@ -1,0 +1,172 @@
+{
+ "name": "vnuis-hd-lap-phieu-lay-y-kien",
+ "title": "Phiếu lấy ý kiến hội đồng",
+ "description": "Dùng khi cần xin ý kiến thành viên Hội đồng Khoa học và Đào tạo bằng văn bản vì không họp tập trung: nội dung phát sinh giữa hai kỳ họp hoặc cần ý kiến nhanh.",
+ "group": "hd",
+ "group_label": "Hội đồng KH&ĐT",
+ "previous_name": "vnuis-phieu-lay-y-kien-hoi-dong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Hội đồng Khoa học và Đào tạo (thư ký, người xử lý hồ sơ)",
+ "when": "Khi cần xin ý kiến Hội đồng KH&ĐT bằng văn bản (không họp tập trung): các nội dung phát sinh\ngiữa hai kỳ họp, nội dung đơn giản đã có đủ tài liệu, hoặc cần ý kiến nhanh. Không áp dụng cho\nnội dung mà quy chế bắt buộc phải họp.",
+ "inputs": [
+  {
+   "key": "noi_dung_xin_y_kien",
+   "desc": "Từng nội dung cần xin ý kiến, trình bày ngắn gọn rõ ràng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tai_lieu_kem",
+   "desc": "Danh mục tài liệu gửi kèm để thành viên nghiên cứu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thanh_vien",
+   "desc": "Danh sách thành viên được xin ý kiến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "han_tra_loi",
+   "desc": "Thời hạn trả lời phiếu",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hinh_thuc_y_kien",
+   "desc": "Đồng ý / Không đồng ý / Ý kiến khác (ghi rõ)",
+   "required": false,
+   "note": "Không (mặc định: 3 ô trên)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Hội đồng Khoa học và Đào tạo (thư ký, người xử lý hồ sơ)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Soạn phiếu lấy ý kiến",
+   "lam_gi": "soạn phiếu gồm tiêu đề; từng nội dung trong `noi_dung_xin_y_kien` tách riêng, trình bày ngắn gọn rõ ràng; danh mục `tai_lieu_kem`; các ô lựa chọn theo `hinh_thuc_y_kien` (mặc định: Đồng ý / Không đồng ý / Ý kiến khác + dòng ghi ý kiến); họ tên + chữ ký thành viên; `han_tra_loi` và nơi gửi lại.",
+   "inputs": [
+    "noi_dung_xin_y_kien",
+    "tai_lieu_kem",
+    "han_tra_loi",
+    "hinh_thuc_y_kien"
+   ],
+   "vai_tro": "Thư ký hội đồng (soạn phiếu theo đúng nội dung xin ý kiến) · AI hỗ trợ: soạn phiếu: nội dung tách riêng, ô lựa chọn, hạn trả lời, nơi gửi lại",
+   "luu_y": "mỗi nội dung chỉ hỏi một vấn đề, không gộp nhiều câu hỏi vào một ô; không dùng phiếu lấy ý kiến thay phiên họp đối với nội dung quy chế bắt buộc phải họp.",
+   "ket_qua": "mẫu phiếu lấy ý kiến hoàn chỉnh."
+  },
+  {
+   "n": 2,
+   "title": "Gửi phiếu kèm tài liệu",
+   "lam_gi": "gửi phiếu cho từng thành viên trong `thanh_vien` kèm đầy đủ `tai_lieu_kem` (bản giấy hoặc điện tử theo quy chế); ghi nhận thời điểm gửi và danh sách đã nhận.",
+   "inputs": [
+    "thanh_vien",
+    "tai_lieu_kem"
+   ],
+   "vai_tro": "Văn thư (gửi phiếu kèm đầy đủ tài liệu cho toàn bộ thành viên) · AI hỗ trợ: lập danh sách gửi và theo dõi nhận/trả",
+   "luu_y": "kiểm tra không sót thành viên; lưu bằng chứng đã gửi để xác định phiếu gửi trễ hạn khi tổng hợp.",
+   "ket_qua": "phiếu đã gửi đến toàn bộ thành viên + danh sách theo dõi nhận/trả."
+  },
+  {
+   "n": 3,
+   "title": "Thu phiếu và kiểm tra tính hợp lệ",
+   "lam_gi": "hết `han_tra_loi`, thu phiếu về; kiểm tra từng phiếu: có chữ ký thành viên, gửi trong hạn, ý kiến ghi rõ ràng; loại phiếu không hợp lệ (thiếu chữ ký, trễ hạn, ý kiến mơ hồ).",
+   "inputs": [
+    "han_tra_loi"
+   ],
+   "vai_tro": "Thư ký hội đồng (thu phiếu, kiểm tra tính hợp lệ, loại phiếu không hợp lệ) · AI hỗ trợ: tổng hợp trước danh sách phiếu thu được theo hạn trả lời, hỗ trợ đối chiếu chữ ký",
+   "luu_y": "tuyệt đối không suy diễn ý kiến từ phiếu không ghi rõ hoặc phiếu trễ hạn; phiếu không hợp lệ phải loại khỏi tổng hợp và ghi rõ lý do.",
+   "ket_qua": "tập phiếu hợp lệ + danh sách phiếu bị loại (kèm lý do)."
+  },
+  {
+   "n": 4,
+   "title": "Tổng hợp kết quả từng nội dung",
+   "lam_gi": "đếm số phiếu phát ra/thu về; với mỗi nội dung, tổng hợp số đồng ý/không đồng ý/ý kiến khác; trích nguyên văn các ý kiến khác (nếu có); lập bảng tổng hợp.",
+   "inputs": [],
+   "vai_tro": "Thư ký hội đồng (tổng hợp kết quả chỉ từ phiếu hợp lệ) · AI hỗ trợ: đếm và tổng hợp kết quả từng nội dung, trích nguyên văn ý kiến khác",
+   "luu_y": "chỉ tổng hợp phiếu hợp lệ; không công bố kết quả khi chưa đủ số phiếu hợp lệ theo quy định; trích ý kiến khác phải nguyên văn, không diễn giải lại.",
+   "ket_qua": "bảng tổng hợp kết quả từng nội dung."
+  },
+  {
+   "n": 5,
+   "title": "Báo cáo kết quả và lưu hồ sơ",
+   "lam_gi": "lập báo cáo tổng hợp kết quả trình Chủ tịch hội đồng; lưu phiếu gốc vào hồ sơ như biên bản họp.",
+   "inputs": [],
+   "vai_tro": "Chủ tịch hội đồng (nhận báo cáo); Thư ký lưu phiếu gốc vào hồ sơ · AI hỗ trợ: lập báo cáo tổng hợp kết quả trình Chủ tịch",
+   "luu_y": "báo cáo phải nêu rõ kết luận từng nội dung (được đa số tán thành hay không) và ý kiến cần tiếp thu; phiếu gốc lưu đầy đủ, không thất lạc.",
+   "ket_qua": "báo cáo tổng hợp trình Chủ tịch + phiếu gốc lưu hồ sơ."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi nội dung chỉ hỏi một vấn đề, không gộp nhiều câu hỏi vào một ô; nội dung quy chế bắt buộc phải họp không dùng phiếu lấy ý kiến thay phiên họp.",
+  "Phiếu gửi đúng toàn bộ thành viên kèm đầy đủ tài liệu (bản giấy hoặc điện tử theo quy chế); lưu bằng chứng đã gửi để xác định phiếu gửi trễ hạn.",
+  "Chỉ tổng hợp phiếu hợp lệ (có chữ ký thành viên, gửi trong hạn, ý kiến ghi rõ ràng); phiếu không hợp lệ loại khỏi tổng hợp và ghi rõ lý do.",
+  "Bảng tổng hợp: số phiếu phát ra/thu về + số đồng ý/không đồng ý/ý kiến khác từng nội dung; ý kiến khác trích nguyên văn, không diễn giải lại.",
+  "Không công bố kết quả khi chưa đủ số phiếu hợp lệ theo quy định.",
+  "Báo cáo nêu rõ kết luận từng nội dung (được đa số tán thành hay không) và ý kiến cần tiếp thu; phiếu gốc lưu đầy đủ như biên bản họp, không thất lạc.",
+  "Đã qua Human gate: Chủ tịch quyết định áp dụng hình thức lấy ý kiến bằng văn bản (chỉ nội dung quy chế cho phép); thư ký tổng hợp trung thực. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Chủ tịch hội đồng** quyết định áp dụng hình thức lấy ý kiến bằng văn bản (chỉ cho nội dung quy chế cho phép, không thay phiên họp bắt buộc).",
+  "**Thư ký hội đồng** tổng hợp trung thực, báo cáo kết quả trình Chủ tịch."
+ ],
+ "guardrails": [
+  "KHÔNG dùng phiếu lấy ý kiến thay cho phiên họp đối với nội dung quy chế bắt buộc phải họp (VD: thông qua chương trình đào tạo, xét học hàm... — theo quy chế từng trường).",
+  "KHÔNG suy diễn ý kiến từ phiếu không ghi rõ hoặc phiếu gửi trễ hạn.",
+  "KHÔNG công bố kết quả khi chưa đủ số phiếu hợp lệ theo quy định."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Theo Điều 18 Luật 125/2025/QH15, Hội đồng khoa học và đào tạo chỉ tư vấn; \"nghị quyết\", \"kết luận\" của Hội đồng là ý kiến tham mưu, quyết định thuộc Hiệu trưởng hoặc cấp có thẩm quyền (chờ C6). Không viết như quyết định có hiệu lực thi hành. Hội đồng trường công lập đã chấm dứt từ 01/01/2026 (Điều 46).",
+  "Thành phần theo website: Chủ tịch (đại diện ĐHQGHN), Phó Chủ tịch, ủy viên thường trực, thư ký, ủy viên; có chuyên gia ngoài Trường. Phiếu phân biệt thành viên trong và ngoài Trường; không tự gán chức danh.",
+  "Tổng hợp theo từng nội dung hoặc điều khoản; ghi rõ ý kiến không đồng thuận và nguồn từng ý kiến để truy vết.",
+  "Ý kiến phản biện có thể cần bảo mật: chỉ chia sẻ theo quy định của Hội đồng."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu phiếu và tiêu chí thẩm định (C8).",
+  "Quy chế hoạt động của Hội đồng (C2)."
+ ],
+ "output_structure": [
+  "Tên cơ quan (HỘI ĐỒNG KHOA HỌC VÀ ĐÀO TẠO) và tên trường.",
+  "Tiêu đề \"PHIẾU LẤY Ý KIẾN THÀNH VIÊN HỘI ĐỒNG\" + hình thức/đợt lấy ý kiến.",
+  "Kính gửi: thành viên Hội đồng.",
+  "Từng nội dung xin ý kiến (đánh số, tách riêng, trình bày ngắn gọn) + các ô lựa chọn (Đồng ý / Không đồng ý / Ý kiến khác + dòng ghi ý kiến).",
+  "Danh mục tài liệu kèm theo.",
+  "Hạn trả lời + nơi gửi lại phiếu.",
+  "Họ tên và chữ ký thành viên."
+ ],
+ "output_structure_raw": "1. Tên cơ quan (HỘI ĐỒNG KHOA HỌC VÀ ĐÀO TẠO) và tên trường.\n\n2. Tiêu đề \"PHIẾU LẤY Ý KIẾN THÀNH VIÊN HỘI ĐỒNG\" + hình thức/đợt lấy ý kiến.\n\n3. Kính gửi: thành viên Hội đồng.\n\n4. Từng nội dung xin ý kiến (đánh số, tách riêng, trình bày ngắn gọn) + các ô lựa chọn (Đồng ý / Không đồng ý / Ý kiến khác + dòng ghi ý kiến).\n\n5. Danh mục tài liệu kèm theo.\n\n6. Hạn trả lời + nơi gửi lại phiếu.\n\n7. Họ tên và chữ ký thành viên.",
+ "human_gate_check": "Đã qua Human gate: Chủ tịch quyết định áp dụng hình thức lấy ý kiến bằng văn bản (chỉ nội dung quy chế cho phép); thư ký tổng hợp trung thực. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Hội đồng Khoa học và Đào tạo (thư ký, người xử lý hồ sơ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-hd-lap-phieu-lay-y-kien/references"
+}

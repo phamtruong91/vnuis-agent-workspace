@@ -1,0 +1,192 @@
+{
+ "name": "vnuis-dt-ra-soat-tien-do-tot-nghiep",
+ "title": "Rà soát tiến độ tốt nghiệp",
+ "description": "Dùng khi cuối học kỳ hoặc trước đợt xét tốt nghiệp cần rà nhanh sinh viên đã đủ điều kiện tốt nghiệp chưa: đối chiếu bảng điểm với chương trình đào tạo, liệt kê học phần còn thiếu. Dùng chung cho Phòng Đào tạo, khoa, cố vấn học tập.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-audit-tien-do-tot-nghiep",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (tốt nghiệp, cố vấn học tập)",
+ "when": "Cuối mỗi học kỳ hoặc trước đợt xét tốt nghiệp, khi cần rà soát nhanh sinh viên đã đủ điều kiện\ntốt nghiệp chưa, còn thiếu học phần/điều kiện gì. Dùng chung cho Phòng Đào tạo, các khoa,\ncố vấn học tập — không phụ thuộc tên đơn vị.",
+ "inputs": [
+  {
+   "key": "bang_diem",
+   "desc": "Danh sách học phần đã học: mã HP, tên HP, số tín chỉ, điểm, học kỳ (mã SV ẩn danh, VD: SV-0847)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "khung_ctdt",
+   "desc": "Khung chương trình đào tạo: các khối kiến thức, số tín chỉ yêu cầu mỗi khối, danh mục HP bắt buộc/tự chọn",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dieu_kien_bo_sung",
+   "desc": "Điều kiện tốt nghiệp ngoài tín chỉ: GPA tối thiểu, chứng chỉ ngoại ngữ/tin học, không nợ học phí...",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "quy_tac_tuong_duong",
+   "desc": "Bảng quy đổi học phần tương đương / học phần thay thế",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "phien_ban_quy_tac",
+   "desc": "Phiên bản quy tắc áp dụng (ghi rõ để truy vết)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (tốt nghiệp, cố vấn học tập)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Kiểm tra hợp lệ dữ liệu đầu vào",
+   "lam_gi": "Kiểm tra `bang_diem`: đủ các trường (mã HP, tên HP, số tín chỉ, điểm, học kỳ); mã HP đúng định dạng; điểm nằm trong thang cho phép; phát hiện dòng trùng lặp, dòng thiếu trường; kiểm tra `khung_ctdt` có đầy đủ các khối kiến thức và chỉ tiêu; nếu phát hiện lỗi → dừng và báo danh sách lỗi, không rà soát tiếp.",
+   "inputs": [
+    "bang_diem",
+    "khung_ctdt",
+    "phien_ban_quy_tac"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: kiểm tra định dạng, thang điểm, dòng trùng/thiếu; dừng khi có lỗi",
+   "luu_y": "dữ liệu rác cho ra kết luận rác — kiểm tra hợp lệ là bắt buộc; điểm nằm ngoài thang (VD: 11/10) phải báo lỗi, không tự sửa.",
+   "ket_qua": "Báo cáo kiểm tra hợp lệ (đạt/không đạt + danh sách lỗi nếu có)."
+  },
+  {
+   "n": 2,
+   "title": "Chuẩn hóa và áp quy tắc tương đương",
+   "lam_gi": "Gộp các lần học lại cùng mã HP, giữ điểm cao nhất theo quy định; quy đổi HP cũ sang HP tương đương theo `quy_tac_tuong_duong`; loại các HP không thuộc chương trình ra khỏi phép tính; ghi lại mọi lần quy đổi vào nhật ký để truy vết.",
+   "inputs": [
+    "bang_diem",
+    "quy_tac_tuong_duong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: gộp lần học lại, áp quy tắc tương đương chính thức, ghi nhật ký quy đổi",
+   "luu_y": "chỉ áp quy tắc tương đương có trong bảng chính thức — không tự suy \"môn này giống môn kia\"; học lại lấy điểm cao nhất theo đúng quy định của trường.",
+   "ket_qua": "Bảng điểm đã chuẩn hóa + nhật ký quy đổi."
+  },
+  {
+   "n": 3,
+   "title": "Đối chiếu từng khối kiến thức",
+   "lam_gi": "Tính tín chỉ tích lũy (chỉ tính HP đạt) cho từng khối trong `khung_ctdt` (đại cương, cơ sở ngành, chuyên ngành, tự chọn); so sánh với chỉ tiêu từng khối; đánh dấu ĐẠT/CHƯA ĐẠT cho từng khối kèm số tín chỉ còn thiếu.",
+   "inputs": [
+    "khung_ctdt"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: tính tín chỉ tích lũy từng khối, so chỉ tiêu, đánh dấu ĐẠT/CHƯA ĐẠT",
+   "luu_y": "HP đạt nhưng thuộc sai khối không được tính sang khối khác; khối tự chọn chỉ tính trong hạn mức quy định.",
+   "ket_qua": "Bảng đối chiếu từng khối (tích lũy/yêu cầu/trạng thái)."
+  },
+  {
+   "n": 4,
+   "title": "Kiểm tra điều kiện bổ sung",
+   "lam_gi": "Tính GPA tích lũy so với mức tối thiểu; kiểm tra chứng chỉ ngoại ngữ/tin học; kiểm tra tình trạng nợ học phí/kỷ luật nếu có dữ liệu; mỗi điều kiện trong `dieu_kien_bo_sung` đánh dấu ĐẠT / CHƯA ĐẠT / KHÔNG CÓ DỮ LIỆU.",
+   "inputs": [
+    "bang_diem",
+    "dieu_kien_bo_sung"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: kiểm tra GPA, chứng chỉ, học phí; thiếu dữ liệu ghi \"không có dữ liệu\"",
+   "luu_y": "thiếu dữ liệu thì ghi \"không có dữ liệu\", không suy đoán là đạt; GPA tính theo đúng thang quy chế (thang 4 hay thang 10).",
+   "ket_qua": "Bảng điều kiện bổ sung (từng điều kiện + trạng thái)."
+  },
+  {
+   "n": 5,
+   "title": "Liệt kê thiếu và gợi ý bổ sung",
+   "lam_gi": "Với mỗi khối/điều kiện CHƯA ĐẠT: nêu rõ thiếu bao nhiêu tín chỉ hoặc còn thiếu điều kiện gì; gợi ý học phần cụ thể có thể đăng ký bổ sung dựa trên danh mục HP trong `khung_ctdt`; sắp xếp gợi ý theo thứ tự ưu tiên.",
+   "inputs": [
+    "khung_ctdt"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: liệt kê thiếu và gợi ý học phần bổ sung khả thi, sắp xếp ưu tiên",
+   "luu_y": "gợi ý phải khả thi (HP còn mở trong học kỳ tới, không trùng lịch) — nếu không chắc thì ghi \"cần cố vấn học tập xác nhận\"; không hứa \"đăng ký là đủ điều kiện\".",
+   "ket_qua": "Danh sách thiếu + gợi ý học phần bổ sung."
+  },
+  {
+   "n": 6,
+   "title": "Xuất báo cáo rà soát và lập exception list",
+   "lam_gi": "Gộp kết quả các bước thành báo cáo rà soát từng sinh viên theo cấu trúc sản phẩm tại references/quy-cach-dau-ra.md, ghi rõ `phien_ban_quy_tac` áp dụng và kết luận \"đạt/chưa đạt THEO QUY TẮC\"; tách các trường hợp đặc biệt (bảo lưu, chuyển ngành, miễn trừ) vào exception list để hội đồng xem xét thủ công.",
+   "inputs": [
+    "phien_ban_quy_tac"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo · AI hỗ trợ: xuất báo cáo rà soát + exception list theo cấu trúc chuẩn để trình hội đồng xét tốt nghiệp",
+   "luu_y": "không bao giờ kết luận \"đủ điều kiện tốt nghiệp\" thay hội đồng — chỉ nêu trạng thái theo quy tắc; exception list ghi rõ lý do cần xem xét thủ công.",
+   "ket_qua": "Báo cáo rà soát từng sinh viên + exception list — sản phẩm cuối."
+  }
+ ],
+ "checks": [
+  "Báo cáo rà soát đầy đủ 6 phần theo cấu trúc sản phẩm tại references/quy-cach-dau-ra.md: thông tin SV + ngành + phiên bản quy tắc áp dụng; đối chiếu từng khối; điều kiện bổ sung; kết luận theo quy tắc; học phần thiếu + gợi ý; chuyển hội đồng (có/không + lý do).",
+  "Phiên bản quy tắc áp dụng được ghi rõ trong báo cáo để truy vết.",
+  "Số liệu trong output khớp với bảng điểm Input; tính toán đúng thang quy chế (thang 4 hay thang 10).",
+  "Chỉ áp quy tắc tương đương có trong bảng chính thức — không tự suy \"môn này giống môn kia\"; mọi lần quy đổi có nhật ký truy vết.",
+  "Điều kiện thiếu dữ liệu ghi \"không có dữ liệu\", không suy đoán là đạt.",
+  "Kết luận là \"đạt/chưa đạt THEO QUY TẮC phiên bản X\" — không thay hội đồng kết luận tốt nghiệp; exception list ghi rõ lý do cần xem xét thủ công.",
+  "Dữ liệu sinh viên được ẩn danh (mã hóa) khi xử lý; không cập nhật/sửa đổi dữ liệu trên hệ thống quản lý đào tạo.",
+  "Đã qua Human gate: chuyên viên Phòng Đào tạo đã kiểm tra báo cáo rà soát và danh sách ngoại lệ trước khi trình. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Chuyên viên Phòng Đào tạo** kiểm tra báo cáo rà soát và danh sách ngoại lệ trước khi trình.",
+  "**Hội đồng xét tốt nghiệp** là đơn vị duy nhất ra quyết định công nhận tốt nghiệp; kết quả rà soát chỉ là tài liệu tham khảo.",
+  "Không công bố danh sách rà soát rộng rãi khi chưa được duyệt."
+ ],
+ "guardrails": [
+  "Không cập nhật, sửa đổi hay ghi đè dữ liệu trên hệ thống quản lý đào tạo.",
+  "Dữ liệu sinh viên phải được ẩn danh (mã hóa) khi đưa vào xử lý.",
+  "Không tự kết luận \"đủ điều kiện tốt nghiệp\" thay hội đồng — chỉ nêu \"đạt/chưa đạt THEO QUY TẮC phiên bản X\".",
+  "Không suy đoán lý do thiếu (bỏ học, hoàn cảnh...) ngoài dữ liệu."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Mỗi chương trình có bộ điều kiện riêng do người dùng nạp; không dùng chung một bộ cho mọi chương trình (ĐHQGHN cấp bằng, liên kết, song bằng, tích hợp khác nhau).",
+  "Chứng chỉ ngoại ngữ và các điều kiện ngoài bảng điểm: ghi nguồn minh chứng; thiếu minh chứng thì ghi \"chưa có minh chứng\".",
+  "Kết quả chia 3 nhóm: có thể đủ điều kiện, thiếu điều kiện (nêu thiếu gì), cần người xem xét. Skill không kết luận ai tốt nghiệp.",
+  "Có thể dùng cho cố vấn học tập: bản tóm tắt tiến độ và cảnh báo cho từng sinh viên, gửi qua đầu mối có thẩm quyền."
+ ],
+ "cho_xac_nhan": [
+  "Bộ điều kiện tốt nghiệp từng chương trình (C2).",
+  "Mẫu bảng điểm xuất từ hệ thống (C5, C8)."
+ ],
+ "output_structure": [
+  "Thông tin sinh viên + ngành + phiên bản quy tắc áp dụng.",
+  "Đối chiếu từng khối kiến thức: tín chỉ tích lũy/yêu cầu — trạng thái ĐẠT/CHƯA ĐẠT.",
+  "Điều kiện bổ sung: GPA, chứng chỉ, học phí — trạng thái từng điều kiện.",
+  "Kết luận theo quy tắc: đạt/chưa đạt THEO QUY TẮC phiên bản X (không thay hội đồng kết luận).",
+  "Học phần còn thiếu + gợi ý học phần bổ sung.",
+  "Chuyển hội đồng xem xét: có/không + lý do."
+ ],
+ "output_structure_raw": "1. Thông tin sinh viên + ngành + phiên bản quy tắc áp dụng.\n\n2. Đối chiếu từng khối kiến thức: tín chỉ tích lũy/yêu cầu — trạng thái ĐẠT/CHƯA ĐẠT.\n\n3. Điều kiện bổ sung: GPA, chứng chỉ, học phí — trạng thái từng điều kiện.\n\n4. Kết luận theo quy tắc: đạt/chưa đạt THEO QUY TẮC phiên bản X (không thay hội đồng kết luận).\n\n5. Học phần còn thiếu + gợi ý học phần bổ sung.\n\n6. Chuyển hội đồng xem xét: có/không + lý do.",
+ "human_gate_check": "Đã qua Human gate: chuyên viên Phòng Đào tạo đã kiểm tra báo cáo rà soát và danh sách ngoại lệ trước khi trình. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (tốt nghiệp, cố vấn học tập). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dt-ra-soat-tien-do-tot-nghiep/references"
+}

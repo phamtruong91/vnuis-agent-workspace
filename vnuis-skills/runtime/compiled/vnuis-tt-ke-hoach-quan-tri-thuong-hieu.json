@@ -1,0 +1,211 @@
+{
+ "name": "vnuis-tt-ke-hoach-quan-tri-thuong-hieu",
+ "title": "Lập kế hoạch quản trị thương hiệu",
+ "description": "Dùng khi đơn vị phụ trách truyền thông lập kế hoạch quản trị thương hiệu năm hoặc quý, hoặc củng cố hình ảnh sau sự kiện, chiến dịch lớn: định vị, bộ nhận diện, giám sát hình ảnh, xử lý khủng hoảng truyền thông.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-ke-hoach-quan-tri-thuong-hieu",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Khi đơn vị phụ trách truyền thông – thương hiệu cần xây dựng kế hoạch quản trị thương hiệu\nnăm/quý, hoặc khi cần củng cố hình ảnh trường sau một sự kiện/chiến dịch lớn.",
+ "inputs": [
+  {
+   "key": "muc_tieu",
+   "desc": "Mục tiêu thương hiệu trong kỳ (VD: tăng nhận biết trong thí sinh THPT)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dinh_vi",
+   "desc": "Định vị thương hiệu mong muốn (VD: đại học ứng dụng gắn với doanh nghiệp)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong",
+   "desc": "Nhóm đối tượng trọng tâm: thí sinh, phụ huynh, doanh nghiệp, cựu sinh viên...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kenh",
+   "desc": "Kênh triển khai: website, fanpage, báo chí, sự kiện...",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ngan_sach",
+   "desc": "Dự toán kinh phí",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "rui_ro",
+   "desc": "Các rủi ro hình ảnh đã nhận diện cần theo dõi",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Đánh giá hiện trạng thương hiệu",
+   "lam_gi": "tổng hợp dữ liệu hiện có: kết quả khảo sát nhận biết/thiện cảm (nếu có), thống kê truyền thông (lượt nhắc tích cực/tiêu cực trên báo chí, mạng xã hội); lập bảng điểm mạnh – điểm yếu hình ảnh theo từng nhóm `doi_tuong`.",
+   "inputs": [
+    "doi_tuong",
+    "muc_tieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, lập bảng biểu, định dạng",
+   "luu_y": "không bịa số liệu khảo sát — chưa có số liệu thì ghi \"chưa có dữ liệu\" và đề xuất khảo sát bổ sung trong kế hoạch.",
+   "ket_qua": "Báo cáo hiện trạng thương hiệu (điểm mạnh/yếu theo nhóm đối tượng)."
+  },
+  {
+   "n": 2,
+   "title": "Xác định định vị và thông điệp chủ đạo",
+   "lam_gi": "từ `dinh_vi`, chốt câu định vị (≤ 15 từ) + 1 thông điệp chủ đạo cho kỳ kế hoạch; kiểm tra nhất quán với chiến lược phát triển trường và không mâu thuẫn với thông điệp các chiến dịch đang chạy.",
+   "inputs": [
+    "dinh_vi",
+    "muc_tieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "định vị phải khác biệt và chứng minh được bằng thực tế đào tạo; tránh khẩu hiệu chung chung.",
+   "ket_qua": "Định vị và thông điệp chủ đạo đã chốt."
+  },
+  {
+   "n": 3,
+   "title": "Rà soát và chuẩn hóa bộ nhận diện",
+   "lam_gi": "kiểm kê logo, màu sắc, slogan, mẫu văn bản/slide/backdrop hiện hành; đối chiếu với quy định sử dụng; lập danh sách điểm chưa chuẩn (sai màu, sai tỉ lệ logo, nhiều phiên bản slogan) và đề xuất chuẩn hóa/bổ sung.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, lập bảng biểu, định dạng",
+   "luu_y": "mọi ấn phẩm đối ngoại phải dùng đúng 1 bộ nhận diện; đề xuất ban hành \"Sổ tay nhận diện thương hiệu\" nếu chưa có.",
+   "ket_qua": "Bảng rà soát nhận diện (hạng mục – hiện trạng – đề xuất chuẩn hóa)."
+  },
+  {
+   "n": 4,
+   "title": "Lập kế hoạch hoạt động theo quý",
+   "lam_gi": "từ `kenh`, thiết kế chiến dịch theo quý: mỗi quý 1 chủ đề lớn; mỗi chiến dịch ghi kênh chính, nội dung trọng tâm, sự kiện thương hiệu; gắn chỉ số đánh giá từng quý (bài đăng, lượt tiếp cận, bài báo).",
+   "inputs": [
+    "kenh",
+    "muc_tieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: lập bảng biểu, định dạng",
+   "luu_y": "hoạt động phải gắn với lịch tuyển sinh và sự kiện lớn của trường trong năm; chỉ số đánh giá đo được, không chung chung.",
+   "ket_qua": "Kế hoạch hoạt động theo quý (chiến dịch – kênh – chỉ số đánh giá)."
+  },
+  {
+   "n": 5,
+   "title": "Thiết lập cơ chế giám sát hình ảnh",
+   "lam_gi": "quy định theo dõi hằng ngày báo chí/mạng xã hội (từ khóa theo dõi, đầu mối); mẫu báo cáo tuần; bộ chỉ số đo lường: lượt nhắc tích cực/tiêu cực, mức độ nhận biết (khảo sát 6 tháng/lần).",
+   "inputs": [
+    "doi_tuong",
+    "rui_ro"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "phân công người trực giám sát cụ thể theo ca/ngày; tin tiêu cực phải được phát hiện trong vòng 4 giờ làm việc.",
+   "ket_qua": "Quy chế giám sát hình ảnh (từ khóa – đầu mối – mẫu báo cáo – chỉ số)."
+  },
+  {
+   "n": 6,
+   "title": "Xây dựng kịch bản xử lý khủng hoảng",
+   "lam_gi": "từ `rui_ro`, phân 3 cấp độ sự cố; mỗi cấp độ quy định: dấu hiệu nhận biết, người phát ngôn, thời hạn phản ứng (cấp 1: phản hồi trong 4 giờ; cấp 2: thông cáo trong 24 giờ; cấp 3: báo cáo BGH ngay + phối hợp cơ quan chức năng), kênh phát ngôn chính thức, mẫu thông cáo khung.",
+   "inputs": [
+    "rui_ro"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: lập bảng biểu, định dạng",
+   "luu_y": "chỉ người phát ngôn do Hiệu trưởng chỉ định được phát ngôn chính thức; ưu tiên phản hồi minh bạch thay vì xóa bình luận tiêu cực một cách tùy tiện.",
+   "ket_qua": "Kịch bản xử lý khủng hoảng 3 cấp độ (kèm mẫu thông cáo khung)."
+  },
+  {
+   "n": 7,
+   "title": "Dự toán kinh phí và phân công thực hiện",
+   "lam_gi": "từ `ngan_sach`, phân bổ kinh phí cho từng hạng mục (chuẩn hóa nhận diện, chiến dịch theo quý, giám sát, dự phòng khủng hoảng); ghi đơn vị chủ trì/phối hợp, chỉ số đánh giá và thời hạn từng hạng mục.",
+   "inputs": [
+    "ngan_sach"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "dành 10–15% ngân sách dự phòng cho xử lý khủng hoảng; tổng phân bổ khớp ngân sách được duyệt.",
+   "ket_qua": "Bảng dự toán và phân công (hạng mục – kinh phí – đơn vị – chỉ số đánh giá – thời hạn)."
+  },
+  {
+   "n": 8,
+   "title": "Tổng hợp và hoàn thiện kế hoạch",
+   "lam_gi": "ghép các bán thành phẩm Bước 1–7 thành văn bản kế hoạch theo thể thức hành chính (số ký hiệu, nơi nhận, chữ ký); rà soát tính nhất quán: mục tiêu – định vị – hoạt động – chỉ số đánh giá – kinh phí.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "kiểm tra số ký hiệu văn bản không trùng; nơi nhận đầy đủ các đơn vị phối hợp.",
+   "ket_qua": "Kế hoạch quản trị thương hiệu hoàn chỉnh (sẵn sàng trình phê duyệt)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Kế hoạch quản trị thương hiệu hoàn chỉnh",
+  "Có đầy đủ sản phẩm: Phụ lục: bảng chỉ số đánh giá đo lường + kịch bản xử lý khủng hoảng truyền thông",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Không bịa số liệu khảo sát — chưa có số liệu thì ghi \"chưa có dữ liệu\" và đề xuất khảo sát bổ sung trong kế hoạch.",
+  "Định vị phải khác biệt và chứng minh được bằng thực tế đào tạo > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Trưởng Phòng Truyền thông và Tuyển sinh (đơn vị phụ trách thương hiệu) soạn và chịu trách nhiệm nội dung.",
+  "Ban Giám hiệu phê duyệt kế hoạch và ngân sách.",
+  "Trong khủng hoảng: chỉ người phát ngôn do Hiệu trưởng chỉ định được phát ngôn chính thức."
+ ],
+ "guardrails": [
+  "AI không tự phát ngôn thay trường, đặc biệt trong tình huống khủng hoảng.",
+  "AI không bịa số liệu khảo sát thương hiệu; mọi con số phải có nguồn.",
+  "AI không sử dụng hình ảnh, âm nhạc, tư liệu không rõ bản quyền."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thương hiệu Trường có yếu tố quốc tế và thuộc ĐHQGHN; quy tắc dùng logo, tên song ngữ lấy từ bộ nhận diện của Trường (C8).",
+  "Không tự đặt thông điệp định vị; chỉ đề xuất phương án để lãnh đạo chọn."
+ ],
+ "cho_xac_nhan": [
+  "Bộ nhận diện thương hiệu hiện hành (C8).",
+  "Người quyết định thông điệp (C6)."
+ ],
+ "output_structure": [
+  "Phần mở đầu hành chính (tên trường, đơn vị, số ký hiệu, ngày tháng).",
+  "Tên kế hoạch + kỳ áp dụng.",
+  "Mục tiêu.",
+  "Định vị và thông điệp chủ đạo.",
+  "Chuẩn hóa bộ nhận diện (danh mục rà soát + đề xuất).",
+  "Hoạt động theo quý (bảng: quý – chiến dịch – kênh chính – chỉ số đánh giá).",
+  "Giám sát hình ảnh (cơ chế theo dõi, chỉ số đo lường).",
+  "Kịch bản xử lý khủng hoảng (3 cấp độ: dấu hiệu – người phát ngôn – thời hạn – kênh).",
+  "Kinh phí và tổ chức thực hiện.",
+  "Nơi nhận, chữ ký. - Phụ lục: Bảng chỉ số đánh giá đo lường chi tiết. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần mở đầu hành chính (tên trường, đơn vị, số ký hiệu, ngày tháng).\n\n2. Tên kế hoạch + kỳ áp dụng.\n\n3. Mục tiêu.\n\n4. Định vị và thông điệp chủ đạo.\n\n5. Chuẩn hóa bộ nhận diện (danh mục rà soát + đề xuất).\n\n6. Hoạt động theo quý (bảng: quý – chiến dịch – kênh chính – chỉ số đánh giá).\n\n7. Giám sát hình ảnh (cơ chế theo dõi, chỉ số đo lường).\n\n8. Kịch bản xử lý khủng hoảng (3 cấp độ: dấu hiệu – người phát ngôn – thời hạn – kênh).\n\n9. Kinh phí và tổ chức thực hiện.\n\n10. Nơi nhận, chữ ký.\n- Phụ lục: Bảng chỉ số đánh giá đo lường chi tiết.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-ke-hoach-quan-tri-thuong-hieu/references"
+}

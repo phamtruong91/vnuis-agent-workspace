@@ -1,0 +1,227 @@
+{
+ "name": "vnuis-phapche-soan-quy-che-to-chuc-hoat-dong-don-vi",
+ "title": "Soạn quy chế tổ chức và hoạt động của đơn vị trực thuộc",
+ "description": "Dùng khi thành lập, chia tách, sáp nhập hoặc rà soát một đơn vị trực thuộc (phòng, khoa, trung tâm, viện) và cần soạn quy chế tổ chức và hoạt động của đơn vị đó.",
+ "group": "phapche",
+ "group_label": "Pháp chế – thanh tra",
+ "previous_name": "vnuis-quy-che-to-chuc-hoat-dong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Ban Giám hiệu; Phòng Tổ chức và Quản trị; đơn vị cần soạn quy chế",
+ "when": "Khi cần ban hành (hoặc sửa đổi, bổ sung) quy chế tổ chức và hoạt động của một đơn vị trực thuộc\ntrường — phòng chức năng, khoa, trung tâm, viện: quy định rõ đơn vị là gì, làm gì (chức năng,\nnhiệm vụ), tổ chức ra sao (cơ cấu, lãnh đạo, các bộ phận), làm việc thế nào (chế độ làm việc,\nmối quan hệ công tác). Thường dùng khi thành lập mới, chia tách/sáp nhập đơn vị, hoặc rà soát\nđịnh kỳ theo yêu cầu quản trị.",
+ "inputs": [
+  {
+   "key": "ten_don_vi",
+   "desc": "Tên đầy đủ của đơn vị (VD: Phòng TC&QT (nhân sự))",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuc_nang",
+   "desc": "Chức năng của đơn vị (1–2 câu khái quát)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nhiem_vu",
+   "desc": "Danh sách nhiệm vụ cụ thể của đơn vị (gạch đầu dòng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "co_cau",
+   "desc": "Cơ cấu tổ chức: lãnh đạo (Trưởng/Phó), các tổ/bộ phận trực thuộc, số lượng dự kiến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "che_do_lam_viec",
+   "desc": "Chế độ làm việc: hội họp, báo cáo, chế độ thủ trưởng, phân công nhiệm vụ",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "moi_quan_he",
+   "desc": "Mối quan hệ công tác với Ban Giám hiệu, các đơn vị trong trường, cơ quan ngoài",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "so_quyet_dinh",
+   "desc": "Số quyết định ban hành kèm quy chế (VD: 250/QĐ-ĐHA)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngay_ky",
+   "desc": "Ngày ký quyết định ban hành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Ban Giám hiệu; Phòng Tổ chức và Quản trị; đơn vị cần soạn quy chế"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định phạm vi và mục đích",
+   "lam_gi": "xác định đây là quy chế mới hoàn toàn hay sửa đổi, bổ sung quy chế hiện hành; nếu sửa đổi: liệt kê các điều khoản được sửa, bãi bỏ, bổ sung và lý do (thành lập mới, chia tách/sáp nhập đơn vị, thay đổi chức năng nhiệm vụ, rà soát định kỳ).",
+   "inputs": [
+    "ten_don_vi",
+    "so_quyet_dinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "sửa đổi, bổ sung quy chế phải ban hành quyết định mới (thay thế hoặc sửa đổi từng điều) — không được sửa trực tiếp trên văn bản cũ; ghi rõ quy chế này thay thế văn bản nào để tránh tồn tại hai quy chế cùng hiệu lực.",
+   "ket_qua": "phiếu xác định phạm vi (mới/sửa đổi + danh sách điều khoản sửa đổi nếu có)."
+  },
+  {
+   "n": 2,
+   "title": "Lập bảng đối chiếu chức năng – nhiệm vụ – bộ phận phụ trách",
+   "lam_gi": "từ `chuc_nang` và `nhiem_vu`, đối chiếu với `co_cau`: mỗi nhiệm vụ phải có tổ/bộ phận hoặc vị trí phụ trách; mỗi tổ/bộ phận phải gắn với nhiệm vụ cụ thể; đánh dấu nhiệm vụ chưa có bộ phận phụ trách hoặc bộ phận chưa gắn nhiệm vụ để điều chỉnh cơ cấu.",
+   "inputs": [
+    "chuc_nang",
+    "nhiem_vu",
+    "co_cau"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: lập bảng tính toán",
+   "luu_y": "làm bước này TRƯỚC khi soạn quy chế để bảo đảm tính nhất quán chức năng → nhiệm vụ → cơ cấu; bẫy thường gặp là cơ cấu copy từ đơn vị khác nhưng nhiệm vụ thì khác — quy chế sẽ có bộ phận không có việc hoặc nhiệm vụ không ai làm.",
+   "ket_qua": "bảng đối chiếu chức năng – nhiệm vụ – bộ phận phụ trách (không trùng lắp, không bỏ sót)."
+  },
+  {
+   "n": 3,
+   "title": "Soạn quyết định ban hành kèm quy chế",
+   "lam_gi": "soạn quyết định hành chính của Hiệu trưởng theo thể thức NĐ 30/2020: Quốc hiệu – Tiêu ngữ, tên trường, `so_quyet_dinh`, địa danh và `ngay_ky`; tên loại \"QUYẾT ĐỊNH\" + trích yếu (Về việc ban hành Quy chế tổ chức và hoạt động của `ten_don_vi`); chức danh người ký; phần căn cứ (quy chế tổ chức và hoạt động của trường; đề nghị của đơn vị); các Điều: Điều 1 (ban hành kèm theo quyết định này Quy chế...); Điều 2 (hiệu lực kể từ ngày ký; thay thế các quy định trước đây trái với quyết định); Điều 3 (trách nhiệm thi hành); Nơi nhận; `nguoi_ky` ký.",
+   "inputs": [
+    "ten_don_vi",
+    "so_quyet_dinh",
+    "ngay_ky",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "quy chế là văn bản kèm theo quyết định, phải đóng dấu giáp lai theo quy định văn thư; Điều 2 bắt buộc ghi rõ thay thế văn bản cũ nào (nếu có) để bảo đảm tính pháp lý.",
+   "ket_qua": "dự thảo quyết định ban hành kèm quy chế."
+  },
+  {
+   "n": 4,
+   "title": "Soạn quy chế theo bố cục chương – điều chuẩn",
+   "lam_gi": "soạn nội dung quy chế gồm 5 chương: - Chương I. Quy định chung: Điều 1 (phạm vi điều chỉnh, đối tượng áp dụng); Điều 2 (vị trí, chức năng của đơn vị — từ `chuc_nang`); - Chương II. Nhiệm vụ và quyền hạn: liệt kê đầy đủ `nhiem_vu`, đánh số từng khoản (Điều 3); quyền hạn của đơn vị và của người đứng đầu (Điều 4); - Chương III. Cơ cấu tổ chức: lãnh đạo đơn vị — Trưởng, các Phó, nhiệm vụ/quyền hạn từng chức danh (Điều 5); các tổ/bộ phận trực thuộc và chức năng từng bộ phận, biên chế (Điều 6) — từ `co_cau` và bảng đối chiếu Bước 2; - Chương IV. Chế độ làm việc và mối quan hệ công tác: chế độ thủ trưởng, hội họp, báo cáo, thông tin (Điều 7 — từ `che_do_lam_viec`); mối quan hệ với Ban Giám hiệu (chịu sự lãnh đạo, chỉ đạo trực tiếp), với các đơn vị trong trường (phối hợp), với cơ quan ngoài (theo ủy quyền) (Điều 8 — từ `moi_quan_he`); - Chương V. Điều khoản thi hành: hiệu lực (Điều 9); trách nhiệm tổ chức thực hiện, sửa đổi bổ sung (Điều 10).",
+   "inputs": [
+    "ten_don_vi",
+    "chuc_nang",
+    "nhiem_vu",
+    "co_cau",
+    "che_do_lam_viec",
+    "moi_quan_he"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "nhiệm vụ ở Chương II phải đầy đủ, đánh số từng khoản để dễ viện dẫn; quyền hạn (Điều 4) phải tương xứng với nhiệm vụ, không ghi quyền hạn vượt thẩm quyền đơn vị; cơ cấu ở Chương III phải khớp với bảng đối chiếu Bước 2.",
+   "ket_qua": "dự thảo quy chế đầy đủ 5 chương."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra tính nhất quán",
+   "lam_gi": "đối chiếu chéo: chức năng (Điều 2) → nhiệm vụ (Điều 3) → cơ cấu (Điều 5–6): mỗi nhiệm vụ có bộ phận/vị trí phụ trách; không trùng lắp nhiệm vụ giữa các bộ phận; không bỏ sót nhiệm vụ được giao; đối chiếu với quy chế tổ chức và hoạt động của trường và đề án vị trí việc làm (không trái, không vượt).",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "quy chế đơn vị không được trái với quy chế tổ chức và hoạt động của trường — mọi điểm khác biệt phải được lý giải và chấp thuận; kiểm tra tên đơn vị, tên các tổ/bộ phận thống nhất trong toàn văn.",
+   "ket_qua": "biên bản kiểm tra nhất quán (đạt/các điểm cần chỉnh)."
+  },
+  {
+   "n": 6,
+   "title": "Áp thể thức NĐ 30/2020 và kiểm tra tổng thể",
+   "lam_gi": "áp thể thức cho cả quyết định ban hành và quy chế kèm theo: Quốc hiệu – Tiêu ngữ, số/ký hiệu, địa danh ngày tháng, chữ ký, nơi nhận đúng vị trí; thể thức trình bày chương/điều (\"Chương I\", \"Điều 1.\" in đậm); quy chế có dòng ghi chú \"Ban hành kèm theo Quyết định số... ngày... của...\"; soát chính tả toàn văn; kiểm tra thẩm quyền ban hành (`nguoi_ky` là Hiệu trưởng), Nơi nhận đầy đủ; đánh giá tính khả thi của cơ cấu và chế độ làm việc.",
+   "inputs": [
+    "so_quyet_dinh",
+    "ngay_ky",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "dòng ghi chú \"Ban hành kèm theo Quyết định số...\" trên quy chế là bắt buộc để gắn quy chế với quyết định ban hành; kiểm tra số quyết định trên quy chế khớp với số trên quyết định ban hành.",
+   "ket_qua": "bộ văn bản đã áp thể thức; phần kiểm tra giữ nội bộ."
+  },
+  {
+   "n": 7,
+   "title": "Xuất bản",
+   "lam_gi": "hoàn thiện bộ văn bản (quyết định ban hành + quy chế kèm theo) file theo định dạng đầu ra của skill, sẵn sàng trình ký / xuất file Word; bảng đối chiếu chức năng – nhiệm vụ – bộ phận chỉ dùng nội bộ (Bước 2) và danh mục kiểm tra (Bước 6) để lưu hồ sơ.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Văn thư Phòng TC&QT (nhân sự) · AI hỗ trợ: định dạng bản chính, cập nhật sổ phát hành",
+   "luu_y": "sau khi ký, quy chế phải được phổ biến đến toàn thể viên chức đơn vị và gửi các đơn vị liên quan; lưu 01 bản tại Văn phòng và 01 bản tại đơn vị.",
+   "ket_qua": "bộ văn bản hoàn chỉnh (quyết định ban hành + quy chế kèm theo) + bảng đối chiếu + danh mục kiểm, sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và định dạng theo Nghị định 30/2020/NĐ-CP về công tác văn thư (thể thức quyết định và văn bản kèm theo).",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Sửa đổi, bổ sung quy chế phải ban hành quyết định mới (thay thế hoặc sửa",
+  "Quy chế là văn bản kèm theo quyết định, phải đóng dấu giáp lai theo quy",
+  "Nhiệm vụ ở Chương II phải đầy đủ, đánh số từng khoản để dễ viện dẫn;"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Chức năng, nhiệm vụ của từng đơn vị lấy từ nội dung công bố trên website và phiếu CES làm điểm xuất phát (sheet 00); văn bản giao nhiệm vụ chính thức vẫn là căn cứ.",
+  "Phòng Đào tạo và Phòng Tổ chức và Quản trị có nhiều mảng sau sắp xếp 2025: quy chế nêu rõ mảng, tránh chồng chéo.",
+  "Quy chế đơn vị phải phù hợp quy chế của ĐHQGHN và của Trường (C2)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế tổ chức và hoạt động của Trường và ĐHQGHN (C2).",
+  "Quyết định sắp xếp tổ chức 2025 (C1)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ (\"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\" / \"Độc lập - Tự do - Hạnh phúc\").",
+  "Tên cơ quan ban hành (Trường Quốc tế – ĐHQGHN).",
+  "Số, ký hiệu quyết định.",
+  "Địa danh, ngày tháng năm ban hành.",
+  "Tên loại văn bản \"QUYẾT ĐỊNH\" + trích yếu (\"Về việc ban hành Quy chế tổ chức và hoạt động của ...\").",
+  "Chức danh người ký (HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC A).",
+  "Phần căn cứ: quy chế tổ chức và hoạt động của trường (số, ngày ban hành); đề nghị của đơn vị.",
+  "Cụm \"QUYẾT ĐỊNH:\" và các Điều: Điều 1 (ban hành kèm theo Quyết định này Quy chế...); Điều 2 (hiệu lực kể từ ngày ký; thay thế các quy định trước đây trái với Quyết định này); Điều 3 (trách nhiệm thi hành).",
+  "Nơi nhận (như Điều 3; lưu VT, TC&QT (nhân sự)).",
+  "Chữ ký (chức danh người ký + họ tên). B. Quy chế kèm theo:",
+  "Tên loại \"QUY CHẾ\" + tên quy chế (\"TỔ CHỨC VÀ HOẠT ĐỘNG CỦA ...\") + dòng ghi chú \"(Ban hành kèm theo Quyết định số ... ngày ... của Hiệu trưởng Trường Quốc tế – ĐHQGHN)\".",
+  "Chương I. Quy định chung: Điều 1 (phạm vi điều chỉnh, đối tượng áp dụng); Điều 2 (vị trí, chức năng).",
+  "Chương II. Nhiệm vụ và quyền hạn: Điều 3 (nhiệm vụ — liệt kê đánh số từng khoản); Điều 4 (quyền hạn).",
+  "Chương III. Cơ cấu tổ chức: Điều 5 (lãnh đạo đơn vị); Điều 6 (các tổ/bộ phận trực thuộc).",
+  "Chương IV. Chế độ làm việc và mối quan hệ công tác: Điều 7 (chế độ làm việc); Điều 8 (mối quan hệ công tác).",
+  "Chương V. Điều khoản thi hành: Điều 9 (hiệu lực thi hành); Điều 10 (trách nhiệm thi hành và sửa đổi, bổ sung). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "A. Quyết định ban hành:\n\n1. Quốc hiệu – Tiêu ngữ (\"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\" / \"Độc lập - Tự do - Hạnh phúc\").\n\n2. Tên cơ quan ban hành (Trường Quốc tế – ĐHQGHN).\n\n3. Số, ký hiệu quyết định.\n\n4. Địa danh, ngày tháng năm ban hành.\n\n5. Tên loại văn bản \"QUYẾT ĐỊNH\" + trích yếu (\"Về việc ban hành Quy chế tổ chức và hoạt\nđộng của ...\").\n\n6. Chức danh người ký (HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC A).\n\n7. Phần căn cứ: quy chế tổ chức và hoạt động của trường (số, ngày ban hành); đề nghị của\nđơn vị.\n\n8. Cụm \"QUYẾT ĐỊNH:\" và các Điều: Điều 1 (ban hành kèm theo Quyết định này Quy chế...);\nĐiều 2 (hiệu lực kể từ ngày ký; thay thế các quy định trước đây trái với Quyết định này);\nĐiều 3 (trách nhiệm thi hành).\n\n9. Nơi nhận (như Điều 3; lưu VT, TC&QT (nhân sự)).\n\n10. Chữ ký (chức danh người ký + họ tên).\n\nB. Quy chế kèm theo:\n\n1. Tên loại \"QUY CHẾ\" + tên quy chế (\"TỔ CHỨC VÀ HOẠT ĐỘNG CỦA ...\") + dòng ghi chú\n\"(Ban hành kèm theo Quyết định số ... ngày ... của Hiệu trưởng Trường Quốc tế – ĐHQGHN)\".\n\n2. Chương I. Quy định chung: Điều 1 (phạm vi điều chỉnh, đối tượng áp dụng); Điều 2\n(vị trí, chức năng).\n\n3. Chương II. Nhiệm vụ và quyền hạn: Điều 3 (nhiệm vụ — liệt kê đánh số từng khoản);\nĐiều 4 (quyền hạn).\n\n4. Chương III. Cơ cấu tổ chức: Điều 5 (lãnh đạo đơn vị); Điều 6 (các tổ/bộ phận trực thuộc).\n\n5. Chương IV. Chế độ làm việc và mối quan hệ công tác: Điều 7 (chế độ làm việc); Điều 8\n(mối quan hệ công tác).\n\n6. Chương V. Điều khoản thi hành: Điều 9 (hiệu lực thi hành); Điều 10 (trách nhiệm thi hành\nvà sửa đổi, bổ sung).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Ban Giám hiệu. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-phapche-soan-quy-che-to-chuc-hoat-dong-don-vi/references"
+}

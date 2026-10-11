@@ -1,0 +1,195 @@
+{
+ "name": "vnuis-ts-kich-ban-tu-van-tuyen-sinh",
+ "title": "Xây dựng kịch bản tư vấn tuyển sinh & hướng nghiệp",
+ "description": "Dùng trước mùa tuyển sinh khi cần kịch bản cho đội tư vấn (ngày hội, livestream, tư vấn tại trường THPT, hotline, fanpage) theo từng đối tượng học sinh, phụ huynh.",
+ "group": "ts",
+ "group_label": "Tuyển sinh",
+ "previous_name": "vnuis-kich-ban-tu-van-tuyen-sinh",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Trước mỗi chiến dịch/mùa tuyển sinh, khi Phòng Truyền thông và Tuyển sinh (hoặc Phòng Truyền thông và Tuyển sinh)\ncần chuẩn bị kịch bản cho đội ngũ tư vấn: ngày hội tư vấn, livestream, tư vấn tại trường THPT,\ntrực hotline, trả lời fanpage.",
+ "inputs": [
+  {
+   "key": "doi_tuong",
+   "desc": "Học sinh lớp 12 / Phụ huynh / Cả hai",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kenh_tu_van",
+   "desc": "Trực tiếp / Livestream / Hotline / Fanpage",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nganh_noi_bat",
+   "desc": "Các ngành cần đẩy mạnh tư vấn",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "chinh_sach",
+   "desc": "Học bổng, học phí, ký túc xá, việc làm sau tốt nghiệp (số liệu chính thức)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cau_hoi_thuong_gap",
+   "desc": "Danh sách hỏi đáp cần chuẩn hóa câu trả lời",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Biểu mẫu tuyển sinh; nền tảng AI tư vấn (ai.vnuis.edu.vn); hotline và is@vnu.edu.vn. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Phân nhóm đối tượng và lập bản đồ mối quan tâm",
+   "lam_gi": "từ `doi_tuong`, tách nhóm học sinh (quan tâm: ngành học, việc làm, môi trường học tập) và phụ huynh (quan tâm: học phí, uy tín, an toàn, ký túc xá); với từng nhóm liệt kê 5–7 mối quan tâm chính theo thứ tự ưu tiên; ghi nhận khác biệt theo `kenh_tu_van` (trực tiếp/livestream/hotline/fanpage).",
+   "inputs": [
+    "doi_tuong",
+    "kenh_tu_van"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "cùng một câu hỏi nhưng cách trả lời cho học sinh và phụ huynh khác nhau (học sinh cần cảm hứng, phụ huynh cần số liệu chắc chắn).",
+   "ket_qua": "Bản đồ mối quan tâm theo nhóm đối tượng."
+  },
+  {
+   "n": 2,
+   "title": "Chốt thông điệp chính có số liệu",
+   "lam_gi": "từ `chinh_sach`, chọn 3–5 điểm nổi bật nhất của trường/ngành (`nganh_noi_bat`); mỗi điểm gắn 1 số liệu chính thức (học bổng, học phí, KTX, tỷ lệ việc làm); đối chiếu từng số liệu với văn bản đã công bố (quyết định học bổng, đề án tuyển sinh).",
+   "inputs": [
+    "chinh_sach",
+    "nganh_noi_bat"
+   ],
+   "vai_tro": "Trưởng Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "tuyệt đối không bịa số liệu; số liệu nào chưa có văn bản công bố thì loại khỏi thông điệp.",
+   "ket_qua": "Bộ thông điệp chính (3–5 điểm, mỗi điểm kèm số liệu + nguồn văn bản)."
+  },
+  {
+   "n": 3,
+   "title": "Soạn bộ hỏi đáp chuẩn có trích nguồn",
+   "lam_gi": "từ `cau_hoi_thuong_gap`, với mỗi câu hỏi viết câu trả lời chuẩn ngắn gọn, có số liệu, ghi nguồn văn bản (tên văn bản + số quyết định nếu có); bổ sung câu hỏi còn thiếu cho đủ các nhóm: điểm chuẩn, học phí, học bổng, KTX, việc làm.",
+   "inputs": [
+    "cau_hoi_thuong_gap",
+    "chinh_sach"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "câu trả lời về điểm chuẩn năm trước phải ghi rõ phương thức xét tuyển đi kèm; không hứa hẹn điểm chuẩn năm nay.",
+   "ket_qua": "Bộ hỏi đáp chuẩn (câu hỏi → câu trả lời → nguồn văn bản)."
+  },
+  {
+   "n": 4,
+   "title": "Viết kịch bản tư vấn theo kênh",
+   "lam_gi": "theo `kenh_tu_van`, viết kịch bản 5 pha: mở đầu (câu chào + câu hỏi mở) → khai thác nhu cầu (3–5 câu hỏi gợi mở) → tư vấn (gắn thông điệp Bước 2 + hỏi đáp Bước 3) → xử lý từ chối (kỹ thuật đồng cảm + số liệu) → chốt hành động (đăng ký tư vấn sâu / tham quan trường / theo dõi fanpage); viết riêng phiên bản cho học sinh và phụ huynh.",
+   "inputs": [
+    "kenh_tu_van"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "kịch bản livestream cần thêm phần tương tác bình luận; kịch bản hotline cần câu hỏi xác nhận thông tin liên hệ để chăm sóc tiếp.",
+   "ket_qua": "Kịch bản tư vấn theo kênh (đủ 5 pha, 2 phiên bản đối tượng)."
+  },
+  {
+   "n": 5,
+   "title": "Chuẩn bị tình huống khó",
+   "lam_gi": "liệt kê 5–8 tình huống nhạy cảm (điểm chuẩn cao, học phí tăng, tin đồn tiêu cực, so sánh với trường khác, \"điểm em thấp có đỗ không\"...); mỗi tình huống viết cách trả lời mẫu theo nguyên tắc: trung thực – không né tránh – không hứa hẹn quá mức – không hạ thấp trường khác.",
+   "inputs": [
+    "chinh_sach"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "câu \"điểm em thấp có đỗ không\" → không hứa hẹn trúng tuyển, chỉ hướng dẫn phương thức phù hợp và ngưỡng năm trước để tham khảo.",
+   "ket_qua": "Bộ tình huống khó kèm cách xử lý mẫu."
+  },
+  {
+   "n": 6,
+   "title": "Lập danh mục kiểm cho tư vấn viên",
+   "lam_gi": "liệt kê tài liệu mang theo (tờ rơi, mã QR), kiến thức bắt buộc nắm (đề án tuyển sinh, học phí, học bổng, KTX), và bài kiểm tra nhanh 10 câu trước chiến dịch; quy định \"3 không\": không hứa hẹn trúng tuyển, không bịa số liệu, không hạ thấp trường khác.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "tư vấn viên chưa qua kiểm tra nhanh thì không được trực tiếp tư vấn.",
+   "ket_qua": "Danh mục kiểm tư vấn viên + bài kiểm tra nhanh."
+  },
+  {
+   "n": 7,
+   "title": "Rà soát cuối và hoàn thiện",
+   "lam_gi": "đối chiếu mọi số liệu trong kịch bản + hỏi đáp với đề án tuyển sinh năm hiện hành đã công bố; kiểm tra ngôn ngữ phù hợp từng đối tượng; đóng gói thành tài liệu nội bộ hoàn chỉnh.",
+   "inputs": [
+    "chinh_sach"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "chỉ một con số sai (học phí, điểm chuẩn) cũng đủ gây khiếu nại; người rà soát cuối nên khác người soạn.",
+   "ket_qua": "Kịch bản tư vấn hoàn chỉnh (sẵn sàng trình duyệt và tập huấn)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Kịch bản tư vấn hoàn chỉnh theo đối tượng và kênh",
+  "Có đầy đủ sản phẩm: Bộ hỏi đáp có câu trả lời chuẩn + danh mục kiểm cho tư vấn viên",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Cùng một câu hỏi nhưng cách trả lời cho học sinh và phụ huynh khác nhau (học sinh cần cảm hứng, phụ huynh cần số liệu chắc chắn).",
+  "Tuyệt đối không bịa số liệu > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Trưởng Phòng Truyền thông và Tuyển sinh (hoặc Phòng Truyền thông và Tuyển sinh) duyệt toàn bộ nội dung, đặc biệt là số liệu học phí, học bổng, điểm chuẩn, tỷ lệ việc làm.",
+  "Tư vấn viên phải được tập huấn và kiểm tra nhanh trước khi tham gia tư vấn."
+ ],
+ "guardrails": [
+  "AI không bịa điểm chuẩn, tỷ lệ việc làm, mức học bổng — mọi số liệu phải theo văn bản đã công bố.",
+  "AI không hứa hẹn trúng tuyển dưới bất kỳ hình thức nào.",
+  "AI không so sánh hạ thấp trường khác; không tư vấn ngoài phạm vi đề án tuyển sinh."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Soạn theo giai đoạn do Phòng chốt (ví dụ quan tâm, đăng ký, xét tuyển, nhập học) và theo kiểu chương trình.",
+  "Không cam kết kết quả xét tuyển, học bổng, việc làm khi chưa có văn bản; thông tin điều kiện, mốc thời gian lấy từ thông báo hiện hành.",
+  "Học sinh có thể chưa đủ 18 tuổi: dùng thông tin liên hệ tối thiểu và theo mục đích tư vấn."
+ ],
+ "cho_xac_nhan": [
+  "Danh sách giai đoạn và kênh liên lạc (C8).",
+  "Chính sách lưu và sử dụng thông tin liên hệ (C5)."
+ ],
+ "output_structure": [
+  "Tiêu đề (tên kịch bản + kênh tư vấn + đối tượng; ghi rõ \"tài liệu nội bộ\").",
+  "Thông điệp chính (3–5 điểm, mỗi điểm kèm số liệu + nguồn văn bản).",
+  "Kịch bản theo đối tượng và kênh (5 pha: mở đầu – khai thác nhu cầu – tư vấn – xử lý từ chối – chốt hành động; phiên bản học sinh / phụ huynh).",
+  "Bộ hỏi đáp chuẩn (câu hỏi → câu trả lời có số liệu → nguồn văn bản).",
+  "Tình huống khó (tình huống → cách xử lý mẫu theo nguyên tắc trung thực).",
+  "Danh mục kiểm tư vấn viên (tài liệu mang theo, kiến thức bắt buộc, bài kiểm tra nhanh, quy tắc \"3 không\")."
+ ],
+ "output_structure_raw": "1. Tiêu đề (tên kịch bản + kênh tư vấn + đối tượng; ghi rõ \"tài liệu nội bộ\").\n\n2. Thông điệp chính (3–5 điểm, mỗi điểm kèm số liệu + nguồn văn bản).\n\n3. Kịch bản theo đối tượng và kênh (5 pha: mở đầu – khai thác nhu cầu – tư vấn – xử lý từ chối – chốt hành động; phiên bản học sinh / phụ huynh).\n\n4. Bộ hỏi đáp chuẩn (câu hỏi → câu trả lời có số liệu → nguồn văn bản).\n\n5. Tình huống khó (tình huống → cách xử lý mẫu theo nguyên tắc trung thực).\n\n6. Danh mục kiểm tư vấn viên (tài liệu mang theo, kiến thức bắt buộc, bài kiểm tra nhanh, quy tắc \"3 không\").",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ts-kich-ban-tu-van-tuyen-sinh/references"
+}

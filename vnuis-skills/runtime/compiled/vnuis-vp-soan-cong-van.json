@@ -1,0 +1,225 @@
+{
+ "name": "vnuis-vp-soan-cong-van",
+ "title": "Soạn công văn đi",
+ "description": "Dùng khi cần ban hành công văn đi đúng thể thức Nghị định 30/2020/NĐ-CP: phúc đáp, đề nghị phối hợp, thông báo, giải trình với cơ quan ngoài trường hoặc giữa các đơn vị trong trường.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-soan-cong-van",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị; mọi đơn vị cần phát hành công văn",
+ "when": "Khi cần ban hành văn bản hành chính để trao đổi công việc: phúc đáp công văn đến, đề nghị phối hợp,\nthông báo, giải trình, báo cáo đột xuất.",
+ "inputs": [
+  {
+   "key": "loai_cong_van",
+   "desc": "Phúc đáp / Đề nghị / Thông báo / Giải trình / Báo cáo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "trich_yeu",
+   "desc": "Trích yếu nội dung (1 dòng, sau \"V/v\")",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung",
+   "desc": "Các ý chính cần truyền đạt, dạng gạch đầu dòng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cong_van_den",
+   "desc": "Số, ký hiệu, ngày tháng công văn đến cần phúc đáp (nếu loại Phúc đáp)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Danh sách nơi nhận (cơ quan + lưu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng / Trưởng phòng (thừa ủy quyền)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "do_khan",
+   "desc": "Thường / Khẩn / Thượng khẩn / Hỏa tốc",
+   "required": false,
+   "note": "Không (mặc định: Thường)"
+  },
+  {
+   "key": "co_quan_chu_quan",
+   "desc": "Cơ quan chủ quản: Đại học Quốc gia Hà Nội (đã điền sẵn)",
+   "required": false,
+   "note": "Không (mặc định: ĐHQGHN)"
+  },
+  {
+   "key": "co_quan_ban_hanh",
+   "desc": "Cơ quan ban hành: Trường Quốc tế – ĐHQGHN (đã điền sẵn); ghi thêm đơn vị soạn thảo nếu khác",
+   "required": false,
+   "note": "Không (mặc định: Trường Quốc tế – ĐHQGHN)"
+  },
+  {
+   "key": "dia_danh",
+   "desc": "Địa danh ghi ở dòng ngày tháng năm (mặc định: Hà Nội)",
+   "required": false,
+   "note": "Không (mặc định: Hà Nội)"
+  },
+  {
+   "key": "so_van_ban",
+   "desc": "Số, ký hiệu văn bản đã được cấp (để trống nếu chưa cấp; không tự đặt)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị; mọi đơn vị cần phát hành công văn"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại công văn và yêu cầu đặc thù",
+   "lam_gi": "Đọc `loai_cong_van`, xác định tập yêu cầu riêng của từng loại: Phúc đáp → bắt buộc có công văn đến để trích dẫn; Đề nghị → nêu rõ đề xuất và thời hạn mong hồi âm; Thông báo → nội dung ngắn, rõ đối tượng và thời hạn; Giải trình → nêu rõ vấn đề được yêu cầu giải trình kèm lập luận; Báo cáo → trình bày đúng nội dung được giao, có số liệu.",
+   "inputs": [
+    "loai_cong_van",
+    "cong_van_den"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "Loại công văn quyết định giọng văn và thẩm quyền ký — Giải trình/Báo cáo gửi cấp trên thường do Hiệu trưởng ký; Đề nghị giữa các đơn vị trong trường có thể do Trưởng phòng ký thừa ủy quyền.",
+   "ket_qua": "Xác nhận loại công văn + danh sách trường input bắt buộc tương ứng."
+  },
+  {
+   "n": 2,
+   "title": "Thu thập và đối chiếu dữ liệu đầu vào",
+   "lam_gi": "Rà soát `noi_dung` — mỗi gạch đầu dòng phải là một ý độc lập, kiểm tra số liệu (ngày tháng, số lượng người, kinh phí) có nhất quán với nhau và khớp với `cong_van_den`; kiểm tra `noi_nhan` có đủ cơ quan nhận chính và các nơi lưu (VT, đơn vị soạn); kiểm tra `nguoi_ky` có thẩm quyền ký loại công văn này theo quy chế phân cấp của trường.",
+   "inputs": [
+    "noi_dung",
+    "cong_van_den",
+    "noi_nhan",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: đối chiếu chéo tự động",
+   "luu_y": "Bẫy thường gặp — chép sai một ký tự trong số/ký hiệu/ngày công văn đến; nơi nhận thiếu dòng \"Lưu: VT\" khiến văn thư không có bản lưu; mốc thời hạn trong nội dung (vd \"trước ngày 20/10/2026\") đã qua so với ngày ban hành dự kiến.",
+   "ket_qua": "Bảng đối chiếu dữ liệu đầu vào đã kiểm chuẩn, kèm danh sách lỗi cần bổ sung (nếu có)."
+  },
+  {
+   "n": 3,
+   "title": "Dựng phần đầu văn bản theo thể thức NĐ 30/2020",
+   "lam_gi": "Dùng Mẫu 1.5 Phụ lục III Nghị định 30: bên trái là cơ quan chủ quản trực tiếp (nếu có), cơ quan ban hành; bên phải là quốc hiệu, tiêu ngữ. Dưới cơ quan là số, ký hiệu và trích yếu V/v; dưới tiêu ngữ là địa danh/ngày. Số đã cấp lấy đúng hồ sơ văn thư; chưa cấp để trống. Ký hiệu công văn chỉ gồm mã cơ quan và mã đơn vị soạn/lĩnh vực, không dùng chữ CV. Không đặt phòng soạn thảo thay tên cơ quan ban hành. Nếu có độ khẩn được xác nhận, bố trí dấu ở ô 10a Phụ lục I. Phần đầu văn bản lấy từ `co_quan_chu_quan` (nếu có), `co_quan_ban_hanh`, `dia_danh`, `so_van_ban` (để dòng dấu chấm nếu chưa cấp số).",
+   "inputs": [
+    "trich_yeu",
+    "noi_nhan",
+    "do_khan",
+    "co_quan_chu_quan",
+    "co_quan_ban_hanh",
+    "dia_danh",
+    "so_van_ban"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Số văn bản phải lấy từ sổ đăng ký văn bản đi — không tự đặt số trùng; trích yếu viết sau \"V/v\", không có dấu chấm cuối câu; \"Kính gửi\" ghi đúng tên cơ quan như trong `noi_nhan`.",
+   "ket_qua": "Khung phần đầu văn bản đã lắp đủ các thành phần thể thức."
+  },
+  {
+   "n": 4,
+   "title": "Soạn nội dung theo bố cục 3 phần",
+   "lam_gi": "(a) Mở đầu — một đoạn nêu lý do/căn cứ ban hành; nếu là Phúc đáp, mở bằng \"Phúc đáp Công văn số ... ngày ... của ... về việc ...\"; (b) Nội dung chính — chuyển từng gạch đầu dòng trong `noi_dung` thành các điểm đánh số 1., 2., 3..., mỗi điểm một ý trọn vẹn, câu văn hành chính với động từ chuẩn (\"đồng ý\", \"cử\", \"đề nghị\"); (c) Kết thúc — một câu đề nghị phối hợp/hồi âm kèm lời cảm ơn, kết bằng ký hiệu \"./.\".",
+   "inputs": [
+    "loai_cong_van",
+    "noi_dung",
+    "cong_van_den"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Mỗi điểm đánh số chỉ chứa MỘT ý; viết tắt (vd \"TC&QT\") phải giải thích đầy đủ ở lần xuất hiện đầu tiên; mốc thời gian trong nội dung thống nhất định dạng ngày/tháng/năm.",
+   "ket_qua": "Dự thảo nội dung 3 phần hoàn chỉnh."
+  },
+  {
+   "n": 5,
+   "title": "Soạn nơi nhận và khối chữ ký",
+   "lam_gi": "Liệt kê nơi nhận: dòng \"- Như trên;\" (hoặc \"- Như Kính gửi;\"), tiếp theo các nơi nhận để biết/lưu, kết thúc bằng \"- Lưu: VT, [mã đơn vị].\"; khối chữ ký phía bên phải: Phó Hiệu trưởng ký thay → \"KT. HIỆU TRƯỞNG\" / \"PHÓ HIỆU TRƯỞNG\"; Trưởng phòng ký thừa ủy quyền → \"TUQ. HIỆU TRƯỞNG\" / \"TRƯỞNG PHÒNG [tên phòng]\"; bản trình ký ghi họ tên người dự kiến ký và chừa khoảng trống ký.",
+   "inputs": [
+    "noi_nhan",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Thừa lệnh (TL.) phải có căn cứ giao ký trong quy chế làm việc/quy chế văn thư; thừa ủy quyền (TUQ.) phải có văn bản ủy quyền giới hạn thời gian và nội dung, không được ủy quyền lại. Kiểm tra căn cứ trước khi chọn ký hiệu; nơi nhận thiếu đơn vị lưu thì văn thư không có bản lưu.",
+   "ket_qua": "Phần nơi nhận và khối chữ ký đúng thẩm quyền."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra theo danh mục kiểm thể thức",
+   "lam_gi": "Đối chiếu từng mục danh mục kiểm: quốc hiệu – tiêu ngữ đúng vị trí, chữ in hoa; đủ số, ký hiệu, ngày tháng, trích yếu; trích dẫn công văn đến (nếu Phúc đáp); nội dung đánh số thứ tự, chính tả, số liệu; nơi nhận đầy đủ; thẩm quyền ký phù hợp; dấu độ khẩn (nếu có).",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "Đọc soát chính tả một lượt riêng (tên cơ quan, tên người); kiểm tra lại số/ký hiệu/ngày công văn đến một lần nữa vì đây là lỗi sai phổ biến nhất.",
+   "ket_qua": "Kết quả đối chiếu thể thức (giữ nội bộ, không xuất kèm file) + danh sách lỗi cần sửa (nếu có), trả về bước tương ứng để chỉnh."
+  },
+  {
+   "n": 7,
+   "title": "Xuất bản văn bản hoàn chỉnh trình ký",
+   "lam_gi": "Ghép phần đầu văn bản + nội dung + nơi nhận + khối chữ ký thành văn bản hoàn chỉnh file theo định dạng đầu ra của skill; thực hiện đối chiếu nội bộ, không xuất kèm danh mục kiểm; chuyển cho chuyên viên soạn xác nhận rồi trình người ký duyệt (human gate).",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) chuẩn bị, người có thẩm quyền ký · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "Sau khi đã đăng ký số vào sổ văn bản đi thì không tự ý đổi số, ký hiệu.",
+   "ket_qua": "Văn bản công văn hoàn chỉnh; phần kiểm tra giữ nội bộ, sẵn sàng trình ký / xuất file Word."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và định dạng theo Nghị định 30/2020/NĐ-CP về công tác văn thư.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Số văn bản phải lấy từ sổ đăng ký văn bản đi — không tự đặt số trùng",
+  "\"Kính gửi\" ghi đúng tên cơ quan như trong `noi_nhan`",
+  "Viết tắt (vd \"TC&QT\") phải giải thích đầy đủ ở lần xuất hiện đầu tiên"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Phần đầu văn bản theo cơ quan chủ quản: ĐẠI HỌC QUỐC GIA HÀ NỘI / TRƯỜNG QUỐC TẾ. Số hiệu theo mẫu `…/TQT-…` của skill TC&QT sẵn có `[CẦN XÁC MINH]` (C1); luôn để trống số và ngày cho người có thẩm quyền điền.",
+  "Báo cáo hiện trạng hoặc công văn đề xuất chính sách gửi ĐHQGHN (có số liệu khảo sát và kiến nghị đánh số): nếu người dùng đã có skill \"Trợ lý soạn báo cáo/công văn gửi ĐHQGHN (TC&QT)\" thì dùng skill đó cho loại này; skill hiện tại dành cho công văn thông thường.",
+  "Thông báo, giấy mời, lịch công tác là các nghiệp vụ trong cùng dòng phiếu: dùng các skill vnuis-vp-soan-thong-bao, vnuis-vp-soan-giay-moi, vnuis-vp-lap-lich-cong-tac-tuan.",
+  "Công văn gửi đối tác nước ngoài: soạn bản Việt, rồi chuyển qua vnuis-tt-dich-song-ngu-va-thuat-ngu; không dịch thẳng tên chức danh ký."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu công văn đang dùng và người ký, ủy quyền (C1).",
+  "Có phát hành qua E-Office không (C5)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "Công văn theo Mẫu 1.5 Phụ lục III Nghị định 30: cơ quan chủ quản nếu có/cơ quan ban hành; quốc hiệu/tiêu ngữ; số và ký hiệu cơ quan–đơn vị soạn hoặc lĩnh vực (không có CV); địa danh/ngày; trích yếu V/v dưới số; Kính gửi; nội dung; nơi nhận và chức vụ/họ tên người ký. Không ghi tên phòng soạn thay cơ quan ban hành. Độ khẩn nếu có trình bày ở vị trí ô 10a Phụ lục I; ghi đúng KHẨN, THƯỢNG KHẨN hoặc HỎA TỐC.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-soan-cong-van/references"
+}

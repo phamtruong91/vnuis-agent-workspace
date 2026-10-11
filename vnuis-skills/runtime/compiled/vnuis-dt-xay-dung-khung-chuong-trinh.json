@@ -1,0 +1,215 @@
+{
+ "name": "vnuis-dt-xay-dung-khung-chuong-trinh",
+ "title": "Xây dựng khung chương trình đào tạo",
+ "description": "Dùng khi xây dựng mới, rà soát hoặc cập nhật khung chương trình đào tạo đại học của một ngành theo Thông tư 54/2026/TT-BGDĐT: mục tiêu, chuẩn đầu ra, khối kiến thức, tổng số tín chỉ, danh mục học phần.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-khung-chuong-trinh-dao-tao",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (quản lý chương trình); các khoa",
+ "when": "Khi cần xây dựng mới, rà soát hoặc cập nhật khung chương trình đào tạo (CTĐT) của một ngành\ntrình độ đại học: xác lập mục tiêu đào tạo, chuẩn đầu ra chương trình (PLO), cấu trúc các khối\nkiến thức, tổng số tín chỉ và danh mục học phần.",
+ "inputs": [
+  {
+   "key": "ten_nganh",
+   "desc": "Tên ngành đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ma_nganh",
+   "desc": "Mã ngành theo danh mục",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "trinh_do",
+   "desc": "Trình độ đào tạo (đại học)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_dao_tao",
+   "desc": "Thời gian đào tạo (năm / học kỳ)",
+   "required": false,
+   "note": "Không (mặc định: 4 năm – 8 học kỳ)"
+  },
+  {
+   "key": "muc_tieu_dao_tao",
+   "desc": "Mục tiêu chung và mục tiêu cụ thể của CTĐT",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "plo",
+   "desc": "Danh sách chuẩn đầu ra chương trình (PLO), phân 3 nhóm: kiến thức / kỹ năng / mức tự chủ và trách nhiệm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tong_tin_chi",
+   "desc": "Tổng số tín chỉ của CTĐT",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "khoi_kien_thuc",
+   "desc": "Cấu trúc các khối kiến thức và số tín chỉ từng khối",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_muc_hoc_phan",
+   "desc": "Danh sách học phần: mã, tên, số tín chỉ, học kỳ, mô tả vắn tắt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_xay_dung",
+   "desc": "Khoa/bộ môn chủ trì xây dựng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (quản lý chương trình); các khoa"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 54/2026/TT-BGDĐT, hiệu lực 30/06/2026: Phân loại xây dựng chương trình, chuẩn đầu ra hay mở ngành; yêu cầu chuẩn ngành/trình độ, trạng thái chương trình và ngày tiếp nhận hồ sơ. Đọc toàn văn và điều khoản chuyển tiếp trước khi đổi chuẩn/mẫu; chưa xác minh toàn văn thì ghi điều kiện chưa xác nhận, không tự đặt thời hạn chuyển đổi.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định mục tiêu đào tạo",
+   "lam_gi": "viết mục tiêu chung (phẩm chất, năng lực của người tốt nghiệp) và các mục tiêu cụ thể từ `muc_tieu_dao_tao`; đối chiếu từng mục tiêu với sứ mệnh, tầm nhìn của trường và nhu cầu xã hội đã xác định; đảm bảo mục tiêu cụ thể có thể đo lường được qua chuẩn đầu ra ở Bước 2.",
+   "inputs": [
+    "ten_nganh",
+    "ma_nganh",
+    "trinh_do",
+    "muc_tieu_dao_tao",
+    "don_vi_xay_dung"
+   ],
+   "vai_tro": "Chuyên viên đơn vị xây dựng CTĐT (khoa/bộ môn) · AI hỗ trợ: soạn dự thảo mục tiêu, kiểm tra tính đo lường được",
+   "luu_y": "bẫy thường gặp là mục tiêu chung chung kiểu \"đào tạo nguồn nhân lực chất lượng cao\" mà không nói rõ \"chất lượng cao\" là gì; mỗi mục tiêu cụ thể phải ánh xạ được sang ít nhất một nhóm PLO ở Bước 2.",
+   "ket_qua": "mục tiêu chung và các mục tiêu cụ thể của CTĐT, có ghi căn cứ gắn với sứ mệnh trường."
+  },
+  {
+   "n": 2,
+   "title": "Xây dựng chuẩn đầu ra chương trình (PLO)",
+   "lam_gi": "cụ thể hóa mục tiêu Bước 1 thành danh sách `plo` theo 3 nhóm: (a) kiến thức, (b) kỹ năng, (c) mức tự chủ và trách nhiệm; mỗi PLO viết bằng động từ hành động có thể đo lường được; đánh số PLO1, PLO2...; lập bảng ánh xạ mục tiêu → PLO để không sót mục tiêu.",
+   "inputs": [
+    "plo"
+   ],
+   "vai_tro": "Chuyên viên đơn vị xây dựng CTĐT (khoa/bộ môn) · AI hỗ trợ: soạn danh sách PLO, kiểm tra ánh xạ mục tiêu → PLO",
+   "luu_y": "PLO phải dùng động từ đo lường được (phân tích, thiết kế, đánh giá) — tránh động từ mơ hồ (hiểu, nắm được); số lượng PLO vừa phải (thường 8–12), quá nhiều gây khó kiểm chứng khi kiểm định.",
+   "ket_qua": "danh sách PLO đánh số, phân 3 nhóm, kèm bảng ánh xạ mục tiêu → PLO."
+  },
+  {
+   "n": 3,
+   "title": "Thiết kế cấu trúc khối kiến thức",
+   "lam_gi": "phân bổ `tong_tin_chi` vào các khối trong `khoi_kien_thuc` — kiến thức giáo dục đại cương; kiến thức cơ sở ngành; kiến thức chuyên ngành; thực tập; khóa luận/đồ án tốt nghiệp; tính tỷ lệ % từng khối; kiểm tra tổng các khối bằng đúng `tong_tin_chi` và tỷ lệ các khối hợp lý theo quy định (khối chuyên ngành phải chiếm tỷ trọng lớn nhất).",
+   "inputs": [
+    "tong_tin_chi",
+    "khoi_kien_thuc",
+    "thoi_gian_dao_tao"
+   ],
+   "vai_tro": "Chuyên viên đơn vị xây dựng CTĐT (khoa/bộ môn) · AI hỗ trợ: tính phân bổ tín chỉ theo khối, kiểm tra tổng khớp",
+   "luu_y": "bẫy số học — tổng tín chỉ các khối không khớp tổng công bố là lỗi phổ biến nhất; kiểm tra quy định tối thiểu/tối đa của từng khối theo chuẩn chương trình đào tạo.",
+   "ket_qua": "bảng phân bổ tín chỉ theo khối kiến thức (số tín chỉ, tỷ lệ %, tổng 100%)."
+  },
+  {
+   "n": 4,
+   "title": "Lập danh mục học phần",
+   "lam_gi": "từ `danh_muc_hoc_phan`, với mỗi học phần ghi: mã, tên, số tín chỉ (lý thuyết – thực hành), học kỳ bố trí, học phần tiên quyết (nếu có); sắp xếp theo tiến trình học tập từ đại cương đến chuyên sâu; kiểm tra tổng tín chỉ các học phần khớp với bảng phân bổ ở Bước 3 và mỗi khối kiến thức đều có đủ học phần.",
+   "inputs": [
+    "danh_muc_hoc_phan"
+   ],
+   "vai_tro": "Chuyên viên đơn vị xây dựng CTĐT (khoa/bộ môn) · AI hỗ trợ: lập danh mục học phần, kiểm tra tiến trình và học phần tiên quyết",
+   "luu_y": "học phần tiên quyết phải được bố trí ở học kỳ trước học phần phụ thuộc — bẫy phổ biến là xếp tiên quyết cùng học kỳ hoặc sau; tên và mã học phần phải thống nhất tuyệt đối với đề cương chi tiết từng học phần.",
+   "ket_qua": "danh mục học phần hoàn chỉnh (mã, tên, tín chỉ, học kỳ, tiên quyết) sắp xếp theo tiến trình."
+  },
+  {
+   "n": 5,
+   "title": "Viết mô tả vắn tắt từng học phần",
+   "lam_gi": "với mỗi học phần trong danh mục Bước 4, viết mô tả 3–5 dòng: nội dung cốt lõi và năng lực người học đạt được sau học phần; đảm bảo mô tả thể hiện được đóng góp của học phần vào các PLO ở Bước 2.",
+   "inputs": [
+    "danh_muc_hoc_phan"
+   ],
+   "vai_tro": "Chuyên viên đơn vị xây dựng CTĐT (khoa/bộ môn) · AI hỗ trợ: viết mô tả vắn tắt, kiểm tra đóng góp vào PLO",
+   "luu_y": "mô tả vắn tắt là cơ sở để giảng viên soạn đề cương chi tiết — phải đủ cụ thể về nội dung, tránh mô tả chung chung áp dụng được cho mọi học phần; mỗi mô tả nên gợi được PLO mà học phần đóng góp.",
+   "ket_qua": "bảng danh mục học phần đã bổ sung cột mô tả vắn tắt."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra tính nhất quán và trình phê duyệt",
+   "lam_gi": "đối chiếu chéo toàn bộ khung: PLO có bao phủ hết mục tiêu đào tạo không; tổng tín chỉ các khối và các học phần có khớp nhau không; mỗi PLO có học phần đóng góp không; lấy ý kiến Hội đồng khoa học – đào tạo khoa và doanh nghiệp; chỉnh sửa theo góp ý; trình Hiệu trưởng ký quyết định ban hành.",
+   "inputs": [
+    "don_vi_xay_dung"
+   ],
+   "vai_tro": "Hội đồng KH–ĐT thẩm định; Hiệu trưởng ký ban hành; chuyên viên đơn vị xây dựng đối chiếu · AI hỗ trợ: đối chiếu chéo nhất quán (mục tiêu ↔ PLO ↔ tín chỉ ↔ học phần)",
+   "luu_y": "đây là cổng chặn lỗi cuối — 3 điểm kiểm tra bắt buộc: (1) mục tiêu ↔ PLO, (2) tổng tín chỉ các khối = tổng tín chỉ các học phần = tổng công bố, (3) học phần tiên quyết đúng tiến trình; ý kiến doanh nghiệp là minh chứng quan trọng khi kiểm định.",
+   "ket_qua": "khung CTĐT hoàn chỉnh đã qua thẩm định, sẵn sàng trình Hiệu trưởng ký quyết định ban hành."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Mọi mục tiêu cụ thể đều ánh xạ được sang ít nhất một PLO; PLO viết bằng động từ hành động đo lường được, số lượng vừa phải (thường 8–12).",
+  "Tổng tín chỉ các khối = tổng tín chỉ các học phần = tổng công bố (tỷ lệ các khối cộng đúng 100%).",
+  "Mỗi PLO có học phần đóng góp; học phần tiên quyết được bố trí ở học kỳ trước học phần phụ thuộc.",
+  "Tên, mã học phần thống nhất với đề cương chi tiết; nội dung khớp với Input đã cho.",
+  "Không bịa đặt số liệu tín chỉ, quyết định ban hành hay trích dẫn văn bản.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (văn bản hiện hành nêu tại phap-ly.md về chuẩn CTĐT).",
+  "Đã qua Human gate: Hội đồng KH–ĐT đã thẩm định, Hiệu trưởng đã ký quyết định ban hành."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Bước đầu tiên: xác định chương trình thuộc kiểu nào (ĐHQGHN cấp bằng, liên kết quốc tế, song bằng, tích hợp cử nhân–thạc sĩ, dự bị). Căn cứ mỗi kiểu khác nhau; chương trình liên kết và song bằng còn chịu yêu cầu của trường đối tác.",
+  "Mã chương trình dạng QHQxx chỉ dùng khi người dùng cung cấp; kiểm tra khớp tên ngành.",
+  "Giảng dạy bằng tiếng Anh: tên học phần và chuẩn đầu ra viết song ngữ; không tự đặt mức chuẩn ngoại ngữ đầu ra khi chưa có quy định (C2, C3).",
+  "Đối chiếu ba chiều: khung chương trình, chuẩn đầu ra, đề cương học phần; ghi chênh lệch về tín chỉ, mã học phần, chuẩn đầu ra."
+ ],
+ "cho_xac_nhan": [
+  "Danh sách chương trình chính thức và kiểu cấp bằng của từng chương trình (C2, C4).",
+  "Quy chế đào tạo và quy định riêng chương trình liên kết (C2)."
+ ],
+ "output_structure": [
+  "Tiêu đề khung CTĐT: tên ngành, mã ngành, trình độ đào tạo, thời gian đào tạo (năm/học kỳ), tổng số tín chỉ; số, ngày quyết định ban hành và người ký ban hành.",
+  "Mục 1 – Mục tiêu đào tạo: mục tiêu chung và các mục tiêu cụ thể.",
+  "Mục 2 – Chuẩn đầu ra của chương trình đào tạo (PLO): liệt kê đánh số theo 3 nhóm — kiến thức; kỹ năng; mức tự chủ và trách nhiệm.",
+  "Mục 3 – Cấu trúc khối kiến thức: bảng (khối kiến thức, số tín chỉ, tỷ lệ %) kèm dòng tổng.",
+  "Mục 4 – Danh mục học phần: bảng (mã HP, tên học phần, số TC lý thuyết–thực hành, học kỳ, học phần tiên quyết, mô tả vắn tắt) sắp xếp theo tiến trình học tập.",
+  "Phụ lục kèm theo: Bảng tổng hợp phân bổ tín chỉ theo học kỳ."
+ ],
+ "output_structure_raw": "1. Tiêu đề khung CTĐT: tên ngành, mã ngành, trình độ đào tạo, thời gian đào tạo (năm/học kỳ),\n   tổng số tín chỉ; số, ngày quyết định ban hành và người ký ban hành.\n\n2. Mục 1 – Mục tiêu đào tạo: mục tiêu chung và các mục tiêu cụ thể.\n\n3. Mục 2 – Chuẩn đầu ra của chương trình đào tạo (PLO): liệt kê đánh số theo 3 nhóm —\n   kiến thức; kỹ năng; mức tự chủ và trách nhiệm.\n\n4. Mục 3 – Cấu trúc khối kiến thức: bảng (khối kiến thức, số tín chỉ, tỷ lệ %) kèm dòng tổng.\n\n5. Mục 4 – Danh mục học phần: bảng (mã HP, tên học phần, số TC lý thuyết–thực hành, học kỳ,\n   học phần tiên quyết, mô tả vắn tắt) sắp xếp theo tiến trình học tập.\n\n6. Phụ lục kèm theo: Bảng tổng hợp phân bổ tín chỉ theo học kỳ.",
+ "human_gate_check": "Đã qua Human gate: Hội đồng KH–ĐT đã thẩm định, Hiệu trưởng đã ký quyết định ban hành.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (quản lý chương trình). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 54/2026/TT-BGDĐT, hiệu lực 30/06/2026\n\nNguồn: https://congbao.chinhphu.vn/van-ban/thong-tu-so-54-2026-tt-bgddt-470099.htm\n\nPhân loại xây dựng chương trình, chuẩn đầu ra hay mở ngành; yêu cầu chuẩn ngành/trình độ, trạng thái chương trình và ngày tiếp nhận hồ sơ. Đọc toàn văn và điều khoản chuyển tiếp trước khi đổi chuẩn/mẫu; chưa xác minh toàn văn thì ghi điều kiện chưa xác nhận, không tự đặt thời hạn chuyển đổi.\n",
+ "outputs_dir": "skills/vnuis-dt-xay-dung-khung-chuong-trinh/references"
+}

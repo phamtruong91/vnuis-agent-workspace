@@ -1,0 +1,174 @@
+{
+ "name": "vnuis-taichinh-bao-cao-quyet-toan",
+ "title": "Soạn báo cáo quyết toán ngân sách năm",
+ "description": "Dùng khi kết thúc năm ngân sách và Phòng TC&QT cần báo cáo quyết toán trình duyệt: đối chiếu dự toán với thực hiện, giải trình chênh lệch lớn, kiến nghị năm sau.",
+ "group": "taichinh",
+ "group_label": "Kế hoạch – tài chính",
+ "previous_name": "vnuis-bao-cao-quyet-toan",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)",
+ "when": "Khi kết thúc năm ngân sách, cần tổng hợp, đối chiếu số liệu thực hiện thu – chi với dự toán\nđược duyệt, giải trình các khoản chênh lệch lớn và đề xuất kiến nghị cho năm sau.",
+ "inputs": [
+  {
+   "key": "nam_quyet_toan",
+   "desc": "Năm ngân sách quyết toán (vd: 2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "du_toan",
+   "desc": "Dự toán thu – chi đã được phê duyệt (theo từng nguồn thu, nội dung chi)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thuc_hien",
+   "desc": "Số liệu thực hiện thu – chi cả năm (từ sổ sách, chứng từ)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguong_giai_trinh",
+   "desc": "Ngưỡng chênh lệch phải giải trình (mặc định: ±10% hoặc ±1.000 triệu đồng)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "kien_nghi",
+   "desc": "Kiến nghị đề xuất cho năm ngân sách sau",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng phụ trách tài chính",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_trinh",
+   "desc": "Cấp trình quyết toán (cấp có thẩm quyền (C6) / cơ quan chủ quản)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 24/2024/TT-BTC, áp dụng từ năm tài chính 2025; sửa đổi 46/2025: Phân biệt năm tài chính, chế độ kế toán, chứng từ, sổ và báo cáo; dùng hệ thống biểu mẫu của 24/2024 cùng sửa đổi 46/2025 theo thời điểm. Không chuyển mã tài khoản hoặc mẫu cũ cơ học; đối chiếu sổ, số dư đầu/cuối kỳ và xác nhận của kế toán trưởng.\n- Luật 89/2025/QH15 và Nghị định 73/2026/NĐ-CP – ngân sách năm 2026: Yêu cầu năm ngân sách, nguồn kinh phí, dự toán được giao và thời điểm nghiệp vụ; áp dụng Luật 89 từ 01/01/2026 và NĐ 73 cho năm ngân sách 2026. Quyết toán 2025 phải kiểm tra chế độ và chuyển tiếp của năm đó, không tự thay toàn bộ căn cứ lịch sử.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chốt sổ và tổng hợp số liệu thực hiện",
+   "lam_gi": "chốt sổ kế toán năm (`nam_quyet_toan`); tổng hợp thu – chi thực tế cả năm theo đúng cơ cấu nguồn thu và nội dung chi của dự toán đã duyệt, để hai bộ số liệu so sánh được tương đồng từng dòng.",
+   "inputs": [
+    "thuc_hien",
+    "du_toan",
+    "nam_quyet_toan"
+   ],
+   "vai_tro": "Trưởng Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "số liệu thực hiện phải khớp với sổ kế toán, không dùng số tạm tính hay số ước; mọi khoản chi vượt dự toán phải có quyết định điều chỉnh, bổ sung dự toán của cấp có thẩm quyền trước khi quyết toán — không hợp thức hóa chứng từ sau.",
+   "ket_qua": "bảng số liệu thực hiện thu – chi cả năm, sắp xếp theo đúng cơ cấu dòng của dự toán được duyệt."
+  },
+  {
+   "n": 2,
+   "title": "Lập bảng so sánh dự toán – thực hiện – chênh lệch",
+   "lam_gi": "với mỗi dòng nguồn thu / nội dung chi, tính chênh lệch tuyệt đối (thực hiện − dự toán) và chênh lệch tương đối (%); kiểm tra số học: tổng các dòng thành phần bằng dòng tổng cộng.",
+   "inputs": [
+    "du_toan",
+    "thuc_hien"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, tính toán, phân tích số liệu",
+   "luu_y": "kiểm tra kỹ dấu của chênh lệch (vượt/thiếu) và cách làm tròn tỷ lệ %; đơn vị tính thống nhất (triệu đồng) trên toàn bảng.",
+   "ket_qua": "bảng so sánh đầy đủ 5 cột (dự toán, thực hiện, chênh lệch tuyệt đối, tỷ lệ %, ghi chú) cho cả phần thu và phần chi."
+  },
+  {
+   "n": 3,
+   "title": "Lọc và xác minh các khoản chênh lệch lớn",
+   "lam_gi": "lọc các dòng vượt `nguong_giai_trinh` (±10% hoặc ±1.000 triệu đồng — điều kiện nào đến trước thì áp dụng); với mỗi khoản, xác minh nguyên nhân từ chứng từ, hợp đồng, quyết định phát sinh trong năm và kiểm tra có quyết định điều chỉnh dự toán giữa năm hay không.",
+   "inputs": [
+    "nguong_giai_trinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "ngưỡng kép (±10% hoặc ±1.000 triệu) giúp bắt cả khoản nhỏ nhưng biến động mạnh và khoản lớn biến động nhẹ; ghi rõ nguyên nhân khách quan (chính sách, thị trường) hay chủ quan (quản lý) cho từng khoản.",
+   "ket_qua": "danh sách các khoản chênh lệch lớn kèm nguyên nhân đã xác minh và tình trạng điều chỉnh dự toán giữa năm."
+  },
+  {
+   "n": 4,
+   "title": "Viết phần giải trình chênh lệch",
+   "lam_gi": "mỗi khoản chênh lệch lớn một đoạn riêng, nêu: số liệu cụ thể (dự toán, thực hiện, chênh lệch), nguyên nhân đã xác minh ở Bước 3, có phải do điều chỉnh dự toán giữa năm hay không, và đánh giá tác động (tích cực/tiêu cực) đến cân đối ngân sách.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "giải trình phải trung thực cả chênh lệch bất lợi; không dùng câu chữ chung chung kiểu \"do khách quan\" mà phải nêu sự kiện, con số cụ thể.",
+   "ket_qua": "phần giải trình chênh lệch hoàn chỉnh."
+  },
+  {
+   "n": 5,
+   "title": "Viết kiến nghị cho năm sau",
+   "lam_gi": "từ các chênh lệch và nguyên nhân ở Bước 3 – 4, đề xuất: điều chỉnh định mức các khoản thường xuyên vượt; bổ sung/giải pháp tăng nguồn thu; siết chặt nội dung chi vượt dự toán; hoàn thiện quy chế chi tiêu nội bộ.",
+   "inputs": [
+    "kien_nghi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "mỗi kiến nghị gắn với một vấn đề thực tế đã phát hiện trong năm quyết toán, tránh kiến nghị chung chung không gắn số liệu.",
+   "ket_qua": "phần kiến nghị hoàn chỉnh."
+  },
+  {
+   "n": 6,
+   "title": "Hoàn thiện báo cáo và trình ký",
+   "lam_gi": "ghép báo cáo theo cấu trúc: tiêu đề văn bản (tên trường, số ký hiệu, ngày tháng, tên báo cáo, kính gửi) → Phần I: kết quả thu → Phần II: kết quả chi → Phần III: giải trình chênh lệch lớn → Phần IV: kiến nghị → biểu số liệu đính kèm → chữ ký (`nguoi_ky`); kiểm tra thể thức, số liệu, thẩm quyền ký; trình `don_vi_trinh` xem xét, phê duyệt.",
+   "inputs": [
+    "nguoi_ky",
+    "don_vi_trinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) (chuẩn bị hồ sơ trình); Hiệu trưởng (người ký) ban hành · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, chuẩn bị hồ sơ trình đầy đủ",
+   "luu_y": "số liệu trong các phần I, II phải khớp 100% với biểu đính kèm; người ký phải đúng thẩm quyền theo quy định của đơn vị.",
+   "ket_qua": "báo cáo quyết toán ngân sách năm hoàn chỉnh, đã ký."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Có đầy đủ sản phẩm: Báo cáo quyết toán ngân sách năm hoàn chỉnh (văn bản + biểu số liệu)",
+  "Có đầy đủ sản phẩm: Bảng so sánh Dự toán / Thực hiện / Chênh lệch theo từng nguồn thu và nội dung chi",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Số liệu thực hiện phải khớp với sổ kế toán, không dùng số tạm tính hay",
+  "Kiểm tra kỹ dấu của chênh lệch (vượt/thiếu) và cách làm tròn tỷ lệ %"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Quyết toán chỉ ghi số đã có chứng từ; chênh lệch với dự toán được nêu, không tự giải thích nguyên nhân.",
+  "Chương trình liên kết có thu chi theo thỏa thuận với đối tác: tách riêng nếu số liệu có (C2)."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu quyết toán và hạn nộp (C8).",
+  "Tuyến duyệt (C6)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "Chọn hệ thống báo cáo quyết toán kinh phí hoạt động theo Thông tư 24/2024/TT-BTC, văn bản sửa đổi và chế độ ngân sách của năm quyết toán. Giữ đúng biểu, mã chỉ tiêu, nguồn kinh phí, mục lục ngân sách, cột và người ký của nguyên mẫu. Phần thuyết minh/giải trình theo yêu cầu cơ quan nhận. Bảng dự toán–thực hiện–chênh lệch chỉ là nội dung phân tích, không thay mẫu quyết toán pháp định.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (kế hoạch – tài chính). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Thông tư 24/2024/TT-BTC, áp dụng từ năm tài chính 2025; sửa đổi 46/2025\n\nNguồn: https://vbpl.vn/cantho/Pages/ivbpq-lichsu.aspx?ItemID=166774&do=word\n\nPhân biệt năm tài chính, chế độ kế toán, chứng từ, sổ và báo cáo; dùng hệ thống biểu mẫu của 24/2024 cùng sửa đổi 46/2025 theo thời điểm. Không chuyển mã tài khoản hoặc mẫu cũ cơ học; đối chiếu sổ, số dư đầu/cuối kỳ và xác nhận của kế toán trưởng.\n\n## Luật 89/2025/QH15 và Nghị định 73/2026/NĐ-CP – ngân sách năm 2026\n\nNguồn: https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-73-2026-nd-cp-469083.htm\n\nYêu cầu năm ngân sách, nguồn kinh phí, dự toán được giao và thời điểm nghiệp vụ; áp dụng Luật 89 từ 01/01/2026 và NĐ 73 cho năm ngân sách 2026. Quyết toán 2025 phải kiểm tra chế độ và chuyển tiếp của năm đó, không tự thay toàn bộ căn cứ lịch sử.\n",
+ "outputs_dir": "skills/vnuis-taichinh-bao-cao-quyet-toan/references"
+}

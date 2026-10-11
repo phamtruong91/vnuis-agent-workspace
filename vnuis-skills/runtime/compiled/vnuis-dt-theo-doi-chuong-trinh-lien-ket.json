@@ -1,0 +1,156 @@
+{
+ "name": "vnuis-dt-theo-doi-chuong-trinh-lien-ket",
+ "title": "Theo dõi nghĩa vụ chương trình liên kết",
+ "description": "Dùng khi Phòng Đào tạo cần nắm cam kết với từng đối tác của các chương trình liên kết hoặc song bằng: mốc báo cáo, kiểm định, thù lao, chỉ tiêu, ai làm gì, việc nào đến hạn, nhất là trước khi gặp đối tác hoặc báo cáo ĐHQGHN.",
+ "group": "dt",
+ "group_label": "Đào tạo (đại học, chương trình, liên kết)",
+ "previous_name": "vnuis-quan-ly-chuong-trinh-lien-ket",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (liên kết quốc tế); Phòng KHCN và Hợp tác phát triển",
+ "when": "Khi Trường có nhiều chương trình liên kết với điều kiện khác nhau và cần biết việc nào đến hạn, bên nào chịu trách nhiệm; khi chuẩn bị gặp đối tác hoặc báo cáo ĐHQGHN.",
+ "inputs": [
+  {
+   "key": "thoa_thuan_lien_ket",
+   "desc": "Văn bản thỏa thuận từng chương trình (bản người dùng cung cấp)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_chuong_trinh",
+   "desc": "Danh sách chương trình: đối tác, mô hình, khóa, người học hiện có",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "lich_moc",
+   "desc": "Các mốc đã biết: báo cáo, kiểm định, gia hạn, thanh toán",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "tinh_hinh_thuc_hien",
+   "desc": "Ghi chú tình hình thực hiện hiện tại của từng chương trình",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ngay_chot",
+   "desc": "Ngày chốt theo dõi",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (liên kết quốc tế); Phòng KHCN và Hợp tác phát triển"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Trích nghĩa vụ từ thỏa thuận",
+   "lam_gi": "Từ mỗi thỏa thuận, trích nghĩa vụ của từng bên, mốc, điều kiện gia hạn, chấm dứt; điều khoản mơ hồ gắn `[CẦN XÁC MINH]`.",
+   "inputs": [
+    "thoa_thuan_lien_ket",
+    "danh_sach_chuong_trinh"
+   ],
+   "vai_tro": "Chuyên viên liên kết · AI hỗ trợ: trích điều khoản",
+   "luu_y": "Chỉ trích những gì văn bản ghi; không diễn giải pháp lý.",
+   "ket_qua": "Bảng nghĩa vụ theo chương trình."
+  },
+  {
+   "n": 2,
+   "title": "Lập lịch mốc",
+   "lam_gi": "Gộp mốc từ thỏa thuận và lịch mốc đã có; mốc quá hạn hoặc sắp tới hạn trong 60 ngày được tô nổi.",
+   "inputs": [
+    "lich_moc",
+    "ngay_chot"
+   ],
+   "vai_tro": "Chuyên viên liên kết · AI hỗ trợ: lập lịch",
+   "luu_y": "Ngưỡng 60 ngày là mặc định, đơn vị chỉnh được.",
+   "ket_qua": "Lịch mốc."
+  },
+  {
+   "n": 3,
+   "title": "Đối chiếu thực hiện",
+   "lam_gi": "So nghĩa vụ với tình hình thực hiện; nghĩa vụ không có thông tin gắn \"chưa rõ\".",
+   "inputs": [
+    "tinh_hinh_thuc_hien"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: đối chiếu",
+   "luu_y": "Không tự coi là đã thực hiện khi không có xác nhận.",
+   "ket_qua": "Bảng thực hiện."
+  },
+  {
+   "n": 4,
+   "title": "Lập báo cáo theo dõi",
+   "lam_gi": "Ghép báo cáo: tình trạng từng chương trình, việc đến hạn, rủi ro, việc cần quyết.",
+   "inputs": [
+    "danh_sach_chuong_trinh"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: dự thảo báo cáo",
+   "luu_y": "Rủi ro pháp lý chuyển pháp chế rà.",
+   "ket_qua": "Báo cáo theo dõi chương trình liên kết."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi nghĩa vụ truy được về điều khoản.",
+  "Mốc quá hạn đã được nêu.",
+  "Không có diễn giải pháp lý vượt văn bản.",
+  "Thông tin thiếu được ghi rõ.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng phòng Đào tạo** xác nhận nội dung theo dõi.",
+  "**Pháp chế** rà điều khoản trước khi nêu ý kiến với đối tác."
+ ],
+ "guardrails": [
+  "KHÔNG diễn giải điều khoản thay người có thẩm quyền.",
+  "KHÔNG đưa thỏa thuận mật lên dịch vụ ngoài khi chưa có quyền (C5)."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Danh sách chương trình liên kết thực tế và thỏa thuận (C2).",
+  "Đầu mối từng đối tác (C7)."
+ ],
+ "output_structure": [
+  "Tiêu đề, ngày chốt, đơn vị lập.",
+  "Bảng tổng quan từng chương trình: đối tác, mô hình, người học, tình trạng.",
+  "Bảng nghĩa vụ và mốc, có trạng thái.",
+  "Việc đến hạn, rủi ro và việc cần lãnh đạo quyết."
+ ],
+ "output_structure_raw": "1. Tiêu đề, ngày chốt, đơn vị lập.\n\n2. Bảng tổng quan từng chương trình: đối tác, mô hình, người học, tình trạng.\n\n3. Bảng nghĩa vụ và mốc, có trạng thái.\n\n4. Việc đến hạn, rủi ro và việc cần lãnh đạo quyết.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (liên kết quốc tế). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dt-theo-doi-chuong-trinh-lien-ket/references"
+}

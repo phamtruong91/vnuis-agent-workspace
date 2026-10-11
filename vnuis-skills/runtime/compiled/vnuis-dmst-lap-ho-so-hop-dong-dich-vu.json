@@ -1,0 +1,199 @@
+{
+ "name": "vnuis-dmst-lap-ho-so-hop-dong-dich-vu",
+ "title": "Hồ sơ hợp đồng dịch vụ KHCN",
+ "description": "Dùng khi trung tâm, viện hoặc Phòng KHCN&HTPT nhận dịch vụ khoa học công nghệ cho khách hàng ngoài trường (tư vấn, phân tích mẫu, đào tạo theo đặt hàng) và cần báo giá, hợp đồng, nghiệm thu, thanh lý.",
+ "group": "dmst",
+ "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+ "previous_name": "vnuis-ho-so-hop-dong-dich-vu-khcn",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Viện ĐMST&CGCN",
+ "when": "Khi trung tâm/viện/Phòng KHCN&HTPT của trường cung cấp dịch vụ cho tổ chức, doanh nghiệp bên ngoài:\ntư vấn kỹ thuật, phân tích – kiểm nghiệm mẫu, chuyển giao công nghệ, đào tạo theo đặt hàng...\ncần lập báo giá, ký hợp đồng, nghiệm thu và thanh lý đúng quy định.",
+ "inputs": [
+  {
+   "key": "ten_dich_vu",
+   "desc": "Tên dịch vụ KHCN cung cấp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "khach_hang",
+   "desc": "Tên, địa chỉ, người đại diện của bên thuê dịch vụ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_thuc_hien",
+   "desc": "Đơn vị của trường thực hiện dịch vụ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "pham_vi_cong_viec",
+   "desc": "Nội dung công việc chi tiết, sản phẩm bàn giao",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_gia",
+   "desc": "Báo giá chi tiết theo hạng mục",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Thời gian thực hiện, các mốc bàn giao",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dieu_khoan_thanh_toan",
+   "desc": "Tạm ứng, thanh toán theo tiến độ, giữ lại",
+   "required": false,
+   "note": "Không (mặc định: tạm ứng 30%, quyết toán sau nghiệm thu)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Viện ĐMST&CGCN"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Lập báo giá chi tiết và chốt giá với khách hàng",
+   "lam_gi": "Bóc tách `pham_vi_cong_viec` thành các hạng mục công việc; mỗi hạng mục ghi: nội dung, đơn vị tính, số lượng, đơn giá, thành tiền; cộng tổng giá trị, ghi rõ đã/chưa bao gồm VAT; gửi khách hàng, thương thảo và chốt giá trị hợp đồng bằng văn bản (email xác nhận hoặc biên bản làm việc).",
+   "inputs": [
+    "ten_dich_vu",
+    "pham_vi_cong_viec",
+    "don_gia",
+    "khach_hang"
+   ],
+   "vai_tro": "Chuyên viên dịch vụ KHCN · AI hỗ trợ: bóc tách hạng mục và lập bảng báo giá dự thảo, đơn vị chốt đơn giá theo biểu giá đã duyệt",
+   "luu_y": "đơn giá theo biểu giá dịch vụ đã được trường phê duyệt (nếu có); chi phí phát sinh ngoài phạm vi phải ghi rõ cách tính ngay từ báo giá; không báo giá miệng — mọi chốt giá phải có văn bản để đối chiếu khi quyết toán.",
+   "ket_qua": "Bảng báo giá chi tiết đã được khách hàng xác nhận bằng văn bản."
+  },
+  {
+   "n": 2,
+   "title": "Soạn thảo hợp đồng",
+   "lam_gi": "Soạn hợp đồng đầy đủ các điều khoản bắt buộc: thông tin hai bên, đối tượng và phạm vi công việc, sản phẩm bàn giao, giá trị hợp đồng, tiến độ và các mốc bàn giao, điều khoản thanh toán, nghiệm thu, bảo hành/bảo mật, phạt vi phạm, chấm dứt hợp đồng, hiệu lực.",
+   "inputs": [
+    "ten_dich_vu",
+    "khach_hang",
+    "don_vi_thuc_hien",
+    "pham_vi_cong_viec",
+    "don_gia",
+    "thoi_gian",
+    "dieu_khoan_thanh_toan"
+   ],
+   "vai_tro": "Chuyên viên dịch vụ KHCN · AI hỗ trợ: soạn dự thảo hợp đồng theo mẫu chuẩn của trường",
+   "luu_y": "dùng mẫu hợp đồng chuẩn của trường (nếu có); số liệu giá trị, tiến độ phải khớp báo giá đã chốt ở bước 1; điều khoản phạt vi phạm phải cân đối hai chiều (cả bên cung cấp và bên thuê).",
+   "ket_qua": "Dự thảo hợp đồng dịch vụ KHCN."
+  },
+  {
+   "n": 3,
+   "title": "Thẩm định và trình ký hợp đồng",
+   "lam_gi": "Đơn vị thực hiện tự rà soát dự thảo → gửi Phòng KHCN&HTPT thẩm định tính pháp lý → trình lãnh đạo trường ký theo phân cấp ủy quyền; sau khi hai bên ký, lưu số hợp đồng, ngày ký, bản chính.",
+   "inputs": [],
+   "vai_tro": "Viện trưởng · AI hỗ trợ: tổng hợp danh mục kiểm tra, đối chiếu hồ sơ",
+   "luu_y": "kiểm tra người ký đúng thẩm quyền theo giá trị hợp đồng (phân cấp); hợp đồng chỉ có hiệu lực khi đủ chữ ký hai bên và đóng dấu; mỗi bên giữ ít nhất 01 bản chính.",
+   "ket_qua": "Hợp đồng đã ký, đóng dấu (bản chính lưu tại đơn vị và Phòng KHCN&HTPT)."
+  },
+  {
+   "n": 4,
+   "title": "Triển khai thực hiện và giám sát tiến độ",
+   "lam_gi": "Lập kế hoạch triển khai chi tiết theo các mốc trong hợp đồng; theo dõi tiến độ từng hạng mục; lập biên bản làm việc/bàn giao từng phần có chữ ký hai bên (nếu hợp đồng chia nhiều đợt); ghi nhận phát sinh (nếu có) và xử lý theo điều khoản hợp đồng.",
+   "inputs": [
+    "thoi_gian",
+    "pham_vi_cong_viec"
+   ],
+   "vai_tro": "Chuyên viên dịch vụ KHCN · AI hỗ trợ: soạn nhật ký theo dõi và nhắc mốc",
+   "luu_y": "mọi thay đổi phạm vi/tiến độ phải lập phụ lục hợp đồng, không thỏa thuận miệng; chậm mốc nào phải báo ngay cho khách hàng và ghi vào biên bản làm việc.",
+   "ket_qua": "Nhật ký triển khai + biên bản bàn giao từng phần (nếu có)."
+  },
+  {
+   "n": 5,
+   "title": "Tổ chức nghiệm thu dịch vụ",
+   "lam_gi": "Thành lập hội đồng nghiệm thu có đại diện hai bên; kiểm tra sản phẩm bàn giao đối chiếu từng nội dung trong hợp đồng (số lượng, chất lượng, thời hạn); lập biên bản nghiệm thu ghi rõ: đạt/không đạt từng hạng mục, tồn tại cần khắc phục (nếu có) và thời hạn khắc phục.",
+   "inputs": [
+    "pham_vi_cong_viec",
+    "thoi_gian"
+   ],
+   "vai_tro": "Hội đồng nghiệm thu · AI hỗ trợ: tổng hợp danh mục kiểm tra, đối chiếu hồ sơ",
+   "luu_y": "chỉ nghiệm thu khi đủ sản phẩm theo hợp đồng; nếu không đạt, ghi rõ nội dung phải làm lại và hạn hoàn thành — không ký \"nghiệm thu có điều kiện\" chung chung.",
+   "ket_qua": "Biên bản nghiệm thu dịch vụ (hai bên ký)."
+  },
+  {
+   "n": 6,
+   "title": "Thanh lý hợp đồng và quyết toán",
+   "lam_gi": "Đối chiếu giá trị thực hiện với hợp đồng (trừ tạm ứng đã nhận, phạt vi phạm nếu có); lập biên bản thanh lý hợp đồng; xuất hóa đơn VAT; hạch toán doanh thu và thực hiện nghĩa vụ tài chính theo quy định của trường; lưu trọn bộ hồ sơ.",
+   "inputs": [
+    "dieu_khoan_thanh_toan",
+    "don_gia"
+   ],
+   "vai_tro": "Chuyên viên dịch vụ KHCN · AI hỗ trợ: đối chiếu số liệu và soạn biên bản thanh lý, kế toán đối chiếu và xuất hóa đơn",
+   "luu_y": "chỉ thanh lý khi đã nghiệm thu đạt và đã thu đủ tiền (hoặc có cam kết thanh toán bằng văn bản); đối chiếu số liệu với Phòng TC&QT (kế hoạch – tài chính) trước khi xuất hóa đơn.",
+   "ket_qua": "Biên bản thanh lý hợp đồng + hồ sơ quyết toán đầy đủ."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu (giá trị, tiến độ) khớp với Input (báo giá, phạm vi công việc) đã cho.",
+  "Không bịa đặt chữ ký, biên bản nghiệm thu hay xác nhận thanh toán không có thật.",
+  "Báo giá chốt bằng văn bản của khách hàng; ghi rõ đã/chưa bao gồm VAT.",
+  "Hợp đồng đầy đủ các điều khoản bắt buộc; người ký đúng thẩm quyền theo phân cấp; đủ chữ ký hai bên và đóng dấu.",
+  "Nghiệm thu đối chiếu từng hạng mục hợp đồng; tồn tại cần khắc phục có hạn hoàn thành cụ thể.",
+  "Thanh lý chỉ khi đã nghiệm thu đạt và đã thu đủ tiền (hoặc có cam kết thanh toán bằng văn bản).",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực: Luật Khoa học và Công nghệ, quy định nội bộ về hoạt động dịch vụ KHCN.",
+  "Đã qua Human gate: Phòng KHCN&HTPT thẩm định pháp lý, lãnh đạo trường ký hợp đồng, hội đồng hai bên ký biên bản nghiệm thu. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Lãnh đạo đơn vị thực hiện** thẩm định phạm vi công việc và báo giá trước khi trình.",
+  "**Phòng KHCN&HTPT** thẩm định tính pháp lý của hợp đồng.",
+  "**Lãnh đạo trường** (theo phân cấp ủy quyền) ký hợp đồng; **hội đồng nghiệm thu 2 bên** ký biên bản nghiệm thu dịch vụ."
+ ],
+ "guardrails": [
+  "AI không tự quyết giá dịch vụ thay đơn vị (giá do đơn vị đề xuất, lãnh đạo phê duyệt).",
+  "Không cam kết tiến độ/chất lượng vượt năng lực thực tế của đơn vị.",
+  "Không thay kế toán lập chứng từ thanh toán, xuất hóa đơn."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hồ sơ hợp đồng dịch vụ KH&CN của Viện: chỉ lập từ thỏa thuận và báo giá có sẵn; không tự đặt giá.",
+  "Pháp chế rà trước khi trình ký."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu hợp đồng dịch vụ và thẩm quyền ký (C1, C8).",
+  "Danh mục dịch vụ Viện cung cấp (C8)."
+ ],
+ "output_structure": [
+  "Bảng báo giá dịch vụ: hạng mục công việc, đơn vị tính, số lượng, đơn giá, thành tiền, tổng giá trị (ghi rõ đã/chưa VAT), xác nhận của khách hàng.",
+  "Hợp đồng dịch vụ KHCN: đầy đủ điều khoản (đối tượng, phạm vi, sản phẩm bàn giao, giá trị, tiến độ, thanh toán, nghiệm thu, bảo mật, phạt vi phạm, chấm dứt), hai bên ký, đóng dấu.",
+  "Biên bản bàn giao từng phần (nếu hợp đồng chia nhiều đợt).",
+  "Biên bản nghiệm thu dịch vụ: đối chiếu từng hạng mục đạt/không đạt, hai bên ký.",
+  "Biên bản thanh lý hợp đồng + hồ sơ quyết toán (đối chiếu giá trị, hóa đơn)."
+ ],
+ "output_structure_raw": "1. Bảng báo giá dịch vụ: hạng mục công việc, đơn vị tính, số lượng, đơn giá, thành tiền,\n   tổng giá trị (ghi rõ đã/chưa VAT), xác nhận của khách hàng.\n\n2. Hợp đồng dịch vụ KHCN: đầy đủ điều khoản (đối tượng, phạm vi, sản phẩm bàn giao, giá\n   trị, tiến độ, thanh toán, nghiệm thu, bảo mật, phạt vi phạm, chấm dứt), hai bên ký,\n   đóng dấu.\n\n3. Biên bản bàn giao từng phần (nếu hợp đồng chia nhiều đợt).\n\n4. Biên bản nghiệm thu dịch vụ: đối chiếu từng hạng mục đạt/không đạt, hai bên ký.\n\n5. Biên bản thanh lý hợp đồng + hồ sơ quyết toán (đối chiếu giá trị, hóa đơn).",
+ "human_gate_check": "Đã qua Human gate: Phòng KHCN&HTPT thẩm định pháp lý, lãnh đạo trường ký hợp đồng, hội đồng hai bên ký biên bản nghiệm thu. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Viện ĐMST&CGCN. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dmst-lap-ho-so-hop-dong-dich-vu/references"
+}

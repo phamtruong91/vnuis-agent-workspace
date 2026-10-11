@@ -1,0 +1,197 @@
+{
+ "name": "vnuis-tt-ke-hoach-to-chuc-su-kien",
+ "title": "Kế hoạch tổ chức sự kiện",
+ "description": "Dùng khi bất kỳ đơn vị nào tổ chức hội nghị, hội thảo, lễ khai giảng hoặc bế giảng, ngày hội việc làm, lễ kỷ niệm và cần kế hoạch: tiến độ lùi từ ngày diễn ra, phân công, kịch bản chi tiết, dự toán, báo cáo sau sự kiện.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-ke-hoach-to-chuc-su-kien",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh; đơn vị chủ trì sự kiện",
+ "when": "Khi tổ chức hội nghị, hội thảo, lễ khai giảng/bế giảng, ngày hội việc làm, lễ kỷ niệm...\nDùng chung cho mọi phòng/khoa/trung tâm — không phụ thuộc tên đơn vị.",
+ "inputs": [
+  {
+   "key": "ten_su_kien",
+   "desc": "Tên sự kiện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_tieu",
+   "desc": "Mục tiêu, kết quả mong đợi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_mo",
+   "desc": "Số lượng khách/dại biểu dự kiến, đối tượng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Ngày giờ tổ chức",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Địa điểm dự kiến (chọn cơ sở: Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngan_sach",
+   "desc": "Ngân sách dự kiến (nếu có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "don_vi_phoi_hop",
+   "desc": "Các đơn vị/cá nhân phối hợp",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh; đơn vị chủ trì sự kiện"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Lập timeline ngược",
+   "lam_gi": "lấy `thoi_gian` làm ngày T, lùi lại các mốc T-30, T-14, T-7, T-3, T-1; mỗi mốc ghi rõ việc phải hoàn thành; kiểm tra các mốc có rơi vào cuối tuần/ngày lễ không để điều chỉnh sớm.",
+   "inputs": [
+    "thoi_gian",
+    "ten_su_kien",
+    "quy_mo"
+   ],
+   "vai_tro": "Trưởng ban tổ chức · AI hỗ trợ: lập timeline ngược từ ngày T, kiểm tra cuối tuần/ngày lễ",
+   "luu_y": "việc phụ thuộc lẫn nhau phải xếp đúng thứ tự (VD chốt danh sách doanh nghiệp trước khi in backdrop có logo); mốc T-1 chỉ dành cho kiểm tra lần cuối, không xếp việc mới.",
+   "ket_qua": "\"timeline ngược\" (mốc thời gian + việc phải xong ở mỗi mốc)."
+  },
+  {
+   "n": 2,
+   "title": "Lập danh mục kiểm theo giai đoạn",
+   "lam_gi": "chi tiết hóa timeline thành danh mục kiểm theo 6 giai đoạn: chuẩn bị → truyền thông → hậu cần → đón tiếp → diễn ra → tổng kết; mỗi đầu việc ghi đầu mối thực hiện và hạn chót cụ thể.",
+   "inputs": [
+    "don_vi_phoi_hop",
+    "dia_diem"
+   ],
+   "vai_tro": "Đơn vị chủ trì sự kiện (Ban tổ chức) · AI hỗ trợ: chi tiết hóa danh mục kiểm 6 giai đoạn, gán đầu mối và hạn chót",
+   "luu_y": "mỗi đầu việc phải có đúng một đầu mối (tránh \"cả làng cùng làm, không ai chịu\"); hạn chót của danh mục kiểm phải khớp với mốc timeline ở bước 1.",
+   "ket_qua": "\"danh mục kiểm công việc theo giai đoạn\" (việc + đầu mối + hạn chót)."
+  },
+  {
+   "n": 3,
+   "title": "Phân công RACI",
+   "lam_gi": "với từng đầu việc trong danh mục kiểm (bước 2), xác định R (người thực hiện), A (người chịu trách nhiệm cuối), C (tham vấn), I (được thông báo).",
+   "inputs": [
+    "don_vi_phoi_hop"
+   ],
+   "vai_tro": "Trưởng ban tổ chức (chốt người chịu trách nhiệm cuối — A) · AI hỗ trợ: gợi ý phân công RACI",
+   "luu_y": "mỗi đầu việc chỉ có đúng một A; A nên là trưởng ban tổ chức hoặc người có thẩm quyền quyết; không để đầu việc nào thiếu A.",
+   "ket_qua": "\"bảng phân công RACI\"."
+  },
+  {
+   "n": 4,
+   "title": "Dựng kịch bản run-of-show",
+   "lam_gi": "chi tiết từng khung giờ trong ngày diễn ra: nội dung, người điều hành/MC, yêu cầu âm thanh–ánh sáng, ghi chú rủi ro và phương án dự phòng.",
+   "inputs": [
+    "thoi_gian",
+    "dia_diem",
+    "quy_mo"
+   ],
+   "vai_tro": "Đơn vị chủ trì sự kiện (Ban tổ chức) · AI hỗ trợ: dựng kịch bản run-of-show từng khung giờ, ghi rủi ro và phương án dự phòng",
+   "luu_y": "mỗi khung giờ phải có người điều hành cụ thể; ghi rõ thiết bị dự phòng (mic, máy chiếu) cho các tiết mục quan trọng; tính thời gian chuyển cảnh và dự phòng trễ giờ.",
+   "ket_qua": "\"kịch bản run-of-show chi tiết\" (giờ + nội dung + điều hành + ghi chú rủi ro)."
+  },
+  {
+   "n": 5,
+   "title": "Lập dự toán",
+   "lam_gi": "từ danh mục kiểm (bước 2) và kịch bản (bước 4), liệt kê từng hạng mục chi phí (số lượng × đơn giá ước tính) + khoản dự phòng; tổng hợp và đối chiếu với `ngan_sach` (nếu có).",
+   "inputs": [
+    "ngan_sach"
+   ],
+   "vai_tro": "Đơn vị chủ trì sự kiện (lấy báo giá thực tế, đối chiếu ngân sách) · AI hỗ trợ: lập bảng dự toán ước tính từ danh mục kiểm và kịch bản",
+   "luu_y": "mọi số liệu chỉ là ước tính — đơn vị phải lấy báo giá thực tế; không cam kết chi vượt thẩm quyền; khoản dự phòng thường để 10–15% tổng.",
+   "ket_qua": "\"bảng dự toán kinh phí\" (hạng mục + số tiền + tổng)."
+  },
+  {
+   "n": 6,
+   "title": "Soạn mẫu báo cáo sau sự kiện",
+   "lam_gi": "soạn mẫu báo cáo gồm: số lượng tham dự thực tế, kết quả so với `muc_tieu`, vấn đề phát sinh, bài học kinh nghiệm; để trống các ô để điền sau khi sự kiện diễn ra.",
+   "inputs": [
+    "muc_tieu",
+    "quy_mo"
+   ],
+   "vai_tro": "Đơn vị chủ trì sự kiện (Ban tổ chức) · AI hỗ trợ: soạn mẫu báo cáo sau sự kiện, gắn trường đối chiếu mục tiêu",
+   "luu_y": "mẫu phải có trường đối chiếu kết quả với mục tiêu ban đầu để đánh giá hiệu quả; mục bài học kinh nghiệm là bắt buộc để cải tiến lần tổ chức sau.",
+   "ket_qua": "\"mẫu báo cáo tổng kết sau sự kiện\" → cùng các sản phẩm trước tạo Output cuối."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Timeline ngược tính từ `thoi_gian`; các mốc không rơi vào cuối tuần/ngày lễ (hoặc đã điều chỉnh); việc phụ thuộc nhau xếp đúng thứ tự; mốc T-1 chỉ dành cho kiểm tra lần cuối.",
+  "Danh mục kiểm: mỗi đầu việc có đúng một đầu mối và hạn chót cụ thể; hạn chót khớp với mốc timeline.",
+  "RACI: mỗi đầu việc có đúng một A (người chịu trách nhiệm cuối), không đầu việc nào thiếu A.",
+  "Run-of-show: mỗi khung giờ có nội dung, người điều hành/MC, yêu cầu âm thanh–ánh sáng, ghi chú rủi ro và phương án dự phòng; đã tính thời gian chuyển cảnh và dự phòng trễ giờ.",
+  "Dự toán liệt kê từng hạng mục (số lượng × đơn giá ước tính) + khoản dự phòng 10–15%; tổng đã đối chiếu với `ngan_sach`.",
+  "Mẫu báo cáo sau sự kiện có trường đối chiếu kết quả với mục tiêu ban đầu và mục bài học kinh nghiệm bắt buộc.",
+  "Mọi số liệu dự toán là ước tính — đơn vị đã lấy báo giá thực tế; không cam kết chi vượt thẩm quyền.",
+  "Đã qua Human gate: trưởng ban tổ chức duyệt kế hoạch, dự toán, kịch bản trước khi triển khai. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng ban tổ chức / thủ trưởng đơn vị chủ trì** duyệt kế hoạch, dự toán, kịch bản trước khi triển khai.",
+  "Ban Giám hiệu duyệt đối với sự kiện cấp trường hoặc có khách mời cấp cao."
+ ],
+ "guardrails": [
+  "Không tự đặt dịch vụ (địa điểm, catering, âm thanh...) hay ký hợp đồng thay.",
+  "Không tự gửi thư mời, thông báo cho khách mời/đại biểu.",
+  "Không cam kết ngân sách vượt thẩm quyền của đơn vị.",
+  "Mọi số liệu dự toán là ước tính — đơn vị phải lấy báo giá thực tế."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Sự kiện chia theo loại: khai giảng, tốt nghiệp, hội thảo, ngày hội tuyển sinh, lễ ký kết; mỗi loại có chủ trì khác nhau.",
+  "Kinh phí và cơ sở vật chất phối hợp Phòng TC&QT."
+ ],
+ "cho_xac_nhan": [
+  "Phân công chủ trì sự kiện (C6).",
+  "Quy trình đặt hội trường các cơ sở (C8)."
+ ],
+ "output_structure": [
+  "Thông tin sự kiện (tên, mục tiêu, quy mô, thời gian, địa điểm, ngân sách).",
+  "Timeline ngược (mốc + việc phải xong).",
+  "Danh mục kiểm theo giai đoạn (việc + đầu mối + hạn chót).",
+  "Bảng phân công RACI.",
+  "Kịch bản run-of-show (giờ + nội dung + điều hành + ghi chú rủi ro).",
+  "Dự toán kinh phí.",
+  "Mẫu báo cáo sau sự kiện. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Thông tin sự kiện (tên, mục tiêu, quy mô, thời gian, địa điểm, ngân sách).\n\n2. Timeline ngược (mốc + việc phải xong).\n\n3. Danh mục kiểm theo giai đoạn (việc + đầu mối + hạn chót).\n\n4. Bảng phân công RACI.\n\n5. Kịch bản run-of-show (giờ + nội dung + điều hành + ghi chú rủi ro).\n\n6. Dự toán kinh phí.\n\n7. Mẫu báo cáo sau sự kiện.",
+ "human_gate_check": "Đã qua Human gate: trưởng ban tổ chức duyệt kế hoạch, dự toán, kịch bản trước khi triển khai. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-ke-hoach-to-chuc-su-kien/references"
+}

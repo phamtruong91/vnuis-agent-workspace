@@ -1,0 +1,184 @@
+{
+ "name": "vnuis-taichinh-bao-cao-tai-chinh",
+ "title": "Lập báo cáo tài chính (chế độ kế toán HCSN)",
+ "description": "Dùng khi khóa sổ năm và Phòng TC&QT lập bộ báo cáo tài chính theo chế độ kế toán hành chính sự nghiệp (Thông tư 24/2024/TT-BTC): cân đối kế toán, kết quả hoạt động, lưu chuyển tiền tệ, thuyết minh.",
+ "group": "taichinh",
+ "group_label": "Kế hoạch – tài chính",
+ "previous_name": "vnuis-bao-cao-tai-chinh",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)",
+ "when": "Khi kết thúc năm tài chính, cần lập bộ báo cáo tài chính của đơn vị hành chính sự nghiệp\ntheo văn bản hiện hành nêu tại phap-ly.md: Bảng cân đối kế toán, Báo cáo kết quả hoạt động,\nBáo cáo lưu chuyển tiền tệ và Thuyết minh báo cáo tài chính.",
+ "inputs": [
+  {
+   "key": "nam_tai_chinh",
+   "desc": "Năm tài chính lập báo cáo (vd: 2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_du_tai_khoan",
+   "desc": "Số dư cuối kỳ các tài khoản kế toán (tài sản, nguồn vốn, thu, chi) sau khi khóa sổ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_dau_nam",
+   "desc": "Số dư đầu năm để lập cột so sánh (Bảng cân đối kế toán)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "che_do",
+   "desc": "Chế độ kế toán áp dụng (mặc định: văn bản hiện hành nêu tại phap-ly.md)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "don_vi_tinh",
+   "desc": "Đơn vị tính (mặc định: triệu đồng)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_lap",
+   "desc": "Người lập báo cáo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ke_toan_truong",
+   "desc": "Kế toán trưởng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Thủ trưởng đơn vị ký báo cáo",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (kế hoạch – tài chính)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 24/2024/TT-BTC, áp dụng từ năm tài chính 2025; sửa đổi 46/2025: Phân biệt năm tài chính, chế độ kế toán, chứng từ, sổ và báo cáo; dùng hệ thống biểu mẫu của 24/2024 cùng sửa đổi 46/2025 theo thời điểm. Không chuyển mã tài khoản hoặc mẫu cũ cơ học; đối chiếu sổ, số dư đầu/cuối kỳ và xác nhận của kế toán trưởng.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Khóa sổ và đối chiếu số liệu",
+   "lam_gi": "đảm bảo đã hạch toán đầy đủ chứng từ của `nam_tai_chinh`; đối chiếu số dư tiền mặt với sổ quỹ, tiền gửi ngân hàng với sao kê; tổ chức kiểm kê tài sản cố định; đối chiếu số liệu giữa sổ chi tiết và sổ tổng hợp cho từng tài khoản trong `so_du_tai_khoan`.",
+   "inputs": [
+    "so_du_tai_khoan",
+    "so_dau_nam",
+    "nam_tai_chinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "chỉ lập báo cáo khi sổ đã khóa và mọi chênh lệch đối chiếu đã được xử lý; số dư đầu năm phải khớp với số cuối năm của báo cáo năm trước đã công bố.",
+   "ket_qua": "biên bản khóa sổ (xác nhận số dư các tài khoản đã đối chiếu khớp)."
+  },
+  {
+   "n": 2,
+   "title": "Lập Bảng cân đối kế toán",
+   "lam_gi": "dựng hai phần của bảng: Phần Tài sản (tiền và tương đương tiền; các khoản phải thu; hàng tồn kho; tài sản cố định = nguyên giá − hao mòn lũy kế; tài sản dở dang; đầu tư tài chính nếu có) và Phần Nguồn vốn (các khoản phải trả; các quỹ; nguồn kinh phí, nguồn vốn khác; thặng dư/thâm hụt lũy kế); lập 2 cột Đầu năm (`so_dau_nam`) – Cuối năm theo `don_vi_tinh`; kiểm tra đẳng thức **Tổng tài sản = Tổng nguồn vốn**.",
+   "inputs": [
+    "so_du_tai_khoan",
+    "so_dau_nam",
+    "don_vi_tinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, lập bảng biểu, định dạng",
+   "luu_y": "giá trị còn lại TSCĐ = nguyên giá − hao mòn lũy kế, không lấy nguyên giá; nếu bảng không cân, quay lại Bước 1 rà soát bút toán — không tự ý điều chỉnh số cho cân.",
+   "ket_qua": "Bảng cân đối kế toán đã cân (Tổng tài sản = Tổng nguồn vốn)."
+  },
+  {
+   "n": 3,
+   "title": "Lập Báo cáo kết quả hoạt động",
+   "lam_gi": "tổng hợp thu hoạt động (thu phí, lệ phí; thu SXKD, dịch vụ; thu NSNN cấp; thu khác) và chi hoạt động (chi phí tiền lương; vật tư, công cụ; hao mòn TSCĐ; dịch vụ mua ngoài; chi phí bằng tiền khác); tính **thặng dư/thâm hụt = tổng thu − tổng chi**.",
+   "inputs": [
+    "so_du_tai_khoan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, tính toán, phân tích số liệu",
+   "luu_y": "chi phí hao mòn TSCĐ là chi phí không bằng tiền — vẫn phải ghi nhận đầy đủ; phân biệt chi hoạt động với chi đầu tư (mua sắm TSCĐ không ghi vào chi hoạt động).",
+   "ket_qua": "Báo cáo kết quả hoạt động (tổng thu, tổng chi, thặng dư/thâm hụt)."
+  },
+  {
+   "n": 4,
+   "title": "Lập Báo cáo lưu chuyển tiền tệ (tóm tắt)",
+   "lam_gi": "tổng hợp 3 dòng tiền: hoạt động chính (thu – chi bằng tiền), hoạt động đầu tư (mua sắm TSCĐ, XDCB), hoạt động tài chính; tính tăng/giảm tiền thuần trong năm; đối chiếu số dư tiền cuối kỳ với chỉ tiêu \"Tiền và tương đương tiền\" trên Bảng cân đối (Bước 2).",
+   "inputs": [
+    "so_du_tai_khoan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "tiền cuối kỳ trên báo cáo lưu chuyển tiền tệ phải khớp tuyệt đối với Bảng cân đối — đây là điểm đối chiếu chéo bắt buộc.",
+   "ket_qua": "Báo cáo lưu chuyển tiền tệ tóm tắt (tiền cuối kỳ đã khớp Bảng cân đối)."
+  },
+  {
+   "n": 5,
+   "title": "Viết Thuyết minh báo cáo tài chính (ngắn)",
+   "lam_gi": "trình bày đặc điểm hoạt động của đơn vị; chế độ kế toán áp dụng (`che_do`); chính sách kế toán chủ yếu (ghi nhận TSCĐ, trích hao mòn, phân bổ chi phí); giải thích các khoản mục biến động lớn so với đầu năm.",
+   "inputs": [
+    "che_do"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) · AI hỗ trợ: soạn dự thảo, chuẩn bị hồ sơ trình đầy đủ",
+   "luu_y": "mọi khoản mục biến động lớn (TSCĐ tăng, quỹ tăng...) đều phải có lời giải thích gắn với sự kiện thực tế trong năm (đưa vào sử dụng công trình, trích lập quỹ...).",
+   "ket_qua": "Thuyết minh báo cáo tài chính."
+  },
+  {
+   "n": 6,
+   "title": "Đối chiếu chéo, ký duyệt và lưu hồ sơ",
+   "lam_gi": "đối chiếu chéo 3 biểu — tiền cuối kỳ (lưu chuyển tiền tệ) = tiền trên Bảng cân đối; thặng dư năm (kết quả hoạt động) liên kết với thặng dư lũy kế (Bảng cân đối); lấy đầy đủ chữ ký theo thứ tự: người lập → kế toán trưởng → thủ trưởng đơn vị (`nguoi_lap` / `ke_toan_truong` / `nguoi_ky`); lưu hồ sơ theo quy định và nộp cho cơ quan chủ quản, cơ quan tài chính đúng thời hạn.",
+   "inputs": [
+    "nguoi_lap",
+    "ke_toan_truong",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (kế hoạch – tài chính) (đối chiếu, hoàn thiện); Kế toán trưởng và Thủ trưởng đơn vị ký duyệt · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, lưu trữ hồ sơ",
+   "luu_y": "thiếu một trong ba chữ ký thì bộ báo cáo chưa có giá trị pháp lý để nộp.",
+   "ket_qua": "bộ báo cáo tài chính hoàn chỉnh, đã ký duyệt."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Có đầy đủ sản phẩm: Bảng cân đối kế toán (tài sản / nguồn vốn, cột đầu năm – cuối năm)",
+  "Có đầy đủ sản phẩm: Báo cáo kết quả hoạt động (thu – chi – thặng dư/thâm hụt)",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Chỉ lập báo cáo khi sổ đã khóa và mọi chênh lệch đối chiếu đã được xử lý",
+  "Giá trị còn lại TSCĐ = nguyên giá − hao mòn lũy kế, không lấy nguyên giá"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Báo cáo tài chính do Phòng lập từ sổ sách và số liệu kế toán đã chốt; skill không tự tính lại số kế toán.",
+  "Nguồn thu tách theo nhóm Trường quy định (ví dụ học phí các mô hình, nguồn khác); không đoán danh mục."
+ ],
+ "cho_xac_nhan": [
+  "Chế độ kế toán và mẫu báo cáo áp dụng (C2, C8).",
+  "Người phê duyệt báo cáo (C6)."
+ ],
+ "output_structure": [],
+ "output_structure_raw": "Bộ báo cáo tài chính theo Phụ lục IV Thông tư 24/2024/TT-BTC và sửa đổi áp dụng cho năm tài chính: B01/BCTC Báo cáo tình hình tài chính; B02/BCTC Báo cáo kết quả hoạt động; B03/BCTC Báo cáo lưu chuyển tiền tệ (chọn phương pháp theo quy định); B04/BCTC Thuyết minh báo cáo tài chính. Giữ nguyên chỉ tiêu, mã số, cột kỳ báo cáo, đơn vị tính, khối người lập/kế toán trưởng/thủ trưởng theo từng biểu. Xác định các biểu bổ sung phải nộp theo đối tượng; không thay bộ biểu bằng bảng thu–chi tổng hợp hoặc gọi B01 là Bảng cân đối kế toán. Nguồn: https://congbao.chinhphu.vn/van-ban/thong-tu-so-24-2024-tt-btc-41775/49902.htm",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (kế hoạch – tài chính). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Thông tư 24/2024/TT-BTC, áp dụng từ năm tài chính 2025; sửa đổi 46/2025\n\nNguồn: https://vbpl.vn/cantho/Pages/ivbpq-lichsu.aspx?ItemID=166774&do=word\n\nPhân biệt năm tài chính, chế độ kế toán, chứng từ, sổ và báo cáo; dùng hệ thống biểu mẫu của 24/2024 cùng sửa đổi 46/2025 theo thời điểm. Không chuyển mã tài khoản hoặc mẫu cũ cơ học; đối chiếu sổ, số dư đầu/cuối kỳ và xác nhận của kế toán trưởng.\n",
+ "outputs_dir": "skills/vnuis-taichinh-bao-cao-tai-chinh/references"
+}

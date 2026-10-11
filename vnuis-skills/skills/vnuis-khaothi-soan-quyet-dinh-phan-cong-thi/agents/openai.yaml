@@ -1,0 +1,4 @@
+interface:
+  display_name: Khảo thí · Quyết định phân công coi thi / chấm thi – VNU-IS
+  short_description: Hỗ trợ quyết định phân công coi thi / chấm thi (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-khaothi-soan-quyet-dinh-phan-cong-thi để hỗ trợ công việc: Quyết định phân công coi thi / chấm thi; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

@@ -1,0 +1,4 @@
+interface:
+  display_name: Dùng chung · Kho tri thức hồ sơ mẫu VNU-IS
+  short_description: Danh mục hồ sơ mẫu dùng lại VNU-IS
+  default_prompt: 'Hãy dùng $vnuis-dc-lap-danh-muc-kho-tri-thuc để hỗ trợ công việc: Danh mục kho tri thức và hồ sơ mẫu của Trường Quốc tế – ĐHQGHN; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .xlsx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

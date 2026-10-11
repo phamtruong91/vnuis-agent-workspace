@@ -1,0 +1,147 @@
+{
+ "name": "vnuis-dmst-sang-loc-sang-kien",
+ "title": "Sàng lọc và xếp ưu tiên sáng kiến đổi mới sáng tạo",
+ "description": "Dùng khi Viện nhận nhiều sáng kiến hoặc nhu cầu đổi mới sáng tạo cùng lúc và cần chuẩn hóa, chấm sơ bộ theo tiêu chí Viện đặt, xếp nhóm ưu tiên thành bảng so sánh để lãnh đạo chọn việc làm trước.",
+ "group": "dmst",
+ "group_label": "Viện ĐMST&CGCN – đổi mới sáng tạo, chuyển giao, đào tạo liên tục",
+ "previous_name": "vnuis-sang-loc-sang-kien-dmst",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Viện ĐMST&CGCN",
+ "when": "Khi Viện nhận nhiều sáng kiến hoặc nhu cầu từ khoa, giảng viên, sinh viên, đối tác và cần bảng so sánh có tiêu chí rõ để chọn việc làm trước.",
+ "inputs": [
+  {
+   "key": "danh_sach_sang_kien",
+   "desc": "Danh sách hoặc phiếu đề xuất: người đề xuất, mô tả, đối tượng hưởng lợi, nguồn lực cần",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tieu_chi_cham",
+   "desc": "Tiêu chí và trọng số do Viện quyết định (ví dụ phù hợp chiến lược, khả thi, tác động)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguon_luc_hien_co",
+   "desc": "Nhân sự, thời gian, ngân sách Viện có thể dành cho việc mới",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "lich_su_xu_ly",
+   "desc": "Các sáng kiến đã nhận trước đây và kết quả, để tránh trùng",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "ky_xet",
+   "desc": "Đợt hoặc kỳ xét",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Viện ĐMST&CGCN"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chuẩn hóa đề xuất",
+   "lam_gi": "Đưa mỗi sáng kiến về cùng các trường; đánh dấu trường thiếu và đề xuất trùng với lịch sử xử lý.",
+   "inputs": [
+    "danh_sach_sang_kien",
+    "lich_su_xu_ly"
+   ],
+   "vai_tro": "Chuyên viên Viện · AI hỗ trợ: chuẩn hóa và phát hiện trùng",
+   "luu_y": "Không viết lại ý của người đề xuất.",
+   "ket_qua": "Bảng sáng kiến chuẩn hóa."
+  },
+  {
+   "n": 2,
+   "title": "Chấm sơ bộ theo tiêu chí",
+   "lam_gi": "Áp tiêu chí và trọng số do Viện cung cấp; mỗi điểm có lý do ngắn trích từ nội dung đề xuất.",
+   "inputs": [
+    "tieu_chi_cham"
+   ],
+   "vai_tro": "Chuyên viên Viện · AI hỗ trợ: chấm sơ bộ có lý do",
+   "luu_y": "Điểm sơ bộ chỉ là gợi ý; thiếu thông tin thì ghi \"chưa đủ cơ sở\", không đoán.",
+   "ket_qua": "Bảng điểm sơ bộ."
+  },
+  {
+   "n": 3,
+   "title": "Đối chiếu nguồn lực",
+   "lam_gi": "So nhu cầu nguồn lực của từng sáng kiến với nguồn lực hiện có; nêu tổ hợp khả thi.",
+   "inputs": [
+    "nguon_luc_hien_co"
+   ],
+   "vai_tro": "Trưởng bộ phận · AI hỗ trợ: lập bảng đối chiếu",
+   "luu_y": "Không tự phân bổ ngân sách.",
+   "ket_qua": "Bảng khả thi theo nguồn lực."
+  },
+  {
+   "n": 4,
+   "title": "Xếp nhóm và danh sách cần bổ sung",
+   "lam_gi": "Chia nhóm: nên làm ngay, cần bổ sung thông tin, để sau, không phù hợp; mỗi nhóm có lý do và việc tiếp theo.",
+   "inputs": [
+    "ky_xet"
+   ],
+   "vai_tro": "Trưởng Viện · AI hỗ trợ: dự thảo xếp nhóm",
+   "luu_y": "Quyết định cuối do lãnh đạo Viện.",
+   "ket_qua": "Bảng ưu tiên và danh sách việc tiếp theo."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mỗi điểm có lý do truy được về nội dung đề xuất.",
+  "Tiêu chí và trọng số đúng như Viện cung cấp.",
+  "Sáng kiến trùng lịch sử đã được gắn cờ.",
+  "Không có quyết định chọn hoặc loại do AI tự đưa ra.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Lãnh đạo Viện** quyết định sáng kiến nào được triển khai.",
+  "**Người đề xuất** được thông báo kết quả theo cách Viện quy định."
+ ],
+ "guardrails": [
+  "KHÔNG tự loại sáng kiến.",
+  "KHÔNG đặt tiêu chí hay trọng số thay Viện."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Tiêu chí và trọng số của Viện (C6, C8).",
+  "Kênh tiếp nhận sáng kiến hiện có (C5)."
+ ],
+ "output_structure": [
+  "Sheet Tổng quan: kỳ xét, số sáng kiến, số theo nhóm.",
+  "Sheet Sáng kiến: thông tin chuẩn hóa, điểm sơ bộ, lý do, nhóm.",
+  "Sheet Nguồn lực: nhu cầu và hiện có.",
+  "Sheet Cần bổ sung: thông tin thiếu và người phải trả lời."
+ ],
+ "output_structure_raw": "1. Sheet Tổng quan: kỳ xét, số sáng kiến, số theo nhóm.\n\n2. Sheet Sáng kiến: thông tin chuẩn hóa, điểm sơ bộ, lý do, nhóm.\n\n3. Sheet Nguồn lực: nhu cầu và hiện có.\n\n4. Sheet Cần bổ sung: thông tin thiếu và người phải trả lời.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Viện ĐMST&CGCN. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-dmst-sang-loc-sang-kien/references"
+}

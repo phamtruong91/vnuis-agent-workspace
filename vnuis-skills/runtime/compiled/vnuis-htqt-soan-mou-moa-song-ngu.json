@@ -1,0 +1,212 @@
+{
+ "name": "vnuis-htqt-soan-mou-moa-song-ngu",
+ "title": "Soạn biên bản ghi nhớ / thỏa thuận hợp tác (MOU/MOA) song ngữ Việt–Anh",
+ "description": "Dùng khi VNU-IS chuẩn bị ký kết hợp tác với đối tác trong nước hoặc quốc tế và cần soạn biên bản ghi nhớ (MOU) hay thỏa thuận hợp tác (MOA) song ngữ Việt–Anh: mục đích, lĩnh vực, trách nhiệm hai bên, thời hạn.",
+ "group": "htqt",
+ "group_label": "Hợp tác quốc tế",
+ "previous_name": "vnuis-soan-mou-moa",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển; Viện ĐMST&CGCN; các khoa",
+ "when": "Khi cần soạn thảo văn bản ghi nhớ (MOU – Memorandum of Understanding) hoặc thỏa thuận\nhợp tác (MOA – Memorandum of Agreement) giữa trường với đối tác trong nước\nhoặc quốc tế, phục vụ ký kết hợp tác đào tạo, nghiên cứu khoa học, trao đổi giảng viên –\nsinh viên.",
+ "inputs": [
+  {
+   "key": "loai_van_ban",
+   "desc": "MOU (ghi nhớ, không ràng buộc pháp lý chặt) / MOA (thỏa thuận, có cam kết cụ thể)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ten_doi_tac",
+   "desc": "Tên đầy đủ của đối tác (tiếng Việt và tiếng Anh), quốc gia, người đại diện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_dich",
+   "desc": "Mục đích hợp tác (1–2 câu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "linh_vuc_hop_tac",
+   "desc": "Các lĩnh vực hợp tác: đào tạo, NCKH, trao đổi GV-SV, đồng tổ chức hội thảo...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "trach_nhiem_ben_a",
+   "desc": "Trách nhiệm của Bên A (trường)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "trach_nhiem_ben_b",
+   "desc": "Trách nhiệm của đối tác",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han",
+   "desc": "Thời hạn hiệu lực (số năm) và điều kiện gia hạn/chấm dứt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Người ký hai bên (chức danh, họ tên)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ngay_ky_du_kien",
+   "desc": "Ngày dự kiến ký kết",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển; Viện ĐMST&CGCN; các khoa"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại văn bản (MOU hay MOA)",
+   "lam_gi": "căn cứ `loai_van_ban` và mức độ cam kết trong `muc_dich`, `linh_vuc_hop_tac` để chốt khung soạn: MOU dùng khi hai bên mới thiết lập quan hệ, nội dung mang tính nguyên tắc; MOA dùng khi đã có cam kết cụ thể (kinh phí, số lượng, tiến độ) — điều khoản chi tiết và chặt chẽ hơn.",
+   "inputs": [
+    "loai_van_ban",
+    "muc_dich",
+    "linh_vuc_hop_tac"
+   ],
+   "vai_tro": "Trưởng Phòng KHCN&HTPT · AI hỗ trợ: phân tích mức độ cam kết",
+   "luu_y": "nếu trong `linh_vuc_hop_tac` hoặc trách nhiệm hai bên xuất hiện cam kết tài chính cụ thể mà `loai_van_ban` là MOU thì phải cảnh báo và đề xuất chuyển sang MOA hoặc tách phụ lục hợp đồng riêng.",
+   "ket_qua": "quyết định loại văn bản + khung điều khoản áp dụng (nguyên tắc cho MOU, chi tiết cho MOA)."
+  },
+  {
+   "n": 2,
+   "title": "Soạn bản tiếng Việt đầy đủ điều khoản",
+   "lam_gi": "soạn bản tiếng Việt theo đúng thứ tự: Tiêu ngữ – Quốc hiệu → tên văn bản → tên hai bên (Bên A/Bên B) → căn cứ ký kết → Điều 1. Mục đích → Điều 2. Lĩnh vực hợp tác → Điều 3. Trách nhiệm của Bên A → Điều 4. Trách nhiệm của Bên B → Điều 5. Thời hạn hiệu lực → Điều 6. Điều khoản chung (ngôn ngữ sử dụng, giải quyết bất đồng, sửa đổi, hiệu lực thi hành) → phần ký.",
+   "inputs": [
+    "ten_doi_tac",
+    "muc_dich",
+    "linh_vuc_hop_tac",
+    "trach_nhiem_ben_a",
+    "trach_nhiem_ben_b",
+    "thoi_han",
+    "nguoi_ky",
+    "ngay_ky_du_kien"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn dự thảo tiếng Việt",
+   "luu_y": "trách nhiệm Bên A và Bên B phải đối xứng, không để một bên chỉ có quyền mà không có nghĩa vụ; MOA phải ghi rõ số lượng, kinh phí, tiến độ cụ thể chứ không dùng chữ chung chung như \"hỗ trợ tối đa\".",
+   "ket_qua": "dự thảo bản tiếng Việt hoàn chỉnh (đủ 6 điều + phần ký)."
+  },
+  {
+   "n": 3,
+   "title": "Soạn bản tiếng Anh tương ứng",
+   "lam_gi": "dịch đầy đủ từng điều của bản tiếng Việt sang tiếng Anh với thuật ngữ pháp lý – hành chính chuẩn (Memorandum of Understanding/Agreement, Party A/Party B, Article, validity, termination...); ghi rõ hai bản có giá trị ngang nhau hoặc chỉ định bản có giá trị ưu tiên khi có khác biệt.",
+   "inputs": [
+    "ten_doi_tac",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: dịch sang tiếng Anh",
+   "luu_y": "tên đối tác và chức danh người ký bằng tiếng Anh phải lấy đúng theo văn bản chính thức của đối tác, không tự dịch tên riêng; số năm, số bản, thời hạn thông báo phải khớp tuyệt đối với bản Việt.",
+   "ket_qua": "dự thảo bản tiếng Anh tương ứng từng điều (Article 1–6 + phần ký)."
+  },
+  {
+   "n": 4,
+   "title": "Rà soát tính tương thích pháp lý",
+   "lam_gi": "đối chiếu từng điều khoản của cả hai bản với quy định của Nhà trường và pháp luật Việt Nam; kiểm tra điều khoản tài chính (nếu có) có phù hợp quy định quản lý tài chính; lập bảng các điểm không tương thích và đề xuất chỉnh sửa.",
+   "inputs": [],
+   "vai_tro": "Phòng Pháp chế · AI hỗ trợ: lập bảng đối chiếu hỗ trợ",
+   "luu_y": "MOU không được chứa điều khoản tạo nghĩa vụ pháp lý bắt buộc kiểu hợp đồng (phạt vi phạm, bồi thường) — nếu có thì phải chuyển sang MOA; điều khoản nào đối tác yêu cầu mà trái quy định thì ghi rõ để đàm phán lại, không tự ý \"làm mềm\".",
+   "ket_qua": "bảng rà soát tương thích pháp lý (điều khoản – đánh giá – đề xuất chỉnh sửa)."
+  },
+  {
+   "n": 5,
+   "title": "Trình duyệt nội bộ",
+   "lam_gi": "trình theo đúng trình tự: Phòng KHCN&HTPT thẩm định nội dung → Phòng TC&QT (văn phòng – văn thư) (hoặc Phòng Pháp chế) rà soát pháp lý → Hiệu trưởng phê duyệt trước khi ký; ghi nhận ý kiến, chữ ký từng đơn vị vào phiếu trình duyệt nội bộ.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Hiệu trưởng · AI hỗ trợ: chuẩn bị hồ sơ trình ký, nhắc lịch và theo dõi tiến độ",
+   "luu_y": "không được bỏ qua bước rà soát pháp lý với văn bản ký cùng đối tác nước ngoài; ý kiến chưa thống nhất thì phải sửa dự thảo và trình lại, không trình \"vượt cấp\".",
+   "ket_qua": "phiếu trình duyệt nội bộ (đơn vị thẩm định, ý kiến, chữ ký, ngày duyệt)."
+  },
+  {
+   "n": 6,
+   "title": "Xuất bản văn bản song ngữ",
+   "lam_gi": "hoàn thiện văn bản song ngữ (hai cột hoặc hai phần riêng), kiểm tra lần cuối tính song hành giữa hai bản; xuất bản sẵn sàng in ký kết; lưu 01 bản tại Phòng KHCN&HTPT.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: hoàn thiện văn bản song ngữ và xuất bản",
+   "luu_y": "số bản in phải khớp Điều khoản chung (ví dụ 04 bản song ngữ, mỗi bên giữ 02 bản); kiểm tra chữ ký, chức danh, con dấu hai bên trước khi coi là hoàn tất.",
+   "ket_qua": "văn bản MOU/MOA song ngữ Việt–Anh hoàn chỉnh + phiếu trình duyệt nội bộ, đã lưu hồ sơ."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung khớp với Input: tên đối tác, lĩnh vực hợp tác, trách nhiệm hai bên, thời hạn, người ký.",
+  "Không bịa đặt cam kết, số liệu tài chính, thông tin đối tác.",
+  "Đúng thể thức văn bản ký kết đối ngoại; hai bản Việt – Anh song hành (số năm, số bản, thời hạn thông báo khớp tuyệt đối).",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực: Luật Giáo dục đại học 2025 (Luật số 125/2025/QH15) và văn bản hướng dẫn hợp tác quốc tế; đối chiếu hiệu lực tại ngày nghiệp vụ (xem docs/CAP_NHAT_PHAP_LY.md).",
+  "Đã qua Human gate: Phòng KHCN&HTPT thẩm định, Phòng Pháp chế rà soát, Hiệu trưởng phê duyệt trước khi ký.",
+  "Trách nhiệm hai bên đối xứng (không bên nào chỉ có quyền mà không có nghĩa vụ); MOU không chứa điều khoản phạt vi phạm/bồi thường.",
+  "Tên đối tác, chức danh người ký tiếng Anh đúng theo văn bản chính thức của đối tác.",
+  "Số bản in khớp Điều khoản chung; phiếu trình duyệt có đủ ý kiến, chữ ký, ngày duyệt từng đơn vị. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "So sánh hai bản Việt và Anh theo từng điều khoản; chỉ ra chỗ lệch nghĩa. Bản nào có giá trị khi hai bản khác nhau do điều khoản ngôn ngữ của thỏa thuận quyết định; skill không tự kết luận.",
+  "Kiểm tra có hay không các nhóm điều khoản: phạm vi, thời hạn, sở hữu trí tuệ, dữ liệu, tài chính, giải quyết tranh chấp, chấm dứt. Chỉ ghi có hay không, không tư vấn pháp lý.",
+  "Loại hợp tác trên website: trao đổi sinh viên và học viên (kể cả ERASMUS+), công nhận chuyển tiếp, thu hút học giả quốc tế, dự án nghiên cứu.",
+  "Thẩm quyền ký và thủ tục xin ý kiến ĐHQGHN chưa rõ; ghi `[CẦN XÁC MINH]` (C1, C6)."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu MOU/MOA chuẩn của Trường (C8).",
+  "Quy trình xin ý kiến ĐHQGHN với thỏa thuận quốc tế (C6)."
+ ],
+ "output_structure": [
+  "Tiêu ngữ – Quốc hiệu (bản tiếng Việt).",
+  "Tên văn bản (Biên bản ghi nhớ / Thỏa thuận hợp tác + tên tiếng Anh) và tên hai bên (Bên A / Bên B).",
+  "Căn cứ ký kết (nhu cầu và khả năng hợp tác của hai bên).",
+  "Điều 1. Mục đích.",
+  "Điều 2. Lĩnh vực hợp tác.",
+  "Điều 3. Trách nhiệm của Bên A.",
+  "Điều 4. Trách nhiệm của Bên B.",
+  "Điều 5. Thời hạn hiệu lực (số năm, điều kiện gia hạn/chấm dứt).",
+  "Điều 6. Điều khoản chung (ngôn ngữ sử dụng, sửa đổi bổ sung, giải quyết bất đồng, hiệu lực thi hành).",
+  "Phần ký: đại diện hai bên (chức danh, họ tên, đơn vị).",
+  "Bản tiếng Anh tương ứng đầy đủ (Article 1–6 + phần ký).",
+  "Phiếu trình duyệt nội bộ (kèm theo): đơn vị thẩm định, ý kiến, người thẩm định, ngày duyệt. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu ngữ – Quốc hiệu (bản tiếng Việt).\n\n2. Tên văn bản (Biên bản ghi nhớ / Thỏa thuận hợp tác + tên tiếng Anh) và tên hai bên (Bên A / Bên B).\n\n3. Căn cứ ký kết (nhu cầu và khả năng hợp tác của hai bên).\n\n4. Điều 1. Mục đích.\n\n5. Điều 2. Lĩnh vực hợp tác.\n\n6. Điều 3. Trách nhiệm của Bên A.\n\n7. Điều 4. Trách nhiệm của Bên B.\n\n8. Điều 5. Thời hạn hiệu lực (số năm, điều kiện gia hạn/chấm dứt).\n\n9. Điều 6. Điều khoản chung (ngôn ngữ sử dụng, sửa đổi bổ sung, giải quyết bất đồng, hiệu lực thi hành).\n\n10. Phần ký: đại diện hai bên (chức danh, họ tên, đơn vị).\n\n11. Bản tiếng Anh tương ứng đầy đủ (Article 1–6 + phần ký).\n\n12. Phiếu trình duyệt nội bộ (kèm theo): đơn vị thẩm định, ý kiến, người thẩm định, ngày duyệt.",
+ "human_gate_check": "Đã qua Human gate: Phòng KHCN&HTPT thẩm định, Phòng Pháp chế rà soát, Hiệu trưởng phê duyệt trước khi ký.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-htqt-soan-mou-moa-song-ngu/references"
+}

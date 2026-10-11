@@ -1,0 +1,196 @@
+{
+ "name": "vnuis-khcn-quan-tri-tap-chi",
+ "title": "Quản trị tạp chí khoa học",
+ "description": "Dùng khi Ban biên tập tạp chí khoa học của trường vận hành một số tạp chí: nhận bản thảo, phân công phản biện, theo dõi bình duyệt, hiệu đính, xuất bản, quản lý ISSN.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-quan-tri-tap-chi-khoa-hoc",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Hội đồng biên tập (nếu có)",
+ "when": "Khi Ban biên tập tạp chí khoa học của trường cần tổ chức quy trình từ tiếp nhận bản thảo đến\nxuất bản một số tạp chí: phân công phản biện, theo dõi tiến độ bình duyệt, hiệu đính, chế bản\nvà phát hành số mới.",
+ "inputs": [
+  {
+   "key": "ten_tap_chi",
+   "desc": "Tên tạp chí, mã ISSN (in/điện tử)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_tap_chi",
+   "desc": "Số, tập, năm xuất bản dự kiến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ban_thao",
+   "desc": "Danh sách bản thảo tiếp nhận (mã số, tên bài, tác giả, lĩnh vực)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hoi_dong_bien_tap",
+   "desc": "Danh sách thành viên hội đồng biên tập, phản biện theo lĩnh vực",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han",
+   "desc": "Mốc thời gian: hạn phản biện, hạn hiệu đính, ngày phát hành",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "quy_dinh_binh_duyet",
+   "desc": "Quy chế bình duyệt (số phản biện/bài, thang điểm, tiêu chí loại)",
+   "required": false,
+   "note": "Không (mặc định: 2 phản biện kín/bài)"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ); Hội đồng biên tập (nếu có)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tiếp nhận và sơ loại bản thảo",
+   "lam_gi": "với mỗi bản thảo trong `ban_thao`: kiểm tra thể thức theo quy định của tạp chí, chạy kiểm tra đạo văn/trùng lặp, đánh giá sự phù hợp với phạm vi của tạp chí; bản thảo không đạt thì trả về cho tác giả kèm lý do cụ thể; bản thảo đạt thì gán mã số và ẩn danh tác giả (xóa tên, đơn vị, lời cảm ơn — cả trong nội dung lẫn thuộc tính file) trước khi gửi phản biện.",
+   "inputs": [
+    "ban_thao",
+    "ten_tap_chi",
+    "quy_dinh_binh_duyet"
+   ],
+   "vai_tro": "Tổng biên tập · AI hỗ trợ: kiểm tra thể thức và đạo văn",
+   "luu_y": "ẩn danh phải triệt để — kiểm tra cả metadata tác giả trong file, không chỉ nội dung; đây là điều kiện bắt buộc của bình duyệt kín.",
+   "ket_qua": "danh sách bản thảo đã sơ loại (đạt/trả về + lý do) kèm mã số ẩn danh."
+  },
+  {
+   "n": 2,
+   "title": "Phân công bình duyệt kín",
+   "lam_gi": "mỗi bản thảo đạt sơ loại gửi 02 phản biện độc lập cùng lĩnh vực từ `hoi_dong_bien_tap`; kiểm tra xung đột lợi ích (phản biện không cùng đơn vị hoặc có quan hệ cộng tác gần với tác giả); đặt hạn phản biện theo `thoi_han` (thường 21–30 ngày); gửi kèm phiếu nhận xét theo `quy_dinh_binh_duyet` (thang điểm, tiêu chí đánh giá).",
+   "inputs": [
+    "hoi_dong_bien_tap",
+    "thoi_han",
+    "quy_dinh_binh_duyet"
+   ],
+   "vai_tro": "Thư ký Tòa soạn Tạp chí · AI hỗ trợ: đề xuất phân công phản biện",
+   "luu_y": "tuyệt đối không tiết lộ danh tính phản biện cho tác giả và ngược lại; phản biện trễ hạn thì nhắc 01 lần, quá 7 ngày thì thay phản biện dự phòng để không vỡ tiến độ số tạp chí.",
+   "ket_qua": "bảng phân công phản biện (mã bản thảo – 2 phản biện – hạn phản biện)."
+  },
+  {
+   "n": 3,
+   "title": "Tổng hợp kết quả bình duyệt",
+   "lam_gi": "thu nhận xét của 02 phản biện; phân loại mỗi bản thảo theo 4 mức: Chấp nhận / Sửa nhỏ / Sửa lớn & phản biện lại / Từ chối; trường hợp 02 phản biện chênh nhau từ 2 mức trở lên thì xin ý kiến phản biện thứ 3 hoặc trưởng ban chuyên môn; gửi nhận xét (đã ẩn danh) về cho tác giả, đặt hạn sửa bài.",
+   "inputs": [],
+   "vai_tro": "Thư ký Tòa soạn Tạp chí · AI hỗ trợ: tổng hợp kết quả 2 phản biện và phân loại 4 mức",
+   "luu_y": "AI không được thay phản biện chuyên môn đánh giá chất lượng khoa học của bản thảo; việc tổng hợp chỉ dựa trên nhận xét của phản biện, không tự ý nâng/hạ mức đánh giá.",
+   "ket_qua": "bảng kết quả bình duyệt từng bản thảo (mức đánh giá + hạn sửa bài)."
+  },
+  {
+   "n": 4,
+   "title": "Duyệt danh mục bài đăng",
+   "lam_gi": "trưởng ban chuyên môn xác nhận kết quả bình duyệt từng lĩnh vực; Tổng biên tập duyệt danh mục bài đăng chính thức của số tạp chí (`so_tap_chi`) dựa trên kết quả bình duyệt, cân đối cơ cấu lĩnh vực và số trang; lập biên bản họp hội đồng biên tập.",
+   "inputs": [
+    "so_tap_chi"
+   ],
+   "vai_tro": "Hội đồng biên tập, Tổng biên tập · AI hỗ trợ: chuẩn bị tài liệu họp, tổng hợp ý kiến",
+   "luu_y": "không tự ý chấp nhận/từ chối bản thảo thay Hội đồng biên tập; bài \"Sửa lớn\" chưa phản biện lại xong thì không đưa vào danh mục chính thức — chỉ ghi ở mức dự kiến.",
+   "ket_qua": "quyết định danh mục bài đăng + biên bản họp hội đồng biên tập."
+  },
+  {
+   "n": 5,
+   "title": "Hiệu đính và chế bản",
+   "lam_gi": "hiệu đính ngôn ngữ, chuẩn hóa định dạng trích dẫn, dàn trang theo khuôn khổ của tạp chí; gửi bản in thử (proof) cho tác giả duyệt; chốt bản cuối sau khi tác giả xác nhận.",
+   "inputs": [],
+   "vai_tro": "Tác giả · AI hỗ trợ: hiệu đính ngôn ngữ",
+   "luu_y": "ở vòng proof, tác giả chỉ được sửa lỗi chế bản, không được thay đổi nội dung khoa học đã được duyệt; mọi thay đổi sau proof phải có xác nhận của Tổng biên tập.",
+   "ket_qua": "bản chế bản cuối cùng đã được tác giả duyệt proof."
+  },
+  {
+   "n": 6,
+   "title": "Xuất bản và lưu chiểu",
+   "lam_gi": "phát hành số tạp chí (bản in/điện tử) đúng `thoi_han` phát hành; nộp lưu chiểu theo quy định của Luật Báo chí; cập nhật cơ sở dữ liệu bài báo của trường; công bố số mới trên website của tạp chí.",
+   "inputs": [
+    "thoi_han",
+    "ten_tap_chi"
+   ],
+   "vai_tro": "Thư ký Tòa soạn Tạp chí · AI hỗ trợ: rà soát kỹ thuật, tổng hợp và lưu trữ hồ sơ",
+   "luu_y": "nộp lưu chiểu đúng hạn là nghĩa vụ pháp lý — trễ lưu chiểu có thể bị xử phạt hành chính; kiểm tra mã ISSN in trên ấn phẩm khớp với ISSN đã đăng ký.",
+   "ket_qua": "số tạp chí đã phát hành + biên nhận nộp lưu chiểu."
+  },
+  {
+   "n": 7,
+   "title": "Theo dõi sau xuất bản",
+   "lam_gi": "ghi nhận chỉ số trích dẫn, lượt tải/đọc, phản hồi bạn đọc của số vừa phát hành; tổng hợp các chỉ số điều hành (tỷ lệ từ chối, thời gian bình duyệt trung bình...) làm bài học cho số tiếp theo.",
+   "inputs": [],
+   "vai_tro": "Thư ký Tòa soạn Tạp chí · AI hỗ trợ: tổng hợp chỉ số trích dẫn, lượt tải và chỉ số điều hành",
+   "luu_y": "dữ liệu sau xuất bản là đầu vào cải tiến chất lượng tạp chí (VD: lĩnh vực nào thiếu bài, phản biện nào hay trễ hạn cần thay thế).",
+   "ket_qua": "báo cáo theo dõi sau xuất bản."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Thông tin bản thảo (mã số, lĩnh vực, phản biện, kết quả, hạn sửa) khớp dữ liệu thực của số tạp chí.",
+  "Danh mục bài đăng chính thức chỉ gồm bài đạt yêu cầu bình duyệt; bài \"Sửa lớn\" chưa phản biện lại không đưa vào danh mục chính thức.",
+  "Không bịa đặt kết quả phản biện hoặc đánh giá chất lượng khoa học của bản thảo.",
+  "Bình duyệt kín: danh tính phản biện và tác giả ẩn danh hai chiều, không tiết lộ chéo.",
+  "Xuất bản đúng hạn; nộp lưu chiểu đúng hạn theo Luật Báo chí; mã ISSN trên ấn phẩm khớp ISSN đã đăng ký.",
+  "Phiếu nhận xét phản biện dùng đúng thang điểm và tiêu chí theo quy chế bình duyệt.",
+  "Đã qua Human gate: trưởng ban chuyên môn xác nhận kết quả bình duyệt; Tổng biên tập duyệt danh mục và ký phát hành; tác giả duyệt bản in thử. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Tổng biên tập** duyệt danh mục bài đăng cuối cùng và ký duyệt phát hành số tạp chí.",
+  "**Trưởng ban chuyên môn** xác nhận kết quả bình duyệt từng lĩnh vực trước khi gửi về tác giả.",
+  "Tác giả duyệt bản in thử (proof) của bài mình trước khi dàn trang cuối."
+ ],
+ "guardrails": [
+  "AI không được thay phản biện chuyên môn đánh giá chất lượng khoa học của bản thảo.",
+  "Không tiết lộ danh tính phản biện cho tác giả và ngược lại (bình duyệt kín).",
+  "Không tự ý chấp nhận/từ chối bản thảo thay Hội đồng biên tập."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Chỉ dùng nếu Trường có tạp chí hoặc ấn phẩm khoa học; website chưa xác nhận (C2).",
+  "Quy trình phản biện ghi theo quy định của tạp chí."
+ ],
+ "cho_xac_nhan": [
+  "Trường có tạp chí hay không và giấy phép (C2).",
+  "Hội đồng biên tập (C6)."
+ ],
+ "output_structure": [
+  "Bảng theo dõi tiến độ bình duyệt (mã bản thảo – lĩnh vực – phản biện 1/2 – kết quả – hạn sửa)",
+  "Quyết định danh mục bài đăng (danh sách bài chính thức + bài dự kiến chờ sửa/phản biện lại)",
+  "Biên bản họp hội đồng biên tập duyệt danh mục",
+  "Số tạp chí hoàn chỉnh (đã hiệu đính, chế bản, tác giả duyệt proof)",
+  "Biên nhận nộp lưu chiểu theo quy định"
+ ],
+ "output_structure_raw": "1. Bảng theo dõi tiến độ bình duyệt (mã bản thảo – lĩnh vực – phản biện 1/2 – kết quả – hạn sửa)\n\n2. Quyết định danh mục bài đăng (danh sách bài chính thức + bài dự kiến chờ sửa/phản biện lại)\n\n3. Biên bản họp hội đồng biên tập duyệt danh mục\n\n4. Số tạp chí hoàn chỉnh (đã hiệu đính, chế bản, tác giả duyệt proof)\n\n5. Biên nhận nộp lưu chiểu theo quy định",
+ "human_gate_check": "Đã qua Human gate: trưởng ban chuyên môn xác nhận kết quả bình duyệt; Tổng biên tập duyệt danh mục và ký phát hành; tác giả duyệt bản in thử. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-khcn-quan-tri-tap-chi/references"
+}

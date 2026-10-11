@@ -1,0 +1,160 @@
+{
+ "name": "vnuis-cntt-phan-loai-yeu-cau-ho-tro",
+ "title": "Phân loại yêu cầu hỗ trợ CNTT",
+ "description": "Dùng khi bộ phận CNTT tiếp nhận yêu cầu hỗ trợ (hỏng mạng, mất mật khẩu, lỗi phần mềm, thiết bị) và cần phân loại phiếu hỗ trợ (ticket), xếp ưu tiên, định hướng xử lý. Dùng chung cho mọi đơn vị.",
+ "group": "cntt",
+ "group_label": "Hạ tầng CNTT, an toàn thông tin, chuyển đổi số",
+ "previous_name": "vnuis-helpdesk-cntt-triage",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin)",
+ "when": "Khi tiếp nhận yêu cầu hỗ trợ CNTT (mạng, phần mềm, tài khoản, thiết bị) cần phân loại\nnhanh, ưu tiên đúng cam kết xử lý và có hướng xử lý nhất quán. Dùng chung cho trung tâm CNTT\nhoặc cán bộ phụ trách CNTT của mọi đơn vị.",
+ "inputs": [
+  {
+   "key": "mo_ta_su_co",
+   "desc": "Mô tả sự cố từ người dùng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_bao",
+   "desc": "Đơn vị/cá nhân báo (mã hóa nếu cần)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_do_bao",
+   "desc": "Mức độ người dùng tự đánh giá: thấp/trung bình/cao/khẩn",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "thong_tin_he_thong",
+   "desc": "Thiết bị, phần mềm, thời điểm xảy ra",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "quy_dinh_sla",
+   "desc": "Thời gian xử lý theo mức ưu tiên của đơn vị",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office; LMS; cổng sinh viên; cổng việc làm; tra cứu văn bằng; thư viện; kho tài nguyên số; E-GOV. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Phân loại và đánh giá ưu tiên",
+   "lam_gi": "đọc `mo_ta_su_co` và `thong_tin_he_thong`, xếp sự cố vào một nhóm (mạng / phần mềm / tài khoản & phân quyền / thiết bị / an toàn thông tin); đánh giá lại mức ưu tiên theo `quy_dinh_sla` dựa trên phạm vi và số người bị ảnh hưởng — không phụ thuộc hoàn toàn vào `muc_do_bao` do người dùng tự đánh giá; tính hạn chót cam kết xử lý từ thời điểm tiếp nhận.",
+   "inputs": [
+    "mo_ta_su_co",
+    "nguoi_bao",
+    "muc_do_bao",
+    "thong_tin_he_thong",
+    "quy_dinh_sla"
+   ],
+   "vai_tro": "Kỹ thuật viên CNTT (tuyến 1) · AI hỗ trợ: phân loại nhóm sự cố, đề xuất mức ưu tiên và hạn chót theo cam kết xử lý",
+   "luu_y": "dấu hiệu an toàn thông tin (nghi bị xâm nhập, mã độc, rò rỉ dữ liệu) → chuyển ngay cho bộ phận ATTT, dừng xử lý tại skill này; mức ưu tiên phải ghi rõ căn cứ cam kết xử lý và hạn chót cụ thể.",
+   "ket_qua": "\"phiếu phân loại\" (nhóm sự cố + mức ưu tiên + căn cứ cam kết xử lý + hạn chót)."
+  },
+  {
+   "n": 2,
+   "title": "Dự thảo hướng xử lý an toàn",
+   "lam_gi": "soạn hướng xử lý từng bước theo thứ tự kiểm tra → khắc phục cơ bản mà người dùng hoặc kỹ thuật viên tuyến 1 có thể làm; với mỗi bước ghi rõ thao tác, kết quả mong đợi, và điểm dừng để chuyển tuyến 2.",
+   "inputs": [
+    "thong_tin_he_thong"
+   ],
+   "vai_tro": "Kỹ thuật viên CNTT · AI hỗ trợ: dự thảo hướng xử lý an toàn từng bước (thao tác → kết quả mong đợi → điểm chuyển tuyến 2) để kiểm thử trước khi áp dụng",
+   "luu_y": "hướng xử lý chỉ ở mức dự thảo — kỹ thuật viên phải kiểm thử trước khi thực hiện hoặc gửi cho người dùng; không bao gồm thao tác thay đổi cấu hình hệ thống, đặt lại mật khẩu hay cấp quyền nếu thiếu xác thực/phê duyệt theo quy trình.",
+   "ket_qua": "\"hướng xử lý dự thảo từng bước\" (kèm điểm chuyển tuyến 2)."
+  },
+  {
+   "n": 3,
+   "title": "Gợi ý hỏi đáp",
+   "lam_gi": "đối chiếu nhóm sự cố và từ khóa triệu chứng với kho tri thức, gợi ý hỏi đáp/bài hướng dẫn liên quan (ghi mã bài và tên bài).",
+   "inputs": [],
+   "vai_tro": "Kỹ thuật viên CNTT (tuyến 1) · AI hỗ trợ: đối chiếu kho tri thức, gợi ý hỏi đáp khớp triệu chứng",
+   "luu_y": "chỉ gợi ý bài có thật trong kho tri thức — không bịa mã hỏi đáp; ưu tiên bài khớp đúng triệu chứng người dùng mô tả.",
+   "ket_qua": "\"danh sách hỏi đáp liên quan\" (mã + tên bài)."
+  },
+  {
+   "n": 4,
+   "title": "Ghi nhận phiếu yêu cầu",
+   "lam_gi": "cấp mã phiếu yêu cầu duy nhất; ghi nhận đầy đủ phân loại, ưu tiên, `nguoi_bao`, hướng xử lý dự thảo (bước 2), hỏi đáp liên quan (bước 3), người phụ trách đề xuất và hạn chót cam kết xử lý.",
+   "inputs": [
+    "nguoi_bao",
+    "quy_dinh_sla"
+   ],
+   "vai_tro": "Kỹ thuật viên CNTT (tuyến 1) · AI hỗ trợ: cấp mã phiếu yêu cầu duy nhất, ghi nhận đầy đủ các trường bắt buộc",
+   "luu_y": "hạn chót cam kết xử lý tính theo giờ làm việc quy định của đơn vị; mã phiếu yêu cầu không trùng; mọi trường bắt buộc phải có trước khi đóng triage.",
+   "ket_qua": "\"phiếu yêu cầu đã ghi nhận đầy đủ\" (sản phẩm chính, chuyển sang Human gate)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Mức ưu tiên có căn cứ cam kết xử lý và hạn chót cụ thể (tính theo giờ làm việc của đơn vị), không phụ thuộc hoàn toàn vào mức độ người dùng tự đánh giá.",
+  "Hướng xử lý từng bước có thao tác → kết quả mong đợi; điểm chuyển tuyến 2 ghi rõ ràng.",
+  "hỏi đáp chỉ gợi ý bài có thật trong kho tri thức (mã + tên bài), khớp đúng triệu chứng người dùng mô tả — không bịa mã hỏi đáp.",
+  "Sự cố có dấu hiệu an toàn thông tin đã chuyển ngay cho bộ phận ATTT, không xử lý tại skill.",
+  "Không đặt lại mật khẩu, cấp quyền hay thay đổi cấu hình hệ thống khi thiếu xác thực/phê duyệt theo quy trình.",
+  "Phiếu yêu cầu có mã duy nhất, đầy đủ trường bắt buộc trước khi đóng triage.",
+  "Đã qua Human gate: kỹ thuật viên kiểm thử hướng xử lý trước khi gửi cho người dùng hoặc thực hiện. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Kỹ thuật viên** kiểm thử/kiểm tra hướng xử lý trước khi gửi cho người dùng hoặc thực hiện trên hệ thống.",
+  "Trưởng bộ phận CNTT duyệt báo cáo xu hướng và đề xuất phòng ngừa."
+ ],
+ "guardrails": [
+  "Không tự chạy lệnh, không thay đổi cấu hình/thiết lập hệ thống một cách tự động.",
+  "Không đặt lại mật khẩu hay cấp quyền mà không có xác thực và phê duyệt theo quy trình.",
+  "Không truy cập, sao chép dữ liệu cá nhân/dữ liệu nhạy cảm của người dùng.",
+  "Sự cố an toàn thông tin (nghi bị xâm nhập, mã độc) phải chuyển ngay cho bộ phận an toàn thông tin, không tự xử lý."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hệ thống cần định tuyến theo danh sách trên website: E-Office, LMS, cổng sinh viên, cổng việc làm, tra cứu văn bản bằng, thư viện, kho tài nguyên số; chủ hệ thống chưa rõ (C5).",
+  "Người báo sự cố gồm viên chức và sinh viên (có sinh viên quốc tế): phiếu yêu cầu ghi ngôn ngữ.",
+  "Sự cố liên quan tài khoản, dữ liệu người học, mất dữ liệu: chuyển người phụ trách an toàn thông tin ngay, không hướng dẫn tự xử lý."
+ ],
+ "cho_xac_nhan": [
+  "Danh mục hệ thống và chủ hệ thống (C5).",
+  "cam kết xử lý đang áp dụng (C8)."
+ ],
+ "output_structure": [
+  "Mã phiếu yêu cầu (người báo, thời điểm tiếp nhận).",
+  "Phân loại và mức ưu tiên (nhóm sự cố, mức ưu tiên, căn cứ cam kết xử lý, hạn chót).",
+  "Mô tả sự cố.",
+  "Hướng xử lý dự thảo từng bước (thao tác → kết quả mong đợi; ghi rõ điểm chuyển tuyến 2).",
+  "Phân công xử lý (kỹ thuật viên phụ trách đề xuất).",
+  "hỏi đáp liên quan (mã + tên bài).",
+  "Ghi chú kiểm thử (kỹ thuật viên kiểm tra trước khi thực hiện/gửi người dùng)."
+ ],
+ "output_structure_raw": "1. Mã phiếu yêu cầu (người báo, thời điểm tiếp nhận).\n\n2. Phân loại và mức ưu tiên (nhóm sự cố, mức ưu tiên, căn cứ cam kết xử lý, hạn chót).\n\n3. Mô tả sự cố.\n\n4. Hướng xử lý dự thảo từng bước (thao tác → kết quả mong đợi; ghi rõ điểm chuyển tuyến 2).\n\n5. Phân công xử lý (kỹ thuật viên phụ trách đề xuất).\n\n6. hỏi đáp liên quan (mã + tên bài).\n\n7. Ghi chú kiểm thử (kỹ thuật viên kiểm tra trước khi thực hiện/gửi người dùng).",
+ "human_gate_check": "Đã qua Human gate: kỹ thuật viên kiểm thử hướng xử lý trước khi gửi cho người dùng hoặc thực hiện. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (hạ tầng CNTT, an toàn thông tin). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-cntt-phan-loai-yeu-cau-ho-tro/references"
+}

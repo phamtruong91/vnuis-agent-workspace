@@ -1,0 +1,4 @@
+interface:
+  display_name: KHCN · Báo cáo nghiệm thu đề tài NCKH (tổng kết + biên bản hội đồng) – VNU-IS
+  short_description: Hỗ trợ báo cáo nghiệm thu đề tài NCKH (tổng kết + biên bản hội đ
+  default_prompt: 'Hãy dùng $vnuis-khcn-bao-cao-nghiem-thu-de-tai để hỗ trợ công việc: Báo cáo nghiệm thu đề tài NCKH (tổng kết + biên bản hội đồng); xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

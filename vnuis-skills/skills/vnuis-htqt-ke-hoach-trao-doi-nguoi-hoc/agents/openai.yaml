@@ -1,0 +1,4 @@
+interface:
+  display_name: Hợp tác QT · Kế hoạch trao đổi người học VNU-IS
+  short_description: Kế hoạch trao đổi người học VNU-IS
+  default_prompt: 'Hãy dùng $vnuis-htqt-ke-hoach-trao-doi-nguoi-hoc để hỗ trợ công việc: Kế hoạch trao đổi người học và giảng viên của Trường Quốc tế – ĐHQGHN; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

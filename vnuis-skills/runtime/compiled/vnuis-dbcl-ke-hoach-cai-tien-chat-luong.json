@@ -1,0 +1,184 @@
+{
+ "name": "vnuis-dbcl-ke-hoach-cai-tien-chat-luong",
+ "title": "Kế hoạch cải tiến chất lượng",
+ "description": "Dùng khi đã có kết quả tự đánh giá hoặc kết luận đánh giá ngoài và cần chuyển các khuyến nghị, tồn tại thành kế hoạch cải tiến có đơn vị thực hiện, thời hạn, kinh phí, tiêu chí đánh giá.",
+ "group": "dbcl",
+ "group_label": "Đảm bảo chất lượng, kiểm định",
+ "previous_name": "vnuis-ke-hoach-cai-tien-chat-luong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (đảm bảo chất lượng)",
+ "when": "Khi có kết quả tự đánh giá hoặc kết luận của đoàn đánh giá ngoài, cần chuyển các khuyến nghị /\ntồn tại thành kế hoạch hành động cụ thể.",
+ "inputs": [
+  {
+   "key": "nguon_khuyen_nghi",
+   "desc": "Báo cáo tự đánh giá / Kết luận đoàn đánh giá ngoài (số, ngày)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach_ton_tai",
+   "desc": "Bảng: tiêu chí, nội dung tồn tại/khuyến nghị",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_thuc_hien",
+   "desc": "Các phòng/khoa được giao",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han_chung",
+   "desc": "Thời hạn hoàn thành toàn bộ kế hoạch",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kinh_phi_du_kien",
+   "desc": "Tổng kinh phí dự kiến (nếu có)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (đảm bảo chất lượng)"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026: Yêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n- Thông tư 04/2025/TT-BGDĐT, hiệu lực 04/04/2025: Tách kiểm định chương trình khỏi kiểm định cơ sở. Yêu cầu phiên bản tiêu chuẩn, ngày đăng ký và bộ minh chứng; trích tiêu chí từ phụ lục hiện hành. Không mặc định khung 11 tiêu chuẩn của 04/2016 là khung hiện hành; đối chiếu chuyển tiếp trước khi tiếp tục hồ sơ cũ.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tổng hợp tồn tại/khuyến nghị",
+   "lam_gi": "Trích toàn bộ tồn tại và khuyến nghị từ `nguon_khuyen_nghi` (báo cáo tự đánh giá / kết luận đoàn đánh giá ngoài: số, ngày ban hành); nhóm các nội dung theo lĩnh vực (đào tạo, NCKH, đội ngũ, CSVC, quản trị...); loại bỏ nội dung trùng lặp, đánh số thứ tự từng tồn tại.",
+   "inputs": [
+    "nguon_khuyen_nghi",
+    "danh_sach_ton_tai"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: trích và nhóm tồn tại/khuyến nghị theo lĩnh vực, loại nội dung trùng lặp",
+   "luu_y": "mỗi khuyến nghị của đoàn đánh giá ngoài đều phải có trong danh sách — sót khuyến nghị là lỗi nghiêm trọng khi tái kiểm định; ghi rõ khuyến nghị thuộc tiêu chí nào để tiện đối chiếu.",
+   "ket_qua": "Bảng tổng hợp tồn tại/khuyến nghị đã nhóm theo lĩnh vực, đánh số thứ tự."
+  },
+  {
+   "n": 2,
+   "title": "Xây dựng giải pháp cho từng nội dung",
+   "lam_gi": "Với mỗi tồn tại, xây dựng 01 hoặc nhiều giải pháp cụ thể, đo lường được (trả lời: làm gì, làm như thế nào, đạt mức nào); mỗi giải pháp phải gắn với tiêu chí đánh giá sẽ nêu ở Bước 6.",
+   "inputs": [
+    "danh_sach_ton_tai"
+   ],
+   "vai_tro": "Đơn vị chuyên môn phụ trách lĩnh vực (rà soát tính khả thi) · AI hỗ trợ: đề xuất giải pháp sơ bộ cho từng tồn tại",
+   "luu_y": "bẫy thường gặp — giải pháp chung chung (\"nâng cao chất lượng đội ngũ\") không thực thi được; giải pháp phải cụ thể đến mức có thể kiểm chứng hoàn thành hay chưa.",
+   "ket_qua": "Bảng tồn tại – giải pháp tương ứng (dự thảo cột 1–2 của bảng hành động)."
+  },
+  {
+   "n": 3,
+   "title": "Phân công trách nhiệm",
+   "lam_gi": "Với mỗi giải pháp, chỉ định 01 đơn vị chủ trì và các đơn vị phối hợp từ danh sách `don_vi_thuc_hien`; gửi dự thảo để các đơn vị góp ý, xác nhận khả năng thực hiện trước khi chốt.",
+   "inputs": [
+    "don_vi_thuc_hien"
+   ],
+   "vai_tro": "Lãnh đạo trường (chốt phân công sau khi các đơn vị góp ý) · AI hỗ trợ: tổng hợp ý kiến góp ý của các đơn vị trước khi chốt",
+   "luu_y": "mỗi giải pháp chỉ có 01 đơn vị chủ trì duy nhất để rõ trách nhiệm; đơn vị phối hợp phải được hỏi ý kiến trước, tránh giao việc mà đơn vị không biết.",
+   "ket_qua": "Bảng giải pháp đã gắn đơn vị chủ trì/phối hợp (dự thảo cột 3)."
+  },
+  {
+   "n": 4,
+   "title": "Ấn định thời hạn và mốc kiểm tra",
+   "lam_gi": "Ấn định thời hạn hoàn thành cho từng giải pháp (không vượt quá `thoi_han_chung`); đặt các mốc kiểm tra giữa kỳ cho giải pháp dài hạn (VD: giải pháp 12 tháng thì có mốc 6 tháng); ghi thời hạn theo tháng/năm cụ thể.",
+   "inputs": [
+    "thoi_han_chung"
+   ],
+   "vai_tro": "Lãnh đạo trường (quyết định thời hạn và mốc kiểm tra) · AI hỗ trợ: gợi ý thời hạn sơ bộ cho từng giải pháp",
+   "luu_y": "thời hạn phải thực tế — quá gấp đơn vị không làm được, quá dài mất tính cam kết; mốc kiểm tra giữa kỳ là cơ sở để Phòng Đào tạo (khảo thí, đảm bảo chất lượng) giám sát.",
+   "ket_qua": "Bảng giải pháp đã có thời hạn và mốc kiểm tra (dự thảo cột 4)."
+  },
+  {
+   "n": 5,
+   "title": "Dự toán kinh phí",
+   "lam_gi": "Lập dự toán kinh phí cho từng giải pháp (nếu có): nội dung chi, số tiền, nguồn kinh phí (ngân sách trường/dự án/tài trợ); tổng hợp thành tổng kinh phí của kế hoạch, đối chiếu với `kinh_phi_du_kien` (nếu có).",
+   "inputs": [
+    "kinh_phi_du_kien"
+   ],
+   "vai_tro": "Phòng TC&QT (kế hoạch – tài chính) (thẩm tra kinh phí) · AI hỗ trợ: lập bảng dự toán sơ bộ theo từng giải pháp",
+   "luu_y": "giải pháp không có kinh phí vẫn phải ghi rõ \"không sử dụng kinh phí\" thay vì để trống; kinh phí lớn cần có ý kiến của Phòng TC&QT (kế hoạch – tài chính) trước khi ban hành.",
+   "ket_qua": "Bảng dự toán kinh phí theo từng giải pháp + tổng kinh phí (dự thảo cột 5)."
+  },
+  {
+   "n": 6,
+   "title": "Xác định tiêu chí đánh giá",
+   "lam_gi": "Với mỗi giải pháp, xác định kết quả đầu ra mong đợi dưới dạng đo lường được (con số, tỷ lệ, sản phẩm cụ thể) và cách kiểm chứng (minh chứng nào chứng minh đã hoàn thành); ghi vào cột tiêu chí đánh giá của bảng hành động.",
+   "inputs": [
+    "danh_sach_ton_tai"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (khảo thí, đảm bảo chất lượng) · AI hỗ trợ: gợi ý tiêu chí đo lường và minh chứng kiểm chứng cho từng giải pháp",
+   "luu_y": "tiêu chí đánh giá phải đo lường được, tránh định tính (\"tốt hơn\", \"nâng cao\"); mỗi tiêu chí nên gắn với 01 minh chứng cụ thể để đoàn kiểm định tái kiểm tra.",
+   "ket_qua": "Bảng hành động hoàn chỉnh 6 cột (nội dung – giải pháp – đơn vị – thời hạn – kinh phí – tiêu chí đánh giá)."
+  },
+  {
+   "n": 7,
+   "title": "Ban hành và giám sát",
+   "lam_gi": "Hoàn thiện văn bản kế hoạch (căn cứ, mục tiêu, bảng hành động, tổ chức thực hiện), trình Hiệu trưởng ký ban hành; Phòng Đào tạo (khảo thí, đảm bảo chất lượng) làm đầu mối theo dõi tiến độ, đôn đốc các đơn vị báo cáo định kỳ (6 tháng/lần); tổng hợp báo cáo tiến độ, lưu đầy đủ minh chứng hoàn thành từng giải pháp.",
+   "inputs": [
+    "nguon_khuyen_nghi",
+    "thoi_han_chung"
+   ],
+   "vai_tro": "Hiệu trưởng ký ban hành, Phòng Đào tạo (khảo thí, đảm bảo chất lượng) theo dõi tiến độ định kỳ · AI hỗ trợ: soạn văn bản kế hoạch hoàn chỉnh, tổng hợp báo cáo tiến độ định kỳ",
+   "luu_y": "kế hoạch cải tiến là minh chứng bắt buộc trong chu kỳ kiểm định tiếp theo — phải lưu đầy đủ báo cáo tiến độ và minh chứng hoàn thành, không chỉ lưu văn bản kế hoạch.",
+   "ket_qua": "Kế hoạch cải tiến chất lượng đã ban hành + cơ chế giám sát tiến độ định kỳ."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Toàn bộ khuyến nghị của đoàn đánh giá ngoài đều có trong danh sách (không sót), ghi rõ thuộc tiêu chí nào; số liệu khớp với Input.",
+  "Không bịa đặt tồn tại, giải pháp, kinh phí.",
+  "Đúng thể thức văn bản hành chính theo Nghị định 30/2020/NĐ-CP.",
+  "Căn cứ (kết luận đoàn đánh giá ngoài / báo cáo tự đánh giá: số, ngày ban hành) đầy đủ, còn hiệu lực.",
+  "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+  "Mỗi giải pháp có 01 đơn vị chủ trì duy nhất đã được hỏi ý kiến trước; thời hạn không vượt quá thời hạn chung, có mốc kiểm tra giữa kỳ cho giải pháp dài hạn.",
+  "Tiêu chí đánh giá đo lường được (con số, tỷ lệ, sản phẩm cụ thể) và gắn minh chứng kiểm chứng; giải pháp không dùng kinh phí ghi rõ \"không sử dụng kinh phí\" thay vì để trống."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kế hoạch cải tiến lấy từ các điểm yếu trong báo cáo tự đánh giá hoặc phản hồi đã có; không tự thêm vấn đề.",
+  "Mỗi hành động có đơn vị phụ trách, thời hạn, chỉ số; thời hạn do đơn vị cam kết."
+ ],
+ "cho_xac_nhan": [
+  "Chu kỳ rà soát cải tiến (C6).",
+  "Nguồn lực được duyệt (C6)."
+ ],
+ "output_structure": [
+  "Quốc hiệu, tên cơ quan ban hành, số/ký hiệu văn bản, địa danh và ngày tháng năm ban hành;",
+  "Tên loại văn bản (KẾ HOẠCH) + trích yếu nội dung (cải tiến chất lượng sau đánh giá, giai đoạn thực hiện);",
+  "Phần I – Căn cứ (kết luận đoàn đánh giá ngoài / báo cáo tự đánh giá: số, ngày);",
+  "Phần II – Mục tiêu (số tồn tại cần khắc phục, mức đạt kỳ vọng);",
+  "Phần III – Nội dung hành động: bảng chi tiết gồm các cột STT – Tồn tại/khuyến nghị – Giải pháp – Đơn vị chủ trì (phối hợp) – Thời hạn – Kinh phí – Tiêu chí đánh giá;",
+  "Phần IV – Tổ chức thực hiện (đơn vị đầu mối theo dõi, trách nhiệm các đơn vị chủ trì, chế độ báo cáo tiến độ, thời hạn báo cáo kết quả);",
+  "Nơi nhận;",
+  "Chức vụ người ký, chữ ký, họ tên người ký. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu, tên cơ quan ban hành, số/ký hiệu văn bản, địa danh và ngày tháng năm ban hành;\n\n2. Tên loại văn bản (KẾ HOẠCH) + trích yếu nội dung (cải tiến chất lượng sau đánh giá, giai đoạn thực hiện);\n\n3. Phần I – Căn cứ (kết luận đoàn đánh giá ngoài / báo cáo tự đánh giá: số, ngày);\n\n4. Phần II – Mục tiêu (số tồn tại cần khắc phục, mức đạt kỳ vọng);\n\n5. Phần III – Nội dung hành động: bảng chi tiết gồm các cột STT – Tồn tại/khuyến nghị – Giải pháp – Đơn vị chủ trì (phối hợp) – Thời hạn – Kinh phí – Tiêu chí đánh giá;\n\n6. Phần IV – Tổ chức thực hiện (đơn vị đầu mối theo dõi, trách nhiệm các đơn vị chủ trì, chế độ báo cáo tiến độ, thời hạn báo cáo kết quả);\n\n7. Nơi nhận;\n\n8. Chức vụ người ký, chữ ký, họ tên người ký.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (đảm bảo chất lượng). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026\n\nNguồn: https://congbao.cdnchinhphu.vn/180507251028987904/2026/4/24/469367-1777014846_v1_1777018480_signed.pdf\n\nYêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n\n## Thông tư 04/2025/TT-BGDĐT, hiệu lực 04/04/2025\n\nNguồn: https://chinhphu.vn/?classid=1&docid=213005&pageid=27160\n\nTách kiểm định chương trình khỏi kiểm định cơ sở. Yêu cầu phiên bản tiêu chuẩn, ngày đăng ký và bộ minh chứng; trích tiêu chí từ phụ lục hiện hành. Không mặc định khung 11 tiêu chuẩn của 04/2016 là khung hiện hành; đối chiếu chuyển tiếp trước khi tiếp tục hồ sơ cũ.\n",
+ "outputs_dir": "skills/vnuis-dbcl-ke-hoach-cai-tien-chat-luong/references"
+}

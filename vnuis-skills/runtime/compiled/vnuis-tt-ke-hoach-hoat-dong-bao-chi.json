@@ -1,0 +1,193 @@
+{
+ "name": "vnuis-tt-ke-hoach-hoat-dong-bao-chi",
+ "title": "Kế hoạch hoạt động báo chí",
+ "description": "Dùng đầu năm khi tòa soạn hoặc ban biên tập của báo in, tạp chí nội bộ, bản tin điện tử của trường lập kế hoạch năm: số kỳ, chuyên mục, phân công biên tập, dự toán.",
+ "group": "tt",
+ "group_label": "Truyền thông, thương hiệu, sự kiện",
+ "previous_name": "vnuis-ke-hoach-hoat-dong-bao-chi",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Đầu năm, cơ quan báo chí của trường (báo in, tạp chí nội bộ, bản tin điện tử) cần lập kế hoạch\nhoạt động: số kỳ xuất bản, tuyến bài/chuyên mục trọng tâm gắn với sự kiện của trường và của\nngành, phân công nhân sự, dự toán kinh phí.",
+ "inputs": [
+  {
+   "key": "ten_an_pham",
+   "desc": "Tên báo/tạp chí/bản tin, loại hình (in/điện tử)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nam_ke_hoach",
+   "desc": "Năm áp dụng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ky_xuat_ban",
+   "desc": "Số kỳ/năm, lịch phát hành dự kiến",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuyen_muc",
+   "desc": "Các chuyên mục cố định và tuyến bài trọng tâm",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "su_kien_trong_tam",
+   "desc": "Sự kiện lớn của trường/ngành trong năm cần tuyên truyền",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nhan_su",
+   "desc": "Tổng biên tập, biên tập viên, phóng viên, cộng tác viên",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kinh_phi",
+   "desc": "Dự toán kinh phí hoạt động năm",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định tôn chỉ, mục đích",
+   "lam_gi": "viết tuyên bố tôn chỉ, mục đích của ấn phẩm bám sát nhiệm vụ chính trị – chuyên môn của trường (tuyên truyền chủ trương, phản ánh hoạt động đào tạo – NCKH, diễn đàn CBVC/SV); rà soát giấy phép hoạt động báo chí (loại hình, kỳ hạn, phạm vi phát hành) để kế hoạch không vượt giấy phép.",
+   "inputs": [
+    "ten_an_pham",
+    "nam_ke_hoach"
+   ],
+   "vai_tro": "Biên tập viên · AI hỗ trợ: soạn dự thảo tuyên bố tôn chỉ, mục đích theo giấy phép hoạt động báo chí",
+   "luu_y": "mọi tuyến bài sau này phải soi lại tôn chỉ này — bài không phù hợp tôn chỉ thì loại ngay từ khâu lập tuyến; ghi đúng tên ấn phẩm theo giấy phép.",
+   "ket_qua": "tuyên bố tôn chỉ – mục đích của ấn phẩm trong năm kế hoạch."
+  },
+  {
+   "n": 2,
+   "title": "Lập lịch xuất bản",
+   "lam_gi": "cụ thể hóa `ky_xuat_ban` thành bảng lịch: số kỳ/năm, ngày phát hành từng kỳ, hạn chốt bài – chốt morat từng kỳ; đánh dấu các số đặc biệt gắn với sự kiện lớn.",
+   "inputs": [
+    "ky_xuat_ban",
+    "su_kien_trong_tam"
+   ],
+   "vai_tro": "Biên tập viên · AI hỗ trợ: lập bảng lịch xuất bản năm: kỳ, ngày phát hành, hạn chốt bài",
+   "luu_y": "hạn chốt bài phải trừ hao thời gian biên tập – chế bản – in ấn (báo in chốt sớm hơn bản điện tử); số đặc biệt cần lịch riêng dài hơn số thường.",
+   "ket_qua": "bảng lịch xuất bản năm (kỳ – ngày phát hành – hạn chốt bài)."
+  },
+  {
+   "n": 3,
+   "title": "Xây dựng tuyến bài",
+   "lam_gi": "từ `chuyen_muc` và `su_kien_trong_tam`, dựng khung tuyến bài theo quý: chuyên mục cố định duy trì mỗi kỳ + bài trọng tâm theo sự kiện (khai giảng, tốt nghiệp, kiểm định, ngày nhà giáo...); phân công phóng viên/cộng tác viên theo dõi từng tuyến.",
+   "inputs": [
+    "chuyen_muc",
+    "su_kien_trong_tam"
+   ],
+   "vai_tro": "Tổng biên tập · AI hỗ trợ: dựng khung tuyến bài theo quý và phân công theo tuyến, Tổng biên tập duyệt tuyến bài",
+   "luu_y": "mỗi sự kiện trọng tâm phải có tuyến bài \"trước – trong – sau\", không chỉ đưa tin sau sự kiện; cân đối giữa tin hoạt động và bài chuyên sâu (gương điển hình, phân tích) để ấn phẩm không thành bản tin sự kiện đơn thuần.",
+   "ket_qua": "khung tuyến bài theo quý + phân công phóng viên/cộng tác viên theo tuyến."
+  },
+  {
+   "n": 4,
+   "title": "Phân công nhân sự",
+   "lam_gi": "phân công biên tập viên phụ trách từng mảng/chuyên mục; bố trí cộng tác viên theo đầu mối khoa/phòng; quy định quy trình duyệt bài (phóng viên → biên tập viên → Tổng biên tập) và trách nhiệm nội dung từng khâu.",
+   "inputs": [
+    "nhan_su"
+   ],
+   "vai_tro": "Tổng biên tập · AI hỗ trợ: lập bảng phân công nhân sự và quy trình duyệt bài, Tổng biên tập chốt",
+   "luu_y": "mỗi bài phải có người chịu trách nhiệm nội dung ghi rõ họ tên — không để bài \"vô chủ\"; Tổng biên tập chịu trách nhiệm cuối cùng về nội dung từng kỳ.",
+   "ket_qua": "bảng phân công nhân sự + quy trình duyệt bài."
+  },
+  {
+   "n": 5,
+   "title": "Dự toán kinh phí",
+   "lam_gi": "lập dự toán theo `kinh_phi`: nhuận bút (theo khung nhuận bút hiện hành), in ấn – phát hành, chi phí tòa soạn (văn phòng phẩm, đi lại tác nghiệp); phân bổ theo quý, dành dự phòng cho số đặc biệt.",
+   "inputs": [
+    "kinh_phi"
+   ],
+   "vai_tro": "Biên tập viên · AI hỗ trợ: lập bảng dự toán kinh phí theo khung nhuận bút và phân bổ theo quý",
+   "luu_y": "nhuận bút tính đúng khung quy định, không tự đặt mức; số đặc biệt (tăng trang, in màu) dự toán riêng vì chi phí cao hơn số thường nhiều lần.",
+   "ket_qua": "bảng dự toán kinh phí năm (hạng mục – mức – phân bổ theo quý)."
+  },
+  {
+   "n": 6,
+   "title": "Tổng hợp và trình duyệt",
+   "lam_gi": "gộp tôn chỉ (Bước 1), lịch xuất bản (Bước 2), tuyến bài (Bước 3), phân công (Bước 4), dự toán (Bước 5) thành kế hoạch hoàn chỉnh; Tổng biên tập duyệt nội dung, sau đó trình lãnh đạo trường (cơ quan chủ quản) phê duyệt kế hoạch năm và số đặc biệt.",
+   "inputs": [
+    "ten_an_pham",
+    "nam_ke_hoach"
+   ],
+   "vai_tro": "Tổng biên tập · AI hỗ trợ: chuẩn bị dự thảo, tài liệu và số liệu phục vụ bước này",
+   "luu_y": "kế hoạch chỉ có hiệu lực sau khi lãnh đạo trường phê duyệt; mọi thay đổi tuyến bài lớn trong năm phải báo cáo Tổng biên tập trước khi thực hiện.",
+   "ket_qua": "kế hoạch hoạt động báo chí năm hoàn chỉnh, đã phê duyệt."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung khớp với Input: tên ấn phẩm, năm, số kỳ/năm, chuyên mục, sự kiện trọng tâm, nhân sự.",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng thể thức văn bản kế hoạch; kế hoạch không vượt giấy phép hoạt động báo chí (loại hình, kỳ hạn, phạm vi phát hành).",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Luật Báo chí 2016, giấy phép hoạt động của ấn phẩm).",
+  "Đã qua Human gate: Tổng biên tập duyệt nội dung; lãnh đạo trường (cơ quan chủ quản) phê duyệt kế hoạch năm và số đặc biệt.",
+  "Mỗi sự kiện trọng tâm có tuyến bài \"trước – trong – sau\"; mỗi bài có người chịu trách nhiệm nội dung ghi rõ họ tên.",
+  "Nhuận bút tính đúng khung quy định; số đặc biệt dự toán riêng.",
+  "Hạn chốt bài trừ hao thời gian biên tập – chế bản – in ấn; số đặc biệt có lịch riêng dài hơn số thường. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Tổng biên tập** chịu trách nhiệm nội dung từng kỳ, duyệt tuyến bài và bản thảo cuối.",
+  "**Lãnh đạo trường** (cơ quan chủ quản) phê duyệt kế hoạch năm và số đặc biệt."
+ ],
+ "guardrails": [
+  "AI không tự quyết đăng/xóa bài thay Tổng biên tập.",
+  "Không đăng nội dung chưa kiểm chứng nguồn; không vi phạm bản quyền hình ảnh/bài viết."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Danh sách cơ quan báo chí và người liên hệ do Phòng cung cấp; không lấy thông tin liên hệ từ nơi khác.",
+  "Phát ngôn ra báo chí do người có thẩm quyền duyệt (C6)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế phát ngôn của Trường (C2).",
+  "Danh sách người được phát ngôn (C6)."
+ ],
+ "output_structure": [
+  "Tiêu đề: tên ấn phẩm + \"Kế hoạch hoạt động năm...\" (căn giữa).",
+  "I. Tôn chỉ, mục đích của ấn phẩm trong năm kế hoạch.",
+  "II. Kế hoạch xuất bản: số kỳ/năm, ngày phát hành, hạn chốt bài từng kỳ (đánh dấu số đặc biệt).",
+  "III. Tuyến bài trọng tâm: theo quý/sự kiện — chuyên mục cố định + bài trọng tâm, phân công phóng viên/cộng tác viên theo tuyến.",
+  "IV. Phân công nhân sự: biên tập viên phụ trách mảng, cộng tác viên theo đầu mối, quy trình duyệt bài.",
+  "V. Kinh phí dự kiến: tổng mức và phân bổ (nhuận bút, in ấn – phát hành, khác).",
+  "Chữ ký duyệt: Tổng biên tập; lãnh đạo trường (cơ quan chủ quản) phê duyệt. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tiêu đề: tên ấn phẩm + \"Kế hoạch hoạt động năm...\" (căn giữa).\n\n2. I. Tôn chỉ, mục đích của ấn phẩm trong năm kế hoạch.\n\n3. II. Kế hoạch xuất bản: số kỳ/năm, ngày phát hành, hạn chốt bài từng kỳ\n   (đánh dấu số đặc biệt).\n\n4. III. Tuyến bài trọng tâm: theo quý/sự kiện — chuyên mục cố định + bài trọng tâm,\n   phân công phóng viên/cộng tác viên theo tuyến.\n\n5. IV. Phân công nhân sự: biên tập viên phụ trách mảng, cộng tác viên theo đầu mối,\n   quy trình duyệt bài.\n\n6. V. Kinh phí dự kiến: tổng mức và phân bổ (nhuận bút, in ấn – phát hành, khác).\n\n7. Chữ ký duyệt: Tổng biên tập; lãnh đạo trường (cơ quan chủ quản) phê duyệt.",
+ "human_gate_check": "Đã qua Human gate: Tổng biên tập duyệt nội dung; lãnh đạo trường (cơ quan chủ quản) phê duyệt kế hoạch năm và số đặc biệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-tt-ke-hoach-hoat-dong-bao-chi/references"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: KHCN · Theo dõi nguồn tài trợ nghiên cứu – VNU-IS
+  short_description: Hỗ trợ theo dõi nguồn tài trợ nghiên cứu (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-khcn-theo-doi-nguon-tai-tro để hỗ trợ công việc: Theo dõi nguồn tài trợ nghiên cứu; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

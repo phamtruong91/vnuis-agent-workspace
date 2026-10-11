@@ -1,0 +1,203 @@
+---
+name: "vnuis-khoa-ke-hoach-hoat-dong-trung-tam-thuc-hanh"
+description: "Dùng đầu năm học khi trung tâm thực hành nghề nghiệp (thực hành pháp luật, sư phạm, phòng khám, xưởng) cần kế hoạch năm: lịch thực hành, tiếp nhận ca thực tế, phân công giảng viên, đánh giá sinh viên."
+---
+
+# Kế hoạch hoạt động trung tâm thực hành
+
+## Khi nào dùng
+Đầu năm học, trung tâm thực hành nghề nghiệp của trường (thực hành pháp luật, thực hành sư phạm,
+phòng khám, xưởng...) cần lập kế hoạch: lịch thực hành mô phỏng theo học phần, tiếp nhận
+vụ việc/ca thực tế, phân công giảng viên hướng dẫn và tiêu chí đánh giá sinh viên.
+
+## Định dạng và file đầu ra
+
+Định dạng đầu ra có thể chọn theo sản phẩm/yêu cầu: .docx, .pdf. Đọc mục “Định dạng bổ sung” trong quy cách đầu ra trước khi chọn.
+
+**Phải tạo file thực tế để tải xuống, không chỉ trả nội dung trong chat.** Định dạng mặc định của skill: **.docx**. Nếu có bảng số liệu nghiệp vụ yêu cầu file bảng tính riêng, tạo thêm Excel theo yêu cầu; không tự tạo file kiểm tra. Không chờ người dùng yêu cầu xuất file lần nữa. Ưu tiên định dạng người dùng chỉ định; đọc quy tắc xuất file tại references/quy-cach-dau-ra.md.
+
+**Chạy qua API (không có công cụ tạo file):** trả đủ nội dung dạng văn bản có tiêu đề, bảng; ứng dụng gọi sẽ xuất file.
+
+## Quy cách đầu ra và thông tin thiếu
+Khi dựng file Word/Excel, áp dụng mục “Thể thức và bảng biểu khi dựng file” trong quy cách đầu ra (cỡ chữ từng thành phần, bảng nhiều trang, số trang, phụ lục). Đọc [quy cách và cấu trúc sản phẩm](references/quy-cach-dau-ra.md) trước khi soạn/xuất. File giao chỉ gồm sản phẩm nghiệp vụ được yêu cầu; kiểm tra nội bộ không xuất kèm. Thiếu thông tin thì giữ nguyên trường/mục và chỗ điền theo mẫu gốc (dòng dấu chấm, dấu gạch hoặc ô trống); không tự điền dữ liệu mẫu, số 0, mã chờ xác minh hay dòng chờ ký. Mẫu chuyên ngành còn áp dụng được ưu tiên về cấu trúc, mã biểu và người ký. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+Khi người dùng yêu cầu bộ slide (.pptx), đọc mục “Xuất PowerPoint (.pptx) khi được yêu cầu” trong quy cách đầu ra.
+
+## Kiểm soát áp dụng và phê duyệt
+Trước khi chạy, xác định `ngay_ap_dung`, `loai_hinh_truong`, `quy_che_noi_bo`, `nguon_du_lieu`, `nguoi_kiem_duyet`; chỉ hỏi thông tin liên quan nghiệp vụ, không dùng giá trị giả định thay dữ liệu bắt buộc. Đối chiếu căn cứ pháp lý với văn bản gốc, hiệu lực, điều khoản áp dụng và chuyển tiếp. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Giới hạn và human gate
+AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Bối cảnh riêng của VNU-IS
+
+Bản chỉnh cho Trường Quốc tế – ĐHQGHN (VNU-IS), v0.4.2. Dựng từ website công khai và phiếu khảo sát CES còn trống; **chưa có dữ liệu khảo sát thực tế của đơn vị**. Đọc [bối cảnh VNU-IS](references/boi-canh-vnuis.md) trước khi chạy; các mã C1–C8 nằm ở mục 6 của file đó.
+
+- **Đơn vị thường dùng:** Sáu khoa hoặc Viện (trung tâm thực hành nếu có).
+- **Nghiệp vụ trong phiếu CES:** "Quản trị Khoa: Quản lý Khoa/Bộ môn" (sheet `07_KS_Cac_Khoa`). Phiếu khoa chỉ có tên nhóm nghiệp vụ, chưa có gợi ý đầu vào hay khó khăn. Đây là gợi ý có sẵn của CES, chưa phải xác nhận của đơn vị.
+
+**Điều chỉnh khi dùng cho VNU-IS**
+- Chỉ dùng khi đơn vị có trung tâm hoặc phòng thực hành; website chưa xác nhận (C8).
+- Kế hoạch gắn học phần thực hành và lịch của Khoa.
+
+**Chờ xác nhận khi khảo sát**
+- Có trung tâm thực hành hay không và đơn vị quản lý (C8).
+- Quy chế sử dụng (C2).
+
+Nếu người dùng chưa trả lời mục chờ xác nhận liên quan, hỏi lại; không tự điền giả định.
+
+## Đầu vào (Input)
+
+| Trường | Mô tả | Bắt buộc |
+|---|---|---|
+| `ten_trung_tam` | Tên trung tâm thực hành | Có |
+| `nam_hoc` | Năm học áp dụng | Có |
+| `hoc_phan_lien_quan` | Các học phần thực hành gắn với trung tâm | Có |
+| `so_luong_sv` | Số SV tham gia thực hành trong năm | Có |
+| `giang_vien` | Giảng viên hướng dẫn, chuyên gia thỉnh giảng | Có |
+| `co_so_vat_chat` | Phòng mô phỏng, trang thiết bị hiện có | Không |
+
+### Thông tin VNU-IS đã điền sẵn (không hỏi lại)
+
+| Mục | Giá trị mặc định |
+|---|---|
+| Cơ quan chủ quản; Trường; địa danh | Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội |
+| Đơn vị sử dụng và phối hợp | Sáu khoa hoặc Viện (trung tâm thực hành nếu có) |
+| Cơ sở | Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm |
+| Mô hình đào tạo | Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2 |
+| Ngôn ngữ đầu ra | Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu |
+| Hệ thống nguồn dữ liệu có trên website | LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5) |
+| Người duyệt và ký | Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6 |
+
+Nguồn: website và phiếu CES; đổi theo khảo sát thì sửa tại đây và trong `references/boi-canh-vnuis.md`.
+
+## Quy trình
+
+*⏱ là ước tính ban đầu của bộ gốc, chưa đo tại VNU-IS; hiệu chỉnh sau khảo sát.*
+
+**Bước 1. Xác định mục tiêu và chuẩn đầu ra**
+- Làm gì: rà soát đề cương các học phần gắn với trung tâm, trích chuẩn đầu ra kỹ năng
+  thực hành của từng học phần, quy đổi thành chỉ tiêu đo được (VD: mỗi SV tham gia
+  tối thiểu 02 phiên mô phỏng và 01 vụ việc thực tế; tỷ lệ SV đạt chuẩn ≥ 90%).
+  Trưởng khoa xác nhận chuẩn đầu ra gắn với CTĐT.
+- Dùng input: `ten_trung_tam`, `nam_hoc`, `hoc_phan_lien_quan`.
+- Vai trò: Trưởng khoa · AI hỗ trợ: trích chuẩn đầu ra và quy đổi thành chỉ tiêu đo được · ⏱ 1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: chỉ tiêu phải khớp CTĐT đã kiểm định — không tự đặt chuẩn mới;
+  không đặt chỉ tiêu vượt năng lực giám sát thực tế của giảng viên (VD: số vụ việc
+  thực tế/SV phải tương xứng số giờ giám sát khả dụng).
+- → Kết quả bước: bảng mục tiêu – chuẩn đầu ra – chỉ tiêu đo được của từng học phần.
+
+**Bước 2. Lập lịch thực hành**
+- Làm gì: chia SV thành ca/nhóm theo `so_luong_sv`; xếp lịch mô phỏng theo tuần của
+  từng học kỳ (phiên tòa giả định, ca lâm sàng mô phỏng, vận hành xưởng...) khớp với
+  thời khóa biểu chung; phân bổ phòng mô phỏng/trang thiết bị theo `co_so_vat_chat`,
+  tính hệ số dự phòng khi trùng lịch.
+- Dùng input: `so_luong_sv`, `hoc_phan_lien_quan`, `co_so_vat_chat`.
+- Vai trò: Cán bộ Trung tâm Thực hành · AI hỗ trợ: xếp lịch thực hành dự thảo theo ca/nhóm, trung tâm chốt và kiểm tra trùng phòng/thiết bị · ⏱ 2–3 giờ (ước tính)
+- Lưu ý nghiệp vụ: sĩ số mỗi nhóm không vượt quy định của học phần; mỗi nhóm phải
+  được trải nghiệm đủ các vai trò trong mô phỏng (không để SV chỉ làm khán giả);
+  kiểm tra không trùng phòng/thiết bị với đơn vị khác.
+- → Kết quả bước: bảng lịch thực hành chi tiết (tuần – ca – nhóm – nội dung –
+  phòng/thiết bị).
+
+**Bước 3. Xây dựng quy trình tiếp nhận vụ việc thực tế**
+- Làm gì: chỉ thực hiện khi trung tâm có mảng tiếp nhận vụ việc/ca thực tế (VD: tư vấn
+  pháp luật miễn phí, khám chữa bệnh thực hành). Thiết kế quy trình: tiếp nhận →
+  phân loại (mức độ phức tạp, rủi ro) → phân công SV xử lý dưới sự giám sát trực tiếp
+  của giảng viên; kèm phiếu tiếp nhận và biên bản bàn giao vụ việc.
+- Dùng input: `ten_trung_tam`, `nam_hoc` (xác định phạm vi áp dụng).
+- Vai trò: Giám đốc Trung tâm Thực hành · AI hỗ trợ: soạn quy trình tiếp nhận và biểu mẫu · ⏱ 1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: vụ việc liên quan đến con người/tài sản phải có giảng viên hoặc
+  chuyên gia giám sát trực tiếp — tuyệt đối không để SV tự ý tư vấn, quyết định;
+  từ chối tiếp nhận vụ việc vượt năng lực của trung tâm và chuyển tuyến phù hợp.
+- → Kết quả bước: quy trình tiếp nhận – phân loại – phân công xử lý vụ việc thực tế
+  + biểu mẫu phiếu tiếp nhận.
+
+**Bước 4. Phân công giảng viên và chuyên gia hướng dẫn**
+- Làm gì: phân công giảng viên phụ trách từng nhóm/ca theo lịch ở Bước 2; xếp lịch
+  chuyên gia thỉnh giảng tham gia mô phỏng và phản biện; xác nhận khối lượng giờ
+  với Trưởng khoa để tính vào giờ chuẩn giảng dạy.
+- Dùng input: `giang_vien`, kết quả lịch thực hành (Bước 2).
+- Vai trò: Giảng viên · AI hỗ trợ: lập bảng phân công dự thảo, trung tâm xác nhận và tránh trùng giờ lên lớp · ⏱ 1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: mỗi nhóm/ca phải có giảng viên chịu trách nhiệm chính ghi rõ họ tên;
+  chuyên gia thỉnh giảng cần có văn bản mời và xác nhận tham gia trước khi đưa vào
+  kế hoạch; tránh phân công trùng giờ lên lớp của giảng viên.
+- → Kết quả bước: bảng phân công hướng dẫn (nhóm/ca – giảng viên phụ trách –
+  chuyên gia tham gia – thời gian).
+
+**Bước 5. Xây dựng công cụ đánh giá**
+- Làm gì: xây dựng thang tiêu chí chấm kỹ năng thực hành theo chuẩn đầu ra ở Bước 1 (thang
+  100 điểm, phân bổ trọng số từng tiêu chí: kỹ năng chuyên môn, soạn thảo/hồ sơ,
+  đạo đức nghề nghiệp, báo cáo thu hoạch); thiết kế mẫu báo cáo thu hoạch của SV;
+  quy định điều kiện đạt (điểm tối thiểu, số buổi tham gia tối thiểu).
+- Dùng input: `hoc_phan_lien_quan`, bảng chuẩn đầu ra (Bước 1).
+- Vai trò: Giảng viên · AI hỗ trợ: soạn khung thang tiêu chí chấm và mẫu báo cáo thu hoạch · ⏱ 1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: thang tiêu chí chấm phải đo đúng chuẩn đầu ra đã công bố trong đề cương học phần;
+  AI chỉ hỗ trợ soạn khung thang tiêu chí chấm — việc đánh giá năng lực thực hành của SV do giảng
+  viên thực hiện; công bố thang tiêu chí chấm cho SV từ đầu kỳ.
+- → Kết quả bước: thang tiêu chí chấm đánh giá kỹ năng thực hành + mẫu báo cáo thu hoạch của SV.
+
+**Bước 6. Tổng hợp và trình duyệt**
+- Làm gì: gộp mục tiêu (Bước 1), lịch (Bước 2), quy trình tiếp nhận (Bước 3, nếu có),
+  phân công (Bước 4), công cụ đánh giá (Bước 5) và dự toán kinh phí thành kế hoạch
+  hoàn chỉnh; kiểm tra tính khớp nối giữa các phần (lịch – phân công – thang tiêu chí chấm);
+  trình Giám đốc trung tâm phê duyệt, gửi khoa và nhà trường.
+- Dùng input: `ten_trung_tam`, `nam_hoc`.
+- Vai trò: Giám đốc Trung tâm Thực hành · AI hỗ trợ: gộp kế hoạch và kiểm tra khớp nối các phần · ⏱ 1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: kinh phí dự kiến phải tách rõ nguồn (ngân sách trường, học phí
+  thực hành, tài trợ); kế hoạch chỉ có hiệu lực sau khi Giám đốc trung tâm ký duyệt.
+- → Kết quả bước: kế hoạch hoạt động năm của trung tâm thực hành (hoàn chỉnh, đã duyệt).
+
+## Luồng quy trình (Workflow)
+```mermaid
+flowchart TD
+    A[/Chuẩn đầu ra thực hành của các học phần/] --> B["Bước 1. Xác định mục tiêu và chuẩn đầu ra"]
+    B --> C["Bước 2. Lập lịch thực hành theo ca và nhóm"]
+    C --> D{"Trung tâm có tiếp nhận vụ việc thực tế?"}
+    D -->|Có| E["Bước 3. Xây dựng quy trình tiếp nhận vụ việc"]
+    D -->|Không| F["Bước 4. Phân công giảng viên và chuyên gia"]
+    E --> F
+    F --> G["Bước 5. Xây dựng thang tiêu chí chấm và mẫu báo cáo thu hoạch"]
+    G --> H["Bước 6. Tổng hợp và trình duyệt"]
+    H --> I["👤 Giám đốc trung tâm duyệt kế hoạch"]
+    I --> J[/Kế hoạch hoạt động năm của trung tâm/]
+```
+
+## Đầu ra
+
+File nghiệp vụ thực tế theo định dạng mặc định ở đầu skill hoặc định dạng người dùng yêu cầu, kèm liên kết tải trong phản hồi cuối.
+
+Sản phẩm nghiệp vụ hoàn chỉnh theo [quy cách và cấu trúc](references/quy-cach-dau-ra.md), giữ các trường chưa có dữ liệu ở trạng thái trống. Không xuất kèm danh mục kiểm/phụ lục kiểm tra đầu ra.
+
+## Kiểm tra nội bộ trước khi giao
+
+- [ ] Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.
+- [ ] Nội dung khớp với Input: số lượng SV, giảng viên, học phần, cơ sở vật chất.
+- [ ] Không bịa đặt lịch, phân công giảng viên hay chuyên gia thỉnh giảng chưa có xác nhận tham gia.
+- [ ] Chuẩn đầu ra khớp CTĐT đã kiểm định (có xác nhận của trưởng khoa); chỉ tiêu đo được.
+- [ ] Lịch thực hành: sĩ số nhóm đúng quy định, không trùng phòng/thiết bị với đơn vị khác, mỗi nhóm trải đủ các vai trò.
+- [ ] Vụ việc thực tế có giảng viên/chuyên gia giám sát trực tiếp; có cơ chế từ chối vụ việc vượt năng lực trung tâm.
+- [ ] Thang tiêu chí chấm đo đúng chuẩn đầu ra trong đề cương học phần; công bố cho SV từ đầu kỳ.
+- [ ] Kinh phí tách rõ nguồn; kế hoạch chỉ có hiệu lực sau khi giám đốc trung tâm ký duyệt.
+- [ ] Đã qua Human gate: giám đốc trung tâm phê duyệt kế hoạch, trưởng khoa xác nhận chuẩn đầu ra.
+
+Tiêu chí đạt = tất cả các ô được đánh dấu.
+
+## Human gate (người kiểm duyệt)
+- **Giám đốc trung tâm** phê duyệt kế hoạch và phân công giảng viên.
+- **Trưởng khoa** xác nhận chuẩn đầu ra thực hành gắn với CTĐT.
+- **Giảng viên hướng dẫn** chịu trách nhiệm chuyên môn đối với vụ việc thực tế do SV xử lý.
+
+## Giới hạn (guardrails)
+- AI không thay giảng viên đánh giá năng lực thực hành của SV.
+- Vụ việc thực tế liên quan đến con người phải có giảng viên/luật sư giám sát trực tiếp;
+  không để SV tự ý tư vấn, quyết định.
+
+## Căn cứ & lưu ý
+- Chuẩn đầu ra CTĐT của ngành; quy định về thực hành, thực tập của Bộ GD&ĐT.
+- Ví dụ trong skill chỉ để minh họa; không đưa dữ liệu cá nhân thật vào ví dụ. Tên Trường, cơ quan chủ quản và địa danh dùng đúng bảng thông tin VNU-IS đã điền sẵn.
+
+## Quản trị phiên bản
+- Phiên bản gói VNU-IS `0.4.2` (cập nhật 2026-10-11), dựa trên skill gốc `ke-hoach-hoat-dong-trung-tam-thuc-hanh` bản `1.3.2`; hồ sơ đầy đủ tại [references/version.json](references/version.json).
+- Người phê duyệt nghiệp vụ: **chưa chỉ định**. Trạng thái: dự thảo nghiệp vụ; kiểm tra pháp lý trước thực thi. Ngày cập nhật không đồng nghĩa mọi văn bản đã được rà soát toàn văn.
+- Giấy phép theo LICENSE của kho (bản quyền CES Global). Lịch sử thay đổi: CHANGELOG.md.

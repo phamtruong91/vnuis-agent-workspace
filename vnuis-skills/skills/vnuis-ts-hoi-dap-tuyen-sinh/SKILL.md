@@ -1,0 +1,168 @@
+---
+name: "vnuis-ts-hoi-dap-tuyen-sinh"
+description: "Dùng khi cần bộ hỏi đáp tuyển sinh cho website, chatbot hoặc tư vấn viên về phương thức, chỉ tiêu, học phí, học bổng, hồ sơ; mỗi câu trả lời trích nguồn và năm áp dụng."
+---
+
+# Hỏi đáp tuyển sinh
+
+## Khi nào dùng
+Khi cần bộ câu hỏi thường gặp về tuyển sinh: phương thức xét tuyển, chỉ tiêu, học phí,
+học bổng, hồ sơ, thời gian... cho website, chatbot tư vấn và đội ngũ tư vấn viên.
+
+## Khi nào KHÔNG dùng
+- Cần kịch bản tư vấn trực tiếp (ngày hội, livestream, hotline) → dùng `vnuis-ts-kich-ban-tu-van-tuyen-sinh`.
+
+## Định dạng và file đầu ra
+
+Định dạng đầu ra có thể chọn theo sản phẩm/yêu cầu: .docx, .pdf, .txt, .md, .html. Đọc mục “Định dạng bổ sung” trong quy cách đầu ra trước khi chọn.
+
+**Phải tạo file thực tế để tải xuống, không chỉ trả nội dung trong chat.** Định dạng mặc định của skill: **.docx**. Nếu có bảng số liệu nghiệp vụ yêu cầu file bảng tính riêng, tạo thêm Excel theo yêu cầu; không tự tạo file kiểm tra. Không chờ người dùng yêu cầu xuất file lần nữa. Ưu tiên định dạng người dùng chỉ định; đọc quy tắc xuất file tại references/quy-cach-dau-ra.md.
+
+**Chạy qua API (không có công cụ tạo file):** trả đủ nội dung dạng văn bản có tiêu đề, bảng; ứng dụng gọi sẽ xuất file.
+
+## Quy cách đầu ra và thông tin thiếu
+Khi dựng file Word/Excel, áp dụng mục “Thể thức và bảng biểu khi dựng file” trong quy cách đầu ra (cỡ chữ từng thành phần, bảng nhiều trang, số trang, phụ lục). Đọc [quy cách và cấu trúc sản phẩm](references/quy-cach-dau-ra.md) trước khi soạn/xuất. File giao chỉ gồm sản phẩm nghiệp vụ được yêu cầu; kiểm tra nội bộ không xuất kèm. Thiếu thông tin thì giữ nguyên trường/mục và chỗ điền theo mẫu gốc (dòng dấu chấm, dấu gạch hoặc ô trống); không tự điền dữ liệu mẫu, số 0, mã chờ xác minh hay dòng chờ ký. Mẫu chuyên ngành còn áp dụng được ưu tiên về cấu trúc, mã biểu và người ký. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+Khi người dùng yêu cầu bộ slide (.pptx), đọc mục “Xuất PowerPoint (.pptx) khi được yêu cầu” trong quy cách đầu ra.
+
+## Kiểm soát áp dụng và phê duyệt
+Trước khi chạy, xác định `ngay_ap_dung`, `loai_hinh_truong`, `quy_che_noi_bo`, `nguon_du_lieu`, `nguoi_kiem_duyet`; chỉ hỏi thông tin liên quan nghiệp vụ, không dùng giá trị giả định thay dữ liệu bắt buộc. Đối chiếu căn cứ pháp lý với văn bản gốc, hiệu lực, điều khoản áp dụng và chuyển tiếp. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Giới hạn và human gate
+AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền. Bản đầy đủ: [quy tắc chung](references/quy-tac-chung.md).
+
+## Bối cảnh riêng của VNU-IS
+
+Bản chỉnh cho Trường Quốc tế – ĐHQGHN (VNU-IS), v0.4.2. Dựng từ website công khai và phiếu khảo sát CES còn trống; **chưa có dữ liệu khảo sát thực tế của đơn vị**. Đọc [bối cảnh VNU-IS](references/boi-canh-vnuis.md) trước khi chạy; các mã C1–C8 nằm ở mục 6 của file đó.
+
+- **Đơn vị thường dùng:** Phòng Truyền thông và Tuyển sinh.
+- **Nghiệp vụ trong phiếu CES:** "Tư vấn: Xây dựng bộ hỏi đáp và kịch bản tư vấn" (sheet `05_KS_TT_Tuyen_sinh`). Tần suất gợi ý: Thường xuyên. Đầu vào gợi ý: Thông tin chương trình; quy chế; học phí; học bổng; câu hỏi cũ. Khó khăn gợi ý: Tài liệu phân tán, nhiều định dạng; Đọc và đối chiếu thủ công mất thời gian; Dễ bỏ sót trường dữ liệu/phiên bản; Đầu ra phụ thuộc kinh nghiệm từng cá nhân. Đây là gợi ý có sẵn của CES, chưa phải xác nhận của đơn vị.
+
+**Điều chỉnh khi dùng cho VNU-IS**
+- Mỗi câu trả lời gắn nguồn (thông báo, đề án tuyển sinh) và ngày hiệu lực. Website hiện không nêu học phí và điểm sàn tiếng Anh: các câu hỏi đó ghi "chưa có thông tin xác nhận", không trả lời bằng số ước chừng.
+- Nhóm câu hỏi theo kiểu chương trình; thêm nhóm dành cho phụ huynh và học sinh quốc tế; tiếng Việt và tiếng Anh.
+- Đã có nền tảng AI tư vấn trên website: hỏi đáp này là nguồn đã duyệt cho nền tảng đó, không để hai nguồn mâu thuẫn; thay đổi hỏi đáp phải báo cho người quản trị nền tảng.
+
+**Chờ xác nhận khi khảo sát**
+- Bộ câu hỏi cũ và người duyệt nội dung (C6).
+- Cách nền tảng AI tư vấn hiện lấy dữ liệu (C5).
+
+Nếu người dùng chưa trả lời mục chờ xác nhận liên quan, hỏi lại; không tự điền giả định.
+
+## Đầu vào (Input)
+
+| Trường | Mô tả | Bắt buộc |
+|---|---|---|
+| `nam_tuyen_sinh` | Năm áp dụng (VD: 2027) | Có |
+| `nguon` | Đề án/quy chế/thông báo tuyển sinh của năm (trích dẫn cụ thể) | Có |
+| `nhom_cau_hoi` | Các nhóm: phương thức, chỉ tiêu, học phí, học bổng, hồ sơ, thời gian, liên hệ | Có |
+| `cau_hoi_thuc_te` | Câu hỏi thí sinh hay hỏi (từ tư vấn viên/chatbot) | Không |
+
+### Thông tin VNU-IS đã điền sẵn (không hỏi lại)
+
+| Mục | Giá trị mặc định |
+|---|---|
+| Cơ quan chủ quản; Trường; địa danh | Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội |
+| Đơn vị sử dụng và phối hợp | Phòng Truyền thông và Tuyển sinh |
+| Mô hình đào tạo | Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2 |
+| Ngôn ngữ đầu ra | Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu |
+| Hệ thống nguồn dữ liệu có trên website | Biểu mẫu tuyển sinh; nền tảng AI tư vấn (ai.vnuis.edu.vn); hotline và is@vnu.edu.vn. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5) |
+| Người duyệt và ký | Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6 |
+
+Nguồn: website và phiếu CES; đổi theo khảo sát thì sửa tại đây và trong `references/boi-canh-vnuis.md`.
+
+## Quy trình
+
+*⏱ là ước tính ban đầu của bộ gốc, chưa đo tại VNU-IS; hiệu chỉnh sau khảo sát.*
+
+**Bước 1. Thu thập và phân loại câu hỏi theo nhóm**
+- Làm gì: gom câu hỏi từ `cau_hoi_thuc_te` (nhật ký chatbot, hotline, fanpage, ghi nhận của tư vấn viên); bổ sung câu hỏi chuẩn cho mỗi nhóm trong `nhom_cau_hoi` (phương thức, chỉ tiêu, học phí, học bổng, hồ sơ, thời gian, liên hệ); loại câu trùng ý, gộp câu hỏi tương tự.
+- Dùng input: `nhom_cau_hoi`, `cau_hoi_thuc_te`.
+- Vai trò: Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu · ⏱ ~30–60 phút (ước tính)
+- Lưu ý nghiệp vụ: ưu tiên câu hỏi thực tế thí sinh hay hỏi; mỗi nhóm tối thiểu 3–5 câu để phủ đủ nội dung.
+- → Kết quả bước: Danh sách câu hỏi đã phân nhóm (đã loại trùng).
+
+**Bước 2. Tra cứu và trích xuất nội dung từ văn bản nguồn**
+- Làm gì: với từng câu hỏi, tra trong `nguon` (đề án/quy chế/thông báo tuyển sinh) tìm điều/mục quy định; trích nguyên văn đoạn liên quan; đánh dấu câu hỏi nằm ngoài phạm vi văn bản nguồn.
+- Dùng input: `nguon` + danh sách câu hỏi (Bước 1).
+- Vai trò: Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp · ⏱ ~30–60 phút (ước tính)
+- Lưu ý nghiệp vụ: chỉ dùng văn bản của đúng `nam_tuyen_sinh` — không dùng quy định năm cũ; câu hỏi ngoài phạm vi văn bản được chuyển sang nhóm "hướng dẫn liên hệ", tuyệt đối không suy đoán.
+- → Kết quả bước: Bảng ánh xạ câu hỏi → điều/mục văn bản (kèm nguyên văn trích dẫn) + danh sách câu hỏi ngoài phạm vi.
+
+**Bước 3. Soạn câu trả lời chuẩn có trích nguồn**
+- Làm gì: viết câu trả lời 2–4 câu, ngôn ngữ dễ hiểu với học sinh/phụ huynh; cuối mỗi câu trả lời ghi nguồn theo mẫu: (Nguồn: [tên văn bản], mục X — áp dụng năm YYYY); với câu hỏi ngoài phạm vi: viết mẫu hướng dẫn liên hệ (bộ phận, số điện thoại).
+- Dùng input: `nam_tuyen_sinh` + bảng ánh xạ (Bước 2).
+- Vai trò: Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo · ⏱ ~30–60 phút (ước tính)
+- Lưu ý nghiệp vụ: không trả lời chung chung kiểu "liên hệ để biết thêm" khi văn bản đã quy định rõ; số liệu (chỉ tiêu, học phí) phải chép đúng từng chữ số.
+- → Kết quả bước: Dự thảo hỏi đáp (câu hỏi → câu trả lời → nguồn + năm áp dụng).
+
+**Bước 4. Phân loại câu hỏi theo chu kỳ cập nhật**
+- Làm gì: đánh dấu từng câu hỏi: "cập nhật hằng năm" (chỉ tiêu, học phí, thời gian, hồ sơ) vs "ổn định" (quy trình chung, khái niệm); lập danh sách rà soát hằng năm kèm thời điểm rà soát (ngay sau khi có đề án tuyển sinh mới).
+- Dùng input: dự thảo hỏi đáp (Bước 3) + `nam_tuyen_sinh`.
+- Vai trò: Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, lập bảng biểu, định dạng · ⏱ ~30–60 phút (ước tính)
+- Lưu ý nghiệp vụ: lỗi phổ biến nhất là dùng hỏi đáp năm cũ cho năm mới — danh sách rà soát này là rào chắn bắt buộc.
+- → Kết quả bước: Bộ hỏi đáp có gắn nhãn chu kỳ cập nhật + danh sách rà soát hằng năm.
+
+**Bước 5. Kiểm tra đối chiếu và hoàn thiện**
+- Làm gì: đọc lại từng câu trả lời đối chiếu với văn bản nguồn (khớp 100%); kiểm tra năm áp dụng đã ghi đủ ở mọi câu; kiểm tra định dạng phù hợp kênh đăng tải (website/chatbot).
+- Dùng input: bộ hỏi đáp (Bước 4) + `nguon`.
+- Vai trò: Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, chuẩn bị bản phát hành · ⏱ ~1–2 giờ (ước tính)
+- Lưu ý nghiệp vụ: người kiểm tra chéo nên khác người soạn để bắt lỗi tốt hơn; đặc biệt soát các mốc thời gian trong câu trả lời.
+- → Kết quả bước: Bộ hỏi đáp hoàn chỉnh + danh sách rà soát hằng năm (sẵn sàng trình duyệt).
+
+## Luồng quy trình (Workflow)
+
+```mermaid
+flowchart TD
+    A[/"Đề án/quy chế tuyển sinh"/] --> B["Bước 1. Thu thập và phân loại câu hỏi theo nhóm"]
+    B --> C["Bước 2. Tra cứu và trích xuất nội dung từ văn bản nguồn"]
+    C --> D{"Nằm trong phạm vi văn bản nguồn?"}
+    D -->|Không| E["Hướng dẫn liên hệ, không suy đoán"]
+    D -->|Có| F["Bước 3. Soạn câu trả lời chuẩn có trích nguồn"]
+    E --> G["Bước 4. Phân loại câu hỏi theo chu kỳ cập nhật"]
+    F --> G
+    G --> H["Bước 5. Kiểm tra đối chiếu và hoàn thiện"]
+    H --> HG["👤 Trưởng phòng duyệt"]
+    HG --> I[["Bộ hỏi đáp theo nhóm + danh sách rà soát hằng năm"]]
+```
+
+## Đầu ra
+
+File nghiệp vụ thực tế theo định dạng mặc định ở đầu skill hoặc định dạng người dùng yêu cầu, kèm liên kết tải trong phản hồi cuối.
+
+Sản phẩm nghiệp vụ hoàn chỉnh theo [quy cách và cấu trúc](references/quy-cach-dau-ra.md), giữ các trường chưa có dữ liệu ở trạng thái trống. Không xuất kèm danh mục kiểm/phụ lục kiểm tra đầu ra.
+
+## Kiểm tra nội bộ trước khi giao
+
+- [ ] Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.
+- [ ] Có đầy đủ sản phẩm: Bộ hỏi đáp theo nhóm: câu hỏi → câu trả lời → nguồn trích dẫn + năm áp dụng
+- [ ] Có đầy đủ sản phẩm: Danh sách câu hỏi cần rà soát lại mỗi năm
+- [ ] Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)
+- [ ] Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ
+- [ ] Đúng thể thức, định dạng văn bản theo quy định hiện hành
+- [ ] Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập
+- [ ] Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành
+- [ ] Ưu tiên câu hỏi thực tế thí sinh hay hỏi
+- [ ] Chỉ dùng văn bản của đúng `nam_tuyen_sinh` — không dùng quy định năm cũ
+
+> Tiêu chí đạt: tất cả các ô đều được đánh dấu.
+
+## Human gate (người kiểm duyệt)
+- Tư vấn viên trưởng rà soát tính đúng đắn của câu trả lời.
+- Trưởng phòng duyệt bộ hỏi đáp trước khi đăng tải.
+- Khi quy chế/đề án thay đổi, đơn vị nghiệp vụ (Phòng Đào tạo) xác nhận lại nội dung.
+
+## Giới hạn (guardrails)
+- Không trả lời ngoài phạm vi văn bản nguồn; câu hỏi chưa có quy định thì hướng dẫn liên hệ thay vì suy đoán.
+- Mọi câu trả lời phải ghi rõ năm áp dụng; không dùng hỏi đáp năm cũ cho năm mới.
+- Không quyết định trúng tuyển thay hội đồng tuyển sinh.
+- Không tự đăng tải; không tự cập nhật khi chưa có văn bản mới.
+
+## Căn cứ & lưu ý
+- Nguồn chính: đề án tuyển sinh hằng năm, quy chế tuyển sinh của Bộ GD&ĐT.
+- Ví dụ trong skill chỉ để minh họa; không đưa dữ liệu cá nhân thật vào ví dụ. Tên Trường, cơ quan chủ quản và địa danh dùng đúng bảng thông tin VNU-IS đã điền sẵn.
+
+## Quản trị phiên bản
+- Phiên bản gói VNU-IS `0.4.2` (cập nhật 2026-10-11), dựa trên skill gốc `faq-tuyen-sinh` bản `1.3.2`; hồ sơ đầy đủ tại [references/version.json](references/version.json).
+- Người phê duyệt nghiệp vụ: **chưa chỉ định**. Trạng thái: dự thảo nghiệp vụ; kiểm tra pháp lý trước thực thi. Ngày cập nhật không đồng nghĩa mọi văn bản đã được rà soát toàn văn.
+- Giấy phép theo LICENSE của kho (bản quyền CES Global). Lịch sử thay đổi: CHANGELOG.md.

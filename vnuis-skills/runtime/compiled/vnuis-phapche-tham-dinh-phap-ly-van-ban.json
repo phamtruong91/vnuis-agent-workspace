@@ -1,0 +1,194 @@
+{
+ "name": "vnuis-phapche-tham-dinh-phap-ly-van-ban",
+ "title": "Thẩm định pháp lý dự thảo văn bản nội bộ",
+ "description": "Dùng khi một đơn vị trình dự thảo văn bản nội bộ (quy định, quy chế, hướng dẫn) và cần ý kiến pháp lý về thẩm quyền, căn cứ, tính thống nhất, thể thức trước khi Hiệu trưởng ký.",
+ "group": "phapche",
+ "group_label": "Pháp chế – thanh tra",
+ "previous_name": "vnuis-tham-dinh-phap-ly-van-ban",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (thanh tra – pháp chế)",
+ "when": "Khi một đơn vị trong trường soạn thảo văn bản nội bộ (quy định, quy chế, hướng dẫn,\nquyết định ban hành quy định...) và cần Phòng TC&QT (thanh tra – pháp chế) rà soát, cho ý kiến\npháp lý trước khi trình Hiệu trưởng ký ban hành.",
+ "inputs": [
+  {
+   "key": "ten_du_thao",
+   "desc": "Tên dự thảo văn bản cần thẩm định",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_soan_thao",
+   "desc": "Đơn vị chủ trì soạn thảo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung_du_thao",
+   "desc": "Toàn văn hoặc tóm tắt các điều khoản chính của dự thảo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu_du_thao_trich",
+   "desc": "Các căn cứ pháp lý mà dự thảo viện dẫn",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "van_ban_cap_tren",
+   "desc": "Văn bản của cấp trên và văn bản nội bộ hiện hành cần đối chiếu",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_tham_dinh",
+   "desc": "Cán bộ/đơn vị thực hiện thẩm định (Phòng TC&QT (thanh tra – pháp chế))",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (thanh tra – pháp chế)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Tiếp nhận và kiểm tra đầy đủ hồ sơ",
+   "lam_gi": "tiếp nhận dự thảo văn bản kèm tờ trình của đơn vị soạn thảo; kiểm tra hồ sơ có đủ các thành phần: dự thảo, tờ trình, tài liệu tham khảo kèm theo; nếu thiếu thì yêu cầu bổ sung, chưa tiến hành thẩm định.",
+   "inputs": [
+    "ten_du_thao",
+    "don_vi_soan_thao",
+    "noi_dung_du_thao",
+    "nguoi_tham_dinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "không thẩm định dự thảo thiếu tờ trình hoặc thiếu căn cứ viện dẫn; ghi nhận ngày tiếp nhận để tính thời hạn thẩm định.",
+   "ket_qua": "Phiếu tiếp nhận hồ sơ (đủ / thiếu + nội dung cần bổ sung)."
+  },
+  {
+   "n": 2,
+   "title": "Kiểm tra thẩm quyền ban hành",
+   "lam_gi": "xác định nội dung dự thảo thuộc thẩm quyền quyết định của cấp nào (Hiệu trưởng / cấp có thẩm quyền (C6) / đơn vị); kiểm tra người ký dự kiến có đúng thẩm quyền không; phát hiện nội dung vượt thẩm quyền.",
+   "inputs": [
+    "noi_dung_du_thao",
+    "don_vi_soan_thao"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "nội dung thuộc thẩm quyền cấp có thẩm quyền (C6) mà để Hiệu trưởng ký là lỗi nghiêm trọng → kết luận \"không đồng ý\".",
+   "ket_qua": "Kết quả kiểm tra thẩm quyền (phù hợp / vượt thẩm quyền + điểm vi phạm)."
+  },
+  {
+   "n": 3,
+   "title": "Kiểm tra căn cứ pháp lý",
+   "lam_gi": "với từng văn bản được dự thảo viện dẫn, kiểm tra: còn hiệu lực hay không; số, ký hiệu, ngày ban hành, cơ quan ban hành có chính xác không; có thiếu căn cứ quan trọng điều chỉnh trực tiếp nội dung dự thảo không.",
+   "inputs": [
+    "can_cu_du_thao_trich",
+    "noi_dung_du_thao"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "căn cứ hết hiệu lực hoặc trích dẫn sai số/ký hiệu là lỗi phổ biến nhất; ghi rõ từng lỗi gắn với điều khoản liên quan.",
+   "ket_qua": "Bảng kiểm tra căn cứ pháp lý (văn bản – tình trạng hiệu lực – lỗi phát hiện)."
+  },
+  {
+   "n": 4,
+   "title": "Đối chiếu tính thống nhất",
+   "lam_gi": "đối chiếu từng điều khoản dự thảo với văn bản cấp trên (luật, nghị định, thông tư) và văn bản nội bộ hiện hành của trường; phát hiện nội dung trái cấp trên, mâu thuẫn nội bộ, thuật ngữ không thống nhất.",
+   "inputs": [
+    "noi_dung_du_thao",
+    "van_ban_cap_tren"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: soạn dự thảo, đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "mâu thuẫn về thời hạn, mức, trình tự giữa các văn bản nội bộ là bẫy thường gặp; ghi rõ điều khoản dự thảo đối chiếu với điều khoản của văn bản nào.",
+   "ket_qua": "Bảng đối chiếu (điều khoản dự thảo – vấn đề phát hiện – văn bản đối chiếu)."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra thể thức theo Nghị định 30/2020/NĐ-CP",
+   "lam_gi": "kiểm tra từng yếu tố thể thức: quốc hiệu – tiêu ngữ; số, ký hiệu; địa danh, ngày tháng; tên văn bản, trích yếu; bố cục điều/khoản (đánh số liên tục); ngôn ngữ hành chính; nơi nhận; thẩm quyền ký.",
+   "inputs": [
+    "noi_dung_du_thao"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "lỗi thể thức phổ biến: thiếu mục nơi nhận, nhảy số điều, ghi sai thẩm quyền ký (KT./TL.).",
+   "ket_qua": "Danh sách lỗi thể thức."
+  },
+  {
+   "n": 6,
+   "title": "Tổng hợp và kết luận mức thẩm định",
+   "lam_gi": "tổng hợp kết quả các Bước 2–5; phân loại mức kết luận: Đồng ý (đủ điều kiện trình ký) / Đồng ý với điều kiện chỉnh sửa (liệt kê từng điểm cần sửa, bổ sung) / Không đồng ý (trái pháp luật, vượt thẩm quyền, mâu thuẫn nghiêm trọng — nêu rõ lý do).",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, chuẩn bị hồ sơ trình đầy đủ",
+   "luu_y": "một lỗi nghiêm trọng (vượt thẩm quyền, trái luật) là đủ để kết luận \"không đồng ý\" dù các phần khác đạt.",
+   "ket_qua": "Mức kết luận thẩm định + danh sách điểm cần sửa / lý do không đồng ý."
+  },
+  {
+   "n": 7,
+   "title": "Lập và gửi phiếu ý kiến pháp lý",
+   "lam_gi": "soạn phiếu ý kiến pháp lý theo cấu trúc chuẩn: I. Đánh giá chung; II. Ý kiến cụ thể (từng điểm); III. Kết luận (đánh dấu 1 trong 3 mức); gửi cho đơn vị soạn thảo để hoàn thiện trước khi trình ký; lưu phiếu vào hồ sơ văn bản.",
+   "inputs": [
+    "nguoi_tham_dinh",
+    "ten_du_thao",
+    "don_vi_soan_thao"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (thanh tra – pháp chế) · AI hỗ trợ: soạn dự thảo, chuẩn bị hồ sơ trình đầy đủ",
+   "luu_y": "đơn vị soạn thảo phải tiếp thu hoặc giải trình bằng văn bản nếu không tiếp thu; theo dõi đến khi dự thảo được hoàn thiện.",
+   "ket_qua": "Phiếu ý kiến pháp lý (trình Trưởng phòng ký) + bảng đối chiếu, gửi đơn vị soạn thảo sau khi ký."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Phiếu ý kiến pháp lý hoàn chỉnh, ghi rõ mức kết luận và từng điểm cần sửa",
+  "Có đầy đủ sản phẩm: Bảng đối chiếu: nội dung dự thảo – vấn đề pháp lý phát hiện – đề xuất chỉnh sửa",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Không thẩm định dự thảo thiếu tờ trình hoặc thiếu căn cứ viện dẫn",
+  "Nội dung thuộc thẩm quyền cấp có thẩm quyền (C6) mà để Hiệu trưởng ký là lỗi nghiêm trọng → kết luận \"không đồng ý\". > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Rà thẩm quyền ban hành: tách rõ nội dung thuộc thẩm quyền Trường và nội dung cần ĐHQGHN; chưa có văn bản phân cấp thì nêu là điểm chưa xác định (C2).",
+  "Văn bản về chương trình liên kết cần đối chiếu thêm với thỏa thuận với đối tác; skill chỉ nêu có hay không có dữ liệu để đối chiếu.",
+  "Kết quả là ý kiến hỗ trợ để người có chuyên môn pháp lý quyết định, không phải ý kiến pháp lý."
+ ],
+ "cho_xac_nhan": [
+  "Văn bản phân cấp giữa ĐHQGHN và Trường (C2).",
+  "Người thẩm định chính thức (C6)."
+ ],
+ "output_structure": [
+  "Phần đầu: quốc hiệu – tiêu ngữ, tên đơn vị thẩm định, số/ký hiệu, địa danh – ngày tháng, tên văn bản \"PHIẾU Ý KIẾN PHÁP LÝ\" + trích yếu (về dự thảo ... do ... soạn thảo); dòng \"Kính gửi: ...\".",
+  "I. Đánh giá chung (thẩm quyền ban hành, bố cục, nhận định tổng thể + số điểm cần sửa).",
+  "II. Ý kiến cụ thể (từng điểm: điều khoản – vấn đề phát hiện – đề xuất chỉnh sửa).",
+  "III. Kết luận (đánh dấu 1 trong 3 mức: đồng ý / đồng ý với điều kiện chỉnh sửa / không đồng ý).",
+  "Phần cuối: nơi nhận, chữ ký người thẩm định."
+ ],
+ "output_structure_raw": "1. Phần đầu: quốc hiệu – tiêu ngữ, tên đơn vị thẩm định, số/ký hiệu, địa danh – ngày tháng, tên văn bản \"PHIẾU Ý KIẾN PHÁP LÝ\" + trích yếu (về dự thảo ... do ... soạn thảo); dòng \"Kính gửi: ...\".\n\n2. I. Đánh giá chung (thẩm quyền ban hành, bố cục, nhận định tổng thể + số điểm cần sửa).\n\n3. II. Ý kiến cụ thể (từng điểm: điều khoản – vấn đề phát hiện – đề xuất chỉnh sửa).\n\n4. III. Kết luận (đánh dấu 1 trong 3 mức: đồng ý / đồng ý với điều kiện chỉnh sửa / không đồng ý).\n\n5. Phần cuối: nơi nhận, chữ ký người thẩm định.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (thanh tra – pháp chế). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-phapche-tham-dinh-phap-ly-van-ban/references"
+}

@@ -1,0 +1,254 @@
+{
+ "name": "vnuis-khcn-soan-thong-bao-dang-ky-de-tai",
+ "title": "Thông báo đăng ký đề tài NCKH các cấp",
+ "description": "Dùng khi Phòng KHCN&HTPT mở đợt đăng ký đề tài NCKH (cấp trường, bộ/tỉnh, nhà nước) và cần soạn thông báo gửi các đơn vị: thời hạn, hồ sơ, định mức kinh phí, nơi nhận.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-thong-bao-dang-ky-de-tai",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)",
+ "when": "Khi Phòng KHCN&HTPT cần ban hành thông báo triển khai đợt đăng ký đề tài\nnghiên cứu khoa học: xác định cấp đề tài, thời hạn nộp hồ sơ, thành phần hồ sơ,\nđịnh mức kinh phí và nơi tiếp nhận, gửi đến các khoa/viện/trung tâm trong trường.",
+ "inputs": [
+  {
+   "key": "dot_dang_ky",
+   "desc": "Đợt đăng ký (VD: đợt 1 năm 2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "cap_de_tai",
+   "desc": "Cấp trường / Cấp bộ (tỉnh) / Cấp nhà nước (có thể nhiều cấp trong một thông báo)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "doi_tuong",
+   "desc": "Đối tượng được đăng ký (cán bộ, giảng viên; tiêu chí chủ nhiệm đề tài)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_luong_chi_tieu",
+   "desc": "Số lượng đề tài dự kiến tuyển chọn theo từng cấp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dinh_muc_kinh_phi",
+   "desc": "Mức kinh phí tối đa cho 01 đề tài theo từng cấp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_so_yeu_cau",
+   "desc": "Thành phần hồ sơ đăng ký (thuyết minh, lý lịch khoa học, dự toán...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_han_nop",
+   "desc": "Hạn cuối nộp hồ sơ (ngày/tháng/năm)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_nop",
+   "desc": "Nơi tiếp nhận hồ sơ (phòng, địa chỉ, hình thức nộp trực tiếp/online)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dau_moi_lien_he",
+   "desc": "Họ tên, điện thoại, email cán bộ phụ trách",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "can_cu",
+   "desc": "Căn cứ ban hành (kế hoạch KHCN năm, quyết định phân bổ kinh phí...)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng / Trưởng Phòng KHCN&HTPT",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Danh sách nơi nhận",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (khoa học công nghệ)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 93/2025/QH15; Nghị định 265/2025 và 267/2025, hiệu lực 14/10/2025: Yêu cầu cấp nhiệm vụ, nguồn kinh phí, tài trợ/đặt hàng, ngày phê duyệt, quy chế cơ quan tài trợ, phương thức khoán và quyền sử dụng kết quả. Đối chiếu NĐ 265 về tài chính và NĐ 267 về nhiệm vụ; không cố định thang xếp loại hoặc thu hồi toàn bộ kinh phí cho mọi đề tài. Nghiệm thu dựa hợp đồng và tiêu chí được duyệt, hội đồng có thẩm quyền xác nhận.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định phạm vi đợt đăng ký",
+   "lam_gi": "đọc `dot_dang_ky` để xác định đợt và năm; lập bảng gồm từng cấp trong `cap_de_tai`, điền `so_luong_chi_tieu` và `dinh_muc_kinh_phi` tương ứng từng cấp; kiểm tra tổng (định mức × chỉ tiêu) có khớp kế hoạch kinh phí KHCN năm đã duyệt không.",
+   "inputs": [
+    "dot_dang_ky",
+    "cap_de_tai",
+    "so_luong_chi_tieu",
+    "dinh_muc_kinh_phi"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: lập bảng phạm vi và kiểm tra tổng kinh phí",
+   "luu_y": "định mức cấp bộ/nhà nước thường do Bộ chủ quản quy định, không được tự đặt vượt trần; nếu một thông báo gộp nhiều cấp phải tách rõ từng cấp trong bảng để tránh nhầm lẫn.",
+   "ket_qua": "bảng phạm vi đợt đăng ký (cấp đề tài – chỉ tiêu – định mức kinh phí)."
+  },
+  {
+   "n": 2,
+   "title": "Tổng hợp thông tin nghiệp vụ",
+   "lam_gi": "trích `thoi_han_nop`, `noi_nop`, `ho_so_yeu_cau`, `dau_moi_lien_he` từ input; đối chiếu `thoi_han_nop` với ngày dự kiến ban hành — thời hạn phải sau ngày ban hành ít nhất 15 ngày làm việc (khuyến nghị 30 ngày); kiểm tra `ho_so_yeu_cau` đã ghi đủ số bản cho từng thành phần hồ sơ chưa.",
+   "inputs": [
+    "thoi_han_nop",
+    "noi_nop",
+    "ho_so_yeu_cau",
+    "dau_moi_lien_he"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: tổng hợp và kiểm tra logic thời hạn",
+   "luu_y": "bẫy thường gặp — ghi thời hạn chung chung (\"cuối tháng 11\") thay vì giờ + ngày cụ thể; quên ghi hình thức nộp bản mềm; thiếu đầu mối liên hệ khiến đơn vị không biết hỏi ai.",
+   "ket_qua": "phiếu tổng hợp thông tin nghiệp vụ (bảng: hạng mục – nội dung – trạng thái đạt/chưa đạt sau kiểm tra thời hạn)."
+  },
+  {
+   "n": 3,
+   "title": "Xác định đối tượng và điều kiện đăng ký",
+   "lam_gi": "cụ thể hóa `doi_tuong` thành 3 nhóm điều kiện: (a) ai được đăng ký (cán bộ/giảng viên cơ hữu...); (b) điều kiện chủ nhiệm theo từng cấp trong `cap_de_tai` (trình độ, thâm niên, công trình công bố); (c) điều kiện loại trừ (đang chủ nhiệm đề tài quá hạn chưa nghiệm thu); bổ sung lĩnh vực ưu tiên theo `can_cu` (kế hoạch KHCN năm).",
+   "inputs": [
+    "doi_tuong",
+    "cap_de_tai",
+    "can_cu"
+   ],
+   "vai_tro": "Trưởng Phòng KHCN&HTPT · AI hỗ trợ: cụ thể hóa điều kiện theo từng cấp",
+   "luu_y": "điều kiện chủ nhiệm cấp bộ/nhà nước phải theo quy định của Bộ chủ quản, không được hạ chuẩn; quy định loại trừ phải rõ ràng để tránh khiếu nại sau này.",
+   "ket_qua": "danh sách điều kiện đăng ký phân theo từng cấp đề tài."
+  },
+  {
+   "n": 4,
+   "title": "Dựng khung thể thức văn bản theo NĐ 30/2020",
+   "lam_gi": "dựng khung văn bản hành chính đúng thứ tự: Quốc hiệu – Tiêu ngữ → Tên cơ quan ban hành → Số, ký hiệu → Địa danh, ngày tháng năm → Tiêu đề → Kính gửi → Nội dung → Nơi nhận → Chữ ký; điền `nguoi_ky`, `noi_nhan` vào đúng vị trí; kiểm tra thẩm quyền ký phù hợp với cấp đề tài.",
+   "inputs": [
+    "nguoi_ky",
+    "noi_nhan",
+    "dot_dang_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: dựng khung văn bản đúng thể thức Nghị định 30/2020",
+   "luu_y": "tiêu đề phải ghi rõ đợt và năm (\"Về việc đăng ký đề tài NCKH đợt 1 năm 2027\"); nơi nhận phải có dòng \"Lưu: VT, ...\" theo quy định văn thư; kiểm tra số, ký hiệu văn bản với Văn thư để không bị trùng.",
+   "ket_qua": "khung văn bản đúng thể thức, sẵn sàng điền nội dung."
+  },
+  {
+   "n": 5,
+   "title": "Viết nội dung thông báo (5 mục)",
+   "lam_gi": "viết 5 mục từ kết quả các bước 1–3: 1. Đối tượng, điều kiện đăng ký; 2. Cấp đề tài, số lượng chỉ tiêu, định mức kinh phí (dạng bảng); 3. Hồ sơ đăng ký (liệt kê từng thành phần + số bản); 4. Thời hạn và nơi nộp hồ sơ; 5. Thông tin liên hệ, giải đáp thắc mắc.",
+   "inputs": [
+    "so_luong_chi_tieu",
+    "dinh_muc_kinh_phi",
+    "ho_so_yeu_cau",
+    "thoi_han_nop",
+    "noi_nop",
+    "dau_moi_lien_he",
+    "doi_tuong"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: soạn dự thảo 5 mục nội dung từ kết quả các bước trước",
+   "luu_y": "số liệu kinh phí ở mục 2 phải khớp 100% với bảng bước 1; mục 4 phải ghi rõ hậu quả nộp muộn (\"hồ sơ nộp sau thời hạn trên không được xem xét\").",
+   "ket_qua": "dự thảo nội dung thông báo đầy đủ 5 mục."
+  },
+  {
+   "n": 6,
+   "title": "Viết phần kết thúc và hoàn thiện văn bản",
+   "lam_gi": "viết câu kết đề nghị các đơn vị phổ biến thông báo đến cán bộ, giảng viên; thêm ký hiệu kết thúc \"./.\"; ghép phần kết thúc và khối chữ ký vào khung văn bản ở bước 4.",
+   "inputs": [
+    "nguoi_ky",
+    "noi_nhan"
+   ],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: viết phần kết thúc và ráp hoàn chỉnh văn bản",
+   "luu_y": "ký hiệu \"./.\" đặt sau câu kết thúc nội dung, trước khối \"Nơi nhận\"; khối chữ ký ghi đúng chức danh người ký theo `nguoi_ky` (VD: \"TL. HIỆU TRƯỞNG / TRƯỞNG PHÒNG KHCN\").",
+   "ket_qua": "dự thảo thông báo hoàn chỉnh (thể thức + nội dung + kết thúc)."
+  },
+  {
+   "n": 7,
+   "title": "Kiểm tra toàn diện và trình lãnh đạo duyệt",
+   "lam_gi": "chạy danh mục kiểm tra: thể thức NĐ 30/2020, chính tả, số liệu kinh phí khớp kế hoạch, logic thời hạn (không rơi vào ngày nghỉ/lễ), thẩm quyền ký, nơi nhận đầy đủ; trình lãnh đạo duyệt nội dung; nếu không đạt thì quay lại bước 4 hoặc 5 để sửa.",
+   "inputs": [],
+   "vai_tro": "Trưởng Phòng KHCN&HTPT · AI hỗ trợ: chạy danh mục kiểm tra kỹ thuật",
+   "luu_y": "lỗi hay gặp nhất là thời hạn nộp rơi vào ngày nghỉ/lễ và số ký hiệu văn bản bị trùng; kiểm tra số văn bản với Văn thư trước khi trình ký.",
+   "ket_qua": "thông báo đã được lãnh đạo duyệt + kết quả đối chiếu nội bộ (không xuất kèm file)."
+  },
+  {
+   "n": 8,
+   "title": "Xuất bản",
+   "lam_gi": "xuất văn bản hoàn chỉnh theo định dạng đầu ra của skill, sẵn sàng trình ký/chuyển sang Word; lưu kèm danh mục kiểm tra vào hồ sơ đợt đăng ký.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng KHCN&HTPT · AI hỗ trợ: xuất văn bản theo định dạng đầu ra của skill và lưu hồ sơ đợt đăng ký",
+   "luu_y": "sau khi ký, lưu 01 bản có số văn bản chính thức để làm căn cứ cho các bước tiếp nhận hồ sơ sau này.",
+   "ket_qua": "văn bản thông báo hoàn chỉnh + kết quả đối chiếu nội bộ (không xuất kèm file)."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu trong output (chỉ tiêu, định mức kinh phí theo từng cấp) khớp 100% với Input (`dot_dang_ky`, `so_luong_chi_tieu`, `dinh_muc_kinh_phi`)",
+  "Không bịa đặt căn cứ pháp lý, số ký hiệu văn bản, thông tin đơn vị",
+  "Đúng thể thức văn bản hành chính theo Nghị định 30/2020/NĐ-CP",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (kế hoạch KHCN năm, quyết định phân bổ kinh phí; quy định của Bộ chủ quản đối với cấp bộ trở lên)",
+  "Đủ 5 mục nội dung: (1) đối tượng, điều kiện đăng ký; (2) cấp/số lượng/định mức kinh phí (dạng bảng); (3) hồ sơ đăng ký; (4) thời hạn và nơi nộp; (5) thông tin liên hệ",
+  "Thời hạn nộp sau ngày ban hành ít nhất 15 ngày làm việc, không rơi vào ngày nghỉ/lễ; ghi rõ hậu quả nộp muộn",
+  "Thẩm quyền ký phù hợp cấp đề tài; nơi nhận đầy đủ kèm dòng \"Lưu: VT, ...\"; số ký hiệu văn bản đã kiểm tra với Văn thư, không trùng",
+  "Đã qua Human gate: lãnh đạo có thẩm quyền đã duyệt nội dung trước khi ban hành"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thông báo đăng ký đề tài ghi điều kiện, hạn nộp theo văn bản của Trường hoặc ĐHQGHN; không đoán.",
+  "Gửi đến Khoa, Viện và giảng viên; bản tiếng Anh khi cần."
+ ],
+ "cho_xac_nhan": [
+  "Kế hoạch KH&CN năm và hạn đăng ký (C6).",
+  "Người ký (C1)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ (căn phải, chữ in hoa)",
+  "Tên cơ quan ban hành (căn trái) + Số, ký hiệu văn bản",
+  "Địa danh, ngày tháng năm ban hành (căn phải)",
+  "Tiêu đề \"THÔNG BÁO\" + dòng trích yếu nội dung (ghi rõ đợt, năm đăng ký)",
+  "Kính gửi các đơn vị nhận",
+  "Căn cứ ban hành (nếu có)",
+  "Nội dung đánh số 5 mục: (1) Đối tượng, điều kiện đăng ký; (2) Cấp đề tài, số lượng chỉ tiêu, định mức kinh phí (dạng bảng); (3) Hồ sơ đăng ký (từng thành phần + số bản); (4) Thời hạn và nơi nộp hồ sơ; (5) Thông tin liên hệ, giải đáp thắc mắc",
+  "Câu kết thúc đề nghị các đơn vị phổ biến + ký hiệu \"./.\"",
+  "Khối Nơi nhận (trái) và Chữ ký (phải, đúng chức danh người ký) Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ (căn phải, chữ in hoa)\n\n2. Tên cơ quan ban hành (căn trái) + Số, ký hiệu văn bản\n\n3. Địa danh, ngày tháng năm ban hành (căn phải)\n\n4. Tiêu đề \"THÔNG BÁO\" + dòng trích yếu nội dung (ghi rõ đợt, năm đăng ký)\n\n5. Kính gửi các đơn vị nhận\n\n6. Căn cứ ban hành (nếu có)\n\n7. Nội dung đánh số 5 mục: (1) Đối tượng, điều kiện đăng ký; (2) Cấp đề tài, số lượng chỉ tiêu, định mức kinh phí (dạng bảng); (3) Hồ sơ đăng ký (từng thành phần + số bản); (4) Thời hạn và nơi nộp hồ sơ; (5) Thông tin liên hệ, giải đáp thắc mắc\n\n8. Câu kết thúc đề nghị các đơn vị phổ biến + ký hiệu \"./.\"\n\n9. Khối Nơi nhận (trái) và Chữ ký (phải, đúng chức danh người ký)",
+ "human_gate_check": "Đã qua Human gate: lãnh đạo có thẩm quyền đã duyệt nội dung trước khi ban hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (khoa học công nghệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ và phạm vi áp dụng\n\nNgày cập nhật 2026-10-09; phải kiểm tra toàn văn và chuyển tiếp trước thực thi.\n\n## Luật 93/2025/QH15; Nghị định 265/2025 và 267/2025, hiệu lực 14/10/2025\n\nNguồn: https://vanban.chinhphu.vn/?classid=1&docid=215664&pageid=27160\n\nYêu cầu cấp nhiệm vụ, nguồn kinh phí, tài trợ/đặt hàng, ngày phê duyệt, quy chế cơ quan tài trợ, phương thức khoán và quyền sử dụng kết quả. Đối chiếu NĐ 265 về tài chính và NĐ 267 về nhiệm vụ; không cố định thang xếp loại hoặc thu hồi toàn bộ kinh phí cho mọi đề tài. Nghiệm thu dựa hợp đồng và tiêu chí được duyệt, hội đồng có thẩm quyền xác nhận.\n",
+ "outputs_dir": "skills/vnuis-khcn-soan-thong-bao-dang-ky-de-tai/references"
+}

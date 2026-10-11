@@ -1,0 +1,176 @@
+{
+ "name": "vnuis-vp-bao-cao-tong-ket-nam-hoc-toan-truong",
+ "title": "Soạn báo cáo tổng kết năm học toàn trường",
+ "description": "Dùng khi Văn phòng tổng hợp báo cáo tổng kết năm học toàn trường từ báo cáo các phòng ban, khoa để trình Hội nghị cán bộ viên chức, cơ quan chủ quản, Bộ GD&ĐT.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-bao-cao-tong-ket-nam-truong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Ban Giám hiệu; Phòng Tổ chức và Quản trị (tổng hợp)",
+ "when": "Khi tổng hợp báo cáo tổng kết năm học để trình Hội nghị cán bộ viên chức, báo cáo\ncơ quan chủ quản, Bộ GD&ĐT.",
+ "inputs": [
+  {
+   "key": "nam_hoc",
+   "desc": "Năm học (VD: 2025–2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bao_cao_don_vi",
+   "desc": "Báo cáo / số liệu của các phòng, khoa, trung tâm theo từng mảng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dinh_huong_chung",
+   "desc": "Định hướng, chỉ đạo của Ban Giám hiệu cho năm học",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Ban Giám hiệu; Phòng Tổ chức và Quản trị (tổng hợp)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xây dựng đề cương báo cáo",
+   "lam_gi": "Dựng đề cương chi tiết với 6 mảng cố định: (1) Công tác đào tạo (tuyển sinh, CTĐT, học vụ, tốt nghiệp); (2) KHCN & hợp tác quốc tế; (3) Công tác sinh viên; (4) Tổ chức cán bộ, thi đua khen thưởng; (5) Tài chính, cơ sở vật chất; (6) Đảm bảo chất lượng, kiểm định. Với mỗi mảng, liệt kê các chỉ số bắt buộc phải có và biểu mẫu số liệu đính kèm; lấy ý kiến Ban Giám hiệu về định hướng, điểm nhấn của năm học.",
+   "inputs": [
+    "nam_hoc",
+    "dinh_huong_chung"
+   ],
+   "vai_tro": "Ban Giám hiệu · AI hỗ trợ: dựng đề cương 6 mảng và biểu mẫu số liệu, Văn phòng trình Ban Giám hiệu chốt định hướng",
+   "luu_y": "Đề cương là \"hợp đồng\" với các đơn vị — càng chi tiết, số liệu thu về càng đồng đều, tránh mỗi đơn vị báo cáo một kiểu; chốt đề cương sớm (trước ít nhất 1 tháng so với hạn báo cáo) để đơn vị có thời gian chuẩn bị.",
+   "ket_qua": "Đề cương báo cáo chi tiết 6 mảng (kèm biểu mẫu số liệu từng mảng)."
+  },
+  {
+   "n": 2,
+   "title": "Gửi đề cương và thu thập báo cáo đơn vị",
+   "lam_gi": "Gửi đề cương + biểu mẫu + thời hạn nộp đến tất cả phòng, khoa, trung tâm; đôn đốc các đơn vị nộp đúng hạn; tiếp nhận báo cáo/số liệu từng đơn vị; lập bảng theo dõi tiến độ nộp.",
+   "inputs": [
+    "bao_cao_don_vi"
+   ],
+   "vai_tro": "Chuyên viên Văn phòng · AI hỗ trợ: hỗ trợ soạn văn bản, lập bảng theo dõi tiến độ nộp, Văn phòng đôn đốc và tiếp nhận báo cáo đơn vị",
+   "luu_y": "Đơn vị nộp muộn là chuyện thường — gửi nhắc trước hạn 7 ngày và 3 ngày; khi nhận báo cáo, kiểm tra ngay tính đầy đủ (có đủ các chỉ số trong đề cương không), thiếu thì yêu cầu bổ sung ngay, không để dồn đến lúc tổng hợp.",
+   "ket_qua": "Tập hợp báo cáo/số liệu các đơn vị + bảng theo dõi tiến độ nộp."
+  },
+  {
+   "n": 3,
+   "title": "Tổng hợp theo mảng, chuẩn hóa số liệu",
+   "lam_gi": "Gom số liệu các đơn vị theo 6 mảng; loại bỏ trùng lặp (nhiều đơn vị cùng báo một hoạt động); chuẩn hóa đơn vị tính và mốc thời gian; đối chiếu chéo số liệu liên quan giữa các đơn vị (VD: số SV tốt nghiệp của Đào tạo với số liệu việc làm của Đào tạo (công tác sinh viên)); yêu cầu đơn vị xác nhận lại các chênh lệch.",
+   "inputs": [
+    "bao_cao_don_vi"
+   ],
+   "vai_tro": "Chuyên viên Văn phòng · AI hỗ trợ: gom số liệu, loại trùng lặp, chuẩn hóa đơn vị tính và đối chiếu chéo",
+   "luu_y": "Số liệu tổng hợp phải thống nhất một mốc thời gian (VD: tính đến 31/7); chênh lệch chưa giải trình được thì không đưa vào báo cáo chính thức; ghi rõ nguồn số liệu từng dòng để truy xuất khi Ban Giám hiệu hỏi.",
+   "ket_qua": "Bảng số liệu tổng hợp 6 mảng đã chuẩn hóa, đối chiếu nhất quán."
+  },
+  {
+   "n": 4,
+   "title": "Viết phần kết quả, nêu bật điểm nổi bật",
+   "lam_gi": "Viết phần I (Kết quả thực hiện các mặt công tác) theo 6 mảng; rút gọn số liệu đơn vị thành các con số tổng hợp cấp trường; nêu bật kết quả nổi bật, điểm sáng (vượt chỉ tiêu, lần đầu đạt được, được cấp trên ghi nhận) bằng gạch đầu dòng có số liệu minh chứng; trình bày bảng biểu tổng hợp.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Văn phòng · AI hỗ trợ: viết dự thảo Phần I theo 6 mảng kèm bảng biểu",
+   "luu_y": "Báo cáo cấp trường phải có \"tầm\" — tránh liệt kê vụn vặt kiểu cộng gộp báo cáo đơn vị; mỗi nhận định tích cực phải có số liệu đi kèm; số liệu so sánh với năm trước giúp Ban Giám hiệu thấy xu hướng.",
+   "ket_qua": "Bản thảo Phần I (kết quả 6 mảng) với bảng biểu tổng hợp."
+  },
+  {
+   "n": 5,
+   "title": "Đánh giá tồn tại, hạn chế và nguyên nhân",
+   "lam_gi": "Đối chiếu kết quả với kế hoạch/mục tiêu đầu năm học để xác định tồn tại, hạn chế; phân tích nguyên nhân khách quan và chủ quan cho từng tồn tại chính; viết Phần II (Tồn tại, hạn chế) ngắn gọn, thẳng thắn.",
+   "inputs": [
+    "dinh_huong_chung"
+   ],
+   "vai_tro": "Ban Giám hiệu · AI hỗ trợ: đề xuất tồn tại từ đối chiếu kế hoạch đầu năm, Ban Giám hiệu quyết định nội dung Phần II",
+   "luu_y": "Tồn tại phải nói thẳng — báo cáo trình Hội nghị CBVC và cấp trên mà \"toàn ưu điểm\" sẽ mất uy tín; không đổ lỗi chung chung (\"do khách quan\"), mỗi tồn tại cần nguyên nhân cụ thể để phần phương hướng có cơ sở đề xuất giải pháp.",
+   "ket_qua": "Bản thảo Phần II (tồn tại, hạn chế + nguyên nhân)."
+  },
+  {
+   "n": 6,
+   "title": "Xây dựng phương hướng năm học tới",
+   "lam_gi": "Căn cứ định hướng của Ban Giám hiệu và các tồn tại đã xác định, xây dựng Phần III: nhiệm vụ trọng tâm, chỉ tiêu cụ thể từng mảng, giải pháp thực hiện; mỗi nhiệm vụ gắn đơn vị chủ trì và thời gian hoàn thành.",
+   "inputs": [
+    "dinh_huong_chung"
+   ],
+   "vai_tro": "Ban Giám hiệu · AI hỗ trợ: soạn dự thảo Phần III (nhiệm vụ, chỉ tiêu, giải pháp), Ban Giám hiệu chốt phương hướng",
+   "luu_y": "Phương hướng phải trả lời được các tồn tại ở Phần II — tồn tại nào không có giải pháp tương ứng sẽ bị chất vấn tại Hội nghị CBVC; chỉ tiêu phải đo lường được, tránh khẩu hiệu chung chung.",
+   "ket_qua": "Bản thảo Phần III (nhiệm vụ trọng tâm, chỉ tiêu, giải pháp)."
+  },
+  {
+   "n": 7,
+   "title": "Hoàn thiện, trình Ban Giám hiệu duyệt",
+   "lam_gi": "Gộp 3 phần thành văn bản hoàn chỉnh; kiểm tra lần cuối: số liệu trong văn bản khớp bảng biểu và phụ lục, chính tả, thể thức; lập phụ lục số liệu tổng hợp theo mảng; trình Ban Giám hiệu duyệt; sau duyệt, trình Hội nghị CBVC và gửi cơ quan chủ quản/Bộ GD&ĐT; lưu hồ sơ.",
+   "inputs": [
+    "nam_hoc"
+   ],
+   "vai_tro": "Ban Giám hiệu · AI hỗ trợ: tổng hợp, đối chiếu và trình bày số liệu",
+   "luu_y": "Kiểm tra số ký hiệu văn bản, ngày tháng, nơi nhận trước khi trình ký — sai thể thức ở báo cáo cấp trường rất mất điểm; phụ lục số liệu phải khớp 100% với số liệu trong văn bản chính.",
+   "ket_qua": "Báo cáo tổng kết năm học toàn trường trình Ban Giám hiệu duyệt + phụ lục số liệu tổng hợp theo mảng."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Phần I có đủ 6 mảng công tác; số liệu trong văn bản khớp 100% với phụ lục số liệu theo mảng.",
+  "Số liệu khớp với báo cáo các đơn vị đã nộp; chênh lệch chưa giải trình được đã loại khỏi báo cáo.",
+  "Không bịa đặt số liệu, minh chứng; số liệu thiếu để trống ô và ghi nhận trong bảng theo dõi nộp.",
+  "Mỗi nhận định tích cực có số liệu minh chứng đi kèm; có so sánh với năm học trước.",
+  "Phần II: tồn tại nêu thẳng với nguyên nhân cụ thể; Phần III: mỗi tồn tại có giải pháp tương ứng, chỉ tiêu đo lường được.",
+  "Đúng thể thức: số ký hiệu văn bản, ngày tháng, nơi nhận, chữ ký Hiệu trưởng.",
+  "Đã qua Human gate: Ban Giám hiệu đã duyệt; đã trình Hội nghị CBVC và gửi ĐHQGHN/Bộ GD&ĐT (chờ C2). Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Tuyến báo cáo: VNU-IS là đơn vị thành viên của ĐHQGHN; báo cáo gửi ĐHQGHN hay Bộ GD&ĐT chờ xác nhận (C2). Trong skill này \"cơ quan tiếp nhận\" là nơi nhận báo cáo theo tuyến đó.",
+  "Nguồn là báo cáo của 4 phòng, 6 khoa, Viện, Hội đồng; các mảng công tác sinh viên, khảo thí, đảm bảo chất lượng lấy từ Phòng Đào tạo.",
+  "Mục hợp tác quốc tế, trao đổi, liên kết lấy từ Phòng KHCN và Hợp tác phát triển.",
+  "Số liệu trùng giữa các báo cáo (số chương trình, người học) phải khớp; mâu thuẫn đưa vào mục riêng. Chạy vnuis-vp-hop-nhat-bao-cao-don-vi trước."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu báo cáo tổng kết của ĐHQGHN (C2, C8).",
+  "Nguồn số liệu chính thức (C4)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ (CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM / Độc lập – Tự do – Hạnh phúc).",
+  "Tên trường (dòng trên), địa danh + ngày tháng năm (dòng dưới, căn phải).",
+  "Tiêu đề: BÁO CÁO TỔNG KẾT NĂM HỌC ...",
+  "Phần I. KẾT QUẢ THỰC HIỆN CÁC MẶT CÔNG TÁC (6 mảng: đào tạo; KHCN & HTQT; Đào tạo (công tác sinh viên); tổ chức cán bộ; tài chính – CSVC; đảm bảo chất lượng).",
+  "Phần II. TỒN TẠI, HẠN CHẾ (kèm nguyên nhân).",
+  "Phần III. PHƯƠNG HƯỚNG NĂM HỌC TỚI (nhiệm vụ trọng tâm, chỉ tiêu, giải pháp).",
+  "Nơi nhận – Lưu.",
+  "Chữ ký Hiệu trưởng (họ tên, học hàm/học vị).",
+  "Phụ lục: bảng số liệu tổng hợp theo mảng (đính kèm). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ (CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM / Độc lập – Tự do –\n   Hạnh phúc).\n\n2. Tên trường (dòng trên), địa danh + ngày tháng năm (dòng dưới, căn phải).\n\n3. Tiêu đề: BÁO CÁO TỔNG KẾT NĂM HỌC ...\n\n4. Phần I. KẾT QUẢ THỰC HIỆN CÁC MẶT CÔNG TÁC (6 mảng: đào tạo; KHCN & HTQT; Đào tạo (công tác sinh viên);\n   tổ chức cán bộ; tài chính – CSVC; đảm bảo chất lượng).\n\n5. Phần II. TỒN TẠI, HẠN CHẾ (kèm nguyên nhân).\n\n6. Phần III. PHƯƠNG HƯỚNG NĂM HỌC TỚI (nhiệm vụ trọng tâm, chỉ tiêu, giải pháp).\n\n7. Nơi nhận – Lưu.\n\n8. Chữ ký Hiệu trưởng (họ tên, học hàm/học vị).\n\n9. Phụ lục: bảng số liệu tổng hợp theo mảng (đính kèm).",
+ "human_gate_check": "Đã qua Human gate: Ban Giám hiệu đã duyệt; đã trình Hội nghị CBVC và gửi ĐHQGHN/Bộ GD&ĐT (chờ C2). Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Ban Giám hiệu. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-bao-cao-tong-ket-nam-hoc-toan-truong/references"
+}

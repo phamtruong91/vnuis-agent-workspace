@@ -1,0 +1,185 @@
+{
+ "name": "vnuis-vp-lap-phieu-trinh-ky",
+ "title": "Lập phiếu trình ký",
+ "description": "Dùng khi đơn vị trình văn bản, hồ sơ (quyết định, kế hoạch, báo cáo, tờ trình, hợp đồng) lên Hiệu trưởng hoặc Phó Hiệu trưởng ký duyệt và cần phiếu trình ký: tóm tắt, ý kiến đề xuất, phần ý kiến lãnh đạo.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-phieu-trinh-ky",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường; Văn phòng (TC&QT)",
+ "when": "Khi trình ký mọi văn bản, hồ sơ cần lãnh đạo trường ký duyệt: quyết định, kế hoạch,\nbáo cáo, tờ trình, hợp đồng...",
+ "inputs": [
+  {
+   "key": "van_ban_trinh",
+   "desc": "Tên văn bản / hồ sơ trình ký (kèm số ký hiệu dự thảo nếu có)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_soan",
+   "desc": "Đơn vị soạn thảo, người trình",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tom_tat",
+   "desc": "Tóm tắt nội dung chính của văn bản (3–7 dòng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "de_xuat",
+   "desc": "Ý kiến đề xuất của đơn vị (đề nghị ký ban hành / phê duyệt / cho ý kiến...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tai_lieu_kem",
+   "desc": "Danh mục tài liệu kèm theo",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường; Văn phòng (TC&QT)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thu thập hồ sơ trình ký, kiểm tra đầy đủ",
+   "lam_gi": "tập hợp đầy đủ `van_ban_trinh` (bản dự thảo) và `tai_lieu_kem`; kiểm tra có đủ chữ ký người soạn thảo, số lượng bản theo quy định, thể thức văn bản đúng Nghị định 30/2020/NĐ-CP; loại hồ sơ thiếu tài liệu kèm thì yêu cầu bổ sung trước khi lập phiếu trình.",
+   "inputs": [
+    "van_ban_trinh",
+    "don_vi_soan",
+    "tai_lieu_kem"
+   ],
+   "vai_tro": "Chuyên viên đơn vị trình chuẩn bị · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "văn bản trình ký phải là bản sạch, không còn lỗi chính tả; tài liệu kèm phải đánh số thứ tự và liệt kê đầy đủ — bẫy thường gặp là trình thiếu phụ lục, danh sách kèm theo.",
+   "ket_qua": "bộ hồ sơ đủ điều kiện trình ký."
+  },
+  {
+   "n": 2,
+   "title": "Viết tóm tắt nội dung văn bản",
+   "lam_gi": "từ `tom_tat`, viết đoạn tóm tắt 3–7 dòng nêu rõ: văn bản giải quyết việc gì, căn cứ pháp lý chính, nội dung cốt lõi (quyết định gì / phê duyệt gì / ban hành gì).",
+   "inputs": [
+    "tom_tat",
+    "van_ban_trinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "tóm tắt để lãnh đạo nắm nhanh — bẫy là chép lại dài dòng gần như toàn văn; mỗi ý một dòng, dùng câu ngắn; bắt buộc nêu căn cứ pháp lý nếu văn bản có tính quy phạm/quyết định.",
+   "ket_qua": "đoạn tóm tắt nội dung chuẩn 3–7 dòng."
+  },
+  {
+   "n": 3,
+   "title": "Ghi ý kiến đề xuất của đơn vị soạn thảo",
+   "lam_gi": "từ `de_xuat`, viết ý kiến đề xuất theo công thức chuẩn: \"Kính đề nghị Hiệu trưởng (Phó Hiệu trưởng) xem xét, ký ban hành / phê duyệt / cho ý kiến chỉ đạo...\" — phải chọn đúng một động từ phù hợp loại văn bản trình.",
+   "inputs": [
+    "de_xuat",
+    "van_ban_trinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "đề xuất phải dứt khoát, không viết mập mờ kiểu \"xin ý kiến\" chung chung; phân biệt rõ \"ký ban hành\" (văn bản đã hoàn chỉnh), \"phê duyệt\" (đề án, kế hoạch), \"cho ý kiến chỉ đạo\" (vấn đề chưa ngã ngũ).",
+   "ket_qua": "mục ý kiến đề xuất rõ ràng, đúng thẩm quyền."
+  },
+  {
+   "n": 4,
+   "title": "Hoàn thiện phiếu trình ký theo khung chuẩn",
+   "lam_gi": "ghép các phần theo đúng thứ tự khung chuẩn (tiêu đề đơn vị – PHIẾU TRÌNH KÝ – kính gửi – thông tin văn bản – đơn vị soạn – tóm tắt – tài liệu kèm – ý kiến đề xuất – ngày tháng và chữ ký người trình); chừa phần \"Ý KIẾN CỦA LÃNH ĐẠO\" trống 4–6 dòng để lãnh đạo ghi tay.",
+   "inputs": [
+    "van_ban_trinh",
+    "don_vi_soan",
+    "tom_tat",
+    "de_xuat",
+    "tai_lieu_kem"
+   ],
+   "vai_tro": "Chuyên viên đơn vị trình chuẩn bị · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "phần ý kiến lãnh đạo tuyệt đối để trống, không được viết sẵn gợi ý; ghi đúng chức danh người nhận (Hiệu trưởng / Phó Hiệu trưởng phụ trách lĩnh vực).",
+   "ket_qua": "phiếu trình ký dự thảo hoàn chỉnh."
+  },
+  {
+   "n": 5,
+   "title": "Kiểm tra thể thức, kẹp vào hồ sơ",
+   "lam_gi": "người trình (`don_vi_soan`) ký xác nhận đã kiểm tra thể thức, tính chính xác của hồ sơ; kẹp phiếu trình lên trên cùng của bộ hồ sơ; đánh số thứ tự tài liệu kèm khớp với danh mục đã liệt kê.",
+   "inputs": [
+    "don_vi_soan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "người trình chịu trách nhiệm về tính chính xác, đầy đủ của toàn bộ hồ sơ — ký xác nhận không phải thủ tục hình thức; kiểm tra lần cuối số ký hiệu, ngày tháng trên văn bản trình.",
+   "ket_qua": "bộ hồ sơ trình ký sẵn sàng (phiếu trình ở trên cùng)."
+  },
+  {
+   "n": 6,
+   "title": "Lãnh đạo ghi ý kiến, ký duyệt",
+   "lam_gi": "chuyển hồ sơ tới lãnh đạo; lãnh đạo đọc phiếu trình, ghi ý kiến vào phần để trống (đồng ý / yêu cầu chỉnh sửa / không đồng ý kèm lý do), ký tên, ghi ngày.",
+   "inputs": [],
+   "vai_tro": "Hiệu trưởng (người ký) · AI hỗ trợ: chuẩn bị hồ sơ trình ký đầy đủ để xem xét nhanh",
+   "luu_y": "nếu lãnh đạo yêu cầu chỉnh sửa thì quay lại Bước 1 với nội dung đã sửa; lưu phiếu trình đã ký cùng hồ sơ để làm căn cứ thực hiện.",
+   "ket_qua": "phiếu trình ký hoàn chỉnh (có ý kiến và chữ ký lãnh đạo)."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng khung phiếu trình ký tại references/quy-cach-dau-ra.md; văn bản trình kèm đúng thể thức Nghị định 30/2020/NĐ-CP (đối chiếu hiệu lực tại ngày nghiệp vụ).",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Văn bản trình ký phải là bản sạch, không còn lỗi chính tả",
+  "Tài liệu kèm phải đánh số thứ tự và liệt kê đầy đủ — bẫy thường gặp là trình thiếu phụ lục, danh sách kèm theo",
+  "Bắt buộc nêu căn cứ pháp lý nếu văn bản có tính quy phạm/quyết định"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Phiếu trình ghi đơn vị đề xuất, người ký chờ, và mức xin ý kiến theo tuyến trình ký của Trường; chưa biết tuyến thì để trống (C6).",
+  "Văn bản có nội dung cần ĐHQGHN cho ý kiến: nêu trong phần tóm tắt để người ký thấy ngay.",
+  "Không điền ý kiến hay chữ ký của lãnh đạo."
+ ],
+ "cho_xac_nhan": [
+  "Tuyến trình ký và vai trò Phó Hiệu trưởng phụ trách (C6).",
+  "Quy trình trình ký trên E-Office (C5)."
+ ],
+ "output_structure": [
+  "Tiêu đề đơn vị (tên trường, tên đơn vị soạn thảo);",
+  "Tiêu đề \"PHIẾU TRÌNH KÝ\";",
+  "Kính gửi: (chức danh lãnh đạo nhận trình);",
+  "Thông tin văn bản trình ký (tên văn bản, số ký hiệu dự thảo nếu có);",
+  "Đơn vị soạn thảo, người trình;",
+  "Tóm tắt nội dung (3–7 dòng: giải quyết việc gì, căn cứ chính, nội dung cốt lõi);",
+  "Tài liệu kèm theo (danh mục liệt kê);",
+  "Ý kiến đề xuất của đơn vị soạn thảo;",
+  "Địa danh, ngày tháng; chữ ký người trình (chức danh, họ tên);",
+  "Phần \"Ý KIẾN CỦA LÃNH ĐẠO\" để trống (4–6 dòng) + địa danh, ngày tháng, chữ ký lãnh đạo."
+ ],
+ "output_structure_raw": "1. Tiêu đề đơn vị (tên trường, tên đơn vị soạn thảo);\n\n2. Tiêu đề \"PHIẾU TRÌNH KÝ\";\n\n3. Kính gửi: (chức danh lãnh đạo nhận trình);\n\n4. Thông tin văn bản trình ký (tên văn bản, số ký hiệu dự thảo nếu có);\n\n5. Đơn vị soạn thảo, người trình;\n\n6. Tóm tắt nội dung (3–7 dòng: giải quyết việc gì, căn cứ chính, nội dung cốt lõi);\n\n7. Tài liệu kèm theo (danh mục liệt kê);\n\n8. Ý kiến đề xuất của đơn vị soạn thảo;\n\n9. Địa danh, ngày tháng; chữ ký người trình (chức danh, họ tên);\n\n10. Phần \"Ý KIẾN CỦA LÃNH ĐẠO\" để trống (4–6 dòng) + địa danh, ngày tháng, chữ ký lãnh đạo.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-lap-phieu-trinh-ky/references"
+}

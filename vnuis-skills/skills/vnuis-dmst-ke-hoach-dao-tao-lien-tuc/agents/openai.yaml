@@ -1,0 +1,4 @@
+interface:
+  display_name: Viện ĐMST · Kế hoạch đào tạo liên tục – VNU-IS
+  short_description: Hỗ trợ kế hoạch đào tạo liên tục (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-dmst-ke-hoach-dao-tao-lien-tuc để hỗ trợ công việc: Kế hoạch đào tạo liên tục; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

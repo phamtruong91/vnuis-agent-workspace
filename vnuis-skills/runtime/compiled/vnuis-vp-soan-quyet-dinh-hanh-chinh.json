@@ -1,0 +1,224 @@
+{
+ "name": "vnuis-vp-soan-quyet-dinh-hanh-chinh",
+ "title": "Soạn quyết định hành chính",
+ "description": "Dùng khi Hiệu trưởng hoặc cấp có thẩm quyền ban hành quyết định cá biệt: thành lập, giải thể đơn vị, ban hành quy chế, điều động, bổ nhiệm, khen thưởng hoặc kỷ luật sinh viên, phê duyệt kế hoạch, đề án.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-soan-quyet-dinh-hc",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường; Phòng Tổ chức và Quản trị",
+ "when": "Khi ban hành quyết định: thành lập / giải thể đơn vị, ban hành quy chế – quy định,\nđiều động – bổ nhiệm, khen thưởng – kỷ luật sinh viên (khen thưởng/kỷ luật viên chức, người lao động dùng vnuis-nhansu-soan-quyet-dinh-khen-thuong-ky-luat-vien-chuc), phê duyệt kế hoạch – đề án.",
+ "inputs": [
+  {
+   "key": "loai_quyet_dinh",
+   "desc": "Thành lập / Ban hành văn bản / Nhân sự / Khen thưởng – kỷ luật sinh viên / Phê duyệt",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu",
+   "desc": "Căn cứ pháp lý: luật, nghị định, quy chế, tờ trình đề nghị",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "noi_dung",
+   "desc": "Nội dung các điều (Điều 1 – quyết định việc gì; Điều 2 – hiệu lực; Điều 3 – trách nhiệm thi hành)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / người đứng đầu cấp có thẩm quyền (C6) / Phó Hiệu trưởng (thừa ủy quyền)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_soan",
+   "desc": "Đơn vị soạn thảo, số ký hiệu dự kiến",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "co_quan_chu_quan",
+   "desc": "Cơ quan chủ quản: Đại học Quốc gia Hà Nội (đã điền sẵn)",
+   "required": false,
+   "note": "Không (mặc định: ĐHQGHN)"
+  },
+  {
+   "key": "co_quan_ban_hanh",
+   "desc": "Cơ quan ban hành: Trường Quốc tế – ĐHQGHN (đã điền sẵn); ghi thêm đơn vị soạn thảo nếu khác",
+   "required": false,
+   "note": "Không (mặc định: Trường Quốc tế – ĐHQGHN)"
+  },
+  {
+   "key": "dia_danh",
+   "desc": "Địa danh ghi ở dòng ngày tháng năm (mặc định: Hà Nội)",
+   "required": false,
+   "note": "Không (mặc định: Hà Nội)"
+  },
+  {
+   "key": "so_van_ban",
+   "desc": "Số, ký hiệu văn bản đã được cấp (để trống nếu chưa cấp; không tự đặt)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Danh sách nơi nhận, gồm cả nơi lưu (VT, đơn vị soạn)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường; Phòng Tổ chức và Quản trị"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại quyết định và thẩm quyền ban hành",
+   "lam_gi": "Đọc `loai_quyet_dinh` để xác định nhóm quyết định (Thành lập / Ban hành văn bản / Nhân sự / Khen thưởng – kỷ luật / Phê duyệt); đối chiếu với `nguoi_ky`: quyết định về tổ chức bộ máy, chiến lược, quy chế thuộc thẩm quyền cấp có thẩm quyền (C6) (người đứng đầu cấp đó ký); quyết định cá biệt điều hành thuộc thẩm quyền Hiệu trưởng; Phó Hiệu trưởng chỉ ký thừa ủy quyền trong phạm vi được ủy quyền.",
+   "inputs": [
+    "loai_quyet_dinh",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "Xác định sai thẩm quyền là lỗi nghiêm trọng nhất — quyết định do người không có thẩm quyền ký là vô hiệu; khi `nguoi_ky` là Phó Hiệu trưởng, kiểm tra quyết định ủy quyền còn hiệu lực.",
+   "ket_qua": "Xác nhận loại quyết định + người có thẩm quyền ký phù hợp."
+  },
+  {
+   "n": 2,
+   "title": "Thu thập và sắp xếp căn cứ pháp lý",
+   "lam_gi": "Từ `can_cu`, liệt kê từng căn cứ, kiểm tra hiệu lực và sắp xếp từ văn bản có hiệu lực cao xuống thấp: Luật → Nghị định/Thông tư → Quy chế tổ chức và hoạt động của trường → Nghị quyết cấp có thẩm quyền (C6) → Tờ trình đề nghị của đơn vị; căn cứ là tờ trình phải ghi đủ số/ký hiệu/ngày và chức danh người ký tờ trình.",
+   "inputs": [
+    "can_cu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Bẫy thường gặp — viện dẫn luật đã được sửa đổi, bổ sung mà không ghi rõ luật sửa đổi; thiếu tờ trình đề nghị của đơn vị khiến quyết định thiếu cơ sở thực tiễn; mỗi căn cứ viết thành dòng riêng bắt đầu bằng \"Căn cứ\".",
+   "ket_qua": "Chuỗi căn cứ đã kiểm chuẩn, sắp xếp đúng thứ tự hiệu lực."
+  },
+  {
+   "n": 3,
+   "title": "Soạn các điều khoản",
+   "lam_gi": "Chuyển `noi_dung` thành các điều đánh số theo trình tự chuẩn: Điều 1 — nội dung quyết định (quyết định việc gì, đối tượng áp dụng); Điều 2 — hiệu lực thi hành (kể từ ngày ký hoặc ngày cụ thể); Điều 3 (hoặc điều cuối) — trách nhiệm thi hành (liệt kê cụ thể các đơn vị, cá nhân chịu trách nhiệm); điều bổ sung theo loại: quyết định thành lập thêm điều về cơ cấu tổ chức, nhiệm vụ, con dấu/tài khoản (nếu có); quyết định nhân sự ghi rõ họ tên, chức vụ, thời hạn bổ nhiệm.",
+   "inputs": [
+    "loai_quyet_dinh",
+    "noi_dung"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Mỗi điều chỉ quy định MỘT nội dung; câu chữ điều khoản phải chặt chẽ, không mơ hồ vì quyết định là văn bản có hiệu lực pháp lý; điều cuối cùng kết bằng \"./.\".",
+   "ket_qua": "Dự thảo các điều khoản đầy đủ, đúng trình tự."
+  },
+  {
+   "n": 4,
+   "title": "Dựng phần đầu văn bản theo thể thức NĐ 30/2020",
+   "lam_gi": "Lắp ráp phần đầu: tên trường + quốc hiệu – tiêu ngữ; số, ký hiệu (ký hiệu \"QĐ\"); địa danh, ngày tháng năm; dòng \"QUYẾT ĐỊNH\" (in hoa, căn giữa) + trích yếu \"Về việc ...\"; dòng thẩm quyền ban hành (vd \"HIỆU TRƯỞNG TRƯỜNG …\", in hoa, căn giữa). Phần đầu văn bản lấy từ `co_quan_chu_quan` (nếu có), `co_quan_ban_hanh`, `dia_danh`, `so_van_ban` (để dòng dấu chấm nếu chưa cấp số).",
+   "inputs": [
+    "don_vi_soan",
+    "loai_quyet_dinh",
+    "co_quan_chu_quan",
+    "co_quan_ban_hanh",
+    "dia_danh",
+    "so_van_ban"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Ký hiệu ghi \"QĐ\" (+ mã đơn vị nếu có); số quyết định chỉ ghi khi người dùng cung cấp, nếu chưa có thì để dòng dấu chấm (văn thư cấp số khi đăng ký sổ văn bản đi); trích yếu sau \"Về việc\" viết ngắn gọn, không dấu chấm cuối.",
+   "ket_qua": "Khung phần đầu quyết định đúng thể thức."
+  },
+  {
+   "n": 5,
+   "title": "Soạn nơi nhận và khối chữ ký",
+   "lam_gi": "Liệt kê nơi nhận: \"- Như Điều [số điều trách nhiệm thi hành];\" rồi các nơi nhận khác để biết/lưu, kết thúc \"- Lưu: VT, [mã đơn vị].\"; khối chữ ký bên phải: chức danh người ký theo `nguoi_ky` (HIỆU TRƯỞNG / CHỦ TỊCH HỘI ĐỒNG TRƯỜNG / KT. HIỆU TRƯỞNG – PHÓ HIỆU TRƯỞNG) + họ tên; ghi chú đóng dấu (bản chính đóng dấu đỏ của trường). Nơi nhận lấy từ `noi_nhan`.",
+   "inputs": [
+    "nguoi_ky",
+    "noi_dung",
+    "noi_nhan"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Nơi nhận phải bao gồm tất cả đơn vị/cá nhân được nêu trong điều trách nhiệm thi hành; quyết định thuộc thẩm quyền của cấp có thẩm quyền (C6) khác Hiệu trưởng thì do người đứng đầu cấp đó ký, không phải Hiệu trưởng (hội đồng trường công lập đã chấm dứt từ 01/01/2026 theo Điều 46 Luật 125/2025/QH15; xác nhận C6 trước khi dùng).",
+   "ket_qua": "Phần nơi nhận + khối chữ ký đúng thẩm quyền."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra căn cứ, nội dung, thẩm quyền",
+   "lam_gi": "Đối chiếu danh mục kiểm: căn cứ đầy đủ, sắp xếp đúng thứ tự hiệu lực; các điều đánh số đúng trình tự, nội dung rõ ràng, chặt chẽ; thẩm quyền ký đúng với loại quyết định; nơi nhận bao phủ điều trách nhiệm thi hành; thể thức NĐ 30/2020 (quốc hiệu, số ký hiệu, ngày tháng); chính tả, tên người, tên văn bản viện dẫn.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "Đọc lại từng căn cứ một lần nữa — viện dẫn sai tên/số văn bản là lỗi phổ biến; kiểm tra điều hiệu lực: \"kể từ ngày ký\" hay ngày cụ thể phải thống nhất với ý đồ ban hành.",
+   "ket_qua": "Kết quả đối chiếu thể thức (giữ nội bộ, không xuất kèm file) + danh sách lỗi cần sửa (nếu có), trả về bước tương ứng để chỉnh."
+  },
+  {
+   "n": 7,
+   "title": "Trình ký ban hành quyết định",
+   "lam_gi": "Ghép toàn bộ thành quyết định hoàn chỉnh file theo định dạng đầu ra của skill; thực hiện đối chiếu nội bộ, không xuất kèm danh mục kiểm; trình người có thẩm quyền ký ban hành (human gate); sau khi ký, chuyển văn thư đóng dấu, đăng ký vào sổ văn bản đi và phát hành.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) chuẩn bị, người ký theo `nguoi_ky` · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "Quyết định chỉ có hiệu lực sau khi ký và đóng dấu; không phát hành bản chưa ký.",
+   "ket_qua": "Quyết định hành chính hoàn chỉnh, sẵn sàng ký ban hành."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và định dạng theo Nghị định 30/2020/NĐ-CP về công tác văn thư.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Khi `nguoi_ky` là Phó Hiệu trưởng, kiểm tra quyết định ủy quyền còn hiệu lực",
+  "Câu chữ điều khoản phải chặt chẽ, không mơ hồ vì quyết định là văn bản có hiệu lực pháp lý",
+  "Nơi nhận phải bao gồm tất cả đơn vị/cá nhân được nêu trong điều trách nhiệm thi hành"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thẩm quyền ban hành (Hiệu trưởng, người được ủy quyền) chưa xác nhận; không đoán \"KT. Hiệu trưởng\" hay \"TUQ.\" (C1).",
+  "Quyết định thành lập tổ chức, hội đồng: thành phần ghi theo chức danh và vai trò; họ tên do đơn vị đề xuất cung cấp.",
+  "Quyết định liên quan chương trình liên kết hoặc ĐHQGHN cấp bằng: ghi `[CẦN XÁC MINH]` thẩm quyền (C2)."
+ ],
+ "cho_xac_nhan": [
+  "Số hiệu, người ký, mẫu quyết định (C1, C8).",
+  "Danh mục quyết định phải xin ý kiến ĐHQGHN (C6)."
+ ],
+ "output_structure": [
+  "Tên trường + Quốc hiệu \"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\" + Tiêu ngữ \"Độc lập - Tự do - Hạnh phúc\"",
+  "Số, ký hiệu quyết định (ký hiệu \"QĐ\"); địa danh, ngày tháng năm",
+  "Tên loại \"QUYẾT ĐỊNH\" (in hoa, căn giữa) + trích yếu \"Về việc ...\"",
+  "Dòng thẩm quyền ban hành (in hoa, căn giữa): \"HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC A\" hoặc \"HỘI ĐỒNG TRƯỜNG TRƯỜNG ĐẠI HỌC A\"",
+  "Chuỗi căn cứ: mỗi căn cứ một dòng bắt đầu bằng \"Căn cứ\", sắp xếp từ văn bản có hiệu lực cao xuống thấp, kết bằng mệnh đề \"Xét...\"",
+  "Dòng \"QUYẾT ĐỊNH:\" rồi các điều khoản: Điều 1 — nội dung quyết định; Điều 2 — hiệu lực thi hành; Điều cuối — trách nhiệm thi hành (thêm điều về cơ cấu tổ chức/con dấu/tài khoản với quyết định thành lập)",
+  "Điều cuối cùng kết bằng \"./.\"",
+  "Nơi nhận (dòng đầu \"- Như Điều [trách nhiệm thi hành];\")",
+  "Khối chữ ký: chức danh người có thẩm quyền + họ tên (bản chính đóng dấu) Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tên trường + Quốc hiệu \"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\" + Tiêu ngữ \"Độc lập - Tự do - Hạnh phúc\"\n\n2. Số, ký hiệu quyết định (ký hiệu \"QĐ\"); địa danh, ngày tháng năm\n\n3. Tên loại \"QUYẾT ĐỊNH\" (in hoa, căn giữa) + trích yếu \"Về việc ...\"\n\n4. Dòng thẩm quyền ban hành (in hoa, căn giữa): \"HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC A\" hoặc \"HỘI ĐỒNG TRƯỜNG TRƯỜNG ĐẠI HỌC A\"\n\n5. Chuỗi căn cứ: mỗi căn cứ một dòng bắt đầu bằng \"Căn cứ\", sắp xếp từ văn bản có hiệu lực cao xuống thấp, kết bằng mệnh đề \"Xét...\"\n\n6. Dòng \"QUYẾT ĐỊNH:\" rồi các điều khoản: Điều 1 — nội dung quyết định; Điều 2 — hiệu lực thi hành; Điều cuối — trách nhiệm thi hành (thêm điều về cơ cấu tổ chức/con dấu/tài khoản với quyết định thành lập)\n\n7. Điều cuối cùng kết bằng \"./.\"\n\n8. Nơi nhận (dòng đầu \"- Như Điều [trách nhiệm thi hành];\")\n\n9. Khối chữ ký: chức danh người có thẩm quyền + họ tên (bản chính đóng dấu)",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-soan-quyet-dinh-hanh-chinh/references"
+}

@@ -1,0 +1,181 @@
+{
+ "name": "vnuis-dbcl-bao-cao-tu-danh-gia",
+ "title": "Báo cáo tự đánh giá (kiểm định chất lượng)",
+ "description": "Dùng khi chuẩn bị kiểm định và cần viết báo cáo tự đánh giá cơ sở giáo dục hoặc chương trình đào tạo theo bộ tiêu chuẩn hiện hành (Thông tư 20/2026/TT-BGDĐT, Thông tư 04/2025/TT-BGDĐT).",
+ "group": "dbcl",
+ "group_label": "Đảm bảo chất lượng, kiểm định",
+ "previous_name": "vnuis-bao-cao-tu-danh-gia",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (đảm bảo chất lượng); mọi đơn vị cung cấp minh chứng",
+ "when": "Khi trường tiến hành tự đánh giá cơ sở giáo dục (CSGD) hoặc chương trình đào tạo (CTĐT)\nđể chuẩn bị đăng ký kiểm định chất lượng giáo dục.",
+ "inputs": [
+  {
+   "key": "doi_tuong",
+   "desc": "Tự đánh giá CSGD / Tự đánh giá CTĐT (ghi rõ tên CTĐT, ngành)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bo_tieu_chuan",
+   "desc": "Bộ tiêu chuẩn áp dụng (VD: 25 tiêu chuẩn CSGD theo văn bản hiện hành nêu tại phap-ly.md)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chu_ky",
+   "desc": "Chu kỳ đánh giá (VD: 2021–2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "minh_chung",
+   "desc": "Danh sách minh chứng đã mã hóa theo từng tiêu chí",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_thuc_hien",
+   "desc": "Hội đồng tự đánh giá, các nhóm công tác",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (đảm bảo chất lượng); mọi đơn vị cung cấp minh chứng"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026: Yêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n- Thông tư 04/2025/TT-BGDĐT, hiệu lực 04/04/2025: Tách kiểm định chương trình khỏi kiểm định cơ sở. Yêu cầu phiên bản tiêu chuẩn, ngày đăng ký và bộ minh chứng; trích tiêu chí từ phụ lục hiện hành. Không mặc định khung 11 tiêu chuẩn của 04/2016 là khung hiện hành; đối chiếu chuyển tiếp trước khi tiếp tục hồ sơ cũ.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thành lập Hội đồng tự đánh giá",
+   "lam_gi": "Ban hành quyết định thành lập Hội đồng tự đánh giá (Chủ tịch, Phó Chủ tịch, Thư ký, các ủy viên); thành lập các nhóm công tác theo từng lĩnh vực/tiêu chuẩn của bộ tiêu chuẩn; ban hành kế hoạch tự đánh giá chi tiết (mốc thời gian, sản phẩm từng nhóm, kinh phí).",
+   "inputs": [
+    "doi_tuong",
+    "bo_tieu_chuan",
+    "don_vi_thuc_hien"
+   ],
+   "vai_tro": "Hiệu trưởng ký ban hành quyết định thành lập Hội đồng tự đánh giá · AI hỗ trợ: soạn dự thảo quyết định và kế hoạch tự đánh giá, gợi ý thành phần hội đồng theo lĩnh vực",
+   "luu_y": "thành viên hội đồng phải bao quát đủ các lĩnh vực trong bộ tiêu chuẩn; nhóm công tác mỗi tiêu chuẩn cần có người am hiểu lĩnh vực đó và 01 thư ký theo dõi minh chứng.",
+   "ket_qua": "Quyết định thành lập Hội đồng + kế hoạch tự đánh giá chi tiết."
+  },
+  {
+   "n": 2,
+   "title": "Thu thập và mã hóa minh chứng",
+   "lam_gi": "Mỗi nhóm công tác thu thập minh chứng cho các tiêu chí được phân công từ các đơn vị (văn bản, quyết định, số liệu, biên bản, hình ảnh...); kiểm tra mỗi tiêu chí có tối thiểu minh chứng theo yêu cầu của bộ tiêu chuẩn; mã hóa thống nhất toàn trường theo quy tắc (VD: H1.1.01 – minh chứng 01 của tiêu chí 1, tiêu chuẩn 1); lập danh mục minh chứng theo mã.",
+   "inputs": [
+    "bo_tieu_chuan",
+    "minh_chung",
+    "chu_ky"
+   ],
+   "vai_tro": "Nhóm công tác theo từng tiêu chuẩn (thu thập minh chứng từ các đơn vị) · AI hỗ trợ: kiểm tra tính đầy đủ minh chứng và mã hóa sơ bộ theo quy tắc",
+   "luu_y": "minh chứng phải có thật, còn hiệu lực trong chu kỳ đánh giá, lưu trữ được để đoàn đánh giá ngoài kiểm tra gốc — tuyệt đối không tạo minh chứng giả; mã minh chứng phải duy nhất và nhất quán giữa danh mục kiểm, báo cáo và hồ sơ lưu.",
+   "ket_qua": "Danh mục minh chứng đã mã hóa thống nhất theo từng tiêu chí."
+  },
+  {
+   "n": 3,
+   "title": "Viết báo cáo theo từng tiêu chuẩn",
+   "lam_gi": "Mỗi nhóm công tác viết phần đánh giá các tiêu chí được phân công theo cấu trúc chuẩn của từng tiêu chí: **Mô tả** (hiện trạng của trường/CTĐT đối với tiêu chí, mỗi nhận định dẫn chiếu mã minh chứng) → **Điểm mạnh** (những mặt đã đạt, vượt yêu cầu) → **Tồn tại** (những mặt chưa đạt hoặc cần cải thiện) → **Kế hoạch cải tiến** (giải pháp cụ thể, đơn vị thực hiện, thời hạn); thư ký tổng hợp thành dự thảo báo cáo đầy đủ các tiêu chuẩn.",
+   "inputs": [
+    "bo_tieu_chuan",
+    "minh_chung",
+    "chu_ky",
+    "doi_tuong"
+   ],
+   "vai_tro": "Nhóm công tác theo từng tiêu chuẩn (viết và biên tập báo cáo) · AI hỗ trợ: soạn dự thảo từng tiêu chí từ minh chứng đã mã hóa",
+   "luu_y": "bẫy thường gặp — viết mô tả chung chung không dẫn chiếu minh chứng; \"điểm mạnh\" thực chất là việc đương nhiên phải làm; kế hoạch cải tiến thiếu đơn vị thực hiện và thời hạn cụ thể.",
+   "ket_qua": "Dự thảo báo cáo tự đánh giá đầy đủ các tiêu chuẩn theo cấu trúc chuẩn từng tiêu chí."
+  },
+  {
+   "n": 4,
+   "title": "Đánh giá mức đạt",
+   "lam_gi": "Hội đồng tự chấm điểm từng tiêu chí theo thang đánh giá của bộ tiêu chuẩn (VD: thang 7 mức của kiểm định CSGD); đối chiếu điểm tự chấm với minh chứng và mô tả đã viết — mức điểm cao phải có minh chứng tương xứng; tổng hợp bảng tự đánh giá mức đạt theo từng tiêu chí/tiêu chuẩn.",
+   "inputs": [
+    "bo_tieu_chuan",
+    "minh_chung"
+   ],
+   "vai_tro": "Hội đồng tự đánh giá (họp tự chấm điểm) · AI hỗ trợ: tổng hợp bảng tự đánh giá mức đạt, đối chiếu mức điểm với minh chứng",
+   "luu_y": "không tự chấm điểm cao hơn mức minh chứng cho phép — đoàn đánh giá ngoài sẽ hạ điểm và ghi nhận thiếu trung thực; các tiêu chí cùng một tiêu chuẩn phải có mức điểm nhất quán với nhận định trong báo cáo.",
+   "ket_qua": "Bảng tự đánh giá mức đạt theo từng tiêu chí (Phụ lục 01)."
+  },
+  {
+   "n": 5,
+   "title": "Thẩm định nội bộ",
+   "lam_gi": "Hội đồng tự đánh giá họp rà soát toàn bộ dự thảo: tính nhất quán giữa các tiêu chuẩn, đầy đủ dẫn chiếu minh chứng, số liệu không mâu thuẫn giữa các phần; kiểm tra ngẫu nhiên hồ sơ minh chứng gốc; hiệu đính và hoàn thiện dự thảo cuối.",
+   "inputs": [
+    "minh_chung",
+    "doi_tuong"
+   ],
+   "vai_tro": "Hội đồng tự đánh giá (thẩm định nội bộ, kiểm tra chéo) · AI hỗ trợ: rà soát tính nhất quán số liệu và dẫn chiếu minh chứng giữa các phần",
+   "luu_y": "kiểm tra chéo — nhóm này rà soát phần viết của nhóm khác để phát hiện thiên vị; mọi số liệu trong báo cáo phải truy xuất được đến minh chứng gốc.",
+   "ket_qua": "Dự thảo báo cáo cuối cùng đã thẩm định nội bộ."
+  },
+  {
+   "n": 6,
+   "title": "Phê duyệt – công bố",
+   "lam_gi": "Trình Hiệu trưởng ký ban hành báo cáo tự đánh giá; gửi báo cáo đến cơ quan quản lý và tổ chức kiểm định theo quy định; công bố nội bộ trong trường; lưu hồ sơ báo cáo + toàn bộ minh chứng theo mã.",
+   "inputs": [
+    "doi_tuong",
+    "chu_ky"
+   ],
+   "vai_tro": "Hiệu trưởng ký ban hành · AI hỗ trợ: kiểm tra thể thức văn bản và danh sách nơi nhận trước khi ban hành",
+   "luu_y": "báo cáo tự đánh giá là tài liệu gốc cho đoàn đánh giá ngoài — sau khi ban hành không tự ý sửa nội dung; lưu trữ đầy đủ để phục vụ chu kỳ kiểm định tiếp theo.",
+   "ket_qua": "Báo cáo tự đánh giá đã ban hành + hồ sơ minh chứng lưu trữ đầy đủ."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Số liệu, nhận định trong báo cáo khớp với Input và truy xuất được đến minh chứng gốc.",
+  "Không bịa đặt minh chứng, số liệu, mức điểm tự đánh giá.",
+  "Đúng bộ tiêu chuẩn kiểm định hiện hành, đúng thứ tự tiêu chuẩn/tiêu chí; cấu trúc mỗi tiêu chí đúng 5 mục.",
+  "Căn cứ pháp lý (bộ tiêu chuẩn, quy định kiểm định) đầy đủ, còn hiệu lực.",
+  "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+  "Mỗi nhận định trong phần Mô tả đều dẫn chiếu mã minh chứng; mã minh chứng duy nhất, nhất quán giữa báo cáo, danh mục kiểm và hồ sơ lưu.",
+  "Mức điểm tự chấm không cao hơn mức minh chứng cho phép; kế hoạch cải tiến của mỗi tiêu chí có đơn vị thực hiện và thời hạn cụ thể."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Mỗi nhận định phải gắn minh chứng có mã; skill không viết nhận định không có minh chứng.",
+  "Điểm tự đánh giá do hội đồng tự đánh giá quyết, skill không chấm."
+ ],
+ "cho_xac_nhan": [
+  "Bộ tiêu chuẩn, tiêu chí và thang đánh giá (C2).",
+  "Hội đồng tự đánh giá (C6)."
+ ],
+ "output_structure": [
+  "Trang bìa (tên báo cáo, đối tượng tự đánh giá, chu kỳ đánh giá, tên trường, năm ban hành);",
+  "Mục lục;",
+  "Phần mở đầu (cơ sở pháp lý, mục đích, phạm vi, phương pháp tự đánh giá, tổ chức thực hiện);",
+  "Tổng quan về trường / chương trình đào tạo (lịch sử, quy mô, sứ mệnh, cơ cấu tổ chức);",
+  "Đánh giá từng tiêu chuẩn theo thứ tự của bộ tiêu chuẩn; mỗi tiêu chí gồm đúng 5 mục: Mô tả (dẫn chiếu mã minh chứng) – Điểm mạnh – Tồn tại – Kế hoạch cải tiến – Tự đánh giá mức đạt;",
+  "Kết luận chung (số tiêu chuẩn đạt/không đạt, nhận định tổng thể, định hướng cải tiến);",
+  "Phụ lục 01 – Bảng tự đánh giá mức đạt theo từng tiêu chí;",
+  "Phụ lục 02 – Danh mục minh chứng mã hóa (mã MC, tên minh chứng, đơn vị cung cấp, tình trạng). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Trang bìa (tên báo cáo, đối tượng tự đánh giá, chu kỳ đánh giá, tên trường, năm ban hành);\n\n2. Mục lục;\n\n3. Phần mở đầu (cơ sở pháp lý, mục đích, phạm vi, phương pháp tự đánh giá, tổ chức thực hiện);\n\n4. Tổng quan về trường / chương trình đào tạo (lịch sử, quy mô, sứ mệnh, cơ cấu tổ chức);\n\n5. Đánh giá từng tiêu chuẩn theo thứ tự của bộ tiêu chuẩn; mỗi tiêu chí gồm đúng 5 mục: Mô tả (dẫn chiếu mã minh chứng) – Điểm mạnh – Tồn tại – Kế hoạch cải tiến – Tự đánh giá mức đạt;\n\n6. Kết luận chung (số tiêu chuẩn đạt/không đạt, nhận định tổng thể, định hướng cải tiến);\n\n7. Phụ lục 01 – Bảng tự đánh giá mức đạt theo từng tiêu chí;\n\n8. Phụ lục 02 – Danh mục minh chứng mã hóa (mã MC, tên minh chứng, đơn vị cung cấp, tình trạng).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền theo quy trình đã duyệt.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (đảm bảo chất lượng). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n\n## Luật Giáo dục đại học 2025 (125/2025/QH15) số 125/2025/QH15, hiệu lực 01/01/2026 (nguồn thứ cấp: thuvienphapluat.vn; chưa đối chiếu toàn văn chính thức)\n\nLuật này thay Luật Giáo dục đại học 2025 (125/2025/QH15) 08/2012/QH13 và các luật sửa đổi (trừ Điều 46 về chuyển tiếp). Văn bản ký từ 01/01/2026 dẫn Luật 2025, không dẫn Luật 2012/2018. Các điểm ảnh hưởng đến nghiệp vụ:\n- Hội đồng đại học và hội đồng trường công lập kết thúc hoạt động từ 01/01/2026, bàn giao cho hiệu trưởng (Điều 46). Văn bản của các hội đồng này tiếp tục áp dụng đến khi có văn bản thay thế, không quá 12 tháng.\n- Hội đồng khoa học và đào tạo chỉ có chức năng tư vấn, do hiệu trưởng thành lập (Điều 18). Không soạn văn bản của hội đồng này như quyết định có hiệu lực thay hiệu trưởng.\n- Cơ sở giáo dục đại học được cấp phép đào tạo theo quy định của Chính phủ (Điều 21). Hiệu trưởng phê duyệt chương trình đào tạo, trừ nhóm ngành giáo viên, sức khỏe, pháp luật do Bộ trưởng quy định phối hợp với bộ liên quan (khoản 2 Điều 24; khoản 3 Điều 24 hiệu lực 01/07/2026).\n- Trường đại học thành viên của đại học quốc gia hoạt động theo quy chế của đại học đó và pháp luật liên quan (Điều 11, 15). Tuyến báo cáo và tuyến duyệt của VNU-IS (qua ĐHQGHN hay trực tiếp Bộ GD&ĐT) chờ xác nhận ở C2, C6; không tự giả định.\n- Chuyển tiếp (Điều 46): hồ sơ mở ngành nộp hợp lệ trước 01/01/2026 xử lý theo quy định tại thời điểm nộp; ngành đã có quyết định mở phải đáp ứng chuẩn chương trình đào tạo trong 36 tháng.\n- Chưa đọc: nghị định hướng dẫn của Chính phủ (cấp phép, mở ngành), quy chế/điều lệ của ĐHQGHN và VNU-IS. Phải đối chiếu các văn bản này trước khi áp dụng.\n\n## Thông tư 58/2026/TT-BGDĐT – quy chế tổ chức và hoạt động của cơ sở giáo dục đại học (nguồn thứ cấp: luatvietnam.vn ghi ban hành 07/07/2026, hiệu lực 22/08/2026)\n\nChưa đọc toàn văn; chưa rõ có áp dụng cho trường thành viên của đại học quốc gia hay không. Đọc văn bản gốc và điều khoản chuyển tiếp trước khi dùng để dẫn căn cứ hay đổi quy chế nội bộ.\n\n## Thông tư 20/2026/TT-BGDĐT, hiệu lực 15/05/2026\n\nNguồn: https://congbao.cdnchinhphu.vn/180507251028987904/2026/4/24/469367-1777014846_v1_1777018480_signed.pdf\n\nYêu cầu ngày hoàn tất tự đánh giá, ngày đăng ký đánh giá ngoài, khung tiêu chuẩn và minh chứng. Điều 51: chỉ cơ sở đã tự đánh giá VÀ đăng ký đánh giá ngoài trước 15/05/2026 được tiếp tục khung 12/2017, hoàn tất chậm nhất 31/12/2026. Ngoài chuyển tiếp dùng 20/2026; không chuyển thang điểm cơ học.\n\n## Thông tư 04/2025/TT-BGDĐT, hiệu lực 04/04/2025\n\nNguồn: https://chinhphu.vn/?classid=1&docid=213005&pageid=27160\n\nTách kiểm định chương trình khỏi kiểm định cơ sở. Yêu cầu phiên bản tiêu chuẩn, ngày đăng ký và bộ minh chứng; trích tiêu chí từ phụ lục hiện hành. Không mặc định khung 11 tiêu chuẩn của 04/2016 là khung hiện hành; đối chiếu chuyển tiếp trước khi tiếp tục hồ sơ cũ.\n",
+ "outputs_dir": "skills/vnuis-dbcl-bao-cao-tu-danh-gia/references"
+}

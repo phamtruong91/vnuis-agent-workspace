@@ -1,0 +1,247 @@
+{
+ "name": "vnuis-khcn-lap-ho-so-so-huu-tri-tue",
+ "title": "Hồ sơ đăng ký sáng chế / giải pháp hữu ích",
+ "description": "Dùng khi giảng viên, nhóm nghiên cứu muốn bảo hộ kết quả nghiên cứu bằng sáng chế hoặc giải pháp hữu ích tại Cục Sở hữu trí tuệ: tờ khai, bản mô tả, yêu cầu bảo hộ, hình vẽ.",
+ "group": "khcn",
+ "group_label": "Khoa học công nghệ, sở hữu trí tuệ",
+ "previous_name": "vnuis-ho-so-dang-ky-shtt",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển (sở hữu trí tuệ)",
+ "when": "Khi giảng viên, nghiên cứu sinh, nhóm nghiên cứu của trường có kết quả nghiên cứu\n(thiết bị, quy trình, phương pháp, sản phẩm) muốn đăng ký bảo hộ sáng chế hoặc\ngiải pháp hữu ích tại Cục Sở hữu trí tuệ: soạn tờ khai, bản mô tả, yêu cầu bảo hộ,\nhình vẽ và kiểm tra khả năng đáp ứng điều kiện bảo hộ.",
+ "inputs": [
+  {
+   "key": "loai_don",
+   "desc": "Sáng chế / Giải pháp hữu ích",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ten_giai_phap",
+   "desc": "Tên giải pháp kỹ thuật cần bảo hộ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tac_gia",
+   "desc": "Họ tên, địa chỉ tác giả sáng chế",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chu_don",
+   "desc": "Tổ chức đứng đơn (Trường Quốc tế – ĐHQGHN) + địa chỉ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "linh_vuc_ky_thuat",
+   "desc": "Lĩnh vực kỹ thuật của giải pháp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tinh_trang_ky_thuat",
+   "desc": "Tình trạng kỹ thuật đã biết (các giải pháp tương tự, hạn chế của chúng)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ban_chat_giai_phap",
+   "desc": "Bản chất kỹ thuật: cấu tạo/nguyên lý/quy trình, điểm mới so với kỹ thuật đã biết",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hieu_qua",
+   "desc": "Hiệu quả kỹ thuật, kinh tế – xã hội có thể đạt được",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "vi_du_thuc_hien",
+   "desc": "Ví dụ thực hiện tốt nhất (cấu tạo cụ thể, thông số, cách vận hành)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hinh_ve",
+   "desc": "Mô tả các hình vẽ minh họa (đánh số hình, chú thích chi tiết từng hình)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "cong_bo_truoc",
+   "desc": "Các lần công bố/bộc lộ giải pháp trước ngày nộp đơn (bài báo, hội thảo...)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển (sở hữu trí tuệ)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Kho tài nguyên số; E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại đơn đăng ký",
+   "lam_gi": "căn cứ `loai_don` và tính chất giải pháp để xác nhận lựa chọn: Sáng chế (đòi hỏi tính mới + trình độ sáng tạo + khả năng áp dụng công nghiệp) hay Giải pháp hữu ích (đòi hỏi tính mới + khả năng áp dụng công nghiệp, không đòi hỏi trình độ sáng tạo cao như sáng chế); tư vấn lại cho tác giả nếu loại đơn đã chọn không phù hợp với trình độ sáng tạo của giải pháp.",
+   "inputs": [
+    "loai_don",
+    "ban_chat_giai_phap"
+   ],
+   "vai_tro": "Tác giả · AI hỗ trợ: phân tích đối chiếu",
+   "luu_y": "chọn sai loại đơn (VD: nộp sáng chế cho một cải tiến nhỏ) dẫn đến bị từ chối sau thẩm định nội dung, mất thời gian và lệ phí; giải pháp hữu ích có thời gian thẩm định nhanh hơn, phù hợp cải tiến kỹ thuật.",
+   "ket_qua": "loại đơn đã xác nhận + căn cứ lựa chọn."
+  },
+  {
+   "n": 2,
+   "title": "Kiểm tra tính mới và rà soát công bố trước",
+   "lam_gi": "từ `cong_bo_truoc` liệt kê mọi lần giải pháp bị bộc lộ trước ngày nộp đơn (bài báo, hội thảo, triển lãm, mạng xã hội, bảo vệ luận văn công khai...) kèm ngày cụ thể; đánh giá nguy cơ mất tính mới; nếu đã công bố thì cảnh báo và kiểm tra có thuộc trường hợp ngoại lệ được miễn trừ mất tính mới theo Luật SHTT không.",
+   "inputs": [
+    "cong_bo_truoc",
+    "ten_giai_phap"
+   ],
+   "vai_tro": "Tác giả · AI hỗ trợ: đánh giá nguy cơ từ danh sách công bố do tác giả cung cấp",
+   "luu_y": "tính mới là điều kiện sống còn — mọi công bố trước ngày nộp đơn đều có thể phá hủy tính mới; nguyên tắc vàng: nộp đơn trước khi công bố kết quả nghiên cứu.",
+   "ket_qua": "báo cáo rà soát tính mới (danh sách công bố + đánh giá nguy cơ)."
+  },
+  {
+   "n": 3,
+   "title": "Soạn Tờ khai đăng ký",
+   "lam_gi": "điền thông tin `chu_don` (tên tổ chức, địa chỉ), `tac_gia` (họ tên, địa chỉ), `ten_giai_phap`, `loai_don`; liệt kê các tài liệu kèm theo; kê khai phí/lệ phí phải nộp.",
+   "inputs": [
+    "chu_don",
+    "tac_gia",
+    "ten_giai_phap",
+    "loai_don"
+   ],
+   "vai_tro": "Tác giả · AI hỗ trợ: soạn dự thảo tờ khai",
+   "luu_y": "chủ đơn là tổ chức (Trường) thì tờ khai phải có chữ ký người đại diện hợp pháp + đóng dấu; tác giả là cá nhân — ghi đúng họ tên theo giấy tờ tùy thân vì liên quan đến quyền nhân thân của tác giả.",
+   "ket_qua": "dự thảo Tờ khai đăng ký (điền sẵn)."
+  },
+  {
+   "n": 4,
+   "title": "Soạn Bản mô tả giải pháp kỹ thuật",
+   "lam_gi": "viết đủ 6 phần theo đúng thứ tự: (1) tên giải pháp (`ten_giai_phap`); (2) lĩnh vực kỹ thuật (`linh_vuc_ky_thuat`); (3) tình trạng kỹ thuật đã biết (`tinh_trang_ky_thuat` — các giải pháp tương tự và hạn chế của chúng); (4) bản chất kỹ thuật (`ban_chat_giai_phap` — cấu tạo/nguyên lý/quy trình, nêu rõ điểm mới so với kỹ thuật đã biết); (5) ví dụ thực hiện tốt nhất (`vi_du_thuc_hien` — cấu tạo cụ thể, thông số, cách vận hành); (6) hiệu quả đạt được (`hieu_qua`).",
+   "inputs": [
+    "ten_giai_phap",
+    "linh_vuc_ky_thuat",
+    "tinh_trang_ky_thuat",
+    "ban_chat_giai_phap",
+    "vi_du_thuc_hien",
+    "hieu_qua"
+   ],
+   "vai_tro": "Tác giả · AI hỗ trợ: soạn dự thảo 6 phần",
+   "luu_y": "phần (4) là linh hồn của bản mô tả — điểm mới phải được nêu rõ ràng, không để thẩm định viên phải \"đoán\"; thuật ngữ kỹ thuật phải nhất quán trong toàn bộ hồ sơ.",
+   "ket_qua": "dự thảo Bản mô tả (đủ 6 phần theo thứ tự chuẩn)."
+  },
+  {
+   "n": 5,
+   "title": "Soạn Yêu cầu bảo hộ",
+   "lam_gi": "viết các điểm yêu cầu bảo hộ: 01 điểm độc lập (nêu đầy đủ các dấu hiệu kỹ thuật cơ bản tạo nên phạm vi bảo hộ) + các điểm phụ thuộc (chi tiết hóa, bổ sung dấu hiệu cho điểm độc lập); kiểm tra mỗi dấu hiệu trong yêu cầu bảo hộ đều đã được bộc lộ trong bản mô tả ở bước 4.",
+   "inputs": [
+    "ban_chat_giai_phap",
+    "vi_du_thuc_hien"
+   ],
+   "vai_tro": "Tác giả · AI hỗ trợ: soạn dự thảo điểm bảo hộ",
+   "luu_y": "phạm vi bảo hộ càng rõ ràng càng dễ bảo vệ quyền khi tranh chấp; yêu cầu bảo hộ viết dấu hiệu không có trong bản mô tả sẽ bị từ chối — đối chiếu chéo với bước 4 trước khi chốt.",
+   "ket_qua": "dự thảo Yêu cầu bảo hộ (điểm độc lập + điểm phụ thuộc, đánh số)."
+  },
+  {
+   "n": 6,
+   "title": "Soạn Bản tóm tắt và danh mục hình vẽ",
+   "lam_gi": "viết bản tóm tắt nêu bản chất giải pháp + hiệu quả chính, không quá 150 từ (đếm từ trước khi chốt); từ `hinh_ve` lập danh mục hình vẽ: đánh số hình, chú thích chi tiết từng hình; kiểm tra ký hiệu trên hình vẽ thống nhất với ký hiệu trong bản mô tả (bước 4).",
+   "inputs": [
+    "hinh_ve"
+   ],
+   "vai_tro": "Tác giả · AI hỗ trợ: soạn dự thảo tóm tắt và danh mục hình vẽ",
+   "luu_y": "tóm tắt vượt 150 từ là lỗi hình thức bị yêu cầu sửa đổi; ký hiệu hình vẽ không thống nhất với bản mô tả là lỗi phổ biến gây kéo dài thời gian thẩm định.",
+   "ket_qua": "dự thảo Bản tóm tắt (≤150 từ) + danh mục hình vẽ."
+  },
+  {
+   "n": 7,
+   "title": "Tác giả duyệt toàn bộ hồ sơ",
+   "lam_gi": "trình tác giả đọc và duyệt toàn bộ: tờ khai, bản mô tả, yêu cầu bảo hộ, tóm tắt, hình vẽ; kiểm tra lần cuối tính nhất quán thuật ngữ, ký hiệu giữa các tài liệu; sửa theo ý kiến của tác giả.",
+   "inputs": [
+    "tac_gia"
+   ],
+   "vai_tro": "Tác giả · AI hỗ trợ: chỉnh sửa theo ý kiến",
+   "luu_y": "tác giả là người hiểu rõ nhất về kỹ thuật — đây là chốt chặn cuối cùng phát hiện sai sót kỹ thuật trước khi nộp; sau khi nộp đơn, việc sửa đổi bị hạn chế.",
+   "ket_qua": "bộ hồ sơ đã được tác giả duyệt."
+  },
+  {
+   "n": 8,
+   "title": "Lập danh mục kiểm và xuất bản",
+   "lam_gi": "lập danh mục kiểm hồ sơ nộp: tờ khai (02 bản), bản mô tả, yêu cầu bảo hộ, tóm tắt, hình vẽ, chứng từ nộp phí/lệ phí, giấy ủy quyền (nếu nộp qua đại diện); xuất bộ hồ sơ hoàn chỉnh file theo định dạng đầu ra của skill, sẵn sàng in/ký và nộp Cục Sở hữu trí tuệ.",
+   "inputs": [],
+   "vai_tro": "Tác giả · AI hỗ trợ: lập danh mục kiểm và xuất bộ hồ sơ",
+   "luu_y": "nộp 02 bản tờ khai theo quy định; giữ lại 01 bộ sao có dấu \"đã nhận\" của Cục làm bằng chứng ngày nộp đơn (ngày nộp đơn quyết định việc đánh giá tính mới).",
+   "ket_qua": "bộ hồ sơ đăng ký hoàn chỉnh + danh mục kiểm hồ sơ nộp."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung các tài liệu khớp với Input (tên giải pháp, tác giả, chủ đơn, số liệu kỹ thuật).",
+  "Không bịa đặt số liệu, thông số kỹ thuật, minh chứng, trích dẫn.",
+  "Bản mô tả đủ 6 phần theo đúng thứ tự chuẩn; bản tóm tắt không quá 150 từ.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực: Luật SHTT (sửa đổi 2009, 2019, 2022), Nghị định 65/2023/NĐ-CP.",
+  "Đã qua Human gate: tác giả đã đọc và duyệt toàn bộ hồ sơ.",
+  "Điểm yêu cầu bảo hộ chỉ nêu dấu hiệu đã được bộc lộ trong bản mô tả.",
+  "Ký hiệu hình vẽ thống nhất với bản mô tả; tờ khai kê đủ 02 bản + chứng từ phí/lệ phí.",
+  "Đã rà soát tính mới: cảnh báo công bố trước ngày nộp đơn (nếu có) đã được ghi rõ. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Hồ sơ sở hữu trí tuệ chỉ lập từ mô tả của tác giả; chưa kết luận về khả năng được bảo hộ.",
+  "Quyền sở hữu giữa Trường, tác giả và đối tác (đề tài hợp tác) cần văn bản xác nhận (C2)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế sở hữu trí tuệ của Trường (C2).",
+  "Mẫu hồ sơ đăng ký (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề \"TỜ KHAI ĐĂNG KÝ SÁNG CHẾ\" hoặc \"TỜ KHAI ĐĂNG KÝ GIẢI PHÁP HỮU ÍCH\"",
+  "Thông tin chủ đơn (tên tổ chức, địa chỉ)",
+  "Thông tin tác giả (họ tên, địa chỉ)",
+  "Tên giải pháp + loại đơn đăng ký",
+  "Danh mục tài liệu kèm theo",
+  "Kê khai phí, lệ phí + chữ ký chủ đơn (ký, đóng dấu nếu là tổ chức) - Tài liệu 2 – Bản mô tả (đủ 6 phần theo đúng thứ tự):",
+  "Tên giải pháp",
+  "Lĩnh vực kỹ thuật",
+  "Tình trạng kỹ thuật đã biết",
+  "Bản chất kỹ thuật (nêu rõ điểm mới so với kỹ thuật đã biết)",
+  "Ví dụ thực hiện tốt nhất",
+  "Hiệu quả đạt được - Tài liệu 3 – Yêu cầu bảo hộ: các điểm yêu cầu đánh số (01 điểm độc lập + các điểm phụ thuộc) - Tài liệu 4 – Bản tóm tắt (không quá 150 từ) + danh mục hình vẽ (đánh số hình, chú thích chi tiết, ký hiệu thống nhất với bản mô tả)"
+ ],
+ "output_structure_raw": "**Cấu trúc output chuẩn:** khung cố định của bộ hồ sơ đăng ký (4 tài liệu), các phần bắt buộc theo đúng thứ tự xuất hiện:\n- Tài liệu 1 – Tờ khai đăng ký:\n  1. Tiêu đề \"TỜ KHAI ĐĂNG KÝ SÁNG CHẾ\" hoặc \"TỜ KHAI ĐĂNG KÝ GIẢI PHÁP HỮU ÍCH\"\n  2. Thông tin chủ đơn (tên tổ chức, địa chỉ)\n  3. Thông tin tác giả (họ tên, địa chỉ)\n  4. Tên giải pháp + loại đơn đăng ký\n  5. Danh mục tài liệu kèm theo\n  6. Kê khai phí, lệ phí + chữ ký chủ đơn (ký, đóng dấu nếu là tổ chức)\n- Tài liệu 2 – Bản mô tả (đủ 6 phần theo đúng thứ tự):\n  1. Tên giải pháp\n  2. Lĩnh vực kỹ thuật\n  3. Tình trạng kỹ thuật đã biết\n  4. Bản chất kỹ thuật (nêu rõ điểm mới so với kỹ thuật đã biết)\n  5. Ví dụ thực hiện tốt nhất\n  6. Hiệu quả đạt được\n- Tài liệu 3 – Yêu cầu bảo hộ: các điểm yêu cầu đánh số (01 điểm độc lập + các điểm phụ thuộc)\n- Tài liệu 4 – Bản tóm tắt (không quá 150 từ) + danh mục hình vẽ (đánh số hình, chú thích chi tiết, ký hiệu thống nhất với bản mô tả)",
+ "human_gate_check": "Đã qua Human gate: tác giả đã đọc và duyệt toàn bộ hồ sơ.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển (sở hữu trí tuệ). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-khcn-lap-ho-so-so-huu-tri-tue/references"
+}

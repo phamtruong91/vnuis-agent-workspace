@@ -1,0 +1,4 @@
+interface:
+  display_name: Khoa · Trợ lý giảng dạy – VNU-IS
+  short_description: Hỗ trợ trợ lý giảng dạy cho VNU-IS (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-khoa-tro-ly-giang-day để hỗ trợ công việc: Trợ lý giảng dạy; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

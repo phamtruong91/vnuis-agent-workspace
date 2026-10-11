@@ -1,0 +1,4 @@
+interface:
+  display_name: Văn phòng · Chuẩn bị họp và theo dõi nhiệm vụ – VNU-IS
+  short_description: Hỗ trợ chuẩn bị họp & theo dõi action (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-vp-chuan-bi-hop-theo-doi-nhiem-vu để hỗ trợ công việc: Chuẩn bị họp & theo dõi action; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .xlsx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

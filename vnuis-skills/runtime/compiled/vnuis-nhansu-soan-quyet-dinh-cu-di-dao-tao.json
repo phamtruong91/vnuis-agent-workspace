@@ -1,0 +1,223 @@
+{
+ "name": "vnuis-nhansu-soan-quyet-dinh-cu-di-dao-tao",
+ "title": "Quyết định cử cán bộ đi đào tạo / tập huấn",
+ "description": "Dùng khi cần cử cán bộ, viên chức, giảng viên đi đào tạo, bồi dưỡng, tập huấn trong hoặc ngoài nước và ban hành quyết định làm căn cứ chế độ, kinh phí.",
+ "group": "nhansu",
+ "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+ "previous_name": "vnuis-quyet-dinh-cu-di-hoc",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị; Phòng KHCN và HTPT (đi học, công tác nước ngoài)",
+ "when": "Khi cần cử cán bộ, viên chức, giảng viên đi học: đào tạo sau đại học, bồi dưỡng nghiệp vụ,\ntập huấn chuyên môn, hội thảo khoa học trong và ngoài nước; làm căn cứ hưởng chế độ,\nthanh toán kinh phí và quản lý thời gian công tác.",
+ "inputs": [
+  {
+   "key": "ho_ten",
+   "desc": "Họ tên cán bộ được cử",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chuc_vu",
+   "desc": "Chức vụ, chức danh nghề nghiệp",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi",
+   "desc": "Đơn vị công tác",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "khoa_hoc",
+   "desc": "Tên khóa đào tạo / tập huấn / hội thảo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi_to_chuc",
+   "desc": "Cơ sở đào tạo / đơn vị tổ chức khóa học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Từ ngày ... đến ngày ...",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dia_diem",
+   "desc": "Nơi tổ chức (chọn cơ sở: Xuân Thủy, Phan Tây Nhạc, Hòa Lạc)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kinh_phi",
+   "desc": "Kinh phí và nguồn chi trả (ngân sách / nguồn thu / tự túc một phần...)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "can_cu",
+   "desc": "Kế hoạch bồi dưỡng năm / công văn triệu tập / đề nghị của đơn vị",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị; Phòng KHCN và HTPT (đi học, công tác nước ngoài)"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Kiểm tra điều kiện cử đi học",
+   "lam_gi": "đối chiếu đề nghị cử đi học với kế hoạch bồi dưỡng năm của trường; xác nhận đối tượng thuộc diện được cử (thuộc kế hoạch năm hoặc nhu cầu đột xuất có tờ trình hợp lệ); kiểm tra thời gian đi học không trùng lịch giảng dạy/quản lý đã phân công, đã bố trí người dạy thay hoặc người thay thế nhiệm vụ nếu cần.",
+   "inputs": [
+    "ho_ten",
+    "chuc_vu",
+    "don_vi",
+    "thoi_gian",
+    "can_cu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "cử đi học trong thời gian giảng dạy mà không bố trí dạy thay là bẫy thường gặp — phải có xác nhận của đơn vị quản lý cán bộ; trường hợp đột xuất ngoài kế hoạch năm cần tờ trình nêu rõ lý do và được Ban Giám hiệu đồng ý trước.",
+   "ket_qua": "phiếu kiểm tra điều kiện (đạt/không đạt từng tiêu chí + phương án bố trí thay thế)."
+  },
+  {
+   "n": 2,
+   "title": "Xác minh căn cứ cử đi học",
+   "lam_gi": "thu thập và đối chiếu từng văn bản nêu trong `can_cu`: kế hoạch bồi dưỡng năm đã phê duyệt (số, ngày ban hành, trích phần liên quan), công văn triệu tập của đơn vị tổ chức (số, ngày, đối tượng triệu tập), tờ trình đề nghị của đơn vị quản lý cán bộ; kiểm tra tên khóa học, đơn vị tổ chức, thời gian, địa điểm trong các văn bản có khớp nhau không.",
+   "inputs": [
+    "can_cu",
+    "khoa_hoc",
+    "don_vi_to_chuc",
+    "thoi_gian",
+    "dia_diem"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: đối chiếu chéo tự động",
+   "luu_y": "tên khóa học trên công văn triệu tập và trên tờ trình thường lệch nhau vài chữ — phải thống nhất một tên chính thức để dùng trong quyết định; kiểm tra thời hạn đăng ký/nộp hồ sơ của đơn vị tổ chức để quyết định được ký kịp thời.",
+   "ket_qua": "bảng đối chiếu căn cứ (căn cứ | số, ngày văn bản | nội dung liên quan | khớp/không khớp)."
+  },
+  {
+   "n": 3,
+   "title": "Lập bảng đối chiếu thông tin cá nhân và chế độ",
+   "lam_gi": "đối chiếu `ho_ten`, `chuc_vu`, `don_vi` với hồ sơ cán bộ (đúng chính tả họ tên, đúng chức danh và đơn vị hiện tại); phân tích `kinh_phi`: tách các khoản (học phí, công tác phí, lưu trú), xác định nguồn chi (ngân sách / nguồn thu / tự túc một phần) và kiểm tra nguồn chi có được phép dùng cho mục đích này không.",
+   "inputs": [
+    "ho_ten",
+    "chuc_vu",
+    "don_vi",
+    "kinh_phi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: lập bảng tính toán",
+   "luu_y": "chức danh trong quyết định phải là chức danh hiện tại (kiểm tra quyết định bổ nhiệm gần nhất); kinh phí trong quyết định ghi cả số tiền bằng số và bằng chữ; nếu tự túc một phần phải ghi rõ phần nào tự túc để tránh tranh chấp khi thanh toán.",
+   "ket_qua": "bảng đối chiếu thông tin cá nhân và kinh phí đã xác minh."
+  },
+  {
+   "n": 4,
+   "title": "Soạn khung quyết định theo thể thức NĐ 30/2020",
+   "lam_gi": "soạn phần mở đầu văn bản: Quốc hiệu – Tiêu ngữ, tên cơ quan ban hành, số và ký hiệu văn bản, địa danh và ngày tháng năm; tên loại văn bản \"QUYẾT ĐỊNH\" kèm trích yếu; chức danh người ký; phần căn cứ (mỗi căn cứ một dòng bắt đầu bằng \"Căn cứ\", sắp xếp từ căn cứ thành lập trường → quy chế trường → kế hoạch bồi dưỡng năm → công văn triệu tập → đề nghị của Phòng TC&QT (nhân sự)).",
+   "inputs": [
+    "can_cu",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "số, ký hiệu lấy từ sổ đăng ký văn bản đi của Văn phòng (không tự đặt số trùng); trích yếu ngắn gọn nêu đúng nội dung \"Về việc cử cán bộ đi bồi dưỡng, tập huấn\"; thẩm quyền ký: Hiệu trưởng hoặc Phó Hiệu trưởng được ủy quyền bằng văn bản.",
+   "ket_qua": "khung quyết định (phần mở đầu + căn cứ) đúng thể thức."
+  },
+  {
+   "n": 5,
+   "title": "Soạn nội dung các Điều",
+   "lam_gi": "viết các điều sau cụm \"QUYẾT ĐỊNH:\": Điều 1 — cử ông/bà nào (họ tên, chức vụ, đơn vị) đi học khóa nào, đơn vị tổ chức nào, thời gian nào, địa điểm nào; Điều 2 — chế độ được hưởng và kinh phí (số tiền bằng số + bằng chữ, nguồn chi); Điều 3 — các đơn vị, cá nhân chịu trách nhiệm thi hành (Phòng TC&QT (nhân sự), Phòng TC&QT (kế hoạch – tài chính), đơn vị quản lý, cá nhân được cử).",
+   "inputs": [
+    "ho_ten",
+    "chuc_vu",
+    "don_vi",
+    "khoa_hoc",
+    "don_vi_to_chuc",
+    "thoi_gian",
+    "dia_diem",
+    "kinh_phi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Điều 1 phải đầy đủ 5 yếu tố (ai – học gì – ai tổ chức – khi nào – ở đâu); Điều 2 ghi nguồn chi cụ thể để Phòng TC&QT (kế hoạch – tài chính) có căn cứ thanh toán; Điều 3 liệt kê đủ đầu mối để không sót khâu theo dõi (đặc biệt là đơn vị quản lý trực tiếp của cán bộ).",
+   "ket_qua": "dự thảo quyết định đầy đủ các Điều."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra, soát lỗi và xuất bản",
+   "lam_gi": "soát toàn văn: chính tả họ tên/chức vụ/đơn vị, thời gian – địa điểm – kinh phí khớp với căn cứ đã xác minh ở Bước 2–3; kiểm tra thẩm quyền ký của `nguoi_ky`; hoàn thiện mục Nơi nhận (các đơn vị/cá nhân ở Điều 3 + lưu VT, TC&QT (nhân sự)); lập danh sách giấy tờ kèm theo cần chuẩn bị (công văn triệu tập, tờ trình đơn vị, trích lục kế hoạch bồi dưỡng).",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "lỗi phổ biến nhất là họ tên/chức danh sai một chữ so với hồ sơ cán bộ — quyết định sai tên không có giá trị làm căn cứ thanh toán; Nơi nhận phải có \"Lưu: VT, TC&QT (nhân sự)\" để lưu hồ sơ cán bộ.",
+   "ket_qua": "quyết định cử đi học hoàn chỉnh + danh sách giấy tờ kèm theo, sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và định dạng theo Nghị định 30/2020/NĐ-CP về công tác văn thư (thể thức văn bản).",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Chức danh trong quyết định phải là chức danh hiện tại (kiểm tra quyết",
+  "Điều 1 phải đầy đủ 5 yếu tố (ai – học gì – ai tổ chức – khi nào – ở đâu);"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Cử đi học, bồi dưỡng trong và ngoài nước: ghi chương trình, thời gian, nguồn kinh phí; học bổng của đối tác nước ngoài ghi riêng.",
+  "Các chương trình trao đổi (ví dụ ERASMUS+ theo website) có thể kèm điều kiện của đối tác; skill ghi để người phụ trách xác nhận.",
+  "Không điền cam kết hoàn trả kinh phí khi Trường chưa có quy định."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế cử đi học và đi công tác nước ngoài (C2).",
+  "Người ký (C1)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ (\"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\" / \"Độc lập - Tự do - Hạnh phúc\").",
+  "Tên cơ quan ban hành (Trường Quốc tế – ĐHQGHN).",
+  "Số, ký hiệu văn bản.",
+  "Địa danh, ngày tháng năm ban hành.",
+  "Tên loại văn bản \"QUYẾT ĐỊNH\" + trích yếu (\"Về việc cử cán bộ đi bồi dưỡng, tập huấn\").",
+  "Chức danh người ký (HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC A).",
+  "Phần căn cứ: mỗi căn cứ một dòng bắt đầu bằng \"Căn cứ\" (thành lập trường → quy chế trường → kế hoạch bồi dưỡng năm → công văn triệu tập → xét đề nghị của Phòng TC&QT (nhân sự)).",
+  "Cụm \"QUYẾT ĐỊNH:\" và các Điều: Điều 1 (cử ai — họ tên, chức vụ, đơn vị — đi học khóa gì, đơn vị tổ chức nào, thời gian nào, địa điểm nào); Điều 2 (chế độ được hưởng; kinh phí: số tiền bằng số + bằng chữ, nguồn chi); Điều 3 (trách nhiệm thi hành của Phòng TC&QT (nhân sự), Phòng TC&QT (kế hoạch – tài chính), đơn vị quản lý, cá nhân được cử).",
+  "Nơi nhận (như Điều 3; lưu VT, TC&QT (nhân sự)).",
+  "Chữ ký (chức danh người ký + họ tên). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ (\"CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\" / \"Độc lập - Tự do - Hạnh phúc\").\n\n2. Tên cơ quan ban hành (Trường Quốc tế – ĐHQGHN).\n\n3. Số, ký hiệu văn bản.\n\n4. Địa danh, ngày tháng năm ban hành.\n\n5. Tên loại văn bản \"QUYẾT ĐỊNH\" + trích yếu (\"Về việc cử cán bộ đi bồi dưỡng, tập huấn\").\n\n6. Chức danh người ký (HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC A).\n\n7. Phần căn cứ: mỗi căn cứ một dòng bắt đầu bằng \"Căn cứ\" (thành lập trường → quy chế\ntrường → kế hoạch bồi dưỡng năm → công văn triệu tập → xét đề nghị của Phòng TC&QT (nhân sự)).\n\n8. Cụm \"QUYẾT ĐỊNH:\" và các Điều: Điều 1 (cử ai — họ tên, chức vụ, đơn vị — đi học khóa gì,\nđơn vị tổ chức nào, thời gian nào, địa điểm nào); Điều 2 (chế độ được hưởng; kinh phí: số\ntiền bằng số + bằng chữ, nguồn chi); Điều 3 (trách nhiệm thi hành của Phòng TC&QT (nhân sự), Phòng TC&QT (kế hoạch – tài chính), đơn vị quản lý, cá nhân được cử).\n\n9. Nơi nhận (như Điều 3; lưu VT, TC&QT (nhân sự)).\n\n10. Chữ ký (chức danh người ký + họ tên).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-nhansu-soan-quyet-dinh-cu-di-dao-tao/references"
+}

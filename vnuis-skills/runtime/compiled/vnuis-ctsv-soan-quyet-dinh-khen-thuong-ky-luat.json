@@ -1,0 +1,223 @@
+{
+ "name": "vnuis-ctsv-soan-quyet-dinh-khen-thuong-ky-luat",
+ "title": "Quyết định khen thưởng / kỷ luật sinh viên",
+ "description": "Dùng khi cần ban hành quyết định kỷ luật sinh viên (đã có biên bản vi phạm) hoặc quyết định khen thưởng sinh viên theo đợt, theo quy chế công tác sinh viên.",
+ "group": "ctsv",
+ "group_label": "Công tác sinh viên",
+ "previous_name": "vnuis-quyet-dinh-ky-luat-sv",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (công tác sinh viên)",
+ "when": "Khi có biên bản vi phạm của sinh viên cần ban hành quyết định kỷ luật theo quy chế công tác\nsinh viên, hoặc khi xét khen thưởng sinh viên đạt thành tích học tập, rèn luyện, hoạt động\nphong trào, nghiên cứu khoa học theo đợt (học kỳ, năm học, đột xuất).",
+ "inputs": [
+  {
+   "key": "loai_quyet_dinh",
+   "desc": "Khen thưởng / Kỷ luật",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_ten_sv",
+   "desc": "Họ tên sinh viên (kỷ luật: từng trường hợp; khen thưởng: danh sách)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ma_sv",
+   "desc": "Mã sinh viên",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "lop_khoa",
+   "desc": "Lớp, khoa đào tạo của sinh viên",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hanh_vi_vi_pham",
+   "desc": "Mô tả hành vi vi phạm, thời gian, địa điểm (nếu loại Kỷ luật)",
+   "required": true,
+   "note": "Có (với kỷ luật)"
+  },
+  {
+   "key": "bien_ban",
+   "desc": "Số, ký hiệu, ngày của biên bản vi phạm (nếu loại Kỷ luật)",
+   "required": true,
+   "note": "Có (với kỷ luật)"
+  },
+  {
+   "key": "thanh_tich",
+   "desc": "Thành tích, danh hiệu khen thưởng (nếu loại Khen thưởng)",
+   "required": true,
+   "note": "Có (với khen thưởng)"
+  },
+  {
+   "key": "muc_khen_thuong",
+   "desc": "Giấy khen Hiệu trưởng / Giấy khen Khoa / Bằng khen cấp trên (nếu loại Khen thưởng)",
+   "required": true,
+   "note": "Có (với khen thưởng)"
+  },
+  {
+   "key": "hoi_dong",
+   "desc": "Hội đồng xét khen thưởng / kỷ luật đã họp (số biên bản, ngày họp)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng (thừa ủy quyền)",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (công tác sinh viên)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Cổng sinh viên; cổng việc làm; tra cứu văn bằng. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại quyết định và hình thức xử lý",
+   "lam_gi": "căn cứ loại quyết định (khen thưởng/kỷ luật), đối chiếu hành vi vi phạm với quy chế công tác sinh viên để xác định hình thức: khiển trách, cảnh cáo, đình chỉ học tập có thời hạn, buộc thôi học (kỷ luật) hoặc Giấy khen Hiệu trưởng / Giấy khen Khoa / Bằng khen cấp trên (khen thưởng); xác định thẩm quyền ký theo phân cấp.",
+   "inputs": [
+    "loai_quyet_dinh",
+    "ho_ten_sv",
+    "ma_sv",
+    "lop_khoa",
+    "hanh_vi_vi_pham",
+    "thanh_tich",
+    "muc_khen_thuong"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: đối chiếu hành vi với quy chế công tác sinh viên",
+   "luu_y": "hình thức kỷ luật phải tương xứng với hành vi và mức độ tái phạm; khiển trách do Hội đồng cấp Khoa đề nghị (Hiệu trưởng hoặc Trưởng khoa ký theo phân cấp), từ cảnh cáo trở lên do Hội đồng kỷ luật trường đề nghị và Hiệu trưởng ký.",
+   "ket_qua": "phiếu xác định hình thức xử lý (loại quyết định, hình thức áp dụng, thẩm quyền ký)."
+  },
+  {
+   "n": 2,
+   "title": "Kiểm tra trình tự hồ sơ kỷ luật",
+   "lam_gi": "kiểm tra đủ 4 thành phần hồ sơ trước khi soạn quyết định kỷ luật: (1) biên bản vi phạm do người có thẩm quyền lập, có chữ ký sinh viên (hoặc ghi rõ vắng mặt không lý do); (2) bản tường trình/tự kiểm điểm của sinh viên; (3) biên bản họp Hội đồng kỷ luật (thành phần theo quy chế, hình thức đề nghị, tỷ lệ biểu quyết); (4) tờ trình đề nghị ra quyết định của Hội đồng/Khoa. Với khen thưởng: kiểm tra biên bản họp Hội đồng xét khen thưởng.",
+   "inputs": [
+    "bien_ban",
+    "hoi_dong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: chuẩn bị tài liệu họp, tổng hợp ý kiến",
+   "luu_y": "thiếu bất kỳ thành phần nào thì báo lại để bổ sung — tuyệt đối không soạn quyết định khi hồ sơ chưa đầy đủ.",
+   "ket_qua": "danh mục kiểm hồ sơ (đủ/thiếu theo từng mục) + yêu cầu bổ sung nếu thiếu."
+  },
+  {
+   "n": 3,
+   "title": "Soạn khung quyết định theo thể thức NĐ 30/2020",
+   "lam_gi": "dựng khung văn bản đủ các thành phần thể thức: Quốc hiệu – Tiêu ngữ; tên cơ quan; số, ký hiệu; địa danh, ngày tháng năm; trích yếu; các căn cứ (Luật Giáo dục đại học 2025 (125/2025/QH15); quy chế công tác sinh viên của trường; biên bản vi phạm; biên bản họp Hội đồng); phần \"QUYẾT ĐỊNH:\"; nơi nhận; chữ ký.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: dựng khung quyết định đúng thể thức NĐ 30/2020",
+   "luu_y": "căn cứ liệt kê đầy đủ, đúng số/ký hiệu/ngày của từng văn bản; trích yếu ngắn gọn, đúng nội dung quyết định.",
+   "ket_qua": "khung dự thảo quyết định đúng thể thức NĐ 30/2020 (chờ điền nội dung các Điều)."
+  },
+  {
+   "n": 4,
+   "title": "Hoàn thiện nội dung các Điều — quyết định kỷ luật",
+   "lam_gi": "viết Điều 1 (hình thức kỷ luật + họ tên, mã SV, lớp, khoa + lý do vi phạm: hành vi, thời gian, địa điểm); Điều 2 (thời gian thi hành, phạm vi áp dụng: với đình chỉ học tập ghi thời hạn cụ thể; với buộc thôi học ghi ngày có hiệu lực; hệ quả kèm theo như hạ bậc xếp loại rèn luyện, không xét học bổng); Điều 3 (trách nhiệm của Khoa, Phòng Đào tạo (công tác sinh viên), Phòng Đào tạo... và quyền khiếu nại của sinh viên).",
+   "inputs": [
+    "ho_ten_sv",
+    "ma_sv",
+    "lop_khoa",
+    "hanh_vi_vi_pham",
+    "bien_ban"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo 3 Điều kỷ luật",
+   "luu_y": "thông tin sinh viên chính xác tuyệt đối; ngày hiệu lực rõ ràng; quyền khiếu nại phải được ghi nhận.",
+   "ket_qua": "nội dung 3 Điều của quyết định kỷ luật, hoàn chỉnh."
+  },
+  {
+   "n": 5,
+   "title": "Hoàn thiện nội dung các Điều — quyết định khen thưởng",
+   "lam_gi": "viết Điều 1 (danh sách sinh viên được khen thưởng: họ tên, mã SV, lớp, khoa; mức khen thưởng; nếu có tiền thưởng ghi rõ mức); Điều 2 (nguồn kinh phí chi khen thưởng); Điều 3 (trách nhiệm thi hành của các đơn vị).",
+   "inputs": [
+    "ho_ten_sv",
+    "ma_sv",
+    "lop_khoa",
+    "thanh_tich",
+    "muc_khen_thuong",
+    "hoi_dong"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo 3 Điều khen thưởng",
+   "luu_y": "danh sách chính xác, đúng thứ tự; mức tiền thưởng và nguồn kinh phí khớp với tờ trình của Hội đồng.",
+   "ket_qua": "nội dung 3 Điều của quyết định khen thưởng, hoàn chỉnh."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra và xuất bản",
+   "lam_gi": "kiểm tra thẩm quyền ký đúng phân cấp, hình thức tương xứng hành vi, thông tin sinh viên chính xác, ngày tháng hiệu lực rõ ràng; xuất văn bản hoàn chỉnh file theo định dạng đầu ra của skill kèm danh sách nơi nhận.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: kiểm tra thể thức và số liệu",
+   "luu_y": "rà soát lần cuối chính tả, số liệu, thể thức trước khi trình ký.",
+   "ket_qua": "văn bản quyết định hoàn chỉnh + danh mục kiểm hồ sơ, sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Thông tin sinh viên (họ tên, mã SV, lớp, khoa) khớp Input, chính xác tuyệt đối.",
+  "Quyết định kỷ luật: lý do vi phạm (hành vi, thời gian, địa điểm) khớp biên bản vi phạm; hình thức kỷ luật tương xứng hành vi; ngày hiệu lực rõ ràng; ghi đầy đủ hệ quả kèm theo (hạ xếp loại rèn luyện, không xét học bổng).",
+  "Quyết định khen thưởng: danh sách chính xác; mức tiền thưởng và nguồn kinh phí khớp tờ trình của Hội đồng.",
+  "Không bịa đặt biên bản vi phạm, kết quả biểu quyết hội đồng, thành tích, văn bản căn cứ.",
+  "Hồ sơ kỷ luật đầy đủ 4 thành phần trước khi soạn quyết định (biên bản vi phạm, tường trình, biên bản họp Hội đồng, tờ trình).",
+  "Thẩm quyền ký đúng phân cấp (khiển trách theo phân cấp; cảnh cáo trở lên Hiệu trưởng ký); căn cứ còn hiệu lực; quyết định kỷ luật ghi nhận quyền khiếu nại của sinh viên.",
+  "Đã qua Human gate: Hội đồng kỷ luật/thi đua – khen thưởng họp và biểu quyết; Hiệu trưởng ký. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Quyết định kỷ luật chỉ soạn từ hồ sơ vụ việc và biên bản hội đồng đã có; mọi cấp kỷ luật do hội đồng quyết, skill không đề xuất mức.",
+  "Thẩm quyền ký và hội đồng xét kỷ luật chưa xác nhận (C1, C6)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế kỷ luật và hội đồng xét (C2).",
+  "Mẫu quyết định (C8)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ; tên cơ quan ban hành; số, ký hiệu; địa danh, ngày tháng năm.",
+  "Tên loại văn bản: \"QUYẾT ĐỊNH\" + trích yếu (Về việc kỷ luật sinh viên / Về việc khen thưởng sinh viên...).",
+  "Chức danh người ký ban hành (HIỆU TRƯỞNG TRƯỜNG...).",
+  "Các căn cứ: Luật Giáo dục đại học 2025 (125/2025/QH15); Quy chế công tác sinh viên của trường; biên bản vi phạm / biên bản họp Hội đồng (ghi rõ số, ký hiệu, ngày).",
+  "Phần \"QUYẾT ĐỊNH:\" gồm các Điều: - Kỷ luật: Điều 1 (hình thức kỷ luật + thông tin sinh viên + lý do); Điều 2 (hiệu lực, thời hạn, hệ quả kèm theo); Điều 3 (trách nhiệm thi hành, quyền khiếu nại của sinh viên). - Khen thưởng: Điều 1 (danh sách sinh viên + mức khen thưởng, tiền thưởng nếu có); Điều 2 (nguồn kinh phí); Điều 3 (trách nhiệm thi hành).",
+  "Nơi nhận + chữ ký (`nguoi_ky`). Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ; tên cơ quan ban hành; số, ký hiệu; địa danh, ngày tháng năm.\n\n2. Tên loại văn bản: \"QUYẾT ĐỊNH\" + trích yếu (Về việc kỷ luật sinh viên / Về việc khen thưởng\n   sinh viên...).\n\n3. Chức danh người ký ban hành (HIỆU TRƯỞNG TRƯỜNG...).\n\n4. Các căn cứ: Luật Giáo dục đại học 2025 (125/2025/QH15); Quy chế công tác sinh viên của trường; biên bản vi phạm\n   / biên bản họp Hội đồng (ghi rõ số, ký hiệu, ngày).\n\n5. Phần \"QUYẾT ĐỊNH:\" gồm các Điều:\n   - Kỷ luật: Điều 1 (hình thức kỷ luật + thông tin sinh viên + lý do); Điều 2 (hiệu lực, thời\n     hạn, hệ quả kèm theo); Điều 3 (trách nhiệm thi hành, quyền khiếu nại của sinh viên).\n   - Khen thưởng: Điều 1 (danh sách sinh viên + mức khen thưởng, tiền thưởng nếu có);\n     Điều 2 (nguồn kinh phí); Điều 3 (trách nhiệm thi hành).\n\n6. Nơi nhận + chữ ký (`nguoi_ky`).",
+ "human_gate_check": "Đã qua Human gate: Hội đồng kỷ luật/thi đua – khen thưởng họp và biểu quyết; Hiệu trưởng ký. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (công tác sinh viên). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ctsv-soan-quyet-dinh-khen-thuong-ky-luat/references"
+}

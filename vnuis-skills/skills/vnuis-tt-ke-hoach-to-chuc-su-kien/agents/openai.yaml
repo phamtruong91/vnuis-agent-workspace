@@ -1,0 +1,4 @@
+interface:
+  display_name: Truyền thông · Kế hoạch tổ chức sự kiện – VNU-IS
+  short_description: Hỗ trợ kế hoạch tổ chức sự kiện (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-tt-ke-hoach-to-chuc-su-kien để hỗ trợ công việc: Kế hoạch tổ chức sự kiện; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

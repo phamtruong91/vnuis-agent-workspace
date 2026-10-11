@@ -1,0 +1,153 @@
+{
+ "name": "vnuis-htqt-bao-cao-hop-tac-quoc-te",
+ "title": "Báo cáo hợp tác quốc tế",
+ "description": "Dùng khi Phòng KHCN và Hợp tác phát triển báo cáo hoạt động hợp tác quốc tế theo tháng, quý, năm cho Ban Giám hiệu hoặc ĐHQGHN, hoặc cần trả nhanh số thỏa thuận, số đối tác, số lượt trao đổi theo năm.",
+ "group": "htqt",
+ "group_label": "Hợp tác quốc tế",
+ "previous_name": "vnuis-bao-cao-doi-ngoai",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng KHCN và Hợp tác phát triển",
+ "when": "Khi cần báo cáo hoạt động hợp tác quốc tế theo kỳ cho Ban Giám hiệu hoặc ĐHQGHN; khi cần trả lời nhanh số thỏa thuận, số đối tác, số lượt trao đổi theo năm.",
+ "inputs": [
+  {
+   "key": "danh_sach_hoat_dong",
+   "desc": "Danh sách hoạt động hợp tác trong kỳ (loại, đối tác, thời gian, đầu mối)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_muc_thoa_thuan",
+   "desc": "Danh mục MOU/MOA: đối tác, ngày ký, thời hạn, trạng thái theo văn bản",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "du_lieu_trao_doi",
+   "desc": "Số lượt người học và giảng viên đi hoặc đến, theo chương trình (ví dụ ERASMUS+, giao lưu)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "mau_bao_cao",
+   "desc": "Mẫu báo cáo hoặc chỉ tiêu theo yêu cầu của ĐHQGHN",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ky_bao_cao",
+   "desc": "Kỳ báo cáo",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng KHCN và Hợp tác phát triển"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chuẩn hóa danh sách",
+   "lam_gi": "Gộp, loại trùng, chuẩn tên đối tác (Việt và Anh) và quốc gia; hoạt động thiếu thông tin đưa vào danh sách cần bổ sung.",
+   "inputs": [
+    "danh_sach_hoat_dong"
+   ],
+   "vai_tro": "Chuyên viên hợp tác · AI hỗ trợ: chuẩn hóa và phát hiện trùng",
+   "luu_y": "Tên đối tác giữ đúng như văn bản; không tự sửa.",
+   "ket_qua": "Danh sách hoạt động đã chuẩn hóa."
+  },
+  {
+   "n": 2,
+   "title": "Phân loại và đếm",
+   "lam_gi": "Phân theo loại: thỏa thuận mới, thỏa thuận hiện hành, trao đổi người học, trao đổi giảng viên và học giả, hội thảo, dự án nghiên cứu; đếm hoạt động, đối tác, quốc gia, lượt người.",
+   "inputs": [
+    "danh_sach_hoat_dong",
+    "du_lieu_trao_doi"
+   ],
+   "vai_tro": "Chuyên viên hợp tác · AI hỗ trợ: phân loại và đếm",
+   "luu_y": "Mỗi con số ghi nguồn dòng; nêu rõ đơn vị đếm (hoạt động, đối tác hay lượt người).",
+   "ket_qua": "Bảng số liệu theo loại."
+  },
+  {
+   "n": 3,
+   "title": "Đối chiếu thỏa thuận và hoạt động",
+   "lam_gi": "Mỗi hoạt động có thỏa thuận hiệu lực hay không theo danh mục; thỏa thuận hết hạn hoặc chưa rõ trạng thái được gắn cờ.",
+   "inputs": [
+    "danh_muc_thoa_thuan",
+    "danh_sach_hoat_dong"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: đối chiếu",
+   "luu_y": "Hiệu lực chỉ theo văn bản người dùng cung cấp; không tự suy ra gia hạn.",
+   "ket_qua": "Danh sách cờ cần xác minh."
+  },
+  {
+   "n": 4,
+   "title": "Lập báo cáo",
+   "lam_gi": "Ghép theo mẫu; nhận xét dựa trên số liệu; xu hướng chỉ nêu khi có từ 3 kỳ.",
+   "inputs": [
+    "mau_bao_cao",
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Trưởng phòng · AI hỗ trợ: dự thảo báo cáo",
+   "luu_y": "Tên đối tác chỉ nêu khi được phép công bố.",
+   "ket_qua": "Báo cáo hợp tác quốc tế."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số trong tổng quan khớp bảng chi tiết.",
+  "Mỗi đối tác ghi nhất quán tên Việt và Anh.",
+  "Thỏa thuận hết hạn hoặc chưa rõ trạng thái đã được gắn cờ.",
+  "Không có tên đối tác chưa được phép công bố.",
+  "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [
+  "**Trưởng phòng KHCN và Hợp tác phát triển** kiểm tra số liệu.",
+  "**Người có thẩm quyền của Trường** duyệt báo cáo gửi ĐHQGHN."
+ ],
+ "guardrails": [
+  "KHÔNG tự khẳng định thỏa thuận còn hiệu lực.",
+  "KHÔNG công bố thông tin đối tác khi chưa được đồng ý."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [],
+ "cho_xac_nhan": [
+  "Mẫu báo cáo đối ngoại của ĐHQGHN (C8).",
+  "Danh mục MOU/MOA hiện có và người giữ bản gốc (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề, kỳ báo cáo, đơn vị lập.",
+  "Tổng quan số liệu: số đối tác, quốc gia, thỏa thuận, hoạt động, lượt người, theo loại.",
+  "Danh sách chi tiết theo loại, có nguồn.",
+  "Cờ cần xác minh và thông tin thiếu."
+ ],
+ "output_structure_raw": "1. Tiêu đề, kỳ báo cáo, đơn vị lập.\n\n2. Tổng quan số liệu: số đối tác, quốc gia, thỏa thuận, hoạt động, lượt người, theo loại.\n\n3. Danh sách chi tiết theo loại, có nguồn.\n\n4. Cờ cần xác minh và thông tin thiếu.",
+ "human_gate_check": "Đã qua Human gate. Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng KHCN và Hợp tác phát triển. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-htqt-bao-cao-hop-tac-quoc-te/references"
+}

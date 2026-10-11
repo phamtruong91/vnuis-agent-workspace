@@ -1,0 +1,183 @@
+{
+ "name": "vnuis-nhansu-soan-quyet-dinh-nang-luong",
+ "title": "Soạn quyết định nâng lương, phụ cấp thâm niên, chuyển ngạch",
+ "description": "Dùng khi đến kỳ xét nâng bậc lương, nâng lương trước hạn, phụ cấp thâm niên vượt khung hoặc chuyển ngạch, chức danh nghề nghiệp cho viên chức và cần soạn quyết định.",
+ "group": "nhansu",
+ "group_label": "Tổ chức cán bộ – nhân sự, thi đua khen thưởng",
+ "previous_name": "vnuis-quyet-dinh-nang-luong",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị",
+ "when": "Khi xét nâng bậc lương thường xuyên (đủ 36 tháng giữ bậc đối với ngạch có hệ số lương\n> 2,34; đủ 24 tháng đối với ngạch có hệ số ≤ 2,34), nâng bậc lương trước thời hạn\n12 tháng do lập thành tích xuất sắc, xét hưởng phụ cấp thâm niên vượt khung\n(đủ 36 tháng giữ bậc lương cuối cùng của ngạch), hoặc chuyển ngạch / chuyển chức danh\nnghề nghiệp khi viên chức trúng tuyển / đủ tiêu chuẩn ngạch mới.",
+ "inputs": [
+  {
+   "key": "loai_qd",
+   "desc": "Nâng bậc lương thường xuyên / Nâng lương trước thời hạn / Phụ cấp thâm niên vượt khung / Chuyển ngạch",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_sach",
+   "desc": "Danh sách viên chức: họ tên, ngày sinh, chức danh + mã ngạch hiện tại, đơn vị",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "luong_cu",
+   "desc": "Bậc, hệ số lương hiện hưởng của từng người",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "luong_moi",
+   "desc": "Bậc, hệ số lương mới (hoặc % phụ cấp TNVK; ngạch mới khi chuyển ngạch)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_diem_huong",
+   "desc": "Ngày bắt đầu hưởng lương mới (VD: 01/01/2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_giu_bac",
+   "desc": "Thời gian giữ bậc lương hiện tại (để kiểm tra đủ điều kiện)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thanh_tich",
+   "desc": "Thành tích làm căn cứ (nếu nâng trước thời hạn: danh hiệu thi đua, hình thức khen thưởng)",
+   "required": false,
+   "note": "Không (bắt buộc nếu loại = trước thời hạn)"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo: Cập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n- Nghị định 233/2026/NĐ-CP; phạm vi: Đánh giá đơn vị sự nghiệp công lập và viên chức: Dùng khung tiêu chí và quy chế đánh giá của đơn vị; bổ sung dữ liệu theo dõi/chấm điểm tháng hoặc quý, nhiệm vụ được giao, sản phẩm công việc, minh chứng, kết quả giám sát. Không tạo thang điểm từ trí nhớ, không tiếp tục ghi Mẫu03 của NĐ 90 là mẫu hiện hành. Tính điểm và xếp loại phải từ tiêu chí được phê duyệt; báo cáo liệt kê thiếu minh chứng.\n- Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo: Thêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định loại quyết định và rà soát điều kiện từng người",
+   "lam_gi": "xác định loại quyết định (Nâng bậc lương thường xuyên / Nâng lương trước thời hạn / Phụ cấp thâm niên vượt khung / Chuyển ngạch) và kiểm tra điều kiện từng viên chức trong danh sách: - Nâng thường xuyên: đủ thời gian giữ bậc (36 tháng nếu hệ số > 2,34; 24 tháng nếu hệ số ≤ 2,34) + 2 năm liên tiếp xếp loại hoàn thành tốt nhiệm vụ trở lên, không vi phạm kỷ luật; - Nâng trước thời hạn: có thành tích xuất sắc (danh hiệu thi đua, hình thức khen thưởng kèm quyết định), tối đa 12 tháng; - Thâm niên vượt khung: đủ 36 tháng giữ bậc lương cuối cùng của ngạch; - Chuyển ngạch: có quyết định trúng tuyển / công nhận đủ tiêu chuẩn ngạch mới. Loại khỏi danh sách người chưa đủ điều kiện, ghi rõ lý do.",
+   "inputs": [
+    "loai_qd",
+    "danh_sach",
+    "thoi_gian_giu_bac",
+    "thanh_tich"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "nâng trước thời hạn không quá 2 lần liên tiếp trong quá trình công tác; thành tích làm căn cứ phải có quyết định khen thưởng kèm theo, không dùng giấy khen \"chung chung\".",
+   "ket_qua": "danh sách viên chức đủ điều kiện + bảng rà soát điều kiện (đạt/không đạt, lý do)."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu hệ số – bậc theo bảng lương",
+   "lam_gi": "tra bảng lương văn bản hiện hành nêu tại phap-ly.md cho từng người: nâng thường xuyên → bậc liền kề; chuyển ngạch → xếp bậc, hệ số mới theo nguyên tắc không thấp hơn lương đang hưởng (trừ trường hợp đặc biệt theo quy định); phụ cấp thâm niên vượt khung: 5% mức lương của bậc lương cuối cùng + 1% cho mỗi năm tiếp theo đủ 12 tháng.",
+   "inputs": [
+    "luong_cu",
+    "luong_moi",
+    "loai_qd"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: đối chiếu chéo tự động",
+   "luu_y": "kiểm tra chéo bậc/hệ số mới trực tiếp trên bảng lương — tra nhầm bậc là lỗi phổ biến; hệ số ngạch mới khi chuyển ngạch phải đúng quy định xếp lương.",
+   "ket_qua": "bảng đối chiếu lương cũ → mới đã kiểm tra (họ tên, bậc–hệ số cũ, bậc–hệ số mới)."
+  },
+  {
+   "n": 3,
+   "title": "Soạn quyết định theo thể thức NĐ 30/2020",
+   "lam_gi": "soạn quyết định hành chính đầy đủ các phần: Quốc hiệu – Tiêu ngữ; tên cơ quan; số/ký hiệu; địa danh, ngày tháng; tên loại \"QUYẾT ĐỊNH\" + trích yếu; phần \"Căn cứ...\" (Luật Viên chức, văn bản hiện hành nêu tại phap-ly.md, biên bản họp Hội đồng lương); phần \"Theo đề nghị...\"; nội dung \"QUYẾT ĐỊNH:\" theo điều — Điều 1: loại nâng lương, danh sách viên chức trình bày dạng bảng (họ tên, chức danh/mã ngạch, đơn vị, bậc–hệ số cũ → mới) + thời điểm hưởng; Điều 2: trách nhiệm thi hành; Điều 3: hiệu lực; nơi nhận; chữ ký Hiệu trưởng.",
+   "inputs": [
+    "loai_qd",
+    "danh_sach",
+    "luong_cu",
+    "luong_moi",
+    "thoi_diem_huong",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "thời điểm hưởng ghi rõ ngày/tháng/năm; danh sách nhiều người trình bày dạng bảng để dễ đối chiếu; thời điểm hưởng không sớm hơn thời điểm đủ điều kiện.",
+   "ket_qua": "dự thảo quyết định hoàn chỉnh."
+  },
+  {
+   "n": 4,
+   "title": "Kiểm tra và chuẩn bị trình ký",
+   "lam_gi": "đối chiếu danh sách trong dự thảo với biên bản họp Hội đồng lương (khớp 100%); kiểm tra hệ số/bậc đúng bảng lương, thời điểm hưởng đúng; kiểm tra thể thức, chính tả, số/ký hiệu; hoàn thiện để trình Hiệu trưởng ký, đóng dấu.",
+   "inputs": [
+    "thoi_diem_huong",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (nhân sự) chuẩn bị, Hiệu trưởng phê duyệt · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "danh sách trong quyết định phải khớp tuyệt đối biên bản Hội đồng lương — sai một người thì phải sửa đồng thời cả hai văn bản.",
+   "ket_qua": "dự thảo quyết định đã kiểm tra + danh mục kiểm tra (trình ký tại Human gate; sau khi ký: ban hành, gửi các đơn vị và cá nhân, lưu hồ sơ)."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức và cấu trúc theo references/quy-cach-dau-ra.md và căn cứ đã chọn tại references/phap-ly.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+  "Thành tích làm căn cứ phải có quyết định khen thưởng kèm theo, không dùng giấy khen \"chung chung\"",
+  "Kiểm tra chéo bậc/hệ số mới trực tiếp trên bảng lương — tra nhầm bậc là lỗi phổ biến",
+  "Hệ số ngạch mới khi chuyển ngạch phải đúng quy định xếp lương"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Chỉ soạn từ danh sách và điều kiện đã được hội đồng hoặc người có thẩm quyền xác nhận; skill không tự xác định ai đủ điều kiện.",
+  "Người ký (Hiệu trưởng hay người được ủy quyền) chưa xác nhận (C1).",
+  "Dữ liệu lương, nhân sự là dữ liệu nhạy cảm: che khi làm ví dụ, không tải lên dịch vụ ngoài (C5)."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế nâng lương và hội đồng xét (C2).",
+  "Mẫu quyết định (C8)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ;",
+  "Tên cơ quan ban hành;",
+  "Số, ký hiệu văn bản;",
+  "Địa danh, ngày tháng năm ban hành;",
+  "Tên loại \"QUYẾT ĐỊNH\" + trích yếu;",
+  "Người ban hành (HIỆU TRƯỞNG...);",
+  "Phần \"Căn cứ...\" (Luật Viên chức, căn cứ chế độ tiền lương viên chức hiện hành nêu tại phap-ly.md, căn cứ quản lý viên chức còn áp dụng, biên bản họp Hội đồng lương);",
+  "Phần \"Theo đề nghị...\" (Trưởng Phòng TC&QT (nhân sự));",
+  "Nội dung \"QUYẾT ĐỊNH:\": Điều 1 (loại nâng lương; danh sách viên chức trình bày dạng bảng: họ tên, chức danh/mã ngạch, đơn vị, bậc–hệ số cũ → mới; thời điểm hưởng), Điều 2 (trách nhiệm thi hành), Điều 3 (hiệu lực);",
+  "Nơi nhận;",
+  "Chữ ký, đóng dấu. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ;\n\n2. Tên cơ quan ban hành;\n\n3. Số, ký hiệu văn bản;\n\n4. Địa danh, ngày tháng năm ban hành;\n\n5. Tên loại \"QUYẾT ĐỊNH\" + trích yếu;\n\n6. Người ban hành (HIỆU TRƯỞNG...);\n\n7. Phần \"Căn cứ...\" (Luật Viên chức, căn cứ chế độ tiền lương viên chức hiện hành nêu tại phap-ly.md, căn cứ quản lý viên chức còn áp dụng, biên bản họp Hội đồng lương);\n\n8. Phần \"Theo đề nghị...\" (Trưởng Phòng TC&QT (nhân sự));\n\n9. Nội dung \"QUYẾT ĐỊNH:\": Điều 1 (loại nâng lương; danh sách viên chức trình bày dạng bảng:\n   họ tên, chức danh/mã ngạch, đơn vị, bậc–hệ số cũ → mới; thời điểm hưởng), Điều 2 (trách nhiệm thi hành),\n   Điều 3 (hiệu lực);\n\n10. Nơi nhận;\n\n11. Chữ ký, đóng dấu.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ pháp lý và điều kiện áp dụng\n\nNgày lập bản đối chiếu: 2026-10-09. Nguồn chính thức đã tra cứu; phạm vi xác minh nêu trong từng hướng dẫn. Phải kiểm tra văn bản gốc và hiệu lực tại ngày nghiệp vụ.\n\n## Luật 129/2025/QH15; Nghị định 259/2026/NĐ-CP; phạm vi: Viên chức đơn vị sự nghiệp công lập; kiểm tra chuyển tiếp và quy định riêng về nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-259-2026-nd-cp-quy-dinh-ve-tuyen-dung-su-dung-va-quan-ly-vien-chuc-119260707070701707.htm\n\nCập nhật căn cứ tuyển dụng, hợp đồng làm việc, bổ nhiệm, điều động và đào tạo viên chức. Không tái sử dụng số điều hoặc mẫu phiếu của NĐ 115. Phải yêu cầu ngày tuyển dụng, ngày phê duyệt kế hoạch, loại hợp đồng, trạng thái hồ sơ và bản văn NĐ 259 để chọn điều khoản chuyển tiếp; không tự áp dụng điều22 Luật Viên chức2010. Các văn bản cũ chỉ là căn cứ lịch sử khi chuyển tiếp cho phép.\n\n## Nghị định 233/2026/NĐ-CP; phạm vi: Đánh giá đơn vị sự nghiệp công lập và viên chức\n\nNguồn: https://baochinhphu.vn/cham-diem-danh-gia-vien-chuc-hang-thang-hoac-hang-quy-102260630052951335.htm\n\nDùng khung tiêu chí và quy chế đánh giá của đơn vị; bổ sung dữ liệu theo dõi/chấm điểm tháng hoặc quý, nhiệm vụ được giao, sản phẩm công việc, minh chứng, kết quả giám sát. Không tạo thang điểm từ trí nhớ, không tiếp tục ghi Mẫu03 của NĐ 90 là mẫu hiện hành. Tính điểm và xếp loại phải từ tiêu chí được phê duyệt; báo cáo liệt kê thiếu minh chứng.\n\n## Luật Nhà giáo; Nghị định 93/2026/NĐ-CP; khoản 9 Điều 62 NĐ 259/2026; phạm vi: Viên chức là nhà giáo\n\nNguồn: https://xaydungchinhsach.chinhphu.vn/huong-dan-quan-ly-doi-ngu-nha-giao-sap-xep-bo-nhiem-chuc-danh-thuc-hien-che-do-chinh-sach-xep-luong-119260811083919821.htm\n\nThêm input đối tượng là nhà giáo hay viên chức khác. Nếu pháp luật nhà giáo có quy định khác về thẩm quyền, tiêu chuẩn, điều kiện, trình tự, thủ tục tuyển dụng/sử dụng/quản lý, áp dụng quy định nhà giáo và hướng dẫn Bộ GDĐT thay vì quy tắc chung NĐ 259.\n",
+ "outputs_dir": "skills/vnuis-nhansu-soan-quyet-dinh-nang-luong/references"
+}

@@ -1,0 +1,173 @@
+{
+ "name": "vnuis-csvc-ke-hoach-bao-tri",
+ "title": "Lập kế hoạch bảo trì cơ sở vật chất",
+ "description": "Dùng khi Phòng TC&QT (mảng cơ sở vật chất) lập kế hoạch bảo trì, bảo dưỡng, sửa chữa cơ sở vật chất hằng năm hoặc đột xuất khi hư hỏng ảnh hưởng an toàn, giảng dạy: hiện trạng, ưu tiên, dự toán, tiến độ.",
+ "group": "csvc",
+ "group_label": "Cơ sở vật chất – mua sắm, tài sản",
+ "previous_name": "vnuis-ke-hoach-bao-tri-csvc",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (cơ sở vật chất)",
+ "when": "Khi xây dựng kế hoạch bảo trì, sửa chữa CSVC hằng năm; khi lập kế hoạch sửa chữa\nđột xuất (hư hỏng ảnh hưởng an toàn, giảng dạy).",
+ "inputs": [
+  {
+   "key": "nam_ke_hoach",
+   "desc": "Năm thực hiện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "hang_muc",
+   "desc": "Bảng hạng mục: công trình/hệ thống, hiện trạng hư hỏng, mức độ ảnh hưởng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_do_uu_tien",
+   "desc": "Khẩn cấp / Ưu tiên / Thường xuyên (hoặc để skill tự phân loại)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "du_toan",
+   "desc": "Dự toán kinh phí từng hạng mục",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tien_do",
+   "desc": "Tiến độ thực hiện dự kiến",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (cơ sở vật chất)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Khảo sát, ghi nhận hiện trạng hư hỏng",
+   "lam_gi": "kiểm tra thực tế từng khu vực: phòng học, giảng đường, ký túc xá, hệ thống điện – nước, PCCC, thang máy, sân bãi; tại mỗi điểm ghi rõ công trình/hệ thống, vị trí cụ thể, hiện trạng hư hỏng quan sát được, mức độ ảnh hưởng tới an toàn và giảng dạy; chụp ảnh minh chứng kèm theo.",
+   "inputs": [
+    "hang_muc",
+    "nam_ke_hoach"
+   ],
+   "vai_tro": "Cán bộ Phòng TC&QT (cơ sở vật chất) (thực hiện trực tiếp) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "ưu tiên kiểm tra các điểm nóng theo đề xuất của đơn vị và sự cố năm trước; hệ thống PCCC, điện phải do người có chuyên môn kiểm tra; hạng mục ảnh hưởng an toàn con người phải ghi nhận riêng và báo ngay, không chờ lập kế hoạch.",
+   "ket_qua": "Bảng khảo sát hiện trạng (danh mục hư hỏng có vị trí, mức ảnh hưởng, ảnh minh chứng)."
+  },
+  {
+   "n": 2,
+   "title": "Phân loại và xếp mức ưu tiên hạng mục",
+   "lam_gi": "với từng hạng mục trong bảng khảo sát, xếp vào 1 trong 3 loại: bảo trì thường xuyên (vệ sinh, kiểm tra định kỳ) / sửa chữa định kỳ (sơn sửa, chống thấm, thay thiết bị hao mòn) / sửa chữa đột xuất (hư hỏng ảnh hưởng an toàn); sau đó xếp mức ưu tiên: Khẩn cấp (PCCC, điện, kết cấu) → Ưu tiên (phòng học, PTN phục vụ giảng dạy) → Thường xuyên (các hạng mục còn lại).",
+   "inputs": [
+    "hang_muc",
+    "muc_do_uu_tien"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "hạng mục vừa định kỳ vừa liên quan an toàn thì xếp theo mức cao hơn; ghi rõ tiêu chí phân loại để bảo vệ khi trình duyệt.",
+   "ket_qua": "Bảng hạng mục đã phân loại và xếp mức ưu tiên (Khẩn cấp / Ưu tiên / Thường xuyên)."
+  },
+  {
+   "n": 3,
+   "title": "Lập dự toán từng hạng mục",
+   "lam_gi": "với từng hạng mục đã phân loại, lập dự toán chi tiết: khối lượng công việc, đơn giá tham khảo thị trường/định mức, thành tiền; tổng hợp tổng dự toán năm; đánh dấu hạng mục vượt hạn mức phải lựa chọn nhà thầu theo Luật Đấu thầu.",
+   "inputs": [
+    "du_toan",
+    "hang_muc",
+    "muc_do_uu_tien"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "đơn giá phải có nguồn tham chiếu; dự phòng 5–10% cho phát sinh; hạng mục vượt hạn mức ghi chú riêng về thủ tục đấu thầu.",
+   "ket_qua": "Bảng dự toán chi tiết từng hạng mục + tổng dự toán, kèm ghi chú đấu thầu."
+  },
+  {
+   "n": 4,
+   "title": "Sắp xếp tiến độ thực hiện",
+   "lam_gi": "gán thời gian thực hiện (quý/tháng) cho từng hạng mục: hạng mục khẩn cấp làm ngay; tránh thi công gây ồn trong kỳ thi kết thúc học phần và tuần khai giảng; ưu tiên thi công lớn vào dịp hè; đối chiếu với lịch năm học trước khi chốt.",
+   "inputs": [
+    "tien_do",
+    "nam_ke_hoach",
+    "muc_do_uu_tien"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "hạng mục PCCC không được dời tùy tiện qua mùa khô/mùa mưa; luôn để dự phòng thời gian cho sửa chữa đột xuất phát sinh trong năm.",
+   "ket_qua": "Lịch tiến độ thực hiện theo quý/tháng."
+  },
+  {
+   "n": 5,
+   "title": "Soạn dự thảo kế hoạch theo cấu trúc chuẩn",
+   "lam_gi": "lắp các bán thành phẩm (bảng hạng mục đã phân loại, bảng dự toán, lịch tiến độ) vào văn bản kế hoạch theo cấu trúc output chuẩn; viết phần tổ chức thực hiện (đơn vị chủ trì, đơn vị phối hợp, nguyên tắc thi công, bố trí kinh phí).",
+   "inputs": [
+    "nam_ke_hoach"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: soạn dự thảo",
+   "luu_y": "tên hạng mục, dự toán, tiến độ phải khớp 100% giữa các bảng; ghi rõ thẩm quyền phê duyệt từng phần.",
+   "ket_qua": "Dự thảo Kế hoạch bảo trì, sửa chữa CSVC năm."
+  },
+  {
+   "n": 6,
+   "title": "Trình phê duyệt",
+   "lam_gi": "soạn tờ trình kèm dự thảo kế hoạch, trình Hiệu trưởng ký ban hành; sau phê duyệt gửi các đơn vị liên quan để phối hợp triển khai; lưu hồ sơ.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) (chuẩn bị hồ sơ trình); Hiệu trưởng (người ký) ban hành · AI hỗ trợ: soạn dự thảo, chuẩn bị hồ sơ trình đầy đủ",
+   "luu_y": "tờ trình nêu rõ tổng kinh phí và nguồn kinh phí; hạng mục đột xuất phát sinh sau phê duyệt xử lý theo quy trình riêng, không tự ý chèn vào kế hoạch.",
+   "ket_qua": "Kế hoạch đã phê duyệt + tờ trình phê duyệt."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Kế hoạch bảo trì, sửa chữa CSVC năm",
+  "Có đầy đủ sản phẩm: Tờ trình phê duyệt kế hoạch",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Ưu tiên kiểm tra các điểm nóng theo đề xuất của đơn vị và sự cố năm trước",
+  "Hạng mục vừa định kỳ vừa liên quan an toàn thì xếp theo mức cao hơn > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kế hoạch bảo trì theo cơ sở và loại hạng mục; thông tin tình trạng thiết bị phải từ hồ sơ hoặc báo cáo bộ phận quản lý.",
+  "Chi phí chỉ ghi khi có báo giá hoặc dự toán."
+ ],
+ "cho_xac_nhan": [
+  "Hạng mục và chu kỳ bảo trì (C8).",
+  "Nhà thầu bảo trì hiện có (C8)."
+ ],
+ "output_structure": [
+  "Phần đầu: quốc hiệu – tiêu ngữ, tên đơn vị lập (Phòng TC&QT (cơ sở vật chất)), địa danh – ngày tháng, tên văn bản \"KẾ HOẠCH BẢO TRÌ, SỬA CHỮA CƠ SỞ VẬT CHẤT NĂM ...\" (+ ghi chú giả lập nếu mô phỏng).",
+  "I. Danh mục hạng mục: bảng STT – Hạng mục – Hiện trạng – Mức độ ưu tiên – Dự toán – Tiến độ, có dòng tổng dự toán.",
+  "II. Tổ chức thực hiện: đơn vị chủ trì/phối hợp, nguyên tắc thi công (tránh kỳ thi), bố trí kinh phí.",
+  "Phần cuối: nơi nhận, chữ ký và họ tên người ký. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần đầu: quốc hiệu – tiêu ngữ, tên đơn vị lập (Phòng TC&QT (cơ sở vật chất)), địa danh – ngày tháng, tên văn bản \"KẾ HOẠCH BẢO TRÌ, SỬA CHỮA CƠ SỞ VẬT CHẤT NĂM ...\" (+ ghi chú giả lập nếu mô phỏng).\n\n2. I. Danh mục hạng mục: bảng STT – Hạng mục – Hiện trạng – Mức độ ưu tiên – Dự toán – Tiến độ, có dòng tổng dự toán.\n\n3. II. Tổ chức thực hiện: đơn vị chủ trì/phối hợp, nguyên tắc thi công (tránh kỳ thi), bố trí kinh phí.\n\n4. Phần cuối: nơi nhận, chữ ký và họ tên người ký.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (cơ sở vật chất). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-csvc-ke-hoach-bao-tri/references"
+}

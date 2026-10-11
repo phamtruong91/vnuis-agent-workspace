@@ -1,0 +1,4 @@
+interface:
+  display_name: Nhân sự · Quyết định khen thưởng / kỷ luật viên chức – VNU-IS
+  short_description: Hỗ trợ quyết định khen thưởng / kỷ luật viên chức (VNU-IS)
+  default_prompt: 'Hãy dùng $vnuis-nhansu-soan-quyet-dinh-khen-thuong-ky-luat-vien-chuc để hỗ trợ công việc: Quyết định khen thưởng / kỷ luật viên chức; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

@@ -1,0 +1,169 @@
+{
+ "name": "vnuis-ts-theo-doi-pheu-thi-sinh",
+ "title": "Theo dõi phễu thí sinh",
+ "description": "Dùng trong chiến dịch tuyển sinh khi cần quản lý thí sinh tiềm năng theo từng giai đoạn (biết đến, quan tâm, nộp hồ sơ, trúng tuyển, nhập học), đôn đốc hồ sơ và báo cáo tỷ lệ chuyển đổi.",
+ "group": "ts",
+ "group_label": "Tuyển sinh",
+ "previous_name": "vnuis-funnel-theo-doi-thi-sinh",
+ "format": "xlsx",
+ "version": "0.4.2",
+ "unit": "Phòng Truyền thông và Tuyển sinh",
+ "when": "Trong chiến dịch tuyển sinh, khi cần quản lý danh sách thí sinh tiềm năng theo từng giai đoạn\nphễu, đôn đốc hồ sơ và báo cáo tỉ lệ chuyển đổi cho lãnh đạo.",
+ "inputs": [
+  {
+   "key": "chien_dich",
+   "desc": "Tên chiến dịch/đợt tuyển sinh",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "du_lieu_lead",
+   "desc": "Danh sách thí sinh tiềm năng: họ tên, kênh tiếp cận, giai đoạn hiện tại, ghi chú (đã ẩn danh/bảo mật)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "moc_thoi_gian",
+   "desc": "Các mốc: mở đăng ký, hạn nộp hồ sơ, công bố kết quả, nhập học",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "chi_tieu",
+   "desc": "Chỉ tiêu thí sinh tiềm năng và tỉ lệ chuyển đổi mục tiêu theo giai đoạn",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Truyền thông và Tuyển sinh"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Biểu mẫu tuyển sinh; nền tảng AI tư vấn (ai.vnuis.edu.vn); hotline và is@vnu.edu.vn. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Chuẩn hóa dữ liệu thí sinh tiềm năng và gán giai đoạn phễu",
+   "lam_gi": "loại bỏ thí sinh tiềm năng trùng (trùng SĐT/email); chuẩn hóa tên kênh tiếp cận về danh mục thống nhất; gán mỗi thí sinh tiềm năng vào đúng 1 giai đoạn theo định nghĩa thống nhất: Biết đến → Quan tâm (đăng ký tư vấn) → Nộp hồ sơ → Đủ điều kiện → Trúng tuyển → Nhập học.",
+   "inputs": [
+    "du_lieu_lead",
+    "chien_dich"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "định nghĩa \"giai đoạn\" phải viết thành văn bản trước khi gán (VD: \"Quan tâm\" = đã để lại SĐT đăng ký tư vấn); dữ liệu cá nhân thí sinh chỉ xử lý trên hệ thống được phân quyền, ẩn danh khi xuất báo cáo.",
+   "ket_qua": "Bộ dữ liệu thí sinh tiềm năng sạch đã gán giai đoạn (kèm nhật ký số thí sinh tiềm năng trùng bị loại)."
+  },
+  {
+   "n": 2,
+   "title": "Lập danh mục kiểm hồ sơ theo phương thức",
+   "lam_gi": "với từng phương thức xét tuyển, liệt kê thành phần hồ sơ bắt buộc; đối chiếu từng thí sinh tiềm năng ở giai đoạn \"Nộp hồ sơ\" → đánh dấu đủ/thiếu từng thành phần; lập danh sách thí sinh tiềm năng cần bổ sung kèm hạn bổ sung.",
+   "inputs": [
+    "du_lieu_lead",
+    "moc_thoi_gian"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch, lập bảng biểu, định dạng",
+   "luu_y": "mỗi phương thức có danh mục kiểm riêng (xét học bạ khác xét điểm thi); hạn bổ sung phải trước hạn nộp hồ sơ ít nhất 5 ngày làm việc.",
+   "ket_qua": "Danh mục kiểm hồ sơ từng phương thức + danh sách thí sinh tiềm năng thiếu giấy tờ cần đôn đốc."
+  },
+  {
+   "n": 3,
+   "title": "Tính tỉ lệ chuyển đổi giữa các giai đoạn",
+   "lam_gi": "đếm số thí sinh tiềm năng từng giai đoạn → tính tỉ lệ chuyển đổi giữa các giai đoạn kề nhau; so sánh với `chi_tieu` (nếu có) và với cùng kỳ năm trước; xác định giai đoạn rớt nhiều nhất.",
+   "inputs": [
+    "chi_tieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: tính toán, phân tích số liệu",
+   "luu_y": "tỉ lệ tính trên số liệu thực tế chốt tại một thời điểm, không ước lượng; ghi rõ thời điểm chốt số liệu trong báo cáo.",
+   "ket_qua": "Bảng phễu kèm tỉ lệ chuyển đổi + so sánh với chỉ tiêu/cùng kỳ."
+  },
+  {
+   "n": 4,
+   "title": "Rà soát cảnh báo",
+   "lam_gi": "quét danh sách đôn đốc (Bước 2) tìm thí sinh tiềm năng sắp quá hạn bổ sung (còn ≤ 5 ngày); quét bảng phễu (Bước 3) tìm giai đoạn có tỉ lệ rớt bất thường (giảm > 10 điểm % so với cùng kỳ hoặc thấp hơn chỉ tiêu); ghi nhận từng cảnh báo kèm số lượng cụ thể.",
+   "inputs": [
+    "moc_thoi_gian"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "cảnh báo phải cụ thể đến nhóm thí sinh tiềm năng (VD: \"180 hồ sơ thiếu học bạ, hạn 25/06\"), không cảnh báo chung chung.",
+   "ket_qua": "Danh sách cảnh báo (thí sinh tiềm năng sắp quá hạn / giai đoạn rớt bất thường)."
+  },
+  {
+   "n": 5,
+   "title": "Xuất báo cáo và đề xuất hành động",
+   "lam_gi": "tổng hợp bảng phễu + danh mục kiểm đôn đốc + cảnh báo thành báo cáo ngắn; viết nhận xét (kênh nào hiệu quả nhất, nút thắt ở đâu) và đề xuất hành động cụ thể (tăng cường kênh nào, đôn đốc nhóm nào, trước ngày nào, ai phụ trách).",
+   "inputs": [
+    "chien_dich"
+   ],
+   "vai_tro": "Chuyên viên Phòng Truyền thông và Tuyển sinh · AI hỗ trợ: soạn dự thảo, tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "mỗi đề xuất phải gắn người phụ trách và thời hạn; báo cáo ẩn danh thông tin cá nhân thí sinh.",
+   "ket_qua": "Báo cáo phễu theo dõi thí sinh kèm đề xuất hành động."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Có đầy đủ sản phẩm: Bảng phễu thí sinh tiềm năng theo giai đoạn + tỉ lệ chuyển đổi",
+  "Có đầy đủ sản phẩm: Danh mục kiểm hồ sơ thiếu cần đôn đốc",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Định nghĩa \"giai đoạn\" phải viết thành văn bản trước khi gán (VD: \"Quan tâm\" = đã để lại SĐT đăng ký tư vấn)",
+  "Mỗi phương thức có danh mục kiểm riêng (xét học bạ khác xét điểm thi) > Tiêu chí đạt: tất cả các ô đều được đánh dấu."
+ ],
+ "gates": [
+  "Trưởng bộ phận tuyển sinh duyệt phân loại giai đoạn và báo cáo trước khi trình lãnh đạo.",
+  "Dữ liệu thí sinh (họ tên, liên hệ) chỉ người được phân quyền mới truy cập."
+ ],
+ "guardrails": [
+  "Không tự gửi tin nhắn/email cho thí sinh khi chưa được duyệt nội dung và danh sách.",
+  "Không tự nhận/trả hồ sơ thay cán bộ tuyển sinh.",
+  "Không quyết định trúng tuyển thay hội đồng tuyển sinh.",
+  "Không chia sẻ dữ liệu cá nhân thí sinh ra ngoài; tuân thủ quy định bảo vệ dữ liệu cá nhân.",
+  "Không bịa số liệu chuyển đổi."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Mỗi bản ghi có mã nguồn: biểu mẫu, hotline, nền tảng AI, sự kiện, giới thiệu; trạng thái do Phòng định nghĩa.",
+  "Quy tắc khử trùng bản ghi do Phòng chốt; skill chỉ đánh dấu nghi trùng.",
+  "Báo cáo phễu chỉ ở mức tổng hợp; không đưa dữ liệu cá nhân thí sinh vào báo cáo."
+ ],
+ "cho_xac_nhan": [
+  "Hệ thống đang lưu thông tin người học tiềm năng (C5).",
+  "Định nghĩa các trạng thái tư vấn (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề (tên chiến dịch/đợt tuyển sinh + thời điểm chốt số liệu).",
+  "Bảng phễu: Giai đoạn | Số lượng | Tỉ lệ chuyển đổi (kèm so sánh chỉ tiêu/cùng kỳ nếu có).",
+  "Danh mục kiểm hồ sơ cần đôn đốc (nhóm theo loại giấy tờ thiếu + số lượng + hạn bổ sung).",
+  "Cảnh báo (thí sinh tiềm năng sắp quá hạn bổ sung; giai đoạn có tỉ lệ rớt bất thường).",
+  "Nhận xét và đề xuất hành động (kênh cần tăng cường, nhóm cần đôn đốc, người phụ trách, thời hạn)."
+ ],
+ "output_structure_raw": "1. Tiêu đề (tên chiến dịch/đợt tuyển sinh + thời điểm chốt số liệu).\n\n2. Bảng phễu: Giai đoạn | Số lượng | Tỉ lệ chuyển đổi (kèm so sánh chỉ tiêu/cùng kỳ nếu có).\n\n3. Danh mục kiểm hồ sơ cần đôn đốc (nhóm theo loại giấy tờ thiếu + số lượng + hạn bổ sung).\n\n4. Cảnh báo (thí sinh tiềm năng sắp quá hạn bổ sung; giai đoạn có tỉ lệ rớt bất thường).\n\n5. Nhận xét và đề xuất hành động (kênh cần tăng cường, nhóm cần đôn đốc, người phụ trách, thời hạn).",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Truyền thông và Tuyển sinh. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ts-theo-doi-pheu-thi-sinh/references"
+}

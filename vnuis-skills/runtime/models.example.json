@@ -1,0 +1,40 @@
+{
+  "_ghi_chu": "Sao chép thành models.json rồi điền. base_url và model phải đúng theo nhà cung cấp bạn dùng (tài liệu nhà cung cấp); gói này không tự đoán. Khóa API lấy từ biến môi trường tên trong api_key_env, không ghi khóa vào file.",
+  "default": "deepseek-v4-flash",
+  "models": {
+    "glm-5.3-flash": {
+      "base_url": "ĐIỀN base_url kiểu OpenAI của nhà cung cấp GLM",
+      "model": "glm-5.3-flash",
+      "api_key_env": "GLM_API_KEY",
+      "supports_json_mode": true,
+      "extra_body_thinking": {},
+      "extra_body_no_thinking": {},
+      "max_tokens": 4096
+    },
+    "deepseek-v4-flash": {
+      "base_url": "ĐIỀN base_url kiểu OpenAI của nhà cung cấp DeepSeek",
+      "model": "deepseek-v4-flash",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "supports_json_mode": true,
+      "extra_body_thinking": {},
+      "extra_body_no_thinking": {},
+      "max_tokens": 4096
+    },
+    "qwen3.5-flash": {
+      "base_url": "ĐIỀN base_url kiểu OpenAI của nhà cung cấp Qwen",
+      "model": "qwen3.5-flash",
+      "api_key_env": "QWEN_API_KEY",
+      "supports_json_mode": true,
+      "extra_body_thinking": {},
+      "extra_body_no_thinking": {},
+      "max_tokens": 4096
+    }
+  },
+  "vai_tro": {
+    "_ghi_chu": "Gán model theo việc. Chọn model rẻ nhất đủ tốt cho từng việc sau khi đo bằng eval/. Chưa đo thì dùng một model cho tất cả.",
+    "router": "deepseek-v4-flash",
+    "thu_thap_input": "deepseek-v4-flash",
+    "soan": "deepseek-v4-flash",
+    "tu_kiem_tra": "deepseek-v4-flash"
+  }
+}

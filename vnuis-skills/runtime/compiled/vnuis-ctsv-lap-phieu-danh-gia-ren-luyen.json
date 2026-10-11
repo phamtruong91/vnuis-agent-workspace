@@ -1,0 +1,164 @@
+{
+ "name": "vnuis-ctsv-lap-phieu-danh-gia-ren-luyen",
+ "title": "Lập phiếu đánh giá kết quả rèn luyện sinh viên + hướng dẫn chấm",
+ "description": "Dùng khi cuối học kỳ cần tổ chức đánh giá kết quả rèn luyện sinh viên: lập phiếu tự đánh giá và hướng dẫn chấm điểm theo Thông tư 16/2015/TT-BGDĐT cho lớp, cố vấn học tập và hội đồng khoa.",
+ "group": "ctsv",
+ "group_label": "Công tác sinh viên",
+ "previous_name": "vnuis-phieu-danh-gia-ren-luyen",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (công tác sinh viên)",
+ "when": "Cuối mỗi học kỳ, khi cần tổ chức đánh giá kết quả rèn luyện của sinh viên: sinh viên tự đánh giá,\ntập thể lớp bình xét, cố vấn học tập nhận xét, hội đồng đánh giá cấp khoa chấm điểm và xếp loại,\nlàm căn cứ xét học bổng, khen thưởng, kỷ luật và đánh giá toàn diện sinh viên.",
+ "inputs": [
+  {
+   "key": "hoc_ky",
+   "desc": "Học kỳ đánh giá (ví dụ: Học kỳ 1)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nam_hoc",
+   "desc": "Năm học đánh giá (ví dụ: 2026–2027)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "don_vi",
+   "desc": "Khoa / lớp áp dụng phiếu",
+   "required": false,
+   "note": "Không (mặc định: toàn trường, theo mẫu chung)"
+  },
+  {
+   "key": "tieu_chi_bo_sung",
+   "desc": "Tiêu chí đặc thù của trường/khoa bổ sung trong khung điểm cho phép",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (công tác sinh viên)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "Cổng sinh viên; cổng việc làm; tra cứu văn bằng. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Áp dụng khung 5 nhóm tiêu chí, thang điểm 100",
+   "lam_gi": "lấy khung chuẩn Thông tư 16/2015/TT-BGDĐT: Nhóm 1 Ý thức học tập (tối đa 30 điểm: thái độ học tập 15, hoạt động học thuật/NCKH 10, vượt khó 5); Nhóm 2 Chấp hành nội quy, quy chế (tối đa 25 điểm: văn bản chỉ đạo 5, nội quy trường 15, an ninh trật tự/ATGT 5); Nhóm 3 Hoạt động chính trị – xã hội – văn hóa – thể thao, phòng chống tội phạm/tệ nạn (tối đa 20 điểm: tham gia hoạt động 10, tuyên truyền phòng chống 5, công ích/tình nguyện 5); Nhóm 4 Phẩm chất công dân, quan hệ cộng đồng (tối đa 15 điểm: mỗi tiêu chí 5); Nhóm 5 Công tác cán bộ lớp/đoàn thể, thành tích đặc biệt (tối đa 10 điểm: tham gia 6, kỹ năng/thành tích 4); cộng tiêu chí đặc thù của trường/khoa từ `tieu_chi_bo_sung` trong phạm vi điểm tối đa cho phép của từng nhóm.",
+   "inputs": [
+    "tieu_chi_bo_sung"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: dựng khung 5 nhóm tiêu chí",
+   "luu_y": "khung 5 nhóm và tổng thang điểm 100 là khung chuẩn của Thông tư — trường chỉ được cụ thể hóa tiêu chí chi tiết trong phạm vi điểm tối đa từng nhóm, tuyệt đối không thay đổi tổng thang điểm và các mức xếp loại; tiêu chí bổ sung không được vượt điểm tối đa của nhóm.",
+   "ket_qua": "khung tiêu chí chấm chính thức (5 nhóm, tiêu chí chi tiết và điểm tối đa từng tiêu chí)."
+  },
+  {
+   "n": 2,
+   "title": "Áp dụng mức xếp loại và quy định trừ điểm khi vi phạm kỷ luật",
+   "lam_gi": "chốt 6 mức xếp loại theo tổng điểm tối đa 100: Xuất sắc (90–100), Tốt (80–<90), Khá (65–<80), Trung bình (50–<65), Yếu (35–<50), Kém (<35); chốt quy tắc xử lý vi phạm kỷ luật: khiển trách trừ 25 điểm tổng; cảnh cáo trở lên xếp loại tối đa Trung bình; đình chỉ học tập có thời hạn xếp loại Kém trong thời gian bị đình chỉ; buộc thôi học đánh giá 0 điểm.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: áp dụng mức xếp loại và quy tắc trừ điểm theo Thông tư 16",
+   "luu_y": "quy tắc trừ điểm/hạ xếp loại áp dụng sau khi đã cộng điểm 5 nhóm — không trừ trực tiếp vào điểm từng tiêu chí; sinh viên bị kỷ luật trong học kỳ đánh giá mới áp dụng, không truy cứu học kỳ trước.",
+   "ket_qua": "bảng mức xếp loại + bảng quy tắc trừ điểm/hạ xếp loại khi vi phạm kỷ luật."
+  },
+  {
+   "n": 3,
+   "title": "Thiết kế phiếu đánh giá",
+   "lam_gi": "dựng phiếu gồm: tiêu đề cơ quan (trường, khoa), tên phiếu, `hoc_ky`, `nam_hoc`; thông tin sinh viên (họ và tên, mã SV, lớp, khoa); bảng 5 nhóm tiêu chí từ Bước 1 với cột điểm tối đa và 4 cột chấm (SV tự chấm / Lớp chấm / Cố vấn / Hội đồng khoa); dòng tổng điểm; dòng xếp loại; khối chữ ký các bên (sinh viên – cố vấn học tập – chủ tịch hội đồng khoa, ký và đóng dấu).",
+   "inputs": [
+    "hoc_ky",
+    "nam_hoc",
+    "don_vi"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: thiết kế mẫu phiếu đánh giá hoàn chỉnh",
+   "luu_y": "4 cột chấm phải tách bạch thành 4 cột riêng — gộp cột sẽ không phân biệt được điểm các cấp; phiếu phải có đủ 3 chữ ký (thiếu chữ ký hội đồng khoa thì phiếu chưa có giá trị chính thức).",
+   "ket_qua": "mẫu phiếu đánh giá hoàn chỉnh (chưa điền điểm)."
+  },
+  {
+   "n": 4,
+   "title": "Soạn hướng dẫn chấm điểm chi tiết",
+   "lam_gi": "viết hướng dẫn phát hành kèm phiếu: nguyên tắc chấm (thang điểm 100, điểm mỗi tiêu chí không vượt điểm tối đa, tổng điểm làm tròn số nguyên); trình tự 4 cấp (SV tự đánh giá → lớp bình xét công khai, biểu quyết đa số → cố vấn nhận xét, ký xác nhận → hội đồng khoa quyết định điểm chính thức); mức xếp loại; xử lý vi phạm kỷ luật; thời hạn thực hiện; quy định lưu trữ.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: soạn dự thảo hướng dẫn",
+   "luu_y": "thời hạn phải ghi cụ thể (lớp hoàn thành bình xét trong 2 tuần đầu học kỳ kế tiếp; khoa gửi kết quả về Phòng Đào tạo (công tác sinh viên) trước ngày 15 của tháng đầu học kỳ kế tiếp) — không ghi chung chung \"đúng thời hạn quy định\".",
+   "ket_qua": "bản hướng dẫn chấm điểm chi tiết (phát hành kèm phiếu)."
+  },
+  {
+   "n": 5,
+   "title": "Tổ chức quy trình chấm theo 4 cấp",
+   "lam_gi": "triển khai chấm theo đúng trình tự: (1) sinh viên tự đánh giá, ghi điểm từng tiêu chí vào phiếu, ký xác nhận; (2) tập thể lớp họp bình xét công khai (lớp trưởng chủ trì, cố vấn học tập dự), thảo luận và thống nhất điểm từng sinh viên theo đa số, thư ký ghi biên bản; (3) cố vấn học tập nhận xét, ký xác nhận vào phiếu; (4) Hội đồng đánh giá kết quả rèn luyện cấp khoa họp, xem xét, quyết định điểm chính thức và xếp loại; Phòng Đào tạo (công tác sinh viên) tổng hợp toàn trường.",
+   "inputs": [],
+   "vai_tro": "Tập thể lớp, Hội đồng khoa · AI hỗ trợ: chuẩn bị hồ sơ trình ký, nhắc lịch và theo dõi tiến độ",
+   "luu_y": "bình xét lớp phải công khai và có biên bản — chấm \"ngầm\" không qua họp lớp là sai quy trình; điểm hội đồng khoa là điểm chính thức cuối cùng, các cấp trước chỉ có tính chất đề xuất.",
+   "ket_qua": "kết quả chấm 4 cấp hoàn tất (phiếu đã ký đủ, biên bản bình xét lớp, quyết định của hội đồng khoa)."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra và xuất bản bộ phiếu",
+   "lam_gi": "kiểm tra phiếu đầy đủ thông tin sinh viên, đủ 5 nhóm tiêu chí, đủ 4 cột chấm, có dòng tổng điểm và xếp loại, đủ chữ ký các bên; đính kèm hướng dẫn chấm điểm chi tiết để phát hành cùng phiếu.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (công tác sinh viên) · AI hỗ trợ: kiểm tra tính đầy đủ của phiếu",
+   "luu_y": "kiểm tra tổng điểm các cột bằng công thức — sai một phép cộng sẽ sai xếp loại; phiếu mẫu phát hành phải là phiếu trắng (chưa điền điểm minh họa của sinh viên cụ thể).",
+   "ket_qua": "bộ phiếu đánh giá + hướng dẫn chấm hoàn chỉnh, sẵn sàng phát hành."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Khung 5 nhóm tiêu chí, thang điểm 100 và 6 mức xếp loại đúng Thông tư 16/2015/TT-BGDĐT; không thay đổi tổng thang điểm và mức xếp loại.",
+  "Tiêu chí bổ sung của trường/khoa không vượt điểm tối đa của nhóm.",
+  "Quy tắc trừ điểm/hạ xếp loại khi vi phạm kỷ luật áp dụng sau khi cộng điểm 5 nhóm và chỉ cho học kỳ bị kỷ luật.",
+  "Không bịa đặt điểm minh họa của sinh viên cụ thể — phiếu mẫu phát hành là phiếu trắng.",
+  "Đủ 3 chữ ký (sinh viên, cố vấn học tập, chủ tịch hội đồng khoa ký và đóng dấu); thời hạn thực hiện ghi cụ thể.",
+  "Đã qua Human gate: Hội đồng cấp khoa quyết định điểm chính thức (điểm các cấp trước chỉ mang tính đề xuất). Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thang điểm và tiêu chí rèn luyện lấy từ quy chế do Trường cung cấp; không dùng khung mặc định khi chưa có (C2).",
+  "Sinh viên quốc tế hoặc đi trao đổi: ghi rõ cách tính nếu quy chế có quy định riêng."
+ ],
+ "cho_xac_nhan": [
+  "Quy chế đánh giá rèn luyện đang áp dụng (C2).",
+  "Mẫu phiếu (C8)."
+ ],
+ "output_structure": [
+  "Tiêu đề cơ quan (trường, khoa) + tên phiếu + học kỳ, năm học.",
+  "Thông tin sinh viên: họ và tên, mã SV, lớp, khoa.",
+  "Bảng đánh giá: STT | Nội dung đánh giá | Điểm tối đa | 4 cột chấm (SV tự chấm / Lớp chấm / Cố vấn / Hội đồng khoa); đủ 5 nhóm tiêu chí theo Thông tư 16; dòng tổng điểm cuối bảng.",
+  "Xếp loại (căn cứ tổng điểm của Hội đồng khoa, đối chiếu bảng mức xếp loại).",
+  "Khối chữ ký: sinh viên (ký, ghi rõ họ tên) – cố vấn học tập (ký, ghi rõ họ tên) – chủ tịch hội đồng khoa (ký, đóng dấu).",
+  "Hướng dẫn chấm điểm chi tiết (phát hành kèm phiếu): nguyên tắc chấm, trình tự chấm 4 cấp, bảng mức xếp loại, quy tắc trừ điểm/hạ xếp loại khi vi phạm kỷ luật, thời hạn thực hiện, quy định lưu trữ."
+ ],
+ "output_structure_raw": "1. Tiêu đề cơ quan (trường, khoa) + tên phiếu + học kỳ, năm học.\n\n2. Thông tin sinh viên: họ và tên, mã SV, lớp, khoa.\n\n3. Bảng đánh giá: STT | Nội dung đánh giá | Điểm tối đa | 4 cột chấm (SV tự chấm / Lớp chấm / Cố vấn / Hội đồng khoa); đủ 5 nhóm tiêu chí theo Thông tư 16; dòng tổng điểm cuối bảng.\n\n4. Xếp loại (căn cứ tổng điểm của Hội đồng khoa, đối chiếu bảng mức xếp loại).\n\n5. Khối chữ ký: sinh viên (ký, ghi rõ họ tên) – cố vấn học tập (ký, ghi rõ họ tên) – chủ tịch hội đồng khoa (ký, đóng dấu).\n\n6. Hướng dẫn chấm điểm chi tiết (phát hành kèm phiếu): nguyên tắc chấm, trình tự chấm 4 cấp, bảng mức xếp loại, quy tắc trừ điểm/hạ xếp loại khi vi phạm kỷ luật, thời hạn thực hiện, quy định lưu trữ.",
+ "human_gate_check": "Đã qua Human gate: Hội đồng cấp khoa quyết định điểm chính thức (điểm các cấp trước chỉ mang tính đề xuất). Tiêu chí đạt = tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (công tác sinh viên). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `chuyen-nganh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-ctsv-lap-phieu-danh-gia-ren-luyen/references"
+}

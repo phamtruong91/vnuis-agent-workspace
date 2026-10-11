@@ -1,0 +1,233 @@
+{
+ "name": "vnuis-vp-soan-ke-hoach-cong-tac",
+ "title": "Soạn kế hoạch công tác",
+ "description": "Dùng khi phòng, khoa lập kế hoạch công tác tháng, quý, năm hoặc kế hoạch triển khai một nhiệm vụ, đợt công tác cụ thể: mục đích, nhiệm vụ, phân công, thời gian, kinh phí.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-soan-ke-hoach-ct",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Mọi đơn vị trong Trường",
+ "when": "Khi đơn vị cần lập kế hoạch công tác tháng, quý, năm; khi lập kế hoạch triển khai\nmột nhiệm vụ, đợt công tác cụ thể.",
+ "inputs": [
+  {
+   "key": "don_vi",
+   "desc": "Đơn vị lập kế hoạch",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Tháng / quý / năm thực hiện",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "muc_tieu",
+   "desc": "Mục đích, yêu cầu của kế hoạch",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nhiem_vu",
+   "desc": "Bảng nhiệm vụ: nội dung, đơn vị/cá nhân thực hiện, thời gian, kết quả mong đợi",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "kinh_phi",
+   "desc": "Dự toán kinh phí (nếu có)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "co_quan_chu_quan",
+   "desc": "Cơ quan chủ quản: Đại học Quốc gia Hà Nội (đã điền sẵn)",
+   "required": false,
+   "note": "Không (mặc định: ĐHQGHN)"
+  },
+  {
+   "key": "co_quan_ban_hanh",
+   "desc": "Cơ quan ban hành: Trường Quốc tế – ĐHQGHN (đã điền sẵn); ghi thêm đơn vị soạn thảo nếu khác",
+   "required": false,
+   "note": "Không (mặc định: Trường Quốc tế – ĐHQGHN)"
+  },
+  {
+   "key": "dia_danh",
+   "desc": "Địa danh ghi ở dòng ngày tháng năm (mặc định: Hà Nội)",
+   "required": false,
+   "note": "Không (mặc định: Hà Nội)"
+  },
+  {
+   "key": "so_van_ban",
+   "desc": "Số, ký hiệu văn bản đã được cấp (để trống nếu chưa cấp; không tự đặt)",
+   "required": false,
+   "note": "Không"
+  },
+  {
+   "key": "noi_nhan",
+   "desc": "Danh sách nơi nhận, gồm cả nơi lưu (VT, đơn vị soạn)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Chức danh, họ tên người ký; hình thức TM./KT./TL./TUQ. chỉ khi có căn cứ",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Mọi đơn vị trong Trường"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Xác định phạm vi kế hoạch và yêu cầu đầu ra",
+   "lam_gi": "Đọc `don_vi` và `thoi_gian` để xác định phạm vi (kế hoạch tháng/quý/năm của đơn vị hay kế hoạch triển khai một nhiệm vụ cụ thể); xác định kế hoạch do thủ trưởng đơn vị ký ban hành hay phải trình cấp trên phê duyệt (kế hoạch vượt thẩm quyền về kinh phí/nhân sự phải trình phê duyệt); đọc `muc_tieu` để nắm mục đích, yêu cầu tổng thể.",
+   "inputs": [
+    "don_vi",
+    "thoi_gian",
+    "muc_tieu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: phân tích input, xác định yêu cầu",
+   "luu_y": "Phạm vi thời gian quyết định độ chi tiết — kế hoạch năm nêu định hướng theo quý, kế hoạch tháng/quý phải có nhiệm vụ cụ thể từng tuần; xác định sai cấp phê duyệt khiến kế hoạch phải làm lại.",
+   "ket_qua": "Xác nhận phạm vi kế hoạch + cấp ban hành/phê duyệt."
+  },
+  {
+   "n": 2,
+   "title": "Xây dựng mục đích, yêu cầu",
+   "lam_gi": "Từ `muc_tieu`, viết phần \"I. MỤC ĐÍCH, YÊU CẦU\": nêu rõ kế hoạch nhằm đạt mục tiêu gì (gắn với kế hoạch năm học của trường và chức năng nhiệm vụ của đơn vị), yêu cầu về chất lượng – tiến độ – phối hợp; yêu cầu phải đo được (đúng tiến độ, đúng thể thức) thay vì chung chung.",
+   "inputs": [
+    "muc_tieu",
+    "don_vi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Mục đích phải trả lời \"làm kế hoạch này để đạt gì\"; tránh sao chép nguyên văn chức năng nhiệm vụ của đơn vị thành mục đích.",
+   "ket_qua": "Dự thảo phần I. Mục đích, yêu cầu."
+  },
+  {
+   "n": 3,
+   "title": "Liệt kê và chi tiết hóa nhiệm vụ",
+   "lam_gi": "Từ `nhiem_vu`, liệt kê từng nhiệm vụ và chi tiết hóa thành bảng với 5 cột: STT | Nội dung | Đơn vị/cá nhân thực hiện | Thời gian | Kết quả mong đợi; mỗi nhiệm vụ phải gắn một đầu mối chịu trách nhiệm chính và một mốc thời gian cụ thể; kết quả mong đợi phải là sản phẩm đo được (báo cáo, danh mục, kịch bản...).",
+   "inputs": [
+    "nhiem_vu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: xử lý sơ bộ theo quy trình",
+   "luu_y": "Bẫy thường gặp — nhiệm vụ không có đầu mối (\"các đơn vị phối hợp\" mà không rõ ai chủ trì), thời gian ghi \"trong quý\" thay vì tháng cụ thể, kết quả mong đợi chung chung (\"hoàn thành tốt\"). Mỗi nhiệm vụ trong bảng phải đứng độc lập, không trùng lặp.",
+   "ket_qua": "Bảng nhiệm vụ chi tiết (STT, nội dung, thực hiện, thời gian, kết quả)."
+  },
+  {
+   "n": 4,
+   "title": "Lập dự toán kinh phí theo nhiệm vụ",
+   "lam_gi": "Nếu có `kinh_phi`: phân bổ dự toán chi tiết theo từng nhiệm vụ trong bảng (nhiệm vụ nào – bao nhiêu – nội dung chi gì), ghi tổng kinh phí và nguồn kinh phí (thường xuyên / đề án / ...); kiểm tra tổng các khoản chi tiết khớp với tổng dự toán.",
+   "inputs": [
+    "kinh_phi",
+    "nhiem_vu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: lập bảng tính toán",
+   "luu_y": "Kinh phí phải gắn với nhiệm vụ cụ thể — không để khoản \"chi khác\" quá lớn; nếu `kinh_phi` không có thì bỏ qua bước này và đánh số lại các phần tiếp theo.",
+   "ket_qua": "Dự thảo phần Kinh phí: bảng phân bổ theo nhiệm vụ + tổng + nguồn."
+  },
+  {
+   "n": 5,
+   "title": "Viết phần tổ chức thực hiện",
+   "lam_gi": "Viết phần \"Tổ chức thực hiện\": phân công trách nhiệm (ai chủ trì chung, ai theo dõi từng nhóm nhiệm vụ), cơ chế báo cáo tiến độ (giao ban tuần/tháng của đơn vị), cơ chế kiểm tra, xử lý khi chậm tiến độ; nêu đầu mối tổng hợp báo cáo.",
+   "inputs": [
+    "don_vi",
+    "nhiem_vu"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) · AI hỗ trợ: soạn dự thảo đúng thể thức",
+   "luu_y": "Phải có ít nhất một cơ chế kiểm tra tiến độ định kỳ — kế hoạch không có cơ chế giám sát thường không thực hiện được; ghi rõ ai là đầu mối tổng hợp để tránh \"mỗi người báo một kiểu\".",
+   "ket_qua": "Dự thảo phần Tổ chức thực hiện."
+  },
+  {
+   "n": 6,
+   "title": "Kiểm tra tính khả thi trước khi trình ký",
+   "lam_gi": "Rà soát toàn văn: mỗi nhiệm vụ có đầu mối + thời hạn cụ thể không; thời gian các nhiệm vụ có nằm trong phạm vi `thoi_gian` không; tổng kinh phí có khớp phân bổ chi tiết không; nhiệm vụ có phù hợp năng lực và chức năng của đơn vị không; chính tả, tên đơn vị chính xác.",
+   "inputs": [],
+   "vai_tro": "Chuyên viên Phòng TC&QT (văn phòng – văn thư) (Trưởng phòng kiểm tra lại) · AI hỗ trợ: quét lỗi theo danh mục kiểm",
+   "luu_y": "Nhiệm vụ có thời hạn nằm ngoài phạm vi kế hoạch (vd kế hoạch quý IV nhưng nhiệm vụ hạn tháng 1 năm sau) phải điều chỉnh; nhiệm vụ vượt năng lực đơn vị phải ghi rõ cần phối hợp/hỗ trợ từ đơn vị nào.",
+   "ket_qua": "Kết quả đối chiếu nội bộ (không xuất kèm file) + danh sách chỗ cần sửa (nếu có); sửa xong thì chuyển Bước 7."
+  },
+  {
+   "n": 7,
+   "title": "Dựng thể thức và trình ký ban hành",
+   "lam_gi": "Lắp ráp phần đầu: tên trường + tên `don_vi` (in hoa), dòng \"KẾ HOẠCH CÔNG TÁC [phạm vi thời gian]\" (in hoa, căn giữa); sắp xếp các phần theo thứ tự: I. Mục đích, yêu cầu → II. Nhiệm vụ cụ thể → III. Kinh phí (nếu có) → IV. Tổ chức thực hiện; cuối văn bản: địa danh, ngày tháng năm + khối chữ ký thủ trưởng đơn vị (chức danh + họ tên); trình thủ trưởng đơn vị ký ban hành (human gate), hoặc trình cấp trên phê duyệt nếu vượt thẩm quyền. Phần đầu văn bản lấy từ `co_quan_chu_quan` (nếu có), `co_quan_ban_hanh`, `dia_danh`, `so_van_ban` (để dòng dấu chấm nếu chưa cấp số). Nơi nhận lấy từ `noi_nhan`. Khối ký lấy từ `nguoi_ky`.",
+   "inputs": [
+    "don_vi",
+    "thoi_gian",
+    "co_quan_chu_quan",
+    "co_quan_ban_hanh",
+    "dia_danh",
+    "so_van_ban",
+    "noi_nhan",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Chuyên viên chuẩn bị, thủ trưởng đơn vị ký ban hành (hoặc cấp trên phê duyệt nếu vượt thẩm quyền) · AI hỗ trợ: tổng hợp hồ sơ, soạn phiếu trình/tờ trình đầy đủ",
+   "luu_y": "Người ký là thủ trưởng đơn vị lập kế hoạch; nếu kế hoạch trình cấp trên phê duyệt thì đơn vị chỉ ký phần đề xuất, không ghi \"ban hành\".",
+   "ket_qua": "Văn bản kế hoạch hoàn chỉnh về thể thức, sẵn sàng trình ký."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Nội dung và số liệu trong output khớp đúng với Input đã cho (không thêm, bớt hay suy diễn)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng cấu trúc và thể thức theo references/quy-cach-dau-ra.md.",
+  "Căn cứ pháp lý được trích dẫn đầy đủ và còn hiệu lực",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+  "Phạm vi thời gian quyết định độ chi tiết — kế hoạch năm nêu định hướng theo quý, kế hoạch tháng/quý phải có nhiệm vụ cụ thể từng tuần",
+  "Xác định sai cấp phê duyệt khiến kế hoạch phải làm lại",
+  "Mục đích phải trả lời \"làm kế hoạch này để đạt gì\""
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kế hoạch công tác ghi đơn vị chủ trì theo vai trò (ví dụ Trưởng phòng Đào tạo), tránh gắn vào cá nhân kiêm nhiệm.",
+  "Mốc thời gian gắn với năm học và chu kỳ do Trường ban hành; không lấy từ tin tức website.",
+  "Kinh phí chỉ điền khi có dự toán được duyệt; nguồn kinh phí ghi theo phân loại ngân sách, ngoài ngân sách, đề tài, dự án."
+ ],
+ "cho_xac_nhan": [
+  "Kỳ kế hoạch và mẫu của từng đơn vị (C8).",
+  "Tuyến duyệt kế hoạch (C6)."
+ ],
+ "output_structure": [
+  "Tên trường (in hoa) + tên đơn vị lập kế hoạch (in hoa)",
+  "Tên loại \"KẾ HOẠCH CÔNG TÁC [phạm vi thời gian]\" (in hoa, căn giữa)",
+  "I. MỤC ĐÍCH, YÊU CẦU: mục tiêu cần đạt + yêu cầu chất lượng – tiến độ – phối hợp",
+  "II. NHIỆM VỤ CỤ THỂ: bảng đúng 5 cột theo thứ tự — STT | Nội dung | Đơn vị/cá nhân thực hiện | Thời gian | Kết quả mong đợi",
+  "III. KINH PHÍ (nếu có): tổng dự toán + nguồn kinh phí (phân bổ chi tiết theo nhiệm vụ)",
+  "IV. TỔ CHỨC THỰC HIỆN: phân công trách nhiệm, cơ chế báo cáo và kiểm tra tiến độ",
+  "Địa danh, ngày tháng năm + khối chữ ký thủ trưởng đơn vị (chức danh + họ tên) Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Tên trường (in hoa) + tên đơn vị lập kế hoạch (in hoa)\n\n2. Tên loại \"KẾ HOẠCH CÔNG TÁC [phạm vi thời gian]\" (in hoa, căn giữa)\n\n3. I. MỤC ĐÍCH, YÊU CẦU: mục tiêu cần đạt + yêu cầu chất lượng – tiến độ – phối hợp\n\n4. II. NHIỆM VỤ CỤ THỂ: bảng đúng 5 cột theo thứ tự — STT | Nội dung | Đơn vị/cá nhân thực hiện | Thời gian | Kết quả mong đợi\n\n5. III. KINH PHÍ (nếu có): tổng dự toán + nguồn kinh phí (phân bổ chi tiết theo nhiệm vụ)\n\n6. IV. TỔ CHỨC THỰC HIỆN: phân công trách nhiệm, cơ chế báo cáo và kiểm tra tiến độ\n\n7. Địa danh, ngày tháng năm + khối chữ ký thủ trưởng đơn vị (chức danh + họ tên)",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra và duyệt trước khi phát hành; bản soạn chưa được coi là đã ký/đã duyệt",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Mọi đơn vị trong Trường. Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-soan-ke-hoach-cong-tac/references"
+}

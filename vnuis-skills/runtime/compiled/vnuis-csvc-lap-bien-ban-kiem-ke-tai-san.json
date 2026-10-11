@@ -1,0 +1,174 @@
+{
+ "name": "vnuis-csvc-lap-bien-ban-kiem-ke-tai-san",
+ "title": "Lập biên bản kiểm kê tài sản",
+ "description": "Dùng khi kiểm kê tài sản cố định, công cụ dụng cụ cuối năm hoặc đột xuất (bàn giao, sáp nhập đơn vị) và cần lập biên bản đối chiếu sổ sách với thực tế, ghi chênh lệch, kiến nghị xử lý.",
+ "group": "csvc",
+ "group_label": "Cơ sở vật chất – mua sắm, tài sản",
+ "previous_name": "vnuis-bien-ban-kiem-ke-tai-san",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (cơ sở vật chất)",
+ "when": "Khi tổ chức kiểm kê tài sản cố định, công cụ dụng cụ cuối năm; khi kiểm kê đột xuất\nkhi bàn giao, sáp nhập, giải thể đơn vị.",
+ "inputs": [
+  {
+   "key": "don_vi",
+   "desc": "Đơn vị được kiểm kê",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "danh_muc",
+   "desc": "Bảng tài sản: mã TS, tên, năm đưa vào sử dụng, nguyên giá, giá trị còn lại",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "tinh_trang",
+   "desc": "Tình trạng thực tế từng tài sản: tốt / cần sửa chữa / hỏng / mất / thanh lý",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ban_kiem_ke",
+   "desc": "Thành phần ban kiểm kê (trưởng ban, thành viên)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian",
+   "desc": "Thời gian kiểm kê",
+   "required": true,
+   "note": "Có"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (cơ sở vật chất)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "**Ràng buộc pháp lý khi thực hiện** (trích references/phap-ly.md; đối chiếu toàn văn và hiệu lực tại ngày nghiệp vụ):\n- Nghị định 186/2025/NĐ-CP, hiệu lực 01/07/2025: Yêu cầu nguồn hình thành, chủ sở hữu, phân cấp quản lý và hồ sơ tài sản công; phân biệt mua sắm, kiểm kê, khai thác, thanh lý. Đối chiếu thẩm quyền và điều kiện theo NĐ 186, không tự quyết định xử lý tài sản.\n- Trước Bước 1: chọn căn cứ theo đối tượng, loại hình trường và chuyển tiếp; lập bảng văn bản / điều khoản / lý do áp dụng / bằng chứng. Thiếu văn bản gốc hoặc điều khoản thì ghi nhận nội bộ [CẦN XÁC MINH] (không đưa vào file giao), để trống phần tương ứng, chưa kết luận tuân thủ.\n- Các con số, thời hạn, số điều, số mức xếp loại, hệ số và mẫu biểu nêu trong các bước dưới đây được giữ từ quy trình gốc (trước cập nhật pháp lý); chỉ dùng khi đã đối chiếu đúng với căn cứ đã chọn, khác thì theo căn cứ. Danh sách điểm cần đối chiếu: docs/DIEM_CAN_DOI_CHIEU_PHAP_LY.md.",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Thành lập ban kiểm kê và phân công",
+   "lam_gi": "ban hành quyết định thành lập ban kiểm kê (`ban_kiem_ke`: trưởng ban, thành viên); phân công đơn vị được kiểm kê (`don_vi`), thời gian thực hiện (`thoi_gian`) và phạm vi tài sản kiểm kê.",
+   "inputs": [
+    "don_vi",
+    "ban_kiem_ke",
+    "thoi_gian"
+   ],
+   "vai_tro": "Hiệu trưởng (ban hành quyết định thành lập Ban kiểm kê) · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "thành phần ban kiểm kê phải độc lập với đơn vị được kiểm kê (có đại diện Phòng TC&QT (kế hoạch – tài chính) và đơn vị sử dụng); quyết định thành lập là căn cứ pháp lý của toàn bộ đợt kiểm kê.",
+   "ket_qua": "quyết định thành lập ban kiểm kê + kế hoạch phân công."
+  },
+  {
+   "n": 2,
+   "title": "Chuẩn bị số liệu: trích sổ tài sản làm căn cứ đối chiếu",
+   "lam_gi": "trích sổ tài sản cố định của đơn vị từ `danh_muc` (mã tài sản, tên, năm đưa vào sử dụng, nguyên giá, giá trị còn lại); lập thành bảng căn cứ để đối chiếu với thực tế tại Bước 3.",
+   "inputs": [
+    "danh_muc",
+    "don_vi"
+   ],
+   "vai_tro": "Chuyên viên Phòng TC&QT (cơ sở vật chất) · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "số liệu trích phải là số đã khóa đến thời điểm kiểm kê; mọi tài sản trong sổ đều phải có mặt trong danh sách kiểm kê — không được bỏ sót dòng.",
+   "ket_qua": "bảng căn cứ đối chiếu từ sổ sách (đầy đủ mã, tên, nguyên giá, giá trị còn lại)."
+  },
+  {
+   "n": 3,
+   "title": "Kiểm kê thực tế từng tài sản",
+   "lam_gi": "đến từng vị trí, đếm và đối chiếu từng tài sản với bảng căn cứ (mã, tên, số serial nếu có); ghi nhận tình trạng thực tế (`tinh_trang`: tốt / cần sửa chữa / hỏng / mất / thanh lý); ghi nhận tài sản thừa hoặc thiếu so với sổ sách ngay tại hiện trường.",
+   "inputs": [
+    "tinh_trang"
+   ],
+   "vai_tro": "Tổ kiểm kê · AI hỗ trợ: đối chiếu tự động, cảnh báo sai lệch",
+   "luu_y": "kiểm kê phải thấy tận mắt từng tài sản — không kiểm kê qua báo cáo của đơn vị; tài sản không tìm thấy phải ghi \"thiếu\", không ghi \"chưa kiểm\".",
+   "ket_qua": "phiếu kiểm kê thực tế + danh sách chênh lệch thừa/thiếu so với sổ sách."
+  },
+  {
+   "n": 4,
+   "title": "Lập bảng tổng hợp kết quả kiểm kê",
+   "lam_gi": "tổng hợp kết quả Bước 3 thành bảng (mã TS, tên, năm sử dụng, nguyên giá, giá trị còn lại, tình trạng thực tế); phân loại tài sản theo tình trạng; tính chênh lệch thừa – thiếu so với sổ sách; cộng tổng nguyên giá và giá trị còn lại.",
+   "inputs": [],
+   "vai_tro": "Tổ kiểm kê · AI hỗ trợ: tổng hợp, chuẩn hóa dữ liệu, tính toán, phân tích số liệu",
+   "luu_y": "tổng số lượng và giá trị trên bảng tổng hợp phải đối chiếu khớp với phiếu kiểm kê thực tế — sai lệch là dấu hiệu bỏ sót hoặc ghi trùng.",
+   "ket_qua": "bảng tổng hợp kết quả kiểm kê (phụ lục biên bản)."
+  },
+  {
+   "n": 5,
+   "title": "Đề xuất kiến nghị xử lý",
+   "lam_gi": "với từng nhóm tài sản có vấn đề, đề xuất hướng xử lý: sửa chữa (ghi rõ tài sản, thời hạn); thanh lý (tài sản hỏng không còn giá trị sử dụng); bồi thường (tài sản mất mát do lỗi cá nhân — xem xét trách nhiệm theo quy định).",
+   "inputs": [],
+   "vai_tro": "Tổ kiểm kê (đề xuất kiến nghị xử lý) · AI hỗ trợ: xử lý sơ bộ, tổng hợp",
+   "luu_y": "kiến nghị phải cụ thể đến từng tài sản (mã TS), có thời hạn thực hiện; tài sản mất mát do lỗi cá nhân phải xem xét bồi thường theo quy định, không bỏ qua.",
+   "ket_qua": "phần kiến nghị xử lý hoàn chỉnh."
+  },
+  {
+   "n": 6,
+   "title": "Lập và ký biên bản",
+   "lam_gi": "viết biên bản theo cấu trúc: tiêu đề → thời gian, địa điểm, thành phần ban kiểm kê (`ban_kiem_ke`) → I. Kết quả kiểm kê (bảng tổng hợp Bước 4) → II. Chênh lệch thừa/thiếu so với sổ sách → III. Kiến nghị (Bước 5) → số bản biên bản → chữ ký của ban kiểm kê và thủ trưởng đơn vị được kiểm kê (ghi rõ họ tên, chức vụ).",
+   "inputs": [
+    "ban_kiem_ke",
+    "thoi_gian"
+   ],
+   "vai_tro": "Ban kiểm kê (ký biên bản) · AI hỗ trợ: soạn dự thảo, tổng hợp, chuẩn hóa dữ liệu",
+   "luu_y": "biên bản chỉ có giá trị khi có đủ chữ ký của ban kiểm kê và đại diện đơn vị được kiểm kê xác nhận.",
+   "ket_qua": "biên bản kiểm kê tài sản hoàn chỉnh, đã ký."
+  }
+ ],
+ "checks": [
+  "Đủ các phần và đúng bố cục theo cấu trúc tại references/quy-cach-dau-ra.md (không theo cấu trúc của bản gốc).",
+  "Có đầy đủ sản phẩm: Biên bản kiểm kê tài sản",
+  "Có đầy đủ sản phẩm: Bảng tổng hợp kết quả kiểm kê (phụ lục)",
+  "Mọi số liệu, tên, ngày tháng trong output khớp với Input đã cung cấp (không thêm bớt, không suy đoán)",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn hay căn cứ",
+  "Đúng thể thức, định dạng văn bản theo quy định hiện hành",
+  "Căn cứ pháp lý nêu đầy đủ, còn hiệu lực tại thời điểm lập",
+  "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+  "Thành phần ban kiểm kê phải độc lập với đơn vị được kiểm kê (có đại diện",
+  "Số liệu trích phải là số đã khóa đến thời điểm kiểm kê"
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Kiểm kê theo từng cơ sở (Xuân Thủy, Phan Tây Nhạc, Hòa Lạc); tài sản không có số liệu sổ sách ghi riêng.",
+  "Chênh lệch kiểm kê chỉ nêu, xử lý do hội đồng kiểm kê quyết."
+ ],
+ "cho_xac_nhan": [
+  "Chu kỳ và thành phần hội đồng kiểm kê (C6).",
+  "Mẫu biên bản (C8)."
+ ],
+ "output_structure": [
+  "Quốc hiệu – Tiêu ngữ;",
+  "Tiêu đề biên bản;",
+  "Thời gian, địa điểm, thành phần ban kiểm kê;",
+  "Phần I: Kết quả kiểm kê (bảng: STT, mã tài sản, tên tài sản, năm đưa vào sử dụng, nguyên giá, giá trị còn lại, tình trạng thực tế);",
+  "Phần II: Chênh lệch thừa/thiếu so với sổ sách;",
+  "Phần III: Kiến nghị xử lý (sửa chữa, thanh lý, bồi thường — cụ thể đến từng tài sản, có thời hạn);",
+  "Số bản biên bản;",
+  "Chữ ký: ban kiểm kê và thủ trưởng đơn vị được kiểm kê (ghi rõ họ tên, chức vụ);",
+  "Phụ lục: Bảng tổng hợp kết quả kiểm kê. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng. Biên bản hành chính dùng BB và các thành phần của Mẫu 1.9 Phụ lục III Nghị định 30; biên bản chuyên ngành dùng nguyên mẫu chuyên ngành. Ghi giờ bắt đầu/kết thúc, người tham dự, nội dung/kết quả thực tế và khối ký phù hợp; không tự ghi “không có vi phạm”, “nghiệm thu đạt”, “đã thông qua” khi không có nguồn."
+ ],
+ "output_structure_raw": "1. Quốc hiệu – Tiêu ngữ;\n\n2. Tiêu đề biên bản;\n\n3. Thời gian, địa điểm, thành phần ban kiểm kê;\n\n4. Phần I: Kết quả kiểm kê (bảng: STT, mã tài sản, tên tài sản, năm đưa vào sử dụng,\n   nguyên giá, giá trị còn lại, tình trạng thực tế);\n\n5. Phần II: Chênh lệch thừa/thiếu so với sổ sách;\n\n6. Phần III: Kiến nghị xử lý (sửa chữa, thanh lý, bồi thường — cụ thể đến từng tài sản,\n   có thời hạn);\n\n7. Số bản biên bản;\n\n8. Chữ ký: ban kiểm kê và thủ trưởng đơn vị được kiểm kê (ghi rõ họ tên, chức vụ);\n\n9. Phụ lục: Bảng tổng hợp kết quả kiểm kê.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền đã kiểm tra/ký duyệt trước khi phát hành",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (cơ sở vật chất). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "# Căn cứ và phạm vi áp dụng\n\nNgày cập nhật 2026-10-09; phải kiểm tra toàn văn và chuyển tiếp trước thực thi.\n\n## Nghị định 186/2025/NĐ-CP, hiệu lực 01/07/2025\n\nNguồn: https://vanban.chinhphu.vn/?docid=214493&pageid=27160\n\nYêu cầu nguồn hình thành, chủ sở hữu, phân cấp quản lý và hồ sơ tài sản công; phân biệt mua sắm, kiểm kê, khai thác, thanh lý. Đối chiếu thẩm quyền và điều kiện theo NĐ 186, không tự quyết định xử lý tài sản.\n",
+ "outputs_dir": "skills/vnuis-csvc-lap-bien-ban-kiem-ke-tai-san/references"
+}

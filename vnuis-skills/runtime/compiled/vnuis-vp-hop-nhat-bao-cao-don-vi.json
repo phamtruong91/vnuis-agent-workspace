@@ -1,0 +1,196 @@
+{
+ "name": "vnuis-vp-hop-nhat-bao-cao-don-vi",
+ "title": "Hợp nhất báo cáo nhiều đơn vị",
+ "description": "Dùng khi nhiều khoa, phòng, trung tâm nộp báo cáo rời rạc, mẫu không thống nhất và cần hợp nhất thành một báo cáo chung của trường (3 công khai, kiểm định, tổng kết năm học, báo cáo đột xuất), kèm nguồn từng con số.",
+ "group": "vp",
+ "group_label": "Văn phòng – văn bản, họp, lịch, báo cáo điều hành",
+ "previous_name": "vnuis-hop-nhat-bao-cao-don-vi",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Tổ chức và Quản trị (tổng hợp); 4 phòng, 6 khoa, Viện, Hội đồng (nộp báo cáo)",
+ "when": "Khi cần tổng hợp báo cáo từ nhiều khoa/phòng/trung tâm thành một báo cáo chung của trường:\nbáo cáo 3 công khai, báo cáo kiểm định, báo cáo tổng kết năm học, báo cáo đột xuất theo yêu cầu\ncấp trên. Đặc biệt hữu ích khi các đơn vị nộp file rời rạc, mẫu biểu không thống nhất.",
+ "inputs": [
+  {
+   "key": "mau_bao_cao_chung",
+   "desc": "Mẫu báo cáo tổng (các mục, chỉ tiêu, bảng biểu yêu cầu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "bao_cao_don_vi",
+   "desc": "Danh sách báo cáo từng đơn vị (tên đơn vị + nội dung/số liệu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "dinh_nghia_chi_tieu",
+   "desc": "Định nghĩa từng chỉ tiêu (cách tính, đơn vị tính, kỳ số liệu)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ky_bao_cao",
+   "desc": "Kỳ báo cáo (VD: năm học 2026–2027; 6 tháng đầu năm 2026)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thu_tu_uu_tien_nguon",
+   "desc": "Khi số liệu mâu thuẫn, ưu tiên nguồn nào (VD: số liệu Phòng Đào tạo > số liệu khoa)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Tổ chức và Quản trị (tổng hợp); 4 phòng, 6 khoa, Viện, Hội đồng (nộp báo cáo)"
+  },
+  {
+   "muc": "Cơ sở",
+   "gia_tri": "Xuân Thủy (Cầu Giấy); Phan Tây Nhạc (Xuân Phương); Hòa Lạc (tòa HT1, Khu Đô thị ĐHQGHN). Ghi rõ cơ sở khi nội dung gắn địa điểm"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "E-Office (văn bản điều hành). Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Đọc loạt file và ghi nhận tình trạng nộp",
+   "lam_gi": "đọc toàn bộ báo cáo trong `bao_cao_don_vi`; lập danh sách đơn vị đã nộp / chưa nộp / nộp bản nháp; ghi nhận kỳ số liệu mà mỗi đơn vị ghi trong báo cáo của mình.",
+   "inputs": [
+    "bao_cao_don_vi",
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Đầu mối tổng hợp (Văn phòng/Phòng Đào tạo) · AI hỗ trợ: đọc loạt file, ghi nhận tình trạng nộp và kỳ số liệu từng đơn vị",
+   "luu_y": "phân biệt \"chưa nộp\" với \"nộp bản nháp chưa xác minh\" — bản nháp KHÔNG được đưa vào tổng hợp; kỳ số liệu lệch nhau giữa các đơn vị phải ghi nhận ngay để xử lý ở Bước 3.",
+   "ket_qua": "bảng tình trạng nộp (đơn vị | trạng thái | kỳ số liệu ghi nhận)."
+  },
+  {
+   "n": 2,
+   "title": "Đối chiếu cột trường dữ liệu về mẫu chung",
+   "lam_gi": "ánh xạ từng số liệu của mỗi đơn vị về đúng chỉ tiêu trong `mau_bao_cao_chung` theo `dinh_nghia_chi_tieu`; ghi lại các chỉ tiêu không đối chiếu được sang cột mẫu và các số liệu của đơn vị không thuộc chỉ tiêu nào.",
+   "inputs": [
+    "bao_cao_don_vi",
+    "mau_bao_cao_chung",
+    "dinh_nghia_chi_tieu"
+   ],
+   "vai_tro": "Đầu mối tổng hợp (Văn phòng/Phòng Đào tạo) · AI hỗ trợ: đối chiếu cột số liệu về chỉ tiêu mẫu chung theo định nghĩa, đánh dấu chỗ không chắc",
+   "luu_y": "đối chiếu cột phải theo định nghĩa chỉ tiêu, không theo tên gọi — hai đơn vị có thể gọi khác nhau nhưng cùng một chỉ tiêu, hoặc ngược lại; chỗ nào không chắc thì ghi \"cần xác minh\", không đoán.",
+   "ket_qua": "bảng đối chiếu cột (đơn vị | số liệu gốc | chỉ tiêu mẫu chung | trạng thái đối chiếu cột)."
+  },
+  {
+   "n": 3,
+   "title": "Chuẩn hóa số liệu",
+   "lam_gi": "thống nhất đơn vị tính, kỳ số liệu, quy tắc làm tròn giữa các đơn vị; thực hiện quy đổi khi cần và ghi rõ công thức quy đổi.",
+   "inputs": [
+    "dinh_nghia_chi_tieu"
+   ],
+   "vai_tro": "Đầu mối tổng hợp (Văn phòng/Phòng Đào tạo) · AI hỗ trợ: chuẩn hóa đơn vị tính, kỳ số liệu, thực hiện quy đổi có ghi công thức",
+   "luu_y": "mọi quy đổi phải minh bạch công thức để đơn vị kiểm tra lại được; không làm tròn trung gian khi số liệu còn phải cộng dồn ở Bước 6.",
+   "ket_qua": "bộ số liệu đã chuẩn hóa, sẵn sàng tổng hợp."
+  },
+  {
+   "n": 4,
+   "title": "Xử lý trùng lặp và mâu thuẫn",
+   "lam_gi": "phát hiện số liệu trùng lặp (cùng đối tượng được hai đơn vị báo) hoặc mâu thuẫn giữa các đơn vị; áp `thu_tu_uu_tien_nguon` để chọn số liệu dùng; mọi chỗ mâu thuẫn đều ghi chú rõ, không tự ý chọn số \"đẹp\".",
+   "inputs": [
+    "thu_tu_uu_tien_nguon"
+   ],
+   "vai_tro": "Đầu mối tổng hợp (Văn phòng/Phòng Đào tạo) · AI hỗ trợ: phát hiện trùng lặp/mâu thuẫn, áp thứ tự ưu tiên nguồn; chỗ không có thứ tự thì ghi \"cần xác minh\"",
+   "luu_y": "nếu không có thứ tự ưu tiên nguồn thì không tự chọn — ghi vào danh sách mâu thuẫn cần xác minh; trùng lặp phải loại trước khi cộng dồn, nếu không tổng sẽ bị đội lên.",
+   "ket_qua": "danh sách mâu thuẫn đã xử lý (ghi nguồn được chọn + lý do) và danh sách mâu thuẫn cần xác minh thêm."
+  },
+  {
+   "n": 5,
+   "title": "Lập bảng thiếu dữ liệu",
+   "lam_gi": "liệt kê đơn vị nào thiếu chỉ tiêu nào, đơn vị nào chưa nộp báo cáo; đánh dấu các chỉ tiêu thiếu có ảnh hưởng đến kết quả tổng hợp.",
+   "inputs": [],
+   "vai_tro": "Đầu mối tổng hợp (Văn phòng/Phòng Đào tạo) · AI hỗ trợ: lập bảng thiếu dữ liệu (đơn vị thiếu chỉ tiêu nào, đơn vị nào chưa nộp)",
+   "luu_y": "gap nhật ký là cam kết minh bạch — \"chưa có số liệu\" phải ghi rõ, không để trống lặng lẽ; số liệu từ bản nháp chưa xác minh không đưa vào tổng.",
+   "ket_qua": "bảng thiếu dữ liệu (đơn vị | chỉ tiêu thiếu | trạng thái)."
+  },
+  {
+   "n": 6,
+   "title": "Tổng hợp số liệu và viết dự thảo nhận xét",
+   "lam_gi": "cộng dồn số liệu theo định nghĩa chỉ tiêu, điền vào các mục của `mau_bao_cao_chung`; viết phần nhận xét/đánh giá CHỈ dựa trên số liệu đã tổng hợp, mỗi nhận xét gắn với con số cụ thể.",
+   "inputs": [
+    "mau_bao_cao_chung",
+    "ky_bao_cao"
+   ],
+   "vai_tro": "Đầu mối tổng hợp (Văn phòng/Phòng Đào tạo) · AI hỗ trợ: cộng dồn số liệu, điền mẫu chung, viết nhận xét chỉ dựa trên số liệu",
+   "luu_y": "cấm suy diễn vượt số liệu (không \"dự báo\", không gán \"nguyên nhân\" khi không có căn cứ); chỉ tiêu nào thiếu số liệu thì ghi \"chưa có số liệu\", không bỏ mục.",
+   "ket_qua": "dự thảo báo cáo hợp nhất (số liệu đã điền + nhận xét dựa trên số liệu)."
+  },
+  {
+   "n": 7,
+   "title": "Lập phụ lục liên kết nguồn",
+   "lam_gi": "với mỗi con số trong báo cáo hợp nhất, ghi chú thích nguồn: đơn vị nào, báo cáo nào, trang/mục nào; kiểm tra không để con số nào \"mồ côi\" nguồn.",
+   "inputs": [
+    "bao_cao_don_vi"
+   ],
+   "vai_tro": "Đầu mối tổng hợp (Văn phòng/Phòng Đào tạo); đầu mối từng đơn vị xác nhận số liệu đơn vị mình · AI hỗ trợ: lập phụ lục liên kết nguồn, kiểm tra không con số nào \"mồ côi\" nguồn",
+   "luu_y": "mất liên kết nguồn = số liệu không dùng được khi bị chất vấn; đây là bước kiểm tra cuối cùng trước khi chuyển human gate.",
+   "ket_qua": "phụ lục liên kết nguồn đầy đủ + báo cáo hợp nhất hoàn chỉnh."
+  }
+ ],
+ "checks": [
+  "Báo cáo hợp nhất đầy đủ 5 phần theo cấu trúc sản phẩm tại references/quy-cach-dau-ra.md: tiêu đề + kỳ báo cáo + ngày lập; phạm vi số liệu (đơn vị nào đã có số liệu / chưa nộp / nộp bản nháp); nội dung theo mẫu chung; bảng thiếu dữ liệu; danh sách mâu thuẫn cần xác minh + hạn bổ sung.",
+  "Số liệu trong output khớp với báo cáo các đơn vị trong Input; không bịa, không ước lượng, không \"làm tròn cho đẹp\".",
+  "Mỗi con số trong báo cáo hợp nhất đều có chú thích nguồn (đơn vị, báo cáo, mục) trong phụ lục liên kết nguồn.",
+  "Số liệu từ bản nháp chưa xác minh KHÔNG đưa vào tổng; chỉ tiêu thiếu để trống ô số liệu và ghi vào bảng thiếu dữ liệu, không bỏ mục.",
+  "Trùng lặp đã loại trước khi cộng dồn; mâu thuẫn ghi rõ nguồn được chọn + lý do theo thứ tự ưu tiên nguồn.",
+  "Nhận xét/đánh giá chỉ dựa trên số liệu đã tổng hợp — không suy diễn vượt số liệu (không dự báo, không gán nguyên nhân khi không có căn cứ).",
+  "Đã qua Human gate: đầu mối từng đơn vị đã xác nhận số liệu đơn vị mình; lãnh đạo đã duyệt báo cáo cuối trước khi ban hành/gửi cấp trên. > Tiêu chí đạt: tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [
+  "KHÔNG bịa, ước lượng hay \"làm tròn cho đẹp\" bất kỳ số liệu nào còn thiếu.",
+  "KHÔNG tự điền số liệu thay đơn vị chưa nộp — ghi rõ \"chưa có số liệu\".",
+  "Mọi con số phải giữ liên kết về nguồn gốc (đơn vị, báo cáo, mục); mất liên kết = số liệu không dùng được.",
+  "KHÔNG viết nhận xét, đánh giá vượt quá những gì số liệu chứng minh được.",
+  "Không cộng số liệu của đơn vị chủ trì với số của đơn vị tham gia khi cùng đếm một đối tượng (bài báo, đề tài, hợp đồng, sinh viên): đối chiếu theo tên hoặc mã duy nhất trước, ghi rõ phần trùng và phần chỉ có ở một nguồn; chưa đối chiếu xong thì không chốt tổng.",
+  "Không dùng tỷ lệ do đơn vị tự ghi khi có số tử/mẫu: tính lại, lệch thì ghi cả hai và đưa vào mục mâu thuẫn.",
+  "Không đưa nhận định thiếu minh chứng (ví dụ \"hài lòng 100%\" không nêu mẫu, số phiếu, cách tính) vào bản hợp nhất.",
+  "Không bỏ qua kỳ báo cáo lệch so với mẫu chung hoặc ngày lập báo cáo; đơn vị tính khác nhau (tỷ, triệu) phải quy đổi và ghi chú.",
+  "Không nêu số đơn vị hay đơn vị chưa nộp khi chưa có danh sách đơn vị phải nộp: ghi \"chưa xác định được\", không tự suy ra."
+ ],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Danh sách đơn vị nộp báo cáo mặc định: 4 phòng, 6 khoa, Viện ĐMST&CGCN, Hội đồng KH&ĐT; bảng theo dõi đơn vị chưa nộp, nộp nháp, nộp đủ.",
+  "Phòng Đào tạo có nhiều mảng (đào tạo, sau đại học, công tác sinh viên, khảo thí, đảm bảo chất lượng): tách mục riêng khi tổng hợp.",
+  "Khi các đơn vị báo cáo số khác nhau về cùng một chỉ tiêu (website của Trường cũng nêu 3 số chương trình khác nhau): liệt kê mâu thuẫn, không tự chọn số.",
+  "Chu kỳ tuần, tháng, quý, năm do Trường quy định; năm học tính theo lịch của Trường."
+ ],
+ "cho_xac_nhan": [
+  "Mẫu báo cáo tuần/tháng/quý/năm đang dùng và định nghĩa từng chỉ tiêu (C8).",
+  "Nguồn số liệu chính thức khi mâu thuẫn (C4)."
+ ],
+ "output_structure": [
+  "Tiêu đề: tên báo cáo, kỳ báo cáo, đơn vị tổng hợp, ngày lập.",
+  "Phạm vi số liệu: đơn vị nào đã có số liệu / chưa nộp / nộp bản nháp (minh bạch ngay từ đầu).",
+  "Nội dung theo mẫu chung: từng mục gồm bảng số liệu (mỗi con số có chú thích nguồn) + nhận xét dựa trên số liệu.",
+  "Data gap nhật ký: đơn vị thiếu chỉ tiêu nào, trạng thái.",
+  "Danh sách mâu thuẫn cần xác minh thêm + hạn bổ sung."
+ ],
+ "output_structure_raw": "1. Tiêu đề: tên báo cáo, kỳ báo cáo, đơn vị tổng hợp, ngày lập.\n\n2. Phạm vi số liệu: đơn vị nào đã có số liệu / chưa nộp / nộp bản nháp (minh bạch ngay từ đầu).\n\n3. Nội dung theo mẫu chung: từng mục gồm bảng số liệu (mỗi con số có chú thích nguồn) + nhận xét dựa trên số liệu.\n\n4. Data gap nhật ký: đơn vị thiếu chỉ tiêu nào, trạng thái.\n\n5. Danh sách mâu thuẫn cần xác minh thêm + hạn bổ sung.",
+ "human_gate_check": "Đã qua Human gate: đầu mối từng đơn vị đã xác nhận số liệu đơn vị mình; lãnh đạo đã duyệt báo cáo cuối trước khi ban hành/gửi cấp trên. > Tiêu chí đạt: tất cả các ô được đánh dấu.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Tổ chức và Quản trị (tổng hợp). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `nghiep-vu`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-vp-hop-nhat-bao-cao-don-vi/references"
+}

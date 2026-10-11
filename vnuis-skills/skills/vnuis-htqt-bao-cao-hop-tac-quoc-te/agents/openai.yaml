@@ -1,0 +1,4 @@
+interface:
+  display_name: Hợp tác QT · Báo cáo hợp tác quốc tế VNU-IS
+  short_description: Tổng hợp hợp tác quốc tế cho VNU-IS
+  default_prompt: 'Hãy dùng $vnuis-htqt-bao-cao-hop-tac-quoc-te để hỗ trợ công việc: Báo cáo hợp tác quốc tế của Trường Quốc tế – ĐHQGHN; xác nhận dữ liệu, căn cứ hiện hành và xuất dự thảo để kiểm duyệt. Tạo file .docx thực tế và cung cấp liên kết tải; không chỉ trả nội dung trong chat. Giữ chỗ điền thông tin thiếu đúng mẫu. Đọc references/boi-canh-vnuis.md và các mục chờ xác nhận trước khi làm.'

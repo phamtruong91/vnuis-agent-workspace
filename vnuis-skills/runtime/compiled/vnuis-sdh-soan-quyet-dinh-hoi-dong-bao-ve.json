@@ -1,0 +1,214 @@
+{
+ "name": "vnuis-sdh-soan-quyet-dinh-hoi-dong-bao-ve",
+ "title": "Quyết định thành lập hội đồng bảo vệ luận văn / luận án",
+ "description": "Dùng khi học viên cao học hoặc nghiên cứu sinh đã đủ điều kiện bảo vệ và cần ban hành quyết định thành lập hội đồng đánh giá luận văn, luận án, đúng thể thức Nghị định 30/2020/NĐ-CP.",
+ "group": "sdh",
+ "group_label": "Sau đại học",
+ "previous_name": "vnuis-quyet-dinh-hoi-dong-bao-ve",
+ "format": "docx",
+ "version": "0.4.2",
+ "unit": "Phòng Đào tạo (sau đại học)",
+ "when": "Khi học viên cao học / nghiên cứu sinh đã đủ điều kiện bảo vệ (hoàn thành học phần, đề cương được duyệt,\nđủ bài báo công bố theo quy định) và cần ban hành quyết định thành lập hội đồng đánh giá luận văn thạc sĩ\nhoặc luận án tiến sĩ, ấn định thời gian, địa điểm bảo vệ.",
+ "inputs": [
+  {
+   "key": "bac_dao_tao",
+   "desc": "Thạc sĩ / Tiến sĩ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ho_ten_hv",
+   "desc": "Họ tên học viên / NCS",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ma_hv",
+   "desc": "Mã học viên / NCS",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nganh",
+   "desc": "Ngành đào tạo",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "ten_de_tai",
+   "desc": "Tên đề tài luận văn / luận án",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_huong_dan",
+   "desc": "Họ tên, học hàm/học vị người hướng dẫn",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thanh_phan_hd",
+   "desc": "Danh sách thành viên hội đồng: Chủ tịch, 02 phản biện, Ủy viên, Thư ký (họ tên, học hàm/học vị, đơn vị)",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "thoi_gian_dia_diem",
+   "desc": "Ngày, giờ, địa điểm bảo vệ",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "nguoi_ky",
+   "desc": "Hiệu trưởng / Phó Hiệu trưởng",
+   "required": true,
+   "note": "Có"
+  },
+  {
+   "key": "so_quyet_dinh",
+   "desc": "Số, ký hiệu quyết định (nếu có)",
+   "required": false,
+   "note": "Không"
+  }
+ ],
+ "defaults": [
+  {
+   "muc": "Cơ quan chủ quản; Trường; địa danh",
+   "gia_tri": "Đại học Quốc gia Hà Nội (ĐHQGHN); Trường Quốc tế – ĐHQGHN (VNU – International School); Hà Nội"
+  },
+  {
+   "muc": "Đơn vị sử dụng và phối hợp",
+   "gia_tri": "Phòng Đào tạo (sau đại học)"
+  },
+  {
+   "muc": "Mô hình đào tạo",
+   "gia_tri": "Chọn đúng mô hình trước khi áp quy tắc, không áp quy tắc của mô hình này cho mô hình khác: (1) ĐHQGHN cấp bằng; (2) liên kết quốc tế, đối tác nước ngoài cấp bằng; (3) song bằng; (4) cử nhân – thạc sĩ tích hợp; (5) tiếng Anh dự bị và mô hình 2+2"
+  },
+  {
+   "muc": "Ngôn ngữ đầu ra",
+   "gia_tri": "Tiếng Việt là bản gốc; thêm tiếng Anh cho đối tác, người học quốc tế hoặc khi được yêu cầu"
+  },
+  {
+   "muc": "Hệ thống nguồn dữ liệu có trên website",
+   "gia_tri": "LMS; cổng sinh viên. Skill không kết nối hệ thống, chỉ dùng file xuất/tải lên (C5)"
+  },
+  {
+   "muc": "Người duyệt và ký",
+   "gia_tri": "Ghi theo vai trò (Trưởng phòng, Phó Hiệu trưởng phụ trách, Hiệu trưởng); tuyến duyệt và thẩm quyền ký chờ C1, C6"
+  }
+ ],
+ "legal_pre": "",
+ "steps": [
+  {
+   "n": 1,
+   "title": "Kiểm tra điều kiện bảo vệ của HV/NCS",
+   "lam_gi": "đối chiếu hồ sơ HV/NCS với điều kiện bảo vệ theo trình độ trước khi soạn quyết định: - Thạc sĩ: hoàn thành chương trình học phần; luận văn được người hướng dẫn đồng ý cho bảo vệ; đề cương đã được hội đồng khoa thông qua. - Tiến sĩ: hoàn thành học phần; bảo vệ thành công đề cương và các chuyên đề; có bài báo khoa học công bố theo quy định (tối thiểu 02 bài, trong đó có bài trên tạp chí khoa học); luận án được tập thể hướng dẫn đồng ý cho bảo vệ cấp cơ sở/trường.",
+   "inputs": [
+    "bac_dao_tao",
+    "ho_ten_hv",
+    "ma_hv",
+    "nganh",
+    "ten_de_tai",
+    "nguoi_huong_dan"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: đối chiếu hồ sơ HV/NCS với điều kiện bảo vệ theo trình độ",
+   "luu_y": "thiếu bất kỳ điều kiện nào thì dừng lại, thông báo cho HV/NCS bổ sung — không soạn quyết định khi chưa đủ điều kiện; kiểm tra tên đề tài trên hồ sơ khớp với đề tài đã duyệt.",
+   "ket_qua": "xác nhận HV/NCS đủ điều kiện bảo vệ (hoặc danh sách điều kiện còn thiếu cần bổ sung)."
+  },
+  {
+   "n": 2,
+   "title": "Đề xuất thành phần hội đồng đúng tiêu chuẩn",
+   "lam_gi": "lập danh sách đề xuất thành viên hội đồng theo đúng cơ cấu quy định: - Luận văn thạc sĩ: 05 thành viên (Chủ tịch, 02 phản biện, 02 ủy viên trong đó 01 thư ký); phản biện phải có trình độ TS trở lên, không phải người hướng dẫn. - Luận án tiến sĩ: 07 thành viên (Chủ tịch, 03 phản biện, 03 ủy viên trong đó 01 thư ký); Chủ tịch và phản biện phải có học hàm GS/PGS hoặc trình độ TS có uy tín trong ngành; số thành viên thuộc đơn vị đào tạo của NCS không quá 1/3. Ghi rõ họ tên, học hàm/học vị, đơn vị công tác và vai trò của từng thành viên.",
+   "inputs": [
+    "bac_dao_tao",
+    "thanh_phan_hd",
+    "nguoi_huong_dan"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: đề xuất danh sách thành viên, kiểm tra tiêu chuẩn và xung đột lợi ích",
+   "luu_y": "người hướng dẫn tuyệt đối không được làm phản biện hoặc chủ tịch hội đồng; kiểm tra xung đột lợi ích (người thân, đồng tác giả chính của NCS) khi đề xuất thành viên.",
+   "ket_qua": "danh sách đề xuất thành viên hội đồng (họ tên, học hàm/học vị, đơn vị, vai trò) đúng cơ cấu và tiêu chuẩn."
+  },
+  {
+   "n": 3,
+   "title": "Soạn quyết định theo thể thức NĐ 30/2020",
+   "lam_gi": "soạn quyết định theo đúng trình tự thể thức: Quốc hiệu – Tiêu ngữ → Tên trường → Số, ký hiệu → Địa danh, ngày tháng năm → Tên loại (\"QUYẾT ĐỊNH\") + trích yếu (thành lập Hội đồng đánh giá luận văn thạc sĩ / luận án tiến sĩ) → Căn cứ pháp lý (quy chế đào tạo, quy chế SĐH của trường, tờ trình đề nghị của Trưởng Phòng Đào tạo (sau đại học)) → Điều 1 (thành lập hội đồng: thông tin HV/NCS, đề tài, người hướng dẫn, danh sách thành viên theo vai trò) → Điều 2 (trách nhiệm hội đồng; thời gian, địa điểm bảo vệ) → Điều 3 (trách nhiệm thi hành, hiệu lực) → Nơi nhận → Chữ ký.",
+   "inputs": [
+    "bac_dao_tao",
+    "ho_ten_hv",
+    "ma_hv",
+    "nganh",
+    "ten_de_tai",
+    "nguoi_huong_dan",
+    "thanh_phan_hd",
+    "thoi_gian_dia_diem",
+    "nguoi_ky",
+    "so_quyet_dinh"
+   ],
+   "vai_tro": "Chuyên viên Phòng Đào tạo (sau đại học) · AI hỗ trợ: soạn dự thảo quyết định đúng thể thức",
+   "luu_y": "tên đề tài trong Điều 1 phải đặt trong ngoặc kép, khớp từng chữ với đề tài đã duyệt; thời gian bảo vệ ghi cả giờ, ngày, địa điểm cụ thể.",
+   "ket_qua": "dự thảo quyết định thành lập hội đồng đúng thể thức NĐ 30/2020."
+  },
+  {
+   "n": 4,
+   "title": "Kiểm tra thẩm quyền ký và tiêu chuẩn thành viên",
+   "lam_gi": "kiểm tra lần cuối trước khi trình ký: thẩm quyền ký (Hiệu trưởng hoặc Phó Hiệu trưởng); tiêu chuẩn từng thành viên hội đồng (trình độ, cơ cấu, không trùng người hướng dẫn làm phản biện/chủ tịch); thời gian bảo vệ phải sau ngày ký quyết định ít nhất 15 ngày (đối với luận án tiến sĩ). Nội dung chưa đạt thì hiệu chỉnh rồi kiểm tra lại.",
+   "inputs": [
+    "thanh_phan_hd",
+    "nguoi_huong_dan",
+    "thoi_gian_dia_diem",
+    "nguoi_ky"
+   ],
+   "vai_tro": "Trưởng Phòng Đào tạo (sau đại học) · AI hỗ trợ: kiểm tra chéo thẩm quyền ký và cơ cấu hội đồng",
+   "luu_y": "bẫy thường gặp là ngày bảo vệ quá gần ngày ký quyết định (không đủ thời gian gửi luận án cho phản biện đọc); kiểm tra chính tả họ tên, học hàm/học vị từng thành viên.",
+   "ket_qua": "dự thảo quyết định đã qua kiểm tra, đạt yêu cầu, sẵn sàng trình ký."
+  },
+  {
+   "n": 5,
+   "title": "Xuất bản, trình ký quyết định",
+   "lam_gi": "hoàn thiện quyết định file theo định dạng đầu ra của skill; trình người có thẩm quyền ký; chuyển sang Word để lưu trữ và gửi đến các thành viên hội đồng, HV/NCS.",
+   "inputs": [
+    "nguoi_ky"
+   ],
+   "vai_tro": "Hiệu trưởng/Phó Hiệu trưởng ký ban hành · AI hỗ trợ: chuẩn bị hồ sơ trình ký",
+   "luu_y": "gửi quyết định đến thành viên hội đồng kèm theo luận văn/luận án (đối với phản biện) đủ thời gian đọc trước buổi bảo vệ.",
+   "ket_qua": "quyết định thành lập hội đồng đã ký duyệt và đã gửi các bên liên quan."
+  }
+ ],
+ "checks": [
+  "Bố cục khớp mẫu áp dụng và cấu trúc tại references/quy-cach-dau-ra.md.",
+  "Số liệu/nội dung trong output khớp với Input đã cho (bậc đào tạo, họ tên/mã HV-NCS, ngành, tên đề tài, người hướng dẫn, thành viên hội đồng, thời gian – địa điểm).",
+  "Không bịa đặt số liệu, minh chứng, trích dẫn.",
+  "Đúng thể thức văn bản hành chính theo Nghị định 30/2020/NĐ-CP; tên đề tài trong Điều 1 đặt trong ngoặc kép.",
+  "Căn cứ pháp lý đầy đủ, còn hiệu lực (Thông tư 23/2021/TT-BGDĐT đối với thạc sĩ; Thông tư 18/2021/TT-BGDĐT đối với tiến sĩ).",
+  "Đã qua Human gate: người có thẩm quyền (Hiệu trưởng/Phó Hiệu trưởng) đã ký quyết định.",
+  "HV/NCS đủ mọi điều kiện bảo vệ (hoàn thành học phần, đề cương được duyệt, đủ bài báo công bố đối với NCS, người hướng dẫn đồng ý); tên đề tài khớp từng chữ với đề tài đã duyệt.",
+  "Cơ cấu hội đồng đúng quy định (thạc sĩ 05 thành viên, tiến sĩ 07 thành viên); phản biện có trình độ TS trở lên; người hướng dẫn không làm phản biện hoặc chủ tịch.",
+  "Không có xung đột lợi ích (người thân, đồng tác giả chính của NCS) trong thành phần hội đồng; chính tả họ tên, học hàm/học vị từng thành viên chính xác.",
+  "Ngày bảo vệ sau ngày ký quyết định ít nhất 15 ngày (đối với luận án tiến sĩ); giờ, ngày, địa điểm ghi cụ thể; quyết định đã gửi đến thành viên hội đồng kèm luận văn/luận án cho phản biện đủ thời gian đọc. Tiêu chí đạt = tất cả các ô được đánh dấu."
+ ],
+ "gates": [],
+ "guardrails": [],
+ "limits_std": "AI hỗ trợ chuẩn bị và đối chiếu; cán bộ phụ trách kiểm tra dữ liệu/căn cứ, người có thẩm quyền duyệt và ký. Không đánh dấu đã ký, đã duyệt, đã công bố khi chưa có chứng cứ. Dữ liệu sinh viên, sức khỏe, nhân sự, tài chính chỉ dùng theo mục đích và phân quyền, che thông tin định danh khi dùng ví dụ (Luật 91/2025/QH15, hiệu lực 01/01/2026); không tải dữ liệu lên dịch vụ ngoài khi chưa có quyền.",
+ "adjustments": [
+  "Thành phần hội đồng lấy từ đề xuất đã có; skill kiểm tra cấu trúc và điều kiện nhưng không chọn người.",
+  "Hội đồng của chương trình liên kết có thể do đối tác lập; xác nhận thẩm quyền (C1, C2)."
+ ],
+ "cho_xac_nhan": [
+  "Điều kiện thành phần hội đồng (C2).",
+  "Thẩm quyền ký (C1)."
+ ],
+ "output_structure": [
+  "Phần đầu văn bản: quốc hiệu – tiêu ngữ; tên trường; số, ký hiệu quyết định; địa danh, ngày tháng năm ban hành.",
+  "Tên loại và trích yếu: \"QUYẾT ĐỊNH\" + \"Về việc thành lập Hội đồng đánh giá luận văn thạc sĩ / luận án tiến sĩ\".",
+  "Thẩm quyền ban hành: chức danh người ký (HIỆU TRƯỞNG / KT. HIỆU TRƯỞNG – PHÓ HIỆU TRƯỞNG).",
+  "Phần căn cứ: quy chế đào tạo trình độ thạc sĩ (TT 23/2021) / tiến sĩ (TT 18/2021); quy chế đào tạo sau đại học của trường; tờ trình đề nghị của Trưởng Phòng Đào tạo (sau đại học) (số, ngày).",
+  "Phần quyết định: Điều 1 (thành lập hội đồng: họ tên HV/NCS, mã HV, ngành, tên đề tài trong ngoặc kép, người hướng dẫn, danh sách thành viên đánh số theo vai trò); Điều 2 (trách nhiệm của hội đồng; thời gian — giờ, ngày — và địa điểm bảo vệ); Điều 3 (trách nhiệm thi hành, hiệu lực kể từ ngày ký).",
+  "Phần cuối: nơi nhận; chữ ký, họ tên người ký.",
+  "Sản phẩm kèm theo: danh mục kiểm điều kiện bảo vệ của HV/NCS + tiêu chuẩn thành viên hội đồng. Phần đầu hành chính và phần ký phải đủ theo loại văn bản, kể cả khi cấu trúc nội dung trên viết tắt phần đó. Nếu đơn vị chỉ lập dự thảo cho trường, ghi cơ quan ban hành là trường; không mặc định đơn vị soạn là cơ quan ban hành. Văn bản ban hành kèm quyết định dùng đúng Mẫu 1.3 và cách ghi kèm theo, không tự thêm số riêng."
+ ],
+ "output_structure_raw": "1. Phần đầu văn bản: quốc hiệu – tiêu ngữ; tên trường; số, ký hiệu quyết định; địa danh,\n   ngày tháng năm ban hành.\n\n2. Tên loại và trích yếu: \"QUYẾT ĐỊNH\" + \"Về việc thành lập Hội đồng đánh giá luận văn thạc sĩ /\n   luận án tiến sĩ\".\n\n3. Thẩm quyền ban hành: chức danh người ký (HIỆU TRƯỞNG / KT. HIỆU TRƯỞNG – PHÓ HIỆU TRƯỞNG).\n\n4. Phần căn cứ: quy chế đào tạo trình độ thạc sĩ (TT 23/2021) / tiến sĩ (TT 18/2021); quy chế\n   đào tạo sau đại học của trường; tờ trình đề nghị của Trưởng Phòng Đào tạo (sau đại học)\n   (số, ngày).\n\n5. Phần quyết định: Điều 1 (thành lập hội đồng: họ tên HV/NCS, mã HV, ngành, tên đề tài trong\n   ngoặc kép, người hướng dẫn, danh sách thành viên đánh số theo vai trò); Điều 2 (trách nhiệm\n   của hội đồng; thời gian — giờ, ngày — và địa điểm bảo vệ); Điều 3 (trách nhiệm thi hành,\n   hiệu lực kể từ ngày ký).\n\n6. Phần cuối: nơi nhận; chữ ký, họ tên người ký.\n\n7. Sản phẩm kèm theo: danh mục kiểm điều kiện bảo vệ của HV/NCS + tiêu chuẩn thành viên hội đồng.",
+ "human_gate_check": "Đã qua Human gate: người có thẩm quyền (Hiệu trưởng/Phó Hiệu trưởng) đã ký quyết định.",
+ "header_info": "- Cơ quan chủ quản: Đại học Quốc gia Hà Nội. Cơ quan ban hành: Trường Quốc tế – ĐHQGHN. Đơn vị soạn thảo: Phòng Đào tạo (sau đại học). Địa danh: Hà Nội.\n- Quốc hiệu, tiêu ngữ theo Nghị định 30/2020/NĐ-CP. Ký hiệu số văn bản, chức vụ ký và cách trình bày chi tiết chờ xác nhận (C1); chưa biết thì để trống, không đoán.\n\nLoại sản phẩm: `hanh-chinh`.",
+ "legal": "",
+ "outputs_dir": "skills/vnuis-sdh-soan-quyet-dinh-hoi-dong-bao-ve/references"
+}
